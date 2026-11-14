@@ -1,27 +1,23 @@
-const CACHE_NAME = 'jj-disc-golf-course-cache-v3';
+const CACHE_NAME = 'jj-disc-golf-course-cache-v4';
 
 const PRECACHE_URLS = [
-  '/',
-  '/index.html',
-  '/manifest.json',
-  '/assets/aistudio/card_star_sync_8e893621.jpg',
-  '/assets/aistudio/card_kc_pro_aviar_cotton_candy_v2_f322901a.jpg',
-  '/assets/aistudio/card_star_aviar_ef73dd08.jpg',
-  '/assets/aistudio/card_xt_glow_nova_cotton_candy_v2_90361134.jpg',
-  '/assets/aistudio/card_pink_dx_alien_invoice_4fe78f83.jpg',
-  '/assets/aistudio/card_star_toro_order_front_b7d093dc.jpg',
-  '/assets/aistudio/card_classic_glow_roc_invoice_c493a3ba.jpg',
-  '/assets/aistudio/card_glow_mako3_db46e7f1.jpg',
-  '/assets/aistudio/card_dx_roc3_f562e170.jpg',
-  '/assets/aistudio/card_star_jay_order_front_c57ddddd.jpg',
-  '/assets/aistudio/card_star_rollo_7d7f53c4.jpg',
-  '/assets/aistudio/card_purple_halo_it_abfe9cf2.jpg',
-  '/assets/aistudio/card_champion_eagle_cotton_candy_v2_0f5474a8.jpg',
-  '/assets/aistudio/card_dx_archangel_order_front_79dc09a3.jpg',
-  '/assets/aistudio/card_gstar_roadrunner_order_front_832980e5.jpg',
-  '/assets/aistudio/card_classic_glow_beast_invoice_92808f96.jpg',
-  '/assets/aistudio/card_star_mamba_c3695bde.jpg',
-  '/assets/aistudio/card_classic_glow_wraith_invoice_935bbe7c.jpg',
+  './',
+  './index.html',
+  './manifest.json',
+  './assets/aistudio/card_xt_glow_nova_sugar_high_4204e372.jpg',
+  './assets/aistudio/card_sugar_high_proto_glow_aviar.jpg',
+  './assets/aistudio/card_sugar_high_yeti_pro_aviar.jpg',
+  './assets/aistudio/card_kc_pro_aviar_sugar_high_06f196b2.jpg',
+  './assets/aistudio/card_sugar_high_dx_glow_roc.jpg',
+  './assets/aistudio/card_sugar_high_proto_glow_mako3.jpg',
+  './assets/aistudio/card_sugar_high_star_rollo.jpg',
+  './assets/aistudio/card_sugar_high_glow_leopard3.jpg',
+  './assets/aistudio/card_sugar_high_glow_teebird.jpg',
+  './assets/aistudio/card_champion_eagle_sugar_high_a806d919.jpg',
+  './assets/aistudio/card_sugar_high_star_roadrunner.jpg',
+  './assets/aistudio/card_sugar_high_luster_firebird.jpg',
+  './assets/aistudio/card_sugar_high_halo_wraith.jpg',
+  './assets/aistudio/card_sugar_high_halo_destroyer.jpg',
 ];
 
 self.addEventListener('install', (event) => {
@@ -55,10 +51,13 @@ self.addEventListener('fetch', (event) => {
   const url = new URL(request.url);
 
   // Never cache local/cloud sync API calls or Vite HMR websockets
-  if (url.pathname.startsWith('/api/')) return;
+  if (url.pathname.includes('/api/')) return;
 
   // Cache-first for collector card images and course map assets
-  if (url.pathname.startsWith('/assets/aistudio/')) {
+  if (
+    url.pathname.includes('/assets/aistudio/') ||
+    url.pathname.includes('/assets/course_maps/')
+  ) {
     event.respondWith(
       caches.open(CACHE_NAME).then((cache) =>
         cache.match(request).then((cached) => {
@@ -89,7 +88,7 @@ self.addEventListener('fetch', (event) => {
         caches.match(request).then((cached) => {
           if (cached) return cached;
           if (request.mode === 'navigate') {
-            return caches.match('/index.html');
+            return caches.match('./index.html');
           }
           return Response.error();
         })

@@ -1,15 +1,16 @@
 {
   "name": "Jeffery & Jack Disc Golf Scorecard",
   "short_name": "J&J Disc Golf",
-  "description": "Precision disc golf scorecard, course caddy, head-to-head rivalry analytics, and 18-disc collector card flight log.",
-  "start_url": "/",
+  "description": "Precision disc golf scorecard, course caddy, head-to-head rivalry analytics, and Cotton Candy collector card flight log.",
+  "start_url": "./",
+  "scope": "./",
   "display": "standalone",
-  "background_color": "#F4F1EA",
+  "background_color": "#FFFBEB",
   "theme_color": "#0F172A",
   "orientation": "portrait-primary",
   "icons": [
     {
-      "src": "/assets/aistudio/card_glow_mako3_db46e7f1.jpg",
+      "src": "./assets/aistudio/card_sugar_high_proto_glow_mako3.jpg",
       "sizes": "512x512",
       "type": "image/jpeg",
       "purpose": "any maskable"
