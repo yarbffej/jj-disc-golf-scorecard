@@ -1,0 +1,12 @@
+node_modules/
+build/
+dist/
+.netlify/
+.aistudio/
+.antigravity/
+coverage/
+.DS_Store
+*.log
+.env*
+!.env.example
+cloud_sync_state.json
