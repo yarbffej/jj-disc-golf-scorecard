@@ -34,8 +34,9 @@ import {
   syncDossierToDashboard
 } from './reportGenerator';
 
-export const MASTER_STORAGE_KEY = 'jj_disc_golf_v101_master_state';
+export const MASTER_STORAGE_KEY = 'jj_disc_golf_v102_master_state';
 export const LEGACY_STORAGE_KEYS = [
+  'jj_disc_golf_v101_master_state',
   'jj_disc_golf_v100_master_state',
   'jj_disc_golf_v99_master_state',
   'jj_disc_golf_v98_master_state',
@@ -69,7 +70,7 @@ export const LEGACY_STORAGE_KEYS = [
   'jj_disc_golf_v70_master_state',
   'jj_disc_golf_v69_master_state'
 ];
-export const VERIFIED_PICKS_STORAGE_KEY = 'jj_disc_golf_verified_hole_picks_v7';
+export const VERIFIED_PICKS_STORAGE_KEY = 'jj_disc_golf_verified_hole_picks_v8';
 export const THEME_STORAGE_KEY = 'jj_disc_golf_bg_theme_v4';
 export const DOSSIER_STORAGE_KEY = 'jj_disc_golf_latest_dossier_v1';
 export const HD_CARDS_STORAGE_KEY = 'jj_disc_golf_hd_cards_v1';
@@ -127,6 +128,15 @@ export function normalizeCourseSignature(courseName?: string): string {
   if (raw.includes('shawnee mission wooded') || raw.includes('smp_wooded')) {
     return 'smp_wooded';
   }
+  if (
+    raw === 'prairie_pass' ||
+    raw.includes('prairie pass') ||
+    raw.includes('blue valley') ||
+    raw.includes('pleasant ridge')
+  ) {
+    return 'prairie_pass';
+  }
+  if (raw === 'prairie_center' || raw.includes('prairie center')) return 'prairie_center';
   if (raw.includes('sar-ko-par') || raw.includes('sarko')) return 'sarko';
   if (raw.includes('mize')) return 'mize';
   if (raw.includes('art nine')) return 'artnine';

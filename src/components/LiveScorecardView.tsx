@@ -44,7 +44,7 @@ import {
 } from './TacticalRangefinderWidgets';
 import { playChainRattleSfx } from '../utils/soundFx';
 
-const VERIFIED_PICKS_STORAGE_KEY = 'jj_disc_golf_verified_hole_picks_v6';
+const VERIFIED_PICKS_STORAGE_KEY = 'jj_disc_golf_verified_hole_picks_v8';
 
 interface LiveScorecardViewProps {
   roundState: ActiveRoundState;

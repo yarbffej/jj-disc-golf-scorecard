@@ -9,6 +9,16 @@ const SYNC_FILE_PATH = path.resolve(__dirname, 'cloud_sync_state.json');
 
 function normalizeServerCourseSig(courseName?: string): string {
   const raw = (courseName || '').toLowerCase();
+  if (
+    raw === 'prairie_pass' ||
+    raw.includes('prairie pass') ||
+    raw.includes('blue valley') ||
+    raw.includes('pleasant ridge')
+  ) {
+    return 'prairie_pass';
+  }
+  if (raw === 'prairie_center' || raw.includes('prairie center')) return 'prairie_center';
+  if (raw.includes('shawnee mission wooded') || raw.includes('smp_wooded')) return 'smp_wooded';
   if (raw.includes('sar-ko-par') || raw.includes('sarko')) return 'sarko';
   if (raw.includes('mize')) return 'mize';
   if (raw.includes('art nine')) return 'artnine';

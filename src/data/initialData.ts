@@ -3106,6 +3106,34 @@ const SHAWNEE_MISSION_WOODED_COURSE: CourseTemplate = {
   ]
 };
 
+const BLUE_VALLEY_PRAIRIE_PASS_COURSE: CourseTemplate = {
+  key: 'prairie_pass',
+  name: 'Blue Valley "Prairie Pass" DG Course',
+  location: 'Overland Park, KS (Pleasant Ridge MS · Standard 18 · Par 54 · 4,209 ft)',
+  totalHoles: 18,
+  updatedAt: 1763168400000,
+  holes: [
+    { number: 1, par: 3, distance: 216, hint: '216 ft Standard Opener (Pleasant Ridge MS Lot) · Smooth Glow Leopard3 or Glow Teebird fairway drive to Black Hole Portal pin.' },
+    { number: 2, par: 3, distance: 218, hint: '218 ft Prairie/Park Par 3 · Glow Teebird [7|5|0|2] straight-to-gentle-left fade + Proto Glow Aviar.' },
+    { number: 3, par: 3, distance: 232, hint: '232 ft Moderate Prairie Lane · Glow Leopard3 [7|5|-2|1] hyzer-flip down center (check tee sign if shared combined pad).' },
+    { number: 4, par: 3, distance: 236, hint: '236 ft Controlled 7-Speed Look · Glow Teebird or Sugar High Star Roadrunner at 80% smooth tempo.' },
+    { number: 5, par: 3, distance: 270, hint: '270 ft Longer Front-9 Stretch · Sugar High Star Roadrunner [9|5|-4|1] flat S-curve glide + XT Glow Nova approach.' },
+    { number: 6, par: 3, distance: 215, hint: '215 ft Short Fairway / Midrange Tweener · Glow Leopard3 smooth pull or full Proto Glow Mako3 laser.' },
+    { number: 7, par: 3, distance: 195, hint: '195 ft Short Game Birdie Look · Proto Glow Mako3 [5|5|0|0] dead-level straight at the Black Hole Portal chains!' },
+    { number: 8, par: 3, distance: 202, hint: '202 ft Technical Midrange Pocket · Sugar High DX Glow Roc [4|4|0|3] controlled right-to-left finish.' },
+    { number: 9, par: 3, distance: 195, hint: '195 ft Front-9 Closer · Sugar High Star Rollo [5|6|-4|1] right-drifting pan or Proto Glow Mako3 straight.' },
+    { number: 10, par: 3, distance: 235, hint: '235 ft Back-9 Opener · Glow Teebird [7|5|0|2] pinpoint fairway placement + KC Pro Aviar.' },
+    { number: 11, par: 3, distance: 252, hint: '252 ft Open Prairie / Hill Lane · Sugar High Star Roadrunner smooth chest-high release.' },
+    { number: 12, par: 3, distance: 193, hint: '193 ft Shortest Hole on Standard Layout! · Prime Ace/Birdie run with Proto Glow Mako3 or Proto Glow Aviar.' },
+    { number: 13, par: 3, distance: 298, hint: '298 ft Longest Hole on Standard Layout · Halo Wraith [11|5|-1|3] or Halo Destroyer low flat bomber!' },
+    { number: 14, par: 3, distance: 197, hint: '197 ft Short Technical Par 3 · Sugar High DX Glow Roc [4|4|0|3] or Proto Glow Mako3 into Circle 1.' },
+    { number: 15, par: 3, distance: 242, hint: '242 ft Mid-Length Fairway · Glow Leopard3 [7|5|-2|1] natural S-curve + Yeti Pro Aviar touch putt.' },
+    { number: 16, par: 3, distance: 270, hint: '270 ft Prairie Bomber Par 3 · Sugar High Star Roadrunner [9|5|-4|1] max-glide fairway carry.' },
+    { number: 17, par: 3, distance: 282, hint: '282 ft Penultimate Long Par 3 · Halo Wraith [11|5|-1|3] controlled power drive + XT Glow Nova slope stopper.' },
+    { number: 18, par: 3, distance: 260, hint: '260 ft Finishing Hole back toward Pleasant Ridge MS · Sugar High Star Roadrunner or Glow Teebird closer!' }
+  ]
+};
+
 export const INITIAL_COURSE_TEMPLATES: CourseTemplate[] = [
   ...(typedV65.courses || [])
     .map((c) => {
@@ -3113,8 +3141,9 @@ export const INITIAL_COURSE_TEMPLATES: CourseTemplate[] = [
       if (c.key === 'smp_wooded') return SHAWNEE_MISSION_WOODED_COURSE;
       return c;
     })
-    .filter((c) => c.key !== 'heritage_park'),
-  HERITAGE_PARK_COURSE
+    .filter((c) => c.key !== 'heritage_park' && c.key !== 'prairie_pass'),
+  HERITAGE_PARK_COURSE,
+  BLUE_VALLEY_PRAIRIE_PASS_COURSE
 ];
 
 const ROUND_2026_11_01_BLACK_HOOF: HistoricalRound = {
@@ -7440,8 +7469,8 @@ Brisk 21-minute bogey-free Friday afternoon loop testing the new "Thrown Last Ti
 
 export const INITIAL_USER_EXPORT: AppExportPayload = {
   app: typedV65.app || 'Jeffery & Jack Disc Golf Scorecard',
-  version: 'v101',
-  exportDate: '2026-11-14T05:10:00.000Z',
+  version: 'v102',
+  exportDate: '2026-11-15T03:55:00.000Z',
   history: [
     ROUND_2026_11_13_SARKO,
     ROUND_2026_11_11_SARKO,

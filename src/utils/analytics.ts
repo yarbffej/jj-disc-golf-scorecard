@@ -484,6 +484,14 @@ export function normalizeCourseKeyForPicks(courseKeyOrName?: string): string {
   if (raw === 'mize' || raw.includes('mize')) return 'mize';
   if (raw === 'artnine' || raw.includes('art nine')) return 'artnine';
   if (raw === 'smp_wooded' || raw.includes('shawnee mission wooded')) return 'smp_wooded';
+  if (
+    raw === 'prairie_pass' ||
+    raw.includes('prairie pass') ||
+    raw.includes('blue valley') ||
+    raw.includes('pleasant ridge')
+  ) {
+    return 'prairie_pass';
+  }
   if (raw === 'prairie_center' || raw.includes('prairie center')) return 'prairie_center';
   if (raw === 'california_trail' || raw.includes('california trail')) return 'california_trail';
   if (raw === 'wyandotte' || raw.includes('wyandotte')) return 'wyandotte';
@@ -606,7 +614,26 @@ export const DEFAULT_VERIFIED_HOLE_PICKS: Record<string, string> = {
   'smp_wooded:15': 'innova-proto-glow-mako3',
   'smp_wooded:16': 'innova-sugar-star-rollo',
   'smp_wooded:17': 'innova-glow-teebird',
-  'smp_wooded:18': 'innova-sugar-star-rollo'
+  'smp_wooded:18': 'innova-sugar-star-rollo',
+  // Blue Valley "Prairie Pass" DG Course (Standard 18, Par 54, 4,209 ft) — Cotton Candy Sugar High Lineup!
+  'prairie_pass:1': 'innova-glow-leopard3',
+  'prairie_pass:2': 'innova-glow-teebird',
+  'prairie_pass:3': 'innova-glow-leopard3',
+  'prairie_pass:4': 'innova-glow-teebird',
+  'prairie_pass:5': 'innova-sugar-star-roadrunner',
+  'prairie_pass:6': 'innova-glow-leopard3',
+  'prairie_pass:7': 'innova-proto-glow-mako3',
+  'prairie_pass:8': 'innova-sugar-glow-roc',
+  'prairie_pass:9': 'innova-sugar-star-rollo',
+  'prairie_pass:10': 'innova-glow-teebird',
+  'prairie_pass:11': 'innova-sugar-star-roadrunner',
+  'prairie_pass:12': 'innova-proto-glow-mako3',
+  'prairie_pass:13': 'innova-halo-wraith',
+  'prairie_pass:14': 'innova-sugar-glow-roc',
+  'prairie_pass:15': 'innova-glow-leopard3',
+  'prairie_pass:16': 'innova-sugar-star-roadrunner',
+  'prairie_pass:17': 'innova-halo-wraith',
+  'prairie_pass:18': 'innova-sugar-star-roadrunner'
 };
 
 export type CaddieStabilityFilter = 'hole_match' | 'understable' | 'stable' | 'overstable';
@@ -2077,6 +2104,109 @@ export const COURSE_SATELLITE_LAYOUTS: Record<string, CourseSatelliteLayoutInfo>
         personalFlightMatch: '172g Star Rollo curved right around tree + Pink DX Alien parked under pin (11/10 Par 3 ★!).'
       }
     }
+  },
+  prairie_pass: {
+    courseKey: 'prairie_pass',
+    courseName: 'Blue Valley "Prairie Pass" DG Course',
+    imageUrl: '',
+    udiscParRating: 160,
+    difficultyLabel: 'Standard Layout · Short · Easy–Moderate · Global Avg E (54)',
+    totalFeet: 4209,
+    overviewNote:
+      'Park in Pleasant Ridge Middle School lot (Overland Park, KS · Est. 2010 · 4.0★ / 2,117 ratings). Concrete tees, Black Hole Portal baskets, moderate hills, open prairie & dense wooded holes. Six (6) holes share combined tees with Advanced—check tee signs!',
+    holeGeometry: {
+      1: {
+        direction: '216 ft Standard Opener (Near Pleasant Ridge MS parking lot)',
+        hazards: 'Open prairie/park start; check Standard vs. Advanced tee sign.',
+        personalFlightMatch:
+          'Glow Leopard3 [7|5|-2|1] or Glow Teebird smooth 80% fairway drive + KC Pro Aviar.'
+      },
+      2: {
+        direction: '218 ft Par 3 (Open prairie & moderate park contour)',
+        hazards: 'Prairie rough off fairway; Black Hole Portal chains catch crisp putts.',
+        personalFlightMatch: 'Glow Teebird [7|5|0|2] straight-to-fade placement into Circle 1.'
+      },
+      3: {
+        direction: '232 ft Par 3 (Prairie fairway)',
+        hazards: 'Check tee sign if combined pad; slight wind exposure across prairie.',
+        personalFlightMatch: 'Glow Leopard3 [7|5|-2|1] hyzer-flip down center.'
+      },
+      4: {
+        direction: '236 ft Par 3 (Moderate hill / prairie transition)',
+        hazards: 'Keep nose down into any open-prairie breeze.',
+        personalFlightMatch: 'Glow Teebird [7|5|0|2] or Sugar High Star Roadrunner at 80%.'
+      },
+      5: {
+        direction: '270 ft Par 3 (Longest Front-9 stretch)',
+        hazards: 'Open prairie wind can lift nose-up drives.',
+        personalFlightMatch: 'Sugar High Star Roadrunner [9|5|-4|1] flat S-curve carry + XT Glow Nova.'
+      },
+      6: {
+        direction: '215 ft Par 3 (Short-game scoring fairway)',
+        hazards: 'Trees framing green approach.',
+        personalFlightMatch: 'Glow Leopard3 smooth pull or full Proto Glow Mako3 laser.'
+      },
+      7: {
+        direction: '195 ft Par 3 (Wooded / technical short-game pocket)',
+        hazards: 'Dense wooded trees guard errant kicks.',
+        personalFlightMatch: 'Proto Glow Mako3 [5|5|0|0] dead-level straight at the pin!'
+      },
+      8: {
+        direction: '202 ft Par 3 (Technical midrange hole)',
+        hazards: 'Wooded gap & moderate elevation contour.',
+        personalFlightMatch: 'Sugar High DX Glow Roc [4|4|0|3] dependable left finish.'
+      },
+      9: {
+        direction: '195 ft Par 3 (Front-9 Birdie closer)',
+        hazards: 'Framed green; check combined tee sign.',
+        personalFlightMatch: 'Sugar High Star Rollo [5|6|-4|1] right-turning glide or Proto Glow Mako3.'
+      },
+      10: {
+        direction: '235 ft Par 3 (Back-9 Opener)',
+        hazards: 'Moderate hills & prairie breeze.',
+        personalFlightMatch: 'Glow Teebird [7|5|0|2] pinpoint fairway drive + Yeti Pro Aviar.'
+      },
+      11: {
+        direction: '252 ft Par 3 (Open prairie / hill lane)',
+        hazards: 'Exposed prairie wind.',
+        personalFlightMatch: 'Sugar High Star Roadrunner [9|5|-4|1] chest-high pull-through.'
+      },
+      12: {
+        direction: '193 ft Par 3 (Shortest hole on Standard Layout!)',
+        hazards: 'Ace-run temptation—keep speed controlled so you stay inside Circle 1.',
+        personalFlightMatch: 'Proto Glow Mako3 [5|5|0|0] or Proto Glow Aviar [2|3|0|1] straight at chains!'
+      },
+      13: {
+        direction: '298 ft Par 3 (Longest hole on Standard Layout!)',
+        hazards: 'Full-flight open prairie distance required.',
+        personalFlightMatch: 'Halo Wraith [11|5|-1|3] or Halo Destroyer [12|5|-1|3] low flat bomber!'
+      },
+      14: {
+        direction: '197 ft Par 3 (Short technical Par 3)',
+        hazards: 'Trees & brush bordering green.',
+        personalFlightMatch: 'Sugar High DX Glow Roc [4|4|0|3] controlled hyzer into Circle 1.'
+      },
+      15: {
+        direction: '242 ft Par 3 (Mid-length prairie/woods fairway)',
+        hazards: 'Moderate hill contour near basket.',
+        personalFlightMatch: 'Glow Leopard3 [7|5|-2|1] natural S-curve + XT Glow Nova stopper.'
+      },
+      16: {
+        direction: '270 ft Par 3 (Back-9 prairie stretch)',
+        hazards: 'Open wind exposure; check tee sign.',
+        personalFlightMatch: 'Sugar High Star Roadrunner [9|5|-4|1] high-glide fairway drive.'
+      },
+      17: {
+        direction: '282 ft Par 3 (2nd longest hole on Standard Layout)',
+        hazards: 'Long prairie carry before finishing green.',
+        personalFlightMatch: 'Halo Wraith [11|5|-1|3] controlled power drive + KC Pro Aviar.'
+      },
+      18: {
+        direction: '260 ft Par 3 (Closing hole toward Pleasant Ridge MS lot)',
+        hazards: 'Finishing fairway breeze—commit to flat release.',
+        personalFlightMatch: 'Sugar High Star Roadrunner or Glow Teebird closer for a strong finish!'
+      }
+    }
   }
 };
 
@@ -2090,6 +2220,14 @@ export function getCourseHoleLayoutIntel(
   const norm = (courseNameOrKey || '').toLowerCase();
   let key = '';
   if (norm === 'smp_wooded' || norm.includes('shawnee mission wooded')) key = 'smp_wooded';
+  else if (
+    norm === 'prairie_pass' ||
+    norm.includes('prairie pass') ||
+    norm.includes('blue valley') ||
+    norm.includes('pleasant ridge')
+  ) {
+    key = 'prairie_pass';
+  }
   else if (norm.includes('sar') || norm === 'sarko') key = 'sarko';
   else if (norm.includes('mize')) key = 'mize';
   else if (norm.includes('harmon')) key = 'harmon';
@@ -2254,6 +2392,26 @@ const CURATED_HOLE_OUTLINES: Record<string, Record<number, CompactOutlineOverrid
     7: { s: 'tunnel', e: 'flat', c: 'tight_woods', p: 'cross', pin: '142 ft South across path into deep southern wooded pocket', tip: 'Glow Mako3 or Star Sync 80% straight down the chute.' },
     8: { s: 'straight', e: 'flat', c: 'park', ts: 'right', p: 'left', pin: '185 ft ENE · Woods right, paved trail left', tip: 'Halo Star IT controlled fairway shot along the tree edge.' },
     9: { s: 'straight', e: 'flat', c: 'open', p: 'left', pin: '167 ft NW open lawn closer back toward parking lot', tip: 'Glow Mako3, DX Roc3, or XT Glow Nova right to chains.' }
+  },
+  prairie_pass: {
+    1: { s: 'straight', e: 'flat', c: 'open', pin: '216 ft Standard opener near Pleasant Ridge MS lot', tip: 'Glow Leopard3 or Glow Teebird smooth 80% fairway drive.' },
+    2: { s: 'slight_left', e: 'flat', c: 'park', pin: '218 ft open prairie & park contour to Black Hole Portal', tip: 'Glow Teebird straight-to-fade placement + KC Pro Aviar.' },
+    3: { s: 'straight', e: 'flat', c: 'open', pin: '232 ft prairie fairway (check combined tee sign)', tip: 'Glow Leopard3 hyzer-flip down center.' },
+    4: { s: 'slight_left', e: 'uphill', c: 'park', pin: '236 ft moderate hill & prairie transition', tip: 'Glow Teebird or Sugar High Star Roadrunner at 80%.' },
+    5: { s: 's_curve', e: 'flat', c: 'open', pin: '270 ft longest Front-9 prairie stretch', tip: 'Sugar High Star Roadrunner flat S-curve carry + XT Glow Nova.' },
+    6: { s: 'straight', e: 'flat', c: 'park', g: true, pin: '215 ft short-game scoring fairway', tip: 'Glow Leopard3 smooth pull or full Proto Glow Mako3 laser.' },
+    7: { s: 'tunnel', e: 'flat', c: 'tight_woods', g: true, pin: '195 ft wooded short-game birdie pocket', tip: 'Proto Glow Mako3 dead-level straight at the chains!' },
+    8: { s: 'slight_left', e: 'flat', c: 'tight_woods', g: true, pin: '202 ft wooded midrange corridor', tip: 'Sugar High DX Glow Roc dependable left finish.' },
+    9: { s: 'slight_right', e: 'flat', c: 'park', pin: '195 ft Front-9 Birdie closer', tip: 'Sugar High Star Rollo right-turning glide or Proto Glow Mako3.' },
+    10: { s: 'slight_left', e: 'flat', c: 'park', pin: '235 ft Back-9 opener across moderate contour', tip: 'Glow Teebird pinpoint fairway drive + Yeti Pro Aviar.' },
+    11: { s: 's_curve', e: 'uphill', c: 'open', pin: '252 ft open prairie & hill lane', tip: 'Sugar High Star Roadrunner chest-high pull-through.' },
+    12: { s: 'straight', e: 'flat', c: 'park', pin: '193 ft shortest hole on Standard Layout (Ace Run!)', tip: 'Proto Glow Mako3 or Proto Glow Aviar straight at pin!' },
+    13: { s: 's_curve', e: 'flat', c: 'open', pin: '298 ft longest hole on Standard Layout', tip: 'Halo Wraith or Halo Destroyer low flat bomber!' },
+    14: { s: 'slight_left', e: 'flat', c: 'tight_woods', g: true, pin: '197 ft technical wooded Par 3', tip: 'Sugar High DX Glow Roc controlled hyzer into Circle 1.' },
+    15: { s: 's_curve', e: 'flat', c: 'park', pin: '242 ft mid-length prairie/woods fairway', tip: 'Glow Leopard3 natural S-curve + XT Glow Nova stopper.' },
+    16: { s: 'straight', e: 'flat', c: 'open', pin: '270 ft Back-9 open prairie stretch', tip: 'Sugar High Star Roadrunner high-glide fairway drive.' },
+    17: { s: 'slight_left', e: 'flat', c: 'open', pin: '282 ft 2nd longest hole on Standard Layout', tip: 'Halo Wraith controlled power drive + KC Pro Aviar.' },
+    18: { s: 'straight', e: 'flat', c: 'park', pin: '260 ft closing fairway back toward Pleasant Ridge MS', tip: 'Sugar High Star Roadrunner or Glow Teebird closer!' }
   },
   prairie_center: {
     1: { s: 'straight', e: 'flat', c: 'park', pin: '273 ft tree-framed park opener', tip: 'GStar Roadrunner flat down center + KC Pro Aviar.' },
@@ -3151,7 +3309,25 @@ export function buildCourseSummary(
       '🎯 Double Birdie Magic: Jeffery & Jack carded matching Birdie 2s on H2 (11/08 w/ Halo IT & Buzzz SS) and H3 (10/25 w/ Star Rollo & Roach).',
       '🌲 Uphill H6 Lock: 176g Glow Mako3 has birdied the 116ft uphill 6th hole in back-to-back Art Nine visits (10/25 & 11/08).'
     ];
-  } else if ( courseName.toLowerCase().includes('prairie') ) {
+  } else if (normKey === 'prairie_pass') {
+    courseVibe =
+      'Beginner-to-intermediate friendly 18-hole Overland Park course at Pleasant Ridge Middle School (4,209 ft Standard Layout · Par 54 · UDisc Par Rating 160 · Global Avg E) blending open prairie fairways, moderate hills, and dense wooded short-game pockets with Concrete Tees and Black Hole Portal baskets.';
+    conditionsAndWindRecap =
+      courseRounds.length > 0
+        ? `Recap across ${courseRounds.length} ${courseRounds.length === 1 ? 'round' : 'rounds'} (${windBreakdownText}): Open prairie holes catch Overland Park breezes while wooded pockets reward dead-straight Mako3 & Leopard3 gap control.`
+        : 'UDisc Scouting Intel (Est. 2010 · 4.0★ across 2,117 ratings · Cart & Dog Friendly · No water/restrooms): Most holes sit right in your sweet spot (195–270 ft, shortest H12 193ft, longest H13 298ft). Six (6) holes share combined tees with the Advanced layout—always check the tee signs!';
+    commentaryHighlights =
+      courseRounds.length > 0
+        ? [
+            `Logged ${courseRounds.length} ${courseRounds.length === 1 ? 'round' : 'rounds'} at Blue Valley "Prairie Pass" DG Course (18 holes · Par 54 · 4,209 ft).`,
+            `Jeffery has recorded ${jeffBirdiesHere} Birdies and ${jeffParsHere} Pars here; Jack has recorded ${jackBirdiesHere} Birdies and ${jackParsHere} Pars.`
+          ]
+        : [
+            '🍬 Tailor-Made for Cotton Candy Main Bag: 15 of 18 holes measure 193–270 ft—ideal birdie yardage for Proto Glow Mako3, DX Glow Roc, Star Rollo, Glow Leopard3, Glow Teebird & Sugar High Star Roadrunner!',
+            '🎯 Key Yardage Bookmarks: H7 (195ft), H9 (195ft), H12 (193ft shortest ace run!) & H14 (197ft) are prime midrange birdie looks; H13 (298ft) & H17 (282ft) let Halo Wraith & Halo Destroyer stretch out.',
+            '🅿️ Arrival & Tee Tip: Park in the Pleasant Ridge Middle School parking lot, and double-check tee signs on the 6 combined Standard/Advanced pads.'
+          ];
+  } else if (normKey === 'prairie_center' || courseName.toLowerCase().includes('prairie center')) {
     courseVibe =
       'Sprawling 18-hole Olathe championship park course (5,808 ft, Par 55) featuring long 250–365 ft tree-framed Par 3s, the 517-ft dogleg-left H12, and the 604-ft Par-4 H13 water hole—with more open recovery lanes than Cedar Ridge.';
     conditionsAndWindRecap = `Recap from 11/08 18-hole debut (${windBreakdownText}): Played in comfortable Sunday morning/afternoon air as Part 1 of a 27-hole father-son day before The Art Nine. Long open fairways rewarded flat GStar Roadrunner drives and low Star Sync / DX Alien approaches.`;
@@ -3445,10 +3621,17 @@ const DISC_COMMENTARY_VERDICTS: Record<string, string> = {
     '🚀 Jack’s High-Glide Fairway Bomber! Powers Jack’s gorgeous natural S-curve drives on 230–350+ ft holes at Prairie Center, Cedar Ridge & Mize.'
 };
 
+export type BagGroupingFilter =
+  | 'jeffery'
+  | 'jack'
+  | 'all'
+  | 'archived'
+  | 'jeffery_all';
+
 export function computeDiscBagTelemetry(
   history: HistoricalRound[],
   bag: DiscItem[],
-  owner: 'jeffery' | 'jack' = 'jeffery'
+  groupingFilter: BagGroupingFilter = 'jeffery_all'
 ): DiscBagTelemetrySummary {
   const shortenCourse = (cName: string) => {
     if (cName.includes('Shawnee Mission Wooded')) return 'SMP Wooded';
@@ -3458,6 +3641,7 @@ export function computeDiscBagTelemetry(
     if (cName.includes('Cedar Ridge')) return 'Cedar Ridge';
     if (cName.includes('Mize')) return 'Mize';
     if (cName.includes('Art Nine')) return 'Art Nine';
+    if (cName.includes('Prairie Pass') || cName.includes('Blue Valley')) return 'Prairie Pass';
     if (cName.includes('Prairie Center')) return 'Prairie Ctr';
     if (cName.includes('California Trail')) return 'Cal Trail';
     if (cName.includes('Wyandotte')) return 'Wyandotte';
@@ -3467,10 +3651,24 @@ export function computeDiscBagTelemetry(
   const candidateDiscs = bag.filter((d) => {
     if (d.id.endsWith('-alt')) return false;
     const dOwner = d.ownerId || 'jeffery';
-    return dOwner === owner;
+    if (groupingFilter === 'jeffery') {
+      return dOwner === 'jeffery' && !d.archived;
+    }
+    if (groupingFilter === 'jack') {
+      return dOwner === 'jack' && !d.archived;
+    }
+    if (groupingFilter === 'all') {
+      return !d.archived;
+    }
+    if (groupingFilter === 'archived') {
+      return Boolean(d.archived);
+    }
+    // 'jeffery_all' -> All Jeffery Career (Cotton Candy Main Bag + Backup / Vault)
+    return dOwner === 'jeffery';
   });
 
   const allRows: DiscTelemetryRow[] = candidateDiscs.map((d) => {
+    const rowOwner: 'jeffery' | 'jack' = d.ownerId === 'jack' ? 'jack' : 'jeffery';
     let totalHolesUsed = 0;
     let teeAndFairwayThrows = 0;
     let puttAndApproachThrows = 0;
@@ -3484,7 +3682,7 @@ export function computeDiscBagTelemetry(
 
     for (const r of history) {
       for (const h of r.holes) {
-        const m = h.meta?.[owner];
+        const m = h.meta?.[rowOwner];
         const uName = (m?.discUsed || '').toLowerCase();
         const dName = d.name.toLowerCase();
         const matchesUsedName =
@@ -3552,7 +3750,7 @@ export function computeDiscBagTelemetry(
           const cShort = shortenCourse(r.courseName);
           courseCounts.set(cShort, (courseCounts.get(cShort) || 0) + 1);
 
-          const sc = h.scores?.[owner] || 0;
+          const sc = h.scores?.[rowOwner] || 0;
           if (sc > 0) {
             scoredHoles++;
             totalRelPar += sc - h.par;
@@ -3599,20 +3797,20 @@ export function computeDiscBagTelemetry(
     };
   });
 
-  const activeRows = allRows.filter((r) => !r.disc.archived);
   const thrownRows = allRows.filter((r) => r.totalHolesUsed > 0);
-  const superlativePool = thrownRows.length >= 6 ? thrownRows : allRows;
+  const unthrownRows = allRows.filter((r) => r.totalHolesUsed === 0);
 
-  // 1. Most Used: Top discs across career rounds by total holes used (preserves Vault + Main Bag stats!)
-  const mostUsed = [...superlativePool]
+  // 1. Most Used: Strictly within the active Collector Card Grouping
+  const mostUsed = [...allRows]
     .sort(
       (a, b) =>
         b.totalHolesUsed - a.totalHolesUsed ||
-        b.teeAndFairwayThrows - a.teeAndFairwayThrows
+        b.teeAndFairwayThrows - a.teeAndFairwayThrows ||
+        b.birdies - a.birdies
     )
     .slice(0, 6);
 
-  // 2. Favorites: Jeffery's top-performing & most-praised go-to discs across career rounds + Main Bag
+  // 2. My Favorites: Strictly within the active Collector Card Grouping!
   const favoritePriorityOrder = [
     'innova-roc3',
     'innova-sync',
@@ -3623,32 +3821,72 @@ export function computeDiscBagTelemetry(
     'innova-archangel',
     'innova-rollo',
     'innova-dx-alien',
+    'innova-jay',
+    'innova-classic-glow-roc',
+    'innova-classic-glow-wraith',
+    'innova-xt-glow-nova',
+    'discraft-roach',
+    'discraft-buzzz-ss',
+    'discraft-cicada',
     'innova-proto-glow-mako3',
     'innova-sugar-star-roadrunner',
     'innova-sugar-star-rollo',
     'innova-sugar-glow-roc',
-    'discraft-roach',
-    'discraft-buzzz-ss',
-    'discraft-cicada'
+    'innova-glow-leopard3',
+    'innova-glow-teebird',
+    'innova-proto-glow-aviar',
+    'innova-halo-wraith',
+    'innova-halo-destroyer',
+    'innova-yeti-pro-aviar'
   ];
-  const favorites = [...superlativePool]
-    .filter(
-      (r) =>
-        favoritePriorityOrder.includes(r.disc.id) ||
-        r.totalHolesUsed >= (owner === 'jack' ? 1 : 20)
-    )
-    .sort((a, b) => {
-      const idxA = favoritePriorityOrder.indexOf(a.disc.id);
-      const idxB = favoritePriorityOrder.indexOf(b.disc.id);
-      if (idxA !== -1 && idxB !== -1) return idxA - idxB;
-      if (idxA !== -1) return -1;
-      if (idxB !== -1) return 1;
-      return b.totalHolesUsed - a.totalHolesUsed;
-    })
-    .slice(0, 8);
 
-  // 3. Least Thrown: Active Cotton Candy Main Bag discs with fewest total holes used
-  const leastThrown = [...activeRows]
+  const toughCommentaryOrder = [
+    'innova-classic-glow-beast',
+    'innova-toro',
+    'innova-champion-eagle',
+    'innova-leopard3',
+    'innova-mamba',
+    'innova-firebird',
+    'innova-xt-glow-nova'
+  ];
+
+  const pureToughOnlyIds = new Set([
+    'innova-classic-glow-beast',
+    'innova-toro',
+    'innova-champion-eagle',
+    'innova-leopard3'
+  ]);
+
+  const thrownFavoriteCandidates = thrownRows.filter(
+    (r) => !pureToughOnlyIds.has(r.disc.id) || thrownRows.length <= 2
+  );
+
+  const sortedThrownFavorites = [...thrownFavoriteCandidates].sort((a, b) => {
+    const idxA = favoritePriorityOrder.indexOf(a.disc.id);
+    const idxB = favoritePriorityOrder.indexOf(b.disc.id);
+    if (idxA !== -1 && idxB !== -1) return idxA - idxB;
+    if (idxA !== -1) return -1;
+    if (idxB !== -1) return 1;
+    return (
+      (a.avgRelPar ?? 99) - (b.avgRelPar ?? 99) ||
+      b.birdieRate - a.birdieRate ||
+      b.totalHolesUsed - a.totalHolesUsed
+    );
+  });
+
+  const sortedUnthrownFavorites = [...unthrownRows].sort((a, b) => {
+    const idxA = favoritePriorityOrder.indexOf(a.disc.id);
+    const idxB = favoritePriorityOrder.indexOf(b.disc.id);
+    if (idxA !== -1 && idxB !== -1) return idxA - idxB;
+    if (idxA !== -1) return -1;
+    if (idxB !== -1) return 1;
+    return a.disc.speed - b.disc.speed;
+  });
+
+  const favorites = [...sortedThrownFavorites, ...sortedUnthrownFavorites].slice(0, 6);
+
+  // 3. Least Thrown: Strictly within the active Collector Card Grouping
+  const leastThrown = [...allRows]
     .sort(
       (a, b) =>
         a.totalHolesUsed - b.totalHolesUsed ||
@@ -3656,21 +3894,30 @@ export function computeDiscBagTelemetry(
     )
     .slice(0, 6);
 
-  // 4. Least Favorite / Toughest in Commentary: Discs with highest over-par avg, touchy flight in woods, or retired/lost
-  const leastFavoriteIds = [
-    'innova-classic-glow-beast',
-    'innova-toro',
-    'innova-xt-glow-nova',
-    'innova-champion-eagle',
-    'innova-leopard3',
-    'innova-mamba'
-  ];
-  const leastFavorite = [...allRows]
-    .filter((r) => leastFavoriteIds.includes(r.disc.id) && r.totalHolesUsed >= 1)
-    .sort(
-      (a, b) =>
-        leastFavoriteIds.indexOf(a.disc.id) - leastFavoriteIds.indexOf(b.disc.id)
-    );
+  // 4. Worst Favorites / Toughest: Strictly within the active Collector Card Grouping!
+  // Ranks thrown discs in this grouping by commentary-flagged difficulty + highest strokes over par.
+  const topFavoriteIdInGroup =
+    thrownRows.length > 1 ? sortedThrownFavorites[0]?.disc.id : null;
+
+  const worstPool = thrownRows.filter((r) => r.disc.id !== topFavoriteIdInGroup);
+  const effectiveWorstPool = worstPool.length > 0 ? worstPool : thrownRows;
+
+  const leastFavorite = [...effectiveWorstPool]
+    .sort((a, b) => {
+      const toughIdxA = toughCommentaryOrder.indexOf(a.disc.id);
+      const toughIdxB = toughCommentaryOrder.indexOf(b.disc.id);
+      const isToughA = toughIdxA !== -1 && (a.avgRelPar ?? 0) >= 0.2;
+      const isToughB = toughIdxB !== -1 && (b.avgRelPar ?? 0) >= 0.2;
+      if (isToughA && isToughB) return toughIdxA - toughIdxB;
+      if (isToughA) return -1;
+      if (isToughB) return 1;
+      return (
+        (b.avgRelPar ?? -99) - (a.avgRelPar ?? -99) ||
+        a.parOrBetterRate - b.parOrBetterRate ||
+        a.birdieRate - b.birdieRate
+      );
+    })
+    .slice(0, 6);
 
   return {
     favorites,
@@ -3683,10 +3930,6 @@ export function computeDiscBagTelemetry(
         b.totalHolesUsed - a.totalHolesUsed
     )
   };
-
-  function r_birdieBonus(row: DiscTelemetryRow): number {
-    return row.birdieRate * 0.8 + Math.min(25, row.birdies * 1.2);
-  }
 }
 
 

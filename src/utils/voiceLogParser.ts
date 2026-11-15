@@ -40,6 +40,66 @@ const DISC_VOICE_PATTERNS: Array<{
   regex: RegExp;
 }> = [
   {
+    discId: 'innova-halo-destroyer',
+    displayName: 'Halo Destroyer',
+    regex: /\b(halo\s+destroyer|the\s+destroyer|destroyer)\b/i
+  },
+  {
+    discId: 'innova-halo-wraith',
+    displayName: 'Halo Wraith',
+    regex: /\b(halo\s+wraith|sugar\s+high\s+wraith|classic\s+glow\s+wraith|glow\s+wraith|the\s+wraith|wraith)\b/i
+  },
+  {
+    discId: 'innova-luster-firebird',
+    displayName: 'Luster Firebird',
+    regex: /\b(luster\s+firebird|firebird|fire\s+bird)\b/i
+  },
+  {
+    discId: 'innova-sugar-star-roadrunner',
+    displayName: 'Sugar High Star Roadrunner',
+    regex: /\b(sugar\s+high\s+roadrunner|star\s+roadrunner|gstar\s+roadrunner|roadrunner|road\s+runner|road\s+ground)\b/i
+  },
+  {
+    discId: 'innova-glow-teebird',
+    displayName: 'Glow Teebird',
+    regex: /\b(glow\s+teebird|teebird|tee\s*bird|t[- ]?bird)\b/i
+  },
+  {
+    discId: 'innova-glow-leopard3',
+    displayName: 'Glow Leopard3',
+    regex: /\b(glow\s+leopard\s*3|leopard\s*3|leopard)\b/i
+  },
+  {
+    discId: 'innova-champion-eagle',
+    displayName: 'Champion Eagle',
+    regex: /\b(champion\s+eagle|the\s+eagle|eagle)\b/i
+  },
+  {
+    discId: 'innova-proto-glow-mako3',
+    displayName: 'Proto Glow Mako3',
+    regex: /\b(proto\s+glow\s+mako\s*3|glow\s+mako\s*3|mako\s*3|miko\s*3|make\s*o\s*3|mako)\b/i
+  },
+  {
+    discId: 'innova-sugar-star-rollo',
+    displayName: 'Sugar High Star Rollo',
+    regex: /\b(sugar\s+high\s+rollo|star\s+rollo|rollo|rolo)\b/i
+  },
+  {
+    discId: 'innova-sugar-glow-roc',
+    displayName: 'Sugar High DX Glow Roc',
+    regex: /\b(sugar\s+high\s+roc|dx\s+glow\s+roc|classic\s+glow\s+(?:dx\s+)?roc|new\s+roc|new\s+rock|normal\s+roc|normal\s+rock|glow\s+roc)\b/i
+  },
+  {
+    discId: 'innova-yeti-pro-aviar',
+    displayName: 'Yeti Pro Aviar',
+    regex: /\b(yeti\s+pro\s+aviar|yeti\s+pro|yeti\s+aviar|the\s+yeti|yeti)\b/i
+  },
+  {
+    discId: 'innova-proto-glow-aviar',
+    displayName: 'Proto Glow Aviar',
+    regex: /\b(proto\s+glow\s+aviar|proto\s+aviar|glow\s+aviar)\b/i
+  },
+  {
     discId: 'innova-sync',
     displayName: 'Sync',
     regex: /\b(star\s+sync|sync|sink|xero|zero)\b/i
@@ -50,34 +110,14 @@ const DISC_VOICE_PATTERNS: Array<{
     regex: /\b(halo\s+star\s+it|halo\s+it|the\s+it|with\s+the\s+it|throw\s+the\s+it|it\s+is\s+working|got\s+the\s+it\s+back)\b/i
   },
   {
-    discId: 'innova-mako3',
-    displayName: 'Mako3',
-    regex: /\b(glow\s+mako\s*3|mako\s*3|miko\s*3|make\s*o\s*3|mako)\b/i
-  },
-  {
     discId: 'innova-roc3',
     displayName: 'Roc3',
     regex: /\b(dx\s+roc\s*3|roc\s*3|rock\s*3)\b/i
   },
   {
-    discId: 'innova-classic-glow-roc',
-    displayName: 'Classic Glow Roc',
-    regex: /\b(classic\s+glow\s+(?:dx\s+)?roc|new\s+roc|new\s+rock|normal\s+roc|normal\s+rock|glow\s+roc)\b/i
-  },
-  {
     discId: 'innova-archangel',
     displayName: 'Archangel',
     regex: /\b(dx\s+archangel|archangel|arch\s+angel|ar\s+angel)\b/i
-  },
-  {
-    discId: 'innova-roadrunner',
-    displayName: 'Roadrunner',
-    regex: /\b(gstar\s+roadrunner|roadrunner|road\s+runner|road\s+ground)\b/i
-  },
-  {
-    discId: 'innova-rollo',
-    displayName: 'Rollo',
-    regex: /\b(star\s+rollo|rollo|rolo)\b/i
   },
   {
     discId: 'innova-mamba',
@@ -90,19 +130,9 @@ const DISC_VOICE_PATTERNS: Array<{
     regex: /\b(classic\s+glow\s+beast|glow\s+beast|the\s+beast|beast)\b/i
   },
   {
-    discId: 'innova-classic-glow-wraith',
-    displayName: 'Classic Glow Wraith',
-    regex: /\b(classic\s+glow\s+wraith|glow\s+wraith|the\s+wraith|wraith)\b/i
-  },
-  {
     discId: 'innova-dx-alien',
     displayName: 'DX Alien',
     regex: /\b(dx\s+alien|pink\s+alien|the\s+alien|alien)\b/i
-  },
-  {
-    discId: 'innova-champion-eagle',
-    displayName: 'Champion Eagle',
-    regex: /\b(champion\s+eagle|the\s+eagle|eagle)\b/i
   },
   {
     discId: 'innova-jay',
@@ -125,8 +155,8 @@ const DISC_VOICE_PATTERNS: Array<{
     regex: /\b(kc\s+pro\s+aviar|kc\s+pro|avr\s+kc\s+pro)\b/i
   },
   {
-    discId: 'innova-aviar',
-    displayName: 'Aviar',
+    discId: 'innova-proto-glow-aviar',
+    displayName: 'Proto Glow Aviar',
     regex: /\b(star\s+aviar|aviar|avr)\b/i
   }
 ];
@@ -253,6 +283,9 @@ export function parseVoiceLogTranscript(
       (c.key === 'blackhoof' && /\bblack\s*hoof\b/i.test(text)) ||
       (c.key === 'cedarridge' && /\bcedar\s*ridge\b/i.test(text)) ||
       (c.key === 'artnine' && /\bart\s*nine\b/i.test(text)) ||
+      (c.key === 'smp_wooded' && /\b(shawnee\s*mission\s*wooded|smp\s*wooded)\b/i.test(text)) ||
+      (c.key === 'prairie_pass' && /\b(prairie\s*pass|blue\s*valley|pleasant\s*ridge)\b/i.test(text)) ||
+      (c.key === 'prairie_center' && /\bprairie\s*center\b/i.test(text)) ||
       (c.key === 'heritage_park' && /\bheritage(\s*park)?\b/i.test(text))
     ) {
       matchedCourse = c;

@@ -92,6 +92,9 @@ export const HomeHubView: React.FC<HomeHubViewProps> = ({
             !nameLower.includes('championship')) ||
           (c.key === 'cedarridge' && nameLower.includes('cedar ridge')) ||
           (c.key === 'smp_wooded' && nameLower.includes('shawnee mission wooded')) ||
+          (c.key === 'prairie_pass' &&
+            (nameLower.includes('prairie pass') || nameLower.includes('blue valley'))) ||
+          (c.key === 'prairie_center' && nameLower.includes('prairie center')) ||
           (c.key === 'wyandotte' && nameLower.includes('wyandotte')) ||
           (c.key === 'heritage_park' && nameLower.includes('heritage'))
         ) {

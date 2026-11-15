@@ -12,6 +12,7 @@ import {
   getDiscCardImageUrl
 } from '../data/initialData';
 import {
+  BagGroupingFilter,
   buildLivePersonalFlightProfile,
   computeDiscBagTelemetry,
   computeFlightPathSvg,
@@ -39,23 +40,21 @@ export const CoursesAndBagView: React.FC<CoursesAndBagViewProps> = ({
   initialSelectedDiscId,
   initialBagOwnerFilter = 'jeffery'
 }) => {
-  const [bagOwnerFilter, setBagOwnerFilter] = useState<
-    'jeffery' | 'jack' | 'all' | 'archived'
-  >(initialBagOwnerFilter);
+  const [bagOwnerFilter, setBagOwnerFilter] = useState<BagGroupingFilter>(
+    initialBagOwnerFilter
+  );
   const [simRelease, setSimRelease] = useState<'flat' | 'hyzer' | 'anhyzer'>('flat');
   const [flippedCardIds, setFlippedCardIds] = useState<Record<string, boolean>>({});
   const [lightboxDisc, setLightboxDisc] = useState<DiscItem | null>(null);
   const [lightboxFlipped, setLightboxFlipped] = useState(false);
   const [showFullDiscTable, setShowFullDiscTable] = useState(false);
   const [discSortBy, setDiscSortBy] = useState<
-    'most_used' | 'favorites' | 'birdies' | 'least_thrown'
+    'most_used' | 'favorites' | 'worst_avg' | 'birdies' | 'least_thrown'
   >('most_used');
 
-  const activeTelemetryOwner: 'jeffery' | 'jack' =
-    bagOwnerFilter === 'jack' ? 'jack' : 'jeffery';
   const discTelemetry = React.useMemo(
-    () => computeDiscBagTelemetry(history, bag, activeTelemetryOwner),
-    [history, bag, activeTelemetryOwner]
+    () => computeDiscBagTelemetry(history, bag, bagOwnerFilter),
+    [history, bag, bagOwnerFilter]
   );
 
   const toggleFlipCard = (discId: string, e?: React.MouseEvent) => {
@@ -154,12 +153,15 @@ export const CoursesAndBagView: React.FC<CoursesAndBagViewProps> = ({
     >();
 
     const shortenCourse = (cName: string) => {
+      if (cName.includes('Shawnee Mission Wooded')) return 'SMP Wooded';
       if (cName.includes('Sar-Ko-Par')) return 'Sar-Ko-Par';
       if (cName.includes('Harmon')) return 'Harmon';
       if (cName.includes('Black Hoof')) return 'Black Hoof';
       if (cName.includes('Cedar Ridge')) return 'Cedar Ridge';
       if (cName.includes('Mize')) return 'Mize Elem';
       if (cName.includes('Art Nine')) return 'Art Nine';
+      if (cName.includes('Prairie Pass') || cName.includes('Blue Valley')) return 'Prairie Pass';
+      if (cName.includes('Prairie Center')) return 'Prairie Ctr';
       if (cName.includes('Wyandotte')) return 'Wyandotte';
       return cName;
     };
@@ -431,6 +433,9 @@ export const CoursesAndBagView: React.FC<CoursesAndBagViewProps> = ({
   );
   const archivedDiscs = sortDriversToPutters(bag.filter((d) => !!d.archived));
   const activeCombinedDiscs = sortDriversToPutters(bag.filter((d) => !d.archived));
+  const jefferyAllDiscs = sortDriversToPutters(
+    bag.filter((d) => d.ownerId !== 'jack')
+  );
 
   const visibleBag =
     bagOwnerFilter === 'jeffery'
@@ -439,7 +444,24 @@ export const CoursesAndBagView: React.FC<CoursesAndBagViewProps> = ({
       ? jackDiscs
       : bagOwnerFilter === 'archived'
       ? archivedDiscs
+      : bagOwnerFilter === 'jeffery_all'
+      ? jefferyAllDiscs
       : activeCombinedDiscs;
+
+  const activeGroupingLabel =
+    bagOwnerFilter === 'jeffery'
+      ? `Jeffery’s Cotton Candy (${jefferyDiscs.length})`
+      : bagOwnerFilter === 'jack'
+      ? `Jack’s Discraft (${jackDiscs.length})`
+      : bagOwnerFilter === 'archived'
+      ? `Backup / Vault (${archivedDiscs.length})`
+      : bagOwnerFilter === 'jeffery_all'
+      ? `All Jeffery Career (${jefferyAllDiscs.length})`
+      : `Active Combined (${activeCombinedDiscs.length})`;
+
+  const unthrownCountInGroup = discTelemetry.allRows.filter(
+    (r) => r.totalHolesUsed === 0
+  ).length;
 
   return (
     <div className="space-y-6">
@@ -467,7 +489,7 @@ export const CoursesAndBagView: React.FC<CoursesAndBagViewProps> = ({
                     : 'text-slate-300 hover:text-white'
                 }`}
               >
-                Jeffery&apos;s Cotton Candy ({jefferyDiscs.length})
+                🍬 Jeffery&apos;s Cotton Candy ({jefferyDiscs.length})
               </button>
               <button
                 type="button"
@@ -502,6 +524,17 @@ export const CoursesAndBagView: React.FC<CoursesAndBagViewProps> = ({
               >
                 📦 Backup / Vault ({archivedDiscs.length})
               </button>
+              <button
+                type="button"
+                onClick={() => setBagOwnerFilter('jeffery_all')}
+                className={`px-3 py-1.5 rounded-lg text-xs sm:text-sm font-bold transition-all duration-300 hover:-translate-y-0.5 active:scale-95 whitespace-nowrap ${
+                  bagOwnerFilter === 'jeffery_all'
+                    ? 'bg-[#00F0FF] text-[#090D0B]'
+                    : 'text-slate-300 hover:text-white'
+                }`}
+              >
+                🏆 All Jeffery Career ({jefferyAllDiscs.length})
+              </button>
             </div>
 
             <button
@@ -527,28 +560,57 @@ export const CoursesAndBagView: React.FC<CoursesAndBagViewProps> = ({
         </div>
       </div>
 
-      {/* DISC PERFORMANCE & USAGE TELEMETRY: FAVORITES, MOST USED, LEAST THROWN & LEAST FAVORITE */}
+      {/* DISC PERFORMANCE & USAGE TELEMETRY: FAVORITES, MOST USED, LEAST THROWN & WORST FAVORITES */}
       <div className="neon-card border-2 border-[#39FF14]/50 rounded-2xl p-4 sm:p-5 space-y-4">
-        <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 border-b border-slate-800 pb-3">
-          <div>
-            <span className="text-[11px] font-mono-tabular uppercase text-[#39FF14] font-extrabold">
-              {activeTelemetryOwner === 'jack'
-                ? 'Jack’s Discraft Performance & Usage Telemetry'
-                : `Jeffery’s Disc Stats Across All ${history.length} Rounds & Voice Logs`}
-            </span>
-            <h3 className="text-base sm:text-lg font-extrabold text-white mt-0.5">
-              🥏 My Disc Stats: Favorites, Most Used, Least Thrown &amp; Least Favorite
-            </h3>
+        <div className="flex flex-col gap-3 border-b border-slate-800 pb-3">
+          <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3">
+            <div>
+              <span className="text-[11px] font-mono-tabular uppercase text-[#39FF14] font-extrabold">
+                Scoped to Collector Grouping: {activeGroupingLabel} · Across {history.length} Rounds
+              </span>
+              <h3 className="text-base sm:text-lg font-extrabold text-white mt-0.5">
+                🥏 My Disc Stats: My Favorites, Most Used, Least Thrown &amp; Worst Favorites
+              </h3>
+            </div>
+            <button
+              type="button"
+              onClick={() => setShowFullDiscTable((prev) => !prev)}
+              className="px-3.5 py-1.5 rounded-xl bg-[#080B14] border border-[#00F0FF] text-xs font-extrabold text-[#00F0FF] hover:bg-[#00F0FF]/15 transition-colors self-start sm:self-auto"
+            >
+              {showFullDiscTable
+                ? `Hide ${activeGroupingLabel} Leaderboard ▲`
+                : `View All ${discTelemetry.allRows.length} Discs in Grouping ▼`}
+            </button>
           </div>
-          <button
-            type="button"
-            onClick={() => setShowFullDiscTable((prev) => !prev)}
-            className="px-3.5 py-1.5 rounded-xl bg-[#080B14] border border-[#00F0FF] text-xs font-extrabold text-[#00F0FF] hover:bg-[#00F0FF]/15 transition-colors self-start sm:self-auto"
-          >
-            {showFullDiscTable
-              ? 'Hide Full All-Discs Leaderboard ▲'
-              : `View All ${discTelemetry.allRows.length} Discs Leaderboard ▼`}
-          </button>
+
+          {/* Synced Collector Grouping Quick-Filter Bar */}
+          <div className="flex flex-wrap items-center gap-1.5">
+            <span className="text-[10px] font-mono-tabular font-bold uppercase tracking-wider text-slate-400 mr-1">
+              Filter Stats &amp; Cards By Grouping:
+            </span>
+            {(
+              [
+                { id: 'jeffery', label: `🍬 Cotton Candy (${jefferyDiscs.length})`, activeCls: 'bg-[#FF5722] text-white border-[#FF5722]' },
+                { id: 'archived', label: `📦 Backup / Vault (${archivedDiscs.length})`, activeCls: 'bg-amber-400 text-slate-950 border-amber-400' },
+                { id: 'jeffery_all', label: `🏆 All Jeffery (${jefferyAllDiscs.length})`, activeCls: 'bg-[#00F0FF] text-slate-950 border-[#00F0FF]' },
+                { id: 'jack', label: `Jack’s Discraft (${jackDiscs.length})`, activeCls: 'bg-[#CCFF00] text-slate-950 border-[#CCFF00]' },
+                { id: 'all', label: `Active Combined (${activeCombinedDiscs.length})`, activeCls: 'bg-[#39FF14] text-slate-950 border-[#39FF14]' }
+              ] as const
+            ).map((grp) => (
+              <button
+                key={grp.id}
+                type="button"
+                onClick={() => setBagOwnerFilter(grp.id)}
+                className={`px-2.5 py-1 rounded-lg text-[11px] font-extrabold border transition-all ${
+                  bagOwnerFilter === grp.id
+                    ? grp.activeCls
+                    : 'bg-[#080B14] text-slate-300 border-slate-700 hover:border-white/40 hover:text-white'
+                }`}
+              >
+                {grp.label}
+              </button>
+            ))}
+          </div>
         </div>
 
         {/* 4-Column Superlative Cards */}
@@ -557,10 +619,10 @@ export const CoursesAndBagView: React.FC<CoursesAndBagViewProps> = ({
           <div className="min-w-0 overflow-hidden p-3.5 rounded-xl bg-[#080B14] border border-[#39FF14]/50 space-y-2.5">
             <div>
               <div className="text-xs font-extrabold text-[#39FF14] uppercase tracking-wider">
-                🏆 My Favorites (Best Scoring)
+                🏆 My Favorites ({bagOwnerFilter === 'archived' ? 'Vault' : bagOwnerFilter === 'jack' ? 'Jack' : bagOwnerFilter === 'jeffery_all' ? 'All Career' : bagOwnerFilter === 'all' ? 'Combined' : 'Cotton Candy'})
               </div>
               <p className="text-[11px] text-slate-400">
-                Highest birdie rate, lowest average vs. par &amp; most trusted in commentary
+                Best birdie/par rate &amp; go-to confidence in this card grouping
               </p>
             </div>
             <div className="space-y-2">
@@ -588,21 +650,34 @@ export const CoursesAndBagView: React.FC<CoursesAndBagViewProps> = ({
                       </span>
                     </div>
                     <div className="text-[10px] text-slate-400 truncate mt-0.5">
-                      {row.topCourse} · {row.parOrBetterRate}% Par or Better
+                      {row.totalHolesUsed > 0
+                        ? `${row.topCourse} · ${row.parOrBetterRate}% Par or Better`
+                        : `[${row.disc.speed}|${row.disc.glide}|${row.disc.turn}|${row.disc.fade}] · Go-To Mold Slot`}
                     </div>
                   </div>
                   <div className="text-right font-mono-tabular shrink-0">
-                    <div className="text-xs font-extrabold text-[#39FF14]">
-                      {row.birdies} Birdies ({row.birdieRate}%)
-                    </div>
-                    <div className="text-[10px] text-slate-300">
-                      {row.totalHolesUsed}H · Avg{' '}
-                      {row.avgRelPar !== null
-                        ? row.avgRelPar > 0
-                          ? `+${row.avgRelPar}`
-                          : row.avgRelPar
-                        : '—'}
-                    </div>
+                    {row.totalHolesUsed > 0 ? (
+                      <>
+                        <div className="text-xs font-extrabold text-[#39FF14]">
+                          {row.birdies} Birdies ({row.birdieRate}%)
+                        </div>
+                        <div className="text-[10px] text-slate-300">
+                          {row.totalHolesUsed}H · Avg{' '}
+                          {row.avgRelPar !== null
+                            ? row.avgRelPar > 0
+                              ? `+${row.avgRelPar}`
+                              : row.avgRelPar
+                            : '—'}
+                        </div>
+                      </>
+                    ) : (
+                      <>
+                        <div className="text-[11px] font-extrabold text-[#FACC15]">
+                          New Card
+                        </div>
+                        <div className="text-[10px] text-slate-400">0H Logged</div>
+                      </>
+                    )}
                   </div>
                 </div>
               ))}
@@ -675,10 +750,10 @@ export const CoursesAndBagView: React.FC<CoursesAndBagViewProps> = ({
           <div className="min-w-0 overflow-hidden p-3.5 rounded-xl bg-[#080B14] border border-[#FACC15]/50 space-y-2.5">
             <div>
               <div className="text-xs font-extrabold text-[#FACC15] uppercase tracking-wider">
-                🆕 Least Thrown (Newest / Specialty)
+                🆕 Least Thrown ({bagOwnerFilter === 'archived' ? 'Vault' : 'Newest / Specialty'})
               </div>
               <p className="text-[11px] text-slate-400">
-                Active bag discs with the fewest logged holes so far
+                Discs in this grouping with the fewest logged holes so far
               </p>
             </div>
             <div className="space-y-2">
@@ -721,47 +796,62 @@ export const CoursesAndBagView: React.FC<CoursesAndBagViewProps> = ({
             </div>
           </div>
 
-          {/* 4. LEAST FAVORITE / TOUGHEST IN COMMENTARY */}
+          {/* 4. WORST FAVORITES / TOUGHEST IN GROUPING */}
           <div className="min-w-0 overflow-hidden p-3.5 rounded-xl bg-[#080B14] border border-[#FF2E93]/50 space-y-2.5">
             <div>
               <div className="text-xs font-extrabold text-[#FF2E93] uppercase tracking-wider">
-                ⚠️ Least Favorite / Toughest
+                ⚠️ Worst Favorites / Toughest
               </div>
               <p className="text-[11px] text-slate-400">
-                Highest strokes over par, touchy in woods, or retired/lost
+                Highest strokes over par or touchiest flight in this card grouping
               </p>
             </div>
             <div className="space-y-2">
-              {discTelemetry.leastFavorite.map((row) => (
-                <div
-                  key={row.disc.id}
-                  onClick={() => {
-                    setLightboxDisc(row.disc);
-                    setLightboxFlipped(false);
-                  }}
-                  className="p-2 rounded-lg bg-[#111629] border border-slate-800 hover:border-[#FF2E93] cursor-pointer transition-colors space-y-1"
-                >
-                  <div className="flex items-center justify-between gap-2">
-                    <span className="text-xs font-extrabold text-white truncate">
-                      {row.disc.weightGrams ? `${row.disc.weightGrams}g ` : ''}
-                      {row.disc.name}
-                      {row.disc.archived ? ' (Archived)' : ''}
-                    </span>
-                    <span className="text-xs font-mono-tabular font-extrabold text-[#FF2E93] shrink-0">
-                      Avg{' '}
-                      {row.avgRelPar !== null
-                        ? row.avgRelPar > 0
-                          ? `+${row.avgRelPar}`
-                          : row.avgRelPar
-                        : '—'}{' '}
-                      ({row.totalHolesUsed}H)
-                    </span>
-                  </div>
-                  <p className="text-[10px] text-slate-300 leading-snug line-clamp-2">
-                    {row.commentaryVerdict}
-                  </p>
+              {discTelemetry.leastFavorite.length === 0 ? (
+                <div className="p-2.5 rounded-lg bg-[#111629] border border-slate-800 text-xs text-slate-400">
+                  No thrown discs in this grouping have over-par history yet.
                 </div>
-              ))}
+              ) : (
+                discTelemetry.leastFavorite.map((row, idx) => (
+                  <div
+                    key={row.disc.id}
+                    onClick={() => {
+                      setLightboxDisc(row.disc);
+                      setLightboxFlipped(false);
+                    }}
+                    className="p-2 rounded-lg bg-[#111629] border border-slate-800 hover:border-[#FF2E93] cursor-pointer transition-colors space-y-1"
+                  >
+                    <div className="flex items-center justify-between gap-2">
+                      <span className="text-xs font-extrabold text-white truncate">
+                        <span className="text-[#FF2E93] font-mono-tabular mr-1">
+                          #{idx + 1}
+                        </span>
+                        {row.disc.weightGrams ? `${row.disc.weightGrams}g ` : ''}
+                        {row.disc.name}
+                        {row.disc.archived ? ' (Vault)' : ''}
+                      </span>
+                      <span className="text-xs font-mono-tabular font-extrabold text-[#FF2E93] shrink-0">
+                        Avg{' '}
+                        {row.avgRelPar !== null
+                          ? row.avgRelPar > 0
+                            ? `+${row.avgRelPar}`
+                            : row.avgRelPar
+                          : '—'}{' '}
+                        ({row.totalHolesUsed}H)
+                      </span>
+                    </div>
+                    <p className="text-[10px] text-slate-300 leading-snug line-clamp-2">
+                      {row.commentaryVerdict}
+                    </p>
+                  </div>
+                ))
+              )}
+              {unthrownCountInGroup > 0 && (
+                <div className="p-2 rounded-lg bg-[#0B1020] border border-dashed border-slate-700 text-[10px] text-slate-400 leading-snug">
+                  💡 {unthrownCountInGroup} brand-new Sugar High{' '}
+                  {unthrownCountInGroup === 1 ? 'card has' : 'cards have'} 0 holes logged so far and will auto-rank here once thrown.
+                </div>
+              )}
             </div>
           </div>
         </div>
@@ -771,13 +861,14 @@ export const CoursesAndBagView: React.FC<CoursesAndBagViewProps> = ({
           <div className="pt-3 border-t border-slate-800 space-y-3">
             <div className="flex flex-wrap items-center justify-between gap-2">
               <span className="text-xs font-extrabold text-white">
-                Complete Disc Leaderboard ({discTelemetry.allRows.length} Discs)
+                {activeGroupingLabel} Leaderboard ({discTelemetry.allRows.length} Discs)
               </span>
               <div className="flex flex-wrap items-center gap-1.5">
                 {(
                   [
                     { id: 'most_used', label: '🔥 Most Used' },
                     { id: 'favorites', label: '🏆 Best Avg vs Par' },
+                    { id: 'worst_avg', label: '⚠️ Worst Avg vs Par' },
                     { id: 'birdies', label: '★ Most Birdies' },
                     { id: 'least_thrown', label: '🆕 Least Thrown' }
                   ] as const
@@ -823,6 +914,9 @@ export const CoursesAndBagView: React.FC<CoursesAndBagViewProps> = ({
                       }
                       if (discSortBy === 'least_thrown') {
                         return a.totalHolesUsed - b.totalHolesUsed;
+                      }
+                      if (discSortBy === 'worst_avg') {
+                        return (b.avgRelPar ?? -99) - (a.avgRelPar ?? -99);
                       }
                       return (a.avgRelPar ?? 99) - (b.avgRelPar ?? 99);
                     })
@@ -897,7 +991,7 @@ export const CoursesAndBagView: React.FC<CoursesAndBagViewProps> = ({
             {
               id: 'drivers',
               title: 'Drivers',
-              badge: 'Speed 7–11',
+              badge: 'Speed 7–12',
               accent: '#FF5722',
               discs: visibleBag.filter((d) => d.speed >= 7)
             },

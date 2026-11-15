@@ -16,6 +16,7 @@ import {
   getDiscCardImageUrl
 } from '../data/initialData';
 import {
+  BagGroupingFilter,
   DEFAULT_VERIFIED_HOLE_PICKS,
   buildCourseSummary,
   computeDiscBagTelemetry,
@@ -149,13 +150,24 @@ export const RivalryAnalyticsView: React.FC<RivalryAnalyticsViewProps> = ({
   const [discSortBy, setDiscSortBy] = useState<
     'most_used' | 'favorites' | 'birdies' | 'least_thrown'
   >('most_used');
+  const [analyticsBagGroup, setAnalyticsBagGroup] = useState<BagGroupingFilter>(
+    statsPlayerScope === 'jack' ? 'jack' : 'jeffery_all'
+  );
 
   const handleSetPlayerScope = (scope: 'jeffery' | 'jack' | 'both') => {
     setStatsPlayerScope(scope);
     if (scope === 'jack') {
       setLoadoutPreset('jack-discraft');
-    } else if (loadoutPreset === 'jack-discraft') {
-      setLoadoutPreset('all-around');
+      setAnalyticsBagGroup('jack');
+    } else {
+      if (loadoutPreset === 'jack-discraft') {
+        setLoadoutPreset('all-around');
+      }
+      if (scope === 'both') {
+        setAnalyticsBagGroup('all');
+      } else if (analyticsBagGroup === 'jack' || analyticsBagGroup === 'all') {
+        setAnalyticsBagGroup('jeffery_all');
+      }
     }
     try {
       localStorage.setItem('jj_disc_golf_stats_player_scope', scope);
@@ -194,13 +206,8 @@ export const RivalryAnalyticsView: React.FC<RivalryAnalyticsViewProps> = ({
     [p2.id, filteredHistory]
   );
   const discTelemetry = useMemo(
-    () =>
-      computeDiscBagTelemetry(
-        filteredHistory,
-        bag,
-        isSoloJack ? 'jack' : 'jeffery'
-      ),
-    [filteredHistory, bag, isSoloJack]
+    () => computeDiscBagTelemetry(filteredHistory, bag, analyticsBagGroup),
+    [filteredHistory, bag, analyticsBagGroup]
   );
 
   // Head-to-Head & Skins Telemetry computed live from filteredHistory
@@ -1362,26 +1369,50 @@ export const RivalryAnalyticsView: React.FC<RivalryAnalyticsViewProps> = ({
             </div>
           </div>
 
-          {/* DISC STATS SNAPSHOT ON OVERVIEW: FAVORITES, MOST USED, LEAST THROWN & LEAST FAVORITE */}
+          {/* DISC STATS SNAPSHOT ON OVERVIEW: FAVORITES, MOST USED, LEAST THROWN & WORST FAVORITES */}
           <div className="neon-card border-2 border-[#39FF14]/50 rounded-2xl p-5 space-y-4">
-            <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 border-b border-slate-800 pb-3">
-              <div>
-                <span className="text-[11px] font-mono-tabular uppercase text-[#39FF14] font-extrabold">
-                  {isSoloJack
-                    ? `${p2.name}’s Discraft Telemetry`
-                    : `${p1.name}’s Disc Telemetry (${filteredHistory.length} Rounds)`}
-                </span>
-                <h3 className="text-base sm:text-lg font-extrabold text-white mt-0.5">
-                  🥏 Disc Stats: Favorites, Most Used, Least Thrown &amp; Least Favorite
-                </h3>
+            <div className="flex flex-col gap-3 border-b border-slate-800 pb-3">
+              <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3">
+                <div>
+                  <span className="text-[11px] font-mono-tabular uppercase text-[#39FF14] font-extrabold">
+                    Scoped to Collector Card Grouping · {filteredHistory.length} Rounds
+                  </span>
+                  <h3 className="text-base sm:text-lg font-extrabold text-white mt-0.5">
+                    🥏 Disc Stats: My Favorites, Most Used, Least Thrown &amp; Worst Favorites
+                  </h3>
+                </div>
+                <button
+                  type="button"
+                  onClick={() => setSubTab('bag_form')}
+                  className="px-3.5 py-1.5 rounded-xl bg-[#39FF14] text-slate-950 text-xs font-extrabold hover:bg-[#39FF14]/90 transition-colors self-start sm:self-auto"
+                >
+                  Open Full Disc Leaderboard &amp; Flight Matrix →
+                </button>
               </div>
-              <button
-                type="button"
-                onClick={() => setSubTab('bag_form')}
-                className="px-3.5 py-1.5 rounded-xl bg-[#39FF14] text-slate-950 text-xs font-extrabold hover:bg-[#39FF14]/90 transition-colors self-start sm:self-auto"
-              >
-                Open Full Disc Leaderboard &amp; Flight Matrix →
-              </button>
+              <div className="flex flex-wrap items-center gap-1.5">
+                {(
+                  [
+                    { id: 'jeffery', label: '🍬 Cotton Candy' },
+                    { id: 'archived', label: '📦 Backup / Vault' },
+                    { id: 'jeffery_all', label: '🏆 All Jeffery Career' },
+                    { id: 'jack', label: 'Jack’s Discraft' },
+                    { id: 'all', label: 'Active Combined' }
+                  ] as const
+                ).map((grp) => (
+                  <button
+                    key={grp.id}
+                    type="button"
+                    onClick={() => setAnalyticsBagGroup(grp.id)}
+                    className={`px-2.5 py-1 rounded-lg text-[11px] font-extrabold border transition-all ${
+                      analyticsBagGroup === grp.id
+                        ? 'bg-[#39FF14] text-slate-950 border-[#39FF14]'
+                        : 'bg-[#080B14] text-slate-300 border-slate-700 hover:border-white/40 hover:text-white'
+                    }`}
+                  >
+                    {grp.label}
+                  </button>
+                ))}
+              </div>
             </div>
 
             <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-3.5">
@@ -2178,37 +2209,61 @@ export const RivalryAnalyticsView: React.FC<RivalryAnalyticsViewProps> = ({
         <div className="space-y-6">
           {/* Complete Disc Stats: Favorites, Most Used, Least Thrown, Least Favorite & Sortable Leaderboard */}
           <div className="neon-card border-2 border-[#00F0FF]/60 rounded-2xl p-5 space-y-5">
-            <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 pb-3 border-b border-slate-800">
-              <div>
-                <span className="text-[11px] font-mono-tabular uppercase text-[#00F0FF] font-extrabold">
-                  {isSoloJack
-                    ? `${p2.name}’s Discraft Stats Across Logged Rounds`
-                    : `${p1.name}’s Disc Stats Across ${filteredHistory.length} Logged Rounds`}
-                </span>
-                <h3 className="text-lg font-extrabold text-white mt-0.5">
-                  🥏 Complete Disc Stats: Favorites, Most Used, Least Thrown &amp; Least Favorite
-                </h3>
+            <div className="flex flex-col gap-3 pb-3 border-b border-slate-800">
+              <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3">
+                <div>
+                  <span className="text-[11px] font-mono-tabular uppercase text-[#00F0FF] font-extrabold">
+                    Scoped to Collector Card Grouping · {filteredHistory.length} Logged Rounds
+                  </span>
+                  <h3 className="text-lg font-extrabold text-white mt-0.5">
+                    🥏 Complete Disc Stats: My Favorites, Most Used, Least Thrown &amp; Worst Favorites
+                  </h3>
+                </div>
+                <div className="flex flex-wrap items-center gap-1.5">
+                  {(
+                    [
+                      { id: 'most_used', label: '🔥 Most Used' },
+                      { id: 'favorites', label: '🏆 Best Avg vs Par' },
+                      { id: 'birdies', label: '★ Most Birdies' },
+                      { id: 'least_thrown', label: '🆕 Least Thrown' }
+                    ] as const
+                  ).map((opt) => (
+                    <button
+                      key={opt.id}
+                      type="button"
+                      onClick={() => setDiscSortBy(opt.id)}
+                      className={`px-3 py-1.5 rounded-xl text-xs font-extrabold transition-colors ${
+                        discSortBy === opt.id
+                          ? 'bg-[#39FF14] text-slate-950'
+                          : 'bg-[#080B14] text-slate-300 border border-slate-800 hover:border-[#00F0FF]'
+                      }`}
+                    >
+                      {opt.label}
+                    </button>
+                  ))}
+                </div>
               </div>
               <div className="flex flex-wrap items-center gap-1.5">
                 {(
                   [
-                    { id: 'most_used', label: '🔥 Most Used' },
-                    { id: 'favorites', label: '🏆 Best Avg vs Par' },
-                    { id: 'birdies', label: '★ Most Birdies' },
-                    { id: 'least_thrown', label: '🆕 Least Thrown' }
+                    { id: 'jeffery', label: '🍬 Cotton Candy' },
+                    { id: 'archived', label: '📦 Backup / Vault' },
+                    { id: 'jeffery_all', label: '🏆 All Jeffery Career' },
+                    { id: 'jack', label: 'Jack’s Discraft' },
+                    { id: 'all', label: 'Active Combined' }
                   ] as const
-                ).map((opt) => (
+                ).map((grp) => (
                   <button
-                    key={opt.id}
+                    key={grp.id}
                     type="button"
-                    onClick={() => setDiscSortBy(opt.id)}
-                    className={`px-3 py-1.5 rounded-xl text-xs font-extrabold transition-colors ${
-                      discSortBy === opt.id
-                        ? 'bg-[#39FF14] text-slate-950'
-                        : 'bg-[#080B14] text-slate-300 border border-slate-800 hover:border-[#00F0FF]'
+                    onClick={() => setAnalyticsBagGroup(grp.id)}
+                    className={`px-2.5 py-1 rounded-lg text-[11px] font-extrabold border transition-all ${
+                      analyticsBagGroup === grp.id
+                        ? 'bg-[#00F0FF] text-slate-950 border-[#00F0FF]'
+                        : 'bg-[#080B14] text-slate-300 border-slate-700 hover:border-white/40 hover:text-white'
                     }`}
                   >
-                    {opt.label}
+                    {grp.label}
                   </button>
                 ))}
               </div>
