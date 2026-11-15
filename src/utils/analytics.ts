@@ -2394,24 +2394,24 @@ const CURATED_HOLE_OUTLINES: Record<string, Record<number, CompactOutlineOverrid
     9: { s: 'straight', e: 'flat', c: 'open', p: 'left', pin: '167 ft NW open lawn closer back toward parking lot', tip: 'Glow Mako3, DX Roc3, or XT Glow Nova right to chains.' }
   },
   prairie_pass: {
-    1: { s: 'straight', e: 'flat', c: 'open', pin: '216 ft Standard opener near Pleasant Ridge MS lot', tip: 'Glow Leopard3 or Glow Teebird smooth 80% fairway drive.' },
-    2: { s: 'slight_left', e: 'flat', c: 'park', pin: '218 ft open prairie & park contour to Black Hole Portal', tip: 'Glow Teebird straight-to-fade placement + KC Pro Aviar.' },
-    3: { s: 'straight', e: 'flat', c: 'open', pin: '232 ft prairie fairway (check combined tee sign)', tip: 'Glow Leopard3 hyzer-flip down center.' },
-    4: { s: 'slight_left', e: 'uphill', c: 'park', pin: '236 ft moderate hill & prairie transition', tip: 'Glow Teebird or Sugar High Star Roadrunner at 80%.' },
-    5: { s: 's_curve', e: 'flat', c: 'open', pin: '270 ft longest Front-9 prairie stretch', tip: 'Sugar High Star Roadrunner flat S-curve carry + XT Glow Nova.' },
-    6: { s: 'straight', e: 'flat', c: 'park', g: true, pin: '215 ft short-game scoring fairway', tip: 'Glow Leopard3 smooth pull or full Proto Glow Mako3 laser.' },
-    7: { s: 'tunnel', e: 'flat', c: 'tight_woods', g: true, pin: '195 ft wooded short-game birdie pocket', tip: 'Proto Glow Mako3 dead-level straight at the chains!' },
-    8: { s: 'slight_left', e: 'flat', c: 'tight_woods', g: true, pin: '202 ft wooded midrange corridor', tip: 'Sugar High DX Glow Roc dependable left finish.' },
-    9: { s: 'slight_right', e: 'flat', c: 'park', pin: '195 ft Front-9 Birdie closer', tip: 'Sugar High Star Rollo right-turning glide or Proto Glow Mako3.' },
-    10: { s: 'slight_left', e: 'flat', c: 'park', pin: '235 ft Back-9 opener across moderate contour', tip: 'Glow Teebird pinpoint fairway drive + Yeti Pro Aviar.' },
-    11: { s: 's_curve', e: 'uphill', c: 'open', pin: '252 ft open prairie & hill lane', tip: 'Sugar High Star Roadrunner chest-high pull-through.' },
-    12: { s: 'straight', e: 'flat', c: 'park', pin: '193 ft shortest hole on Standard Layout (Ace Run!)', tip: 'Proto Glow Mako3 or Proto Glow Aviar straight at pin!' },
-    13: { s: 's_curve', e: 'flat', c: 'open', pin: '298 ft longest hole on Standard Layout', tip: 'Halo Wraith or Halo Destroyer low flat bomber!' },
-    14: { s: 'slight_left', e: 'flat', c: 'tight_woods', g: true, pin: '197 ft technical wooded Par 3', tip: 'Sugar High DX Glow Roc controlled hyzer into Circle 1.' },
-    15: { s: 's_curve', e: 'flat', c: 'park', pin: '242 ft mid-length prairie/woods fairway', tip: 'Glow Leopard3 natural S-curve + XT Glow Nova stopper.' },
-    16: { s: 'straight', e: 'flat', c: 'open', pin: '270 ft Back-9 open prairie stretch', tip: 'Sugar High Star Roadrunner high-glide fairway drive.' },
-    17: { s: 'slight_left', e: 'flat', c: 'open', pin: '282 ft 2nd longest hole on Standard Layout', tip: 'Halo Wraith controlled power drive + KC Pro Aviar.' },
-    18: { s: 'straight', e: 'flat', c: 'park', pin: '260 ft closing fairway back toward Pleasant Ridge MS', tip: 'Sugar High Star Roadrunner or Glow Teebird closer!' }
+    1: { s: 'straight', e: 'uphill', c: 'park', g: true, ob: 'left', pin: '216 ft Standard opener · Steep hill & OB left', tip: 'Aim straight down center; avoid uphill comebackers.' },
+    2: { s: 'slight_right', e: 'flat', c: 'park', pin: '218 ft Short Pin (vs 282ft Adv) · ★ 11/15 Par Lock', tip: 'Star Rollo right of left trouble + parked approach under pin!' },
+    3: { s: 'straight', e: 'downhill', c: 'park', pin: '232 ft straight to downhill roll-away green · ★ 11/15 Double Par', tip: '192ft Mako3/Leopard3 drive + soft KC Pro Aviar so it doesn\'t roll.' },
+    4: { s: 'straight', e: 'flat', c: 'park', g: true, pin: '236 ft straight tree-framed lane · ★ 11/15 Double Par', tip: '200ft "straight box-cutter line" Roadrunner drive + C1 putt!' },
+    5: { s: 's_curve', e: 'flat', c: 'park', ts: 'right', pin: '270 ft long Front-9 stretch · Trees bordering right', tip: 'Keep Roadrunner/Teebird nose-down off tee to clear right trees.' },
+    6: { s: 'slight_left', e: 'flat', c: 'park', w: 'left', pin: '215 ft park lane · Storm drain gutter hazard left', tip: 'Keep Roc/Teebird high enough to clear left tree & storm gutter.' },
+    7: { s: 'tunnel', e: 'flat', c: 'tight_woods', g: true, pin: '195 ft dense scary woods w/ hanging tire #1', tip: 'Commit to dead-level Mako3 or Sync straight down center chute.' },
+    8: { s: 'slight_left', e: 'flat', c: 'park', g: true, pin: '202 ft around tree to low-canopy pin · ★ 11/15 Archangel Gem', tip: '170g DX Archangel parked pin-high 10ft left ("Like an angel!")!' },
+    9: { s: 'tunnel', e: 'flat', c: 'tight_woods', g: true, pin: '195 ft straight woods chute near night-game lights', tip: 'Thread Mako3 cleanly past the 50ft early guardian trunks.' },
+    10: { s: 'straight', e: 'downhill', c: 'open', pin: '235 ft slight downhill Back-9 opener · ★ 11/15 Par Lock', tip: '"10 out of 10" Rollo glide drive; careful of 15ft downhill roll-away!' },
+    11: { s: 'dogleg_right', e: 'uphill', c: 'tight_woods', g: true, pin: '252 ft woods wrap to elevated mound pin w/ thorns', tip: 'Rollo right wrap + XT Glow Nova stop-and-drop on top of mound!' },
+    12: { s: 'tunnel', e: 'flat', c: 'tight_woods', g: true, pin: '193 ft shortest hole straight through woods · ★ 11/15 Par Lock', tip: 'Thread Archangel or Mako3 straight through the wooded branches!' },
+    13: { s: 'straight', e: 'flat', c: 'open', pin: '298 ft longest hole on Standard Layout · Bushes behind pin', tip: 'Roadrunner/Wraith chest-high pull + 150ft DX Alien straight laser.' },
+    14: { s: 'tunnel', e: 'flat', c: 'tight_woods', g: true, pin: '197 ft woods pocket w/ hanging tire #2 & thorns · ★ 11/15 Double Par', tip: 'Keep tee shot nose-down through trees + confident C1 putt.' },
+    15: { s: 'slight_left', e: 'flat', c: 'open', pin: '242 ft open fairway · Pin tucked left in afternoon sun', tip: 'Roadrunner/Teebird skip-hop + hyzer approach that checks instead of rolling.' },
+    16: { s: 'straight', e: 'downhill', c: 'open', pin: '270 ft steep downhill danger pin · ★ 11/15 Par Lock', tip: 'Wraith straight bomb + XT Glow Nova stop-and-drop on scary slope!' },
+    17: { s: 'straight', e: 'flat', c: 'open', pin: '282 ft 2nd longest hole · Straight open prairie lane', tip: 'Roadrunner/Wraith flat drive + keep approach level into low sun.' },
+    18: { s: 'slight_left', e: 'uphill', c: 'park', g: true, pin: '260 ft guardian-tree closer back toward Hole 1', tip: 'Shape around guardian tree + XT Glow Nova approach so it doesn\'t roll long.' }
   },
   prairie_center: {
     1: { s: 'straight', e: 'flat', c: 'park', pin: '273 ft tree-framed park opener', tip: 'GStar Roadrunner flat down center + KC Pro Aviar.' },
@@ -2623,12 +2623,12 @@ export function doesCommentaryMentionDisc(
       return /\b(roc\s*3|rock\s*3)\b/i.test(text);
     case 'innova-classic-glow-roc':
       return (
-        (!roundDate || (roundDate >= '2026-11-05' && roundDate < '2026-11-14')) &&
+        (!roundDate || (roundDate >= '2026-11-05' && roundDate < '2026-11-16')) &&
         /\b(classic\s+glow\s+(?:dx\s+)?roc|glow\s+roc|new\s+roc|normal\s+roc)\b/i.test(text)
       );
     case 'innova-sugar-glow-roc':
       return (
-        Boolean(roundDate && roundDate >= '2026-11-14') &&
+        Boolean(roundDate && roundDate >= '2026-11-16') &&
         /\b(dx\s+glow\s+roc|glow\s+roc|sugar\s+high\s+roc|\broc\b)\b/i.test(text) &&
         !/\broc\s*3\b/i.test(text)
       );
@@ -2636,17 +2636,17 @@ export function doesCommentaryMentionDisc(
       return /\b(kc\s*pro(?:\s*aviar)?|kc\s+aviar)\b/i.test(text);
     case 'innova-proto-glow-aviar':
       return (
-        Boolean(roundDate && roundDate >= '2026-11-14') &&
+        Boolean(roundDate && roundDate >= '2026-11-16') &&
         /\b(proto\s*glow\s*aviar|glow\s*aviar)\b/i.test(text)
       );
     case 'innova-yeti-pro-aviar':
       return (
-        Boolean(roundDate && roundDate >= '2026-11-14') &&
+        Boolean(roundDate && roundDate >= '2026-11-16') &&
         /\b(yeti(?:\s*pro)?(?:\s*aviar)?)\b/i.test(text)
       );
     case 'innova-aviar':
       return (
-        (!roundDate || roundDate < '2026-11-14') &&
+        (!roundDate || roundDate < '2026-11-16') &&
         (/\bstar\s+aviar\b/i.test(text) ||
           (/\baviar\b/i.test(text) && !/\bkc\s*(?:pro\s*)?aviar\b/i.test(text)))
       );
@@ -2660,17 +2660,17 @@ export function doesCommentaryMentionDisc(
       return (!roundDate || roundDate >= '2026-11-05') && /\bbeast\b/i.test(text);
     case 'innova-classic-glow-wraith':
       return (
-        (!roundDate || (roundDate >= '2026-11-05' && roundDate < '2026-11-14')) &&
+        (!roundDate || (roundDate >= '2026-11-05' && roundDate < '2026-11-16')) &&
         /\bwraith\b/i.test(text)
       );
     case 'innova-halo-wraith':
       return (
-        Boolean(roundDate && roundDate >= '2026-11-14') &&
+        Boolean(roundDate && roundDate >= '2026-11-16') &&
         /\b(halo\s*wraith|wraith)\b/i.test(text)
       );
     case 'innova-halo-destroyer':
       return (
-        Boolean(roundDate && roundDate >= '2026-11-14') &&
+        Boolean(roundDate && roundDate >= '2026-11-16') &&
         /\b(halo\s*destroyer|destroyer)\b/i.test(text)
       );
     case 'innova-champion-eagle':
@@ -2682,60 +2682,60 @@ export function doesCommentaryMentionDisc(
       return /\btoro\b/i.test(text);
     case 'innova-mako3':
       return (
-        (!roundDate || roundDate < '2026-11-14') &&
+        (!roundDate || roundDate < '2026-11-16') &&
         /\b(mako\s*3|mako|miko\s*3)\b/i.test(text)
       );
     case 'innova-proto-glow-mako3':
       return (
-        Boolean(roundDate && roundDate >= '2026-11-14') &&
+        Boolean(roundDate && roundDate >= '2026-11-16') &&
         /\b(proto\s*glow\s*mako\s*3|mako\s*3|mako|miko\s*3)\b/i.test(text)
       );
     case 'innova-jay':
       return /\b(star\s+jay|jay)\b/i.test(text);
     case 'innova-rollo':
       return (
-        (!roundDate || roundDate < '2026-11-14') &&
+        (!roundDate || roundDate < '2026-11-16') &&
         /\b(rollo|rolo)\b/i.test(text)
       );
     case 'innova-sugar-star-rollo':
       return (
-        Boolean(roundDate && roundDate >= '2026-11-14') &&
+        Boolean(roundDate && roundDate >= '2026-11-16') &&
         /\b(rollo|rolo)\b/i.test(text)
       );
     case 'innova-archangel':
       return /\b(archangel|arch\s*angel|ar\s*angel)\b/i.test(text);
     case 'innova-roadrunner':
       return (
-        (!roundDate || roundDate < '2026-11-14') &&
+        (!roundDate || roundDate < '2026-11-16') &&
         /\b(roadrunner|road\s*runner)\b/i.test(text)
       );
     case 'innova-sugar-star-roadrunner':
       return (
-        Boolean(roundDate && roundDate >= '2026-11-14') &&
+        Boolean(roundDate && roundDate >= '2026-11-16') &&
         /\b(roadrunner|road\s*runner)\b/i.test(text)
       );
     case 'innova-mamba':
       return /\bmamba\b/i.test(text);
     case 'innova-leopard3':
       return (
-        (!roundDate || roundDate < '2026-11-14') &&
+        (!roundDate || roundDate < '2026-11-16') &&
         /\b(leopard\s*3|leopard)\b/i.test(text)
       );
     case 'innova-glow-leopard3':
       return (
-        Boolean(roundDate && roundDate >= '2026-11-14') &&
+        Boolean(roundDate && roundDate >= '2026-11-16') &&
         /\b(glow\s*leopard\s*3|leopard\s*3|leopard)\b/i.test(text)
       );
     case 'innova-glow-teebird':
       return (
-        Boolean(roundDate && roundDate >= '2026-11-14') &&
+        Boolean(roundDate && roundDate >= '2026-11-16') &&
         /\b(glow\s*teebird|teebird|tee\s*bird)\b/i.test(text)
       );
     case 'innova-firebird':
-      return (!roundDate || roundDate < '2026-11-14') && /\bfirebird\b/i.test(text);
+      return (!roundDate || roundDate < '2026-11-16') && /\bfirebird\b/i.test(text);
     case 'innova-luster-firebird':
       return (
-        Boolean(roundDate && roundDate >= '2026-11-14') &&
+        Boolean(roundDate && roundDate >= '2026-11-16') &&
         /\b(luster\s*firebird|firebird)\b/i.test(text)
       );
     case 'innova-pig':
@@ -2857,9 +2857,9 @@ export function buildLivePersonalFlightProfile(
       'Index finger off the rim, weight on front foot, and stroke straight through the chains without hesitating ("Lock in! Did it!").';
   } else if (disc.id === 'innova-xt-glow-nova') {
     howItFliesForMe =
-      'My dead-straight [2|2|0|0] scramble & slope stopper! Its grippy two-piece XT Glow outer rim absorbs impact and stops on a dime without rolling away (parked tree-trouble scrambles to 2ft on Sar-Ko-Par H3 on 11/04 & 11/05, Cedar Ridge H3/H5, and a tomahawk over trees on Black Hoof H9). Commentary tendency (11/08 Prairie Center H11): If thrown nose-up on a downhill shot, its low 2-glide stalls short—keep it level!';
+      'My dead-straight [2|2|0|0] scramble & slope stopper! On 11/15 at Prairie Pass (65 PB!), it stopped dead at the top of H11’s elevated thorn mound ("Stop at the top—perfect!") and stuck steep downhill H16 ("Good job, Nova! Good, stay!") for Par 3, right after saving Par out of deep woods on 11/13 Sar-Ko H2! Note: Keep level on downhill throws so its 2-glide doesn’t stall short.';
     swingCue =
-      'Point-and-shoot flat release on flat or sloped greens; keep the nose level on downhill approaches so it doesn’t stall.';
+      'Point-and-shoot flat release on mound or downhill roll-away greens; keep the nose level so it glides to the pin and sits.';
   } else if (disc.id === 'innova-sync') {
     howItFliesForMe =
       'Flies like a laser-straight throwing putter and "All-Star" C1/C2 approach disc! On 11/10 at Shawnee Mission Wooded, it parked H5 to 3ft for Par 3 ("Perfect, beautiful!"), drained a clutch H6 Par putt, and stuck H8 ("That Sync’s an All-Star!"). Also parked Sar-Ko-Par H1 in 3 straight rounds (11/04–11/05). Note: Relax when bystanders watch so I don’t pull it left.';
@@ -2912,12 +2912,12 @@ export function buildLivePersonalFlightProfile(
       'Aim well right of the target on RHBH drives or release on a slight anhyzer flex—it will always fight back hard to the left.';
   } else if (disc.id === 'innova-archangel') {
     howItFliesForMe =
-      'My high-glide woods-threading birdie/par machine [8|6|-3|1]! On 11/10 at Shawnee Mission Wooded, it missed almost every tree on H3 ("Beautiful, fantastic!") and laced H14 ("Great shot!") for two Par 3s. Also parked 5–7ft on Sar-Ko-Par H5 (11/09) and 3ft on H7 & 20ft on H8 in my 11/05 21 (-6 PB)!';
+      'My high-glide woods-threading birdie/par machine [8|6|-3|1]! On 11/15 at Prairie Pass (65 / +11 18-Hole PB!), I parked 202ft H8 exact pin-high 10ft left ("Like an angel! You have to keep that one in the bag—permanent, keep this one!") and threaded 193ft wooded H12 for Par 3, after lacing SMP Wooded H3 & H14 (11/10) and Sar-Ko H5/H7/H8!';
     swingCue =
-      '"Don’t bend down—stay straight up when I release it" with a 90° chest-high elbow and tea-kettle wrist.';
+      '"Don’t bend down—stay straight up when I release it" with a smooth chest-high pull-through.';
   } else if (disc.id === 'innova-roadrunner') {
     howItFliesForMe =
-      'My #1 all-around distance driver and birdie catalyst [9|5|-4|1]! On 11/09 at Sar-Ko-Par (22 / -5), it bookended my 6-hole birdie streak—lacing a "perfect shot" on H3 for Birdie #1 and curling around the outside gap to 15ft right on H8 for Birdie #6! At Prairie Center Park on 11/08, it earned Par 3s on H1, H5 & H8 and threaded the tiny guardian-tree window on H9.';
+      'My #1 all-around distance driver and birdie catalyst [9|5|-4|1]! Striped a ~200ft "straight box-cutter line" on 11/15 at Prairie Pass H4 for Par 3, bookended my 6-hole birdie streak on 11/09 at Sar-Ko-Par (H3 & H8 Birdies), and carried Prairie Center H1, H5, H8 & H9’s tiny gap!';
     swingCue =
       'Smooth, level chest-high pull—avoid nose-up releases on the 1st tee or uphill drives so its 9-speed glide penetrates forward.';
   } else if (disc.id === 'innova-classic-glow-beast') {
@@ -3311,22 +3311,13 @@ export function buildCourseSummary(
     ];
   } else if (normKey === 'prairie_pass') {
     courseVibe =
-      'Beginner-to-intermediate friendly 18-hole Overland Park course at Pleasant Ridge Middle School (4,209 ft Standard Layout · Par 54 · UDisc Par Rating 160 · Global Avg E) blending open prairie fairways, moderate hills, and dense wooded short-game pockets with Concrete Tees and Black Hole Portal baskets.';
-    conditionsAndWindRecap =
-      courseRounds.length > 0
-        ? `Recap across ${courseRounds.length} ${courseRounds.length === 1 ? 'round' : 'rounds'} (${windBreakdownText}): Open prairie holes catch Overland Park breezes while wooded pockets reward dead-straight Mako3 & Leopard3 gap control.`
-        : 'UDisc Scouting Intel (Est. 2010 · 4.0★ across 2,117 ratings · Cart & Dog Friendly · No water/restrooms): Most holes sit right in your sweet spot (195–270 ft, shortest H12 193ft, longest H13 298ft). Six (6) holes share combined tees with the Advanced layout—always check the tee signs!';
-    commentaryHighlights =
-      courseRounds.length > 0
-        ? [
-            `Logged ${courseRounds.length} ${courseRounds.length === 1 ? 'round' : 'rounds'} at Blue Valley "Prairie Pass" DG Course (18 holes · Par 54 · 4,209 ft).`,
-            `Jeffery has recorded ${jeffBirdiesHere} Birdies and ${jeffParsHere} Pars here; Jack has recorded ${jackBirdiesHere} Birdies and ${jackParsHere} Pars.`
-          ]
-        : [
-            '🍬 Tailor-Made for Cotton Candy Main Bag: 15 of 18 holes measure 193–270 ft—ideal birdie yardage for Proto Glow Mako3, DX Glow Roc, Star Rollo, Glow Leopard3, Glow Teebird & Sugar High Star Roadrunner!',
-            '🎯 Key Yardage Bookmarks: H7 (195ft), H9 (195ft), H12 (193ft shortest ace run!) & H14 (197ft) are prime midrange birdie looks; H13 (298ft) & H17 (282ft) let Halo Wraith & Halo Destroyer stretch out.',
-            '🅿️ Arrival & Tee Tip: Park in the Pleasant Ridge Middle School parking lot, and double-check tee signs on the 6 combined Standard/Advanced pads.'
-          ];
+      'Fun "18-Hole Sar-Ko-Par" style Overland Park course at Pleasant Ridge Middle School (4,209 ft Standard Layout · Par 54 · UDisc Par Rating 160 · Global Avg E) mixing open prairie fairways, elevated mound & downhill greens (H11 & H16), and clean wooded tunnels with hanging tires (H7, H9, H12 & H14).';
+    conditionsAndWindRecap = `Recap from 11/15 18-hole debut (${windBreakdownText}): Played in chilly autumn crosswinds and bright low winter sun on the Back 9—where Star Rollo, Roadrunner, Archangel, Wraith & XT Glow Nova powered career-best 18-hole scores for BOTH players!`;
+    commentaryHighlights = [
+      '🏆 11/15 DOUBLE ALL-TIME 18-HOLE PERSONAL BESTS! Jeffery shot 65 (+11 · Front 33 / Back 32 · 8 Par 3s ★ on H2, H3, H4, H8, H10, H12, H14 & H16—beating his 69 SMP Wooded PB by 4 strokes!) & Jack shot 71 (+17 · Front 36 / Back 35 · 3 Par 3s ★ on H3, H4 & H14, zero 6s/7s—crushing his 86 Prairie Center PB by 15 strokes!).',
+      '😇 Shot of the Round (H8 · 202ft): Jeffery parked 170g DX Archangel exact pin-high 10 feet left ("Like an angel! You have to keep that one in the bag—permanent, keep this one!") and threaded 193ft wooded H12 for Par 3!',
+      '🛑 Slope-Stopper Clinic (H11 & H16): 175g XT Glow Nova stopped dead on top of H11’s elevated thorn mound ("Stop at the top—perfect!") and held the steep downhill green on 270ft H16 after a dead-straight 171g Classic Glow Wraith drive for Par 3!'
+    ];
   } else if (normKey === 'prairie_center' || courseName.toLowerCase().includes('prairie center')) {
     courseVibe =
       'Sprawling 18-hole Olathe championship park course (5,808 ft, Par 55) featuring long 250–365 ft tree-framed Par 3s, the 517-ft dogleg-left H12, and the 604-ft Par-4 H13 water hole—with more open recovery lanes than Cedar Ridge.';
@@ -3556,33 +3547,33 @@ const DISC_COMMENTARY_VERDICTS: Record<string, string> = {
   'innova-kc-pro-aviar':
     '🏆 #1 Go-To Chain Putter (70% Par+)! Powered both 6-hole birdie streaks (11/05 & 11/09) + drained a 20+ ft heavy-wind floater Par save on Sar-Ko H7 (11/11).',
   'innova-archangel':
-    '🏆 Highest Par-or-Better Driver! Threaded SMP Wooded H3 & H14 for Par 3s (11/10) and parked 5–7ft on Sar-Ko H5 (11/09) & clean wind C1s on H6/H8 (11/11).',
+    '🏆 Permanent Bag Keeper! Parked Prairie Pass H8 pin-high 10ft left ("Like an angel! Permanent, keep this one!"), parred H12, & threaded SMP Wooded H3/H14!',
   'innova-it':
     '⭐ Pinpoint Fairway Favorite! Striped a dead-flat heavy-wind ace-run Birdie 2 on Sar-Ko H3 (11/11), 1ft park on H3 (11/05), 5ft past H7 (11/09) & SMP Wooded H6/H17 Pars.',
   'innova-mako3':
-    '⭐ #1 Dead-Straight Midrange Workhorse! Striped a 277ft flat downhill laser on SMP Wooded H13 ("Straight, beauty, perfect!") & 12 Birdies.',
+    '⭐ #1 Dead-Straight Midrange Workhorse! Bombed ~192ft on Prairie Pass H3 for Par 3 (11/15), 277ft flat downhill laser on SMP Wooded H13 & 12 Birdies.',
   'innova-rollo':
-    '⭐ Signature Right-Turn & Uphill Closer! Powered 3 Par 3s on SMP Wooded (H5, uphill H12 & 347ft H18!) + 5× Birdies on Sar-Ko H9.',
+    '⭐ Signature Right-Turn & Glide Mid! Piped a "10 out of 10" glide drive on Prairie Pass H10 & parked H2 for Par 3s (11/15), plus 3 SMP Wooded Pars & 5× Sar-Ko H9 Birdies.',
   'innova-roadrunner':
-    '🔥 #1 Long-Course Distance Workhorse! Threaded Prairie Center H9’s tiny gap and bookended the 11/09 H3–H8 6-hole birdie streak.',
+    '🔥 #1 Long-Course Distance Workhorse! Striped a 200ft "straight box-cutter line" on Prairie Pass H4 (11/15), Prairie Center H9 gap, & 11/09 6-hole birdie streak.',
   'innova-mamba':
     '⚡ Most Thrown Distance Driver off the Tee — bombs 300+ ft open fairways, but easily overpowers <180ft woods holes into trees.',
   'innova-jay':
     '⭐ Clutch Back-9 Midrange! Locked in Par 3s on SMP Wooded H15 (10ft glide loop) & H17 headwind ("It was perfect!"), plus Cal Trail H5 4ft park.',
   'innova-xt-glow-nova':
-    '⭐ Clutch Trouble & Slope Stopper — saved a textbook Par 3 out of deep left woods on Sar-Ko H2 (11/13 bogey-free 25 / -2: "Couldn\'t have done better getting out of that!") & floated downhill SMP Wooded H10.',
+    '⭐ Clutch Mound & Downhill Stopper! Stuck H11’s thorn mound ("Stop at the top—perfect!") & steep downhill H16 at Prairie Pass (11/15 65 PB!) + 11/13 Sar-Ko H2 woods save.',
   'innova-toro':
-    '⚠️ Utility-Only Overstable Hook — dumps hard left (+3 fade) if thrown like a normal mid; save strictly for dogleg-left tree hooks.',
+    '⚠️ Pulled from Physical Bag before 11/15 Prairie Pass — dumps hard left (+3 fade) if thrown like a normal mid.',
   'innova-champion-eagle':
     '🆕 Overstable 7-Speed Fairway — parked 10ft on Sar-Ko H6 in rain/wind, but strong +3 fade kicks left into woods on tight tunnels.',
   'innova-dx-alien':
-    '⭐ Rising Low-Ceiling & Bullseye Favorite! Parked 347ft SMP Wooded H18 under the pin ("Right there by the pin! Love the Alien!") & Prairie Ctr H7/H8.',
+    '⭐ Rising Bullseye & Approach Laser! Fired a dead-straight 150ft approach on 298ft Prairie Pass H13 ("Straight as an Alien would!") & parked 347ft SMP Wooded H18.',
   'innova-classic-glow-roc':
     '⭐ Wind-Fighting Glow Midrange! Parked Sar-Ko H4 (11/09) & skipped low and flat in heavy gusts on H5 (11/11) for back-to-back Birdie 2s!',
   'innova-classic-glow-beast':
-    '⚠️ Skeptical / Toughest New Driver — nice wide-right drive on SMP Wooded H8, but pulled left on H11 ("Not sure I like the Beast all that much").',
+    '⚠️ Pulled from Physical Bag before 11/15 Prairie Pass — pulled left on SMP Wooded H11 ("Not sure I like the Beast all that much").',
   'innova-classic-glow-wraith':
-    '🚀 Breakthrough Low-Ceiling 11-Speed Bomber! Kept low & flat on SMP Wooded H7 & H9 ("Excellent job Wraith—kept it down, great flight!").',
+    '🚀 Breakthrough Low-Ceiling 11-Speed Bomber! Bombed dead-straight on downhill Prairie Pass H16 ("That Wraith was good, I liked it!") & SMP Wooded H7/H9!',
   'innova-aviar':
     '📦 Archived Vault (36 holes, 5 Birdies) — trusty beadless Star putter before KC Pro Aviar took over primary putting duties.',
   'innova-pig':
@@ -3700,7 +3691,7 @@ export function computeDiscBagTelemetry(
                 d.id === 'innova-halo-destroyer' ||
                 d.id === 'innova-proto-glow-aviar' ||
                 d.id === 'innova-yeti-pro-aviar') &&
-              r.date < '2026-11-14'
+              r.date < '2026-11-16'
             )) ||
             (uName === 'it' && d.id === 'innova-it') ||
             (uName === 'halo it' && d.id === 'innova-it') ||
