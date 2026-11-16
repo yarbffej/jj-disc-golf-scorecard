@@ -8044,7 +8044,7 @@ Bag Note: Cotton Candy "Sugar High" discs are not in hand yet, so Jeffery played
 
 export const INITIAL_USER_EXPORT: AppExportPayload = {
   app: typedV65.app || 'Jeffery & Jack Disc Golf Scorecard',
-  version: 'v103',
+  version: 'v104',
   exportDate: '2026-11-15T23:05:00.000Z',
   history: [
     ROUND_2026_11_15_PRAIRIE_PASS,

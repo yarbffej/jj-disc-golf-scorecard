@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import {
   Calendar,
   Clock,
@@ -9,7 +9,8 @@ import {
   NotebookPen,
   Check,
   Trophy,
-  ArrowLeft
+  ArrowLeft,
+  Map as MapIcon
 } from 'lucide-react';
 import { DiscItem, HistoricalRound, PlayerRosterItem } from '../data/initialData';
 import {
@@ -77,6 +78,8 @@ interface RoundHistoryViewProps {
   history: HistoricalRound[];
   roster: PlayerRosterItem[];
   bag: DiscItem[];
+  initialCourseName?: string | null;
+  onOpenCourseAtlas?: (courseName: string) => void;
   onDeleteRound: (roundId: number) => void;
   onReplayCourse: (round: HistoricalRound) => void;
   onSyncSingleRoundToWebhook: (round: HistoricalRound) => Promise<void>;
@@ -85,14 +88,26 @@ interface RoundHistoryViewProps {
 export const RoundHistoryView: React.FC<RoundHistoryViewProps> = ({
   history,
   bag,
+  initialCourseName,
+  onOpenCourseAtlas,
   onDeleteRound,
   onReplayCourse
 }) => {
-  const [selectedCourse, setSelectedCourse] = useState<string | null>(null);
+  const [selectedCourse, setSelectedCourse] = useState<string | null>(
+    initialCourseName || null
+  );
   const [expandedRoundId, setExpandedRoundId] = useState<number | null>(null);
   const [openCommentaryRoundIds, setOpenCommentaryRoundIds] = useState<Record<number, boolean>>({});
   const [confirmDeleteId, setConfirmDeleteId] = useState<number | null>(null);
   const [copiedRoundDossierId, setCopiedRoundDossierId] = useState<number | null>(null);
+
+  useEffect(() => {
+    if (initialCourseName) {
+      setSelectedCourse(initialCourseName);
+      const firstRound = history.find((r) => r.courseName === initialCourseName);
+      setExpandedRoundId(firstRound?.id ?? null);
+    }
+  }, [initialCourseName, history]);
 
   const uniqueCourses = Array.from(new Set(history.map((r) => r.courseName)));
 
@@ -279,14 +294,28 @@ export const RoundHistoryView: React.FC<RoundHistoryViewProps> = ({
                   })()}
                 </div>
 
-                <div className="pt-2 border-t border-slate-800 flex items-center justify-between gap-2">
-                  <span className="text-xs font-bold text-slate-400">
-                    {voiceRoundsCount > 0
-                      ? `🎙️ ${voiceRoundsCount} Voice Log${voiceRoundsCount === 1 ? '' : 's'} & Summary`
-                      : 'Course summary & scorecards'}
-                  </span>
+                <div className="pt-2 border-t border-slate-800 flex flex-wrap items-center justify-between gap-2">
+                  {onOpenCourseAtlas ? (
+                    <button
+                      type="button"
+                      onClick={(e) => {
+                        e.stopPropagation();
+                        onOpenCourseAtlas(courseName);
+                      }}
+                      className="px-3 py-1.5 rounded-xl bg-[#00F0FF] text-slate-950 text-xs font-extrabold flex items-center gap-1.5 zine-pill-btn"
+                    >
+                      <MapIcon className="w-3.5 h-3.5 shrink-0" />
+                      <span>Layout &amp; Holes</span>
+                    </button>
+                  ) : (
+                    <span className="text-xs font-bold text-slate-400">
+                      {voiceRoundsCount > 0
+                        ? `🎙️ ${voiceRoundsCount} Voice Log${voiceRoundsCount === 1 ? '' : 's'} & Summary`
+                        : 'Course summary & scorecards'}
+                    </span>
+                  )}
                   <span className="px-3 py-1.5 rounded-xl bg-[#FF2E93] text-white text-xs font-extrabold">
-                    View Summary &amp; Rounds →
+                    Scorecards ({courseRounds.length}) →
                   </span>
                 </div>
               </div>
@@ -350,6 +379,16 @@ export const RoundHistoryView: React.FC<RoundHistoryViewProps> = ({
         </div>
 
         <div className="flex flex-wrap items-center gap-2 shrink-0">
+          {onOpenCourseAtlas && selectedCourse && selectedCourse !== 'ALL' && (
+            <button
+              type="button"
+              onClick={() => onOpenCourseAtlas(selectedCourse)}
+              className="px-4 py-2.5 rounded-xl bg-[#00F0FF] hover:bg-[#00F0FF]/90 text-slate-950 text-xs sm:text-sm font-extrabold flex items-center gap-1.5 zine-pill-btn"
+            >
+              <MapIcon className="w-4 h-4 shrink-0" />
+              <span>Course Layout &amp; Tee-Signs</span>
+            </button>
+          )}
           {filteredRounds[0] && (
             <button
               type="button"

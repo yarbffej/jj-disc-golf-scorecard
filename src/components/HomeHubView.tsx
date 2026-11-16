@@ -14,7 +14,8 @@ import {
   Palette,
   Sparkles,
   Trophy,
-  ArrowRight
+  ArrowRight,
+  Map as MapIcon
 } from 'lucide-react';
 import {
   ActiveRoundState,
@@ -54,8 +55,9 @@ interface HomeHubViewProps {
   onResumeLiveRound: () => void;
   onOpenVoiceLogImporter?: () => void;
   onNavigateTab: (
-    tab: 'live' | 'courses' | 'rivalry' | 'history' | 'sync' | 'dashboard',
-    bagOwnerFilter?: 'jeffery' | 'jack' | 'all'
+    tab: 'live' | 'atlas' | 'courses' | 'rivalry' | 'history' | 'sync' | 'dashboard',
+    bagOwnerFilter?: 'jeffery' | 'jack' | 'all',
+    courseKeyOrName?: string
   ) => void;
 }
 
@@ -499,7 +501,19 @@ Players: ${soloMode ? 'Jeffery (Solo)' : 'Jeffery & Jack'}
             </div>
           </div>
 
-          <div className="pt-2 border-t-2 border-slate-900/15 flex justify-end">
+          <div className="pt-2 border-t-2 border-slate-900/15 flex flex-wrap items-center justify-between gap-2.5">
+            <button
+              type="button"
+              onClick={() => {
+                playChainRattleSfx('tap');
+                setShowStartWizard(false);
+                onNavigateTab('atlas', undefined, selectedCourseKey);
+              }}
+              className="w-full sm:w-auto min-h-[46px] px-5 py-2.5 rounded-full bg-[#00F0FF] text-slate-950 font-extrabold text-xs sm:text-sm flex items-center justify-center gap-1.5 zine-pill-btn"
+            >
+              <MapIcon className="w-4 h-4 shrink-0" />
+              <span>Preview {chosenCourse.name} Layout</span>
+            </button>
             <button
               type="button"
               onClick={handleConfirmTeeOff}
@@ -581,31 +595,42 @@ Players: ${soloMode ? 'Jeffery (Solo)' : 'Jeffery & Jack'}
           </div>
         </div>
 
-        {/* TILE 3: ROUND & COURSE HISTORY */}
+        {/* TILE 3: COURSE LAYOUTS & ROUND HISTORY */}
         <div className="neon-card min-w-0 overflow-hidden rounded-2xl p-4 sm:p-5 h-full min-h-[138px] flex flex-col justify-between gap-3.5">
           <div className="space-y-1.5 min-w-0">
             <div className="flex items-center justify-between gap-2">
               <span className="px-2.5 py-0.5 rounded-full bg-[#FACC15] text-slate-950 text-[11px] font-extrabold uppercase tracking-wide whitespace-nowrap zine-sticker">
-                3 · Round History
+                3 · Courses &amp; History
               </span>
-              <History className="w-4 h-4 text-amber-600 shrink-0" />
+              <MapIcon className="w-4 h-4 text-amber-600 shrink-0" />
             </div>
             <h2 className="font-display text-[15px] sm:text-[17px] font-extrabold uppercase leading-snug tracking-tight break-words">
-              Round &amp; Course History ({history.length})
+              Course Layouts &amp; History
             </h2>
           </div>
 
-          <div className="flex items-center gap-2 min-w-0">
+          <div className="grid grid-cols-2 gap-2 min-w-0">
+            <button
+              type="button"
+              onClick={() => {
+                playChainRattleSfx('tap');
+                onNavigateTab('atlas');
+              }}
+              className="min-w-0 w-full min-h-[40px] px-2.5 py-2 rounded-xl bg-[#00F0FF] text-slate-950 font-extrabold text-xs flex items-center justify-center gap-1.5 zine-pill-btn"
+            >
+              <MapIcon className="w-3.5 h-3.5 shrink-0" />
+              <span className="truncate">Layouts ({courses.length})</span>
+            </button>
             <button
               type="button"
               onClick={() => {
                 playChainRattleSfx('tap');
                 onNavigateTab('history');
               }}
-              className="w-full min-w-0 min-h-[40px] px-3.5 py-2 rounded-xl bg-[#FACC15] text-slate-950 font-extrabold text-xs flex items-center justify-center gap-1.5 zine-pill-btn"
+              className="min-w-0 w-full min-h-[40px] px-2.5 py-2 rounded-xl bg-[#FACC15] text-slate-950 font-extrabold text-xs flex items-center justify-center gap-1.5 zine-pill-btn"
             >
               <History className="w-3.5 h-3.5 shrink-0" />
-              <span className="truncate">Open History ({history.length} Rounds)</span>
+              <span className="truncate">History ({history.length})</span>
             </button>
           </div>
         </div>

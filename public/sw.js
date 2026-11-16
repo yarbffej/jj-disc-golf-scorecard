@@ -1,9 +1,14 @@
-const CACHE_NAME = 'jj-disc-golf-course-cache-v6';
+const CACHE_NAME = 'jj-disc-golf-course-cache-v7';
 
 const PRECACHE_URLS = [
   './',
   './index.html',
   './manifest.json',
+  './assets/course_maps/udisc_sarko.jpg',
+  './assets/course_maps/udisc_mize.jpg',
+  './assets/course_maps/udisc_harmon.jpg',
+  './assets/course_maps/udisc_blackhoof.jpg',
+  './assets/course_maps/udisc_artnine.jpg',
   './assets/aistudio/card_xt_glow_nova_sugar_high_4204e372.jpg',
   './assets/aistudio/card_sugar_high_proto_glow_aviar.jpg',
   './assets/aistudio/card_sugar_high_yeti_pro_aviar.jpg',

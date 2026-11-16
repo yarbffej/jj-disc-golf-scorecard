@@ -32,6 +32,7 @@ interface RivalryAnalyticsViewProps {
   bag?: DiscItem[];
   courses?: CourseTemplate[];
   onOpenBagGuide?: (discId?: string, ownerFilter?: 'jeffery' | 'jack' | 'all') => void;
+  onOpenCourseAtlas?: (courseName: string) => void;
 }
 
 type StatsSubTab = 'overview' | 'courses' | 'rivalry' | 'bag_form';
@@ -130,7 +131,8 @@ export const RivalryAnalyticsView: React.FC<RivalryAnalyticsViewProps> = ({
   roster,
   bag = [],
   courses = [],
-  onOpenBagGuide
+  onOpenBagGuide,
+  onOpenCourseAtlas
 }) => {
   const [subTab, setSubTab] = useState<StatsSubTab>('overview');
   const [statsPlayerScope, setStatsPlayerScope] = useState<'jeffery' | 'jack' | 'both'>(() => {
@@ -1647,7 +1649,7 @@ export const RivalryAnalyticsView: React.FC<RivalryAnalyticsViewProps> = ({
           {/* Interactive Course Selector & Hole-by-Hole Comparison Graph */}
           <div className="neon-card border-2 border-[#00F0FF]/50 rounded-2xl p-5 space-y-5">
             <div className="flex flex-col lg:flex-row lg:items-center justify-between gap-3 pb-3 border-b border-slate-800">
-              <div>
+              <div className="space-y-1.5">
                 <h3 className="text-lg font-extrabold text-white">
                   Course Hole-by-Hole Graph &amp; Caddie Sheet
                 </h3>
@@ -1655,6 +1657,16 @@ export const RivalryAnalyticsView: React.FC<RivalryAnalyticsViewProps> = ({
                   Select any played course to inspect hole-by-hole average scores, personal
                   bests, and verified disc picks.
                 </p>
+                {onOpenCourseAtlas && (
+                  <button
+                    type="button"
+                    onClick={() => onOpenCourseAtlas(activeCourseDetailName)}
+                    className="mt-1 inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-[#00F0FF] text-slate-950 text-xs font-extrabold zine-pill-btn"
+                  >
+                    <Compass className="w-3.5 h-3.5" />
+                    <span>Open Visual Course Layout &amp; Hole History ({activeCourseDetailName}) →</span>
+                  </button>
+                )}
               </div>
               <div className="flex flex-wrap gap-1.5">
                 {uniqueCourseNames.map((cName) => {

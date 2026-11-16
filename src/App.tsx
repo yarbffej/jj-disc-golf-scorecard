@@ -10,6 +10,7 @@ import {
   BarChart3,
   History,
   Compass,
+  Map as MapIcon,
   RefreshCw,
   Volume2,
   VolumeX
@@ -41,6 +42,7 @@ import { LiveScorecardView } from './components/LiveScorecardView';
 import { RivalryAnalyticsView } from './components/RivalryAnalyticsView';
 import { RoundHistoryView } from './components/RoundHistoryView';
 import { CoursesAndBagView } from './components/CoursesAndBagView';
+import { CourseAtlasView } from './components/CourseAtlasView';
 import { SyncAndRosterView } from './components/SyncAndRosterView';
 import { VoiceLogImporterModal } from './components/VoiceLogImporterModal';
 import { ParsedVoiceRoundResult } from './utils/voiceLogParser';
@@ -70,8 +72,9 @@ import {
   writeMergedStateToLocalStorageAndDashboard
 } from './utils/cloudSync';
 
-const STORAGE_KEY = 'jj_disc_golf_v103_master_state';
+const STORAGE_KEY = 'jj_disc_golf_v104_master_state';
 const LEGACY_STORAGE_KEYS = [
+  'jj_disc_golf_v103_master_state',
   'jj_disc_golf_v102_master_state',
   'jj_disc_golf_v101_master_state',
   'jj_disc_golf_v100_master_state',
@@ -224,6 +227,7 @@ function buildAndSaveHdCardMap(currentBag: DiscItem[]): Record<string, string> {
 type NavTab =
   | 'home'
   | 'live'
+  | 'atlas'
   | 'rivalry'
   | 'history'
   | 'courses'
@@ -318,6 +322,8 @@ export const TILE_STYLE_OPTIONS: ReadonlyArray<{
 export default function App() {
   const [activeTab, setActiveTab] = useState<NavTab>('home');
   const [focusedDiscId, setFocusedDiscId] = useState<string | null>(null);
+  const [focusedAtlasCourse, setFocusedAtlasCourse] = useState<string | null>(null);
+  const [focusedHistoryCourse, setFocusedHistoryCourse] = useState<string | null>(null);
   const [bagOwnerFilter, setBagOwnerFilter] = useState<'jeffery' | 'jack' | 'all'>('jeffery');
   const [soundFxEnabled, setSoundFxEnabled] = useState<boolean>(() => isSoundFxEnabled());
 
@@ -1683,6 +1689,23 @@ export default function App() {
               type="button"
               onClick={() => {
                 playChainRattleSfx('tap');
+                setActiveTab('atlas');
+              }}
+              className={`px-3 py-1.5 rounded-full zine-pill-btn transition-all whitespace-nowrap shrink-0 ${
+                activeTab === 'atlas'
+                  ? 'bg-[#39FF14] text-slate-950'
+                  : bgTheme === 'midnight'
+                  ? 'bg-slate-800 text-slate-100 hover:bg-slate-700'
+                  : 'bg-white text-slate-900 hover:bg-emerald-50'
+              }`}
+            >
+              🗺️ Courses
+            </button>
+
+            <button
+              type="button"
+              onClick={() => {
+                playChainRattleSfx('tap');
                 setActiveTab('courses');
               }}
               className={`px-3 py-1.5 rounded-full zine-pill-btn transition-all whitespace-nowrap shrink-0 ${
@@ -1801,22 +1824,23 @@ export default function App() {
           </div>
         </div>
 
-        {/* Tablet/Mobile Compact Comic 5-Pill Nav Bar */}
+        {/* Tablet/Mobile Compact Comic 6-Pill Nav Bar */}
         <nav
           aria-label="Mobile Navigation"
-          className="lg:hidden mt-2 pt-2 border-t-2 border-slate-900/15 grid grid-cols-5 items-center gap-1 w-full min-w-0"
+          className="lg:hidden mt-2 pt-2 border-t-2 border-slate-900/15 grid grid-cols-6 items-center gap-1 w-full min-w-0"
         >
           {[
-            { id: 'home', label: 'Home Hub', icon: Home, activeBg: 'bg-[#FACC15] text-slate-950' },
+            { id: 'home', label: 'Home', icon: Home, activeBg: 'bg-[#FACC15] text-slate-950' },
             {
               id: 'live',
               label: hasActiveRound
                 ? `H#${roundState.currentHoleIndex + 1}`
-                : 'Last Card',
+                : 'Card',
               icon: ClipboardList,
               activeBg: 'bg-[#39FF14] text-slate-950'
             },
-            { id: 'courses', label: 'Cards', icon: Compass, activeBg: 'bg-[#00F0FF] text-slate-950' },
+            { id: 'atlas', label: 'Courses', icon: MapIcon, activeBg: 'bg-[#39FF14] text-slate-950' },
+            { id: 'courses', label: 'Discs', icon: Compass, activeBg: 'bg-[#00F0FF] text-slate-950' },
             { id: 'history', label: 'History', icon: History, activeBg: 'bg-[#FACC15] text-slate-950' },
             { id: 'rivalry', label: 'Stats', icon: BarChart3, activeBg: 'bg-[#FF2E93] text-white' }
           ].map((item) => {
@@ -1895,9 +1919,34 @@ export default function App() {
             onStartConfiguredRound={handleStartConfiguredRound}
             onResumeLiveRound={() => setActiveTab('live')}
             onOpenVoiceLogImporter={() => setShowVoiceLogImporter(true)}
-            onNavigateTab={(tab, ownerFilter) => {
+            onNavigateTab={(tab, ownerFilter, courseKeyOrName) => {
               if (ownerFilter) setBagOwnerFilter(ownerFilter);
+              if (courseKeyOrName) setFocusedAtlasCourse(courseKeyOrName);
               setActiveTab(tab === 'dashboard' ? 'rivalry' : tab);
+            }}
+          />
+        )}
+
+        {activeTab === 'atlas' && (
+          <CourseAtlasView
+            courses={courses}
+            history={history}
+            bag={bag}
+            roster={roster}
+            initialCourseKeyOrName={focusedAtlasCourse}
+            onStartRoundAtCourse={(courseKey) => {
+              handleSwitchCourse(courseKey);
+              setIsRoundInProgress(true);
+              setActiveTab('live');
+            }}
+            onOpenDiscCard={(discId, ownerFilter) => {
+              setFocusedDiscId(discId);
+              if (ownerFilter) setBagOwnerFilter(ownerFilter);
+              setActiveTab('courses');
+            }}
+            onOpenRoundHistory={(courseName) => {
+              if (courseName) setFocusedHistoryCourse(courseName);
+              setActiveTab('history');
             }}
           />
         )}
@@ -1968,25 +2017,41 @@ export default function App() {
                 if (ownerFilter) setBagOwnerFilter(ownerFilter);
                 setActiveTab('courses');
               }}
+              onOpenCourseAtlas={(courseName) => {
+                setFocusedAtlasCourse(courseName);
+                setActiveTab('atlas');
+              }}
             />
           </div>
         )}
 
         {activeTab === 'history' && (
           <div className="space-y-4">
-            <div className="flex items-center justify-between">
+            <div className="flex flex-wrap items-center justify-between gap-2">
+              <button
+                type="button"
+                onClick={() => setActiveTab('atlas')}
+                className="px-4 py-2 rounded-full bg-[#39FF14] text-slate-950 text-xs sm:text-sm font-extrabold zine-pill-btn"
+              >
+                🗺️ Explore Course Layouts &amp; Hole Tee-Signs →
+              </button>
               <button
                 type="button"
                 onClick={() => setActiveTab('rivalry')}
-                className="px-4 py-2 rounded-xl bg-[#00F0FF] text-slate-950 text-xs sm:text-sm font-bold hover:bg-[#00F0FF]/90"
+                className="px-4 py-2 rounded-full bg-[#00F0FF] text-slate-950 text-xs sm:text-sm font-extrabold zine-pill-btn"
               >
-                View Personal &amp; Course Stats (Jeffery &amp; Jack) →
+                📊 Personal &amp; Course Stats →
               </button>
             </div>
             <RoundHistoryView
               history={history}
               roster={roster}
               bag={bag}
+              initialCourseName={focusedHistoryCourse}
+              onOpenCourseAtlas={(courseName) => {
+                setFocusedAtlasCourse(courseName);
+                setActiveTab('atlas');
+              }}
               onDeleteRound={handleDeleteRound}
               onReplayCourse={handleReplayHistoricalCourse}
               onSyncSingleRoundToWebhook={syncRoundToWebhook}

@@ -477,10 +477,14 @@ export function normalizeCourseKeyForPicks(courseKeyOrName?: string): string {
   const raw = (courseKeyOrName || '').toLowerCase();
   if (raw === 'sarko' || raw.includes('sar-ko-par')) return 'sarko';
   if (raw === 'harmon' || raw.includes('harmon')) return 'harmon';
+  if (raw === 'blackhoof_18' || (raw.includes('black hoof') && raw.includes('championship'))) {
+    return 'blackhoof_18';
+  }
   if (raw === 'blackhoof' || (raw.includes('black hoof') && !raw.includes('championship'))) {
     return 'blackhoof';
   }
-  if (raw === 'cedar_ridge' || raw.includes('cedar ridge')) return 'cedarridge';
+  if (raw === 'cedar_ridge' || raw === 'cedarridge' || raw.includes('cedar ridge')) return 'cedarridge';
+  if (raw === 'wolfden' || raw.includes('wolf den')) return 'wolfden';
   if (raw === 'mize' || raw.includes('mize')) return 'mize';
   if (raw === 'artnine' || raw.includes('art nine')) return 'artnine';
   if (raw === 'smp_wooded' || raw.includes('shawnee mission wooded')) return 'smp_wooded';
@@ -2110,103 +2114,186 @@ export const COURSE_SATELLITE_LAYOUTS: Record<string, CourseSatelliteLayoutInfo>
     courseName: 'Blue Valley "Prairie Pass" DG Course',
     imageUrl: '',
     udiscParRating: 160,
-    difficultyLabel: 'Standard Layout · Short · Easy–Moderate · Global Avg E (54)',
+    difficultyLabel: 'Standard Layout · 18 Holes · Par 54 · Global Avg E (54) · "18-Hole Sar-Ko-Par!"',
     totalFeet: 4209,
     overviewNote:
-      'Park in Pleasant Ridge Middle School lot (Overland Park, KS · Est. 2010 · 4.0★ / 2,117 ratings). Concrete tees, Black Hole Portal baskets, moderate hills, open prairie & dense wooded holes. Six (6) holes share combined tees with Advanced—check tee signs!',
+      'Park in Pleasant Ridge Middle School lot (Overland Park, KS · Est. 2010 · 4.0★ / 2,117 ratings). Concrete tees, Black Hole Portal baskets, moderate hills, open prairie & dense wooded holes (with 2 hanging tires in the woods!). Site of Jeffery’s 65 (+11) & Jack’s 71 (+17) Double All-Time 18-Hole PBs on 2026-11-15!',
     holeGeometry: {
       1: {
-        direction: '216 ft Standard Opener (Near Pleasant Ridge MS parking lot)',
-        hazards: 'Open prairie/park start; check Standard vs. Advanced tee sign.',
+        direction: '216 ft Standard Opener (Steep hill & OB left · Center guardian tree)',
+        hazards: 'Steep drop-off & OB left; uphill comebacker if past pin.',
         personalFlightMatch:
-          'Glow Leopard3 [7|5|-2|1] or Glow Teebird smooth 80% fairway drive + KC Pro Aviar.'
+          'Keep Leopard3, Teebird, or Rollo straight down center away from the left drop.'
       },
       2: {
-        direction: '218 ft Par 3 (Open prairie & moderate park contour)',
-        hazards: 'Prairie rough off fairway; Black Hole Portal chains catch crisp putts.',
-        personalFlightMatch: 'Glow Teebird [7|5|0|2] straight-to-fade placement into Circle 1.'
+        direction: '218 ft Short Pin (vs. 282 ft Advanced Pin)',
+        hazards: 'Trees pinching left; Short vs. Long basket split.',
+        personalFlightMatch:
+          '172g Star Rollo right of left-side trouble + parked approach under pin (11/15 Par 3 ★!).'
       },
       3: {
-        direction: '232 ft Par 3 (Prairie fairway)',
-        hazards: 'Check tee sign if combined pad; slight wind exposure across prairie.',
-        personalFlightMatch: 'Glow Leopard3 [7|5|-2|1] hyzer-flip down center.'
+        direction: '232 ft Straight Downhill Roll-Away Green',
+        hazards: 'Sloped downhill green behind basket.',
+        personalFlightMatch:
+          '192 ft Glow Mako3 drive + soft KC Pro Aviar/Nova approach (11/15 Double Par 3s w/ Jack’s 15 ft putt!).'
       },
       4: {
-        direction: '236 ft Par 3 (Moderate hill / prairie transition)',
-        hazards: 'Keep nose down into any open-prairie breeze.',
-        personalFlightMatch: 'Glow Teebird [7|5|0|2] or Sugar High Star Roadrunner at 80%.'
+        direction: '236 ft Straight Tree-Framed Corridor',
+        hazards: 'Trees framing both sides of fairway.',
+        personalFlightMatch:
+          '169g GStar Roadrunner ~200 ft low "straight box-cutter line" + C1 putt (11/15 Double Par 3s ★!).'
       },
       5: {
-        direction: '270 ft Par 3 (Longest Front-9 stretch)',
-        hazards: 'Open prairie wind can lift nose-up drives.',
-        personalFlightMatch: 'Sugar High Star Roadrunner [9|5|-4|1] flat S-curve carry + XT Glow Nova.'
+        direction: '270 ft Longest Front-9 Stretch',
+        hazards: 'Dense tree line along right side.',
+        personalFlightMatch:
+          'Keep Roadrunner or Teebird nose-down off tee to stay clear of right-side trees.'
       },
       6: {
-        direction: '215 ft Par 3 (Short-game scoring fairway)',
-        hazards: 'Trees framing green approach.',
-        personalFlightMatch: 'Glow Leopard3 smooth pull or full Proto Glow Mako3 laser.'
+        direction: '215 ft Park Lane (Storm Gutter Hazard Left)',
+        hazards: 'Early left tree + storm drain gutter 1 ft from green edge!',
+        personalFlightMatch:
+          'DX Roc3 / Glow Roc high enough to clear the left tree and check safely clear of the drain.'
       },
       7: {
-        direction: '195 ft Par 3 (Wooded / technical short-game pocket)',
-        hazards: 'Dense wooded trees guard errant kicks.',
-        personalFlightMatch: 'Proto Glow Mako3 [5|5|0|0] dead-level straight at the pin!'
+        direction: '195 ft Dense Woods Chute (Hanging Tire #1)',
+        hazards: 'Tight scary timber gap with hanging tire landmark.',
+        personalFlightMatch:
+          'Commit to dead-level Glow Mako3 or Star Sync straight down the center chute.'
       },
       8: {
-        direction: '202 ft Par 3 (Technical midrange hole)',
-        hazards: 'Wooded gap & moderate elevation contour.',
-        personalFlightMatch: 'Sugar High DX Glow Roc [4|4|0|3] dependable left finish.'
+        direction: '202 ft Slight-Left Low-Canopy Pin',
+        hazards: 'Guardian tree & low ceiling guarding Circle 1.',
+        personalFlightMatch:
+          '170g DX Archangel parked pin-high 10 ft left ("Like an angel! Permanent keep in the bag!" · 11/15 Par 3 ★!).'
       },
       9: {
-        direction: '195 ft Par 3 (Front-9 Birdie closer)',
-        hazards: 'Framed green; check combined tee sign.',
-        personalFlightMatch: 'Sugar High Star Rollo [5|6|-4|1] right-turning glide or Proto Glow Mako3.'
+        direction: '195 ft Wooded Gap Near Night-Golf Lights',
+        hazards: 'Early guardian trunks 50 ft off tee.',
+        personalFlightMatch:
+          'Glow Mako3 dead-straight through the 50-ft gap for a clean Front-9 closer.'
       },
       10: {
-        direction: '235 ft Par 3 (Back-9 Opener)',
-        hazards: 'Moderate hills & prairie breeze.',
-        personalFlightMatch: 'Glow Teebird [7|5|0|2] pinpoint fairway drive + Yeti Pro Aviar.'
+        direction: '235 ft Downhill Back-9 Opener',
+        hazards: 'Fast downhill roll-away behind basket.',
+        personalFlightMatch:
+          '"10 out of 10" 172g Star Rollo glide drive + clutch 15-ft comebacker (11/15 Par 3 ★!).'
       },
       11: {
-        direction: '252 ft Par 3 (Open prairie / hill lane)',
-        hazards: 'Exposed prairie wind.',
-        personalFlightMatch: 'Sugar High Star Roadrunner [9|5|-4|1] chest-high pull-through.'
+        direction: '252 ft Woods Wrap to Elevated Thorn Mound',
+        hazards: 'Raised mound basket surrounded by thorny brush.',
+        personalFlightMatch:
+          'Star Rollo right-turning tee + 175g XT Glow Nova dead-stop right on top of the mound!'
       },
       12: {
-        direction: '193 ft Par 3 (Shortest hole on Standard Layout!)',
-        hazards: 'Ace-run temptation—keep speed controlled so you stay inside Circle 1.',
-        personalFlightMatch: 'Proto Glow Mako3 [5|5|0|0] or Proto Glow Aviar [2|3|0|1] straight at chains!'
+        direction: '193 ft Shortest Hole — Straight Woods Tunnel',
+        hazards: 'Wooded branches framing entire 193-ft corridor.',
+        personalFlightMatch:
+          '170g DX Archangel or Glow Mako3 threaded straight through the woods (11/15 Par 3 ★!).'
       },
       13: {
-        direction: '298 ft Par 3 (Longest hole on Standard Layout!)',
-        hazards: 'Full-flight open prairie distance required.',
-        personalFlightMatch: 'Halo Wraith [11|5|-1|3] or Halo Destroyer [12|5|-1|3] low flat bomber!'
+        direction: '298 ft Longest Hole on Standard Layout',
+        hazards: 'Full prairie carry; thick bushes behind basket.',
+        personalFlightMatch:
+          'Roadrunner / Wraith chest-high pull + ~150 ft 178g Pink DX Alien laser approach!'
       },
       14: {
-        direction: '197 ft Par 3 (Short technical Par 3)',
-        hazards: 'Trees & brush bordering green.',
-        personalFlightMatch: 'Sugar High DX Glow Roc [4|4|0|3] controlled hyzer into Circle 1.'
+        direction: '197 ft Woods Pocket (Hanging Tire #2 & Thorns)',
+        hazards: 'Low wooded ceiling + thorny rough.',
+        personalFlightMatch:
+          'Halo Star IT / Mako3 kept nose-down + C1 putt (11/15 Double Par 3s ★ → Tee 15 RPS tiebreaker!).'
       },
       15: {
-        direction: '242 ft Par 3 (Mid-length prairie/woods fairway)',
-        hazards: 'Moderate hill contour near basket.',
-        personalFlightMatch: 'Glow Leopard3 [7|5|-2|1] natural S-curve + XT Glow Nova stopper.'
+        direction: '242 ft Open Slight-Left Fairway',
+        hazards: 'Afternoon sun in eyes; sloped green prone to rolls.',
+        personalFlightMatch:
+          'Roadrunner / Teebird skip-hop + hyzer approach that checks up near pin.'
       },
       16: {
-        direction: '270 ft Par 3 (Back-9 prairie stretch)',
-        hazards: 'Open wind exposure; check tee sign.',
-        personalFlightMatch: 'Sugar High Star Roadrunner [9|5|-4|1] high-glide fairway drive.'
+        direction: '270 ft Steep Downhill Danger Pin',
+        hazards: 'Scary steep downhill slope right behind basket!',
+        personalFlightMatch:
+          '168g Classic Glow Wraith straight bomb + 175g XT Glow Nova stop-and-drop on slope (11/15 Par 3 ★!).'
       },
       17: {
-        direction: '282 ft Par 3 (2nd longest hole on Standard Layout)',
-        hazards: 'Long prairie carry before finishing green.',
-        personalFlightMatch: 'Halo Wraith [11|5|-1|3] controlled power drive + KC Pro Aviar.'
+        direction: '282 ft Long Straight Prairie Fairway',
+        hazards: '2nd-longest hole; low western sun on approach.',
+        personalFlightMatch:
+          'Roadrunner / Wraith flat drive + level Pink DX Alien approach.'
       },
       18: {
-        direction: '260 ft Par 3 (Closing hole toward Pleasant Ridge MS lot)',
-        hazards: 'Finishing fairway breeze—commit to flat release.',
-        personalFlightMatch: 'Sugar High Star Roadrunner or Glow Teebird closer for a strong finish!'
+        direction: '260 ft Guardian-Tree Closer (Back to Hole 1)',
+        hazards: 'Guardian tree in fairway + fast roll-away green.',
+        personalFlightMatch:
+          'Halo Star IT / Teebird around tree + XT Glow Nova approach to seal the round!'
       }
     }
+  },
+  prairie_center: {
+    courseKey: 'prairie_center',
+    courseName: 'Prairie Center Park',
+    imageUrl: '',
+    udiscParRating: 181,
+    difficultyLabel: 'Mid-to-Long Park · 18 Holes · Par 55 · 5,808 ft · Signature 604ft Par 4 Water Hole',
+    totalFeet: 5808,
+    overviewNote:
+      'Sprawling 18-hole Olathe park layout (5,808 ft, Par 55) mixing mature tree-framed fairways, a 517-ft dogleg-left H12, and a signature 604-ft Par 4 water hole on H13. Jeffery shot 77 (+22) & Jack 86 (+31) on 2026-11-08.',
+    holeGeometry: {}
+  },
+  cedarridge: {
+    courseKey: 'cedarridge',
+    courseName: 'Cedar Ridge',
+    imageUrl: '',
+    udiscParRating: 186,
+    difficultyLabel: 'Heavy Championship Woods · 18 Holes · Par 58 · 5,344 ft · Four Par-4 Monsters',
+    totalFeet: 5344,
+    overviewNote:
+      'Rugged, heavily wooded 18-hole test at Wyandotte County Lake / Bonner Springs (Par 58, 5,344 ft) featuring narrow timber tunnels, swamp bridge H4, steep ravines, and a 613-ft Par 4 H16.',
+    holeGeometry: {}
+  },
+  california_trail: {
+    courseKey: 'california_trail',
+    courseName: 'California Trail MS',
+    imageUrl: '',
+    udiscParRating: 168,
+    difficultyLabel: 'Open School Hills & Par 4 Closers · 9 Holes · Par 29 · 3,043 ft',
+    totalFeet: 3043,
+    overviewNote:
+      'Long 9-hole school campus loop in Olathe, KS (Par 29, 3,043 ft) featuring sand volleyball H1, downhill-to-uphill soccer vistas, and back-to-back Par 4 finishers (467 ft H8 & 532 ft H9 — site of Jack’s 47-ft putt!).',
+    holeGeometry: {}
+  },
+  wyandotte: {
+    courseKey: 'wyandotte',
+    courseName: 'Wyandotte County Park',
+    imageUrl: '',
+    udiscParRating: 198,
+    difficultyLabel: 'Championship Bomber Park · 18 Holes · Par 63 · 8,296 ft · Veteran Baskets',
+    totalFeet: 8296,
+    overviewNote:
+      'Massive 8,296-ft championship-scale course in Bonner Springs, KS (Par 63) with sprawling multi-shot Par 4s, rolling hills, and Dynamic Discs Veteran targets.',
+    holeGeometry: {}
+  },
+  wolfden: {
+    courseKey: 'wolfden',
+    courseName: 'Wolf Den @ Mission Trail',
+    imageUrl: '',
+    udiscParRating: 174,
+    difficultyLabel: 'Wooded Creek & Meadow · 18 Holes · Par 54 · 5,011 ft',
+    totalFeet: 5011,
+    overviewNote:
+      'Scenic 18-hole Leawood layout (5,011 ft, Par 54) winding along Tomahawk Creek trails and wooded pockets behind Mission Trail Elementary.',
+    holeGeometry: {}
+  },
+  heritage_park: {
+    courseKey: 'heritage_park',
+    courseName: 'Heritage Park',
+    imageUrl: '',
+    udiscParRating: 188,
+    difficultyLabel: 'Championship Tournament Course · 18 Holes · Olathe, KS',
+    totalFeet: 6150,
+    overviewNote:
+      'Premier Johnson County tournament course in Olathe, KS blending open bomber prairie grass fairways with technical creek-side woods.',
+    holeGeometry: {}
   }
 };
 
@@ -2227,8 +2314,19 @@ export function getCourseHoleLayoutIntel(
     norm.includes('pleasant ridge')
   ) {
     key = 'prairie_pass';
-  }
-  else if (norm.includes('sar') || norm === 'sarko') key = 'sarko';
+  } else if (norm === 'prairie_center' || norm.includes('prairie center')) {
+    key = 'prairie_center';
+  } else if (norm === 'cedar_ridge' || norm === 'cedarridge' || norm.includes('cedar ridge')) {
+    key = 'cedarridge';
+  } else if (norm === 'california_trail' || norm.includes('california trail')) {
+    key = 'california_trail';
+  } else if (norm === 'wyandotte' || norm.includes('wyandotte')) {
+    key = 'wyandotte';
+  } else if (norm === 'wolfden' || norm.includes('wolf den')) {
+    key = 'wolfden';
+  } else if (norm === 'heritage_park' || norm.includes('heritage')) {
+    key = 'heritage_park';
+  } else if (norm.includes('sar') || norm === 'sarko') key = 'sarko';
   else if (norm.includes('mize')) key = 'mize';
   else if (norm.includes('harmon')) key = 'harmon';
   else if (
@@ -2452,6 +2550,17 @@ const CURATED_HOLE_OUTLINES: Record<string, Record<number, CompactOutlineOverrid
     16: { s: 's_curve', e: 'flat', c: 'park', ob: 'right', pin: '613 ft monster Par 4 · Thorny brush rough', tip: 'DX Archangel / Roadrunner max-glide fairway placements + Nova.' },
     17: { s: 'tunnel', e: 'flat', c: 'tight_woods', pin: '503 ft Par 4 · 20-ft-wide timber hallway', tip: 'DX Archangel tee + Glow Mako3 straight down the gut.' },
     18: { s: 'dogleg_right', e: 'flat', c: 'tight_woods', g: true, pin: '332 ft closer with basket tucked right in trees', tip: 'DX Archangel tee + Star Rollo curving right to green.' }
+  },
+  california_trail: {
+    1: { s: 'slight_left', e: 'flat', c: 'park', pin: '227 ft opener near sand volleyball pit · ★ 10/29 Par', tip: 'Keep Leopard3/Teebird nose-down + Star Sync 50ft approach.' },
+    2: { s: 'straight', e: 'flat', c: 'park', g: true, pin: '280 ft past "No Parking Fire Lane" guardian tree', tip: 'Roadrunner flat past Fire Lane tree + Star Jay level approach.' },
+    3: { s: 'straight', e: 'downhill', c: 'open', pin: '291 ft hill drive overlooking soccer park · ★ 10/29 Par', tip: 'Roadrunner bomber off hill + Star Sync parked 8–10ft!' },
+    4: { s: 'straight', e: 'flat', c: 'open', pin: '291 ft open campus fairway', tip: 'Roadrunner flat down center + commit firmly on 2nd shot.' },
+    5: { s: 'straight', e: 'flat', c: 'open', pin: '336 ft long Par 3 bomber · ★ 10/29 Par', tip: 'Mamba/Wraith low drive + full-strength Star Jay parked 4ft shy!' },
+    6: { s: 'slight_left', e: 'flat', c: 'park', g: true, pin: '352 ft longest Par 3 · Guardian tree at green', tip: 'Roadrunner/Wraith straight pull + Sync curve around guardian tree.' },
+    7: { s: 'slight_left', e: 'flat', c: 'park', g: true, pin: '267 ft early guardian tree · ★ 10/29 35ft Par Putt!', tip: 'Beat early tree cleanly + confident C2/C1 putt.' },
+    8: { s: 's_curve', e: 'uphill', c: 'open', pin: '467 ft Par 4 hill climb', tip: 'Two controlled driver/midrange placements onto hill before C1 bid.' },
+    9: { s: 'slight_left', e: 'uphill', c: 'park', g: true, ob: 'left', pin: '532 ft Monster Par 4 finale · ★ Jack’s 47ft Putt!', tip: 'Two Leopard3/Roadrunner placements + Toro/Roc uphill around tree!' }
   }
 };
 
