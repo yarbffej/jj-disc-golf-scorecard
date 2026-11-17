@@ -34,8 +34,9 @@ import {
   syncDossierToDashboard
 } from './reportGenerator';
 
-export const MASTER_STORAGE_KEY = 'jj_disc_golf_v104_master_state';
+export const MASTER_STORAGE_KEY = 'jj_disc_golf_v105_master_state';
 export const LEGACY_STORAGE_KEYS = [
+  'jj_disc_golf_v104_master_state',
   'jj_disc_golf_v103_master_state',
   'jj_disc_golf_v102_master_state',
   'jj_disc_golf_v101_master_state',

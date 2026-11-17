@@ -2732,12 +2732,15 @@ export function doesCommentaryMentionDisc(
       return /\b(roc\s*3|rock\s*3)\b/i.test(text);
     case 'innova-classic-glow-roc':
       return (
-        (!roundDate || (roundDate >= '2026-11-05' && roundDate < '2026-11-16')) &&
-        /\b(classic\s+glow\s+(?:dx\s+)?roc|glow\s+roc|new\s+roc|normal\s+roc)\b/i.test(text)
+        (!roundDate || (roundDate >= '2026-11-05' && roundDate < '2026-11-17')) &&
+        /\b(classic\s+glow\s+(?:dx\s+)?roc|glow\s+roc|new\s+roc|normal\s+roc|\broc\b|\brock\b)\b/i.test(
+          text
+        ) &&
+        !/\b(roc\s*3|rock\s*3)\b/i.test(text)
       );
     case 'innova-sugar-glow-roc':
       return (
-        Boolean(roundDate && roundDate >= '2026-11-16') &&
+        Boolean(roundDate && roundDate >= '2026-11-17') &&
         /\b(dx\s+glow\s+roc|glow\s+roc|sugar\s+high\s+roc|\broc\b)\b/i.test(text) &&
         !/\broc\s*3\b/i.test(text)
       );
@@ -2745,17 +2748,17 @@ export function doesCommentaryMentionDisc(
       return /\b(kc\s*pro(?:\s*aviar)?|kc\s+aviar)\b/i.test(text);
     case 'innova-proto-glow-aviar':
       return (
-        Boolean(roundDate && roundDate >= '2026-11-16') &&
+        Boolean(roundDate && roundDate >= '2026-11-17') &&
         /\b(proto\s*glow\s*aviar|glow\s*aviar)\b/i.test(text)
       );
     case 'innova-yeti-pro-aviar':
       return (
-        Boolean(roundDate && roundDate >= '2026-11-16') &&
+        Boolean(roundDate && roundDate >= '2026-11-17') &&
         /\b(yeti(?:\s*pro)?(?:\s*aviar)?)\b/i.test(text)
       );
     case 'innova-aviar':
       return (
-        (!roundDate || roundDate < '2026-11-16') &&
+        (!roundDate || roundDate < '2026-11-17') &&
         (/\bstar\s+aviar\b/i.test(text) ||
           (/\baviar\b/i.test(text) && !/\bkc\s*(?:pro\s*)?aviar\b/i.test(text)))
       );
@@ -2769,17 +2772,17 @@ export function doesCommentaryMentionDisc(
       return (!roundDate || roundDate >= '2026-11-05') && /\bbeast\b/i.test(text);
     case 'innova-classic-glow-wraith':
       return (
-        (!roundDate || (roundDate >= '2026-11-05' && roundDate < '2026-11-16')) &&
+        (!roundDate || (roundDate >= '2026-11-05' && roundDate < '2026-11-17')) &&
         /\bwraith\b/i.test(text)
       );
     case 'innova-halo-wraith':
       return (
-        Boolean(roundDate && roundDate >= '2026-11-16') &&
+        Boolean(roundDate && roundDate >= '2026-11-17') &&
         /\b(halo\s*wraith|wraith)\b/i.test(text)
       );
     case 'innova-halo-destroyer':
       return (
-        Boolean(roundDate && roundDate >= '2026-11-16') &&
+        Boolean(roundDate && roundDate >= '2026-11-17') &&
         /\b(halo\s*destroyer|destroyer)\b/i.test(text)
       );
     case 'innova-champion-eagle':
@@ -2791,60 +2794,60 @@ export function doesCommentaryMentionDisc(
       return /\btoro\b/i.test(text);
     case 'innova-mako3':
       return (
-        (!roundDate || roundDate < '2026-11-16') &&
+        (!roundDate || roundDate < '2026-11-17') &&
         /\b(mako\s*3|mako|miko\s*3)\b/i.test(text)
       );
     case 'innova-proto-glow-mako3':
       return (
-        Boolean(roundDate && roundDate >= '2026-11-16') &&
+        Boolean(roundDate && roundDate >= '2026-11-17') &&
         /\b(proto\s*glow\s*mako\s*3|mako\s*3|mako|miko\s*3)\b/i.test(text)
       );
     case 'innova-jay':
       return /\b(star\s+jay|jay)\b/i.test(text);
     case 'innova-rollo':
       return (
-        (!roundDate || roundDate < '2026-11-16') &&
+        (!roundDate || roundDate < '2026-11-17') &&
         /\b(rollo|rolo)\b/i.test(text)
       );
     case 'innova-sugar-star-rollo':
       return (
-        Boolean(roundDate && roundDate >= '2026-11-16') &&
+        Boolean(roundDate && roundDate >= '2026-11-17') &&
         /\b(rollo|rolo)\b/i.test(text)
       );
     case 'innova-archangel':
       return /\b(archangel|arch\s*angel|ar\s*angel)\b/i.test(text);
     case 'innova-roadrunner':
       return (
-        (!roundDate || roundDate < '2026-11-16') &&
+        (!roundDate || roundDate < '2026-11-17') &&
         /\b(roadrunner|road\s*runner)\b/i.test(text)
       );
     case 'innova-sugar-star-roadrunner':
       return (
-        Boolean(roundDate && roundDate >= '2026-11-16') &&
+        Boolean(roundDate && roundDate >= '2026-11-17') &&
         /\b(roadrunner|road\s*runner)\b/i.test(text)
       );
     case 'innova-mamba':
       return /\bmamba\b/i.test(text);
     case 'innova-leopard3':
       return (
-        (!roundDate || roundDate < '2026-11-16') &&
+        (!roundDate || roundDate < '2026-11-17') &&
         /\b(leopard\s*3|leopard)\b/i.test(text)
       );
     case 'innova-glow-leopard3':
       return (
-        Boolean(roundDate && roundDate >= '2026-11-16') &&
+        Boolean(roundDate && roundDate >= '2026-11-17') &&
         /\b(glow\s*leopard\s*3|leopard\s*3|leopard)\b/i.test(text)
       );
     case 'innova-glow-teebird':
       return (
-        Boolean(roundDate && roundDate >= '2026-11-16') &&
+        Boolean(roundDate && roundDate >= '2026-11-17') &&
         /\b(glow\s*teebird|teebird|tee\s*bird)\b/i.test(text)
       );
     case 'innova-firebird':
-      return (!roundDate || roundDate < '2026-11-16') && /\bfirebird\b/i.test(text);
+      return (!roundDate || roundDate < '2026-11-17') && /\bfirebird\b/i.test(text);
     case 'innova-luster-firebird':
       return (
-        Boolean(roundDate && roundDate >= '2026-11-16') &&
+        Boolean(roundDate && roundDate >= '2026-11-17') &&
         /\b(luster\s*firebird|firebird)\b/i.test(text)
       );
     case 'innova-pig':
@@ -2966,14 +2969,14 @@ export function buildLivePersonalFlightProfile(
       'Index finger off the rim, weight on front foot, and stroke straight through the chains without hesitating ("Lock in! Did it!").';
   } else if (disc.id === 'innova-xt-glow-nova') {
     howItFliesForMe =
-      'My dead-straight [2|2|0|0] scramble & slope stopper! On 11/15 at Prairie Pass (65 PB!), it stopped dead at the top of H11’s elevated thorn mound ("Stop at the top—perfect!") and stuck steep downhill H16 ("Good job, Nova! Good, stay!") for Par 3, right after saving Par out of deep woods on 11/13 Sar-Ko H2! Note: Keep level on downhill throws so its 2-glide doesn’t stall short.';
+      'My dead-straight [2|2|0|0] scramble, mound & downhill stopper! On 11/16 at Sar-Ko-Par, I drained an ~18ft downhill H9 Birdie closer ("Birdied out, dude!") and saved 7 pars across two rounds—while confirming never to tee with Nova on H1 (keep Star Sync on H1 tee!). Also stuck H11’s thorn mound & steep downhill H16 at Prairie Pass (11/15 65 PB!).';
     swingCue =
-      'Point-and-shoot flat release on mound or downhill roll-away greens; keep the nose level so it glides to the pin and sits.';
+      'Point-and-shoot flat release on mound/downhill greens & wooded scrambles; never use off the Hole #1 tee.';
   } else if (disc.id === 'innova-sync') {
     howItFliesForMe =
-      'Flies like a laser-straight throwing putter and "All-Star" C1/C2 approach disc! On 11/10 at Shawnee Mission Wooded, it parked H5 to 3ft for Par 3 ("Perfect, beautiful!"), drained a clutch H6 Par putt, and stuck H8 ("That Sync’s an All-Star!"). Also parked Sar-Ko-Par H1 in 3 straight rounds (11/04–11/05). Note: Relax when bystanders watch so I don’t pull it left.';
+      'My #1 Hole #1 Ace-Run Tee Putter & "All-Star" approach laser [3|3|0|1]! On 11/16 at Sar-Ko-Par R1 H1 (138ft), it SMACKED THE BASKET off the tee ("Oh shit, that was almost an ace! That hit the basket!") for Birdie 2 and flew dead-flat onto the H1 ledge again in R2! Also parked SMP Wooded H5 to 3ft & stuck H8 (11/10).';
     swingCue =
-      'Relaxed 80% flat release—don’t overthink when a gallery is watching; trust its straight [3|3|0|1] flight down tight chutes.';
+      'Step up on Hole #1 without overthinking—relaxed 80% flat release straight at the chains!';
   } else if (disc.id === 'innova-toro') {
     howItFliesForMe =
       'Flies like a heavy, torque-resistant approach brick [4|2|0|3] that refuses to turn over and hooks reliably left to brake by the pin. Saved Par up the wooded lane on Sar-Ko-Par H5 (11/04: "Toro was good, got me up there!") and parked a 3rd-shot uphill approach around a guardian tree on Cal Trail H9 (532ft Par 4). Won’t glide past the basket, but will dump left early if thrown softly.';
@@ -2981,9 +2984,9 @@ export function buildLivePersonalFlightProfile(
       'Aim 15–20ft right of the pin on RHBH approaches (or flick forehand) and let its +3 fade hook around guardian trees and sit.';
   } else if (disc.id === 'innova-dx-alien') {
     howItFliesForMe =
-      'My low-ceiling scramble & bullseye touch hybrid [4|2|0|1]! On 11/10 at Shawnee Mission Wooded’s 347ft closing Hole #18, I parked it over the rough right under the basket for Par 3 ("Right there by the pin! I almost thought it was going in—beauty! Love the Alien!"). Also shined punching low under branches on 11/08 at Prairie Center H7, H8 & H10 ("Alien’s great!").';
+      'My low-ceiling skip-birdie & bullseye touch hybrid [4|2|0|1]! On 11/16 at Sar-Ko-Par R2 H5 (144ft), I kept it low and flat off the tee for a pinpoint skip to exact pin distance 10–15ft right and drained Birdie 2! Also fired a 150ft laser on Prairie Pass H13 (11/15) and parked 347ft SMP Wooded H18 (11/10).';
     swingCue =
-      'Lock your thumb into the ridged saucer groove and punch it low and flat—its 2-glide sits right by the pin without sailing long.';
+      'Lock your thumb into the ridged saucer groove and punch it low and flat—skips pin-high under low ceilings without sailing long.';
   } else if (disc.id === 'innova-mako3') {
     howItFliesForMe =
       'My purest angle-integrity truth-teller [5|5|0|0]. On 11/10 at Shawnee Mission Wooded H13 (277ft downhill), I striped it dead-flat the entire flight ("Straight, beauty, perfect! Flat as can be the whole way!"). Also laced 11/09 Sar-Ko-Par H2, parked 2ft on 11/05 Sar-Ko H6 (21 PB), and birdied Art Nine H6 back-to-back. Tendency: Turning my wrist pulls it left into early trees.';
@@ -3016,17 +3019,17 @@ export function buildLivePersonalFlightProfile(
       'Keep elbow at 90° chest-high with the "heavy tea-kettle" wrist—keep the nose down when throwing into a breeze.';
   } else if (disc.id === 'innova-champion-eagle') {
     howItFliesForMe =
-      'My most overstable, torque-resistant fairway driver [7|4|-1|3]. In my 11/05 Round 2 comparison test on Sar-Ko-Par H6 and 11/01 Cedar Ridge 5-driver field test, it held the farthest-left line of any driver in my bag ("Eagle goes left—went 30 feet left of the pin"). Built for dogleg-left fairways, forced flexes, and fighting stiff headwinds.';
+      'Breakout Cotton Candy "Sugar High" 2-Foil fairway workhorse [7|4|-1|3]! On 11/16 at Sar-Ko-Par R2 H8 (171ft), I parked it 5–7 FEET UNDER THE PIN ("That’s under the pin, dude! 5, 6, 7 feet away—Birdied!") during a bogey-free 24 (-3), plus earned Par 3s on R1 H8 & R2 H4 and a clean left skip on R1 H6! Dependable +3 left finish when Archangel stays too straight.';
     swingCue =
-      'Aim well right of the target on RHBH drives or release on a slight anhyzer flex—it will always fight back hard to the left.';
+      'Aim right of guarded pockets and commit to a crisp flat release so it skips and hooks left right under the basket.';
   } else if (disc.id === 'innova-archangel') {
     howItFliesForMe =
-      'My high-glide woods-threading birdie/par machine [8|6|-3|1]! On 11/15 at Prairie Pass (65 / +11 18-Hole PB!), I parked 202ft H8 exact pin-high 10ft left ("Like an angel! You have to keep that one in the bag—permanent, keep this one!") and threaded 193ft wooded H12 for Par 3, after lacing SMP Wooded H3 & H14 (11/10) and Sar-Ko H5/H7/H8!';
+      'My high-glide woods-threading birdie/par machine [8|6|-3|1]! On 11/15 at Prairie Pass (65 / +11 18-Hole PB!), I parked 202ft H8 exact pin-high 10ft left ("Like an angel! Permanent, keep this one!") and threaded 193ft wooded H12, plus dropped flat by the basket on 11/16 Sar-Ko H3 (clipping top band on the birdie bid)!';
     swingCue =
       '"Don’t bend down—stay straight up when I release it" with a smooth chest-high pull-through.';
   } else if (disc.id === 'innova-roadrunner') {
     howItFliesForMe =
-      'My #1 all-around distance driver and birdie catalyst [9|5|-4|1]! Striped a ~200ft "straight box-cutter line" on 11/15 at Prairie Pass H4 for Par 3, bookended my 6-hole birdie streak on 11/09 at Sar-Ko-Par (H3 & H8 Birdies), and carried Prairie Center H1, H5, H8 & H9’s tiny gap!';
+      'My #1 all-around distance driver and birdie catalyst [9|5|-4|1]! On 11/16 at Sar-Ko-Par R2 H2 (192ft), my Purple 168g GStar Roadrunner parked exact pin-high 3 FEET left ("Purple, there he is—exact distance of the pin, 3 feet away to the left! Birdie!"), right after striping a 200ft "straight box-cutter line" on Prairie Pass H4 (11/15)! Club down on 162ft H3 so it doesn’t sail long.';
     swingCue =
       'Smooth, level chest-high pull—avoid nose-up releases on the 1st tee or uphill drives so its 9-speed glide penetrates forward.';
   } else if (disc.id === 'innova-classic-glow-beast') {
@@ -3652,31 +3655,31 @@ const DISC_COMMENTARY_VERDICTS: Record<string, string> = {
   'innova-roc3':
     '🏆 #1 Birdie-Rate Midrange! Money right-to-left hyzer finish on Sar-Ko H4/H5/H7 & Art Nine H5—including 11/13 H4 Birdie 2 while dialing the straight pull-through tee-kettle low cue!',
   'innova-sync':
-    '🏆 #1 Most Used "All-Star" Putter/Approach! Parked Sar-Ko H1 (incl. 11/13 Birdie 2), sealed bogey-free 25 (-2) safely up H9, and parked SMP Wooded H5 to 3ft!',
+    '🏆 #1 Most Used "All-Star" Putter/Approach! SMACKED THE BASKET on Sar-Ko H1 (11/16 near-Ace Birdie 2!), sealed bogey-free 25 (-2), & parked SMP Wooded H5 to 3ft!',
   'innova-kc-pro-aviar':
-    '🏆 #1 Go-To Chain Putter (70% Par+)! Powered both 6-hole birdie streaks (11/05 & 11/09) + drained a 20+ ft heavy-wind floater Par save on Sar-Ko H7 (11/11).',
+    '🏆 #1 Go-To Chain Putter (70% Par+)! Powered both 6-hole birdie streaks (11/05 & 11/09), 11/16 H3 Par save, & 20+ ft heavy-wind floater Par on Sar-Ko H7 (11/11).',
   'innova-archangel':
-    '🏆 Permanent Bag Keeper! Parked Prairie Pass H8 pin-high 10ft left ("Like an angel! Permanent, keep this one!"), parred H12, & threaded SMP Wooded H3/H14!',
+    '🏆 Permanent Bag Keeper! Parked Prairie Pass H8 pin-high 10ft left ("Like an angel! Permanent, keep this one!"), parred H12, & clipped top band on 11/16 Sar-Ko H3!',
   'innova-it':
     '⭐ Pinpoint Fairway Favorite! Striped a dead-flat heavy-wind ace-run Birdie 2 on Sar-Ko H3 (11/11), 1ft park on H3 (11/05), 5ft past H7 (11/09) & SMP Wooded H6/H17 Pars.',
   'innova-mako3':
     '⭐ #1 Dead-Straight Midrange Workhorse! Bombed ~192ft on Prairie Pass H3 for Par 3 (11/15), 277ft flat downhill laser on SMP Wooded H13 & 12 Birdies.',
   'innova-rollo':
-    '⭐ Signature Right-Turn & Glide Mid! Piped a "10 out of 10" glide drive on Prairie Pass H10 & parked H2 for Par 3s (11/15), plus 3 SMP Wooded Pars & 5× Sar-Ko H9 Birdies.',
+    '⭐ Signature Right-Turn & Glide Mid! Set up the 11/16 R1 H9 Birdie closer, piped a "10 out of 10" glide drive on Prairie Pass H10 & parked H2 (11/15), + 6× Sar-Ko H9 Birdies!',
   'innova-roadrunner':
-    '🔥 #1 Long-Course Distance Workhorse! Striped a 200ft "straight box-cutter line" on Prairie Pass H4 (11/15), Prairie Center H9 gap, & 11/09 6-hole birdie streak.',
+    '🔥 #1 Distance & Pin-High Workhorse! Parked 192ft Sar-Ko H2 pin-high 3ft left for Birdie 2 (11/16), 200ft "straight box-cutter line" on Prairie Pass H4, & 11/09 6-birdie run.',
   'innova-mamba':
     '⚡ Most Thrown Distance Driver off the Tee — bombs 300+ ft open fairways, but easily overpowers <180ft woods holes into trees.',
   'innova-jay':
     '⭐ Clutch Back-9 Midrange! Locked in Par 3s on SMP Wooded H15 (10ft glide loop) & H17 headwind ("It was perfect!"), plus Cal Trail H5 4ft park.',
   'innova-xt-glow-nova':
-    '⭐ Clutch Mound & Downhill Stopper! Stuck H11’s thorn mound ("Stop at the top—perfect!") & steep downhill H16 at Prairie Pass (11/15 65 PB!) + 11/13 Sar-Ko H2 woods save.',
+    '⭐ #1 Scramble, Mound & Downhill Stopper! Drained ~18ft downhill 11/16 R1 H9 Birdie closer + stuck Prairie Pass H11 mound & steep H16 (never tee with it on H1!).',
   'innova-toro':
     '⚠️ Pulled from Physical Bag before 11/15 Prairie Pass — dumps hard left (+3 fade) if thrown like a normal mid.',
   'innova-champion-eagle':
-    '🆕 Overstable 7-Speed Fairway — parked 10ft on Sar-Ko H6 in rain/wind, but strong +3 fade kicks left into woods on tight tunnels.',
+    '⭐ Breakout Cotton Candy Fairway [7|4|-1|3]! Parked Sar-Ko H8 5–7ft under the pin for Birdie 2 (11/16 bogey-free 24 / -3!), plus clean H8/H4 Pars & left skips.',
   'innova-dx-alien':
-    '⭐ Rising Bullseye & Approach Laser! Fired a dead-straight 150ft approach on 298ft Prairie Pass H13 ("Straight as an Alien would!") & parked 347ft SMP Wooded H18.',
+    '⭐ Low-Skip Birdie & Approach Laser! Skipped pin-high 10–15ft right on Sar-Ko H5 for Birdie 2 (11/16), 150ft laser on Prairie Pass H13, & parked 347ft SMP Wooded H18!',
   'innova-classic-glow-roc':
     '⭐ Wind-Fighting Glow Midrange! Parked Sar-Ko H4 (11/09) & skipped low and flat in heavy gusts on H5 (11/11) for back-to-back Birdie 2s!',
   'innova-classic-glow-beast':
@@ -3800,7 +3803,7 @@ export function computeDiscBagTelemetry(
                 d.id === 'innova-halo-destroyer' ||
                 d.id === 'innova-proto-glow-aviar' ||
                 d.id === 'innova-yeti-pro-aviar') &&
-              r.date < '2026-11-16'
+              r.date < '2026-11-17'
             )) ||
             (uName === 'it' && d.id === 'innova-it') ||
             (uName === 'halo it' && d.id === 'innova-it') ||

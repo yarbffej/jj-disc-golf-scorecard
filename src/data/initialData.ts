@@ -8042,11 +8042,491 @@ Bag Note: Cotton Candy "Sugar High" discs are not in hand yet, so Jeffery played
   ]
 };
 
+const ROUND_2026_11_16_SARKO_1: HistoricalRound = {
+  id: 1763324400000,
+  courseName: 'Sar-Ko-Par Trails',
+  totalHoles: 9,
+  date: '2026-11-16',
+  duration: '00:26:00',
+  par: 27,
+  windCondition: 'calm',
+  weather: '55–57°F · Nice Day, Slight Wind (2:20 PM · Round 1 of 2)',
+  gameMode: 'stroke',
+  updatedAt: 1763326200000,
+  notes:
+    'Solo Afternoon Round 1 of 2 (55–57°F, Slight Wind) — Jeffery 26 (-1, 2 Birdies ★, 6 Pars, 1 Bogey)! 175g Star Sync SMACKED THE BASKET on Hole #1 (nearly an Ace!), confirmed never to tee with Nova on H1, tested trimmed Cotton Candy-focused lineup (Classic Glow Roc & Champion Eagle skips), and birdied out on Hole #9 with Star Rollo + ~18ft downhill XT Glow Nova putt!',
+  roundTranscript: `Sar-Ko-Par Trails Solo Afternoon Session — Round 1 of 2 (2026-11-16 · 2:20 PM · 55–57°F, Slight Wind) — Jeffery 26 (-1, 2 Birdies ★, 6 Pars, 1 Bogey).
+Trimmed bag session testing Cotton Candy staples (Champion Eagle, XT Glow Nova, KC Pro Aviar) alongside Classic Glow Roc, Star Sync, DX Archangel, GStar Roadrunner & Star Rollo:
+- Hole 1 (138ft, Par 3): Jeffery 2 (Birdie ★). Practice test with XT Glow Nova drifted right ("Never do the Nova on this one again"); stepped up with 175g Star Sync and HIT THE BASKET—inches from a 138ft Ace ("Oh shit, that was almost an ace! That hit the basket!") for a tap-in Birdie 2!
+- Hole 2 (192ft, Par 3): Jeffery 3 (Par). Tested 170g DX Archangel off tee into left trees (comparison Classic Glow Roc was cleaner, slightly nose-up); played original Archangel lie and threaded 175g XT Glow Nova through branches to save Par 3!
+- Hole 3 (162ft, Par 3): Jeffery 3 (Par). Overpowered 168g GStar Roadrunner long and left near the trail; pitched high and drained a clutch Par 3 save with 175g KC Pro Aviar ("KC Pro Aviar, save par, please—Parred!").
+- Hole 4 (162ft, Par 3): Jeffery 3 (Par). Threw 180g Classic Glow Roc while culling the bag toward Cotton Candy—flew dead-straight down the right line without hooking left like Roc3; parked 175g XT Glow Nova right at the pin for Par 3!
+- Hole 5 (144ft, Par 3): Jeffery 3 (Par). Threw 180g Classic Glow Roc off the tee to ~10ft right and 7ft deep (~12ft C1 birdie look); missed the birdie bid and tapped in Par 3 (-1 through 5).
+- Hole 6 (165ft, Par 3): Jeffery 4 (Bogey). Tested 175g Champion Eagle off the tee—got a nice intended left skip, missed the Par putt for lone Bogey 4 (bringing score to Even Par stepping onto Tee 7).
+- Hole 7 (139ft, Par 3): Jeffery 3 (Par). Threw a flat, nose-down 170g DX Archangel left of the pin ("That was a perfect shot, felt great flat"); left long C2 birdie bid low, then stepped up and fired in a clutch comebacker for Par 3!
+- Hole 8 (171ft, Par 3): Jeffery 3 (Par). Threw 175g Champion Eagle skip tee shot and laid a safe half-power 175g XT Glow Nova right behind the pole for Par 3!
+- Hole 9 (141ft, Par 3): Jeffery 2 (Birdie ★). Piped 172g Star Rollo uphill (~15ft left and ~10ft behind basket) and drained the ~18ft downhill 175g XT Glow Nova putt ("Drop the Nova in there—Birdie, birdie, birdie! Birdied out, dude!") for 26 (-1)!`,
+  players: [{ id: 'jeffery', name: 'Jeffery', tag: 'J1', total: 26 }],
+  holes: [
+    {
+      number: 1,
+      par: 3,
+      distance: 138,
+      scores: { jeffery: 2 },
+      voiceTranscript:
+        'Practice Nova tee drifted right ("Never do the Nova on this one again"); threw 175g Star Sync and SMACKED THE BASKET—almost an Ace ("Oh shit, that was almost an ace! That hit the basket!") for tap-in Birdie 2!',
+      meta: {
+        jeffery: {
+          thrownDiscId: 'innova-sync',
+          discUsed: 'Sync',
+          scenarioUsed: 'calm',
+          fairwayHit: true,
+          puttDistance: 'C1',
+          puttDistanceFeet: 2,
+          voiceNote: '★ 175g Star Sync HIT THE BASKET off the tee (almost an Ace!) for Birdie 2!',
+          throws: [
+            { shotType: 'tee', discId: 'innova-sync' },
+            { shotType: 'putt', discId: 'innova-kc-pro-aviar' }
+          ]
+        }
+      }
+    },
+    {
+      number: 2,
+      par: 3,
+      distance: 192,
+      scores: { jeffery: 3 },
+      voiceTranscript:
+        'Tried 170g DX Archangel off tee into trees (comparison Classic Glow Roc was better); played first lie and threaded 175g XT Glow Nova through branches for Par 3.',
+      meta: {
+        jeffery: {
+          thrownDiscId: 'innova-archangel',
+          discUsed: 'Archangel',
+          scenarioUsed: 'calm',
+          puttDistance: 'C1',
+          puttDistanceFeet: 8,
+          voiceNote: 'DX Archangel into trees + XT Glow Nova threaded through branches for Par 3',
+          throws: [
+            { shotType: 'tee', discId: 'innova-archangel' },
+            { shotType: 'approach', discId: 'innova-xt-glow-nova' },
+            { shotType: 'putt', discId: 'innova-kc-pro-aviar' }
+          ]
+        }
+      }
+    },
+    {
+      number: 3,
+      par: 3,
+      distance: 162,
+      scores: { jeffery: 3 },
+      voiceTranscript:
+        'Overpowered 168g GStar Roadrunner way left & long near trail; pitched high and saved Par 3 with 175g KC Pro Aviar ("KC Pro Aviar, save par, please!").',
+      meta: {
+        jeffery: {
+          thrownDiscId: 'innova-roadrunner',
+          discUsed: 'Roadrunner',
+          scenarioUsed: 'calm',
+          puttDistance: 'C1',
+          puttDistanceFeet: 14,
+          voiceNote: 'Overpowered Roadrunner left + clutch KC Pro Aviar Par 3 save!',
+          throws: [
+            { shotType: 'tee', discId: 'innova-roadrunner' },
+            { shotType: 'approach', discId: 'innova-xt-glow-nova' },
+            { shotType: 'putt', discId: 'innova-kc-pro-aviar' }
+          ]
+        }
+      }
+    },
+    {
+      number: 4,
+      par: 3,
+      distance: 162,
+      scores: { jeffery: 3 },
+      voiceTranscript:
+        'Threw 180g Classic Glow Roc—went dead-straight down the right line without hooking left like Roc3; parked 175g XT Glow Nova right at the pin for Par 3 ("Right to the pin, perfect, parred it!").',
+      meta: {
+        jeffery: {
+          thrownDiscId: 'innova-classic-glow-roc',
+          discUsed: 'Classic Glow Roc',
+          scenarioUsed: 'calm',
+          puttDistance: 'C1',
+          puttDistanceFeet: 3,
+          voiceNote: 'Classic Glow Roc straight right + XT Glow Nova parked at pin for Par 3!',
+          throws: [
+            { shotType: 'tee', discId: 'innova-classic-glow-roc' },
+            { shotType: 'approach', discId: 'innova-xt-glow-nova' },
+            { shotType: 'putt', discId: 'innova-xt-glow-nova' }
+          ]
+        }
+      }
+    },
+    {
+      number: 5,
+      par: 3,
+      distance: 144,
+      scores: { jeffery: 3 },
+      voiceTranscript:
+        'Threw 180g Classic Glow Roc off tee—landed 10ft right and 7ft behind the basket (~12ft C1 look); missed birdie putt and tapped in Par 3.',
+      meta: {
+        jeffery: {
+          thrownDiscId: 'innova-classic-glow-roc',
+          discUsed: 'Classic Glow Roc',
+          scenarioUsed: 'calm',
+          fairwayHit: true,
+          puttDistance: 'C1',
+          puttDistanceFeet: 12,
+          voiceNote: 'Classic Glow Roc to 10ft right / 7ft deep; missed birdie bid, tap-in Par 3',
+          throws: [
+            { shotType: 'tee', discId: 'innova-classic-glow-roc' },
+            { shotType: 'putt', discId: 'innova-kc-pro-aviar' },
+            { shotType: 'putt', discId: 'innova-kc-pro-aviar' }
+          ]
+        }
+      }
+    },
+    {
+      number: 6,
+      par: 3,
+      distance: 165,
+      scores: { jeffery: 4 },
+      voiceTranscript:
+        'Tested 175g Champion Eagle off tee—got a nice intended left skip, missed the Par putt for lone Bogey 4 (moved to Even Par entering Hole 7).',
+      meta: {
+        jeffery: {
+          thrownDiscId: 'innova-champion-eagle',
+          discUsed: 'Champion Eagle',
+          scenarioUsed: 'calm',
+          puttDistance: 'C1',
+          voiceNote: '175g Champion Eagle nice left skip; missed par bid for Bogey 4',
+          throws: [
+            { shotType: 'tee', discId: 'innova-champion-eagle' },
+            { shotType: 'approach', discId: 'innova-xt-glow-nova' },
+            { shotType: 'putt', discId: 'innova-kc-pro-aviar' },
+            { shotType: 'putt', discId: 'innova-kc-pro-aviar' }
+          ]
+        }
+      }
+    },
+    {
+      number: 7,
+      par: 3,
+      distance: 139,
+      scores: { jeffery: 3 },
+      voiceTranscript:
+        'Flat, nose-down 170g DX Archangel tee shot left of pin ("Perfect shot, felt great flat"); left long C2 bid low, then fired in a clutch comebacker ("Fire it in there—like that!") for Par 3!',
+      meta: {
+        jeffery: {
+          thrownDiscId: 'innova-archangel',
+          discUsed: 'Archangel',
+          scenarioUsed: 'calm',
+          fairwayHit: true,
+          puttDistance: 'C1',
+          puttDistanceFeet: 12,
+          voiceNote: 'Flat DX Archangel tee + fired in clutch Par 3 comebacker!',
+          throws: [
+            { shotType: 'tee', discId: 'innova-archangel' },
+            { shotType: 'approach', discId: 'innova-kc-pro-aviar' },
+            { shotType: 'putt', discId: 'innova-kc-pro-aviar' }
+          ]
+        }
+      }
+    },
+    {
+      number: 8,
+      par: 3,
+      distance: 171,
+      scores: { jeffery: 3 },
+      voiceTranscript:
+        'Threw 175g Champion Eagle skip shot off tee and floated a safe half-power 175g XT Glow Nova right behind the pole for Par 3.',
+      meta: {
+        jeffery: {
+          thrownDiscId: 'innova-champion-eagle',
+          discUsed: 'Champion Eagle',
+          scenarioUsed: 'calm',
+          fairwayHit: true,
+          puttDistance: 'C1',
+          puttDistanceFeet: 2,
+          voiceNote: '175g Champion Eagle skip + half-power XT Glow Nova behind pole for Par 3',
+          throws: [
+            { shotType: 'tee', discId: 'innova-champion-eagle' },
+            { shotType: 'approach', discId: 'innova-xt-glow-nova' },
+            { shotType: 'putt', discId: 'innova-xt-glow-nova' }
+          ]
+        }
+      }
+    },
+    {
+      number: 9,
+      par: 3,
+      distance: 141,
+      scores: { jeffery: 2 },
+      voiceTranscript:
+        '172g Star Rollo uphill to ~15ft left & ~10ft behind pin; drained the ~18ft downhill 175g XT Glow Nova putt ("Drop the Nova in there—Birdie, birdie, birdie! Birdied out, dude!")!',
+      meta: {
+        jeffery: {
+          thrownDiscId: 'innova-rollo',
+          discUsed: 'Rollo',
+          scenarioUsed: 'calm',
+          fairwayHit: true,
+          puttDistance: 'C1',
+          puttDistanceFeet: 18,
+          voiceNote: '★ Star Rollo uphill + drained ~18ft downhill XT Glow Nova putt to birdie out!',
+          throws: [
+            { shotType: 'tee', discId: 'innova-rollo' },
+            { shotType: 'putt', discId: 'innova-xt-glow-nova' }
+          ]
+        }
+      }
+    }
+  ]
+};
+
+const ROUND_2026_11_16_SARKO_2: HistoricalRound = {
+  id: 1763326080000,
+  courseName: 'Sar-Ko-Par Trails',
+  totalHoles: 9,
+  date: '2026-11-16',
+  duration: '00:24:00',
+  par: 27,
+  windCondition: 'calm',
+  weather: '55–57°F · Nice Day, Slight Wind (~2:48 PM · Round 2 of 2)',
+  gameMode: 'stroke',
+  updatedAt: 1763326260000,
+  notes:
+    'BOGEY-FREE 24 (-3)! Solo Afternoon Round 2 of 2 (Course all to himself!) — 3 Birdies ★ & 6 Pars! Parked Purple 168g GStar Roadrunner 3ft left on H2 ★, unlocked a low-skip 178g Pink DX Alien Birdie on H5 ★, and parked 175g Champion Eagle 5–7ft under the pin on H8 ★!',
+  roundTranscript: `Sar-Ko-Par Trails Solo Afternoon Session — Round 2 of 2 (2026-11-16 · ~2:48 PM · 55–57°F, Slight Wind) — Jeffery 24 (-3, 🏆 BOGEY-FREE! 3 Birdies ★, 6 Pars, 0 Bogeys!).
+Kept the voice log rolling with the whole course to himself and dialed in three awesome Birdie lines:
+- Hole 1 (138ft, Par 3): Jeffery 3 (Par). Committed to 175g Star Sync off the tee—flew perfectly flat the entire way with a tiny left check and stayed on the ledge; left the birdie putt weak and tapped in Par 3.
+- Hole 2 (192ft, Par 3): Jeffery 2 (Birdie ★). Chose Purple 168g GStar Roadrunner over Roc and parked it exact pin-high 3 FEET left ("Purple, there he is—exact distance of the pin, 3 feet away to the left! Roadrunner, you'll get the honor—Birdie!")!
+- Hole 3 (162ft, Par 3): Jeffery 3 (Par). Clubbed down from Roadrunner to a flat 170g DX Archangel—dropped right near the basket; birdie bid clipped the top band, tapped in Par 3.
+- Hole 4 (162ft, Par 3): Jeffery 3 (Par). Threw 175g Champion Eagle low off the tee (stopped in rough before skipping); threw 175g XT Glow Nova right in/under for a clean Par 3 save!
+- Hole 5 (144ft, Par 3): Jeffery 2 (Birdie ★). Switched to Speed 4 178g Pink DX Alien off the tee—kept it low and flat for a clean skip to exact pin distance 10–15ft right and drained the Birdie 2 ("Two, bird! Birdie!")!
+- Hole 6 (165ft, Par 3): Jeffery 3 (Par). 176g Glow Mako3 hit a tree; pitched 175g XT Glow Nova right under the basket (tiny roll) and converted Par 3.
+- Hole 7 (139ft, Par 3): Jeffery 3 (Par). 170g DX Archangel flew dead-straight the entire way instead of fading left (noted Champion Eagle is the move here next time!); glided 175g XT Glow Nova down for Par 3.
+- Hole 8 (171ft, Par 3): Jeffery 2 (Birdie ★). Pulled 175g Champion Eagle off the tee and PARKED IT 5–7 FEET UNDER THE PIN ("That's under the pin, dude! About 5, 6, 7 feet away—Birdied!")!
+- Hole 9 (141ft, Par 3): Jeffery 3 (Par). Overshot uphill H9 with 172g Star Rollo ~15ft past toward Hole 1 and floated 175g XT Glow Nova back onto the hill ("Nova, don't roll") to seal a bogey-free 24 (-3)!`,
+  players: [{ id: 'jeffery', name: 'Jeffery', tag: 'J1', total: 24 }],
+  holes: [
+    {
+      number: 1,
+      par: 3,
+      distance: 138,
+      scores: { jeffery: 3 },
+      voiceTranscript:
+        '175g Star Sync flew perfectly flat the whole way with a slight left fade and stayed on the ledge; left birdie putt weak ("First one missed so far") for tap-in Par 3.',
+      meta: {
+        jeffery: {
+          thrownDiscId: 'innova-sync',
+          discUsed: 'Sync',
+          scenarioUsed: 'calm',
+          fairwayHit: true,
+          puttDistance: 'C1',
+          puttDistanceFeet: 4,
+          voiceNote: 'Perfectly flat 175g Star Sync tee shot; weak birdie bid, tap-in Par 3',
+          throws: [
+            { shotType: 'tee', discId: 'innova-sync' },
+            { shotType: 'putt', discId: 'innova-kc-pro-aviar' },
+            { shotType: 'putt', discId: 'innova-kc-pro-aviar' }
+          ]
+        }
+      }
+    },
+    {
+      number: 2,
+      par: 3,
+      distance: 192,
+      scores: { jeffery: 2 },
+      voiceTranscript:
+        'Chose Purple 168g GStar Roadrunner off tee—parked exact pin-high 3 FEET left ("Purple, there he is! Exact distance of the pin, 3 feet away to the left!") and tapped in with Roadrunner for Birdie 2!',
+      meta: {
+        jeffery: {
+          thrownDiscId: 'innova-roadrunner',
+          discUsed: 'Roadrunner',
+          scenarioUsed: 'calm',
+          fairwayHit: true,
+          puttDistance: 'C1',
+          puttDistanceFeet: 3,
+          voiceNote: '★ Purple 168g GStar Roadrunner parked pin-high 3ft left + tap-in Birdie 2!',
+          throws: [
+            { shotType: 'tee', discId: 'innova-roadrunner' },
+            { shotType: 'putt', discId: 'innova-roadrunner' }
+          ]
+        }
+      }
+    },
+    {
+      number: 3,
+      par: 3,
+      distance: 162,
+      scores: { jeffery: 3 },
+      voiceTranscript:
+        'Kept 170g DX Archangel flat off tee—good flight dropping near the basket; birdie putt clipped the top of the basket, tapped in Par 3.',
+      meta: {
+        jeffery: {
+          thrownDiscId: 'innova-archangel',
+          discUsed: 'Archangel',
+          scenarioUsed: 'calm',
+          fairwayHit: true,
+          puttDistance: 'C1',
+          puttDistanceFeet: 4,
+          voiceNote: 'Flat DX Archangel near basket; birdie putt hit top band, tap-in Par 3',
+          throws: [
+            { shotType: 'tee', discId: 'innova-archangel' },
+            { shotType: 'putt', discId: 'innova-kc-pro-aviar' },
+            { shotType: 'putt', discId: 'innova-kc-pro-aviar' }
+          ]
+        }
+      }
+    },
+    {
+      number: 4,
+      par: 3,
+      distance: 162,
+      scores: { jeffery: 3 },
+      voiceTranscript:
+        'Threw 175g Champion Eagle very low off tee (stopped in rough without skipping); pitched 175g XT Glow Nova right in/under to save Par 3.',
+      meta: {
+        jeffery: {
+          thrownDiscId: 'innova-champion-eagle',
+          discUsed: 'Champion Eagle',
+          scenarioUsed: 'calm',
+          puttDistance: 'C1',
+          puttDistanceFeet: 3,
+          voiceNote: 'Low Champion Eagle tee + clutch XT Glow Nova scramble for Par 3',
+          throws: [
+            { shotType: 'tee', discId: 'innova-champion-eagle' },
+            { shotType: 'approach', discId: 'innova-xt-glow-nova' },
+            { shotType: 'putt', discId: 'innova-xt-glow-nova' }
+          ]
+        }
+      }
+    },
+    {
+      number: 5,
+      par: 3,
+      distance: 144,
+      scores: { jeffery: 2 },
+      voiceTranscript:
+        'Debuted 178g Pink DX Alien [4|2|0|1] off H5 tee—kept it low and flat for a clean skip to exact pin distance 10–15ft right and drained the Birdie 2 ("Two, bird! Birdie!")!',
+      meta: {
+        jeffery: {
+          thrownDiscId: 'innova-dx-alien',
+          discUsed: 'DX Alien',
+          scenarioUsed: 'calm',
+          fairwayHit: true,
+          puttDistance: 'C1',
+          puttDistanceFeet: 12,
+          voiceNote: '★ 178g Pink DX Alien low flat skip pin-high 10–15ft right + drained Birdie 2!',
+          throws: [
+            { shotType: 'tee', discId: 'innova-dx-alien' },
+            { shotType: 'putt', discId: 'innova-kc-pro-aviar' }
+          ]
+        }
+      }
+    },
+    {
+      number: 6,
+      par: 3,
+      distance: 165,
+      scores: { jeffery: 3 },
+      voiceTranscript:
+        '176g Glow Mako3 hit a tree; threw 175g XT Glow Nova right under the basket (tiny roll) and made Par 3.',
+      meta: {
+        jeffery: {
+          thrownDiscId: 'innova-mako3',
+          discUsed: 'Mako3',
+          scenarioUsed: 'calm',
+          puttDistance: 'C1',
+          puttDistanceFeet: 6,
+          voiceNote: 'Glow Mako3 tree kick + XT Glow Nova approach under basket for Par 3',
+          throws: [
+            { shotType: 'tee', discId: 'innova-mako3' },
+            { shotType: 'approach', discId: 'innova-xt-glow-nova' },
+            { shotType: 'putt', discId: 'innova-kc-pro-aviar' }
+          ]
+        }
+      }
+    },
+    {
+      number: 7,
+      par: 3,
+      distance: 139,
+      scores: { jeffery: 3 },
+      voiceTranscript:
+        '170g DX Archangel flew super straight the whole way instead of fading left (noted Champion Eagle would be ideal here); glided 175g XT Glow Nova down to pin for Par 3.',
+      meta: {
+        jeffery: {
+          thrownDiscId: 'innova-archangel',
+          discUsed: 'Archangel',
+          scenarioUsed: 'calm',
+          puttDistance: 'C1',
+          puttDistanceFeet: 5,
+          voiceNote: 'Straight DX Archangel + XT Glow Nova glide approach for Par 3 (try Eagle next time!)',
+          throws: [
+            { shotType: 'tee', discId: 'innova-archangel' },
+            { shotType: 'approach', discId: 'innova-xt-glow-nova' },
+            { shotType: 'putt', discId: 'innova-xt-glow-nova' }
+          ]
+        }
+      }
+    },
+    {
+      number: 8,
+      par: 3,
+      distance: 171,
+      scores: { jeffery: 2 },
+      voiceTranscript:
+        'Pulled 175g Champion Eagle off the tee and PARKED IT 5–7 FEET UNDER THE PIN ("That\'s under the pin, dude! About 5, 6, 7 feet away—Birdied!")!',
+      meta: {
+        jeffery: {
+          thrownDiscId: 'innova-champion-eagle',
+          discUsed: 'Champion Eagle',
+          scenarioUsed: 'calm',
+          fairwayHit: true,
+          puttDistance: 'C1',
+          puttDistanceFeet: 6,
+          voiceNote: '★ 175g Champion Eagle parked 5–7ft under the basket for Birdie 2!',
+          throws: [
+            { shotType: 'tee', discId: 'innova-champion-eagle' },
+            { shotType: 'putt', discId: 'innova-kc-pro-aviar' }
+          ]
+        }
+      }
+    },
+    {
+      number: 9,
+      par: 3,
+      distance: 141,
+      scores: { jeffery: 3 },
+      voiceTranscript:
+        'Overshot uphill H9 with 172g Star Rollo ~15ft past toward Hole 1 and floated 175g XT Glow Nova back onto the hill ("Nova, don\'t roll") for a bogey-free 24 (-3)!',
+      meta: {
+        jeffery: {
+          thrownDiscId: 'innova-rollo',
+          discUsed: 'Rollo',
+          scenarioUsed: 'calm',
+          fairwayHit: true,
+          puttDistance: 'C1',
+          puttDistanceFeet: 4,
+          voiceNote: 'Overshot Star Rollo uphill + XT Glow Nova hill layup for bogey-free Par 3!',
+          throws: [
+            { shotType: 'tee', discId: 'innova-rollo' },
+            { shotType: 'approach', discId: 'innova-xt-glow-nova' },
+            { shotType: 'putt', discId: 'innova-xt-glow-nova' }
+          ]
+        }
+      }
+    }
+  ]
+};
+
 export const INITIAL_USER_EXPORT: AppExportPayload = {
   app: typedV65.app || 'Jeffery & Jack Disc Golf Scorecard',
-  version: 'v104',
-  exportDate: '2026-11-15T23:05:00.000Z',
+  version: 'v105',
+  exportDate: '2026-11-17T00:40:00.000Z',
   history: [
+    ROUND_2026_11_16_SARKO_2,
+    ROUND_2026_11_16_SARKO_1,
     ROUND_2026_11_15_PRAIRIE_PASS,
     ROUND_2026_11_13_SARKO,
     ROUND_2026_11_11_SARKO,
@@ -8071,6 +8551,8 @@ export const INITIAL_USER_EXPORT: AppExportPayload = {
     ROUND_2026_10_25_MIZE,
     ...(typedV65.history || []).filter(
       (r) =>
+        r.id !== ROUND_2026_11_16_SARKO_2.id &&
+        r.id !== ROUND_2026_11_16_SARKO_1.id &&
         r.id !== ROUND_2026_11_15_PRAIRIE_PASS.id &&
         r.id !== ROUND_2026_11_13_SARKO.id &&
         r.id !== ROUND_2026_11_11_SARKO.id &&
