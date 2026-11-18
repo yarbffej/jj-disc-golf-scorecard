@@ -2412,24 +2412,24 @@ type CompactOutlineOverride = {
 
 const CURATED_HOLE_OUTLINES: Record<string, Record<number, CompactOutlineOverride>> = {
   smp_wooded: {
-    1: { s: 'slight_left', e: 'flat', c: 'park', g: true, w: 'right', pin: 'Water right near tee · Framed slight-left green', tip: 'Keep Roadrunner or Halo IT flat down center; avoid nose-up stall.' },
-    2: { s: 'tunnel', e: 'flat', c: 'tight_woods', g: true, pin: 'Guardian trunks 15 ft off tee · Dead-straight pin', tip: 'Pipe Glow Mako3 level straight through the initial gap.' },
-    3: { s: 'tunnel', e: 'flat', c: 'tight_woods', g: true, pin: 'Narrow forest chute · Late guardian tree ~30 ft out', tip: 'Upright 90° DX Archangel threads the trees right to C1 (Par ★).' },
-    4: { s: 'slight_right', e: 'flat', c: 'tight_woods', ob: 'left', pin: '305 ft corridor parallel to Renner Rd · Drifts right', tip: 'Glow Mako3 through initial gap + Star Rollo right-turn 2nd shot.' },
-    5: { s: 'dogleg_right', e: 'flat', c: 'tight_woods', g: true, pin: 'Pin tucked right past guardian trees', tip: 'Star Rollo turning right off tee + Star Sync laser to pin (Par ★).' },
+    1: { s: 'slight_left', e: 'flat', c: 'park', g: true, w: 'right', pin: 'Water right near tee · Framed slight-left green', tip: 'Keep Roadrunner or Eagle flat down center; avoid nose-up stall.' },
+    2: { s: 'tunnel', e: 'flat', c: 'tight_woods', g: true, pin: 'Mando logs against trees 15 ft out · Dead-straight pin', tip: 'Skip Star Sync or Glow Mako3 level straight through the gap (11/17 Par ★).' },
+    3: { s: 'tunnel', e: 'flat', c: 'tight_woods', g: true, pin: 'Narrow forest chute · Late guardian tree ~30 ft out', tip: 'Roadrunner (<5ft kick 11/17!) or upright 90° Archangel right to C1.' },
+    4: { s: 'slight_right', e: 'flat', c: 'tight_woods', ob: 'left', pin: '305 ft corridor parallel to Renner Rd · Drifts right', tip: 'Roadrunner/Mako3 through initial gap + Star Rollo / Nova approach.' },
+    5: { s: 'dogleg_right', e: 'flat', c: 'tight_woods', g: true, pin: 'Pin tucked right past guardian trees · ★ 11/17 Birdie 2!', tip: '172g Star Rollo glides right under the basket for tap-in Birdie!' },
     6: { s: 'straight', e: 'flat', c: 'tight_woods', pin: '187 ft wooded lane opening on left ~40 ft short', tip: 'Halo Star IT smooth placement + Star Sync putt (Par ★).' },
-    7: { s: 'slight_left', e: 'flat', c: 'tight_woods', pin: '355 ft low-ceiling wooded fairway finishing left', tip: 'Classic Glow Wraith driven low & flat + Roc3 / Sync approach.' },
-    8: { s: 'dogleg_left', e: 'flat', c: 'park', pin: 'Wide open tee narrowing left to guarded basket', tip: 'Aim wide right so driver hyzers left into the green pocket.' },
-    9: { s: 's_curve', e: 'downhill', c: 'tight_woods', g: true, pin: '375 ft winding low-ceiling trek to deep Blue Pin', tip: 'Keep Classic Glow Wraith low off tee; advance cleanly with Mako3/Rollo.' },
-    10: { s: 'dogleg_left', e: 'downhill', c: 'tight_woods', g: true, pin: 'Downhill left bend · Early guardian tree in center', tip: 'Beat early tree with DX Roc3 + float XT Glow Nova downhill to pin.' },
-    11: { s: 's_curve', e: 'flat', c: 'park', g: true, pin: '444 ft monster Par 3: wooded exit into open fairway', tip: 'Punch straight out of trees, then rip Mako3 + Star Jay into C1.' },
-    12: { s: 'slight_right', e: 'uphill', c: 'tight_woods', pin: '223 ft steady uphill climb drifting slightly right', tip: 'Level tea-kettle wrist with Star Rollo carries uphill to pin (Par ★).' },
-    13: { s: 'straight', e: 'downhill', c: 'park', pin: '277 ft scenic downhill laser straight at white pin', tip: 'Throw Glow Mako3 dead-flat the entire flight; watch wind on green.' },
-    14: { s: 'dogleg_left', e: 'flat', c: 'tight_woods', pin: '243 ft wooded corridor bending left to guarded pin', tip: 'Lace DX Archangel down the left-finishing lane to park C1 (Par ★).' },
-    15: { s: 'tunnel', e: 'uphill', c: 'tight_woods', g: true, pin: '189 ft picturesque straight chute · Uphill green', tip: 'Star Jay / Mako3 straight down the hallway + firm uphill putt (Par ★).' },
-    16: { s: 'slight_right', e: 'uphill', c: 'tight_woods', g: true, pin: '338 ft uphill climb · Low branches & thick rough', tip: 'Keep Roadrunner nose-down off tee + Star Rollo uphill skip shot.' },
-    17: { s: 'slight_left', e: 'flat', c: 'park', pin: '214 ft framed fairway exposed to headwinds', tip: 'Keep tee low in breeze + stick 180g Star Jay right by pin (Par ★).' },
-    18: { s: 'dogleg_right', e: 'flat', c: 'park', g: true, pin: '347 ft closer bending right around guardian tree', tip: 'Curve Star Rollo right around tree + park Pink DX Alien under pin!' }
+    7: { s: 'slight_left', e: 'flat', c: 'tight_woods', pin: '355 ft low-ceiling wooded fairway to White Pin', tip: 'Classic Glow Wraith driven low & flat + committed Mako3/Alien approach.' },
+    8: { s: 'dogleg_left', e: 'flat', c: 'park', pin: '302 ft open tee narrowing left to guarded basket', tip: 'Wraith straight 150+ ft drive + commit firmly on 2nd shot (don\'t baby it!).' },
+    9: { s: 's_curve', e: 'downhill', c: 'tight_woods', g: true, pin: '375 ft trek (Shorter Tee Pad Available · Blue Pin Only!)', tip: 'Play short tee w/ Classic Glow Wraith 180+ ft + XT Glow Nova to chains.' },
+    10: { s: 'dogleg_left', e: 'downhill', c: 'tight_woods', g: true, pin: '248 ft downhill left bend (Blue Pin Only — No White Basket!)', tip: 'Release on time past right trees w/ Roc + float XT Glow Nova downhill.' },
+    11: { s: 's_curve', e: 'flat', c: 'park', g: true, pin: '444 ft monster Par 3: wooded exit into windy open fairway', tip: 'Keep nose down out of trees, then rip Mako3 + Star Jay into C1.' },
+    12: { s: 'slight_right', e: 'uphill', c: 'tight_woods', ob: 'left', pin: '223 ft uphill climb · Street OB left! · ★ 2× Par Lock', tip: 'Avoid street left—throw Star Rollo uphill + XT Glow Nova stop (Par ★).' },
+    13: { s: 'straight', e: 'downhill', c: 'park', pin: '277 ft scenic downhill laser straight at white pin', tip: 'Throw Glow Mako3 chest-high & flat (don\'t throw 2ft worm-burners!).' },
+    14: { s: 'dogleg_left', e: 'flat', c: 'tight_woods', pin: '243 ft wooded corridor bending left to guarded pin', tip: 'Champion Eagle left lane + XT Glow Nova approach to C1.' },
+    15: { s: 'tunnel', e: 'uphill', c: 'tight_woods', g: true, pin: '189 ft straight wooded chute · ★ 2× Par Lock (11/10 & 11/17)', tip: '175g Star Sync dead-straight to 20ft (11/17) or Star Jay glide loop!' },
+    16: { s: 'slight_right', e: 'uphill', c: 'tight_woods', g: true, pin: '338 ft steep uphill climb · Low branches & thick rough', tip: 'Aim 172g Star Rollo at center tree + uphill Rollo climb right to 5ft!' },
+    17: { s: 'slight_left', e: 'flat', c: 'park', pin: '214 ft framed fairway exposed to headwinds', tip: 'Keep tee low in breeze + low-glide Alien/Nova (Sync rolls in wind).' },
+    18: { s: 'dogleg_right', e: 'flat', c: 'park', g: true, pin: '347 ft closer bending right around guardian tree', tip: 'Classic Glow Wraith straight bomb (or Rollo right) + Pink DX Alien!' }
   },
   // Verified hole-for-hole directly from UDisc Sar-Ko-Par satellite layout (udisc_sarko.jpg)
   sarko: {
@@ -2732,7 +2732,7 @@ export function doesCommentaryMentionDisc(
       return /\b(roc\s*3|rock\s*3)\b/i.test(text);
     case 'innova-classic-glow-roc':
       return (
-        (!roundDate || (roundDate >= '2026-11-05' && roundDate < '2026-11-17')) &&
+        (!roundDate || (roundDate >= '2026-11-05' && roundDate < '2026-11-18')) &&
         /\b(classic\s+glow\s+(?:dx\s+)?roc|glow\s+roc|new\s+roc|normal\s+roc|\broc\b|\brock\b)\b/i.test(
           text
         ) &&
@@ -2740,7 +2740,7 @@ export function doesCommentaryMentionDisc(
       );
     case 'innova-sugar-glow-roc':
       return (
-        Boolean(roundDate && roundDate >= '2026-11-17') &&
+        Boolean(roundDate && roundDate >= '2026-11-18') &&
         /\b(dx\s+glow\s+roc|glow\s+roc|sugar\s+high\s+roc|\broc\b)\b/i.test(text) &&
         !/\broc\s*3\b/i.test(text)
       );
@@ -2748,17 +2748,17 @@ export function doesCommentaryMentionDisc(
       return /\b(kc\s*pro(?:\s*aviar)?|kc\s+aviar)\b/i.test(text);
     case 'innova-proto-glow-aviar':
       return (
-        Boolean(roundDate && roundDate >= '2026-11-17') &&
+        Boolean(roundDate && roundDate >= '2026-11-18') &&
         /\b(proto\s*glow\s*aviar|glow\s*aviar)\b/i.test(text)
       );
     case 'innova-yeti-pro-aviar':
       return (
-        Boolean(roundDate && roundDate >= '2026-11-17') &&
+        Boolean(roundDate && roundDate >= '2026-11-18') &&
         /\b(yeti(?:\s*pro)?(?:\s*aviar)?)\b/i.test(text)
       );
     case 'innova-aviar':
       return (
-        (!roundDate || roundDate < '2026-11-17') &&
+        (!roundDate || roundDate < '2026-11-18') &&
         (/\bstar\s+aviar\b/i.test(text) ||
           (/\baviar\b/i.test(text) && !/\bkc\s*(?:pro\s*)?aviar\b/i.test(text)))
       );
@@ -2772,17 +2772,17 @@ export function doesCommentaryMentionDisc(
       return (!roundDate || roundDate >= '2026-11-05') && /\bbeast\b/i.test(text);
     case 'innova-classic-glow-wraith':
       return (
-        (!roundDate || (roundDate >= '2026-11-05' && roundDate < '2026-11-17')) &&
+        (!roundDate || (roundDate >= '2026-11-05' && roundDate < '2026-11-18')) &&
         /\bwraith\b/i.test(text)
       );
     case 'innova-halo-wraith':
       return (
-        Boolean(roundDate && roundDate >= '2026-11-17') &&
+        Boolean(roundDate && roundDate >= '2026-11-18') &&
         /\b(halo\s*wraith|wraith)\b/i.test(text)
       );
     case 'innova-halo-destroyer':
       return (
-        Boolean(roundDate && roundDate >= '2026-11-17') &&
+        Boolean(roundDate && roundDate >= '2026-11-18') &&
         /\b(halo\s*destroyer|destroyer)\b/i.test(text)
       );
     case 'innova-champion-eagle':
@@ -2794,60 +2794,60 @@ export function doesCommentaryMentionDisc(
       return /\btoro\b/i.test(text);
     case 'innova-mako3':
       return (
-        (!roundDate || roundDate < '2026-11-17') &&
+        (!roundDate || roundDate < '2026-11-18') &&
         /\b(mako\s*3|mako|miko\s*3)\b/i.test(text)
       );
     case 'innova-proto-glow-mako3':
       return (
-        Boolean(roundDate && roundDate >= '2026-11-17') &&
+        Boolean(roundDate && roundDate >= '2026-11-18') &&
         /\b(proto\s*glow\s*mako\s*3|mako\s*3|mako|miko\s*3)\b/i.test(text)
       );
     case 'innova-jay':
       return /\b(star\s+jay|jay)\b/i.test(text);
     case 'innova-rollo':
       return (
-        (!roundDate || roundDate < '2026-11-17') &&
+        (!roundDate || roundDate < '2026-11-18') &&
         /\b(rollo|rolo)\b/i.test(text)
       );
     case 'innova-sugar-star-rollo':
       return (
-        Boolean(roundDate && roundDate >= '2026-11-17') &&
+        Boolean(roundDate && roundDate >= '2026-11-18') &&
         /\b(rollo|rolo)\b/i.test(text)
       );
     case 'innova-archangel':
       return /\b(archangel|arch\s*angel|ar\s*angel)\b/i.test(text);
     case 'innova-roadrunner':
       return (
-        (!roundDate || roundDate < '2026-11-17') &&
+        (!roundDate || roundDate < '2026-11-18') &&
         /\b(roadrunner|road\s*runner)\b/i.test(text)
       );
     case 'innova-sugar-star-roadrunner':
       return (
-        Boolean(roundDate && roundDate >= '2026-11-17') &&
+        Boolean(roundDate && roundDate >= '2026-11-18') &&
         /\b(roadrunner|road\s*runner)\b/i.test(text)
       );
     case 'innova-mamba':
       return /\bmamba\b/i.test(text);
     case 'innova-leopard3':
       return (
-        (!roundDate || roundDate < '2026-11-17') &&
+        (!roundDate || roundDate < '2026-11-18') &&
         /\b(leopard\s*3|leopard)\b/i.test(text)
       );
     case 'innova-glow-leopard3':
       return (
-        Boolean(roundDate && roundDate >= '2026-11-17') &&
+        Boolean(roundDate && roundDate >= '2026-11-18') &&
         /\b(glow\s*leopard\s*3|leopard\s*3|leopard)\b/i.test(text)
       );
     case 'innova-glow-teebird':
       return (
-        Boolean(roundDate && roundDate >= '2026-11-17') &&
+        Boolean(roundDate && roundDate >= '2026-11-18') &&
         /\b(glow\s*teebird|teebird|tee\s*bird)\b/i.test(text)
       );
     case 'innova-firebird':
-      return (!roundDate || roundDate < '2026-11-17') && /\bfirebird\b/i.test(text);
+      return (!roundDate || roundDate < '2026-11-18') && /\bfirebird\b/i.test(text);
     case 'innova-luster-firebird':
       return (
-        Boolean(roundDate && roundDate >= '2026-11-17') &&
+        Boolean(roundDate && roundDate >= '2026-11-18') &&
         /\b(luster\s*firebird|firebird)\b/i.test(text)
       );
     case 'innova-pig':
@@ -3004,14 +3004,14 @@ export function buildLivePersonalFlightProfile(
       'Align disc down the forearm ("heavy tea-kettle" grip), swing wide right of guardian trees, and trust the late +3 left fade.';
   } else if (disc.id === 'innova-classic-glow-roc') {
     howItFliesForMe =
-      'My max-weight 180g Rancho-mold control mid [4|4|0|3] with a gentler, more controlled left curve than the Speed 5 Roc3. Earned its first Circle 1 Birdie 2 on 11/09 at Sar-Ko-Par H4 ("Get this curve, right there where Daddy is—Circle 1! Two, birdie!"), debuted with a Par 3 on 11/05 H4, and stayed safely in bounds on 11/08 at Prairie Center H2 & H9.';
+      'My max-weight 180g Rancho-mold control mid [4|4|0|3]—straighter under flat snap than Roc3 with a smooth late check! On 11/17 at The Art Nine, I laced it dead-straight downhill on Hole #9 for a walk-off Birdie 2 to seal a 16-minute Even-Par 27 ("Roc, that looks straight, man, downhill—Good! Birdie! Even, huh?")! Also parked Sar-Ko H4 for Birdie 2 (11/09).';
     swingCue =
-      'Throw firm and flat on 155–220ft shots when you want a smoother, less skippy left curve than the Roc3.';
+      'Throw firm and flat on 130–220ft tunnels & downhill lines when you want dead-straight control with a gentle late check.';
   } else if (disc.id === 'innova-rollo') {
     howItFliesForMe =
-      'My effortless right-turning midrange [5|6|-4|1] and uphill/dogleg-right weapon! Powered 3 Par 3s on 11/10 at Shawnee Mission Wooded—including uphill H12 and curving right around the guardian tree on 347ft H18—plus sealed both 21 (-6 PB) Sar-Ko-Par H9 closers! Match your zip to the slope so nose-up throws don’t stall left.';
+      'My ONLY guaranteed RHBH right-turning midrange [5|6|-4|1] and uphill weapon! On 11/17 at Shawnee Mission Wooded, it glided right under the 208ft dogleg-right H5 basket ("Rollo gets the honor—Birdie!"), saved Par uphill on H12, and conquered steep 338ft uphill H16 in 3 throws to 5ft! Plus Prairie Pass H2/H10 Pars & 6× Sar-Ko H9 Birdies!';
     swingCue =
-      'Keep the "tea-kettle" wrist level with firm chest-high zip so the -4 right turn activates cleanly.';
+      'Keep the "tea-kettle" wrist level with firm chest-high zip ("Only disc that ever goes right is the Rollo!").';
   } else if (disc.id === 'innova-it') {
     howItFliesForMe =
       'My #1 pinpoint fairway driver [7|6|-2|1]! With my chest-high "tea-kettle" release, it flies the exact S-curve printed on the card. Parked 5ft past Sar-Ko-Par H7 on 11/09 for Birdie 2 ("IT was perfect!"), earned Par 3s on Shawnee Mission Wooded H6 & H17 (11/10) and Prairie Center H13 & H16 (11/08), and parked 1ft on Sar-Ko H3 (11/05)! Note: Keep nose down into headwinds.';
@@ -3044,9 +3044,9 @@ export function buildLivePersonalFlightProfile(
       'Keep the release low and smooth at 80% effort so the 152g weight and 6-glide carry straight; club down on holes under 220ft.';
   } else if (disc.id === 'innova-classic-glow-wraith') {
     howItFliesForMe =
-      'Breakthrough low-ceiling 11-speed bomber [11|5|-1|3]! On 11/10 at Shawnee Mission Wooded, I kept it low and flat off the tee on both 355ft H7 ("Excellent, flat, good job Wraith!") and 375ft H9 ("Excellent job Wraith—kept it down like I was supposed to, great flight, I liked that Wraith!"). Pushes fast and flat under canopy ceilings before a dependable +3 left finish.';
+      'Breakthrough low-ceiling 11-speed bomber [11|5|-1|3]! On 11/17 at Shawnee Mission Wooded, it crushed 150–180+ ft over halfway on H7, H8 & H9—and after being found on H18 ("I found the Wraith!"), striped a dead-straight closing bomb down H18! Also bombed downhill Prairie Pass H16 for Par 3 (11/15).';
     swingCue =
-      'Keep the trajectory low and flat ("kept it down like I was supposed to") and aim right of center for its +3 left finish.';
+      'Keep the trajectory low and flat ("kept it down like I was supposed to") and release cleanly out in front so it doesn’t leak right.';
   } else if (disc.id === 'discraft-roach') {
     howItFliesForMe =
       'Jack’s deadly beadless putter & approach sniper [2|3|0|1]! On 11/09 at Sar-Ko-Par (Even-Par 27!), Jack threw a 50-foot Roach approach on H7 that parked 2 feet from the pin ("Threw that putter right where it was about two feet—this Roach!"). Also powered his bogey-free 24 (-3) PB at The Art Nine on 11/08 and his 47-foot stride-measured bomb putt on Cal Trail H9 (10/29)!';
@@ -3665,27 +3665,27 @@ const DISC_COMMENTARY_VERDICTS: Record<string, string> = {
   'innova-mako3':
     '⭐ #1 Dead-Straight Midrange Workhorse! Bombed ~192ft on Prairie Pass H3 for Par 3 (11/15), 277ft flat downhill laser on SMP Wooded H13 & 12 Birdies.',
   'innova-rollo':
-    '⭐ Signature Right-Turn & Glide Mid! Set up the 11/16 R1 H9 Birdie closer, piped a "10 out of 10" glide drive on Prairie Pass H10 & parked H2 (11/15), + 6× Sar-Ko H9 Birdies!',
+    '⭐ #1 Right-Turn & Uphill Weapon! Parked 208ft SMP Wooded H5 right under basket for Birdie 2 (11/17!), climbed 338ft H16 to 5ft, + Prairie Pass H2/H10 Pars & 6× Sar-Ko H9 Birdies!',
   'innova-roadrunner':
-    '🔥 #1 Distance & Pin-High Workhorse! Parked 192ft Sar-Ko H2 pin-high 3ft left for Birdie 2 (11/16), 200ft "straight box-cutter line" on Prairie Pass H4, & 11/09 6-birdie run.',
+    '🔥 #1 Distance & Pin-High Workhorse! Parked 192ft Sar-Ko H2 3ft left (11/16), threaded SMP Wooded H3 <5ft (11/17), & striped 200ft Prairie Pass H4!',
   'innova-mamba':
     '⚡ Most Thrown Distance Driver off the Tee — bombs 300+ ft open fairways, but easily overpowers <180ft woods holes into trees.',
   'innova-jay':
     '⭐ Clutch Back-9 Midrange! Locked in Par 3s on SMP Wooded H15 (10ft glide loop) & H17 headwind ("It was perfect!"), plus Cal Trail H5 4ft park.',
   'innova-xt-glow-nova':
-    '⭐ #1 Scramble, Mound & Downhill Stopper! Drained ~18ft downhill 11/16 R1 H9 Birdie closer + stuck Prairie Pass H11 mound & steep H16 (never tee with it on H1!).',
+    '⭐ #1 Scramble, Mound & Downhill Stopper! Hit basket on SMP Wooded H9 & parked H4/H12 (11/17), drained ~18ft downhill Sar-Ko H9 Birdie (11/16), & stuck Prairie Pass H11/H16!',
   'innova-toro':
     '⚠️ Pulled from Physical Bag before 11/15 Prairie Pass — dumps hard left (+3 fade) if thrown like a normal mid.',
   'innova-champion-eagle':
     '⭐ Breakout Cotton Candy Fairway [7|4|-1|3]! Parked Sar-Ko H8 5–7ft under the pin for Birdie 2 (11/16 bogey-free 24 / -3!), plus clean H8/H4 Pars & left skips.',
   'innova-dx-alien':
-    '⭐ Low-Skip Birdie & Approach Laser! Skipped pin-high 10–15ft right on Sar-Ko H5 for Birdie 2 (11/16), 150ft laser on Prairie Pass H13, & parked 347ft SMP Wooded H18!',
+    '⭐ Low-Skip Birdie & Approach Laser! Set up Art Nine H6 20ft Birdie (11/17), skipped pin-high on Sar-Ko H5 for Birdie 2 (11/16), & fired 150ft Prairie Pass H13 laser!',
   'innova-classic-glow-roc':
-    '⭐ Wind-Fighting Glow Midrange! Parked Sar-Ko H4 (11/09) & skipped low and flat in heavy gusts on H5 (11/11) for back-to-back Birdie 2s!',
+    '⭐ Straight Tunnel & Wind Midrange! Walk-off downhill Birdie 2 on Art Nine H9 to seal 16-min Even Par (11/17!), plus Sar-Ko H4 & H5 Birdie 2s!',
   'innova-classic-glow-beast':
     '⚠️ Pulled from Physical Bag before 11/15 Prairie Pass — pulled left on SMP Wooded H11 ("Not sure I like the Beast all that much").',
   'innova-classic-glow-wraith':
-    '🚀 Breakthrough Low-Ceiling 11-Speed Bomber! Bombed dead-straight on downhill Prairie Pass H16 ("That Wraith was good, I liked it!") & SMP Wooded H7/H9!',
+    '🚀 Breakthrough Low-Ceiling 11-Speed Bomber! Crushed H7/H8/H9 & found-on-H18 straight bomb at SMP Wooded (11/17), plus downhill Prairie Pass H16 Par!',
   'innova-aviar':
     '📦 Archived Vault (36 holes, 5 Birdies) — trusty beadless Star putter before KC Pro Aviar took over primary putting duties.',
   'innova-pig':
@@ -3803,7 +3803,7 @@ export function computeDiscBagTelemetry(
                 d.id === 'innova-halo-destroyer' ||
                 d.id === 'innova-proto-glow-aviar' ||
                 d.id === 'innova-yeti-pro-aviar') &&
-              r.date < '2026-11-17'
+              r.date < '2026-11-18'
             )) ||
             (uName === 'it' && d.id === 'innova-it') ||
             (uName === 'halo it' && d.id === 'innova-it') ||

@@ -1,4 +1,4 @@
-const CACHE_NAME = 'jj-disc-golf-course-cache-v8';
+const CACHE_NAME = 'jj-disc-golf-course-cache-v9';
 
 const PRECACHE_URLS = [
   './',
