@@ -217,23 +217,21 @@ export function generateFullChatGptReport(input: FullReportInput): string {
   };
 
   renderDiscGroup(
-    "3A. Jeffery's Active Innova Adventure Pack Lineup (18-Disc Master Caddie Guide)",
+    "3A. Jeffery's Active 17-Disc Main Bag (14 Cotton Candy + Halloween Star Sync / Hot Pink Archangel / Pink DX Alien)",
     jefferyActiveDiscs
   );
   renderDiscGroup("3B. Jack's Discraft Lineup", jackDiscs);
   if (jefferyArchivedDiscs.length > 0) {
     renderDiscGroup(
-      "3C. Jeffery's Archived / Reserve Vault Discs (Replaced in Active Pack)",
+      "3C. Jeffery's Backup / Reserve Vault Discs (Replaced in Active Bag)",
       jefferyArchivedDiscs
     );
   }
-  lines.push('### 3D. Innova Adventure Pack Compartment Architecture & Order Provenance');
-  lines.push('- **Top Putter Pocket (4 Discs)**: #01 KC Pro Aviar [2|3|0|2], #02 Star Aviar [2|3|0|1], #03 XT Glow Nova [2|2|0|0], #04 Star Sync [3|3|0|1]');
-  lines.push('- **Main Compartment — Approach & Midranges (7 Discs)**: #05 Star Toro [4|2|0|3], #06 DX Alien [4|2|0|1], #07 Glow Mako3 [5|5|0|0], #08 Star Jay [5|4|0|1], #09 DX Roc3 [5|4|0|3], #10 Classic Glow Roc [4|4|0|3], #11 Star Rollo [5|6|-4|1]');
-  lines.push('- **Main Compartment — Fairway & Distance Drivers (7 Discs)**: #12 GStar Leopard3 [7|5|-2|1], #13 Champion Eagle [7|4|-1|3], #14 DX Archangel [8|6|-3|1], #15 GStar Roadrunner [9|5|-4|1], #16 Classic Glow Beast [10|5|-2|2], #17 Star Mamba [11|6|-5|1], #18 Classic Glow Wraith [11|5|-1|3]');
-  lines.push('- **Innova Factory Store Order #100829495 (Oct 26, 2026)**: Star Toro ($18.99), Star Jay ($18.99), GStar Leopard3 ($16.99), GStar Roadrunner ($16.99), DX Archangel ($9.99), Standard Dew Fly Towel ($7.99)');
-  lines.push('- **Innova Factory Store Order #100836888 (Oct 29, 2026)**: Sugar High 2-Foil Champion Eagle ($19.99), Sugar High 2-Foil KC Pro Aviar ($17.99), Sugar High 2-Foil XT Glow Nova ($15.99), 2x Disc Golf Answer Book ($6.00)');
-  lines.push('- **Innova Factory Store Order #100838958 (Oct 31, 2026)**: DX Alien ($11.99), KC Pro Galactic Aviar F2 ($10.00), Classic Glow Roc ($7.95), Classic Glow Beast ($7.95), Classic Glow Wraith ($7.95)');
+  lines.push('### 3D. Active 17-Disc Main Bag Architecture (Cotton Candy + Hot Pink Core 3)');
+  lines.push('- **Putters & Approach (6 Discs)**: #01 XT Glow Nova [2|2|0|0], #02 Proto Glow Aviar [2|3|0|1], #03 Yeti Pro Aviar [2|3|0|1], #04 KC Pro Aviar [2|3|0|2], #05 Hot Pink Star Sync — Halloween Edition [3|3|0|1], #06 Pink DX Alien [4|2|0|1]');
+  lines.push('- **Midranges (3 Discs)**: #07 DX Glow Roc [4|4|0|3], #08 Proto Glow Mako3 [5|5|0|0], #09 Star Rollo [5|6|-4|1]');
+  lines.push('- **Fairway Drivers (4 Discs)**: #10 Glow Leopard3 [7|5|-2|1], #11 Glow Teebird [7|5|0|2], #12 Champion Eagle [7|4|-1|3], #13 Hot Pink DX Archangel [8|6|-4|1]');
+  lines.push('- **Distance Drivers (4 Discs)**: #14 Hot Pink Star Roadrunner [9|5|-4|1], #15 Luster Firebird [9|3|0|4], #16 Halo Wraith [11|5|-1|3], #17 Halo Destroyer [12|5|-1|3]');
   lines.push('');
 
   // ============================================================================
@@ -384,7 +382,7 @@ export function generateFullChatGptReport(input: FullReportInput): string {
     'Please analyze the complete dataset above for Jeffery (RHBH thrower) and provide actionable insights on:'
   );
   lines.push(
-    '1. **Bag Synergy, Overlap & Slot Gaps**: Evaluate Jeffery’s 18-disc active Innova Adventure Pack lineup across his 4-Putter Top Pocket (KC Pro Aviar [2|3|0|2], Star Aviar [2|3|0|1], XT Glow Nova [2|2|0|0], Star Sync [3|3|0|1]), 7 Approach/Midranges (Star Toro [4|2|0|3], DX Alien [4|2|0|1], Glow Mako3 [5|5|0|0], Star Jay [5|4|0|1], DX Roc3 [5|4|0|3], Classic Glow Roc [4|4|0|3], Star Rollo [5|6|-4|1]), and 7 Fairway/Distance Drivers (GStar Leopard3 [7|5|-2|1], Champion Eagle [7|4|-1|3], DX Archangel [8|6|-3|1], GStar Roadrunner [9|5|-4|1], Classic Glow Beast [10|5|-2|2], Star Mamba [11|6|-5|1], Classic Glow Wraith [11|5|-1|3]). Identify any speed/stability overlaps and recommend course-specific primary pulls.'
+    '1. **Bag Synergy, Overlap & Slot Gaps**: Evaluate Jeffery’s active 17-disc Main Bag (14 Cotton Candy + Hot Pink Core 3) across his 6 Putters/Approach (XT Glow Nova [2|2|0|0], Proto Glow Aviar [2|3|0|1], Yeti Pro Aviar [2|3|0|1], KC Pro Aviar [2|3|0|2], Hot Pink Halloween Star Sync [3|3|0|1], Pink DX Alien [4|2|0|1]), 3 Midranges (DX Glow Roc [4|4|0|3], Proto Glow Mako3 [5|5|0|0], Star Rollo [5|6|-4|1]), 4 Fairways (Glow Leopard3 [7|5|-2|1], Glow Teebird [7|5|0|2], Champion Eagle [7|4|-1|3], Hot Pink DX Archangel [8|6|-4|1]), and 4 Distance Drivers (Hot Pink Star Roadrunner [9|5|-4|1], Luster Firebird [9|3|0|4], Halo Wraith [11|5|-1|3], Halo Destroyer [12|5|-1|3]). Identify any speed/stability overlaps and recommend course-specific primary pulls.'
   );
   lines.push(
     '2. **Scoring Leaks & Distance Bracket Optimization**: Analyze Jeffery’s scoring averages across the 4 distance brackets (<185 ft, 185–239 ft, 240–299 ft, 300+ ft) and pinpoint which specific holes on Sar-Ko-Par Trails, Mize Elementary, California Trail MS, Harmon Park, Black Hoof, and Art Nine offer the highest stroke-saving potential.'

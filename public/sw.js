@@ -1,4 +1,4 @@
-const CACHE_NAME = 'jj-disc-golf-course-cache-v10';
+const CACHE_NAME = 'jj-disc-golf-course-cache-v11';
 
 const PRECACHE_URLS = [
   './',
@@ -23,6 +23,9 @@ const PRECACHE_URLS = [
   './assets/aistudio/card_sugar_high_luster_firebird.jpg',
   './assets/aistudio/card_sugar_high_halo_wraith.jpg',
   './assets/aistudio/card_sugar_high_halo_destroyer.jpg',
+  './assets/aistudio/card_star_sync_halloween_pink.jpg',
+  './assets/aistudio/card_pink_dx_alien_invoice_4fe78f83.jpg',
+  './assets/aistudio/card_dx_archangel_hot_pink.jpg',
 ];
 
 self.addEventListener('install', (event) => {

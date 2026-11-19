@@ -34,8 +34,9 @@ import {
   syncDossierToDashboard
 } from './reportGenerator';
 
-export const MASTER_STORAGE_KEY = 'jj_disc_golf_v107_master_state';
+export const MASTER_STORAGE_KEY = 'jj_disc_golf_v108_master_state';
 export const LEGACY_STORAGE_KEYS = [
+  'jj_disc_golf_v107_master_state',
   'jj_disc_golf_v106_master_state',
   'jj_disc_golf_v105_master_state',
   'jj_disc_golf_v104_master_state',
@@ -674,6 +675,16 @@ export function mergeDiscBags(
       slotCategory: canonicalBase?.slotCategory || winner.slotCategory || loser.slotCategory,
       orderNumber: canonicalBase?.orderNumber || winner.orderNumber || loser.orderNumber,
       price: canonicalBase?.price || winner.price || loser.price,
+      colorStamp: canonicalBase?.colorStamp || winner.colorStamp || loser.colorStamp,
+      colorHex: canonicalBase?.colorHex || winner.colorHex || loser.colorHex,
+      weightGrams:
+        canonicalBase?.weightGrams !== undefined
+          ? canonicalBase.weightGrams
+          : winner.weightGrams ?? loser.weightGrams,
+      speed: canonicalBase?.speed ?? winner.speed ?? loser.speed,
+      glide: canonicalBase?.glide ?? winner.glide ?? loser.glide,
+      turn: canonicalBase?.turn ?? winner.turn ?? loser.turn,
+      fade: canonicalBase?.fade ?? winner.fade ?? loser.fade,
       moldAndFlight: canonicalBase?.moldAndFlight || winner.moldAndFlight || loser.moldAndFlight,
       courseStrategy: canonicalBase?.courseStrategy || winner.courseStrategy || loser.courseStrategy,
       personalFlightNotes:
@@ -876,7 +887,7 @@ export function mergeCloudPayloads(
 
   const payload: AppExportPayload = {
     app: 'Jeffery & Jack Disc Golf Scorecard',
-    version: 'v107',
+    version: 'v108',
     exportDate: new Date().toISOString(),
     updatedAt: Math.max(localTime, remoteTime),
     deviceId: local.deviceId || getOrCreateDeviceId(),
@@ -988,7 +999,7 @@ export function readLocalStorageSnapshot(): AppExportPayload {
 
   return {
     app: 'Jeffery & Jack Disc Golf Scorecard',
-    version: 'v107',
+    version: 'v108',
     exportDate: new Date().toISOString(),
     updatedAt: parsedMaster.updatedAt || Date.now(),
     deviceId: getOrCreateDeviceId(),

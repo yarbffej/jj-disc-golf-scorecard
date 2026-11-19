@@ -111,7 +111,7 @@ const LOADOUT_PRESETS: Record<
       { id: 'innova-dx-alien', role: 'Low-Branch Scramble & Bullseye Stopper [4|2|0|1]' },
       { id: 'innova-proto-glow-mako3', role: '2nd-Shot Fairway Gap Threader (Prairie H7/H12) [5|5|0|0]' },
       { id: 'innova-glow-teebird', role: 'Straight-to-Fade 7-Speed Fairway Anchor (220–280 ft) [7|5|0|2]' },
-      { id: 'innova-archangel', role: 'High-Glide Fairway Turnover Keeper ("Like an Angel!") [8|6|-3|1]' },
+      { id: 'innova-archangel', role: 'Hot Pink DX High-Glide Understable Fairway Keeper ("Like an Angel!") [8|6|-4|1]' },
       { id: 'innova-sugar-star-roadrunner', role: '#1 Workhorse Hot Pink Star Distance & S-Curve [9|5|-4|1]' },
       { id: 'innova-luster-firebird', role: 'Luster Champion Headwind Fighter & Flare-Skip Utility [9|3|0|4]' },
       { id: 'innova-halo-wraith', role: 'Two-Tone Halo 11-Speed Low-Ceiling Power Bomber [11|5|-1|3]' },

@@ -287,9 +287,9 @@ export const CoursesAndBagView: React.FC<CoursesAndBagViewProps> = ({
         'Art Nine #7 ★ (Par)'
       ],
       'innova-sync': [
-        'Putter 5 (Active Main Bag Keeper) · Sar-Ko-Par #1 ★ (11/16 Basket-Smack Near-Ace & 11/05 Parked Birdie!)',
-        'SMP Wooded #2, #5 (3ft Park!) & #15 ★',
-        'Art Nine #1, #3, #4, #9 ★'
+        'Putter 5 (Halloween Edition Main Bag) · 173–175g Hot Pink Sparkle Star ★ [3|3|0|1]',
+        'Sar-Ko-Par #1 ★ (11/16 Basket-Smack Near-Ace & 11/05 Parked Birdie!)',
+        'SMP Wooded #2, #5 (3ft Park!) & #15 · Precision Throwing Putter'
       ],
       'innova-toro': [
         'Backup Vault · Sar-Ko-Par #6 ★ (11/04 14ft Birdie!)',
@@ -337,9 +337,9 @@ export const CoursesAndBagView: React.FC<CoursesAndBagViewProps> = ({
         'Cedar Ridge & Black Hoof Fairway Workhorse'
       ],
       'innova-archangel': [
-        'Fairway 4 (Active Main Bag Keeper) · Prairie Pass #8 Pin-High 10ft Park ("Permanent, Keep This One!")',
-        'Sar-Ko #7 6ft Parked Birdie & #3 Top-Band Run!',
-        'Massive 6-Glide Easy-Turn Fairway [8|6|-3|1]'
+        'Fairway 4 (Hot Pink DX Main Bag) · 170–172g High-Glide Understable Fairway ★ [8|6|-4|1]',
+        'Prairie Pass #8 Pin-High 10ft Park ("Permanent, Keep This One!")',
+        'Sar-Ko #7 6ft Parked Birdie & #3 Top-Band Run!'
       ],
       'innova-roadrunner': [
         'Backup Vault · Upgraded to Cotton Candy Hot Pink Star Roadrunner',
