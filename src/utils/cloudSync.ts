@@ -34,8 +34,9 @@ import {
   syncDossierToDashboard
 } from './reportGenerator';
 
-export const MASTER_STORAGE_KEY = 'jj_disc_golf_v106_master_state';
+export const MASTER_STORAGE_KEY = 'jj_disc_golf_v107_master_state';
 export const LEGACY_STORAGE_KEYS = [
+  'jj_disc_golf_v106_master_state',
   'jj_disc_golf_v105_master_state',
   'jj_disc_golf_v104_master_state',
   'jj_disc_golf_v103_master_state',
@@ -74,7 +75,7 @@ export const LEGACY_STORAGE_KEYS = [
   'jj_disc_golf_v70_master_state',
   'jj_disc_golf_v69_master_state'
 ];
-export const VERIFIED_PICKS_STORAGE_KEY = 'jj_disc_golf_verified_hole_picks_v8';
+export const VERIFIED_PICKS_STORAGE_KEY = 'jj_disc_golf_verified_hole_picks_v9';
 export const THEME_STORAGE_KEY = 'jj_disc_golf_bg_theme_v4';
 export const DOSSIER_STORAGE_KEY = 'jj_disc_golf_latest_dossier_v1';
 export const HD_CARDS_STORAGE_KEY = 'jj_disc_golf_hd_cards_v1';
@@ -129,7 +130,12 @@ export function getOrCreateDeviceId(): string {
 
 export function normalizeCourseSignature(courseName?: string): string {
   const raw = (courseName || '').toLowerCase();
-  if (raw.includes('shawnee mission wooded') || raw.includes('smp_wooded')) {
+  if (
+    raw.includes('shawnee mission wooded') ||
+    raw.includes('smp_wooded') ||
+    raw.includes('smp wooded') ||
+    (raw.includes('shawnee mission') && !raw.includes('art nine'))
+  ) {
     return 'smp_wooded';
   }
   if (
@@ -485,6 +491,14 @@ export function mergeRoundHistories(
   const sigToId = new Map<string, number>();
 
   const builtInCourseDateScoreKeys = new Map<string, number>();
+  const builtInSingleRoundDateCourseKeys = new Map<string, number>();
+  const canonicalDateCourseCounts = new Map<string, number>();
+  for (const canonical of INITIAL_USER_EXPORT.history) {
+    if (canonical && typeof canonical.id === 'number') {
+      const dcKey = `${canonical.date}::${normalizeCourseSignature(canonical.courseName)}`;
+      canonicalDateCourseCounts.set(dcKey, (canonicalDateCourseCounts.get(dcKey) || 0) + 1);
+    }
+  }
   for (const canonical of INITIAL_USER_EXPORT.history) {
     if (
       canonical &&
@@ -494,11 +508,21 @@ export function mergeRoundHistories(
       byId.set(canonical.id, canonical);
       const sig = getRoundDedupeSignature(canonical);
       sigToId.set(sig, canonical.id);
+      const canonCourseNorm = normalizeCourseSignature(canonical.courseName);
       const canonJ = canonical.players?.find((p) => p.id === 'jeffery')?.total ?? '';
       builtInCourseDateScoreKeys.set(
-        `${canonical.date}::${normalizeCourseSignature(canonical.courseName)}::${canonJ}`,
+        `${canonical.date}::${canonCourseNorm}::${canonJ}`,
         canonical.id
       );
+      const dcKey = `${canonical.date}::${canonCourseNorm}`;
+      const isSingleCanonicalDayCourse =
+        (canonicalDateCourseCounts.get(dcKey) || 0) === 1 &&
+        ((canonical.totalHoles || canonical.holes.length) >= 18 ||
+          canonical.date === '2026-11-17' ||
+          canonical.date === '2026-11-15');
+      if (isSingleCanonicalDayCourse) {
+        builtInSingleRoundDateCourseKeys.set(dcKey, canonical.id);
+      }
     }
   }
 
@@ -566,10 +590,17 @@ export function mergeRoundHistories(
       return;
     }
 
-    // 3. Built-in canonical round on same date & course with identical Jeffery score
+    // 3. Built-in canonical round on same date & course (exact score OR single-round canonical 18H/11-17 day-course)
     const builtInId = builtInCourseDateScoreKeys.get(courseDateScoreKey);
     if (builtInId !== undefined && byId.has(builtInId)) {
       // Keep canonical built-in round's verified hole discs & commentary authoritative
+      return;
+    }
+    const singleDayCourseId = builtInSingleRoundDateCourseKeys.get(
+      `${candidate.date}::${courseNorm}`
+    );
+    if (singleDayCourseId !== undefined && byId.has(singleDayCourseId)) {
+      // Collapse any duplicate device-scored copy of a canonical 18-hole / 11-17 round
       return;
     }
 
@@ -624,9 +655,9 @@ export function mergeDiscBags(
     const winner = candidateTime >= existingTime ? d : existing;
     const loser = winner === d ? existing : d;
 
-    // v101 Cutover (2026-11-14T05:00:00Z): Default active bag to Jeffery's 14 Cotton Candy "Sugar High"
-    // stamped Innova discs unless the user manually toggles Restore/Archive after this cutover timestamp.
-    const SUGAR_HIGH_MAIN_BAG_CUTOVER_TS = 1794632400000;
+    // v107 Cutover (2026-11-19T04:20:00Z): Cotton Candy discs arrived! Active Main Bag = 14 Cotton Candy
+    // "Sugar High" discs + Star Sync + DX Archangel + Pink DX Alien (17 Active Discs) unless manually toggled later.
+    const SUGAR_HIGH_MAIN_BAG_CUTOVER_TS = 1795062000000;
     const forceArchived =
       d.id === 'innova-leopard3' || d.id === 'innova-aviar'
         ? true
@@ -825,16 +856,27 @@ export function mergeCloudPayloads(
   const localTime = local.updatedAt || 0;
   const remoteTime = remote.updatedAt || 0;
 
-  const mergedVerifiedPicks = {
+  const activeBagIdSet = new Set(
+    mergedBag.filter((d) => !d.archived).map((d) => d.id)
+  );
+  const rawMergedVerifiedPicks: Record<string, string> = {
     ...DEFAULT_VERIFIED_HOLE_PICKS,
     ...(remoteTime > localTime
       ? { ...(local.verifiedHolePicks || {}), ...(remote.verifiedHolePicks || {}) }
       : { ...(remote.verifiedHolePicks || {}), ...(local.verifiedHolePicks || {}) })
   };
+  const mergedVerifiedPicks: Record<string, string> = { ...DEFAULT_VERIFIED_HOLE_PICKS };
+  for (const [hk, discId] of Object.entries(rawMergedVerifiedPicks)) {
+    if (discId && activeBagIdSet.has(discId)) {
+      mergedVerifiedPicks[hk] = discId;
+    } else if (DEFAULT_VERIFIED_HOLE_PICKS[hk]) {
+      mergedVerifiedPicks[hk] = DEFAULT_VERIFIED_HOLE_PICKS[hk];
+    }
+  }
 
   const payload: AppExportPayload = {
     app: 'Jeffery & Jack Disc Golf Scorecard',
-    version: 'v87',
+    version: 'v107',
     exportDate: new Date().toISOString(),
     updatedAt: Math.max(localTime, remoteTime),
     deviceId: local.deviceId || getOrCreateDeviceId(),
@@ -946,7 +988,7 @@ export function readLocalStorageSnapshot(): AppExportPayload {
 
   return {
     app: 'Jeffery & Jack Disc Golf Scorecard',
-    version: 'v86',
+    version: 'v107',
     exportDate: new Date().toISOString(),
     updatedAt: parsedMaster.updatedAt || Date.now(),
     deviceId: getOrCreateDeviceId(),

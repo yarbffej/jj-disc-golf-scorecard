@@ -944,10 +944,16 @@ export const CourseAtlasView: React.FC<CourseAtlasViewProps> = ({
       );
       const verifiedId = DEFAULT_VERIFIED_HOLE_PICKS[verifiedKey];
       const topLogged = Array.from(discCounts.values()).sort((a, b) => b.count - a.count)[0];
+      const topLoggedDiscObj = resolveDiscByIdOrName(bag, topLogged?.discId, topLogged?.name);
+      const activeVerifiedDisc = resolveDiscByIdOrName(bag, verifiedId);
 
+      // Prefer the active 17-disc Main Bag pick (Cotton Candy + Sync/Archangel/Alien) when
+      // the historically most-thrown disc has been moved to Backup / Vault.
+      const isTopLoggedActive = Boolean(topLoggedDiscObj && !topLoggedDiscObj.archived);
       const goToDisc =
-        resolveDiscByIdOrName(bag, topLogged?.discId, topLogged?.name) ||
-        resolveDiscByIdOrName(bag, verifiedId);
+        (isTopLoggedActive ? topLoggedDiscObj : activeVerifiedDisc) ||
+        topLoggedDiscObj ||
+        activeVerifiedDisc;
 
       // Check if user saved a custom hole photo on Live Scorecard
       let customHolePhoto: string | null = null;
@@ -976,7 +982,8 @@ export const CourseAtlasView: React.FC<CourseAtlasViewProps> = ({
         p2Best,
         p2Avg,
         goToDisc,
-        topLoggedCount: topLogged?.count || 0,
+        topLoggedCount: isTopLoggedActive ? topLogged?.count || 0 : 0,
+        prevLoggedName: !isTopLoggedActive && topLogged ? topLogged.name : null,
         customHolePhoto,
         historicalPlays
       });
@@ -1404,7 +1411,7 @@ export const CourseAtlasView: React.FC<CourseAtlasViewProps> = ({
                     .slice(0, 3)
                     .map((d) => `${d.name} (${d.count}×)`)
                     .join(' · ')
-                : 'Mako3 · Rollo · Roadrunner'}
+                : 'Proto Glow Mako3 · Star Rollo · Star Roadrunner'}
             </div>
             <div className="text-[11px] font-bold text-slate-700 truncate">
               {courseStats.firstDate
@@ -1837,7 +1844,9 @@ export const CourseAtlasView: React.FC<CourseAtlasViewProps> = ({
                             <div className="text-[10px] font-mono-tabular font-bold uppercase text-[#00F0FF]">
                               {h.topLoggedCount > 0
                                 ? `★ Most Thrown Here (${h.topLoggedCount}×)`
-                                : '★ Recommended Tee Disc'}
+                                : h.prevLoggedName
+                                ? `🍬 Active Bag Pick (Prev: ${h.prevLoggedName})`
+                                : '🍬 Active Main Bag Pick'}
                             </div>
                             <div className="text-xs font-extrabold text-white truncate">
                               {h.goToDisc.weightGrams ? `${h.goToDisc.weightGrams}g ` : ''}

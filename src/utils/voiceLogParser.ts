@@ -85,9 +85,14 @@ const DISC_VOICE_PATTERNS: Array<{
     regex: /\b(sugar\s+high\s+rollo|star\s+rollo|rollo|rolo)\b/i
   },
   {
+    discId: 'innova-roc3',
+    displayName: 'Roc3',
+    regex: /\b(dx\s+roc\s*3|roc\s*3|rock\s*3)\b/i
+  },
+  {
     discId: 'innova-sugar-glow-roc',
     displayName: 'Sugar High DX Glow Roc',
-    regex: /\b(sugar\s+high\s+roc|dx\s+glow\s+roc|classic\s+glow\s+(?:dx\s+)?roc|new\s+roc|new\s+rock|normal\s+roc|normal\s+rock|glow\s+roc)\b/i
+    regex: /\b(sugar\s+high\s+roc|dx\s+glow\s+roc|classic\s+glow\s+(?:dx\s+)?roc|new\s+roc|new\s+rock|normal\s+roc|normal\s+rock|glow\s+roc|the\s+roc|the\s+rock|roc|rock)\b(?!\s*3)/i
   },
   {
     discId: 'innova-yeti-pro-aviar',
@@ -108,11 +113,6 @@ const DISC_VOICE_PATTERNS: Array<{
     discId: 'innova-it',
     displayName: 'IT',
     regex: /\b(halo\s+star\s+it|halo\s+it|the\s+it|with\s+the\s+it|throw\s+the\s+it|it\s+is\s+working|got\s+the\s+it\s+back)\b/i
-  },
-  {
-    discId: 'innova-roc3',
-    displayName: 'Roc3',
-    regex: /\b(dx\s+roc\s*3|roc\s*3|rock\s*3)\b/i
   },
   {
     discId: 'innova-archangel',
@@ -179,11 +179,11 @@ export function detectDiscFromVoiceSegment(
 
   // Fallback to verified hole pick for this course & hole
   const holeKey = getVerifiedHoleKey(fallbackCourseKey, holeNumber);
-  const verifiedId = DEFAULT_VERIFIED_HOLE_PICKS[holeKey] || 'innova-mako3';
+  const verifiedId = DEFAULT_VERIFIED_HOLE_PICKS[holeKey] || 'innova-proto-glow-mako3';
   const verifiedDisc = bag.find((d) => d.id === verifiedId);
   return {
     discId: verifiedId,
-    discUsed: verifiedDisc?.name || 'Mako3'
+    discUsed: verifiedDisc?.name || 'Proto Glow Mako3'
   };
 }
 

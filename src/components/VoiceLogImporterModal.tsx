@@ -248,7 +248,7 @@ export const VoiceLogImporterModal: React.FC<VoiceLogImporterModalProps> = ({
             value={rawTranscript}
             onChange={(e) => setRawTranscript(e.target.value)}
             rows={5}
-            placeholder={`Tap here & press the 🎙️ microphone on your iPhone keyboard (bottom-right), or paste your Notes voice log (e.g. "Hole 1: Sync right under the pin, birdie! Next hole: Halo IT parked 5 feet right, par...")`}
+            placeholder={`Tap here & press the 🎙️ microphone on your iPhone keyboard (bottom-right), or paste your Notes voice log (e.g. "Hole 1: Sync right under the pin, birdie! Next hole: Proto Glow Mako3 parked 5 feet right, par...")`}
             className="w-full rounded-xl border border-slate-300 bg-slate-50 p-3 text-xs sm:text-sm font-mono text-slate-900 focus:outline-none focus:border-emerald-600"
           />
         </div>

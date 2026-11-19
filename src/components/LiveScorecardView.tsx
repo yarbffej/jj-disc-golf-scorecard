@@ -44,7 +44,7 @@ import {
 } from './TacticalRangefinderWidgets';
 import { playChainRattleSfx } from '../utils/soundFx';
 
-const VERIFIED_PICKS_STORAGE_KEY = 'jj_disc_golf_verified_hole_picks_v8';
+const VERIFIED_PICKS_STORAGE_KEY = 'jj_disc_golf_verified_hole_picks_v9';
 
 interface LiveScorecardViewProps {
   roundState: ActiveRoundState;
@@ -215,20 +215,43 @@ Players: ${playersLabel}
       'halo it': 'innova-it',
       it: 'innova-it',
       'halo star it': 'innova-it',
-      roc: 'innova-classic-glow-roc',
+      roc: 'innova-sugar-glow-roc',
+      'dx glow roc': 'innova-sugar-glow-roc',
+      'sugar high dx glow roc': 'innova-sugar-glow-roc',
       'classic glow roc': 'innova-classic-glow-roc',
-      'glow roc': 'innova-classic-glow-roc',
+      'glow roc': 'innova-sugar-glow-roc',
       sync: 'innova-sync',
       'star sync': 'innova-sync',
       alien: 'innova-dx-alien',
       'dx alien': 'innova-dx-alien',
-      wraith: 'innova-classic-glow-wraith',
+      archangel: 'innova-archangel',
+      'dx archangel': 'innova-archangel',
+      wraith: 'innova-halo-wraith',
+      'halo wraith': 'innova-halo-wraith',
+      'classic glow wraith': 'innova-classic-glow-wraith',
+      destroyer: 'innova-halo-destroyer',
+      'halo destroyer': 'innova-halo-destroyer',
+      firebird: 'innova-luster-firebird',
+      'luster firebird': 'innova-luster-firebird',
       beast: 'innova-classic-glow-beast',
       eagle: 'innova-champion-eagle',
+      'champion eagle': 'innova-champion-eagle',
+      teebird: 'innova-glow-teebird',
+      'glow teebird': 'innova-glow-teebird',
+      leopard3: 'innova-glow-leopard3',
+      'glow leopard3': 'innova-glow-leopard3',
+      rollo: 'innova-sugar-star-rollo',
+      'star rollo': 'innova-sugar-star-rollo',
+      roadrunner: 'innova-sugar-star-roadrunner',
+      'star roadrunner': 'innova-sugar-star-roadrunner',
       nova: 'innova-xt-glow-nova',
+      'xt glow nova': 'innova-xt-glow-nova',
       'kc pro aviar': 'innova-kc-pro-aviar',
-      mako3: 'innova-mako3',
-      'glow mako3': 'innova-mako3'
+      'proto glow aviar': 'innova-proto-glow-aviar',
+      'yeti pro aviar': 'innova-yeti-pro-aviar',
+      mako3: 'innova-proto-glow-mako3',
+      'proto glow mako3': 'innova-proto-glow-mako3',
+      'glow mako3': 'innova-proto-glow-mako3'
     };
     if (aliasMap[norm]) {
       const mapped = bag.find((d) => d.id === aliasMap[norm]);
@@ -1496,10 +1519,7 @@ Players: ${playersLabel}
                       roundState.courseKey || roundState.courseName,
                       currentHole.number
                     );
-                    let verifiedDiscIdForHole = verifiedHolePicks[holeKey];
-                    if (holeKey === 'sarko:1' && caddieScenario === 'calm') {
-                      verifiedDiscIdForHole = 'innova-aviar';
-                    }
+                    const verifiedDiscIdForHole = verifiedHolePicks[holeKey];
                     const isYardageMatchTier = caddieDecision.recommendedTierIndex === idx;
                     const isVerifiedPick =
                       stabilityFilter === 'hole_match'

@@ -67,54 +67,55 @@ const LOADOUT_PRESETS: Record<
   }
 > = {
   'all-around': {
-    title: '⭐ Optimal Core 9-Disc Adventure Pack (Default All-Around)',
+    title: '🍬 Optimal Core 9-Disc Cotton Candy + Sync / Archangel / Alien Pack (Default)',
     subtitle:
-      'Covers every speed and stability slot from C1 chains to 340+ ft drives across technical and open park courses.',
-    reserveNote: 'Reserve: XT Glow Nova, Star Sync, DX Archangel, DX Alien',
+      'Covers every speed and stability slot from C1 chains to 340+ ft drives using your in-hand 17-disc Cotton Candy + Sync / Archangel / Alien Main Bag.',
+    reserveNote:
+      'Active Bench (8): Proto Glow Aviar, Yeti Pro Aviar, Pink DX Alien, Glow Teebird, DX Archangel, Luster Firebird, Halo Wraith, Halo Destroyer',
     discIds: [
-      { id: 'innova-kc-pro-aviar', role: 'Putter 1 · Primary C1/C2 Chain Putter (21 / -6 PB!) [2|3|0|2]' },
-      { id: 'innova-sync', role: 'Putter 2 · Dead-Straight Tee Putter & Approach Laser [3|3|0|1]' },
-      { id: 'innova-toro', role: 'Approach · Overstable Tree-Hook & Slope Brake [4|2|0|3]' },
-      { id: 'innova-rollo', role: 'Midrange (US) · Right Turn, Tunnel & Uphill Closer [5|6|-4|1]' },
-      { id: 'innova-mako3', role: 'Midrange (Neutral) · Dead-Straight Point & Shoot [5|5|0|0]' },
-      { id: 'innova-roc3', role: 'Midrange (OS) · Dependable Left Hyzer Finish [5|4|0|3]' },
-      { id: 'innova-it', role: 'Fairway (Control) · Pinpoint 6-Glide S-Curve Fairway [7|6|-2|1]' },
-      { id: 'innova-champion-eagle', role: 'Fairway (OS) · Torque-Resistant Left Finish & Flex [7|4|-1|3]' },
-      { id: 'innova-roadrunner', role: 'Distance Bomber · #1 All-Around Distance & Gap Driver [9|5|-4|1]' }
+      { id: 'innova-kc-pro-aviar', role: 'Putter 1 · Cotton Candy 2-Foil Primary C1/C2 Chain Putter (21 / -6 PB!) [2|3|0|2]' },
+      { id: 'innova-sync', role: 'Putter 2 · Star Sync Dead-Straight Tee Putter & 11/16 H1 Basket-Smack Laser [3|3|0|1]' },
+      { id: 'innova-xt-glow-nova', role: 'Approach · Sugar High Zero-Fade Scramble & Sloped-Green Stopper [2|2|0|0]' },
+      { id: 'innova-sugar-star-rollo', role: 'Midrange (US) · Cotton Candy Star Rollo Right-Turn, Tunnel & Uphill Closer [5|6|-4|1]' },
+      { id: 'innova-proto-glow-mako3', role: 'Midrange (Neutral) · Cotton Candy Proto Glow Dead-Straight Point & Shoot [5|5|0|0]' },
+      { id: 'innova-sugar-glow-roc', role: 'Midrange (OS) · Cotton Candy DX Glow Rancho Roc Wind & Left Hyzer [4|4|0|3]' },
+      { id: 'innova-glow-leopard3', role: 'Fairway (Control) · Cotton Candy Color Glow Hyzer-Flip & S-Curve Fairway [7|5|-2|1]' },
+      { id: 'innova-champion-eagle', role: 'Fairway (OS) · Cotton Candy 2-Foil Torque-Resistant Left Finish & Flex [7|4|-1|3]' },
+      { id: 'innova-sugar-star-roadrunner', role: 'Distance Bomber · Hot Pink Star #1 All-Around Distance & Gap Driver [9|5|-4|1]' }
     ]
   },
   'short-wooded': {
-    title: '🌲 Short Technical Woods (Sar-Ko-Par / Art Nine / Black Hoof)',
+    title: '🌲 Short Technical Woods (Sar-Ko-Par / Art Nine / Black Hoof / Prairie Pass)',
     subtitle:
-      'Built for 100–240 ft technical gaps, guardian trees, and sloped greens where touch beats raw speed.',
-    reserveNote: 'Swaps in XT Glow Nova, DX Alien & Star Jay for long distance drivers',
+      'Built for 100–240 ft technical gaps, guardian trees, and sloped greens where Cotton Candy touch + Sync & Pink DX Alien shine.',
+    reserveNote: 'Active Swaps: Yeti Pro Aviar, Glow Teebird, Champion Eagle & DX Archangel',
     discIds: [
-      { id: 'innova-kc-pro-aviar', role: 'Main Chain Putter · 6 Straight Birdies in 21 PB [2|3|0|2]' },
-      { id: 'innova-sync', role: 'Tee Putter · 3 Straight Sar-Ko H1 Parked Birdies [3|3|0|1]' },
-      { id: 'innova-xt-glow-nova', role: 'Scramble Stopper · Stops Dead on Sloped Greens [2|2|0|0]' },
-      { id: 'innova-dx-alien', role: 'Low-Ceiling Touch · Low 2-Glide Under Branches [4|2|0|1]' },
-      { id: 'innova-rollo', role: 'Right-Turning Woods Mid · Sar-Ko H9 & Art Nine H3 [5|6|-4|1]' },
-      { id: 'innova-mako3', role: 'Tunnel Carver · Zero-Fade Wooded Corridor [5|5|0|0]' },
-      { id: 'innova-jay', role: 'Torque Mid · Point-and-Shoot w/ Gentle Check [5|4|0|1]' },
-      { id: 'innova-roc3', role: 'Hyzer Mid · Sar-Ko H4/H5 & Art Nine H5 Left Finish [5|4|0|3]' },
-      { id: 'innova-it', role: 'Control Fairway · Sar-Ko H2/H3 & Art Nine H2 Parker [7|6|-2|1]' }
+      { id: 'innova-kc-pro-aviar', role: 'Main Chain Putter · Cotton Candy 2-Foil Wind & C1 Lock [2|3|0|2]' },
+      { id: 'innova-proto-glow-aviar', role: 'Driving Putter · Beadless Proto Glow 130–185 ft Tee Laser [2|3|0|1]' },
+      { id: 'innova-sync', role: 'Tee Putter · Star Sync Basket-Smacking Sar-Ko H1 & SMP H5 Parker [3|3|0|1]' },
+      { id: 'innova-xt-glow-nova', role: 'Scramble Stopper · Zero-Fade Mound & Sloped-Green Anchor [2|2|0|0]' },
+      { id: 'innova-dx-alien', role: 'Low-Ceiling Touch · Pink DX Alien 2-Glide Skip & Under-Branch Laser [4|2|0|1]' },
+      { id: 'innova-sugar-star-rollo', role: 'Right-Turning Woods Mid · Sar-Ko H9 & Art Nine H3 Specialist [5|6|-4|1]' },
+      { id: 'innova-proto-glow-mako3', role: 'Tunnel Carver · Zero-Fade Proto Glow Wooded Corridor [5|5|0|0]' },
+      { id: 'innova-sugar-glow-roc', role: 'Hyzer Mid · Cotton Candy DX Glow Roc Left Finish & Wind Fighter [4|4|0|3]' },
+      { id: 'innova-glow-leopard3', role: 'Control Fairway · Aqua Color Glow Tight-Gap Hyzer-Flip [7|5|-2|1]' }
     ]
   },
   'open-bomber': {
-    title: '🚀 Long Bomber & Par-4 Course (Prairie Center / Cedar Ridge / Mize / Cal Trail)',
+    title: '🚀 Long Bomber & Par-4 Course (Prairie Center / Cedar Ridge / Mize / SMP Wooded)',
     subtitle:
-      'Maximizes 260–604+ ft Par 3/4 carry with high-glide distance drivers and reliable 2nd-shot placement mids.',
-    reserveNote: 'Activates Classic Glow Wraith, Classic Glow Beast, Mamba & Roadrunner',
+      'Maximizes 260–604+ ft Par 3/4 carry with Cotton Candy Halo Destroyer, Halo Wraith, Luster Firebird, Hot Pink Star Roadrunner & DX Archangel.',
+    reserveNote: 'Full 17-Disc Cotton Candy + Sync / Archangel / Alien Power Setup',
     discIds: [
       { id: 'innova-kc-pro-aviar', role: 'C1/C2 Chain Putter & Uphill Finisher [2|3|0|2]' },
       { id: 'innova-dx-alien', role: 'Low-Branch Scramble & Bullseye Stopper [4|2|0|1]' },
-      { id: 'innova-mako3', role: '2nd-Shot Fairway Gap Threader (Prairie H7/H12) [5|5|0|0]' },
-      { id: 'innova-jay', role: 'Full-Strength Midrange Bridge (200–255 ft) [5|4|0|1]' },
-      { id: 'innova-it', role: 'Fairway Workhorse & Chest-High Laser [7|6|-2|1]' },
-      { id: 'innova-archangel', role: 'High-Glide Fairway Turnover [8|6|-3|1]' },
-      { id: 'innova-roadrunner', role: '#1 Workhorse Driver (Prairie H1/H5/H8/H9/H13) [9|5|-4|1]' },
-      { id: 'innova-classic-glow-beast', role: '10-Speed S-Curve Distance Driver [10|5|-2|2]' },
-      { id: 'innova-classic-glow-wraith', role: '11-Speed Dogleg-Left Power Bomber [11|5|-1|3]' }
+      { id: 'innova-proto-glow-mako3', role: '2nd-Shot Fairway Gap Threader (Prairie H7/H12) [5|5|0|0]' },
+      { id: 'innova-glow-teebird', role: 'Straight-to-Fade 7-Speed Fairway Anchor (220–280 ft) [7|5|0|2]' },
+      { id: 'innova-archangel', role: 'High-Glide Fairway Turnover Keeper ("Like an Angel!") [8|6|-3|1]' },
+      { id: 'innova-sugar-star-roadrunner', role: '#1 Workhorse Hot Pink Star Distance & S-Curve [9|5|-4|1]' },
+      { id: 'innova-luster-firebird', role: 'Luster Champion Headwind Fighter & Flare-Skip Utility [9|3|0|4]' },
+      { id: 'innova-halo-wraith', role: 'Two-Tone Halo 11-Speed Low-Ceiling Power Bomber [11|5|-1|3]' },
+      { id: 'innova-halo-destroyer', role: 'Flagship Speed 12 Neon Chartreuse Max-Distance Bomber [12|5|-1|3]' }
     ]
   },
   'jack-discraft': {
@@ -153,7 +154,7 @@ export const RivalryAnalyticsView: React.FC<RivalryAnalyticsViewProps> = ({
     'most_used' | 'favorites' | 'birdies' | 'least_thrown'
   >('most_used');
   const [analyticsBagGroup, setAnalyticsBagGroup] = useState<BagGroupingFilter>(
-    statsPlayerScope === 'jack' ? 'jack' : 'jeffery_all'
+    statsPlayerScope === 'jack' ? 'jack' : 'jeffery'
   );
 
   const handleSetPlayerScope = (scope: 'jeffery' | 'jack' | 'both') => {
@@ -168,7 +169,7 @@ export const RivalryAnalyticsView: React.FC<RivalryAnalyticsViewProps> = ({
       if (scope === 'both') {
         setAnalyticsBagGroup('all');
       } else if (analyticsBagGroup === 'jack' || analyticsBagGroup === 'all') {
-        setAnalyticsBagGroup('jeffery_all');
+        setAnalyticsBagGroup('jeffery');
       }
     }
     try {
@@ -434,10 +435,10 @@ export const RivalryAnalyticsView: React.FC<RivalryAnalyticsViewProps> = ({
         verifiedDiscObj?.name ||
         topLoggedDisc ||
         (distance < 185
-          ? 'Star Sync / Aviar'
+          ? 'Star Sync / Proto Glow Aviar'
           : distance < 245
-          ? 'Glow Mako3 / Jay'
-          : 'Roadrunner / Leopard3');
+          ? 'Proto Glow Mako3 / DX Glow Roc'
+          : 'Star Roadrunner / Glow Leopard3');
 
       holeRows.push({
         holeNumber: hNum,
@@ -1394,7 +1395,7 @@ export const RivalryAnalyticsView: React.FC<RivalryAnalyticsViewProps> = ({
               <div className="flex flex-wrap items-center gap-1.5">
                 {(
                   [
-                    { id: 'jeffery', label: '🍬 Cotton Candy' },
+                    { id: 'jeffery', label: '🍬 Cotton Candy + 3 (17)' },
                     { id: 'archived', label: '📦 Backup / Vault' },
                     { id: 'jeffery_all', label: '🏆 All Jeffery Career' },
                     { id: 'jack', label: 'Jack’s Discraft' },
@@ -2258,7 +2259,7 @@ export const RivalryAnalyticsView: React.FC<RivalryAnalyticsViewProps> = ({
               <div className="flex flex-wrap items-center gap-1.5">
                 {(
                   [
-                    { id: 'jeffery', label: '🍬 Cotton Candy' },
+                    { id: 'jeffery', label: '🍬 Cotton Candy + 3 (17)' },
                     { id: 'archived', label: '📦 Backup / Vault' },
                     { id: 'jeffery_all', label: '🏆 All Jeffery Career' },
                     { id: 'jack', label: 'Jack’s Discraft' },

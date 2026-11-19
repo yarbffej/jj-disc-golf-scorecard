@@ -72,8 +72,9 @@ import {
   writeMergedStateToLocalStorageAndDashboard
 } from './utils/cloudSync';
 
-const STORAGE_KEY = 'jj_disc_golf_v106_master_state';
+const STORAGE_KEY = 'jj_disc_golf_v107_master_state';
 const LEGACY_STORAGE_KEYS = [
+  'jj_disc_golf_v106_master_state',
   'jj_disc_golf_v105_master_state',
   'jj_disc_golf_v104_master_state',
   'jj_disc_golf_v103_master_state',
@@ -116,7 +117,12 @@ const THEME_STORAGE_KEY = 'jj_disc_golf_bg_theme_v4';
 
 function normalizeCourseSignature(courseName?: string): string {
   const raw = (courseName || '').toLowerCase();
-  if (raw.includes('shawnee mission wooded') || raw.includes('smp_wooded')) {
+  if (
+    raw.includes('shawnee mission wooded') ||
+    raw.includes('smp_wooded') ||
+    raw.includes('smp wooded') ||
+    (raw.includes('shawnee mission') && !raw.includes('art nine'))
+  ) {
     return 'smp_wooded';
   }
   if (
@@ -417,6 +423,23 @@ export default function App() {
                 }`
             )
           );
+          const canonicalDateCourseCounts = new Map<string, number>();
+          for (const r of INITIAL_USER_EXPORT.history) {
+            const dcKey = `${r.date}::${normalizeCourseSignature(r.courseName)}`;
+            canonicalDateCourseCounts.set(dcKey, (canonicalDateCourseCounts.get(dcKey) || 0) + 1);
+          }
+          const builtInSingleRoundDateCourseKeys = new Set<string>();
+          for (const r of INITIAL_USER_EXPORT.history) {
+            const dcKey = `${r.date}::${normalizeCourseSignature(r.courseName)}`;
+            if (
+              (canonicalDateCourseCounts.get(dcKey) || 0) === 1 &&
+              ((r.totalHoles || r.holes.length) >= 18 ||
+                r.date === '2026-11-17' ||
+                r.date === '2026-11-15')
+            ) {
+              builtInSingleRoundDateCourseKeys.add(dcKey);
+            }
+          }
           const byId = new Map<number, HistoricalRound>();
 
           // 1. Canonical built-in rounds always keep their true historical dates & transcripts (unless deleted)
@@ -443,6 +466,9 @@ export default function App() {
             }
             const sigKey = `${r.date}::${courseNorm}::${r.players?.[0]?.total ?? ''}`;
             if (builtInCourseDateScoreKeys.has(sigKey)) {
+              continue;
+            }
+            if (builtInSingleRoundDateCourseKeys.has(`${r.date}::${courseNorm}`)) {
               continue;
             }
 

@@ -32,7 +32,7 @@ export function generateFullChatGptReport(input: FullReportInput): string {
   // Load any custom verified picks from localStorage merged with defaults
   let verifiedPicks: Record<string, string> = { ...DEFAULT_VERIFIED_HOLE_PICKS };
   try {
-    const saved = localStorage.getItem('jj_disc_golf_verified_hole_picks_v5');
+    const saved = localStorage.getItem('jj_disc_golf_verified_hole_picks_v9');
     if (saved) {
       verifiedPicks = { ...verifiedPicks, ...JSON.parse(saved) };
     }
@@ -110,7 +110,7 @@ export function generateFullChatGptReport(input: FullReportInput): string {
     lines.push('');
   };
 
-  renderPlayerProfile('1A. Jeffery (Primary Player — RHBH · Innova Adventure Pack)', jefferyProfile);
+  renderPlayerProfile('1A. Jeffery (Primary Player — RHBH · 17-Disc Cotton Candy + Sync / Archangel / Alien Main Bag)', jefferyProfile);
   renderPlayerProfile('1B. Jack (Rival / Duo Partner — Discraft Lineup)', jackProfile);
 
   // ============================================================================

@@ -287,89 +287,89 @@ export const CoursesAndBagView: React.FC<CoursesAndBagViewProps> = ({
         'Art Nine #7 ★ (Par)'
       ],
       'innova-sync': [
-        'Putter 4 (Top Pocket) · Sar-Ko-Par #1 ★ (11/05 Parked Under Pin Birdie!)',
-        'Mize #3, #4, #5 & #8 ★ (10/28 Wind Approach)',
+        'Putter 5 (Active Main Bag Keeper) · Sar-Ko-Par #1 ★ (11/16 Basket-Smack Near-Ace & 11/05 Parked Birdie!)',
+        'SMP Wooded #2, #5 (3ft Park!) & #15 ★',
         'Art Nine #1, #3, #4, #9 ★'
       ],
       'innova-toro': [
-        'Approach 1 (Main) · Sar-Ko-Par #6 ★ (11/04 14ft Birdie!)',
+        'Backup Vault · Sar-Ko-Par #6 ★ (11/04 14ft Birdie!)',
         'Mize #1 & #3 ★ (10/28 Wind Debut!)',
         'Heavy Headwinds & Forehand Flicks (<200ft)'
       ],
       'innova-dx-alien': [
-        'Approach 2 (Active In-Hand 11/05) · 176–179g Pink DX ★ [4|2|0|1]',
-        'Ridged Sonic-Style Top · Point-and-Shoot Touch Mid',
-        'Low 2-Glide Bullseye Approach'
+        'Approach (Active Main Bag Keeper) · 176–179g Pink DX ★ [4|2|0|1]',
+        'Art Nine #6 20ft Birdie & Sar-Ko #5 Skip Birdie (11/16–11/17)!',
+        'Prairie Pass #13 150ft Low-Ceiling Laser'
       ],
       'innova-pig': [
-        'Archived Vault · Replaced by Star Toro',
+        'Backup Vault · Replaced by DX Alien & XT Glow Nova',
         'Harmon #6 ★ (Hill Stop)',
         'Sar-Ko-Par #9 ★'
       ],
       'innova-rollo': [
-        'Midrange 5 (Main) · Sar-Ko-Par #9 ★ (5× Birdie incl. 11/05 -6 PB Finale!)',
-        'Art Nine #3 ★ (Double Birdie!)',
-        'Mize #6 & #7 ★ (10/28 Pink Basket Approach!)'
+        'Backup Vault · Upgraded to Cotton Candy Star Rollo',
+        'Sar-Ko-Par #9 ★ (6× Birdie!) & SMP Wooded #5 Birdie (11/17!)',
+        'Art Nine #3 ★ (Double Birdie!)'
       ],
       'innova-mako3': [
-        'Midrange 1 (Main) · Sar-Ko-Par #2 & #5 ★ (11/05 12ft H5 Birdie!)',
-        'Mize #4 & #9 ★ (10/28 Hole #9 Basket Park!)',
-        'Art Nine #6 & #9 ★ (2× Birdie)'
+        'Backup Vault · Upgraded to Cotton Candy Proto Glow Mako3',
+        'Sar-Ko-Par #2 & #5 ★ (11/05 12ft H5 Birdie!)',
+        'Prairie Pass #3 (~192ft Laser Par!) & SMP Wooded #13'
       ],
       'innova-jay': [
-        'Midrange 2 (Main) · Mize #2 & #5 ★ (10/28 20ft Chain-Through!)',
-        'Post-Round Field Test ★ ("Went Far for a Mid!")',
-        'Bridges Mako3 & Roc3'
+        'Backup Vault · SMP Wooded #15 & #17 Clutch Pars!',
+        'Mize #2 & #5 ★ (10/28 20ft Chain-Through!)',
+        'Cal Trail #5 4ft Park ★'
       ],
       'innova-roc3': [
-        'Midrange 3 (Main) · Sar-Ko-Par #4 & #6 ★ (11/05 6ft H4 & 20ft H6 Birdies!)',
-        'Art Nine #1 ★ (10/25 Birdie!)',
-        'Mize #3, #8 & #9 ★'
+        'Backup Vault · Upgraded to Cotton Candy DX Glow Roc',
+        'Sar-Ko-Par #4 & #6 ★ (11/05 6ft H4 & 20ft H6 Birdies!)',
+        'Art Nine #1 ★ (10/25 Birdie!)'
       ],
       'innova-classic-glow-roc': [
-        'Midrange 4 (Active In-Hand 11/05) · Sar-Ko-Par #4 ★ (11/05 Debut Par!)',
-        'Classic Rancho Mold · Heavy +3 Wind-Fighting Fade',
-        'Cedar Ridge & Black Hoof Midrange Anchor'
+        'Backup Vault · Upgraded to Cotton Candy DX Glow Roc',
+        'Art Nine #9 Walk-Off Even-Par Birdie (11/17!) ★',
+        'Sar-Ko-Par #4 & #5 Birdie 2s ★'
       ],
       'innova-leopard3': [
-        'Backup Vault (Lost at Sar-Ko-Par) · Replaced by Glow Leopard3',
+        'Backup Vault (Lost at Sar-Ko-Par) · Replaced by Cotton Candy Glow Leopard3',
         '10/28 Field Test #2 ★ ("Lift Off, Down & Up" +15ft!)',
         'Cedar Ridge & Black Hoof Fairway Workhorse'
       ],
       'innova-archangel': [
-        'Fairway 3 (Main) · Sar-Ko-Par #7 ★ (11/05 6ft Parked Birdie!)',
-        '10/28 Field Test #2 ★ ("Doesn\'t Go Too Far Left!")',
-        'Massive 6 Glide Fairway Driver'
+        'Fairway 4 (Active Main Bag Keeper) · Prairie Pass #8 Pin-High 10ft Park ("Permanent, Keep This One!")',
+        'Sar-Ko #7 6ft Parked Birdie & #3 Top-Band Run!',
+        'Massive 6-Glide Easy-Turn Fairway [8|6|-3|1]'
       ],
       'innova-roadrunner': [
-        'Driver 1 (Main) · Sar-Ko-Par #7 & #8 ★ (11/04 & 11/05 Pars)',
-        '10/28 Field Test #1 ★ (+20ft Longest Driver!)',
-        'Skipped 2ft from Hole #5 Pin!'
+        'Backup Vault · Upgraded to Cotton Candy Hot Pink Star Roadrunner',
+        'Sar-Ko #2 3ft Park (11/16) & SMP Wooded #3 <5ft (11/17) ★',
+        '10/28 Field Test #1 ★ (+20ft Longest Driver!)'
       ],
       'innova-classic-glow-beast': [
-        'Driver 2 (Active In-Hand 11/05) · Sar-Ko-Par #8 ★ (11/05 234ft Debut Birdie!)',
+        'Backup Vault · Sar-Ko-Par #8 ★ (11/05 234ft Debut Birdie!)',
         'Smooth S-Curve Control Distance Driver (260–340 ft)',
-        'Bridges Roadrunner & Wraith'
+        'Pulled Before 11/15 Prairie Pass'
       ],
       'innova-it': [
-        'Fairway 1 (Main) · Sar-Ko-Par #2 & #3 ★ (11/05 Perfect FlightPath Birdie!)',
-        'Mize #1, #5, #7 & #9 ★',
-        'Black Hoof #1 ★ (Birdie)'
+        'Backup Vault · Replaced by Cotton Candy Glow Leopard3 & Glow Teebird',
+        'Sar-Ko-Par #2 & #3 ★ (11/05 & 11/11 Ace-Run Birdies!)',
+        'Mize #1, #5, #7 & #9 ★'
       ],
       'innova-firebird': [
-        'Archived Vault · Replaced by Champion Eagle',
+        'Backup Vault (Lost at Mize #1) · Replaced by Cotton Candy Luster Firebird',
         'Sar-Ko-Par #4 & #7 ★',
         'Mize #3 & #4 (90° Swing)'
       ],
       'innova-mamba': [
-        'Driver 3 (Main) · Sar-Ko-Par #3 & #7 ★ (10/28 3ft Birdie!)',
+        'Backup Vault · Sar-Ko-Par #3 & #7 ★ (10/28 3ft Birdie!)',
         'Mize #1, #2, #7, #8, #9 ★ (10/28 Hole #8 Glide!)',
         'Black Hoof #9 Par ★'
       ],
       'innova-classic-glow-wraith': [
-        'Driver 4 (Active In-Hand 11/05) · 165–169g DX Classic Glow ★ [11|5|-1|3]',
-        'Headwind Power Distance Driver · Refuses to Flip Over',
-        'Cedar Ridge Hole #16 613ft Par Bomber!'
+        'Backup Vault · Upgraded to Cotton Candy Halo Star Wraith',
+        'SMP Wooded #7/#8/#9 & Miraculous H18 Found-Disc Bomb (11/17!) ★',
+        'Prairie Pass #16 Downhill Par ★'
       ],
       'discraft-roach': [
         'Art Nine #2 & #3 ★ (2× Birdie!)',
@@ -450,7 +450,7 @@ export const CoursesAndBagView: React.FC<CoursesAndBagViewProps> = ({
 
   const activeGroupingLabel =
     bagOwnerFilter === 'jeffery'
-      ? `Jeffery’s Cotton Candy (${jefferyDiscs.length})`
+      ? `Main Bag: Cotton Candy + 3 (${jefferyDiscs.length})`
       : bagOwnerFilter === 'jack'
       ? `Jack’s Discraft (${jackDiscs.length})`
       : bagOwnerFilter === 'archived'
@@ -489,7 +489,7 @@ export const CoursesAndBagView: React.FC<CoursesAndBagViewProps> = ({
                     : 'text-slate-300 hover:text-white'
                 }`}
               >
-                🍬 Jeffery&apos;s Cotton Candy ({jefferyDiscs.length})
+                🍬 Main Bag: Cotton Candy + 3 ({jefferyDiscs.length})
               </button>
               <button
                 type="button"
@@ -590,7 +590,7 @@ export const CoursesAndBagView: React.FC<CoursesAndBagViewProps> = ({
             </span>
             {(
               [
-                { id: 'jeffery', label: `🍬 Cotton Candy (${jefferyDiscs.length})`, activeCls: 'bg-[#FF5722] text-white border-[#FF5722]' },
+                { id: 'jeffery', label: `🍬 Cotton Candy + 3 (${jefferyDiscs.length})`, activeCls: 'bg-[#FF5722] text-white border-[#FF5722]' },
                 { id: 'archived', label: `📦 Backup / Vault (${archivedDiscs.length})`, activeCls: 'bg-amber-400 text-slate-950 border-amber-400' },
                 { id: 'jeffery_all', label: `🏆 All Jeffery (${jefferyAllDiscs.length})`, activeCls: 'bg-[#00F0FF] text-slate-950 border-[#00F0FF]' },
                 { id: 'jack', label: `Jack’s Discraft (${jackDiscs.length})`, activeCls: 'bg-[#CCFF00] text-slate-950 border-[#CCFF00]' },
@@ -619,7 +619,7 @@ export const CoursesAndBagView: React.FC<CoursesAndBagViewProps> = ({
           <div className="min-w-0 overflow-hidden p-3.5 rounded-xl bg-[#080B14] border border-[#39FF14]/50 space-y-2.5">
             <div>
               <div className="text-xs font-extrabold text-[#39FF14] uppercase tracking-wider">
-                🏆 My Favorites ({bagOwnerFilter === 'archived' ? 'Vault' : bagOwnerFilter === 'jack' ? 'Jack' : bagOwnerFilter === 'jeffery_all' ? 'All Career' : bagOwnerFilter === 'all' ? 'Combined' : 'Cotton Candy'})
+                🏆 My Favorites ({bagOwnerFilter === 'archived' ? 'Vault' : bagOwnerFilter === 'jack' ? 'Jack' : bagOwnerFilter === 'jeffery_all' ? 'All Career' : bagOwnerFilter === 'all' ? 'Combined' : 'Main Bag'})
               </div>
               <p className="text-[11px] text-slate-400">
                 Best birdie/par rate &amp; go-to confidence in this card grouping
@@ -848,8 +848,8 @@ export const CoursesAndBagView: React.FC<CoursesAndBagViewProps> = ({
               )}
               {unthrownCountInGroup > 0 && (
                 <div className="p-2 rounded-lg bg-[#0B1020] border border-dashed border-slate-700 text-[10px] text-slate-400 leading-snug">
-                  💡 {unthrownCountInGroup} brand-new Sugar High{' '}
-                  {unthrownCountInGroup === 1 ? 'card has' : 'cards have'} 0 holes logged so far and will auto-rank here once thrown.
+                  💡 {unthrownCountInGroup} newly arrived Cotton Candy{' '}
+                  {unthrownCountInGroup === 1 ? 'card (in-hand 11/18!) has' : 'cards (in-hand 11/18!) have'} 0 holes logged so far and will auto-rank here once thrown.
                 </div>
               )}
             </div>

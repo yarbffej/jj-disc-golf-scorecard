@@ -214,11 +214,9 @@ export const INITIAL_PACK_GEAR: PackGearItem[] = [
 
 export const ARCHIVED_DISC_IDS = new Set([
   'innova-aviar',
-  'innova-sync',
   'innova-pig',
   'innova-toro',
   'innova-toro-alt',
-  'innova-dx-alien',
   'innova-rollo',
   'innova-mako3',
   'innova-jay',
@@ -226,7 +224,6 @@ export const ARCHIVED_DISC_IDS = new Set([
   'innova-classic-glow-roc',
   'innova-it',
   'innova-leopard3',
-  'innova-archangel',
   'innova-roadrunner',
   'innova-firebird',
   'innova-classic-glow-beast',
@@ -1897,11 +1894,11 @@ const NEW_INNOVA_DISCS: DiscItem[] = [
   {
     id: 'innova-dx-alien',
     ownerId: 'jeffery',
-    cardNumber: '#06 OF 18',
+    cardNumber: '#06 OF 17',
     cardImage: './assets/aistudio/card_pink_dx_alien_invoice_4fe78f83.jpg',
     name: 'DX Alien',
     brand: 'Innova',
-    slotCategory: 'Approach 2 (Main Compartment) · Ridged-Top Point-and-Shoot Touch Mid',
+    slotCategory: 'Approach 2 (Main Bag · Core 3) · Ridged-Top Point-and-Shoot & Low-Skip Birdies',
     plastic: 'DX',
     weightGrams: 178,
     colorStamp: 'DX / Nexus (Hot Pink · Alien Saucer Top)',
@@ -2078,11 +2075,11 @@ const NEW_INNOVA_DISCS: DiscItem[] = [
   {
     id: 'innova-archangel',
     ownerId: 'jeffery',
-    cardNumber: '#14 OF 18',
+    cardNumber: '#13 OF 17',
     cardImage: EMBEDDED_CARD_IMAGES['innova-archangel'],
     name: 'Archangel',
     brand: 'Innova',
-    slotCategory: 'Fairway 3 (Main Compartment) · Floaty High-Glide Control Driver',
+    slotCategory: 'Fairway 4 (Main Bag · Core 3) · Floaty 6-Glide Woods-Threading Control Driver',
     plastic: 'DX',
     weightGrams: 170,
     colorStamp: 'Royal Blue / Bright Red Winged Archangel Stamp',
@@ -2957,32 +2954,35 @@ const CORE_DISC_UPDATES_V86: Record<string, Partial<DiscItem>> = {
       '10/30 Sar-Ko-Par H3: Parked woods scramble right under the pin for Par 3 + 10/29 H1 Birdie (6–7ft)!'
   },
   'innova-sync': {
-    slotCategory: 'Putter 4 (Top Pocket) · #1 Throwing Putter, Uphill Pins & Crosswinds',
+    slotCategory: 'Putter 5 (Main Bag · Core 3) · #1 Throwing Putter, H1 Ace-Runner & Woods Chutes',
     orderNumber: '1010 Discs Order #279091 (Oct 10, 2026)',
     price: '$15.99',
     personalFlightNotes:
-      '11/05 Sar-Ko-Par H1 BACK-TO-BACK PARKED BIRDIE 2s ★ (Rounds 1 & 2) + 11/04 H1 Birdie 2 ★: Parked Hole #1 (138ft) right under the pin in BOTH 11/05 rounds ("Sync went right there, right under the pin, baby! Birdied that one with the Sync all the way!" in R1 & "Just a couple feet shy of the pin—Sync again, birdie!" in R2), making 3 straight Hole #1 Birdie 2s across 11/04 & 11/05!',
-    fieldTestRank: '🏆 Sar-Ko-Par H1 5× Birdie Tee Putter (3 Straight on 11/04–11/05!) & H9 Near-Ace',
+      'Active Main Bag Keeper (Cotton Candy + Core 3): SMACKED THE BASKET on Sar-Ko-Par H1 (11/16 near-Ace Birdie 2!), parked H1 in both 11/05 rounds + 11/04, and piped SMP Wooded H2 & H15 Pars (11/17)! Your #1 dead-straight 130–190ft throwing putter.',
+    fieldTestRank: '🏆 Active Main Bag · Sar-Ko-Par H1 Basket-Hit Ace Runner & Woods Chute Laser',
     transcriptStats:
-      '11/05 Sar-Ko-Par: Parked H1 for Birdie 2 in BOTH rounds (25/-2 & 21/-6 PB) + 11/04 H1 Birdie 2 + 11/03 H9 Near-Ace!'
+      '11/16 Sar-Ko H1 Basket Hit Birdie 2 + 11/17 SMP Wooded H2/H15 Pars + 11/05 21 PB H1 Birdie!'
   }
 };
 
 export const ACTIVE_CARD_NUMBERS: Record<string, string> = {
-  'innova-xt-glow-nova': '#01 OF 14',
-  'innova-proto-glow-aviar': '#02 OF 14',
-  'innova-yeti-pro-aviar': '#03 OF 14',
-  'innova-kc-pro-aviar': '#04 OF 14',
-  'innova-sugar-glow-roc': '#05 OF 14',
-  'innova-proto-glow-mako3': '#06 OF 14',
-  'innova-sugar-star-rollo': '#07 OF 14',
-  'innova-glow-leopard3': '#08 OF 14',
-  'innova-glow-teebird': '#09 OF 14',
-  'innova-champion-eagle': '#10 OF 14',
-  'innova-sugar-star-roadrunner': '#11 OF 14',
-  'innova-luster-firebird': '#12 OF 14',
-  'innova-halo-wraith': '#13 OF 14',
-  'innova-halo-destroyer': '#14 OF 14'
+  'innova-xt-glow-nova': '#01 OF 17',
+  'innova-proto-glow-aviar': '#02 OF 17',
+  'innova-yeti-pro-aviar': '#03 OF 17',
+  'innova-kc-pro-aviar': '#04 OF 17',
+  'innova-sync': '#05 OF 17',
+  'innova-dx-alien': '#06 OF 17',
+  'innova-sugar-glow-roc': '#07 OF 17',
+  'innova-proto-glow-mako3': '#08 OF 17',
+  'innova-sugar-star-rollo': '#09 OF 17',
+  'innova-glow-leopard3': '#10 OF 17',
+  'innova-glow-teebird': '#11 OF 17',
+  'innova-champion-eagle': '#12 OF 17',
+  'innova-archangel': '#13 OF 17',
+  'innova-sugar-star-roadrunner': '#14 OF 17',
+  'innova-luster-firebird': '#15 OF 17',
+  'innova-halo-wraith': '#16 OF 17',
+  'innova-halo-destroyer': '#17 OF 17'
 };
 
 export const ACTIVE_JEFFERY_ORDER = [
@@ -2990,12 +2990,15 @@ export const ACTIVE_JEFFERY_ORDER = [
   'innova-proto-glow-aviar',
   'innova-yeti-pro-aviar',
   'innova-kc-pro-aviar',
+  'innova-sync',
+  'innova-dx-alien',
   'innova-sugar-glow-roc',
   'innova-proto-glow-mako3',
   'innova-sugar-star-rollo',
   'innova-glow-leopard3',
   'innova-glow-teebird',
   'innova-champion-eagle',
+  'innova-archangel',
   'innova-sugar-star-roadrunner',
   'innova-luster-firebird',
   'innova-halo-wraith',
@@ -9230,8 +9233,8 @@ Stepped onto Hole #1 saying "I don't know if I'm gonna redeem myself on this one
 
 export const INITIAL_USER_EXPORT: AppExportPayload = {
   app: typedV65.app || 'Jeffery & Jack Disc Golf Scorecard',
-  version: 'v106',
-  exportDate: '2026-11-18T02:10:00.000Z',
+  version: 'v107',
+  exportDate: '2026-11-19T04:10:00.000Z',
   history: [
     ROUND_2026_11_17_ART_NINE,
     ROUND_2026_11_17_SMP_WOODED,
