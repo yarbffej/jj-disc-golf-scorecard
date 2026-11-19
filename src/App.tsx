@@ -253,46 +253,46 @@ export const BG_THEME_OPTIONS: ReadonlyArray<{
   swatch: string;
 }> = [
   {
-    id: 'turf',
-    label: '☀️ Fairway Sunburst',
-    surface: 'light',
-    swatch: '#FFE600'
-  },
-  {
-    id: 'sunset',
-    label: '🥏 Chain-Bang Arcade',
-    surface: 'light',
-    swatch: '#FF8A3D'
-  },
-  {
-    id: 'glow',
-    label: '🧪 Acid Mint Basket',
-    surface: 'light',
-    swatch: '#6EE7B7'
-  },
-  {
     id: 'sugar',
-    label: '🍬 Halo Foil Pop',
-    surface: 'light',
-    swatch: '#FF7DB4'
-  },
-  {
-    id: 'championship',
-    label: '🌆 Skyline Hyzer',
-    surface: 'light',
-    swatch: '#4CE2FF'
-  },
-  {
-    id: 'adventure',
-    label: '🌲 Pinewood Studio',
-    surface: 'light',
-    swatch: '#34D399'
+    label: '🍬 Cotton Candy Neon',
+    surface: 'dark',
+    swatch: 'linear-gradient(135deg, #FF2E93 0%, #9333EA 50%, #00F0FF 100%)'
   },
   {
     id: 'midnight',
     label: '🌙 Glow-Disc Night',
     surface: 'dark',
-    swatch: '#39FF14'
+    swatch: 'linear-gradient(135deg, #1E1B4B 0%, #39FF14 100%)'
+  },
+  {
+    id: 'sunset',
+    label: '🕹️ Outrun Arcade 80s',
+    surface: 'dark',
+    swatch: 'linear-gradient(135deg, #FF2E93 0%, #FF6B2C 55%, #FFE600 100%)'
+  },
+  {
+    id: 'glow',
+    label: '☢️ Cyber Rangefinder',
+    surface: 'dark',
+    swatch: 'linear-gradient(135deg, #041E2B 0%, #00F0FF 55%, #CCFF00 100%)'
+  },
+  {
+    id: 'championship',
+    label: '💎 Cobalt Pro Tour',
+    surface: 'dark',
+    swatch: 'linear-gradient(135deg, #1E3A8A 0%, #38BDF8 60%, #FACC15 100%)'
+  },
+  {
+    id: 'turf',
+    label: '☀️ Sunburst Comic',
+    surface: 'light',
+    swatch: 'linear-gradient(135deg, #FFE600 0%, #FF4D94 100%)'
+  },
+  {
+    id: 'adventure',
+    label: '🌲 Emerald Fairway',
+    surface: 'light',
+    swatch: 'linear-gradient(135deg, #064E3B 0%, #10B981 60%, #FACC15 100%)'
   }
 ];
 
@@ -354,7 +354,7 @@ export default function App() {
     } catch {
       // Fallback
     }
-    return 'turf';
+    return 'sugar';
   });
 
   const [tileStyle, setTileStyle] = useState<TileStyleMode>(() => {
@@ -374,6 +374,23 @@ export default function App() {
       localStorage.setItem(THEME_STORAGE_KEY, bgTheme);
     } catch {
       // Ignore
+    }
+    const paperColorByTheme: Record<string, string> = {
+      sugar: '#0F051D',
+      midnight: '#060A14',
+      sunset: '#13061D',
+      glow: '#020A0E',
+      championship: '#050C22',
+      turf: '#FFFBE6',
+      adventure: '#D8F3E2'
+    };
+    const nextColor = paperColorByTheme[bgTheme] || '#0F051D';
+    if (typeof document !== 'undefined') {
+      document.body.style.backgroundColor = nextColor;
+      const meta = document.querySelector('meta[name="theme-color"]');
+      if (meta) {
+        meta.setAttribute('content', nextColor);
+      }
     }
   }, [bgTheme]);
 
@@ -1622,12 +1639,9 @@ export default function App() {
     BG_THEME_OPTIONS.find((t) => t.id === bgTheme) || BG_THEME_OPTIONS[0];
   const selectedTileMeta =
     TILE_STYLE_OPTIONS.find((t) => t.id === tileStyle) || TILE_STYLE_OPTIONS[0];
-  const effectiveSurface: 'light' | 'dark' =
-    selectedTileMeta.surface === 'auto'
-      ? selectedThemeMeta.surface
-      : selectedTileMeta.surface;
+  const isDarkVibe = selectedThemeMeta.surface === 'dark';
   const themeClass = `theme-${selectedThemeMeta.id} tile-${selectedTileMeta.id} ${
-    effectiveSurface === 'light' ? 'theme-light-tiles' : 'theme-dark-tiles'
+    isDarkVibe ? 'vibe-dark theme-dark-tiles' : 'vibe-light theme-light-tiles'
   }`;
 
   return (
@@ -1682,9 +1696,7 @@ export default function App() {
               className={`px-3 py-1.5 rounded-full zine-pill-btn transition-all whitespace-nowrap shrink-0 ${
                 activeTab === 'home'
                   ? 'bg-[#FACC15] text-slate-950'
-                  : bgTheme === 'midnight'
-                  ? 'bg-slate-800 text-slate-100 hover:bg-slate-700'
-                  : 'bg-white text-slate-900 hover:bg-amber-50'
+                  : 'vibe-nav-idle'
               }`}
             >
               🏠 1. Home Hub
@@ -1701,9 +1713,7 @@ export default function App() {
                   ? 'bg-[#39FF14] text-slate-950'
                   : hasActiveRound
                   ? 'bg-[#39FF14] text-slate-950'
-                  : bgTheme === 'midnight'
-                  ? 'bg-slate-800 text-slate-100 hover:bg-slate-700'
-                  : 'bg-white text-slate-900 hover:bg-lime-50'
+                  : 'vibe-nav-idle'
               }`}
             >
               <ClipboardList className="w-3.5 h-3.5 shrink-0" />
@@ -1723,9 +1733,7 @@ export default function App() {
               className={`px-3 py-1.5 rounded-full zine-pill-btn transition-all whitespace-nowrap shrink-0 ${
                 activeTab === 'atlas'
                   ? 'bg-[#39FF14] text-slate-950'
-                  : bgTheme === 'midnight'
-                  ? 'bg-slate-800 text-slate-100 hover:bg-slate-700'
-                  : 'bg-white text-slate-900 hover:bg-emerald-50'
+                  : 'vibe-nav-idle'
               }`}
             >
               🗺️ Courses
@@ -1740,9 +1748,7 @@ export default function App() {
               className={`px-3 py-1.5 rounded-full zine-pill-btn transition-all whitespace-nowrap shrink-0 ${
                 activeTab === 'courses'
                   ? 'bg-[#00F0FF] text-slate-950'
-                  : bgTheme === 'midnight'
-                  ? 'bg-slate-800 text-slate-100 hover:bg-slate-700'
-                  : 'bg-white text-slate-900 hover:bg-sky-50'
+                  : 'vibe-nav-idle'
               }`}
             >
               🃏 Disc Cards
@@ -1757,9 +1763,7 @@ export default function App() {
               className={`px-3 py-1.5 rounded-full zine-pill-btn transition-all whitespace-nowrap shrink-0 ${
                 activeTab === 'history'
                   ? 'bg-[#FACC15] text-slate-950'
-                  : bgTheme === 'midnight'
-                  ? 'bg-slate-800 text-slate-100 hover:bg-slate-700'
-                  : 'bg-white text-slate-900 hover:bg-yellow-50'
+                  : 'vibe-nav-idle'
               }`}
             >
               📜 History
@@ -1774,9 +1778,7 @@ export default function App() {
               className={`px-3 py-1.5 rounded-full zine-pill-btn transition-all whitespace-nowrap shrink-0 ${
                 activeTab === 'rivalry'
                   ? 'bg-[#FF2E93] text-white'
-                  : bgTheme === 'midnight'
-                  ? 'bg-slate-800 text-slate-100 hover:bg-slate-700'
-                  : 'bg-white text-slate-900 hover:bg-pink-50'
+                  : 'vibe-nav-idle'
               }`}
             >
               📊 Stats
@@ -1796,9 +1798,7 @@ export default function App() {
               className={`px-2 sm:px-3 py-1 sm:py-1.5 rounded-full zine-pill-btn text-[10px] sm:text-xs font-extrabold whitespace-nowrap flex items-center gap-1 transition-all ${
                 soundFxEnabled
                   ? 'bg-[#FACC15] text-slate-950'
-                  : bgTheme === 'midnight'
-                  ? 'bg-slate-800 text-slate-200'
-                  : 'bg-white text-slate-900 hover:bg-amber-50'
+                  : 'vibe-nav-idle'
               }`}
             >
               {soundFxEnabled ? (
@@ -1886,12 +1886,12 @@ export default function App() {
                 }}
                 className={`py-1.5 px-0.5 min-w-0 rounded-xl border-2 flex flex-col items-center justify-center transition-all ${
                   isActive
-                    ? `${item.activeBg} border-[#0F172A] shadow-[2px_2px_0_#0F172A] font-extrabold`
+                    ? `${item.activeBg} zine-pill-btn font-extrabold`
                     : isHighlightedLive
-                    ? 'bg-[#39FF14]/30 border-[#0F172A] shadow-[2px_2px_0_#0F172A] text-slate-950 font-extrabold'
-                    : bgTheme === 'midnight'
-                    ? 'bg-slate-800 border-slate-600 text-slate-200 font-bold'
-                    : 'bg-white border-[#0F172A] text-slate-900 font-bold shadow-[1.5px_1.5px_0_#0F172A]'
+                    ? 'bg-[#39FF14]/30 border-[#39FF14] text-white font-extrabold'
+                    : isDarkVibe
+                    ? 'vibe-nav-idle font-bold'
+                    : 'vibe-nav-idle font-bold shadow-[1.5px_1.5px_0_#0F172A]'
                 }`}
               >
                 <Icon className="w-3.5 h-3.5 sm:w-4 sm:h-4 shrink-0" />

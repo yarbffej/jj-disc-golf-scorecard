@@ -272,15 +272,19 @@ Players: ${soloMode ? 'Jeffery (Solo)' : 'Jeffery & Jack'}
     ? `Current active round on ${roundState.date} · Tap to jump right back to Hole #${roundState.currentHoleIndex + 1}!`
     : (latestRound?.notes || 'View hole-by-hole throws, discs & voice commentary on the scorecard.');
 
+  const activeVibeMeta =
+    bgThemeOptions.find((opt) => opt.id === bgTheme) || bgThemeOptions[0];
+  const isDarkVibe = activeVibeMeta?.surface === 'dark';
+
   return (
     <div className="space-y-5">
-      {/* 0A. DISC GOLF COURSE VIBE PALETTE BAR (ZINE STUDIO SWITCHER) */}
-      <div className="neon-card rounded-2xl p-2.5 sm:p-3 flex flex-wrap items-center gap-1.5">
-        <span className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-slate-950 text-white font-mono-tabular text-[10px] sm:text-[11px] font-extrabold uppercase tracking-wider shrink-0 zine-sticker">
-          <Palette className="w-3.5 h-3.5 text-[#FFE600]" />
-          <span>COURSE VIBE:</span>
-        </span>
+      {/* 0A. DISC GOLF FULL-APP UI VIBE STUDIO BAR */}
+      <div className="neon-card rounded-2xl p-2.5 sm:p-3 flex flex-wrap items-center justify-between gap-2">
         <div className="flex flex-wrap items-center gap-1.5 min-w-0">
+          <span className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-slate-950 text-white font-mono-tabular text-[10px] sm:text-[11px] font-extrabold uppercase tracking-wider shrink-0 zine-sticker">
+            <Palette className="w-3.5 h-3.5 text-[#FFE600]" />
+            <span>UI VIBE:</span>
+          </span>
           {bgThemeOptions.map((opt) => {
             const isSelected = bgTheme === opt.id;
             return (
@@ -289,15 +293,11 @@ Players: ${soloMode ? 'Jeffery (Solo)' : 'Jeffery & Jack'}
                 type="button"
                 onClick={() => onChangeBgTheme(opt.id)}
                 className={`px-2.5 py-1 rounded-full text-[11px] font-extrabold zine-pill-btn transition-all whitespace-nowrap flex items-center gap-1.5 ${
-                  isSelected
-                    ? 'bg-[#FACC15] text-slate-950'
-                    : bgTheme === 'midnight'
-                    ? 'bg-slate-800 text-slate-100 hover:bg-slate-700'
-                    : 'bg-white text-slate-900 hover:bg-amber-50'
+                  isSelected ? 'vibe-pill-active scale-[1.02]' : 'vibe-nav-idle opacity-90 hover:opacity-100'
                 }`}
               >
                 <span
-                  className="w-2.5 h-2.5 rounded-full border border-[#0F172A] shrink-0"
+                  className="w-3 h-3 rounded-full border border-white/70 shrink-0 shadow-sm"
                   style={{ background: opt.swatch }}
                 />
                 <span>{opt.label}</span>
@@ -305,6 +305,15 @@ Players: ${soloMode ? 'Jeffery (Solo)' : 'Jeffery & Jack'}
             );
           })}
         </div>
+        <span
+          className={`hidden xl:inline-flex items-center px-2.5 py-0.5 rounded-full font-mono-tabular text-[10px] font-extrabold uppercase tracking-wider shrink-0 ${
+            isDarkVibe
+              ? 'bg-[#FF2E93] text-white'
+              : 'bg-[#FACC15] text-slate-950'
+          }`}
+        >
+          {isDarkVibe ? '⚡ NEON DARK MODE' : '☀️ DAYLIGHT MODE'}
+        </span>
       </div>
 
       {/* 0B. POP-ART DISC GOLF FIELD ZINE ISSUE COVER BANNER */}
@@ -404,7 +413,7 @@ Players: ${soloMode ? 'Jeffery (Solo)' : 'Jeffery & Jack'}
                   className={`py-2 px-2.5 rounded-lg text-xs font-extrabold transition-colors ${
                     !soloMode
                       ? 'bg-[#00F0FF] text-slate-950'
-                      : bgTheme === 'midnight'
+                      : isDarkVibe
                       ? 'text-slate-300 hover:text-white'
                       : 'text-slate-600 hover:text-slate-950'
                   }`}
@@ -420,7 +429,7 @@ Players: ${soloMode ? 'Jeffery (Solo)' : 'Jeffery & Jack'}
                   className={`py-2 px-2.5 rounded-lg text-xs font-extrabold transition-colors ${
                     soloMode
                       ? 'bg-[#FF2E93] text-white'
-                      : bgTheme === 'midnight'
+                      : isDarkVibe
                       ? 'text-slate-300 hover:text-white'
                       : 'text-slate-600 hover:text-slate-950'
                   }`}
@@ -445,6 +454,8 @@ Players: ${soloMode ? 'Jeffery (Solo)' : 'Jeffery & Jack'}
                       className={`w-full text-left p-3 rounded-xl border-2 transition-all flex items-center justify-between ${
                         isChosen
                           ? 'bg-[#FACC15] text-slate-950 border-[#0F172A] shadow-[3px_3px_0_#0F172A]'
+                          : isDarkVibe
+                          ? 'vibe-nav-idle hover:opacity-100'
                           : 'bg-white text-slate-900 border-slate-900/30 hover:border-[#0F172A]'
                       }`}
                     >

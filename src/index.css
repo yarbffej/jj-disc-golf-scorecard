@@ -1,161 +1,362 @@
 @import "tailwindcss";
 
 @layer base {
+  /* ==========================================================================
+     VIBE 1 (DAYLIGHT): SUNBURST COMIC ZINE (High-Contrast Outdoor Pop-Art)
+     ========================================================================== */
   :root,
   .theme-turf {
     --font-display: 'Outfit', 'Space Grotesk', 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
     --font-sans: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
     --font-mono: 'JetBrains Mono', monospace;
-    --dg-paper: #FFFDF3;
-    --dg-dot: rgba(15, 23, 42, 0.11);
+    --dg-paper: #FFFBE6;
+    --dg-bg-image: radial-gradient(rgba(15, 23, 42, 0.14) 1.6px, transparent 1.6px);
+    --dg-bg-size: 16px 16px;
     --dg-card: #FFFFFF;
-    --dg-well: #FEFDF7;
+    --dg-card-backdrop: none;
+    --dg-card-shadow: 5px 5px 0px #0F172A;
+    --dg-card-radius: 1rem;
+    --dg-well: #FEFDF5;
     --dg-well-alt: #F8FAFC;
+    --dg-well-border: #0F172A;
     --dg-ink: #0F172A;
     --dg-muted: #475569;
     --dg-shadow: #0F172A;
     --dg-border: #0F172A;
-    --dg-hero-bg: #FFE600;
+    --dg-border-width: 2.5px;
+    --dg-hero-bg: linear-gradient(135deg, #FFE600 0%, #FFD000 100%);
     --dg-hero-ink: #0F172A;
+    --dg-hero-shadow: 6px 6px 0px #0F172A;
     --dg-hero-circle: #FF4D94;
+    --dg-hero-text-shadow: none;
     --dg-lime: #82ED1F;
     --dg-yellow: #FFE600;
     --dg-cyan: #3CE6FF;
     --dg-pink: #E8357D;
     --dg-orange: #FF6B2C;
-    --dg-header-bg: #FFFDF7;
+    --dg-header-bg: #FFFDF2;
+    --dg-header-border: #0F172A;
+    --dg-header-shadow: 0 3px 0 rgba(15, 23, 42, 0.12);
+    --dg-nav-idle-bg: #FFFFFF;
+    --dg-nav-idle-ink: #0F172A;
+    --dg-nav-idle-border: #0F172A;
+    --dg-vibe-active-bg: #FFE600;
+    --dg-vibe-active-ink: #0F172A;
+    --dg-btn-shadow: 3px 3px 0px #0F172A;
+    --dg-btn-shadow-hover: 4px 4px 0px #0F172A;
+    --dg-btn-shadow-active: 1px 1px 0px #0F172A;
+    --dg-sticker-shadow: 2.5px 2.5px 0px #0F172A;
+    --dg-accent-lime-text: #15803D;
+    --dg-accent-cyan-text: #0369A1;
+    --dg-accent-yellow-text: #B45309;
+    --dg-accent-pink-text: #C81E68;
   }
 
-  /* Vibe 2: Chain-Bang Arcade (Warm Peach Paper + Tangerine + Arcade Volt) */
-  .theme-sunset {
-    --dg-paper: #FFF7EE;
-    --dg-dot: rgba(234, 88, 12, 0.16);
-    --dg-card: #FFFFFF;
-    --dg-well: #FFFBF5;
-    --dg-well-alt: #FEF3C7;
-    --dg-ink: #0F172A;
-    --dg-muted: #475569;
-    --dg-shadow: #0F172A;
-    --dg-border: #0F172A;
-    --dg-hero-bg: #FF8A3D;
-    --dg-hero-ink: #0F172A;
-    --dg-hero-circle: #FFE600;
-    --dg-lime: #A3E635;
-    --dg-yellow: #FFE600;
-    --dg-cyan: #22D3EE;
-    --dg-pink: #E11D74;
-    --dg-orange: #EA580C;
-    --dg-header-bg: #FFF9F2;
-  }
-
-  /* Vibe 3: Acid Mint Basket (Mint Studio Dot Paper + Neon Mint + Lemon) */
-  .theme-glow {
-    --dg-paper: #F1FFF6;
-    --dg-dot: rgba(21, 128, 61, 0.15);
-    --dg-card: #FFFFFF;
-    --dg-well: #F4FFF8;
-    --dg-well-alt: #ECFDF5;
-    --dg-ink: #0F172A;
-    --dg-muted: #334155;
-    --dg-shadow: #0F172A;
-    --dg-border: #0F172A;
-    --dg-hero-bg: #6EE7B7;
-    --dg-hero-ink: #0F172A;
-    --dg-hero-circle: #FFE600;
-    --dg-lime: #7CE81E;
-    --dg-yellow: #FDE047;
-    --dg-cyan: #2CE6FF;
-    --dg-pink: #EC4899;
-    --dg-orange: #F97316;
-    --dg-header-bg: #F6FFF9;
-  }
-
-  /* Vibe 4: Halo Foil Pop (Confetti Cream + Bubblegum Pink + Sky Pop) */
-  .theme-sugar {
-    --dg-paper: #FFF5FA;
-    --dg-dot: rgba(232, 53, 125, 0.15);
-    --dg-card: #FFFFFF;
-    --dg-well: #FFF9FC;
-    --dg-well-alt: #FDF2F8;
-    --dg-ink: #0F172A;
-    --dg-muted: #475569;
-    --dg-shadow: #0F172A;
-    --dg-border: #0F172A;
-    --dg-hero-bg: #FF7DB4;
-    --dg-hero-ink: #0F172A;
-    --dg-hero-circle: #FFE600;
-    --dg-lime: #84EC20;
-    --dg-yellow: #FFE600;
-    --dg-cyan: #38E8FF;
-    --dg-pink: #E11D74;
-    --dg-orange: #FF6B2C;
-    --dg-header-bg: #FFF9FC;
-  }
-
-  /* Vibe 5: Skyline Hyzer (Crisp Cyan Halftone + Sunburst + Electric Blue) */
-  .theme-championship {
-    --dg-paper: #F0F9FF;
-    --dg-dot: rgba(2, 132, 199, 0.15);
-    --dg-card: #FFFFFF;
-    --dg-well: #F8FCFF;
-    --dg-well-alt: #E0F2FE;
-    --dg-ink: #0F172A;
-    --dg-muted: #334155;
-    --dg-shadow: #0F172A;
-    --dg-border: #0F172A;
-    --dg-hero-bg: #4CE2FF;
-    --dg-hero-ink: #0F172A;
-    --dg-hero-circle: #FFE600;
-    --dg-lime: #82ED1F;
-    --dg-yellow: #FFE600;
-    --dg-cyan: #38BDF8;
-    --dg-pink: #E8357D;
-    --dg-orange: #FB7185;
-    --dg-header-bg: #F5FBFF;
-  }
-
-  /* Vibe 6: Pinewood Studio (Warm Fairway Parchment + Pine Green + Mango) */
+  /* ==========================================================================
+     VIBE 2 (DAYLIGHT): EMERALD FAIRWAY PRO (Mowed Turf + Augusta Pine & Gold)
+     ========================================================================== */
   .theme-adventure {
-    --dg-paper: #F7FAF1;
-    --dg-dot: rgba(22, 101, 52, 0.14);
-    --dg-card: #FFFFFF;
-    --dg-well: #FAFDF5;
-    --dg-well-alt: #ECFDF5;
-    --dg-ink: #0F172A;
-    --dg-muted: #334155;
-    --dg-shadow: #0F172A;
-    --dg-border: #0F172A;
-    --dg-hero-bg: #FACC15;
-    --dg-hero-ink: #0F172A;
-    --dg-hero-circle: #34D399;
-    --dg-lime: #4ADE80;
-    --dg-yellow: #FDE047;
-    --dg-cyan: #38E8FF;
-    --dg-pink: #E8357D;
-    --dg-orange: #F97316;
-    --dg-header-bg: #FAFDF6;
+    --dg-paper: #D8F3E2;
+    --dg-bg-image: repeating-linear-gradient(
+      -45deg,
+      rgba(6, 78, 59, 0.055) 0px,
+      rgba(6, 78, 59, 0.055) 26px,
+      transparent 26px,
+      transparent 52px
+    );
+    --dg-bg-size: 74px 74px;
+    --dg-card: #F8FFFA;
+    --dg-card-backdrop: none;
+    --dg-card-shadow: 5px 5px 0px #064E3B;
+    --dg-card-radius: 1.1rem;
+    --dg-well: #ECFDF5;
+    --dg-well-alt: #D1FAE5;
+    --dg-well-border: #065F46;
+    --dg-ink: #052E22;
+    --dg-muted: #1E5A46;
+    --dg-shadow: #064E3B;
+    --dg-border: #064E3B;
+    --dg-border-width: 2.5px;
+    --dg-hero-bg: linear-gradient(135deg, #064E3B 0%, #047857 58%, #10B981 100%);
+    --dg-hero-ink: #FFFFFF;
+    --dg-hero-shadow: 6px 6px 0px #022C22;
+    --dg-hero-circle: #FACC15;
+    --dg-hero-text-shadow: 0 2px 10px rgba(2, 44, 34, 0.45);
+    --dg-lime: #34D399;
+    --dg-yellow: #FACC15;
+    --dg-cyan: #22D3EE;
+    --dg-pink: #E11D48;
+    --dg-orange: #EA580C;
+    --dg-header-bg: #ECFDF5;
+    --dg-header-border: #064E3B;
+    --dg-header-shadow: 0 3px 0 rgba(6, 78, 59, 0.18);
+    --dg-nav-idle-bg: #FFFFFF;
+    --dg-nav-idle-ink: #064E3B;
+    --dg-nav-idle-border: #064E3B;
+    --dg-vibe-active-bg: #065F46;
+    --dg-vibe-active-ink: #FACC15;
+    --dg-btn-shadow: 3px 3px 0px #064E3B;
+    --dg-btn-shadow-hover: 4px 4px 0px #064E3B;
+    --dg-btn-shadow-active: 1px 1px 0px #064E3B;
+    --dg-sticker-shadow: 2.5px 2.5px 0px #064E3B;
+    --dg-accent-lime-text: #047857;
+    --dg-accent-cyan-text: #0E7490;
+    --dg-accent-yellow-text: #B45309;
+    --dg-accent-pink-text: #BE123C;
   }
 
-  /* Vibe 7: Glow-Disc Night (UV Night Golf Ink + Phosphor Green + Electric Cyan) */
+  /* ==========================================================================
+     VIBE 3 (NEON DARK): COTTON CANDY NEON (Hot Pink + Aqua Holo Glass)
+     Built to match the 17-Disc Cotton Candy + Halloween Sync + Pink Archangel Bag!
+     ========================================================================== */
+  .theme-sugar {
+    --dg-paper: #0F051D;
+    --dg-bg-image:
+      radial-gradient(circle at 12% 10%, rgba(255, 46, 147, 0.28) 0%, transparent 42%),
+      radial-gradient(circle at 88% 18%, rgba(0, 240, 255, 0.24) 0%, transparent 40%),
+      radial-gradient(circle at 50% 88%, rgba(168, 85, 247, 0.22) 0%, transparent 48%),
+      radial-gradient(rgba(255, 119, 200, 0.2) 1.3px, transparent 1.3px);
+    --dg-bg-size: 100% 100%, 100% 100%, 100% 100%, 22px 22px;
+    --dg-card: rgba(27, 11, 48, 0.90);
+    --dg-card-backdrop: blur(14px);
+    --dg-card-shadow: 0 0 24px rgba(255, 46, 147, 0.26), 0 0 42px rgba(0, 240, 255, 0.12), 4px 4px 0px #FF2E93;
+    --dg-card-radius: 1.15rem;
+    --dg-well: rgba(16, 6, 30, 0.92);
+    --dg-well-alt: rgba(38, 16, 66, 0.92);
+    --dg-well-border: rgba(255, 46, 147, 0.48);
+    --dg-ink: #FDF4FF;
+    --dg-muted: #E9D5FF;
+    --dg-shadow: #FF2E93;
+    --dg-border: #FF4DA6;
+    --dg-border-width: 2px;
+    --dg-hero-bg: linear-gradient(135deg, #FF1F8F 0%, #9333EA 52%, #06B6D4 100%);
+    --dg-hero-ink: #FFFFFF;
+    --dg-hero-shadow: 0 0 32px rgba(255, 46, 147, 0.45), 5px 5px 0px #00F0FF;
+    --dg-hero-circle: linear-gradient(135deg, #00F0FF 0%, #FFE600 100%);
+    --dg-hero-text-shadow: 0 2px 14px rgba(15, 5, 29, 0.55);
+    --dg-lime: #CCFF00;
+    --dg-yellow: #FFE600;
+    --dg-cyan: #00F0FF;
+    --dg-pink: #FF2E93;
+    --dg-orange: #FF6EC7;
+    --dg-header-bg: rgba(18, 6, 34, 0.90);
+    --dg-header-border: #FF2E93;
+    --dg-header-shadow: 0 4px 22px rgba(255, 46, 147, 0.28);
+    --dg-nav-idle-bg: rgba(42, 17, 72, 0.9);
+    --dg-nav-idle-ink: #FDF4FF;
+    --dg-nav-idle-border: rgba(255, 77, 166, 0.6);
+    --dg-vibe-active-bg: linear-gradient(135deg, #FF2E93 0%, #00F0FF 100%);
+    --dg-vibe-active-ink: #0F051D;
+    --dg-btn-shadow: 0 0 14px rgba(255, 46, 147, 0.35), 2.5px 2.5px 0px #00F0FF;
+    --dg-btn-shadow-hover: 0 0 20px rgba(0, 240, 255, 0.48), 3.5px 3.5px 0px #00F0FF;
+    --dg-btn-shadow-active: 0 0 8px rgba(255, 46, 147, 0.4), 1px 1px 0px #00F0FF;
+    --dg-sticker-shadow: 0 0 10px rgba(255, 46, 147, 0.35), 2px 2px 0px #0F051D;
+    --dg-accent-lime-text: #D9FF3B;
+    --dg-accent-cyan-text: #38F6FF;
+    --dg-accent-yellow-text: #FFE94A;
+    --dg-accent-pink-text: #FF62B5;
+  }
+
+  /* ==========================================================================
+     VIBE 4 (NEON DARK): GLOW-DISC NIGHT (UV Phosphor Blacklight + Toxic Lime)
+     ========================================================================== */
   .theme-midnight {
-    --dg-paper: #090E1A;
-    --dg-dot: rgba(57, 255, 20, 0.18);
-    --dg-card: #111827;
-    --dg-well: #0B1220;
-    --dg-well-alt: #1E293B;
+    --dg-paper: #060A14;
+    --dg-bg-image:
+      radial-gradient(circle at 18% 8%, rgba(57, 255, 20, 0.16) 0%, transparent 40%),
+      radial-gradient(circle at 86% 85%, rgba(99, 102, 241, 0.2) 0%, transparent 45%),
+      radial-gradient(rgba(57, 255, 20, 0.22) 1.5px, transparent 1.5px);
+    --dg-bg-size: 100% 100%, 100% 100%, 18px 18px;
+    --dg-card: rgba(14, 22, 40, 0.94);
+    --dg-card-backdrop: blur(10px);
+    --dg-card-shadow: 0 0 22px rgba(57, 255, 20, 0.22), 5px 5px 0px #39FF14;
+    --dg-card-radius: 1rem;
+    --dg-well: #09101F;
+    --dg-well-alt: #13203A;
+    --dg-well-border: rgba(57, 255, 20, 0.42);
     --dg-ink: #F8FAFC;
     --dg-muted: #CBD5E1;
     --dg-shadow: #39FF14;
     --dg-border: #39FF14;
-    --dg-hero-bg: #1E1B4B;
+    --dg-border-width: 2.5px;
+    --dg-hero-bg: linear-gradient(135deg, #1E1B4B 0%, #0F172A 62%, #064E3B 100%);
     --dg-hero-ink: #F8FAFC;
+    --dg-hero-shadow: 0 0 28px rgba(57, 255, 20, 0.35), 6px 6px 0px #39FF14;
     --dg-hero-circle: #39FF14;
+    --dg-hero-text-shadow: 0 0 18px rgba(57, 255, 20, 0.35);
     --dg-lime: #39FF14;
     --dg-yellow: #FACC15;
     --dg-cyan: #22D3EE;
     --dg-pink: #EC4899;
     --dg-orange: #FF6B2C;
-    --dg-header-bg: #0D1424;
+    --dg-header-bg: rgba(9, 14, 28, 0.92);
+    --dg-header-border: #39FF14;
+    --dg-header-shadow: 0 4px 20px rgba(57, 255, 20, 0.2);
+    --dg-nav-idle-bg: #121D34;
+    --dg-nav-idle-ink: #F1F5F9;
+    --dg-nav-idle-border: rgba(57, 255, 20, 0.55);
+    --dg-vibe-active-bg: #39FF14;
+    --dg-vibe-active-ink: #050914;
+    --dg-btn-shadow: 0 0 12px rgba(57, 255, 20, 0.3), 2.5px 2.5px 0px #39FF14;
+    --dg-btn-shadow-hover: 0 0 18px rgba(57, 255, 20, 0.45), 3.5px 3.5px 0px #39FF14;
+    --dg-btn-shadow-active: 1px 1px 0px #39FF14;
+    --dg-sticker-shadow: 2px 2px 0px #39FF14;
+    --dg-accent-lime-text: #4DFF2B;
+    --dg-accent-cyan-text: #22D3EE;
+    --dg-accent-yellow-text: #FDE047;
+    --dg-accent-pink-text: #F472B6;
+  }
+
+  /* ==========================================================================
+     VIBE 5 (NEON DARK): OUTRUN ARCADE 80s (Synthwave Laser Grid + Solar Sunset)
+     ========================================================================== */
+  .theme-sunset {
+    --dg-paper: #13061D;
+    --dg-bg-image:
+      linear-gradient(180deg, rgba(255, 107, 44, 0.20) 0%, rgba(255, 46, 147, 0.10) 28%, transparent 58%),
+      linear-gradient(rgba(255, 46, 147, 0.16) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(255, 107, 44, 0.15) 1px, transparent 1px);
+    --dg-bg-size: 100% 100%, 28px 28px, 28px 28px;
+    --dg-card: rgba(29, 12, 44, 0.92);
+    --dg-card-backdrop: blur(12px);
+    --dg-card-shadow: 0 0 24px rgba(255, 107, 44, 0.25), 4px 4px 0px #FF2E93;
+    --dg-card-radius: 0.9rem;
+    --dg-well: rgba(18, 7, 30, 0.94);
+    --dg-well-alt: rgba(42, 16, 58, 0.92);
+    --dg-well-border: rgba(255, 107, 44, 0.5);
+    --dg-ink: #FFF7ED;
+    --dg-muted: #FED7AA;
+    --dg-shadow: #FF2E93;
+    --dg-border: #FF7A2F;
+    --dg-border-width: 2px;
+    --dg-hero-bg: linear-gradient(135deg, #D91A7A 0%, #FF5E1A 56%, #FACC15 100%);
+    --dg-hero-ink: #FFFFFF;
+    --dg-hero-shadow: 0 0 34px rgba(255, 94, 26, 0.45), 5px 5px 0px #FACC15;
+    --dg-hero-circle: linear-gradient(180deg, #FFE600 0%, #FF4D00 100%);
+    --dg-hero-text-shadow: 0 2px 12px rgba(19, 6, 29, 0.55);
+    --dg-lime: #FACC15;
+    --dg-yellow: #FFE600;
+    --dg-cyan: #22D3EE;
+    --dg-pink: #FF2E93;
+    --dg-orange: #FF6B2C;
+    --dg-header-bg: rgba(22, 8, 34, 0.92);
+    --dg-header-border: #FF6B2C;
+    --dg-header-shadow: 0 4px 22px rgba(255, 107, 44, 0.28);
+    --dg-nav-idle-bg: #26103A;
+    --dg-nav-idle-ink: #FFF7ED;
+    --dg-nav-idle-border: rgba(255, 122, 47, 0.6);
+    --dg-vibe-active-bg: linear-gradient(135deg, #FF6B2C 0%, #FACC15 100%);
+    --dg-vibe-active-ink: #13061D;
+    --dg-btn-shadow: 0 0 14px rgba(255, 107, 44, 0.35), 2.5px 2.5px 0px #FF2E93;
+    --dg-btn-shadow-hover: 0 0 22px rgba(255, 46, 147, 0.5), 3.5px 3.5px 0px #FACC15;
+    --dg-btn-shadow-active: 1px 1px 0px #FF2E93;
+    --dg-sticker-shadow: 2px 2px 0px #FF2E93;
+    --dg-accent-lime-text: #FDE047;
+    --dg-accent-cyan-text: #38F6FF;
+    --dg-accent-yellow-text: #FDBA74;
+    --dg-accent-pink-text: #FF62B5;
+  }
+
+  /* ==========================================================================
+     VIBE 6 (NEON DARK): CYBER RANGEFINDER HUD (Stealth Obsidian + Plasma Cyan)
+     Sharp Laser-Precision Tactical Telemetry (Zero Comic Offset — Pure Glow!)
+     ========================================================================== */
+  .theme-glow {
+    --dg-paper: #020A0E;
+    --dg-bg-image:
+      radial-gradient(circle at 82% 8%, rgba(0, 240, 255, 0.18) 0%, transparent 42%),
+      radial-gradient(circle at 12% 85%, rgba(204, 255, 0, 0.12) 0%, transparent 42%),
+      linear-gradient(rgba(0, 240, 255, 0.085) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(0, 240, 255, 0.085) 1px, transparent 1px);
+    --dg-bg-size: 100% 100%, 100% 100%, 20px 20px, 20px 20px;
+    --dg-card: rgba(5, 22, 31, 0.92);
+    --dg-card-backdrop: blur(14px);
+    --dg-card-shadow: 0 0 24px rgba(0, 240, 255, 0.22), inset 0 1px 0 rgba(0, 240, 255, 0.35);
+    --dg-card-radius: 0.65rem;
+    --dg-well: rgba(3, 14, 21, 0.96);
+    --dg-well-alt: rgba(8, 33, 46, 0.94);
+    --dg-well-border: rgba(0, 240, 255, 0.42);
+    --dg-ink: #ECFEFF;
+    --dg-muted: #A5F3FC;
+    --dg-shadow: #00F0FF;
+    --dg-border: #00E5FF;
+    --dg-border-width: 1.5px;
+    --dg-hero-bg: linear-gradient(135deg, #041E2B 0%, #0A4D68 58%, #0E7490 100%);
+    --dg-hero-ink: #ECFEFF;
+    --dg-hero-shadow: 0 0 32px rgba(0, 240, 255, 0.36), inset 0 1px 0 rgba(204, 255, 0, 0.5);
+    --dg-hero-circle: linear-gradient(135deg, #CCFF00 0%, #00F0FF 100%);
+    --dg-hero-text-shadow: 0 0 16px rgba(0, 240, 255, 0.45);
+    --dg-lime: #CCFF00;
+    --dg-yellow: #FDE047;
+    --dg-cyan: #00F0FF;
+    --dg-pink: #F43F5E;
+    --dg-orange: #FF5722;
+    --dg-header-bg: rgba(3, 14, 21, 0.92);
+    --dg-header-border: #00F0FF;
+    --dg-header-shadow: 0 4px 24px rgba(0, 240, 255, 0.22);
+    --dg-nav-idle-bg: rgba(7, 29, 41, 0.95);
+    --dg-nav-idle-ink: #CFFAFE;
+    --dg-nav-idle-border: rgba(0, 240, 255, 0.45);
+    --dg-vibe-active-bg: #00F0FF;
+    --dg-vibe-active-ink: #020A0E;
+    --dg-btn-shadow: 0 0 16px rgba(0, 240, 255, 0.34);
+    --dg-btn-shadow-hover: 0 0 24px rgba(204, 255, 0, 0.48);
+    --dg-btn-shadow-active: 0 0 8px rgba(0, 240, 255, 0.4);
+    --dg-sticker-shadow: 0 0 10px rgba(0, 240, 255, 0.3);
+    --dg-accent-lime-text: #CCFF00;
+    --dg-accent-cyan-text: #00F0FF;
+    --dg-accent-yellow-text: #FDE047;
+    --dg-accent-pink-text: #FB7185;
+  }
+
+  /* ==========================================================================
+     VIBE 7 (NEON DARK): COBALT PRO TOUR (Night Stadium Broadcast Glass)
+     ========================================================================== */
+  .theme-championship {
+    --dg-paper: #050C22;
+    --dg-bg-image:
+      radial-gradient(ellipse at 20% 0%, rgba(37, 99, 235, 0.35) 0%, transparent 48%),
+      radial-gradient(ellipse at 85% 5%, rgba(14, 165, 233, 0.28) 0%, transparent 45%),
+      radial-gradient(circle at 50% 95%, rgba(250, 204, 21, 0.12) 0%, transparent 45%);
+    --dg-bg-size: 100% 100%, 100% 100%, 100% 100%;
+    --dg-card: rgba(11, 23, 54, 0.90);
+    --dg-card-backdrop: blur(14px);
+    --dg-card-shadow: 0 12px 30px rgba(2, 6, 23, 0.55), 0 0 22px rgba(56, 189, 248, 0.18), inset 0 1px 0 rgba(255, 255, 255, 0.16);
+    --dg-card-radius: 1rem;
+    --dg-well: rgba(7, 15, 38, 0.94);
+    --dg-well-alt: rgba(18, 36, 80, 0.92);
+    --dg-well-border: rgba(56, 189, 248, 0.42);
+    --dg-ink: #F0F9FF;
+    --dg-muted: #BAE6FD;
+    --dg-shadow: #0EA5E9;
+    --dg-border: #38BDF8;
+    --dg-border-width: 1.75px;
+    --dg-hero-bg: linear-gradient(135deg, #1E3A8A 0%, #1D4ED8 48%, #0284C7 100%);
+    --dg-hero-ink: #FFFFFF;
+    --dg-hero-shadow: 0 12px 32px rgba(2, 132, 199, 0.42), inset 0 1px 0 rgba(255, 255, 255, 0.28);
+    --dg-hero-circle: linear-gradient(135deg, #FACC15 0%, #F59E0B 100%);
+    --dg-hero-text-shadow: 0 2px 14px rgba(5, 12, 34, 0.5);
+    --dg-lime: #34D399;
+    --dg-yellow: #FACC15;
+    --dg-cyan: #38BDF8;
+    --dg-pink: #F43F5E;
+    --dg-orange: #FB923C;
+    --dg-header-bg: rgba(7, 15, 38, 0.92);
+    --dg-header-border: #38BDF8;
+    --dg-header-shadow: 0 4px 24px rgba(14, 165, 233, 0.24);
+    --dg-nav-idle-bg: rgba(16, 33, 74, 0.94);
+    --dg-nav-idle-ink: #E0F2FE;
+    --dg-nav-idle-border: rgba(56, 189, 248, 0.48);
+    --dg-vibe-active-bg: linear-gradient(135deg, #38BDF8 0%, #FACC15 100%);
+    --dg-vibe-active-ink: #050C22;
+    --dg-btn-shadow: 0 6px 16px rgba(2, 132, 199, 0.34);
+    --dg-btn-shadow-hover: 0 8px 22px rgba(56, 189, 248, 0.45);
+    --dg-btn-shadow-active: 0 2px 8px rgba(2, 132, 199, 0.4);
+    --dg-sticker-shadow: 0 4px 12px rgba(2, 6, 23, 0.45);
+    --dg-accent-lime-text: #4ADE80;
+    --dg-accent-cyan-text: #38BDF8;
+    --dg-accent-yellow-text: #FDE047;
+    --dg-accent-pink-text: #FB7185;
   }
 
   html, body, #root {
@@ -178,7 +379,7 @@
 
   body {
     font-family: var(--font-sans);
-    background-color: var(--dg-paper, #FFFDF3);
+    background-color: var(--dg-paper, #FFFBE6);
     color: var(--dg-ink, #0F172A);
     line-height: 1.45;
     letter-spacing: -0.005em;
@@ -200,9 +401,10 @@
   }
 
   button, a[role="button"] {
-    transition: transform 140ms cubic-bezier(0.22, 1, 0.36, 1),
-      box-shadow 140ms cubic-bezier(0.22, 1, 0.36, 1),
-      background-color 140ms ease;
+    transition: transform 150ms cubic-bezier(0.22, 1, 0.36, 1),
+      box-shadow 180ms cubic-bezier(0.22, 1, 0.36, 1),
+      background-color 160ms ease,
+      border-color 160ms ease;
   }
 
   button:not(:disabled):hover, a[role="button"]:hover {
@@ -210,7 +412,7 @@
   }
 
   button:not(:disabled):active, a[role="button"]:active {
-    transform: translate(2px, 2px) scale(0.985);
+    transform: translate(1.5px, 1.5px) scale(0.985);
   }
 }
 
@@ -228,7 +430,7 @@
 }
 
 /* ============================================================================
-   1. HALFTONE DOT-GRID ZINE PAPER BACKDROP (DRIVEN BY COURSE VIBE)
+   1. FULL-APP ATMOSPHERIC VIBE CANVAS (PATTERN + AMBIENT NEON LAYERS)
    ============================================================================ */
 .theme-turf,
 .theme-adventure,
@@ -240,14 +442,14 @@
 .theme-championship,
 .theme-white {
   background-color: var(--dg-paper) !important;
-  background-image:
-    radial-gradient(var(--dg-dot) 1.55px, transparent 1.55px) !important;
-  background-size: 18px 18px !important;
+  background-image: var(--dg-bg-image) !important;
+  background-size: var(--dg-bg-size, 18px 18px) !important;
+  background-attachment: fixed;
   color: var(--dg-ink) !important;
 }
 
 /* ============================================================================
-   2. NEO-ZINE COMIC CARDS (.neon-card) WITH CRISP INK FRAMES & OFFSET SHADOWS
+   2. VIBE-DRIVEN CARDS (.neon-card) — GLASS, HUD, ARCADE, UV OR COMIC PAPER
    ============================================================================ */
 .neon-card,
 .tile-auto .neon-card,
@@ -261,15 +463,16 @@
   max-width: 100%;
   overflow-wrap: break-word;
   background: var(--dg-card, #FFFFFF) !important;
-  backdrop-filter: none !important;
-  -webkit-backdrop-filter: none !important;
-  border: 2.5px solid var(--dg-border, #0F172A) !important;
-  box-shadow: 5px 5px 0px var(--dg-shadow, #0F172A) !important;
+  backdrop-filter: var(--dg-card-backdrop, none) !important;
+  -webkit-backdrop-filter: var(--dg-card-backdrop, none) !important;
+  border: var(--dg-border-width, 2.5px) solid var(--dg-border, #0F172A) !important;
+  box-shadow: var(--dg-card-shadow, 5px 5px 0px #0F172A) !important;
+  border-radius: var(--dg-card-radius, 1rem);
   color: var(--dg-ink, #0F172A) !important;
 }
 
 /* ============================================================================
-   3. POP-ART ZINE HERO COVER BANNER & HARD-SHADOW STICKERS
+   3. HERO COVER BANNER, STICKERS, PILLS & MASTHEAD
    ============================================================================ */
 .zine-hero-card {
   position: relative;
@@ -279,164 +482,252 @@
   overflow-wrap: break-word;
   background: var(--dg-hero-bg, #FFE600) !important;
   color: var(--dg-hero-ink, #0F172A) !important;
-  border: 3px solid var(--dg-border, #0F172A) !important;
-  box-shadow: 6px 6px 0px var(--dg-shadow, #0F172A) !important;
+  border: 2.5px solid var(--dg-border, #0F172A) !important;
+  box-shadow: var(--dg-hero-shadow, 6px 6px 0px #0F172A) !important;
+}
+
+.zine-hero-card h1 {
+  color: var(--dg-hero-ink, #0F172A) !important;
+  text-shadow: var(--dg-hero-text-shadow, none);
 }
 
 .zine-hero-orb {
   position: absolute;
   top: -30px;
   right: -26px;
-  width: 112px;
-  height: 112px;
+  width: 118px;
+  height: 118px;
   border-radius: 9999px;
   background: var(--dg-hero-circle, #FF4D94);
-  border: 3px solid var(--dg-border, #0F172A);
+  border: 2.5px solid var(--dg-border, #0F172A);
   pointer-events: none;
   z-index: 0;
 }
 
+.vibe-dark .zine-hero-orb {
+  box-shadow: 0 0 34px rgba(255, 255, 255, 0.25);
+}
+
 .zine-sticker {
   border: 2px solid var(--dg-border, #0F172A);
-  box-shadow: 2.5px 2.5px 0px var(--dg-shadow, #0F172A);
+  box-shadow: var(--dg-sticker-shadow, 2.5px 2.5px 0px #0F172A);
 }
 
 .zine-pill-btn {
   border: 2px solid var(--dg-border, #0F172A) !important;
-  box-shadow: 3px 3px 0px var(--dg-shadow, #0F172A) !important;
+  box-shadow: var(--dg-btn-shadow, 3px 3px 0px #0F172A) !important;
 }
 
 .zine-pill-btn:not(:disabled):hover {
-  box-shadow: 4px 4px 0px var(--dg-shadow, #0F172A) !important;
+  box-shadow: var(--dg-btn-shadow-hover, 4px 4px 0px #0F172A) !important;
 }
 
 .zine-pill-btn:not(:disabled):active {
-  box-shadow: 1px 1px 0px var(--dg-shadow, #0F172A) !important;
+  box-shadow: var(--dg-btn-shadow-active, 1px 1px 0px #0F172A) !important;
 }
 
-/* Crisp Comic Header Masthead */
+/* Themed Idle Navigation & Vibe Switcher Pills */
+.vibe-nav-idle {
+  background: var(--dg-nav-idle-bg, #FFFFFF) !important;
+  color: var(--dg-nav-idle-ink, #0F172A) !important;
+  border-color: var(--dg-nav-idle-border, #0F172A) !important;
+}
+
+.vibe-pill-active {
+  background: var(--dg-vibe-active-bg, #FFE600) !important;
+  color: var(--dg-vibe-active-ink, #0F172A) !important;
+  border-color: var(--dg-border, #0F172A) !important;
+}
+
+/* Masthead Header */
 .zine-masthead {
-  background-color: var(--dg-header-bg, #FFFDF7) !important;
-  border-bottom: 3px solid var(--dg-border, #0F172A) !important;
-  box-shadow: 0 3px 0 rgba(15, 23, 42, 0.08);
+  background: var(--dg-header-bg, #FFFDF2) !important;
+  backdrop-filter: var(--dg-card-backdrop, none);
+  -webkit-backdrop-filter: var(--dg-card-backdrop, none);
+  border-bottom: 2.5px solid var(--dg-header-border, #0F172A) !important;
+  box-shadow: var(--dg-header-shadow, 0 3px 0 rgba(15, 23, 42, 0.1));
   color: var(--dg-ink, #0F172A) !important;
 }
 
 /* ============================================================================
-   4. DAYLIGHT ZINE TYPOGRAPHY & WELL CONVERSIONS (FOR 6 DAYLIGHT VIBES)
+   4A. DAYLIGHT VIBE SURFACE CONVERSIONS (.vibe-light: Sunburst & Emerald)
    ============================================================================ */
-.theme-dark-tiles,
-.theme-light-tiles {
+.vibe-light > main .bg-\[\#080B14\]:not(.rangefinder-keep-dark):not(.rangefinder-keep-dark *),
+.vibe-light > main .bg-\[\#080B14\]\/60:not(.rangefinder-keep-dark *),
+.vibe-light > main .bg-\[\#080B14\]\/50:not(.rangefinder-keep-dark *),
+.vibe-light > main .bg-\[\#090D0B\]\/85:not(.rangefinder-keep-dark *),
+.vibe-light > main .bg-\[\#090D0B\]\/90:not(.rangefinder-keep-dark *) {
+  background-color: var(--dg-well, #FEFDF5) !important;
+  border-color: var(--dg-well-border, #0F172A) !important;
   color: var(--dg-ink, #0F172A) !important;
 }
 
-:not(.theme-midnight) > main .bg-\[\#080B14\]:not(.rangefinder-keep-dark):not(.rangefinder-keep-dark *),
-:not(.theme-midnight) > main .bg-\[\#080B14\]\/60:not(.rangefinder-keep-dark *),
-:not(.theme-midnight) > main .bg-\[\#080B14\]\/50:not(.rangefinder-keep-dark *),
-:not(.theme-midnight) > main .bg-\[\#090D0B\]\/85:not(.rangefinder-keep-dark *),
-:not(.theme-midnight) > main .bg-\[\#090D0B\]\/90:not(.rangefinder-keep-dark *) {
-  background-color: var(--dg-well, #FEFDF7) !important;
-  border-color: #0F172A !important;
-  color: #0F172A !important;
-}
-
-/* Keep SVG rangefinder canvases & dark telemetry cards dark even in daylight mode */
-:not(.theme-midnight) > main .rangefinder-keep-dark {
+.vibe-light > main .rangefinder-keep-dark {
   border: 2.5px solid var(--dg-border, #0F172A) !important;
-  box-shadow: 4px 4px 0px var(--dg-shadow, #0F172A) !important;
+  box-shadow: var(--dg-card-shadow, 4px 4px 0px #0F172A) !important;
 }
 
-:not(.theme-midnight) > main .bg-\[\#090D0B\]:not(.rangefinder-keep-dark):not(.rangefinder-keep-dark *) {
-  background-color: #F8FAFC !important;
-  border-color: #0F172A !important;
-  color: #0F172A !important;
+.vibe-light > main .bg-\[\#090D0B\]:not(.rangefinder-keep-dark):not(.rangefinder-keep-dark *) {
+  background-color: var(--dg-well-alt, #F8FAFC) !important;
+  border-color: var(--dg-well-border, #0F172A) !important;
+  color: var(--dg-ink, #0F172A) !important;
 }
 
-:not(.theme-midnight) > main .bg-\[\#111629\]:not(.rangefinder-keep-dark *),
-:not(.theme-midnight) > main .bg-\[\#0B0F1E\]:not(.rangefinder-keep-dark *),
-:not(.theme-midnight) > main .bg-\[\#0D1120\]:not(.rangefinder-keep-dark *),
-:not(.theme-midnight) > main .bg-\[\#0D1222\]:not(.rangefinder-keep-dark *),
-:not(.theme-midnight) > main .bg-\[\#070A14\]:not(.collector-3d-front):not(.rangefinder-keep-dark *) {
-  background-color: #F4F6FA !important;
-  border-color: #0F172A !important;
-  color: #0F172A !important;
+.vibe-light > main .bg-\[\#111629\]:not(.rangefinder-keep-dark *),
+.vibe-light > main .bg-\[\#0B0F1E\]:not(.rangefinder-keep-dark *),
+.vibe-light > main .bg-\[\#0D1120\]:not(.rangefinder-keep-dark *),
+.vibe-light > main .bg-\[\#0D1222\]:not(.rangefinder-keep-dark *),
+.vibe-light > main .bg-\[\#070A14\]:not(.collector-3d-front):not(.rangefinder-keep-dark *) {
+  background-color: var(--dg-well-alt, #F4F6FA) !important;
+  border-color: var(--dg-well-border, #0F172A) !important;
+  color: var(--dg-ink, #0F172A) !important;
 }
 
-:not(.theme-midnight) > main .border-slate-800:not(.rangefinder-keep-dark *),
-:not(.theme-midnight) > main .border-slate-700:not(.rangefinder-keep-dark *),
-:not(.theme-midnight) > main .border-white\/10:not(.rangefinder-keep-dark *),
-:not(.theme-midnight) > main .border-white\/15:not(.rangefinder-keep-dark *) {
-  border-color: rgba(15, 23, 42, 0.25) !important;
+.vibe-light > main .border-slate-800:not(.rangefinder-keep-dark *),
+.vibe-light > main .border-slate-700:not(.rangefinder-keep-dark *),
+.vibe-light > main .border-white\/10:not(.rangefinder-keep-dark *),
+.vibe-light > main .border-white\/15:not(.rangefinder-keep-dark *) {
+  border-color: rgba(15, 23, 42, 0.26) !important;
 }
 
-:not(.theme-midnight) > main h1:not(.zine-keep-color):not(.rangefinder-keep-dark *),
-:not(.theme-midnight) > main h2:not(.zine-keep-color):not(.rangefinder-keep-dark *),
-:not(.theme-midnight) > main h3:not(.zine-keep-color):not(.rangefinder-keep-dark *),
-:not(.theme-midnight) > main h4:not(.zine-keep-color):not(.rangefinder-keep-dark *),
-:not(.theme-midnight) > main .text-white:not(button):not(button *):not(.collector-3d-front *):not(.rangefinder-keep-dark *):not(span[class*="bg-"]):not(.zine-keep-white) {
-  color: #0F172A !important;
+.vibe-light > main h1:not(.zine-keep-color):not(.rangefinder-keep-dark *),
+.vibe-light > main h2:not(.zine-keep-color):not(.rangefinder-keep-dark *),
+.vibe-light > main h3:not(.zine-keep-color):not(.rangefinder-keep-dark *),
+.vibe-light > main h4:not(.zine-keep-color):not(.rangefinder-keep-dark *),
+.vibe-light > main .text-white:not(button):not(button *):not(.collector-3d-front *):not(.rangefinder-keep-dark *):not(span[class*="bg-"]):not(.zine-keep-white) {
+  color: var(--dg-ink, #0F172A) !important;
 }
 
-:not(.theme-midnight) > main .text-slate-200:not(.collector-3d-front *):not(.rangefinder-keep-dark *):not(button *),
-:not(.theme-midnight) > main .text-slate-300:not(.collector-3d-front *):not(.rangefinder-keep-dark *):not(button *) {
-  color: #1E293B !important;
+.vibe-light > main .text-slate-200:not(.collector-3d-front *):not(.rangefinder-keep-dark *):not(button *),
+.vibe-light > main .text-slate-300:not(.collector-3d-front *):not(.rangefinder-keep-dark *):not(button *) {
+  color: var(--dg-ink, #1E293B) !important;
 }
 
-:not(.theme-midnight) > main .text-slate-400:not(.collector-3d-front *):not(.rangefinder-keep-dark *),
-:not(.theme-midnight) > main .text-slate-500:not(.collector-3d-front *):not(.rangefinder-keep-dark *) {
-  color: #475569 !important;
+.vibe-light > main .text-slate-400:not(.collector-3d-front *):not(.rangefinder-keep-dark *),
+.vibe-light > main .text-slate-500:not(.collector-3d-front *):not(.rangefinder-keep-dark *) {
+  color: var(--dg-muted, #475569) !important;
 }
 
-/* Buttons on light-converted wells (#080B14 / #111629) use crisp dark ink in daylight modes */
-:not(.theme-midnight) > main button.bg-\[\#080B14\]:not(.rangefinder-keep-dark *),
-:not(.theme-midnight) > main button.bg-\[\#111629\]:not(.rangefinder-keep-dark *),
-:not(.theme-midnight) > main button.bg-\[\#0B0F1E\]:not(.rangefinder-keep-dark *),
-:not(.theme-midnight) > main button.bg-\[\#0D1120\]:not(.rangefinder-keep-dark *),
-:not(.theme-midnight) > main button.bg-\[\#080B14\]:not(.rangefinder-keep-dark *) *,
-:not(.theme-midnight) > main button.bg-\[\#111629\]:not(.rangefinder-keep-dark *) * {
-  color: #0F172A !important;
+.vibe-light > main button.bg-\[\#080B14\]:not(.rangefinder-keep-dark *),
+.vibe-light > main button.bg-\[\#111629\]:not(.rangefinder-keep-dark *),
+.vibe-light > main button.bg-\[\#0B0F1E\]:not(.rangefinder-keep-dark *),
+.vibe-light > main button.bg-\[\#0D1120\]:not(.rangefinder-keep-dark *),
+.vibe-light > main button.bg-\[\#080B14\]:not(.rangefinder-keep-dark *) *,
+.vibe-light > main button.bg-\[\#111629\]:not(.rangefinder-keep-dark *) * {
+  color: var(--dg-ink, #0F172A) !important;
 }
 
-/* Daylight accent ink contrast */
-:not(.theme-midnight) > main .text-\[\#39FF14\]:not(.collector-3d-front *):not(.rangefinder-keep-dark *):not(span[class*="bg-"]),
-:not(.theme-midnight) > main .text-\[\#00FF9D\]:not(.collector-3d-front *):not(.rangefinder-keep-dark *),
-:not(.theme-midnight) > main .text-\[\#CCFF00\]:not(.collector-3d-front *):not(.rangefinder-keep-dark *) {
-  color: #15803D !important;
+.vibe-light > main .text-\[\#39FF14\]:not(.collector-3d-front *):not(.rangefinder-keep-dark *):not(span[class*="bg-"]),
+.vibe-light > main .text-\[\#00FF9D\]:not(.collector-3d-front *):not(.rangefinder-keep-dark *),
+.vibe-light > main .text-\[\#CCFF00\]:not(.collector-3d-front *):not(.rangefinder-keep-dark *) {
+  color: var(--dg-accent-lime-text, #15803D) !important;
 }
 
-:not(.theme-midnight) > main .text-\[\#00F0FF\]:not(.collector-3d-front *):not(.rangefinder-keep-dark *):not(span[class*="bg-"]),
-:not(.theme-midnight) > main .text-\[\#00E5FF\]:not(.collector-3d-front *):not(.rangefinder-keep-dark *),
-:not(.theme-midnight) > main .text-\[\#38BDF8\]:not(.collector-3d-front *):not(.rangefinder-keep-dark *) {
-  color: #0369A1 !important;
+.vibe-light > main .text-\[\#00F0FF\]:not(.collector-3d-front *):not(.rangefinder-keep-dark *):not(span[class*="bg-"]),
+.vibe-light > main .text-\[\#00E5FF\]:not(.collector-3d-front *):not(.rangefinder-keep-dark *),
+.vibe-light > main .text-\[\#38BDF8\]:not(.collector-3d-front *):not(.rangefinder-keep-dark *) {
+  color: var(--dg-accent-cyan-text, #0369A1) !important;
 }
 
-:not(.theme-midnight) > main .text-\[\#FACC15\]:not(.collector-3d-front *):not(.rangefinder-keep-dark *):not(span[class*="bg-"]) {
-  color: #B45309 !important;
+.vibe-light > main .text-\[\#FACC15\]:not(.collector-3d-front *):not(.rangefinder-keep-dark *):not(span[class*="bg-"]) {
+  color: var(--dg-accent-yellow-text, #B45309) !important;
 }
 
-:not(.theme-midnight) > main .text-\[\#FF2E93\]:not(.collector-3d-front *):not(.rangefinder-keep-dark *):not(span[class*="bg-"]),
-:not(.theme-midnight) > main .text-\[\#FF5722\]:not(.collector-3d-front *):not(.rangefinder-keep-dark *):not(span[class*="bg-"]) {
-  color: #C81E68 !important;
-}
-
-/* Glow-Disc Night Mode overrides so everything pops crisply in UV Dark */
-.theme-midnight main .bg-\[\#080B14\],
-.theme-midnight main .bg-\[\#0B0F1E\],
-.theme-midnight main .bg-\[\#111629\] {
-  border-color: rgba(57, 255, 20, 0.35) !important;
-}
-
-.theme-midnight .zine-hero-card {
-  box-shadow: 6px 6px 0px #39FF14 !important;
-}
-
-.theme-midnight main .text-slate-950,
-.theme-midnight main .text-slate-900 {
-  color: #0F172A !important;
+.vibe-light > main .text-\[\#FF2E93\]:not(.collector-3d-front *):not(.rangefinder-keep-dark *):not(span[class*="bg-"]),
+.vibe-light > main .text-\[\#FF5722\]:not(.collector-3d-front *):not(.rangefinder-keep-dark *):not(span[class*="bg-"]) {
+  color: var(--dg-accent-pink-text, #C81E68) !important;
 }
 
 /* ============================================================================
-   5. PUNCHY ZINE-POP ACTION BUTTONS & SOLID BADGES
+   4B. FULL NEON DARK VIBE ENGINE (.vibe-dark: Cotton Candy, Glow Night,
+       Outrun Arcade, Cyber Rangefinder HUD, Cobalt Pro Tour)
+   ============================================================================ */
+.vibe-dark > main .bg-\[\#080B14\]:not(.rangefinder-keep-dark),
+.vibe-dark > main .bg-\[\#080B14\]\/60,
+.vibe-dark > main .bg-\[\#080B14\]\/50,
+.vibe-dark > main .bg-\[\#090D0B\]:not(.rangefinder-keep-dark),
+.vibe-dark > main .bg-\[\#090D0B\]\/85,
+.vibe-dark > main .bg-\[\#090D0B\]\/90,
+.vibe-dark > main .bg-\[\#0B0F1E\] {
+  background-color: var(--dg-well) !important;
+  border-color: var(--dg-well-border) !important;
+  color: var(--dg-ink) !important;
+}
+
+.vibe-dark > main .bg-\[\#111629\],
+.vibe-dark > main .bg-\[\#0D1120\],
+.vibe-dark > main .bg-\[\#0D1222\] {
+  background-color: var(--dg-well-alt) !important;
+  border-color: var(--dg-well-border) !important;
+  color: var(--dg-ink) !important;
+}
+
+.vibe-dark > main .rangefinder-keep-dark {
+  background-color: var(--dg-well) !important;
+  border: var(--dg-border-width, 2px) solid var(--dg-border) !important;
+  box-shadow: var(--dg-card-shadow) !important;
+}
+
+.vibe-dark > main .border-slate-800,
+.vibe-dark > main .border-slate-700,
+.vibe-dark > main .border-slate-900\/15,
+.vibe-dark > main .border-slate-900\/20 {
+  border-color: var(--dg-well-border) !important;
+}
+
+.vibe-dark > main h1:not(.zine-keep-color):not(.text-slate-950),
+.vibe-dark > main h2:not(.zine-keep-color):not(.text-slate-950),
+.vibe-dark > main h3:not(.zine-keep-color):not(.text-slate-950),
+.vibe-dark > main h4:not(.zine-keep-color):not(.text-slate-950) {
+  color: var(--dg-ink) !important;
+}
+
+.vibe-dark > main .text-slate-400:not(.collector-3d-front *),
+.vibe-dark > main .text-slate-300:not(.collector-3d-front *) {
+  color: var(--dg-muted) !important;
+}
+
+/* Keep crisp dark ink inside bright pill badges & light stickers in Dark Vibes */
+.vibe-dark > main .text-slate-950,
+.vibe-dark > main .text-slate-900 {
+  color: #0F172A !important;
+}
+
+/* Make dark-well secondary buttons luminous in Dark Vibes */
+.vibe-dark > main button.bg-\[\#080B14\],
+.vibe-dark > main button.bg-\[\#111629\],
+.vibe-dark > main button.bg-\[\#0B0F1E\],
+.vibe-dark > main button.bg-\[\#0D1120\] {
+  background: var(--dg-nav-idle-bg) !important;
+  color: var(--dg-nav-idle-ink) !important;
+  border-color: var(--dg-nav-idle-border) !important;
+}
+
+/* Luminous Per-Vibe Neon Accent Text */
+.vibe-dark > main .text-\[\#39FF14\]:not(span[class*="bg-"]),
+.vibe-dark > main .text-\[\#CCFF00\]:not(span[class*="bg-"]),
+.vibe-dark > main .text-emerald-600 {
+  color: var(--dg-accent-lime-text, #39FF14) !important;
+}
+
+.vibe-dark > main .text-\[\#00F0FF\]:not(span[class*="bg-"]),
+.vibe-dark > main .text-\[\#38BDF8\]:not(span[class*="bg-"]),
+.vibe-dark > main .text-sky-600 {
+  color: var(--dg-accent-cyan-text, #00F0FF) !important;
+}
+
+.vibe-dark > main .text-\[\#FACC15\]:not(span[class*="bg-"]),
+.vibe-dark > main .text-amber-600:not(.bg-white\/95 *) {
+  color: var(--dg-accent-yellow-text, #FACC15) !important;
+}
+
+.vibe-dark > main .text-\[\#FF2E93\]:not(span[class*="bg-"]),
+.vibe-dark > main .text-pink-600 {
+  color: var(--dg-accent-pink-text, #FF4DA6) !important;
+}
+
+/* ============================================================================
+   5. VIBE-HARMONIZED ACTION BUTTONS, BADGES & FORM CONTROLS
    ============================================================================ */
 button.bg-\[\#39FF14\],
 button.bg-\[\#CCFF00\],
@@ -445,28 +736,28 @@ span.bg-\[\#39FF14\]:not(.w-2):not(.w-1\.5),
 span.bg-\[\#CCFF00\]:not(.w-2):not(.w-1\.5) {
   background-color: var(--dg-lime, #82ED1F) !important;
   color: #0F172A !important;
-  border: 2px solid #0F172A !important;
+  border: 2px solid var(--dg-border, #0F172A) !important;
 }
 
 button.bg-\[\#39FF14\],
 button.bg-\[\#CCFF00\] {
-  box-shadow: 3px 3px 0px var(--dg-shadow, #0F172A) !important;
+  box-shadow: var(--dg-btn-shadow, 3px 3px 0px #0F172A) !important;
 }
 
 button.bg-\[\#39FF14\]:active,
 button.bg-\[\#CCFF00\]:active {
-  box-shadow: 1px 1px 0px var(--dg-shadow, #0F172A) !important;
+  box-shadow: var(--dg-btn-shadow-active, 1px 1px 0px #0F172A) !important;
 }
 
 button.bg-\[\#00F0FF\],
 span.bg-\[\#00F0FF\]:not(.w-2):not(.w-1\.5) {
   background-color: var(--dg-cyan, #3CE6FF) !important;
   color: #0F172A !important;
-  border: 2px solid #0F172A !important;
+  border: 2px solid var(--dg-border, #0F172A) !important;
 }
 
 button.bg-\[\#00F0FF\] {
-  box-shadow: 3px 3px 0px var(--dg-shadow, #0F172A) !important;
+  box-shadow: var(--dg-btn-shadow, 3px 3px 0px #0F172A) !important;
 }
 
 button.bg-\[\#FACC15\],
@@ -474,55 +765,71 @@ div.bg-\[\#FACC15\],
 span.bg-\[\#FACC15\]:not(.w-2):not(.w-1\.5) {
   background-color: var(--dg-yellow, #FFE600) !important;
   color: #0F172A !important;
-  border: 2px solid #0F172A !important;
+  border: 2px solid var(--dg-border, #0F172A) !important;
 }
 
 button.bg-\[\#FACC15\] {
-  box-shadow: 3px 3px 0px var(--dg-shadow, #0F172A) !important;
+  box-shadow: var(--dg-btn-shadow, 3px 3px 0px #0F172A) !important;
 }
 
 button.bg-\[\#FF2E93\],
 span.bg-\[\#FF2E93\]:not(.w-2):not(.w-1\.5) {
   background-color: var(--dg-pink, #E8357D) !important;
   color: #FFFFFF !important;
-  border: 2px solid #0F172A !important;
+  border: 2px solid var(--dg-border, #0F172A) !important;
 }
 
 button.bg-\[\#FF5722\],
 span.bg-\[\#FF5722\]:not(.w-2):not(.w-1\.5) {
   background-color: var(--dg-orange, #FF6B2C) !important;
   color: #FFFFFF !important;
-  border: 2px solid #0F172A !important;
+  border: 2px solid var(--dg-border, #0F172A) !important;
 }
 
 button.bg-\[\#FF2E93\],
 button.bg-\[\#FF5722\] {
-  box-shadow: 3px 3px 0px var(--dg-shadow, #0F172A) !important;
+  box-shadow: var(--dg-btn-shadow, 3px 3px 0px #0F172A) !important;
 }
 
-/* Give secondary bordered buttons crisp offset ink shadows too */
-main button[class*="border-"]:not(:disabled):not(.collector-3d-front button) {
-  box-shadow: 2.5px 2.5px 0px rgba(15, 23, 42, 0.85);
+/* Secondary bordered buttons adapt cleanly to Light vs Dark Vibes */
+.vibe-light main button[class*="border-"]:not(:disabled):not(.collector-3d-front button) {
+  box-shadow: 2.5px 2.5px 0px var(--dg-shadow, #0F172A);
 }
 
-main button[class*="border-"]:not(:disabled):active {
-  box-shadow: 1px 1px 0px rgba(15, 23, 42, 0.85);
+.vibe-light main button[class*="border-"]:not(:disabled):active {
+  box-shadow: 1px 1px 0px var(--dg-shadow, #0F172A);
+}
+
+.vibe-dark main button[class*="border-"]:not(:disabled):not(.collector-3d-front button) {
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.35);
 }
 
 .neon-border-pink,
 .neon-border-cyan,
 .neon-border-lime {
-  box-shadow: 3px 3px 0px var(--dg-shadow, #0F172A) !important;
+  box-shadow: var(--dg-btn-shadow, 3px 3px 0px #0F172A) !important;
 }
 
-/* Tactile Comic Form Controls */
-main input[type="text"],
-main input[type="search"],
-main input[type="url"],
-main input[type="number"],
-main select,
-main textarea {
-  border: 2px solid #0F172A !important;
+/* Form Controls */
+.vibe-light main input[type="text"],
+.vibe-light main input[type="search"],
+.vibe-light main input[type="url"],
+.vibe-light main input[type="number"],
+.vibe-light main select,
+.vibe-light main textarea {
+  border: 2px solid var(--dg-border, #0F172A) !important;
+  border-radius: 0.85rem;
+}
+
+.vibe-dark main input[type="text"],
+.vibe-dark main input[type="search"],
+.vibe-dark main input[type="url"],
+.vibe-dark main input[type="number"],
+.vibe-dark main select,
+.vibe-dark main textarea:not(.bg-white) {
+  background-color: var(--dg-well) !important;
+  color: var(--dg-ink) !important;
+  border: 1.75px solid var(--dg-well-border) !important;
   border-radius: 0.85rem;
 }
 
@@ -547,7 +854,7 @@ main textarea {
 }
 
 /* ============================================================================
-   7. COLLECTOR CARD 3D FLIP SCENE (DARK FOIL FRONT + CRISP COMIC BACK)
+   7. COLLECTOR CARD 3D FLIP SCENE (DARK FOIL FRONT + VIBE-ADAPTIVE BACK)
    ============================================================================ */
 .collector-3d-scene {
   perspective: 1200px;
@@ -606,16 +913,23 @@ main textarea {
   -webkit-transform: rotateY(180deg) translateZ(1px);
 }
 
-.card-back-dark {
+.vibe-light .card-back-dark {
   background-color: #FFFFFF !important;
   color: #0F172A !important;
-  border: 2.5px solid #0F172A !important;
-  box-shadow: 4px 4px 0px #0F172A !important;
+  border: 2.5px solid var(--dg-border, #0F172A) !important;
+  box-shadow: 4px 4px 0px var(--dg-shadow, #0F172A) !important;
+}
+
+.vibe-dark .card-back-dark {
+  background: var(--dg-card) !important;
+  color: var(--dg-ink) !important;
+  border: 2px solid var(--dg-border) !important;
+  box-shadow: var(--dg-card-shadow) !important;
 }
 
 /* Keep RHBH SVG flight box dark inside card back so glowing flight curves pop */
 .card-back-dark .bg-\[\#05070E\] {
-  background-color: #0F172A !important;
+  background-color: #060B18 !important;
 }
 
 /* iOS Safari Fixed Bottom Nav Lock */
