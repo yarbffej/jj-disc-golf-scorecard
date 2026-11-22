@@ -73,8 +73,11 @@ import {
   writeMergedStateToLocalStorageAndDashboard
 } from './utils/cloudSync';
 
-const STORAGE_KEY = 'jj_disc_golf_v108_master_state';
+const STORAGE_KEY = 'jj_disc_golf_v111_master_state';
 const LEGACY_STORAGE_KEYS = [
+  'jj_disc_golf_v110_master_state',
+  'jj_disc_golf_v109_master_state',
+  'jj_disc_golf_v108_master_state',
   'jj_disc_golf_v107_master_state',
   'jj_disc_golf_v106_master_state',
   'jj_disc_golf_v105_master_state',
@@ -453,6 +456,7 @@ export default function App() {
             if (
               (canonicalDateCourseCounts.get(dcKey) || 0) === 1 &&
               ((r.totalHoles || r.holes.length) >= 18 ||
+                r.date === '2026-11-22' ||
                 r.date === '2026-11-17' ||
                 r.date === '2026-11-15')
             ) {

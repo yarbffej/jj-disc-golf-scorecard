@@ -3701,23 +3701,23 @@ const DISC_COMMENTARY_VERDICTS: Record<string, string> = {
   'innova-proto-glow-aviar':
     '🍬 Arrived 11/18! Cotton Candy In-Hand Main Bag [2|3|0|1] — Grippy beadless Proto Glow driving & touch putter for 130–185ft tee shots and Circle 2 floaters!',
   'innova-yeti-pro-aviar':
-    '🍬 Arrived 11/18! Cotton Candy In-Hand Main Bag [2|3|0|1] — Tacky concave-top beaded Yeti Pro putter for locked-in cold-weather grip and soft-landing approaches!',
+    '🏆 Breakout Cotton Candy Putter [2|3|0|1]! Powered 11/22 BOGEY-FREE 24 (-3) Art Nine PB tie (magic tree-bending H5 Birdie 2!) + hit metal from 45–50ft on SMP Wooded H9!',
   'innova-sugar-glow-roc':
-    '🍬 Arrived 11/18! Cotton Candy In-Hand Main Bag [4|4|0|3] — 1990s Collector DX Glow Rancho Roc for wind-fighting midrange lines & Sar-Ko H4/H5 right-to-left hyzers!',
+    '🏆 Breakout Cotton Candy Midrange [4|4|0|3]! Anchored 4 Pars on 11/22 SMP Wooded (H6, 15ft downhill H10, dead-straight H14 & H17) + Art Nine H1 Par!',
   'innova-proto-glow-mako3':
-    '🍬 Arrived 11/18! Cotton Candy In-Hand Main Bag [5|5|0|0] — Premium Proto Glow upgrade to your dead-straight Mako3 woods laser!',
+    '🏆 Breakout Cotton Candy Woods Laser [5|5|0|0]! Skip Birdie 2 on Art Nine H3, CHAIN-OUT bid for 23 (-4) on H9 (sealing 24 / -3 PB tie!), & pure SMP Wooded H15 Par (11/22)!',
   'innova-sugar-star-rollo':
-    '🍬 Arrived 11/18! Cotton Candy In-Hand Main Bag [5|6|-4|1] — Stamped Sugar High Star Rollo for effortless RHBH right-turn pans, uphill closers & fairway rollers!',
+    '⭐ Cotton Candy Right-Turn & Uphill Weapon [5|6|-4|1]! Debuted 11/22 at SMP Wooded (H4/H11/H12) & Art Nine H8 tree-save Par during your bogey-free 24 (-3)!',
   'innova-glow-leopard3':
-    '🍬 Arrived 11/18! Cotton Candy In-Hand Main Bag [7|5|-2|1] — Aqua Color Glow Champion Leopard3 replacing your lost GStar Leopard3 for smooth hyzer-flips!',
+    '🍬 Cotton Candy Color Glow Fairway [7|5|-2|1] — First test throws on 11/22 SMP Wooded H2/H6; ready to dial flat chest-high hyzer-flips!',
   'innova-glow-teebird':
-    '🍬 Arrived 11/18! Cotton Candy In-Hand Main Bag [7|5|0|2] — Pinpoint straight-to-fade 7-speed fairway anchor bridging Leopard3 and Champion Eagle!',
+    '⭐ Cotton Candy Fairway Debut [7|5|0|2]! Piped straight-with-gentle-left into gusty wind on 11/22 SMP Wooded H1 ("Did exactly what it needed to!") & punched through H11 branches!',
   'innova-sugar-star-roadrunner':
-    '🍬 Arrived 11/18! Cotton Candy In-Hand Main Bag [9|5|-4|1] — Hot Pink Star upgrade to your #1 long-course S-curve & turnover distance workhorse!',
+    '🍬 Cotton Candy Hot Pink Star [9|5|-4|1] — Debuted on 11/22 SMP Wooded H13 long tee; high-visibility upgrade to your #1 S-curve distance workhorse!',
   'innova-luster-firebird':
-    '🍬 Arrived 11/18! Cotton Candy In-Hand Main Bag [9|3|0|4] — Luster Champion Firebird headwind fighter, flare-skipper & forehand get-out-of-trouble utility!',
+    '⭐ Cotton Candy Headwind & Skip Debut [9|3|0|4]! Locked in Par 3 on 11/22 SMP Wooded H8 paired w/ Pink DX Alien!',
   'innova-halo-wraith':
-    '🍬 Arrived 11/18! Cotton Candy In-Hand Main Bag [11|5|-1|3] — Two-tone Halo Star upgrade to your low-ceiling Speed 11 Wraith bomber!',
+    '🚀 Cotton Candy Two-Tone Halo Bomber [11|5|-1|3] — Debuted off the tee on 11/22 SMP Wooded H7 & closing H18 (71 / +17 — 7 strokes better than 11/17)!',
   'innova-halo-destroyer':
     '🍬 Arrived 11/18! Cotton Candy In-Hand Main Bag [12|5|-1|3] — Flagship Speed 12 Neon Chartreuse Halo Destroyer for max-distance open bombers & stiff headwinds!',
   'discraft-roach':
