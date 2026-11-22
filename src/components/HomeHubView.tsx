@@ -54,6 +54,7 @@ interface HomeHubViewProps {
   }) => void;
   onResumeLiveRound: () => void;
   onOpenVoiceLogImporter?: () => void;
+  onOpenShotFinder?: () => void;
   onNavigateTab: (
     tab: 'live' | 'atlas' | 'courses' | 'rivalry' | 'history' | 'sync' | 'dashboard',
     bagOwnerFilter?: 'jeffery' | 'jack' | 'all',
@@ -72,6 +73,7 @@ export const HomeHubView: React.FC<HomeHubViewProps> = ({
   onChangeBgTheme,
   onStartConfiguredRound,
   onResumeLiveRound,
+  onOpenShotFinder,
   onNavigateTab
 }) => {
   // Count how many times each course has been played in history
@@ -553,18 +555,30 @@ Players: ${soloMode ? 'Jeffery (Solo)' : 'Jeffery & Jack'}
             </h2>
           </div>
 
-          <div className="flex items-center gap-2 min-w-0">
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-2 min-w-0">
             <button
               type="button"
               onClick={() => {
                 playChainRattleSfx('tap');
                 setShowStartWizard(true);
               }}
-              className="w-full min-w-0 min-h-[40px] px-3.5 py-2 rounded-xl bg-[#39FF14] text-slate-950 font-extrabold text-xs flex items-center justify-center gap-1.5 truncate zine-pill-btn"
+              className="w-full min-w-0 min-h-[40px] px-3 py-2 rounded-xl bg-[#39FF14] text-slate-950 font-extrabold text-xs flex items-center justify-center gap-1.5 truncate zine-pill-btn"
             >
               <Play className="w-3.5 h-3.5 fill-current shrink-0" />
               <span className="truncate">Start New Round</span>
             </button>
+            {onOpenShotFinder && (
+              <button
+                type="button"
+                onClick={() => {
+                  playChainRattleSfx('tap');
+                  onOpenShotFinder();
+                }}
+                className="w-full min-w-0 min-h-[40px] px-3 py-2 rounded-xl bg-[#00F0FF] text-slate-950 font-extrabold text-xs flex items-center justify-center gap-1.5 truncate zine-pill-btn"
+              >
+                <span className="truncate">🎯 RHBH Shot Finder</span>
+              </button>
+            )}
           </div>
         </div>
 

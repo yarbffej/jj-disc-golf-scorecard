@@ -43,6 +43,7 @@ import {
   HoleLayoutOutlineWidget
 } from './TacticalRangefinderWidgets';
 import { playChainRattleSfx } from '../utils/soundFx';
+import { RhbhShotFinder } from './RhbhShotFinder';
 
 const VERIFIED_PICKS_STORAGE_KEY = 'jj_disc_golf_verified_hole_picks_v9';
 
@@ -97,6 +98,7 @@ export const LiveScorecardView: React.FC<LiveScorecardViewProps> = ({
   }>({});
   const [flippedCardIds, setFlippedCardIds] = useState<Record<string, boolean>>({});
   const [showSwingCues, setShowSwingCues] = useState<boolean>(true);
+  const [showShotFinder, setShowShotFinder] = useState<boolean>(false);
   const [confirmResetModal, setConfirmResetModal] = useState(false);
   const [saveConfirmBanner, setSaveConfirmBanner] = useState<string | null>(null);
   const [notesHeaderCopied, setNotesHeaderCopied] = useState(false);
@@ -1373,6 +1375,48 @@ Players: ${playersLabel}
                 </div>
               </div>
             )}
+
+            {/* 2B. INTERACTIVE RHBH SHOT FINDER (DISTANCE + LEFT / STRAIGHT / RIGHT BACKHAND CADDIE) */}
+            <div className="pt-3 border-t border-slate-800 space-y-2.5">
+              <button
+                type="button"
+                onClick={() => {
+                  playChainRattleSfx('tap');
+                  setShowShotFinder((v) => !v);
+                }}
+                className={`w-full px-3.5 py-2.5 rounded-2xl text-xs sm:text-sm font-extrabold flex items-center justify-between gap-2 zine-pill-btn transition-all ${
+                  showShotFinder
+                    ? 'bg-[#FF2E93] text-white'
+                    : 'bg-[#00F0FF] text-slate-950'
+                }`}
+              >
+                <span className="flex items-center gap-2 text-left">
+                  <span>🎯 RHBH Shot Finder · Dial Distance + Go Left / Straight / Right</span>
+                </span>
+                <span className="font-mono-tabular text-[11px] uppercase shrink-0">
+                  {showShotFinder ? 'Hide ▲' : `Open (${currentHole.distance} ft) ▼`}
+                </span>
+              </button>
+
+              {showShotFinder && (
+                <RhbhShotFinder
+                  bag={bag}
+                  initialDistanceFeet={currentHole.distance}
+                  initialWind={caddieScenario}
+                  holeNumber={currentHole.number}
+                  holeDistanceFeet={currentHole.distance}
+                  selectedDiscIdOnHole={currentHole.meta?.jeffery?.thrownDiscId}
+                  onSelectDiscForHole={(disc) => selectHoleThrownDisc('jeffery', disc)}
+                  onOpenDiscCard={
+                    onOpenBagGuide
+                      ? (discId) => onOpenBagGuide(discId, 'jeffery')
+                      : undefined
+                  }
+                  onClose={() => setShowShotFinder(false)}
+                  compact
+                />
+              )}
+            </div>
 
             {/* 3. TEE-BOX CARD RECOMMENDATIONS BELOW SCORING (FLIPPABLE 3D COLLECTOR CARDS: 1. DRIVER -> 2. MID-RANGE -> 3. PUTTER) */}
             {caddieDecision.primary && (

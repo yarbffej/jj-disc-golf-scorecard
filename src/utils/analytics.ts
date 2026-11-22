@@ -4039,5 +4039,483 @@ export function computeDiscBagTelemetry(
   };
 }
 
+// ============================================================================
+// INTERACTIVE RHBH SHOT FINDER (DISTANCE + LEFT / STRAIGHT / RIGHT CADDIE)
+// ============================================================================
+export type RhbhShotShape =
+  | 'hard_left'
+  | 'gentle_left'
+  | 'straight'
+  | 'gentle_right'
+  | 'hard_right';
+
+export type RhbhTerrain = 'open' | 'low_ceiling' | 'uphill' | 'downhill';
+
+export interface RhbhShotQuery {
+  distanceFeet: number;
+  shape: RhbhShotShape;
+  wind?: CaddieScenario;
+  terrain?: RhbhTerrain;
+}
+
+export interface RhbhShotRecommendation {
+  disc: DiscItem;
+  rank: 1 | 2 | 3;
+  matchScore: number;
+  releaseAngle: 'hyzer' | 'flat' | 'anhyzer';
+  releaseLabel: string;
+  powerPct: number;
+  powerLabel: string;
+  estCarryFeet: number;
+  aimCue: string;
+  whyBadge: string;
+  coachingNote: string;
+}
+
+export interface RhbhShotFinderResult {
+  query: Required<RhbhShotQuery>;
+  effectiveDistanceFeet: number;
+  topPick: RhbhShotRecommendation | null;
+  alternatives: RhbhShotRecommendation[];
+  allRanked: RhbhShotRecommendation[];
+  shapeSummary: string;
+}
+
+/**
+ * Parses a natural-language voice or text shot phrase like:
+ *   "180 feet go left", "140 right uphill", "260 straight headwind", "95 downhill left"
+ */
+export function parseRhbhShotQuery(
+  rawText: string,
+  current: Required<RhbhShotQuery>
+): { next: Required<RhbhShotQuery>; matchedFields: string[] } {
+  const lower = rawText.toLowerCase().trim();
+  const next: Required<RhbhShotQuery> = { ...current };
+  const matchedFields: string[] = [];
+
+  // 1. Distance extraction (supports "185", "185 feet", "185ft", "185'", "two hundred")
+  const numMatch = lower.match(/\b(\d{2,3})\s*(?:ft|feet|foot|'|yards?)?\b/);
+  if (numMatch) {
+    const parsed = parseInt(numMatch[1], 10);
+    if (!Number.isNaN(parsed) && parsed >= 25 && parsed <= 600) {
+      next.distanceFeet = Math.max(30, Math.min(450, parsed));
+      matchedFields.push(`${next.distanceFeet} ft`);
+    }
+  } else if (/\b(hundred and fifty|150)\b/.test(lower)) {
+    next.distanceFeet = 150;
+    matchedFields.push('150 ft');
+  } else if (/\b(two hundred|200)\b/.test(lower)) {
+    next.distanceFeet = 200;
+    matchedFields.push('200 ft');
+  } else if (/\b(two fifty|250)\b/.test(lower)) {
+    next.distanceFeet = 250;
+    matchedFields.push('250 ft');
+  } else if (/\b(three hundred|300)\b/.test(lower)) {
+    next.distanceFeet = 300;
+    matchedFields.push('300 ft');
+  } else if (/\b(hundred|100)\b/.test(lower)) {
+    next.distanceFeet = 100;
+    matchedFields.push('100 ft');
+  }
+
+  // 2. Shot shape extraction (RHBH)
+  if (
+    /\b(hard\s+left|sharp\s+left|big\s+left|hook\s+left|dogleg\s+left|spike\s+hyzer|hard\s+hyzer|skip\s+left|way\s+left)\b/.test(
+      lower
+    )
+  ) {
+    next.shape = 'hard_left';
+    matchedFields.push('Hard Left');
+  } else if (
+    /\b(slight\s+left|gentle\s+left|little\s+left|soft\s+left|bit\s+left|fade\s+left|finish\s+left)\b/.test(
+      lower
+    )
+  ) {
+    next.shape = 'gentle_left';
+    matchedFields.push('Gentle Left');
+  } else if (/\b(left|hyzer|hook)\b/.test(lower)) {
+    next.shape = 'hard_left';
+    matchedFields.push('Go Left');
+  } else if (
+    /\b(hard\s+right|sharp\s+right|big\s+right|dogleg\s+right|turnover|turn\s+right|anhyzer|way\s+right|bend\s+right|curve\s+right)\b/.test(
+      lower
+    )
+  ) {
+    next.shape = 'hard_right';
+    matchedFields.push('Go Right');
+  } else if (
+    /\b(slight\s+right|gentle\s+right|little\s+right|soft\s+right|bit\s+right|drift\s+right|s[- ]?curve)\b/.test(
+      lower
+    )
+  ) {
+    next.shape = 'gentle_right';
+    matchedFields.push('Gentle Right');
+  } else if (/\b(right)\b/.test(lower)) {
+    next.shape = 'hard_right';
+    matchedFields.push('Go Right');
+  } else if (
+    /\b(dead\s+straight|straight|tunnel|laser|flat|narrow|gap|center)\b/.test(lower)
+  ) {
+    next.shape = 'straight';
+    matchedFields.push('Dead Straight');
+  }
+
+  // 3. Wind extraction
+  if (/\b(head\s*wind|into\s+the\s+wind|windy|gusty)\b/.test(lower)) {
+    next.wind = 'headwind';
+    matchedFields.push('Headwind');
+  } else if (/\b(tail\s*wind|with\s+the\s+wind|wind\s+at\s+my\s+back)\b/.test(lower)) {
+    next.wind = 'tailwind';
+    matchedFields.push('Tailwind');
+  } else if (/\b(cross\s*wind|left\s+to\s+right)\b/.test(lower)) {
+    next.wind = 'cross_lr';
+    matchedFields.push('Crosswind');
+  } else if (/\b(calm|no\s+wind|still)\b/.test(lower)) {
+    next.wind = 'calm';
+    matchedFields.push('Calm');
+  }
+
+  // 4. Terrain / ceiling extraction
+  if (/\b(up\s*hill|steep|climb|elevated)\b/.test(lower)) {
+    next.terrain = 'uphill';
+    matchedFields.push('Uphill');
+  } else if (/\b(down\s*hill|slope|mound|roll\s*away|stop\s+dead)\b/.test(lower)) {
+    next.terrain = 'downhill';
+    matchedFields.push('Downhill');
+  } else if (/\b(low\s+ceiling|low\s+branch|branches|woods|wooded|trees|canopy|skip)\b/.test(lower)) {
+    next.terrain = 'low_ceiling';
+    matchedFields.push('Low Ceiling');
+  } else if (/\b(open|wide\s+open|meadow|field)\b/.test(lower)) {
+    next.terrain = 'open';
+    matchedFields.push('Open');
+  }
+
+  return { next, matchedFields };
+}
+
+/**
+ * Computes RHBH-calibrated Top-3 disc recommendations from Jeffery's active bag
+ * given exact distance to the pin, desired Left / Straight / Right shot shape,
+ * wind condition, and terrain/ceiling modifier.
+ */
+export function recommendRhbhShotDiscs(
+  queryInput: RhbhShotQuery,
+  bag: DiscItem[]
+): RhbhShotFinderResult {
+  const query: Required<RhbhShotQuery> = {
+    distanceFeet: Math.max(30, Math.min(450, Math.round(queryInput.distanceFeet))),
+    shape: queryInput.shape,
+    wind: queryInput.wind || 'calm',
+    terrain: queryInput.terrain || 'open'
+  };
+
+  const activeJeffery = bag.filter((d) => !d.archived && d.ownerId !== 'jack');
+  const pool = activeJeffery.length > 0 ? activeJeffery : bag.filter((d) => !d.archived);
+
+  // Effective playing distance adjusted for elevation & wind
+  let effDist = query.distanceFeet;
+  if (query.terrain === 'uphill') effDist = Math.round(effDist * 1.18);
+  if (query.terrain === 'downhill') effDist = Math.round(effDist * 0.85);
+  if (query.wind === 'headwind') effDist = Math.round(effDist * 1.07);
+  if (query.wind === 'tailwind') effDist = Math.round(effDist * 0.94);
+
+  const shapeTargets: Record<
+    RhbhShotShape,
+    {
+      label: string;
+      targetNetBias: number; // negative = RHBH fades LEFT, 0 = STRAIGHT, positive = RHBH turns RIGHT
+      preferredFadeMin: number;
+      preferredFadeMax: number;
+    }
+  > = {
+    hard_left: {
+      label: '↰ Hard Left / Hyzer Hook (RHBH Fade Left)',
+      targetNetBias: -3.2,
+      preferredFadeMin: 2,
+      preferredFadeMax: 4
+    },
+    gentle_left: {
+      label: '↖ Gentle Left (Straight → Soft Left Finish)',
+      targetNetBias: -1.35,
+      preferredFadeMin: 1,
+      preferredFadeMax: 2.5
+    },
+    straight: {
+      label: '↑ Dead Straight (Zero-Fade Laser Tunnel)',
+      targetNetBias: -0.2,
+      preferredFadeMin: 0,
+      preferredFadeMax: 1.5
+    },
+    gentle_right: {
+      label: '↗ Gentle Right (Smooth RHBH Drift / S-Curve)',
+      targetNetBias: 1.45,
+      preferredFadeMin: 0,
+      preferredFadeMax: 1.5
+    },
+    hard_right: {
+      label: '↱ Turn Right (RHBH Turnover / Anhyzer Pan)',
+      targetNetBias: 2.85,
+      preferredFadeMin: 0,
+      preferredFadeMax: 1
+    }
+  };
+
+  const targetCfg = shapeTargets[query.shape];
+
+  const scoredWithRaw = pool.map((disc) => {
+    // Wind-adjusted effective flight numbers for RHBH
+    let effTurn = disc.turn;
+    let effFade = disc.fade;
+    if (query.wind === 'headwind') {
+      effTurn -= 1.2;
+      effFade = Math.max(0, effFade - 0.5);
+    } else if (query.wind === 'tailwind') {
+      effTurn += 0.9;
+      effFade += 0.5;
+    } else if (query.wind === 'cross_lr') {
+      effTurn -= 0.6;
+      effFade = Math.max(0, effFade - 0.3);
+    } else if (query.wind === 'cross_rl') {
+      effTurn += 0.5;
+      effFade += 0.6;
+    }
+    if (query.terrain === 'uphill') {
+      // Uphill slows the disc early, making every disc act more overstable
+      effTurn += 0.8;
+      effFade += 0.6;
+    } else if (query.terrain === 'downhill') {
+      // Downhill keeps airspeed up slightly longer
+      effTurn -= 0.4;
+      effFade = Math.max(0, effFade - 0.3);
+    }
+
+    // Positive netBias => RHBH drifts RIGHT; Negative netBias => RHBH hooks LEFT
+    const netBias = -effTurn * 0.95 - effFade * 1.15;
+
+    // 1. DISTANCE FIT SCORE (0–48 pts)
+    // Calibrated comfort band for Jeffery's arm speed
+    const sweetSpot =
+      disc.speed <= 3
+        ? Math.min(disc.idealMaxFeet - 25, 148)
+        : disc.speed <= 5
+        ? Math.round((disc.idealMinFeet + disc.idealMaxFeet) * 0.52)
+        : disc.speed <= 8
+        ? Math.round((disc.idealMinFeet + disc.idealMaxFeet) * 0.55)
+        : Math.round((disc.idealMinFeet + disc.idealMaxFeet) * 0.58);
+
+    let distScore = 44;
+    if (effDist < disc.idealMinFeet) {
+      const underBy = disc.idealMinFeet - effDist;
+      // Putters handle short distances cleanly (<100ft); fast drivers are penalized heavily on short shots
+      const underPenaltyRate =
+        disc.speed <= 4 ? 0.14 : disc.speed <= 5 ? 0.28 : disc.speed <= 8 ? 0.48 : 0.65;
+      distScore -= underBy * underPenaltyRate;
+      // Exception: Firebird skip-hook around a tree at 140–195ft is a real utility shot!
+      if (disc.id === 'innova-luster-firebird' && query.shape === 'hard_left' && effDist >= 135) {
+        distScore += 16;
+      }
+    } else if (effDist > disc.idealMaxFeet) {
+      const overBy = effDist - disc.idealMaxFeet;
+      distScore -= overBy * 0.52;
+    } else {
+      const distFromSweet = Math.abs(effDist - sweetSpot);
+      distScore -= Math.min(14, distFromSweet * 0.085);
+    }
+
+    // Extra discipline: keep short shots (<145ft) putter/mid-led and long shots (>265ft) fairway/driver-led
+    if (effDist <= 135 && disc.speed <= 4) distScore += 8;
+    if (effDist <= 120 && disc.speed >= 7) distScore -= 18;
+    if (effDist >= 145 && effDist <= 225 && disc.speed >= 4 && disc.speed <= 6) distScore += 7;
+    if (effDist >= 225 && effDist <= 300 && disc.speed >= 7 && disc.speed <= 9) distScore += 7;
+    if (effDist >= 295 && disc.speed >= 9) distScore += 9;
+
+    // 2. RHBH SHOT SHAPE FIT SCORE (0–46 pts)
+    const biasDiff = Math.abs(netBias - targetCfg.targetNetBias);
+    let shapeScore = Math.max(0, 44 - biasDiff * 8.2);
+
+    // Specific disc-golf RHBH flight-physics refinements:
+    if (query.shape === 'hard_left') {
+      if (disc.fade >= 3) shapeScore += 10;
+      if (disc.fade === 2 && effDist <= 165) shapeScore += 8; // KC Pro Aviar hyzer approach
+      if (disc.turn <= -2) shapeScore -= 18; // Understable discs fight against going hard left!
+      if (disc.fade === 0) shapeScore -= 20;
+    } else if (query.shape === 'gentle_left') {
+      if (disc.fade >= 1 && disc.fade <= 2 && disc.turn >= -1) shapeScore += 9;
+      if (disc.turn <= -3) shapeScore -= 12;
+      if (disc.fade >= 4) shapeScore -= 8; // Firebird hooks harder than "gentle"
+    } else if (query.shape === 'straight') {
+      if (disc.turn === 0 && disc.fade === 0) shapeScore += 13; // XT Glow Nova & Proto Glow Mako3!
+      if (disc.id === 'innova-sync' && effDist <= 200) shapeScore += 10; // Proven dead-straight tee putter!
+      if (disc.id === 'innova-glow-leopard3' && effDist >= 195 && effDist <= 305) shapeScore += 8; // Hyzer-flip laser
+      if (disc.id === 'innova-glow-teebird' && effDist >= 210 && effDist <= 305) shapeScore += 6;
+      if (disc.id === 'innova-halo-wraith' && effDist >= 295) shapeScore += 7;
+      if (disc.fade >= 4) shapeScore -= 16;
+      if (disc.turn <= -4 && query.wind === 'headwind') shapeScore -= 14;
+    } else if (query.shape === 'gentle_right') {
+      if (disc.turn <= -2 && disc.fade <= 1) shapeScore += 10;
+      if (disc.turn === 0 && disc.fade === 0 && effDist <= 220) shapeScore += 7; // Nova / Mako3 gentle anhyzer holds right!
+      if (disc.fade >= 3) shapeScore -= 16;
+      // Avoid burning -4 rollers in stiff headwinds
+      if (query.wind === 'headwind' && disc.turn <= -4) shapeScore -= 12;
+    } else if (query.shape === 'hard_right') {
+      if (disc.turn <= -4 && disc.fade <= 1) shapeScore += 14; // Star Rollo, Hot Pink DX Archangel, Star Roadrunner!
+      if (disc.turn === -2 && disc.fade <= 1) shapeScore += 7; // Glow Leopard3 anhyzer
+      if (disc.fade === 0 && effDist <= 165) shapeScore += 10; // XT Glow Nova anhyzer never fights left!
+      if (disc.fade >= 2) shapeScore -= 20;
+      if (query.wind === 'headwind' && disc.turn <= -4) shapeScore -= 10; // Headwind turns Leopard3/Mako3 right cleanly without cut-rolling
+    }
+
+    // 3. TERRAIN & WIND MODIFIERS
+    let modScore = 0;
+    if (query.terrain === 'low_ceiling') {
+      if (disc.id === 'innova-dx-alien') modScore += 11; // Low 2-glide branch-ducking laser!
+      if (disc.glide <= 3) modScore += 6;
+      if (disc.id === 'innova-halo-wraith' && effDist >= 245) modScore += 8;
+      if (disc.id === 'innova-luster-firebird' && query.shape === 'hard_left') modScore += 7;
+      if (disc.glide >= 6 && effDist < 175) modScore -= 5;
+    } else if (query.terrain === 'uphill') {
+      if (disc.glide >= 5 && disc.turn <= -2) modScore += 9; // Rollo, Archangel, Roadrunner, Leopard3 climb hills!
+      if (disc.id === 'innova-sugar-star-rollo' && effDist <= 245) modScore += 7;
+      if (disc.fade >= 3 && query.shape !== 'hard_left') modScore -= 7;
+    } else if (query.terrain === 'downhill') {
+      if (disc.id === 'innova-xt-glow-nova' && effDist <= 190) modScore += 14; // Stops dead on slopes/mounds!
+      if (disc.id === 'innova-dx-alien' && effDist <= 215) modScore += 8;
+      if (disc.id === 'innova-yeti-pro-aviar' && effDist <= 165) modScore += 7;
+      if (disc.glide <= 3) modScore += 5;
+      if (disc.speed >= 10 && effDist < 280) modScore -= 8;
+    }
+
+    if (query.wind === 'headwind') {
+      if (disc.fade >= 2 && disc.turn >= -1) modScore += 6;
+      if (disc.turn <= -4 && query.shape !== 'hard_right') modScore -= 9;
+    } else if (query.wind === 'tailwind') {
+      if (disc.glide >= 5 && disc.turn <= -1) modScore += 5;
+    }
+
+    // Determine best RHBH release angle for THIS disc on THIS shot
+    let releaseAngle: 'hyzer' | 'flat' | 'anhyzer' = 'flat';
+    if (query.shape === 'hard_left') {
+      releaseAngle = disc.fade >= 3 ? 'flat' : 'hyzer';
+    } else if (query.shape === 'gentle_left') {
+      releaseAngle = disc.turn <= -2 ? 'hyzer' : 'flat';
+    } else if (query.shape === 'straight') {
+      if (disc.turn <= -2) releaseAngle = 'hyzer'; // Hyzer-flip straight!
+      else releaseAngle = 'flat';
+    } else if (query.shape === 'gentle_right') {
+      if (disc.turn <= -2) releaseAngle = 'flat';
+      else releaseAngle = 'anhyzer';
+    } else if (query.shape === 'hard_right') {
+      if (disc.turn <= -4 && query.wind !== 'tailwind') releaseAngle = 'flat';
+      else releaseAngle = 'anhyzer';
+    }
+
+    const flightPreview = computeFlightPathSvg(disc, query.wind, releaseAngle);
+    const estCarryFeet = flightPreview.estimatedFeet;
+
+    // Power % calibration
+    const rawPower = Math.round((effDist / Math.max(120, estCarryFeet)) * 100);
+    const powerPct = Math.max(45, Math.min(100, rawPower));
+    const powerLabel =
+      powerPct <= 62
+        ? `🪶 Touch ${powerPct}%`
+        : powerPct <= 82
+        ? `🎯 Smooth ${powerPct}%`
+        : powerPct <= 94
+        ? `⚡ Firm ${powerPct}%`
+        : `🔥 Full ${powerPct}%`;
+
+    const releaseLabel =
+      releaseAngle === 'hyzer'
+        ? disc.turn <= -2 && query.shape === 'straight'
+          ? 'Hyzer-Flip (Tilt → Stand Up)'
+          : 'Hyzer Tilt (Edge Down)'
+        : releaseAngle === 'anhyzer'
+        ? 'Anhyzer Tilt (Nose Flat, Right Drift)'
+        : 'Flat Release (90° Chest Pull)';
+
+    // Aim & Coaching Cue tailored to Jeffery's RHBH form!
+    const aimCue =
+      query.shape === 'hard_left'
+        ? `Aim 18–25 ft RIGHT of basket · ${
+            releaseAngle === 'hyzer' ? 'Tilt edge down (hyzer)' : 'Throw flat & let +' + disc.fade + ' fade hook left'
+          }`
+        : query.shape === 'gentle_left'
+        ? `Aim 8–12 ft RIGHT of basket · Smooth flat chest-high pull so +${disc.fade} fade settles pin-high`
+        : query.shape === 'straight'
+        ? releaseAngle === 'hyzer'
+          ? `Aim dead at pin · Gentle hyzer-flip + heavy tea-kettle wrist low so it flips flat & lasers straight`
+          : `Aim dead at pin · 90° chest-high pull-through + heavy tea-kettle low wrist (zero fade!)`
+        : query.shape === 'gentle_right'
+        ? `Aim 8–12 ft LEFT of basket · ${
+            releaseAngle === 'anhyzer'
+              ? 'Slight anhyzer nose-flat tilt so it drifts right without fighting back'
+              : `Flat smooth pull — let the ${disc.turn} turn glide smoothly right`
+          }`
+        : `Aim 15–22 ft LEFT of basket · ${
+            releaseAngle === 'anhyzer'
+              ? 'Committed RHBH anhyzer release (keep nose down!) so it holds right all the way to the pin'
+              : `Flat chest-high rip — ${disc.turn} turn pans effortlessly right without needing a forehand!`
+          }`;
+
+    const whyParts: string[] = [];
+    if (query.terrain === 'downhill' && disc.id === 'innova-xt-glow-nova') {
+      whyParts.push('Stops dead on slope');
+    } else if (query.terrain === 'low_ceiling' && disc.id === 'innova-dx-alien') {
+      whyParts.push('Low 2-glide under branches');
+    } else if (query.terrain === 'uphill' && disc.glide >= 5 && disc.turn <= -2) {
+      whyParts.push(`${disc.glide}-glide hill climber`);
+    } else if (query.wind === 'headwind' && disc.fade >= 2) {
+      whyParts.push('Headwind torque-resistant');
+    } else if (query.shape === 'hard_right' && disc.turn <= -4) {
+      whyParts.push(`${disc.turn} turn RHBH right panner`);
+    } else if (query.shape === 'hard_left' && disc.fade >= 3) {
+      whyParts.push(`+${disc.fade} reliable left hook`);
+    } else if (query.shape === 'straight' && disc.fade === 0) {
+      whyParts.push('Zero-fade laser');
+    } else if (disc.id === 'innova-sync' && effDist <= 195) {
+      whyParts.push('#1 throwing putter');
+    } else {
+      whyParts.push(`Calibrated ${disc.idealMinFeet}–${disc.idealMaxFeet} ft`);
+    }
+
+    const rawScore = distScore + shapeScore + modScore;
+    const totalScore = Math.max(10, Math.min(99, Math.round(rawScore)));
+
+    return {
+      rawScore,
+      rec: {
+        disc,
+        rank: 1 as 1 | 2 | 3,
+        matchScore: totalScore,
+        releaseAngle,
+        releaseLabel,
+        powerPct,
+        powerLabel,
+        estCarryFeet,
+        aimCue,
+        whyBadge: whyParts[0],
+        coachingNote: disc.caddieRoleNote || disc.courseStrategy
+      }
+    };
+  });
+
+  scoredWithRaw.sort((a, b) => b.rawScore - a.rawScore || a.rec.disc.speed - b.rec.disc.speed);
+
+  const ranked: RhbhShotRecommendation[] = scoredWithRaw.map((item, idx) => ({
+    ...item.rec,
+    rank: Math.min(3, idx + 1) as 1 | 2 | 3
+  }));
+
+  return {
+    query,
+    effectiveDistanceFeet: effDist,
+    topPick: ranked[0] || null,
+    alternatives: ranked.slice(1, 3),
+    allRanked: ranked,
+    shapeSummary: targetCfg.label
+  };
+}
+
+
 
 

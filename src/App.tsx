@@ -45,6 +45,7 @@ import { CoursesAndBagView } from './components/CoursesAndBagView';
 import { CourseAtlasView } from './components/CourseAtlasView';
 import { SyncAndRosterView } from './components/SyncAndRosterView';
 import { VoiceLogImporterModal } from './components/VoiceLogImporterModal';
+import { RhbhShotFinder } from './components/RhbhShotFinder';
 import { ParsedVoiceRoundResult } from './utils/voiceLogParser';
 import {
   generateFullChatGptReport,
@@ -633,6 +634,7 @@ export default function App() {
 
   const [elapsedSeconds, setElapsedSeconds] = useState<number>(0);
   const [showVoiceLogImporter, setShowVoiceLogImporter] = useState<boolean>(false);
+  const [showShotFinderModal, setShowShotFinderModal] = useState<boolean>(false);
   const [isRoundInProgress, setIsRoundInProgress] = useState<boolean>(() => {
     try {
       const saved = localStorage.getItem(STORAGE_KEY);
@@ -1785,8 +1787,21 @@ export default function App() {
             </button>
           </nav>
 
-          {/* Zone 3: Chains SFX Synth Toy Toggle + Sync Now + Data */}
+          {/* Zone 3: Quick RHBH Shot Finder + Chains SFX + Sync Now + Data */}
           <div className="flex items-center gap-1.5 sm:gap-2 shrink min-w-0">
+            <button
+              type="button"
+              onClick={() => {
+                playChainRattleSfx('tap');
+                setShowShotFinderModal(true);
+              }}
+              title="Open RHBH Shot Finder — tell me distance + left/right for instant disc recommendation"
+              className="px-2 sm:px-3 py-1 sm:py-1.5 rounded-full zine-pill-btn text-[10px] sm:text-xs font-extrabold whitespace-nowrap flex items-center gap-1 transition-all bg-[#00F0FF] text-slate-950"
+            >
+              <span>🎯</span>
+              <span>Shot</span>
+            </button>
+
             <button
               type="button"
               onClick={handleToggleSoundFx}
@@ -1948,6 +1963,7 @@ export default function App() {
             onStartConfiguredRound={handleStartConfiguredRound}
             onResumeLiveRound={() => setActiveTab('live')}
             onOpenVoiceLogImporter={() => setShowVoiceLogImporter(true)}
+            onOpenShotFinder={() => setShowShotFinderModal(true)}
             onNavigateTab={(tab, ownerFilter, courseKeyOrName) => {
               if (ownerFilter) setBagOwnerFilter(ownerFilter);
               if (courseKeyOrName) setFocusedAtlasCourse(courseKeyOrName);
@@ -2114,6 +2130,45 @@ export default function App() {
           onSaveParsedRoundToHistory={handleSaveVoiceParsedRound}
           onLoadParsedIntoActiveScorecard={handleLoadVoiceParsedIntoScorecard}
         />
+
+        {showShotFinderModal && (
+          <div
+            className="fixed inset-0 z-50 bg-slate-950/80 backdrop-blur-sm flex items-start sm:items-center justify-center p-2.5 sm:p-5 overflow-y-auto"
+            onClick={() => setShowShotFinderModal(false)}
+          >
+            <div
+              className="w-full max-w-4xl my-auto"
+              onClick={(e) => e.stopPropagation()}
+            >
+              <RhbhShotFinder
+                bag={bag}
+                initialDistanceFeet={
+                  hasActiveRound
+                    ? roundState.holes[roundState.currentHoleIndex]?.distance || 175
+                    : 175
+                }
+                initialWind={roundState.windCondition || 'calm'}
+                holeNumber={
+                  hasActiveRound
+                    ? roundState.holes[roundState.currentHoleIndex]?.number
+                    : undefined
+                }
+                holeDistanceFeet={
+                  hasActiveRound
+                    ? roundState.holes[roundState.currentHoleIndex]?.distance
+                    : undefined
+                }
+                onOpenDiscCard={(discId) => {
+                  setShowShotFinderModal(false);
+                  setFocusedDiscId(discId);
+                  setBagOwnerFilter('jeffery');
+                  setActiveTab('courses');
+                }}
+                onClose={() => setShowShotFinderModal(false)}
+              />
+            </div>
+          </div>
+        )}
       </main>
     </div>
   );
