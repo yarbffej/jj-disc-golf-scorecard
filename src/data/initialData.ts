@@ -2284,12 +2284,12 @@ const NEW_INNOVA_DISCS: DiscItem[] = [
     courseStrategy:
       'Putter 3 in the Cotton Candy Sugar High Main Bag:Tacky cold-weather brother to your stiff KC Pro Aviar [2|3|0|2]. The concave flight plate locks your thumb in place for chilly rounds and uphill approaches that sit soft.',
     personalFlightNotes:
-      'Added to Cotton Candy "Sugar High" Main Bag (11/13): Signature Yeti Pro Aviar [2|3|0|1]—gives you beaded KC Aviar confidence with extra tacky grip and a straighter 1-fade finish.',
-    fieldTestRank: '🍬 Cotton Candy "Sugar High" Main Bag · Tacky Concave Beaded Putter [2|3|0|1]',
+      '11/22 Cotton Candy Debut Breakout (27H · 3 Birdies ★ · 12 Pars): Anchored your BOGEY-FREE 24 (-3) Art Nine PB tie—wove crazily around every tree on H5 for Birdie 2 ("Went around all those trees!") and hit metal from 45–50ft on SMP Wooded H9! Tacky puddle-top grip shone in chilly wind.',
+    fieldTestRank: '🏆 11/22 Art Nine 24 (-3) PB-Tie Putter · H5 Tree-Bender Birdie [2|3|0|1]',
     backComments:
       'Gold Foil Pixel Edition Innova Yeti Pro Aviar [2 | 3 | 0 | 1]. Features Jay "Yeti" Reading’s signature grippy Pro blend and slight puddle top for clean thumb placement and straight chain-hunting flights.',
     transcriptStats:
-      'Cotton Candy "Sugar High" Main Bag Addition (11/13): Yeti Pro Aviar [2|3|0|1].',
+      '11/22 Debut: Powered Bogey-Free 24 (-3) Art Nine PB Tie (H5 Birdie 2!) + SMP Wooded H9 45–50ft metal hit!',
     caddieScenarios: ['calm', 'headwind', 'tailwind'],
     caddieRoleNote:
       'Yeti Pro Aviar — Sugar High Main Bag Concave-Top Grippy Beaded Putter [2|3|0|1]'
@@ -2321,12 +2321,12 @@ const NEW_INNOVA_DISCS: DiscItem[] = [
     courseStrategy:
       'Midrange 1 in the Cotton Candy Sugar High Main Bag: Takes over your money overstable midrange slot (Sar-Ko-Par H4 & H5 right-to-left hyzers and gusty headwind mid shots) with grippy glow feel.',
     personalFlightNotes:
-      'Added to Cotton Candy "Sugar High" Main Bag (11/13): Stamped Sugar High brother to the Glow Roc / DX Roc3 slot you parked Sar-Ko-Par H4 & H5 with—keep the wrist low ("tea kettle down") and pull straight through!',
-    fieldTestRank: '🍬 Cotton Candy "Sugar High" Main Bag · Overstable Wind & Hyzer Mid [4|4|0|3]',
+      '11/22 Cotton Candy Debut MVP (7H · 5 Pars ★): Anchored 4 Pars at Shawnee Mission Wooded—H6 straight past trees, H10 downhill laser to 15ft right (grazing top bar on birdie bid!), H14 dead-straight ("Lovely, lovely—Par baby!"), and H17, plus Art Nine H1 Par!',
+    fieldTestRank: '🏆 11/22 SMP Wooded 4-Par Midrange MVP · H10 15ft Laser [4|4|0|3]',
     backComments:
       '1990s Collector’s Edition Innova DX Glow Roc [4 | 4 | 0 | 3]. Legendary beaded Rancho midrange built for headwinds, sweeping RHBH right-to-left hyzers, and pinpoint placement.',
     transcriptStats:
-      'Cotton Candy "Sugar High" Main Bag Addition (11/13): DX Glow Roc [4|4|0|3].',
+      '11/22 Debut: 5 Pars across SMP Wooded (H6, H10 15ft, H14, H17) & Art Nine H1!',
     caddieScenarios: ['headwind', 'cross_rl', 'calm'],
     caddieRoleNote:
       'DX Glow Roc — Sugar High Main Bag Overstable Rancho Glow Midrange [4|4|0|3]'
@@ -2358,12 +2358,12 @@ const NEW_INNOVA_DISCS: DiscItem[] = [
     courseStrategy:
       'Midrange 2 in the Cotton Candy Sugar High Main Bag: Direct premium upgrade to your 12-Birdie DX Glow Mako3 workhorse for Sar-Ko-Par H2/H6, Art Nine tunnels, and Shawnee Mission Wooded hallways.',
     personalFlightNotes:
-      'Added to Cotton Candy "Sugar High" Main Bag (11/13): Upgrades one of your all-time favorite molds [5|5|0|0] into durable Proto Glow plastic so tree hits in the woods never warp its dead-straight flight!',
-    fieldTestRank: '🍬 Cotton Candy "Sugar High" Main Bag · #1 Dead-Straight Tunnel Laser [5|5|0|0]',
+      '11/22 Cotton Candy Debut Breakout (7H · 1 Birdie ★ · 3 Pars): Sparked your BOGEY-FREE 24 (-3) Art Nine PB tie with a clean H3 skip Birdie 2, glided glowing downhill on H9 for a CHAIN-OUT birdie bid for 23, and threaded SMP Wooded H15 ("Missed the trees!") for Par 3!',
+    fieldTestRank: '🏆 11/22 Art Nine H3 Birdie & H9 Chain-Out Laser · SMP H15 Par [5|5|0|0]',
     backComments:
       'Rainbow Holo Collector Card — Innova Proto Glow Mako3 [5 | 5 | 0 | 0]. Zero turn, zero fade, high 5-glide midrange that mirrors your exact release angle from tee to chains.',
     transcriptStats:
-      'Cotton Candy "Sugar High" Main Bag Addition (11/13): Proto Glow Mako3 [5|5|0|0].',
+      '11/22 Debut: Art Nine H3 Skip Birdie + H9 Chain-Out for 23 (Bogey-Free 24 PB Tie!) + SMP Wooded H15 Par!',
     caddieScenarios: ['calm', 'tailwind', 'cross_lr'],
     caddieRoleNote:
       'Proto Glow Mako3 — Sugar High Main Bag Dead-Straight [5|5|0|0] Woods & Fairway Laser'
@@ -2395,12 +2395,12 @@ const NEW_INNOVA_DISCS: DiscItem[] = [
     courseStrategy:
       'Midrange 3 in the Cotton Candy Sugar High Main Bag: Stamped Sugar High twin to your 5× Sar-Ko-Par H9 Birdie closer and SMP Wooded H5/H12/H18 Par shaper. Throw smooth at 75% for sweeping right pans or uphill glide.',
     personalFlightNotes:
-      'Added to Cotton Candy "Sugar High" Main Bag (11/13): Keeps your signature [5|6|-4|1] Star Rollo uphill closer & dogleg-right woods shaper locked into the all-Cotton-Candy lineup!',
-    fieldTestRank: '🍬 Cotton Candy "Sugar High" Main Bag · Uphill Closer & Right-Turn Shaper [5|6|-4|1]',
+      '11/22 Cotton Candy Debut (5H · 1 Par): Carved a clean fairway turn on SMP Wooded H4 ("Hey, that\'s something! Rollo—that was good!"), battled uphill H12, and set up your true Par 3 on Art Nine H8 during your bogey-free 24 (-3) PB tie!',
+    fieldTestRank: '🍬 11/22 Cotton Candy Debut · RHBH Right-Turn & Uphill Mid [5|6|-4|1]',
     backComments:
       'Limited Edition Pixel Fairway — Innova Star Rollo [5 | 6 | -4 | 1]. Massive 6-glide and -4 turn make right-finishing RHBH lines, standstill woods scrambles, and touch rollers effortless.',
     transcriptStats:
-      'Cotton Candy "Sugar High" Main Bag Addition (11/13): Sugar High Star Rollo [5|6|-4|1].',
+      '11/22 Debut: SMP Wooded H4 ("Rollo—that was good!"), H5/H11/H12 + Art Nine H8 Par (24 / -3 PB Tie)!',
     caddieScenarios: ['tailwind', 'calm', 'cross_lr'],
     caddieRoleNote:
       'Star Rollo — Sugar High Main Bag Effortless Right-Turn, Uphill Glide & Roller Mid [5|6|-4|1]'
@@ -2432,12 +2432,12 @@ const NEW_INNOVA_DISCS: DiscItem[] = [
     courseStrategy:
       'Fairway 1 in the Cotton Candy Sugar High Main Bag: Brings back the Leopard3 mold (+15ft "double-lift glide" winner from your 10/28 field test!) in premium Color Glow Champion plastic, filling the Halo Star IT [7|6|-2|1] slot on Sar-Ko-Par H2/H3 & wooded tunnels.',
     personalFlightNotes:
-      'Added to Cotton Candy "Sugar High" Main Bag (11/13): Replaces your lost GStar Leopard3 and covers your favorite 7-speed [-2|1] hyzer-flip fairway slot in gorgeous Aqua Color Glow Champion!',
-    fieldTestRank: '🍬 Cotton Candy "Sugar High" Main Bag · Color Glow Hyzer-Flip Fairway [7|5|-2|1]',
+      '11/22 Cotton Candy Debut Test Throws: First test rips on SMP Wooded H2 & H6 (released slightly nose-up left)—keep tea-kettle wrist low & flat to unlock smooth wooded hyzer-flips in Aqua Color Glow Champion!',
+    fieldTestRank: '🍬 11/22 Debut Tested · Color Glow Hyzer-Flip Fairway [7|5|-2|1]',
     backComments:
       'Prism Holo Collector Card — Innova Color Glow Champion Leopard3 [7 | 5 | -2 | 1]. Flat-topped 7-speed control fairway built for dead-straight wooded hyzer-flips and smooth turnover lines.',
     transcriptStats:
-      'Cotton Candy "Sugar High" Main Bag Addition (11/13): Color Glow Champion Leopard3 [7|5|-2|1].',
+      '11/22 Debut: First test throws on SMP Wooded H2 & H6 (keep nose down for straight hyzer-flips)!',
     caddieScenarios: ['calm', 'tailwind', 'cross_lr'],
     caddieRoleNote:
       'Glow Leopard3 — Sugar High Main Bag Color Glow Hyzer-Flip & Tunnel Fairway [7|5|-2|1]'
@@ -2469,12 +2469,12 @@ const NEW_INNOVA_DISCS: DiscItem[] = [
     courseStrategy:
       'Fairway 2 in the Cotton Candy Sugar High Main Bag: Bridges your understable Glow Leopard3 [7|5|-2|1] and overstable Champion Eagle [7|4|-1|3], giving you a complete 3-disc 7-speed fairway triad!',
     personalFlightNotes:
-      'Added to Cotton Candy "Sugar High" Main Bag (11/13): Classic [7|5|0|2] Teebird accuracy—won’t flip over in light breezes and won’t dump as hard left as the Eagle on tight fairways.',
-    fieldTestRank: '🍬 Cotton Candy "Sugar High" Main Bag · Straight-to-Fade 7-Speed Anchor [7|5|0|2]',
+      '11/22 Cotton Candy Debut (2H): First-ever tee shot of the Cotton Candy era into crazy gusty wind on SMP Wooded H1 ("Pretty straight, slightly left—did exactly what it needed to!") and punched cleanly through H11 branches!',
+    fieldTestRank: '⭐ 11/22 Debut Opener · Straight-to-Fade 7-Speed Anchor [7|5|0|2]',
     backComments:
       'Collector’s Edition Holo — Innova Glow Teebird [7 | 5 | 0 | 2]. Innova’s gold-standard pinpoint fairway driver combining high 5-glide carry, zero turn, and predictable placement fade.',
     transcriptStats:
-      'Cotton Candy "Sugar High" Main Bag Addition (11/13): Glow Teebird [7|5|0|2].',
+      '11/22 Debut: SMP Wooded H1 gusty-wind opener ("Did exactly what it needed to!") + H11 branch punch!',
     caddieScenarios: ['calm', 'headwind', 'cross_rl'],
     caddieRoleNote:
       'Glow Teebird — Sugar High Main Bag Straight-to-Fade Fairway Workhorse [7|5|0|2]'
@@ -2506,12 +2506,12 @@ const NEW_INNOVA_DISCS: DiscItem[] = [
     courseStrategy:
       'Driver 1 in the Cotton Candy Sugar High Main Bag: Upgrades your #1 long-course distance workhorse (Mize +20ft field-test winner, Prairie Center H9 gap laser & Sar-Ko-Par 11/09 H3/H8 Birdies) into bright Hot Pink Star plastic that’s impossible to lose in leaves!',
     personalFlightNotes:
-      'Added to Cotton Candy "Sugar High" Main Bag (11/13): Keeps your money [9|5|-4|1] Roadrunner slot front and center—easy full-S distance off a slight hyzer release without needing max arm Strain.',
-    fieldTestRank: '🍬 Cotton Candy "Sugar High" Main Bag · #1 Easy-Distance S-Curve & Turnover Driver [9|5|-4|1]',
+      '11/22 Cotton Candy Debut: First throws in bright Hot Pink Star plastic on SMP Wooded H13 (375ft long tee) & H6 test—keeps your signature [9|5|-4|1] S-curve & turnover distance driver impossible to miss in leaves!',
+    fieldTestRank: '🍬 11/22 Cotton Candy Debut · Hot Pink Star Distance & Turnover [9|5|-4|1]',
     backComments:
       'Cracked-Ice Holo Collector Card — Innova Star Roadrunner [9 | 5 | -4 | 1]. Versatile long-range turnover driver, tailwind bomber, and out-of-the-box distance roller.',
     transcriptStats:
-      'Cotton Candy "Sugar High" Main Bag Addition (11/13): Hot Pink Star Roadrunner [9|5|-4|1].',
+      '11/22 Debut: SMP Wooded H13 (375ft long tee) & H6 test in Hot Pink Star plastic!',
     caddieScenarios: ['calm', 'tailwind', 'cross_lr'],
     caddieRoleNote:
       'Star Roadrunner — Sugar High Main Bag High-Glide Turnover & S-Curve Distance Driver [9|5|-4|1]'
@@ -2543,12 +2543,12 @@ const NEW_INNOVA_DISCS: DiscItem[] = [
     courseStrategy:
       'Driver 2 in the Cotton Candy Sugar High Main Bag: Replaces the Champion Firebird lost on Mize H1! Pull this for brutal headwinds, low skip shots under tree canopies, dogleg-left corners, and forehand get-out-of-trouble flexes.',
     personalFlightNotes:
-      'Added to Cotton Candy "Sugar High" Main Bag (11/13): The Firebird is BACK in pearly Luster Champion! Pair with Star Roadrunner [9|5|-4|1] as opposite bookends at Speed 9.',
-    fieldTestRank: '🍬 Cotton Candy "Sugar High" Main Bag · Ultimate Headwind & Skip-Hyzer Utility [9|3|0|4]',
+      '11/22 Cotton Candy Debut (2H · 1 Par ★): Immediately earned Par 3 on 302ft Shawnee Mission Wooded H8 paired with Pink DX Alien, and battled wind on H9!',
+    fieldTestRank: '⭐ 11/22 Debut Par (SMP H8) · Headwind & Skip-Hyzer Utility [9|3|0|4]',
     backComments:
       'Gold & Lightning Collector Card — Innova Luster Champion Firebird [9 | 3 | 0 | 4]. Tour-proven wind fighter for spike hyzers, flare skips, and high-torque forehands.',
     transcriptStats:
-      'Cotton Candy "Sugar High" Main Bag Addition (11/13): Luster Champion Firebird [9|3|0|4].',
+      '11/22 Debut: Locked in Par 3 on 302ft SMP Wooded H8 paired w/ Pink DX Alien!',
     caddieScenarios: ['headwind', 'cross_rl'],
     caddieRoleNote:
       'Luster Firebird — Sugar High Main Bag Headwind Fighter, Flare-Skip & Spike-Hyzer Utility [9|3|0|4]'
@@ -2580,12 +2580,12 @@ const NEW_INNOVA_DISCS: DiscItem[] = [
     courseStrategy:
       'Driver 3 in the Cotton Candy Sugar High Main Bag: Premium Halo Star upgrade to the Classic Glow Wraith you striped low and flat on Shawnee Mission Wooded H7 & H9 ("Excellent job Wraith—kept it down, great flight!").',
     personalFlightNotes:
-      'Added to Cotton Candy "Sugar High" Main Bag (11/13): Gives your proven Speed 11 Wraith slot premium Halo Star durability and wind resistance for 260–375ft open and low-ceiling fairways.',
-    fieldTestRank: '🍬 Cotton Candy "Sugar High" Main Bag · Halo Star Speed 11 Power Driver [11|5|-1|3]',
+      '11/22 Cotton Candy Debut (2H): Debuted off the tee in gusty wind on 355ft SMP Wooded H7 and closing 347ft H18—helping shoot 71 (+17), 7 strokes better than 11/17! Premium Halo Star stability for 260–375ft low-ceiling & windy fairways.',
+    fieldTestRank: '🚀 11/22 Cotton Candy Debut · Halo Star Speed 11 Power Driver [11|5|-1|3]',
     backComments:
       'Rainbow Holo Collector Card — Innova Halo Star Wraith [11 | 5 | -1 | 3]. Long, controllable distance driver with extra glide and reliable wind-penetrating Halo rim stability.',
     transcriptStats:
-      'Cotton Candy "Sugar High" Main Bag Addition (11/13): Halo Star Wraith [11|5|-1|3].',
+      '11/22 Debut: SMP Wooded H7 (355ft) & H18 (347ft) tee drives in 71 (+17) Cotton Candy debut!',
     caddieScenarios: ['headwind', 'cross_rl', 'calm'],
     caddieRoleNote:
       'Halo Wraith — Sugar High Main Bag Controlled Power & Wind Distance Driver [11|5|-1|3]'
@@ -10080,8 +10080,8 @@ const ROUND_2026_11_22_ART_NINE: HistoricalRound = {
 
 export const INITIAL_USER_EXPORT: AppExportPayload = {
   app: typedV65.app || 'Jeffery & Jack Disc Golf Scorecard',
-  version: 'v111',
-  exportDate: '2026-11-22T23:30:00.000Z',
+  version: 'v112',
+  exportDate: '2026-11-22T23:35:00.000Z',
   history: [
     ROUND_2026_11_22_ART_NINE,
     ROUND_2026_11_22_SMP_WOODED,

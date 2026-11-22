@@ -73,8 +73,9 @@ import {
   writeMergedStateToLocalStorageAndDashboard
 } from './utils/cloudSync';
 
-const STORAGE_KEY = 'jj_disc_golf_v111_master_state';
+const STORAGE_KEY = 'jj_disc_golf_v112_master_state';
 const LEGACY_STORAGE_KEYS = [
+  'jj_disc_golf_v111_master_state',
   'jj_disc_golf_v110_master_state',
   'jj_disc_golf_v109_master_state',
   'jj_disc_golf_v108_master_state',

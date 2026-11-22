@@ -23,15 +23,20 @@ import { BroadcastScorecardTicker } from './TacticalRangefinderWidgets';
 
 function resolveHoleThrownDisc(
   h: HistoricalRound['holes'][number],
-  bag: DiscItem[]
+  bag: DiscItem[],
+  roundDate?: string
 ): DiscItem | undefined {
+  const isCottonCandyEra = Boolean(roundDate && roundDate >= '2026-11-18');
   const teeThrowId = h.meta?.jeffery?.throws?.find((t) => t.shotType === 'tee')?.discId;
   const thrownId = teeThrowId || h.meta?.jeffery?.thrownDiscId;
   const usedName = h.meta?.jeffery?.discUsed;
+  const matchPool = isCottonCandyEra
+    ? [...bag.filter((d) => !d.archived), ...bag.filter((d) => d.archived)]
+    : bag;
   const directMatch =
     (thrownId ? bag.find((d) => d.id === thrownId) : undefined) ||
     (usedName
-      ? bag.find(
+      ? matchPool.find(
           (d) =>
             d.name.toLowerCase() === usedName.toLowerCase() ||
             (usedName.toLowerCase() === 'xero' && d.id === 'innova-sync') ||
@@ -42,30 +47,64 @@ function resolveHoleThrownDisc(
 
   const note = (h.voiceTranscript || h.meta?.jeffery?.voiceNote || '').toLowerCase();
   if (!note) return undefined;
-  const keywordMap: Array<[string, string]> = [
-    ['classic glow roc', 'innova-classic-glow-roc'],
-    ['classic glow beast', 'innova-classic-glow-beast'],
-    ['classic glow wraith', 'innova-classic-glow-wraith'],
-    ['xt glow nova', 'innova-xt-glow-nova'],
-    ['kc pro aviar', 'innova-kc-pro-aviar'],
-    ['dx alien', 'innova-dx-alien'],
-    ['champion eagle', 'innova-champion-eagle'],
-    ['roadrunner', 'innova-roadrunner'],
-    ['archangel', 'innova-archangel'],
-    ['leopard3', 'innova-leopard3'],
-    ['halo star it', 'innova-it'],
-    ['halo it', 'innova-it'],
-    ['mako3', 'innova-mako3'],
-    ['roc3', 'innova-roc3'],
-    ['rollo', 'innova-rollo'],
-    ['mamba', 'innova-mamba'],
-    ['sync', 'innova-sync'],
-    ['toro', 'innova-toro'],
-    ['jay', 'innova-jay'],
-    ['firebird', 'innova-firebird'],
-    ['xt pig', 'innova-pig'],
-    ['aviar', 'innova-aviar']
-  ];
+  const keywordMap: Array<[string, string]> = isCottonCandyEra
+    ? [
+        ['halo destroyer', 'innova-halo-destroyer'],
+        ['destroyer', 'innova-halo-destroyer'],
+        ['halo wraith', 'innova-halo-wraith'],
+        ['wraith', 'innova-halo-wraith'],
+        ['luster firebird', 'innova-luster-firebird'],
+        ['firebird', 'innova-luster-firebird'],
+        ['star roadrunner', 'innova-sugar-star-roadrunner'],
+        ['roadrunner', 'innova-sugar-star-roadrunner'],
+        ['glow teebird', 'innova-glow-teebird'],
+        ['teebird', 'innova-glow-teebird'],
+        ['glow leopard3', 'innova-glow-leopard3'],
+        ['leopard3', 'innova-glow-leopard3'],
+        ['champion eagle', 'innova-champion-eagle'],
+        ['archangel', 'innova-archangel'],
+        ['proto glow mako3', 'innova-proto-glow-mako3'],
+        ['mako3', 'innova-proto-glow-mako3'],
+        ['star rollo', 'innova-sugar-star-rollo'],
+        ['rollo', 'innova-sugar-star-rollo'],
+        ['dx glow roc', 'innova-sugar-glow-roc'],
+        ['glow roc', 'innova-sugar-glow-roc'],
+        ['roc3', 'innova-roc3'],
+        ['roc', 'innova-sugar-glow-roc'],
+        ['dx alien', 'innova-dx-alien'],
+        ['sync', 'innova-sync'],
+        ['yeti pro aviar', 'innova-yeti-pro-aviar'],
+        ['yeti', 'innova-yeti-pro-aviar'],
+        ['kc pro aviar', 'innova-kc-pro-aviar'],
+        ['proto glow aviar', 'innova-proto-glow-aviar'],
+        ['xt glow nova', 'innova-xt-glow-nova'],
+        ['nova', 'innova-xt-glow-nova'],
+        ['aviar', 'innova-proto-glow-aviar']
+      ]
+    : [
+        ['classic glow roc', 'innova-classic-glow-roc'],
+        ['classic glow beast', 'innova-classic-glow-beast'],
+        ['classic glow wraith', 'innova-classic-glow-wraith'],
+        ['xt glow nova', 'innova-xt-glow-nova'],
+        ['kc pro aviar', 'innova-kc-pro-aviar'],
+        ['dx alien', 'innova-dx-alien'],
+        ['champion eagle', 'innova-champion-eagle'],
+        ['roadrunner', 'innova-roadrunner'],
+        ['archangel', 'innova-archangel'],
+        ['leopard3', 'innova-leopard3'],
+        ['halo star it', 'innova-it'],
+        ['halo it', 'innova-it'],
+        ['mako3', 'innova-mako3'],
+        ['roc3', 'innova-roc3'],
+        ['rollo', 'innova-rollo'],
+        ['mamba', 'innova-mamba'],
+        ['sync', 'innova-sync'],
+        ['toro', 'innova-toro'],
+        ['jay', 'innova-jay'],
+        ['firebird', 'innova-firebird'],
+        ['xt pig', 'innova-pig'],
+        ['aviar', 'innova-aviar']
+      ];
   for (const [kw, discId] of keywordMap) {
     if (note.includes(kw)) {
       return bag.find((d) => d.id === discId);
@@ -791,7 +830,7 @@ export const RoundHistoryView: React.FC<RoundHistoryViewProps> = ({
                         </thead>
                         <tbody className="divide-y divide-slate-800/80">
                           {round.holes.map((h) => {
-                            const thrownDisc = resolveHoleThrownDisc(h, bag);
+                            const thrownDisc = resolveHoleThrownDisc(h, bag, round.date);
                             const holeNote =
                               h.voiceTranscript ||
                               h.meta?.jeffery?.voiceNote ||

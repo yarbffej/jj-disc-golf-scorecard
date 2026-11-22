@@ -2919,21 +2919,64 @@ export function buildLivePersonalFlightProfile(
         candidateTexts.find((t) => doesCommentaryMentionDisc(disc, t, r.date)) || '';
       const voiceMatched = Boolean(voice);
 
+      const isCottonCandyEra = Boolean(r.date && r.date >= '2026-11-18');
+      const isReplacedVaultMold =
+        disc.id === 'innova-rollo' ||
+        disc.id === 'innova-roadrunner' ||
+        disc.id === 'innova-mako3' ||
+        disc.id === 'innova-classic-glow-wraith' ||
+        disc.id === 'innova-classic-glow-roc' ||
+        disc.id === 'innova-leopard3' ||
+        disc.id === 'innova-firebird' ||
+        disc.id === 'innova-aviar';
+      const isNewCottonCandyMold =
+        disc.id === 'innova-sugar-star-rollo' ||
+        disc.id === 'innova-sugar-star-roadrunner' ||
+        disc.id === 'innova-proto-glow-mako3' ||
+        disc.id === 'innova-halo-wraith' ||
+        disc.id === 'innova-sugar-glow-roc' ||
+        disc.id === 'innova-glow-leopard3' ||
+        disc.id === 'innova-glow-teebird' ||
+        disc.id === 'innova-luster-firebird' ||
+        disc.id === 'innova-yeti-pro-aviar' ||
+        disc.id === 'innova-proto-glow-aviar' ||
+        disc.id === 'innova-halo-destroyer';
+
+      const allowNameMatch =
+        (!isReplacedVaultMold || !isCottonCandyEra) &&
+        (!isNewCottonCandyMold || isCottonCandyEra);
+
       const discUsedMatched =
         thrownId === disc.id ||
         inThrowsArray ||
-        usedDisc === nameLower ||
-        (disc.id === 'innova-sync' && (usedDisc.includes('sync') || usedDisc.includes('xero'))) ||
-        (disc.id === 'innova-roc3' && usedDisc.includes('roc3')) ||
-        (disc.id === 'innova-classic-glow-roc' &&
-          (usedDisc.includes('classic glow roc') || usedDisc === 'roc')) ||
-        (disc.id !== 'innova-it' &&
-          disc.id !== 'innova-roc3' &&
-          disc.id !== 'innova-classic-glow-roc' &&
-          disc.id !== 'innova-aviar' &&
-          usedDisc.includes(idShort)) ||
-        (disc.id === 'innova-aviar' &&
-          (usedDisc === 'aviar' || usedDisc === 'star aviar'));
+        (allowNameMatch &&
+          (usedDisc === nameLower ||
+            (disc.id === 'innova-sync' &&
+              (usedDisc.includes('sync') || usedDisc.includes('xero'))) ||
+            (disc.id === 'innova-roc3' && usedDisc.includes('roc3')) ||
+            (disc.id === 'innova-classic-glow-roc' &&
+              (usedDisc.includes('classic glow roc') || usedDisc === 'roc')) ||
+            (disc.id === 'innova-sugar-glow-roc' &&
+              (usedDisc.includes('glow roc') || usedDisc === 'roc')) ||
+            (disc.id === 'innova-proto-glow-mako3' && usedDisc.includes('mako')) ||
+            (disc.id === 'innova-sugar-star-rollo' && usedDisc.includes('rollo')) ||
+            (disc.id === 'innova-sugar-star-roadrunner' && usedDisc.includes('roadrunner')) ||
+            (disc.id === 'innova-halo-wraith' && usedDisc.includes('wraith')) ||
+            (disc.id === 'innova-glow-leopard3' && usedDisc.includes('leopard')) ||
+            (disc.id === 'innova-glow-teebird' && usedDisc.includes('teebird')) ||
+            (disc.id === 'innova-luster-firebird' && usedDisc.includes('firebird')) ||
+            (disc.id === 'innova-yeti-pro-aviar' && usedDisc.includes('yeti')) ||
+            (disc.id === 'innova-proto-glow-aviar' &&
+              (usedDisc.includes('proto glow aviar') || usedDisc === 'aviar')) ||
+            (disc.id === 'innova-halo-destroyer' && usedDisc.includes('destroyer')) ||
+            (disc.id !== 'innova-it' &&
+              disc.id !== 'innova-roc3' &&
+              disc.id !== 'innova-classic-glow-roc' &&
+              disc.id !== 'innova-aviar' &&
+              !isNewCottonCandyMold &&
+              usedDisc.includes(idShort)) ||
+            (disc.id === 'innova-aviar' &&
+              (usedDisc === 'aviar' || usedDisc === 'star aviar'))));
 
       const matched = discUsedMatched || voiceMatched;
 
@@ -2991,6 +3034,61 @@ export function buildLivePersonalFlightProfile(
       'My low-ceiling skip-birdie & bullseye touch hybrid [4|2|0|1]! On 11/16 at Sar-Ko-Par R2 H5 (144ft), I kept it low and flat off the tee for a pinpoint skip to exact pin distance 10–15ft right and drained Birdie 2! Also fired a 150ft laser on Prairie Pass H13 (11/15) and parked 347ft SMP Wooded H18 (11/10).';
     swingCue =
       'Lock your thumb into the ridged saucer groove and punch it low and flat—skips pin-high under low ceilings without sailing long.';
+  } else if (disc.id === 'innova-proto-glow-mako3') {
+    howItFliesForMe =
+      'Breakout Cotton Candy "Sugar High" straight woods laser [5|5|0|0]! In its 11/22 debut doubleheader, it sparked your BOGEY-FREE 24 (-3) Art Nine PB tie with a clean H3 skip Birdie 2, piped glowing downhill glide on H9 (setting up a CHAIN-OUT birdie bid for 23!), and laced SMP Wooded H15 cleanly past every tree ("Good, good, good, baby—missed the trees!") for Par 3!';
+    swingCue =
+      'Stay upright with a dead-level chest-high pull-through—Proto Glow plastic holds your exact angle cleanly even after tree taps.';
+  } else if (disc.id === 'innova-sugar-star-rollo') {
+    howItFliesForMe =
+      'Cotton Candy "Sugar High" right-turning & uphill weapon [5|6|-4|1]! Debuted on 11/22 across 5 holes at Shawnee Mission Wooded & The Art Nine—carved a clean fairway line on H4 ("Hey, that\'s something! Rollo—that was good!"), climbed uphill H12, and set up your true Par 3 on Art Nine H8 during your bogey-free 24 (-3) PB tie!';
+    swingCue =
+      'Smooth 75% flat chest-high pull ("tea-kettle" wrist level) so its -4 turn glides effortlessly right or climbs steep uphill tunnels.';
+  } else if (disc.id === 'innova-sugar-star-roadrunner') {
+    howItFliesForMe =
+      'Cotton Candy Hot Pink Star distance workhorse [9|5|-4|1]! Debuted on 11/22 at Shawnee Mission Wooded H13 (accidentally played from the 375ft long tee) and also tested on H6—high-visibility Hot Pink Star upgrade to your #1 S-curve & turnover distance slot!';
+    swingCue =
+      'Smooth level chest-high pull (or slight hyzer-flip) and keep the nose down so its 9-speed glide carries dead straight or pans right.';
+  } else if (disc.id === 'innova-halo-wraith') {
+    howItFliesForMe =
+      'Cotton Candy Two-Tone Halo Star Speed 11 power bomber [11|5|-1|3]! Debuted off the tee on 11/22 at Shawnee Mission Wooded on 355ft H7 and closing 347ft H18—helping shave 7 strokes off your 11/17 score for a 71 (+17)! Premium Halo rim resists gusty headwinds with a reliable +3 left finish.';
+    swingCue =
+      'Keep it low and flat under the ceiling with a full follow-through so Halo rim stability drives forward before hooking left.';
+  } else if (disc.id === 'innova-sugar-glow-roc') {
+    howItFliesForMe =
+      'Breakout Cotton Candy DX Glow Rancho Roc [4|4|0|3]! Stole the show in its 11/22 debut with 4 clutch Pars at Shawnee Mission Wooded—H6 straight past guardian trees, H10 downhill laser to 15ft right (grazing the top bar on the birdie bid!), H14 dead-straight ("Lovely, lovely—Par baby!"), and H17, plus Art Nine H1 Par!';
+    swingCue =
+      'Commit to a firm flat pull-through with tea-kettle wrist low—flies dead straight with a gentle predictable left check in wind.';
+  } else if (disc.id === 'innova-yeti-pro-aviar') {
+    howItFliesForMe =
+      'Breakout Cotton Candy concave-top beaded putter [2|3|0|1]! Anchored ALL 27 holes of your 11/22 Cotton Candy debut—powered your BOGEY-FREE 24 (-3) Art Nine PB tie (including a wild tree-bending H5 Birdie 2: "Went around all those trees!"), hit metal from 45–50ft on SMP Wooded H9, and locked in chilly-weather grip all afternoon!';
+    swingCue =
+      'Lock your thumb into the concave puddle top, keep weight forward, and pop straight through the chains with tacky confidence.';
+  } else if (disc.id === 'innova-proto-glow-aviar') {
+    howItFliesForMe =
+      'Cotton Candy Mint Collector beadless driving & touch putter [2|3|0|1]! In-hand Main Bag option for 130–185ft straight tee drives and floaty Circle 2 touch putts—awaiting its first logged throws!';
+    swingCue =
+      'Relaxed 80% flat release with index finger tucked cleanly under the beadless rim for smooth, straight float.';
+  } else if (disc.id === 'innova-glow-teebird') {
+    howItFliesForMe =
+      'Cotton Candy Glow Teebird straight-to-fade fairway anchor [7|5|0|2]! Debuted into crazy gusty wind on 11/22 Shawnee Mission Wooded H1 ("Pretty straight, slightly left—did exactly what it needed to!") and punched cleanly through the branches on 444ft H11!';
+    swingCue =
+      'Aim 8–12ft right of the pin and pull flat & chest-high—holds zero turn for 80% of flight before a clean +2 left settle.';
+  } else if (disc.id === 'innova-glow-leopard3') {
+    howItFliesForMe =
+      'Cotton Candy Aqua Color Glow Champion fairway [7|5|-2|1]! Got its first test throws on 11/22 Shawnee Mission Wooded H2 & H6 (noted nose-up release went left)—keep the nose down on flat/hyzer-flip releases to unlock smooth wooded S-curves!';
+    swingCue =
+      'Keep nose flat ("heavy tea-kettle" down low) on a smooth 80% chest-high pull so its -2 turn glides straight down wooded tunnels.';
+  } else if (disc.id === 'innova-luster-firebird') {
+    howItFliesForMe =
+      'Cotton Candy Luster Champion wind & skip utility [9|3|0|4]! Debuted on 11/22 at Shawnee Mission Wooded—anchored a clutch Par 3 on 302ft H8 paired with Pink DX Alien and fought gusty wind on H9!';
+    swingCue =
+      'Pull strictly for headwinds, sharp dogleg-left corners, or low flare-skips aimed well right of the basket.';
+  } else if (disc.id === 'innova-halo-destroyer') {
+    howItFliesForMe =
+      'Flagship Cotton Candy Speed 12 Neon Chartreuse Halo Destroyer [12|5|-1|3]! In-hand Main Bag max-distance & stiff-headwind bomber for 300–600ft open Championship fairways—awaiting its first logged tee rip!';
+    swingCue =
+      'Save for wide-open 300+ ft fairways or fierce headwinds; release low and flat with room on the right for its +3 finish.';
   } else if (disc.id === 'innova-mako3') {
     howItFliesForMe =
       'My purest angle-integrity truth-teller [5|5|0|0]. On 11/10 at Shawnee Mission Wooded H13 (277ft downhill), I striped it dead-flat the entire flight ("Straight, beauty, perfect! Flat as can be the whole way!"). Also laced 11/09 Sar-Ko-Par H2, parked 2ft on 11/05 Sar-Ko H6 (21 PB), and birdied Art Nine H6 back-to-back. Tendency: Turning my wrist pulls it left into early trees.';

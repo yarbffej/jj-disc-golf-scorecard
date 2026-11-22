@@ -554,7 +554,9 @@ function resolveDiscByIdOrName(
   }
   if (discName) {
     const lower = discName.toLowerCase();
-    return bag.find(
+    // Prefer active (non-archived) Cotton Candy / Main Bag discs first on name matches
+    const ordered = [...bag.filter((d) => !d.archived), ...bag.filter((d) => d.archived)];
+    return ordered.find(
       (d) =>
         d.name.toLowerCase() === lower ||
         lower.includes(d.name.toLowerCase()) ||

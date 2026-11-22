@@ -34,8 +34,9 @@ import {
   syncDossierToDashboard
 } from './reportGenerator';
 
-export const MASTER_STORAGE_KEY = 'jj_disc_golf_v111_master_state';
+export const MASTER_STORAGE_KEY = 'jj_disc_golf_v112_master_state';
 export const LEGACY_STORAGE_KEYS = [
+  'jj_disc_golf_v111_master_state',
   'jj_disc_golf_v110_master_state',
   'jj_disc_golf_v109_master_state',
   'jj_disc_golf_v108_master_state',
@@ -891,7 +892,7 @@ export function mergeCloudPayloads(
 
   const payload: AppExportPayload = {
     app: 'Jeffery & Jack Disc Golf Scorecard',
-    version: 'v111',
+    version: 'v112',
     exportDate: new Date().toISOString(),
     updatedAt: Math.max(localTime, remoteTime),
     deviceId: local.deviceId || getOrCreateDeviceId(),
@@ -1003,7 +1004,7 @@ export function readLocalStorageSnapshot(): AppExportPayload {
 
   return {
     app: 'Jeffery & Jack Disc Golf Scorecard',
-    version: 'v111',
+    version: 'v112',
     exportDate: new Date().toISOString(),
     updatedAt: parsedMaster.updatedAt || Date.now(),
     deviceId: getOrCreateDeviceId(),
