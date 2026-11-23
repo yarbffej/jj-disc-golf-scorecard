@@ -532,7 +532,7 @@ export const DEFAULT_VERIFIED_HOLE_PICKS: Record<string, string> = {
   'harmon:7': 'innova-sugar-star-rollo',
   'harmon:8': 'innova-halo-destroyer',
   'harmon:9': 'innova-sugar-glow-roc',
-  // Black Hoof Flying Disc — Cotton Candy + Core 3 Picks!
+  // Black Hoof Flying Disc (9-Hole) — Cotton Candy + Core 3 Picks!
   'blackhoof:1': 'innova-archangel',
   'blackhoof:2': 'innova-archangel',
   'blackhoof:3': 'innova-sugar-star-roadrunner',
@@ -542,6 +542,25 @@ export const DEFAULT_VERIFIED_HOLE_PICKS: Record<string, string> = {
   'blackhoof:7': 'innova-sync',
   'blackhoof:8': 'innova-glow-leopard3',
   'blackhoof:9': 'innova-xt-glow-nova',
+  // Black Hoof Championship (White to White · 18 Holes · Par 54 · 4,218 ft) — 11/23 65 (+11 PB Tie!) Picks!
+  'blackhoof_18:1': 'innova-sugar-star-rollo',
+  'blackhoof_18:2': 'innova-archangel',
+  'blackhoof_18:3': 'innova-glow-leopard3',
+  'blackhoof_18:4': 'innova-sugar-glow-roc',
+  'blackhoof_18:5': 'innova-glow-teebird',
+  'blackhoof_18:6': 'innova-glow-leopard3',
+  'blackhoof_18:7': 'innova-sugar-star-roadrunner',
+  'blackhoof_18:8': 'innova-proto-glow-mako3',
+  'blackhoof_18:9': 'innova-sugar-glow-roc',
+  'blackhoof_18:10': 'innova-sugar-star-rollo',
+  'blackhoof_18:11': 'innova-proto-glow-mako3',
+  'blackhoof_18:12': 'innova-sugar-star-roadrunner',
+  'blackhoof_18:13': 'innova-sync',
+  'blackhoof_18:14': 'innova-proto-glow-mako3',
+  'blackhoof_18:15': 'innova-sugar-star-rollo',
+  'blackhoof_18:16': 'innova-proto-glow-mako3',
+  'blackhoof_18:17': 'innova-sugar-star-rollo',
+  'blackhoof_18:18': 'innova-sugar-star-rollo',
   // Cedar Ridge (H1–H18, Par 58, 5,344ft) — Cotton Candy + Core 3 Lineup!
   'cedarridge:1': 'innova-sugar-star-roadrunner',
   'cedarridge:2': 'innova-sugar-star-roadrunner',
@@ -3021,9 +3040,9 @@ export function buildLivePersonalFlightProfile(
       'Point-and-shoot flat release on mound/downhill greens & wooded scrambles; never use off the Hole #1 tee.';
   } else if (disc.id === 'innova-sync') {
     howItFliesForMe =
-      'My #1 Hole #1 Ace-Run Tee Putter & "All-Star" approach laser [3|3|0|1]! On 11/16 at Sar-Ko-Par R1 H1 (138ft), it SMACKED THE BASKET off the tee ("Oh shit, that was almost an ace! That hit the basket!") for Birdie 2 and flew dead-flat onto the H1 ledge again in R2! Also parked SMP Wooded H5 to 3ft & stuck H8 (11/10).';
+      'Halloween Edition Hot Pink Star Sync [3|3|0|1] — #1 Ace-Run Tee Putter & Trees-Threading Sniper! On 11/23 Black Hoof Championship (65 / +11 18-Hole PB tie!), threaded EVERY tree on 105ft H13 grazing the basket top ("No idea how I missed all those trees!") & drained a 10ft H10 Par; birdied Art Nine H7 (11/22 24 / -3 PB tie!) & smacked the basket on Sar-Ko H1 (11/16)!';
     swingCue =
-      'Step up on Hole #1 without overthinking—relaxed 80% flat release straight at the chains!';
+      'Step up without overthinking—relaxed 80% flat chest-high pull straight at the chains!';
   } else if (disc.id === 'innova-toro') {
     howItFliesForMe =
       'Flies like a heavy, torque-resistant approach brick [4|2|0|3] that refuses to turn over and hooks reliably left to brake by the pin. Saved Par up the wooded lane on Sar-Ko-Par H5 (11/04: "Toro was good, got me up there!") and parked a 3rd-shot uphill approach around a guardian tree on Cal Trail H9 (532ft Par 4). Won’t glide past the basket, but will dump left early if thrown softly.';
@@ -3031,24 +3050,24 @@ export function buildLivePersonalFlightProfile(
       'Aim 15–20ft right of the pin on RHBH approaches (or flick forehand) and let its +3 fade hook around guardian trees and sit.';
   } else if (disc.id === 'innova-dx-alien') {
     howItFliesForMe =
-      'My low-ceiling skip-birdie & bullseye touch hybrid [4|2|0|1]! On 11/16 at Sar-Ko-Par R2 H5 (144ft), I kept it low and flat off the tee for a pinpoint skip to exact pin distance 10–15ft right and drained Birdie 2! Also fired a 150ft laser on Prairie Pass H13 (11/15) and parked 347ft SMP Wooded H18 (11/10).';
+      'My low-ceiling skip-birdie & UFO tree-dodge touch hybrid [4|2|0|1]! On 11/23 Black Hoof Championship (65 PB tie!), pulled off a legendary scramble on H12 ("Missed the trees like an alien UFO would!"); skipped pin-high for Birdie 2 on Sar-Ko H5 (11/16) & set up Art Nine H6 20ft Birdie (11/17)!';
     swingCue =
       'Lock your thumb into the ridged saucer groove and punch it low and flat—skips pin-high under low ceilings without sailing long.';
   } else if (disc.id === 'innova-proto-glow-mako3') {
     howItFliesForMe =
-      'Breakout Cotton Candy "Sugar High" straight woods laser [5|5|0|0]! In its 11/22 debut doubleheader, it sparked your BOGEY-FREE 24 (-3) Art Nine PB tie with a clean H3 skip Birdie 2, piped glowing downhill glide on H9 (setting up a CHAIN-OUT birdie bid for 23!), and laced SMP Wooded H15 cleanly past every tree ("Good, good, good, baby—missed the trees!") for Par 3!';
+      'Breakout Cotton Candy "Sugar High" straight woods laser [5|5|0|0]! Sparked your 11/22 BOGEY-FREE 24 (-3) Art Nine PB tie (H3 skip Birdie 2 + H9 chain-out for 23!), laced SMP Wooded H15 Par, and started your 3-Par streak on 11/23 Black Hoof Championship H8 (65 / +11 18-Hole PB tie!)!';
     swingCue =
-      'Stay upright with a dead-level chest-high pull-through—Proto Glow plastic holds your exact angle cleanly even after tree taps.';
+      'Stay upright with a dead-level chest-high pull-through—focus on releasing on time without drifting late right.';
   } else if (disc.id === 'innova-sugar-star-rollo') {
     howItFliesForMe =
-      'Cotton Candy "Sugar High" right-turning & uphill weapon [5|6|-4|1]! Debuted on 11/22 across 5 holes at Shawnee Mission Wooded & The Art Nine—carved a clean fairway line on H4 ("Hey, that\'s something! Rollo—that was good!"), climbed uphill H12, and set up your true Par 3 on Art Nine H8 during your bogey-free 24 (-3) PB tie!';
+      '🏆 11/23 BLACK HOOF CHAMPIONSHIP MVP [5|6|-4|1]!! Flipped up on 201ft H17 for your 1st Cotton Candy Star Rollo BIRDIE 2 ★ ("Flip up, flip up—IT DID IT!! Rollo is my disc, man! Birdie, dude!"), bombed 237+ ft downhill to the blue pin on H15 Par, & locked in Pars on H1, 294ft H10 & uphill H18 to tie your All-Time 18-Hole PB (65 / +11)!';
     swingCue =
-      'Smooth 75% flat chest-high pull ("tea-kettle" wrist level) so its -4 turn glides effortlessly right or climbs steep uphill tunnels.';
+      'Swing your hips ("belly button at target!") with firm flat chest-high zip—don’t be afraid to throw it far and let the -4 turn flip up!';
   } else if (disc.id === 'innova-sugar-star-roadrunner') {
     howItFliesForMe =
-      'Cotton Candy Hot Pink Star distance workhorse [9|5|-4|1]! Debuted on 11/22 at Shawnee Mission Wooded H13 (accidentally played from the 375ft long tee) and also tested on H6—high-visibility Hot Pink Star upgrade to your #1 S-curve & turnover distance slot!';
+      'Cotton Candy Hot Pink Star distance workhorse [9|5|-4|1]! On 11/23 Black Hoof Championship (65 PB tie!), twisted the hips down the 382ft longest hole H7 ("Went the distance! I was proud of that 4!"), plus 11/22 SMP Wooded H13 debut!';
     swingCue =
-      'Smooth level chest-high pull (or slight hyzer-flip) and keep the nose down so its 9-speed glide carries dead straight or pans right.';
+      'Drive through with hip rotation ("belly button at target") and keep the nose down so its 9-speed glide carries dead straight or pans right.';
   } else if (disc.id === 'innova-halo-wraith') {
     howItFliesForMe =
       'Cotton Candy Two-Tone Halo Star Speed 11 power bomber [11|5|-1|3]! Debuted off the tee on 11/22 at Shawnee Mission Wooded on 355ft H7 and closing 347ft H18—helping shave 7 strokes off your 11/17 score for a 71 (+17)! Premium Halo rim resists gusty headwinds with a reliable +3 left finish.';
@@ -3056,29 +3075,29 @@ export function buildLivePersonalFlightProfile(
       'Keep it low and flat under the ceiling with a full follow-through so Halo rim stability drives forward before hooking left.';
   } else if (disc.id === 'innova-sugar-glow-roc') {
     howItFliesForMe =
-      'Breakout Cotton Candy DX Glow Rancho Roc [4|4|0|3]! Stole the show in its 11/22 debut with 4 clutch Pars at Shawnee Mission Wooded—H6 straight past guardian trees, H10 downhill laser to 15ft right (grazing the top bar on the birdie bid!), H14 dead-straight ("Lovely, lovely—Par baby!"), and H17, plus Art Nine H1 Par!';
+      'Breakout Cotton Candy DX Glow Rancho Roc [4|4|0|3]! Locked in H9 Double Par during your 11/23 Black Hoof 65 (+11) PB tie, right after stealing the show on 11/22 SMP Wooded with 4 clutch Pars (H6, 15ft downhill H10, dead-straight H14 & H17) + Art Nine H1 Par!';
     swingCue =
       'Commit to a firm flat pull-through with tea-kettle wrist low—flies dead straight with a gentle predictable left check in wind.';
   } else if (disc.id === 'innova-yeti-pro-aviar') {
     howItFliesForMe =
-      'Breakout Cotton Candy concave-top beaded putter [2|3|0|1]! Anchored ALL 27 holes of your 11/22 Cotton Candy debut—powered your BOGEY-FREE 24 (-3) Art Nine PB tie (including a wild tree-bending H5 Birdie 2: "Went around all those trees!"), hit metal from 45–50ft on SMP Wooded H9, and locked in chilly-weather grip all afternoon!';
+      'Breakout Cotton Candy concave-top beaded putter [2|3|0|1]! Powered your 11/22 BOGEY-FREE 24 (-3) Art Nine PB tie (wild tree-bending H5 Birdie 2!), hit metal from 45–50ft on SMP Wooded H9, and closed out your 11/23 Black Hoof H17 Rollo Birdie in 42°F sunshine!';
     swingCue =
       'Lock your thumb into the concave puddle top, keep weight forward, and pop straight through the chains with tacky confidence.';
   } else if (disc.id === 'innova-proto-glow-aviar') {
     howItFliesForMe =
-      'Cotton Candy Mint Collector beadless driving & touch putter [2|3|0|1]! In-hand Main Bag option for 130–185ft straight tee drives and floaty Circle 2 touch putts—awaiting its first logged throws!';
+      'Cotton Candy Mint Collector beadless putter [2|3|0|1] — Debuted on 11/23 Black Hoof Championship (65 PB tie!) across H2, H6, H11 & H14 ("Color Aviar")! Commit smoothly without holding back for straight beadless float!';
     swingCue =
-      'Relaxed 80% flat release with index finger tucked cleanly under the beadless rim for smooth, straight float.';
+      'Don’t throw scared—trust a smooth 80% flat pull with index finger tucked cleanly under the beadless rim.';
   } else if (disc.id === 'innova-glow-teebird') {
     howItFliesForMe =
-      'Cotton Candy Glow Teebird straight-to-fade fairway anchor [7|5|0|2]! Debuted into crazy gusty wind on 11/22 Shawnee Mission Wooded H1 ("Pretty straight, slightly left—did exactly what it needed to!") and punched cleanly through the branches on 444ft H11!';
+      '🏆 Breakout Cotton Candy 7-Speed Fairway [7|5|0|2]! On 11/23 Black Hoof Championship (65 PB tie!), striped a gorgeous S-glide on 315ft H5 ("Like a little snake—goes right then flows back left!") for a monster Par 3 ★, right after its gusty-wind SMP Wooded H1 debut (11/22)!';
     swingCue =
       'Aim 8–12ft right of the pin and pull flat & chest-high—holds zero turn for 80% of flight before a clean +2 left settle.';
   } else if (disc.id === 'innova-glow-leopard3') {
     howItFliesForMe =
-      'Cotton Candy Aqua Color Glow Champion fairway [7|5|-2|1]! Got its first test throws on 11/22 Shawnee Mission Wooded H2 & H6 (noted nose-up release went left)—keep the nose down on flat/hyzer-flip releases to unlock smooth wooded S-curves!';
+      'Cotton Candy Aqua Color Glow Champion fairway [7|5|-2|1]! Unlocked your hip-rotation cue on 11/23 Black Hoof Championship H3 ("Swing your hips—belly button at target!") with clean skip-skip-skip carries on H3 & H6!';
     swingCue =
-      'Keep nose flat ("heavy tea-kettle" down low) on a smooth 80% chest-high pull so its -2 turn glides straight down wooded tunnels.';
+      'Swing your hips so your belly button finishes facing the target with a flat chest-high release for smooth wooded hyzer-flips.';
   } else if (disc.id === 'innova-luster-firebird') {
     howItFliesForMe =
       'Cotton Candy Luster Champion wind & skip utility [9|3|0|4]! Debuted on 11/22 at Shawnee Mission Wooded—anchored a clutch Par 3 on 302ft H8 paired with Pink DX Alien and fought gusty wind on H9!';
@@ -3126,7 +3145,7 @@ export function buildLivePersonalFlightProfile(
       'Aim right of guarded pockets and commit to a crisp flat release so it skips and hooks left right under the basket.';
   } else if (disc.id === 'innova-archangel') {
     howItFliesForMe =
-      'My high-glide woods-threading birdie/par machine [8|6|-4|1]! On 11/15 at Prairie Pass (65 / +11 18-Hole PB!), I parked 202ft H8 exact pin-high 10ft left ("Like an angel! Permanent, keep this one!") and threaded 193ft wooded H12, plus dropped flat by the basket on 11/16 Sar-Ko H3 (clipping top band on the birdie bid)!';
+      'New Hot Pink DX Archangel [8|6|-4|1] — BACK IN THE 100% COMPLETE BAG on 11/23 Black Hoof Championship (debuted on 250ft H2 during your 65/+11 18-Hole PB tie!). High-glide woods-threading birdie/par lineage: parked 202ft Prairie Pass H8 exact pin-high 10ft left ("Like an angel! Permanent, keep this one!") and threaded 193ft wooded H12!';
     swingCue =
       '"Don’t bend down—stay straight up when I release it" with a smooth chest-high pull-through.';
   } else if (disc.id === 'innova-roadrunner') {
@@ -3757,11 +3776,11 @@ const DISC_COMMENTARY_VERDICTS: Record<string, string> = {
   'innova-roc3':
     '🏆 #1 Birdie-Rate Midrange! Money right-to-left hyzer finish on Sar-Ko H4/H5/H7 & Art Nine H5—including 11/13 H4 Birdie 2 while dialing the straight pull-through tee-kettle low cue!',
   'innova-sync':
-    '🏆 #1 Most Used "All-Star" Putter/Approach! SMACKED THE BASKET on Sar-Ko H1 (11/16 near-Ace Birdie 2!), sealed bogey-free 25 (-2), & parked SMP Wooded H5 to 3ft!',
+    '🏆 Halloween Edition Hot Pink Star Sync [3|3|0|1] — 2/2 Pars (0.00 avg) in its 11/23 Black Hoof debut (grazed basket top threading H13 trees + drained H10 Par)! SMACKED THE BASKET on Sar-Ko H1!',
   'innova-kc-pro-aviar':
     '🏆 #1 Go-To Chain Putter (70% Par+)! Powered both 6-hole birdie streaks (11/05 & 11/09), 11/16 H3 Par save, & 20+ ft heavy-wind floater Par on Sar-Ko H7 (11/11).',
   'innova-archangel':
-    '🏆 Permanent Bag Keeper! Parked Prairie Pass H8 pin-high 10ft left ("Like an angel! Permanent, keep this one!"), parred H12, & clipped top band on 11/16 Sar-Ko H3!',
+    '🏆 New Hot Pink DX Archangel — BACK IN THE BAG on 11/23 Black Hoof H2! Lineage: parked Prairie Pass H8 pin-high 10ft left ("Like an angel! Permanent, keep this one!") & parred H12!',
   'innova-it':
     '⭐ Pinpoint Fairway Favorite! Striped a dead-flat heavy-wind ace-run Birdie 2 on Sar-Ko H3 (11/11), 1ft park on H3 (11/05), 5ft past H7 (11/09) & SMP Wooded H6/H17 Pars.',
   'innova-mako3':
@@ -3797,21 +3816,21 @@ const DISC_COMMENTARY_VERDICTS: Record<string, string> = {
   'innova-firebird':
     '📦 Archived / Lost on Mize H1 (15 holes, 40% Birdies) — early headwind/skip workhorse before being lost in heavy rough.',
   'innova-proto-glow-aviar':
-    '🍬 Arrived 11/18! Cotton Candy In-Hand Main Bag [2|3|0|1] — Grippy beadless Proto Glow driving & touch putter for 130–185ft tee shots and Circle 2 floaters!',
+    '🍬 Cotton Candy Debut 11/23! First throws on Black Hoof Championship (65 PB tie!) H2, H6, H11 & H14 ("Color Aviar") — 16 of 17 active discs now logged!',
   'innova-yeti-pro-aviar':
-    '🏆 Breakout Cotton Candy Putter [2|3|0|1]! Powered 11/22 BOGEY-FREE 24 (-3) Art Nine PB tie (magic tree-bending H5 Birdie 2!) + hit metal from 45–50ft on SMP Wooded H9!',
+    '🏆 Breakout Cotton Candy Putter [2|3|0|1]! Powered 11/22 BOGEY-FREE 24 (-3) Art Nine PB tie (H5 tree-bending Birdie 2!) + sealed 11/23 Black Hoof H17 Birdie!',
   'innova-sugar-glow-roc':
-    '🏆 Breakout Cotton Candy Midrange [4|4|0|3]! Anchored 4 Pars on 11/22 SMP Wooded (H6, 15ft downhill H10, dead-straight H14 & H17) + Art Nine H1 Par!',
+    '🏆 Breakout Cotton Candy Midrange [4|4|0|3]! 11/23 Black Hoof H9 Double Par (65 PB tie!) + 4 Pars on 11/22 SMP Wooded (H6, 15ft H10, H14, H17)!',
   'innova-proto-glow-mako3':
-    '🏆 Breakout Cotton Candy Woods Laser [5|5|0|0]! Skip Birdie 2 on Art Nine H3, CHAIN-OUT bid for 23 (-4) on H9 (sealing 24 / -3 PB tie!), & pure SMP Wooded H15 Par (11/22)!',
+    '🏆 Breakout Cotton Candy Woods Laser [5|5|0|0]! Art Nine H3 Birdie + H9 chain-out for 23 (11/22), SMP H15 Par, & Black Hoof H8 Double Par (11/23 65 PB tie)!',
   'innova-sugar-star-rollo':
-    '⭐ Cotton Candy Right-Turn & Uphill Weapon [5|6|-4|1]! Debuted 11/22 at SMP Wooded (H4/H11/H12) & Art Nine H8 tree-save Par during your bogey-free 24 (-3)!',
+    '🏆 11/23 BLACK HOOF MVP [5|6|-4|1]!! Flipped up on H17 for 1st Cotton Candy Birdie 2 ("IT DID IT!! Rollo is my disc!") + 237ft+ H15 bomb & 4 Pars in 65 PB tie!',
   'innova-glow-leopard3':
-    '🍬 Cotton Candy Color Glow Fairway [7|5|-2|1] — First test throws on 11/22 SMP Wooded H2/H6; ready to dial flat chest-high hyzer-flips!',
+    '🍬 Cotton Candy Color Glow Fairway [7|5|-2|1] — Unlocked hip-rotation skip carries ("belly button at target!") on 11/23 Black Hoof Championship H3 & H6!',
   'innova-glow-teebird':
-    '⭐ Cotton Candy Fairway Debut [7|5|0|2]! Piped straight-with-gentle-left into gusty wind on 11/22 SMP Wooded H1 ("Did exactly what it needed to!") & punched through H11 branches!',
+    '🏆 Breakout Cotton Candy Fairway [7|5|0|2]! Striped a snake S-glide on 315ft Black Hoof H5 for Monster Par 3 (11/23 65 PB tie!) + SMP Wooded H1 wind opener!',
   'innova-sugar-star-roadrunner':
-    '🍬 Cotton Candy Hot Pink Star [9|5|-4|1] — Debuted on 11/22 SMP Wooded H13 long tee; high-visibility upgrade to your #1 S-curve distance workhorse!',
+    '⭐ Cotton Candy Hot Pink Star [9|5|-4|1] — Twisted hips down 382ft Black Hoof H7 for proud Bogey 4 (11/23 65 PB tie!) + SMP Wooded H13 debut!',
   'innova-luster-firebird':
     '⭐ Cotton Candy Headwind & Skip Debut [9|3|0|4]! Locked in Par 3 on 11/22 SMP Wooded H8 paired w/ Pink DX Alien!',
   'innova-halo-wraith':

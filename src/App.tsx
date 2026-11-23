@@ -73,8 +73,9 @@ import {
   writeMergedStateToLocalStorageAndDashboard
 } from './utils/cloudSync';
 
-const STORAGE_KEY = 'jj_disc_golf_v112_master_state';
+const STORAGE_KEY = 'jj_disc_golf_v113_master_state';
 const LEGACY_STORAGE_KEYS = [
+  'jj_disc_golf_v112_master_state',
   'jj_disc_golf_v111_master_state',
   'jj_disc_golf_v110_master_state',
   'jj_disc_golf_v109_master_state',
@@ -144,6 +145,7 @@ function normalizeCourseSignature(courseName?: string): string {
   if (raw.includes('mize')) return 'mize';
   if (raw.includes('art nine')) return 'artnine';
   if (raw.includes('harmon')) return 'harmon';
+  if (raw === 'blackhoof_18' || (raw.includes('black hoof') && (raw.includes('championship') || raw.includes('white')))) return 'blackhoof_18';
   if (raw.includes('black hoof') && !raw.includes('championship')) return 'blackhoof';
   if (raw.includes('cedar ridge') || raw.includes('cedarridge')) return 'cedarridge';
   if (raw.includes('wyandotte')) return 'wyandotte';
@@ -457,6 +459,7 @@ export default function App() {
             if (
               (canonicalDateCourseCounts.get(dcKey) || 0) === 1 &&
               ((r.totalHoles || r.holes.length) >= 18 ||
+                r.date === '2026-11-23' ||
                 r.date === '2026-11-22' ||
                 r.date === '2026-11-17' ||
                 r.date === '2026-11-15')

@@ -34,8 +34,9 @@ import {
   syncDossierToDashboard
 } from './reportGenerator';
 
-export const MASTER_STORAGE_KEY = 'jj_disc_golf_v112_master_state';
+export const MASTER_STORAGE_KEY = 'jj_disc_golf_v113_master_state';
 export const LEGACY_STORAGE_KEYS = [
+  'jj_disc_golf_v112_master_state',
   'jj_disc_golf_v111_master_state',
   'jj_disc_golf_v110_master_state',
   'jj_disc_golf_v109_master_state',
@@ -157,6 +158,7 @@ export function normalizeCourseSignature(courseName?: string): string {
   if (raw.includes('art nine')) return 'artnine';
   if (raw.includes('harmon')) return 'harmon';
   if (raw.includes('california trail') || raw.includes('cal trail')) return 'caltrail';
+  if (raw === 'blackhoof_18' || (raw.includes('black hoof') && (raw.includes('championship') || raw.includes('white')))) return 'blackhoof_18';
   if (raw.includes('black hoof') && !raw.includes('championship')) return 'blackhoof';
   if (raw.includes('cedar ridge') || raw.includes('cedarridge')) return 'cedarridge';
   if (raw.includes('wyandotte')) return 'wyandotte';
@@ -523,6 +525,7 @@ export function mergeRoundHistories(
       const isSingleCanonicalDayCourse =
         (canonicalDateCourseCounts.get(dcKey) || 0) === 1 &&
         ((canonical.totalHoles || canonical.holes.length) >= 18 ||
+          canonical.date === '2026-11-23' ||
           canonical.date === '2026-11-22' ||
           canonical.date === '2026-11-17' ||
           canonical.date === '2026-11-15');
@@ -892,7 +895,7 @@ export function mergeCloudPayloads(
 
   const payload: AppExportPayload = {
     app: 'Jeffery & Jack Disc Golf Scorecard',
-    version: 'v112',
+    version: 'v113',
     exportDate: new Date().toISOString(),
     updatedAt: Math.max(localTime, remoteTime),
     deviceId: local.deviceId || getOrCreateDeviceId(),
@@ -1004,7 +1007,7 @@ export function readLocalStorageSnapshot(): AppExportPayload {
 
   return {
     app: 'Jeffery & Jack Disc Golf Scorecard',
-    version: 'v112',
+    version: 'v113',
     exportDate: new Date().toISOString(),
     updatedAt: parsedMaster.updatedAt || Date.now(),
     deviceId: getOrCreateDeviceId(),

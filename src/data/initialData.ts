@@ -2247,12 +2247,12 @@ const NEW_INNOVA_DISCS: DiscItem[] = [
     courseStrategy:
       'Putter 2 in the Cotton Candy Sugar High Main Bag: Replaces Star Sync / Star Aviar for beadless 130–185ft tee shots (like Sar-Ko-Par H1 & Art Nine H7) and floaty Circle 2 touch putts.',
     personalFlightNotes:
-      'Added to Cotton Candy "Sugar High" Main Bag (11/13): Grippy Proto Glow beadless Aviar [2|3|0|1] that slots right between zero-fade XT Glow Nova [2|2|0|0] and stiffer beaded KC Pro Aviar [2|3|0|2].',
-    fieldTestRank: '🍬 Cotton Candy "Sugar High" Main Bag · Beadless Driving & Touch Putter [2|3|0|1]',
+      '11/23 Black Hoof Championship Debut (4H): First logged throws in your 65 (+11) All-Time 18-Hole PB tie ("Color Aviar" on H2, H6, H11 around the tree & H14)—commit smoothly without holding back for straight beadless float!',
+    fieldTestRank: '🍬 11/23 Black Hoof 18 Debut · Beadless Driving & Touch Putter [2|3|0|1]',
     backComments:
       'Mint Collector Edition Innova Proto Glow Aviar [2 | 3 | 0 | 1]. Beadless putter feel with grippy Proto Glow polymer for straight short-hole tee drives and confident touch approaches.',
     transcriptStats:
-      'Cotton Candy "Sugar High" Main Bag Addition (11/13): Proto Glow Aviar [2|3|0|1].',
+      '11/23 Debut: Black Hoof Championship H2, H6, H11 & H14 in 65 (+11) 18-Hole PB tie!',
     caddieScenarios: ['calm', 'tailwind', 'cross_lr'],
     caddieRoleNote:
       'Proto Glow Aviar — Sugar High Main Bag Beadless Driving & Touch Putter [2|3|0|1]'
@@ -2395,12 +2395,12 @@ const NEW_INNOVA_DISCS: DiscItem[] = [
     courseStrategy:
       'Midrange 3 in the Cotton Candy Sugar High Main Bag: Stamped Sugar High twin to your 5× Sar-Ko-Par H9 Birdie closer and SMP Wooded H5/H12/H18 Par shaper. Throw smooth at 75% for sweeping right pans or uphill glide.',
     personalFlightNotes:
-      '11/22 Cotton Candy Debut (5H · 1 Par): Carved a clean fairway turn on SMP Wooded H4 ("Hey, that\'s something! Rollo—that was good!"), battled uphill H12, and set up your true Par 3 on Art Nine H8 during your bogey-free 24 (-3) PB tie!',
-    fieldTestRank: '🍬 11/22 Cotton Candy Debut · RHBH Right-Turn & Uphill Mid [5|6|-4|1]',
+      '🏆 11/23 BLACK HOOF CHAMPIONSHIP MVP (65 / +11 18-HOLE PB TIE!!): Flipped up on 201ft H17 for your 1st Cotton Candy Star Rollo BIRDIE 2 ★ ("Flip up, flip up—IT DID IT!! Rollo is my disc, man! Birdie, dude!"), crushed 237+ ft downhill past the blue pin on H15 Par, & locked in Pars on H1, 294ft H10 & uphill H18!',
+    fieldTestRank: '🏆 11/23 Black Hoof H17 Birdie MVP · 5 Pars + 1 Birdie in 65 PB Tie [5|6|-4|1]',
     backComments:
       'Limited Edition Pixel Fairway — Innova Star Rollo [5 | 6 | -4 | 1]. Massive 6-glide and -4 turn make right-finishing RHBH lines, standstill woods scrambles, and touch rollers effortless.',
     transcriptStats:
-      '11/22 Debut: SMP Wooded H4 ("Rollo—that was good!"), H5/H11/H12 + Art Nine H8 Par (24 / -3 PB Tie)!',
+      '11/23 Black Hoof 65 PB Tie: H17 Flip-Up Birdie 2 ("Rollo is my disc, man!") + 4 Pars (H1, H10, H15 237ft+ bomb, H18)!',
     caddieScenarios: ['tailwind', 'calm', 'cross_lr'],
     caddieRoleNote:
       'Star Rollo — Sugar High Main Bag Effortless Right-Turn, Uphill Glide & Roller Mid [5|6|-4|1]'
@@ -2432,12 +2432,12 @@ const NEW_INNOVA_DISCS: DiscItem[] = [
     courseStrategy:
       'Fairway 1 in the Cotton Candy Sugar High Main Bag: Brings back the Leopard3 mold (+15ft "double-lift glide" winner from your 10/28 field test!) in premium Color Glow Champion plastic, filling the Halo Star IT [7|6|-2|1] slot on Sar-Ko-Par H2/H3 & wooded tunnels.',
     personalFlightNotes:
-      '11/22 Cotton Candy Debut Test Throws: First test rips on SMP Wooded H2 & H6 (released slightly nose-up left)—keep tea-kettle wrist low & flat to unlock smooth wooded hyzer-flips in Aqua Color Glow Champion!',
-    fieldTestRank: '🍬 11/22 Debut Tested · Color Glow Hyzer-Flip Fairway [7|5|-2|1]',
+      '11/23 Black Hoof Championship H3 & H6: Unlocked your new hip-rotation swing cue ("Swing your hips—belly button at the target!") with clean skip-skip-skip carries on H3 (206ft) in your 65 (+11) PB tie!',
+    fieldTestRank: '🍬 11/23 Black Hoof H3 Hip-Rotation Breakthrough · Hyzer-Flip Fairway [7|5|-2|1]',
     backComments:
       'Prism Holo Collector Card — Innova Color Glow Champion Leopard3 [7 | 5 | -2 | 1]. Flat-topped 7-speed control fairway built for dead-straight wooded hyzer-flips and smooth turnover lines.',
     transcriptStats:
-      '11/22 Debut: First test throws on SMP Wooded H2 & H6 (keep nose down for straight hyzer-flips)!',
+      '11/23 Black Hoof 65 PB Tie: H3 hip-rotation skip drive & H6 + 11/22 SMP Wooded debut!',
     caddieScenarios: ['calm', 'tailwind', 'cross_lr'],
     caddieRoleNote:
       'Glow Leopard3 — Sugar High Main Bag Color Glow Hyzer-Flip & Tunnel Fairway [7|5|-2|1]'
@@ -2469,12 +2469,12 @@ const NEW_INNOVA_DISCS: DiscItem[] = [
     courseStrategy:
       'Fairway 2 in the Cotton Candy Sugar High Main Bag: Bridges your understable Glow Leopard3 [7|5|-2|1] and overstable Champion Eagle [7|4|-1|3], giving you a complete 3-disc 7-speed fairway triad!',
     personalFlightNotes:
-      '11/22 Cotton Candy Debut (2H): First-ever tee shot of the Cotton Candy era into crazy gusty wind on SMP Wooded H1 ("Pretty straight, slightly left—did exactly what it needed to!") and punched cleanly through H11 branches!',
-    fieldTestRank: '⭐ 11/22 Debut Opener · Straight-to-Fade 7-Speed Anchor [7|5|0|2]',
+      '🏆 11/23 Black Hoof Championship H5 (315ft) MONSTER PAR 3 ★: Striped a gorgeous S-glide ("Like a little snake—goes right then flows back left!") + XT Glow Nova parked 5ft under pin! Plus 11/22 SMP Wooded H1 gusty-wind debut opener!',
+    fieldTestRank: '🏆 11/23 Black Hoof 315ft H5 S-Glide Par · Straight-to-Fade 7-Speed [7|5|0|2]',
     backComments:
       'Collector’s Edition Holo — Innova Glow Teebird [7 | 5 | 0 | 2]. Innova’s gold-standard pinpoint fairway driver combining high 5-glide carry, zero turn, and predictable placement fade.',
     transcriptStats:
-      '11/22 Debut: SMP Wooded H1 gusty-wind opener ("Did exactly what it needed to!") + H11 branch punch!',
+      '11/23 Black Hoof 65 PB Tie: 315ft H5 snake-glide Par 3 ★ + 11/22 SMP Wooded H1 wind opener!',
     caddieScenarios: ['calm', 'headwind', 'cross_rl'],
     caddieRoleNote:
       'Glow Teebird — Sugar High Main Bag Straight-to-Fade Fairway Workhorse [7|5|0|2]'
@@ -2506,12 +2506,12 @@ const NEW_INNOVA_DISCS: DiscItem[] = [
     courseStrategy:
       'Driver 1 in the Cotton Candy Sugar High Main Bag: Upgrades your #1 long-course distance workhorse (Mize +20ft field-test winner, Prairie Center H9 gap laser & Sar-Ko-Par 11/09 H3/H8 Birdies) into bright Hot Pink Star plastic that’s impossible to lose in leaves!',
     personalFlightNotes:
-      '11/22 Cotton Candy Debut: First throws in bright Hot Pink Star plastic on SMP Wooded H13 (375ft long tee) & H6 test—keeps your signature [9|5|-4|1] S-curve & turnover distance driver impossible to miss in leaves!',
-    fieldTestRank: '🍬 11/22 Cotton Candy Debut · Hot Pink Star Distance & Turnover [9|5|-4|1]',
+      '11/23 Black Hoof Championship H7 (382ft Longest Hole!) & H12: Twisted the hips for a clean roller carry down Black Hoof\'s 382ft monster ("Went the distance! I was proud of that 4!") in your 65 (+11) PB tie, plus 11/22 SMP Wooded H13 debut!',
+    fieldTestRank: '⭐ 11/23 Black Hoof 382ft H7 Proud 4 · Hot Pink Star Distance [9|5|-4|1]',
     backComments:
       'Cracked-Ice Holo Collector Card — Innova Star Roadrunner [9 | 5 | -4 | 1]. Versatile long-range turnover driver, tailwind bomber, and out-of-the-box distance roller.',
     transcriptStats:
-      '11/22 Debut: SMP Wooded H13 (375ft long tee) & H6 test in Hot Pink Star plastic!',
+      '11/23 Black Hoof 65 PB Tie: 382ft H7 hip-twist distance 4 & H12 + 11/22 SMP Wooded H13!',
     caddieScenarios: ['calm', 'tailwind', 'cross_lr'],
     caddieRoleNote:
       'Star Roadrunner — Sugar High Main Bag High-Glide Turnover & S-Curve Distance Driver [9|5|-4|1]'
@@ -3044,28 +3044,28 @@ export const INITIAL_DISC_BAG: DiscItem[] = [
 const BLACK_HOOF_18_COURSE: CourseTemplate = {
   key: 'blackhoof_18',
   name: 'Black Hoof Championship (White to White)',
-  location: 'Lenexa, KS (White to White · Par 54 · UDisc 171)',
+  location: 'Lenexa, KS (#2 Best Course in KS · White to White · Par 54 · 4,218 ft)',
   totalHoles: 18,
-  updatedAt: 1762624800000,
+  updatedAt: 1795468664071,
   holes: [
-    { number: 1, par: 3, distance: 183, hint: 'White to White · 183 ft Par 3' },
-    { number: 2, par: 3, distance: 250, hint: 'White to White · 250 ft Par 3' },
-    { number: 3, par: 3, distance: 206, hint: 'White to White · 206 ft Par 3' },
-    { number: 4, par: 3, distance: 197, hint: 'White to White · 197 ft Par 3' },
-    { number: 5, par: 3, distance: 315, hint: 'White to White · 315 ft Par 3' },
-    { number: 6, par: 3, distance: 310, hint: 'White to White · 310 ft Par 3' },
-    { number: 7, par: 3, distance: 382, hint: 'White to White · 382 ft Par 3 (Longest Hole)' },
-    { number: 8, par: 3, distance: 236, hint: 'White to White · 236 ft Par 3' },
-    { number: 9, par: 3, distance: 206, hint: 'White to White · 206 ft Par 3' },
-    { number: 10, par: 3, distance: 294, hint: 'White to White · 294 ft Par 3' },
-    { number: 11, par: 3, distance: 221, hint: 'White to White · 221 ft Par 3' },
-    { number: 12, par: 3, distance: 252, hint: 'White to White · 252 ft Par 3' },
-    { number: 13, par: 3, distance: 105, hint: 'White to White · 105 ft Par 3 (Shortest Ace Run)' },
-    { number: 14, par: 3, distance: 185, hint: 'White to White · 185 ft Par 3' },
-    { number: 15, par: 3, distance: 237, hint: 'White to White · 237 ft Par 3' },
-    { number: 16, par: 3, distance: 260, hint: 'White to White · 260 ft Par 3' },
-    { number: 17, par: 3, distance: 201, hint: 'White to White · 201 ft Par 3' },
-    { number: 18, par: 3, distance: 178, hint: 'White to White · 178 ft Par 3' }
+    { number: 1, par: 3, distance: 183, hint: '183 ft Par 3 (#2 Course in KS Opener) · ★ 11/23 PAR: Cotton Candy Star Rollo + XT Glow Nova couple feet from pin!' },
+    { number: 2, par: 3, distance: 250, hint: '250 ft Par 3 · Hot Pink DX Archangel / Star Roadrunner off tee; commit firmly on 2nd-shot approach!' },
+    { number: 3, par: 3, distance: 206, hint: '206 ft Par 3 · Glow Leopard3 skip line (swing hips—belly button at target!) + XT Glow Nova.' },
+    { number: 4, par: 3, distance: 197, hint: '197 ft Par 3 · DX Glow Roc skip line around trees + Yeti Pro Aviar.' },
+    { number: 5, par: 3, distance: 315, hint: '315 ft Par 3 (Curves LEFT — map is flipped!) · ★ 11/23 MONSTER PAR: Glow Teebird snake S-glide + XT Glow Nova 5ft under pin!' },
+    { number: 6, par: 3, distance: 310, hint: '310 ft Par 3 · Watch left tree early; keep Glow Leopard3 / Glow Teebird straight down middle fairway.' },
+    { number: 7, par: 3, distance: 382, hint: '382 ft Par 3 (Longest Hole on White!) · Hot Pink Star Roadrunner hip-twist drive + blind tree upshot (11/23 proud 4!).' },
+    { number: 8, par: 3, distance: 236, hint: '236 ft Par 3 (Sheltered Sunny Corridor) · ★ 11/23 DOUBLE PAR: Proto Glow Mako3 + XT Glow Nova!' },
+    { number: 9, par: 3, distance: 206, hint: '206 ft Par 3 · ★ 11/23 DOUBLE PAR: Cotton Candy DX Glow Roc + XT Glow Nova!' },
+    { number: 10, par: 3, distance: 294, hint: '294 ft Par 3 · ★ 11/23 3RD STRAIGHT PAR: Cotton Candy Star Rollo + Halloween Star Sync 10ft closer!' },
+    { number: 11, par: 3, distance: 221, hint: '221 ft Downhill Par 3 · Proto Glow Mako3 straight past early tree + Proto Glow Aviar around obstacle.' },
+    { number: 12, par: 3, distance: 252, hint: '252 ft Wooded Par 3 · Star Roadrunner / Glow Teebird center gap (11/23 Pink DX Alien UFO tree-dodge scramble!).' },
+    { number: 13, par: 3, distance: 105, hint: '105 ft Tight Trees (Shortest Ace Run!) · ★ 11/23 NEAR-BIRDIE PAR: Halloween Star Sync threaded every tree & grazed basket top!' },
+    { number: 14, par: 3, distance: 185, hint: '185 ft Par 3 · Proto Glow Mako3 straight (watch late release right) + Proto Glow Aviar.' },
+    { number: 15, par: 3, distance: 237, hint: '237 ft Downhill Par 3 · ★ 11/23 DOUBLE PAR: Cotton Candy Star Rollo flipped & bombed 237+ ft to blue pin + XT Glow Nova!' },
+    { number: 16, par: 3, distance: 260, hint: '260 ft Par 3 · Proto Glow Mako3 / Star Rollo + XT Glow Nova (watch high nose-up pulls left).' },
+    { number: 17, par: 3, distance: 201, hint: '201 ft Dogleg Right (2nd Shortest!) · ★ 11/23 BIRDIE 2: Cotton Candy Star Rollo flip-up ("IT DID IT! Rollo is my disc!")!' },
+    { number: 18, par: 3, distance: 178, hint: '178 ft Uphill Closer · ★ 11/23 CLUTCH PAR (65 PB TIE!): Cotton Candy Star Rollo uphill + XT Glow Nova!' }
   ]
 };
 
@@ -10078,11 +10078,573 @@ const ROUND_2026_11_22_ART_NINE: HistoricalRound = {
   ]
 };
 
+const ROUND_2026_11_23_BLACK_HOOF_18: HistoricalRound = {
+  id: 1795468664071,
+  courseName: 'Black Hoof Championship (White to White)',
+  totalHoles: 18,
+  date: '2026-11-23',
+  duration: '01:42:00',
+  par: 54,
+  windCondition: 'cross_rl',
+  gameMode: 'stroke',
+  notes:
+    '🏆 DOUBLE ALL-TIME 18-HOLE PERSONAL BEST TIE — JEFFERY 65 (+11, Front 34 / Back 31!) TIED JACK 65 (+11, Front 34 / Back 31!) AT BLACK HOOF CHAMPIONSHIP (#2 Course in KS · 42°F Sunny · Eve of Jeffery’s Birthday!)! 100% Complete Cotton Candy + Halloween Hot Pink Star Sync + Hot Pink DX Archangel + Pink DX Alien Bag! Jeffery nailed 1 Birdie ★ (H17 Cotton Candy Star Rollo flip-up: "IT DID IT!! Rollo is my disc, man! Birdie, dude!") + 8 Pars (incl. 315ft H5 Glow Teebird snake-glide Par, H8–H10 3-Par streak, H13 Halloween Sync near-birdie & H15 237+ ft Rollo bomb!) and debuted Proto Glow Aviar (16/17 active discs logged!). Jack CRUSHED his 18-hole PB by 6 full strokes (71 → 65) with 9 Pars & ZERO 6s, tying Jeffery on H18!',
+  roundTranscript: `Black Hoof Championship (White to White · #2 Course in Kansas · 18 Holes · Par 54 · 4,218 ft · 2026-11-23 · 1:33 PM · 01:42:00 · 42°F Crisp & Sunny · Birthday Eve!) — 🏆 JEFFERY 65 (+11, Front 34 / Back 31 · TIED ALL-TIME 18-HOLE PB! 1 Birdie ★, 8 Pars) TIED JACK 65 (+11, Front 34 / Back 31 · NEW ALL-TIME 18-HOLE PB BY 6 STROKES! 9 Pars, ZERO 6s!):
+Bag Milestone: 100% Complete Cotton Candy + Hot Pink Halloween Star Sync + Hot Pink DX Archangel + Pink DX Alien Main Bag (plus Proto Glow Aviar debut!).
+- Hole 1 (183ft, Par 3): Jeffery 3 (Par ★) | Jack 4 (Bogey). Crisp 42°F opener at Kansas's #2 course! Cotton Candy Star Rollo caught a helpful tree stop ("Very nice throw, Jeffery!") + XT Glow Nova couple feet away for opening Par 3!
+- Hole 2 (250ft, Par 3): Jeffery 5 (Double) | Jack 4 (Bogey). ★ HOT PINK DX ARCHANGEL & PROTO GLOW AVIAR DEBUT! Teed off with brand-new Hot Pink DX Archangel ("I did get my Archangel back—got a new one!") + debuted Cotton Candy Proto Glow Aviar ("Color Aviar—scared to throw it, only threw half distance") for 5; Jack 4!
+- Hole 3 (206ft, Par 3): Jeffery 4 (Bogey) | Jack 4 (Bogey). ★ SWING BREAKTHROUGH: Glow Leopard3 skip-skip-skip ("Focusing on swinging my hips—belly button at the target!") + XT Glow Nova tree tap for 4-4 tie!
+- Hole 4 (197ft, Par 3): Jeffery 4 (Bogey) | Jack 3 (Par ★). Cotton Candy DX Glow Roc skip-skip-skip + Yeti Pro Aviar tree clip for 4; Jack parked Roach for Par 3 ★!
+- Hole 5 (315ft, Par 3): Jeffery 3 (Par ★) | Jack 5 (Double). ★ MONSTER 315-FT PAR 3! Noted course map is flipped (goes LEFT!), then striped Cotton Candy Glow Teebird with a gorgeous S-glide ("Like a little snake—goes right then flows back left!") + XT Glow Nova parked 5ft under the pin ("That stops well!") for Par 3!
+- Hole 6 (310ft, Par 3): Jeffery 5 (Double) | Jack 3 (Par ★). Jack striped straight down the middle of the 310ft fairway for Par 3 ★! Jeffery threw Glow Leopard3 (clipped left tree) + Proto Glow Aviar + XT Glow Nova for 5.
+- Hole 7 (382ft, Par 3 — Longest Hole!): Jeffery 4 (Bogey) | Jack 5 (Double). Birthday-eve announcement ("It's my birthday tomorrow!"). Hot Pink Star Roadrunner hip-twist roller carry ("Went the distance!") + blind woods upshot for a proud Bogey 4 ("I was proud of that one!").
+- Hole 8 (236ft, Par 3): Jeffery 3 (Par ★) | Jack 3 (Par ★). ★ DOUBLE PAR & 3-PAR STREAK BEGINS! Cotton Candy Proto Glow Mako3 + XT Glow Nova for clean Par 3 alongside Jack's Par 3!
+- Hole 9 (206ft, Par 3): Jeffery 3 (Par ★) | Jack 3 (Par ★). ★ 2ND STRAIGHT DOUBLE PAR! Cotton Candy DX Glow Roc + XT Glow Nova for Par 3 to close the Front 9 dead even at 34–34!
+- Hole 10 (294ft, Par 3): Jeffery 3 (Par ★) | Jack 4 (Bogey). ★ 3RD STRAIGHT PAR! Cotton Candy Star Rollo ("Got to do your hips!") + Hot Pink Halloween Star Sync 10-footer ("Dude, I got a par! I'm doing good these last few holes!")!
+- Hole 11 (221ft, Par 3): Jeffery 4 (Bogey) | Jack 3 (Par ★). Downhill Proto Glow Mako3 clipped tree + Proto Glow Aviar bend around obstacle for 4; Jack striped a beauty for Par 3 ★!
+- Hole 12 (252ft, Par 3): Jeffery 4 (Bogey) | Jack 4 (Bogey). Hot Pink Star Roadrunner buried right under leaves + LEGENDARY PINK DX ALIEN UFO SCRAMBLE ("Wow, that was good—missed the trees like an alien UFO would!") for 4! Jack's Cicada hit the top of the basket!
+- Hole 13 (105ft, Par 3 — Shortest Ace Run!): Jeffery 3 (Par ★) | Jack 3 (Par ★). ★ HALLOWEEN STAR SYNC NEAR-BIRDIE! Threaded EVERY tree ("No idea how I missed all those trees—that Sync went right where I was aiming!") and grazed the basket top ("If the top wasn't on it, you would have birdied!") for Double Par 3!
+- Hole 14 (185ft, Par 3): Jeffery 5 (Double) | Jack 3 (Par ★). Proto Glow Mako3 released late right + Proto Glow Aviar ("Color Aviar") for 5; Jack nailed back-to-back Pars (H13–H14) to grab a 2-stroke lead!
+- Hole 15 (237ft, Par 3): Jeffery 3 (Par ★) | Jack 3 (Par ★). ★ DOUBLE PAR & HUGE ROLLO BOMB! Cotton Candy Star Rollo flipped over downhill and carried 237+ ft ALL THE WAY PAST TO THE BLUE PIN ("It did its flip! Good to know I threw that far!") + XT Glow Nova for Par 3 (Jack's 3rd straight Par H13–H15)!
+- Hole 16 (260ft, Par 3): Jeffery 4 (Bogey) | Jack 4 (Bogey). Proto Glow Mako3 + XT Glow Nova for a 4-4 tie!
+- Hole 17 (201ft, Par 3): Jeffery 2 (Birdie ★) | Jack 3 (Par ★). ★ SHOT OF THE DAY — 1ST COTTON CANDY STAR ROLLO BIRDIE!! "Quit being afraid to throw it too far—just throw it far, Jeffery! Flip up, flip up, flip up! IT DID IT!! Rollo is my disc, man! Birdie, dude!!" (Spotted a fox-shaped tree stump!). Jack carded his 9th Par!
+- Hole 18 (178ft, Par 3 — Uphill Closer): Jeffery 3 (Par ★) | Jack 4 (Bogey). ★ CLUTCH UPHILL PAR TO TIE 65–65!! Cotton Candy Star Rollo uphill + XT Glow Nova for closing Par 3 (Back 9 = 31 / +4!) while Jack parked yellow Cicada in Circle 1 for 4 ("Do you know what giving yourself a 4 did? It tied me and you! 65 (+11) — tied my best 18-hole score!")!!`,
+  players: [
+    { id: 'jeffery', name: 'Jeffery', tag: 'J1', total: 65 },
+    { id: 'jack', name: 'Jack', tag: 'J2', total: 65 }
+  ],
+  holes: [
+    {
+      number: 1,
+      par: 3,
+      distance: 183,
+      scores: { jeffery: 3, jack: 4 },
+      voiceTranscript:
+        '★ OPENING PAR 3! Cotton Candy Star Rollo caught a helpful tree stop ("Very nice throw, Jeffery!") + XT Glow Nova couple feet away for tap-in Par 3 (Jack 4)!',
+      meta: {
+        jeffery: {
+          thrownDiscId: 'innova-sugar-star-rollo',
+          discUsed: 'Star Rollo',
+          scenarioUsed: 'cross_rl',
+          fairwayHit: true,
+          puttDistance: 'C1',
+          puttDistanceFeet: 3,
+          voiceNote: '★ Cotton Candy Star Rollo + XT Glow Nova parked 2ft for opening Par 3!',
+          throws: [
+            { shotType: 'tee', discId: 'innova-sugar-star-rollo' },
+            { shotType: 'approach', discId: 'innova-xt-glow-nova' },
+            { shotType: 'putt', discId: 'innova-xt-glow-nova' }
+          ]
+        },
+        jack: {
+          thrownDiscId: 'discraft-buzzz-ss',
+          discUsed: 'Buzzz SS',
+          voiceNote: 'Buzzz SS + Roach opener for Bogey 4'
+        }
+      }
+    },
+    {
+      number: 2,
+      par: 3,
+      distance: 250,
+      scores: { jeffery: 5, jack: 4 },
+      voiceTranscript:
+        '★ HOT PINK DX ARCHANGEL & PROTO GLOW AVIAR DEBUT! Teed off with brand-new Hot Pink DX Archangel ("Got a new one!") + debuted Cotton Candy Proto Glow Aviar ("Color Aviar—only threw half distance") for 5; Jack 4!',
+      meta: {
+        jeffery: {
+          thrownDiscId: 'innova-archangel',
+          discUsed: 'Archangel',
+          scenarioUsed: 'cross_rl',
+          puttDistance: 'C1',
+          voiceNote: 'Debuted Hot Pink DX Archangel + debuted Cotton Candy Proto Glow Aviar ("Color Aviar") for 5',
+          throws: [
+            { shotType: 'tee', discId: 'innova-archangel' },
+            { shotType: 'approach', discId: 'innova-proto-glow-aviar' },
+            { shotType: 'approach', discId: 'innova-proto-glow-aviar' },
+            { shotType: 'putt', discId: 'innova-yeti-pro-aviar' },
+            { shotType: 'putt', discId: 'innova-yeti-pro-aviar' }
+          ]
+        },
+        jack: {
+          thrownDiscId: 'discraft-buzzz-ss',
+          discUsed: 'Buzzz SS',
+          voiceNote: 'Missed all trees cleanly + Roach for Bogey 4'
+        }
+      }
+    },
+    {
+      number: 3,
+      par: 3,
+      distance: 206,
+      scores: { jeffery: 4, jack: 4 },
+      voiceTranscript:
+        '★ HIP-ROTATION BREAKTHROUGH! Glow Leopard3 skip-skip-skip ("Focusing on swinging my hips—belly button at the target!") + XT Glow Nova tree clip for 4-4 tie!',
+      meta: {
+        jeffery: {
+          thrownDiscId: 'innova-glow-leopard3',
+          discUsed: 'Glow Leopard3',
+          scenarioUsed: 'calm',
+          fairwayHit: true,
+          puttDistance: 'C1',
+          voiceNote: 'Glow Leopard3 hip-rotation skip drive ("belly button at target!") + XT Glow Nova for 4',
+          throws: [
+            { shotType: 'tee', discId: 'innova-glow-leopard3' },
+            { shotType: 'approach', discId: 'innova-xt-glow-nova' },
+            { shotType: 'putt', discId: 'innova-yeti-pro-aviar' },
+            { shotType: 'putt', discId: 'innova-yeti-pro-aviar' }
+          ]
+        },
+        jack: {
+          thrownDiscId: 'discraft-cicada',
+          discUsed: 'Cicada',
+          voiceNote: 'Great roll right beside Jeffery + Roach for Bogey 4'
+        }
+      }
+    },
+    {
+      number: 4,
+      par: 3,
+      distance: 197,
+      scores: { jeffery: 4, jack: 3 },
+      voiceTranscript:
+        'Cotton Candy DX Glow Roc skip-skip-skip + Yeti Pro Aviar tree tap for Bogey 4; Jack parked Roach ("Your purple one is good!") for Par 3 ★!',
+      meta: {
+        jeffery: {
+          thrownDiscId: 'innova-sugar-glow-roc',
+          discUsed: 'DX Glow Roc',
+          scenarioUsed: 'calm',
+          puttDistance: 'C1',
+          voiceNote: 'Cotton Candy DX Glow Roc skip + Yeti Pro Aviar tree tap for 4',
+          throws: [
+            { shotType: 'tee', discId: 'innova-sugar-glow-roc' },
+            { shotType: 'approach', discId: 'innova-yeti-pro-aviar' },
+            { shotType: 'putt', discId: 'innova-yeti-pro-aviar' },
+            { shotType: 'putt', discId: 'innova-yeti-pro-aviar' }
+          ]
+        },
+        jack: {
+          thrownDiscId: 'discraft-cicada',
+          discUsed: 'Cicada',
+          fairwayHit: true,
+          voiceNote: '★ Cicada + clutch purple Roach approach for Par 3!'
+        }
+      }
+    },
+    {
+      number: 5,
+      par: 3,
+      distance: 315,
+      scores: { jeffery: 3, jack: 5 },
+      voiceTranscript:
+        '★ MONSTER 315-FT PAR 3! Striped Cotton Candy Glow Teebird with a snake S-glide ("Like a little snake—goes right then flows back left!") + XT Glow Nova parked 5ft under pin ("That stops well!") for Par 3!',
+      meta: {
+        jeffery: {
+          thrownDiscId: 'innova-glow-teebird',
+          discUsed: 'Glow Teebird',
+          scenarioUsed: 'calm',
+          fairwayHit: true,
+          puttDistance: 'C1',
+          puttDistanceFeet: 5,
+          voiceNote: '★ 315ft Par 3! Glow Teebird snake S-glide + XT Glow Nova parked 5ft under pin!',
+          throws: [
+            { shotType: 'tee', discId: 'innova-glow-teebird' },
+            { shotType: 'approach', discId: 'innova-xt-glow-nova' },
+            { shotType: 'putt', discId: 'innova-xt-glow-nova' }
+          ]
+        },
+        jack: {
+          thrownDiscId: 'discraft-cicada',
+          discUsed: 'Cicada',
+          voiceNote: 'Cicada + Roach on 315ft dogleg-left for 5'
+        }
+      }
+    },
+    {
+      number: 6,
+      par: 3,
+      distance: 310,
+      scores: { jeffery: 5, jack: 3 },
+      voiceTranscript:
+        'Jack striped straight down the middle of the 310ft fairway for Par 3 ★! Jeffery clipped left tree with Glow Leopard3 + Proto Glow Aviar + XT Glow Nova for 5.',
+      meta: {
+        jeffery: {
+          thrownDiscId: 'innova-glow-leopard3',
+          discUsed: 'Glow Leopard3',
+          scenarioUsed: 'calm',
+          puttDistance: 'C1',
+          voiceNote: 'Glow Leopard3 left tree + Proto Glow Aviar ("my Aviar") for 5',
+          throws: [
+            { shotType: 'tee', discId: 'innova-glow-leopard3' },
+            { shotType: 'fairway', discId: 'innova-proto-glow-aviar' },
+            { shotType: 'approach', discId: 'innova-xt-glow-nova' },
+            { shotType: 'putt', discId: 'innova-yeti-pro-aviar' },
+            { shotType: 'putt', discId: 'innova-yeti-pro-aviar' }
+          ]
+        },
+        jack: {
+          thrownDiscId: 'discraft-cicada',
+          discUsed: 'Cicada',
+          fairwayHit: true,
+          voiceNote: '★ Striped straight down the middle of 310ft fairway for clutch Par 3!'
+        }
+      }
+    },
+    {
+      number: 7,
+      par: 3,
+      distance: 382,
+      scores: { jeffery: 4, jack: 5 },
+      voiceTranscript:
+        '382ft longest hole (Birthday Eve!): Hot Pink Star Roadrunner hip-twist roller carry ("Went the distance!") + blind woods upshot for a proud Bogey 4 ("I was proud of that one!") vs. Jack 5!',
+      meta: {
+        jeffery: {
+          thrownDiscId: 'innova-sugar-star-roadrunner',
+          discUsed: 'Star Roadrunner',
+          scenarioUsed: 'calm',
+          fairwayHit: true,
+          puttDistance: 'C1',
+          voiceNote: 'Hot Pink Star Roadrunner hip-twist distance + blind woods upshot ("Proud of that 4!")',
+          throws: [
+            { shotType: 'tee', discId: 'innova-sugar-star-roadrunner' },
+            { shotType: 'fairway', discId: 'innova-sugar-star-roadrunner' },
+            { shotType: 'approach', discId: 'innova-xt-glow-nova' },
+            { shotType: 'putt', discId: 'innova-yeti-pro-aviar' }
+          ]
+        },
+        jack: {
+          thrownDiscId: 'discraft-cicada',
+          discUsed: 'Cicada',
+          voiceNote: 'Cicada + Buzzz SS + Roach on 382ft longest hole for 5'
+        }
+      }
+    },
+    {
+      number: 8,
+      par: 3,
+      distance: 236,
+      scores: { jeffery: 3, jack: 3 },
+      voiceTranscript:
+        '★ DOUBLE PAR & 3-PAR STREAK BEGINS! Cotton Candy Proto Glow Mako3 + XT Glow Nova ("I might do me a par—yep, I did! Both parred!") for Par 3 with Jack!',
+      meta: {
+        jeffery: {
+          thrownDiscId: 'innova-proto-glow-mako3',
+          discUsed: 'Proto Glow Mako3',
+          scenarioUsed: 'calm',
+          fairwayHit: true,
+          puttDistance: 'C1',
+          voiceNote: '★ Cotton Candy Proto Glow Mako3 + XT Glow Nova for Double Par 3!',
+          throws: [
+            { shotType: 'tee', discId: 'innova-proto-glow-mako3' },
+            { shotType: 'approach', discId: 'innova-xt-glow-nova' },
+            { shotType: 'putt', discId: 'innova-xt-glow-nova' }
+          ]
+        },
+        jack: {
+          thrownDiscId: 'discraft-cicada',
+          discUsed: 'Cicada',
+          fairwayHit: true,
+          voiceNote: '★ Straight fairway Cicada + Roach for Double Par 3!'
+        }
+      }
+    },
+    {
+      number: 9,
+      par: 3,
+      distance: 206,
+      scores: { jeffery: 3, jack: 3 },
+      voiceTranscript:
+        '★ 2ND STRAIGHT DOUBLE PAR! Cotton Candy DX Glow Roc + XT Glow Nova for Par 3 to close the Front 9 tied 34–34!',
+      meta: {
+        jeffery: {
+          thrownDiscId: 'innova-sugar-glow-roc',
+          discUsed: 'DX Glow Roc',
+          scenarioUsed: 'calm',
+          fairwayHit: true,
+          puttDistance: 'C1',
+          voiceNote: '★ Cotton Candy DX Glow Roc + XT Glow Nova for 2nd straight Double Par (Front 34–34)!',
+          throws: [
+            { shotType: 'tee', discId: 'innova-sugar-glow-roc' },
+            { shotType: 'approach', discId: 'innova-xt-glow-nova' },
+            { shotType: 'putt', discId: 'innova-xt-glow-nova' }
+          ]
+        },
+        jack: {
+          thrownDiscId: 'discraft-roach',
+          discUsed: 'Roach',
+          fairwayHit: true,
+          voiceNote: '★ Roach clutch Par 3 to finish Front 9 tied 34–34!'
+        }
+      }
+    },
+    {
+      number: 10,
+      par: 3,
+      distance: 294,
+      scores: { jeffery: 3, jack: 4 },
+      voiceTranscript:
+        '★ 3RD STRAIGHT PAR (294 FT)! Cotton Candy Star Rollo ("Got to do your hips!") + Hot Pink Halloween Star Sync 10-footer ("Dude, I got a par! Doing good these last few holes!")!',
+      meta: {
+        jeffery: {
+          thrownDiscId: 'innova-sugar-star-rollo',
+          discUsed: 'Star Rollo',
+          scenarioUsed: 'calm',
+          fairwayHit: true,
+          puttDistance: 'C1',
+          puttDistanceFeet: 10,
+          voiceNote: '★ 3rd straight Par! Cotton Candy Star Rollo + Halloween Star Sync 10ft putt on 294ft H10!',
+          throws: [
+            { shotType: 'tee', discId: 'innova-sugar-star-rollo' },
+            { shotType: 'approach', discId: 'innova-sync' },
+            { shotType: 'putt', discId: 'innova-sync' }
+          ]
+        },
+        jack: {
+          thrownDiscId: 'discraft-cicada',
+          discUsed: 'Cicada',
+          voiceNote: 'Cicada tree tap + Roach for Bogey 4'
+        }
+      }
+    },
+    {
+      number: 11,
+      par: 3,
+      distance: 221,
+      scores: { jeffery: 4, jack: 3 },
+      voiceTranscript:
+        'Downhill Proto Glow Mako3 clipped tree + Proto Glow Aviar bend around tree for Bogey 4; Jack striped a beauty ("Beautiful dude, great shot!") for Par 3 ★!',
+      meta: {
+        jeffery: {
+          thrownDiscId: 'innova-proto-glow-mako3',
+          discUsed: 'Proto Glow Mako3',
+          scenarioUsed: 'calm',
+          puttDistance: 'C1',
+          voiceNote: 'Proto Glow Mako3 tree kick + Proto Glow Aviar bend-around for Bogey 4',
+          throws: [
+            { shotType: 'tee', discId: 'innova-proto-glow-mako3' },
+            { shotType: 'approach', discId: 'innova-proto-glow-aviar' },
+            { shotType: 'putt', discId: 'innova-yeti-pro-aviar' },
+            { shotType: 'putt', discId: 'innova-yeti-pro-aviar' }
+          ]
+        },
+        jack: {
+          thrownDiscId: 'discraft-buzzz-ss',
+          discUsed: 'Buzzz SS',
+          fairwayHit: true,
+          voiceNote: '★ Downhill beauty ("Beautiful dude, great shot!") for 5th Par 3!'
+        }
+      }
+    },
+    {
+      number: 12,
+      par: 3,
+      distance: 252,
+      scores: { jeffery: 4, jack: 4 },
+      voiceTranscript:
+        'Hot Pink Star Roadrunner went right under leaves + LEGENDARY PINK DX ALIEN UFO SCRAMBLE ("Wow, that was good—missed the trees like an alien UFO would!") for Bogey 4! Jack hit top of basket for 4!',
+      meta: {
+        jeffery: {
+          thrownDiscId: 'innova-sugar-star-roadrunner',
+          discUsed: 'Star Roadrunner',
+          scenarioUsed: 'calm',
+          puttDistance: 'C1',
+          voiceNote: 'Hot Pink Star Roadrunner + Pink DX Alien UFO tree-dodge ("missed the trees like an alien UFO!") for 4',
+          throws: [
+            { shotType: 'tee', discId: 'innova-sugar-star-roadrunner' },
+            { shotType: 'approach', discId: 'innova-dx-alien' },
+            { shotType: 'putt', discId: 'innova-yeti-pro-aviar' },
+            { shotType: 'putt', discId: 'innova-yeti-pro-aviar' }
+          ]
+        },
+        jack: {
+          thrownDiscId: 'discraft-cicada',
+          discUsed: 'Cicada',
+          voiceNote: 'Cicada hit top of basket ("Hit the top! Hang!") for Bogey 4!'
+        }
+      }
+    },
+    {
+      number: 13,
+      par: 3,
+      distance: 105,
+      scores: { jeffery: 3, jack: 3 },
+      voiceTranscript:
+        '★ HALLOWEEN STAR SYNC NEAR-BIRDIE! Threaded EVERY tree ("No idea how I missed all those trees—that Sync went right where I was aiming!") and grazed basket top for Double Par 3!',
+      meta: {
+        jeffery: {
+          thrownDiscId: 'innova-sync',
+          discUsed: 'Sync',
+          scenarioUsed: 'calm',
+          fairwayHit: true,
+          puttDistance: 'C1',
+          voiceNote: '★ Hot Pink Halloween Star Sync missed every tree & grazed basket top (near-Birdie!) for Par 3!',
+          throws: [
+            { shotType: 'tee', discId: 'innova-sync' },
+            { shotType: 'putt', discId: 'innova-sync' },
+            { shotType: 'putt', discId: 'innova-sync' }
+          ]
+        },
+        jack: {
+          thrownDiscId: 'discraft-buzzz-ss',
+          discUsed: 'Buzzz SS',
+          fairwayHit: true,
+          voiceNote: '★ Buzzz SS + Roach for Double Par 3 (starts 3-Par streak H13–H15!)'
+        }
+      }
+    },
+    {
+      number: 14,
+      par: 3,
+      distance: 185,
+      scores: { jeffery: 5, jack: 3 },
+      voiceTranscript:
+        'Proto Glow Mako3 released late right + Proto Glow Aviar ("Color Aviar") for 5; Jack nailed back-to-back Pars (H13–H14) for a 2-stroke lead!',
+      meta: {
+        jeffery: {
+          thrownDiscId: 'innova-proto-glow-mako3',
+          discUsed: 'Proto Glow Mako3',
+          scenarioUsed: 'calm',
+          puttDistance: 'C1',
+          voiceNote: 'Proto Glow Mako3 late release right + Proto Glow Aviar ("Color Aviar") for 5',
+          throws: [
+            { shotType: 'tee', discId: 'innova-proto-glow-mako3' },
+            { shotType: 'approach', discId: 'innova-proto-glow-aviar' },
+            { shotType: 'approach', discId: 'innova-xt-glow-nova' },
+            { shotType: 'putt', discId: 'innova-yeti-pro-aviar' },
+            { shotType: 'putt', discId: 'innova-yeti-pro-aviar' }
+          ]
+        },
+        jack: {
+          thrownDiscId: 'discraft-buzzz-ss',
+          discUsed: 'Buzzz SS',
+          fairwayHit: true,
+          voiceNote: '★ Back-to-back Par 3 to take a 2-stroke lead!'
+        }
+      }
+    },
+    {
+      number: 15,
+      par: 3,
+      distance: 237,
+      scores: { jeffery: 3, jack: 3 },
+      voiceTranscript:
+        '★ DOUBLE PAR & 237+ FT ROLLO BOMB! Cotton Candy Star Rollo flipped downhill and flew ALL THE WAY TO THE BLUE PIN ("It did its flip! Good to know I threw that far!") + XT Glow Nova for Par 3 (Jack\'s 3rd straight Par)!',
+      meta: {
+        jeffery: {
+          thrownDiscId: 'innova-sugar-star-rollo',
+          discUsed: 'Star Rollo',
+          scenarioUsed: 'calm',
+          fairwayHit: true,
+          puttDistance: 'C1',
+          voiceNote: '★ Cotton Candy Star Rollo flipped downhill 237+ ft to blue pin + XT Glow Nova for Par 3!',
+          throws: [
+            { shotType: 'tee', discId: 'innova-sugar-star-rollo' },
+            { shotType: 'approach', discId: 'innova-xt-glow-nova' },
+            { shotType: 'putt', discId: 'innova-xt-glow-nova' }
+          ]
+        },
+        jack: {
+          thrownDiscId: 'discraft-cicada',
+          discUsed: 'Cicada',
+          fairwayHit: true,
+          voiceNote: '★ 3rd straight Par 3 (H13–H15)!'
+        }
+      }
+    },
+    {
+      number: 16,
+      par: 3,
+      distance: 260,
+      scores: { jeffery: 4, jack: 4 },
+      voiceTranscript:
+        'Proto Glow Mako3 pulled slightly right + XT Glow Nova approach for Bogey 4 (tied 4-4 with Jack).',
+      meta: {
+        jeffery: {
+          thrownDiscId: 'innova-proto-glow-mako3',
+          discUsed: 'Proto Glow Mako3',
+          scenarioUsed: 'calm',
+          puttDistance: 'C1',
+          voiceNote: 'Proto Glow Mako3 + XT Glow Nova for Bogey 4',
+          throws: [
+            { shotType: 'tee', discId: 'innova-proto-glow-mako3' },
+            { shotType: 'approach', discId: 'innova-xt-glow-nova' },
+            { shotType: 'putt', discId: 'innova-xt-glow-nova' },
+            { shotType: 'putt', discId: 'innova-yeti-pro-aviar' }
+          ]
+        },
+        jack: {
+          thrownDiscId: 'discraft-buzzz-ss',
+          discUsed: 'Buzzz SS',
+          voiceNote: 'Buzzz SS + Roach for Bogey 4'
+        }
+      }
+    },
+    {
+      number: 17,
+      par: 3,
+      distance: 201,
+      scores: { jeffery: 2, jack: 3 },
+      voiceTranscript:
+        '★ SHOT OF THE DAY — 1ST COTTON CANDY STAR ROLLO BIRDIE!! "Flip up, flip up, flip up! IT DID IT!! Rollo is my disc, man! Birdie, dude!!" Jack nailed his 9th Par 3 ★!',
+      meta: {
+        jeffery: {
+          thrownDiscId: 'innova-sugar-star-rollo',
+          discUsed: 'Star Rollo',
+          scenarioUsed: 'calm',
+          fairwayHit: true,
+          puttDistance: 'C1',
+          puttDistanceFeet: 12,
+          voiceNote: '★ 1ST COTTON CANDY STAR ROLLO BIRDIE 2!! Flipped right around dogleg ("IT DID IT!! Rollo is my disc, man!")!',
+          throws: [
+            { shotType: 'tee', discId: 'innova-sugar-star-rollo' },
+            { shotType: 'putt', discId: 'innova-yeti-pro-aviar' }
+          ]
+        },
+        jack: {
+          thrownDiscId: 'discraft-buzzz-ss',
+          discUsed: 'Buzzz SS',
+          fairwayHit: true,
+          voiceNote: '★ Beauty drive ("Beauty, beauty Jack!") for 9th Par 3 of the round!'
+        }
+      }
+    },
+    {
+      number: 18,
+      par: 3,
+      distance: 178,
+      scores: { jeffery: 3, jack: 4 },
+      voiceTranscript:
+        '★ CLUTCH UPHILL CLOSING PAR FOR 65–65 DOUBLE 18-HOLE PB TIE!! Cotton Candy Star Rollo uphill + XT Glow Nova for Par 3 (Back 9 = 31 / +4!); Jack parked yellow Cicada in Circle 1 for 4 to shatter his 18-hole PB by 6 strokes (71 → 65)!',
+      meta: {
+        jeffery: {
+          thrownDiscId: 'innova-sugar-star-rollo',
+          discUsed: 'Star Rollo',
+          scenarioUsed: 'calm',
+          fairwayHit: true,
+          puttDistance: 'C1',
+          voiceNote: '★ Closing uphill Star Rollo + XT Glow Nova Par 3 → 65 (+11, Back 31!) TIED ALL-TIME 18-HOLE PB!',
+          throws: [
+            { shotType: 'tee', discId: 'innova-sugar-star-rollo' },
+            { shotType: 'approach', discId: 'innova-xt-glow-nova' },
+            { shotType: 'putt', discId: 'innova-xt-glow-nova' }
+          ]
+        },
+        jack: {
+          thrownDiscId: 'discraft-cicada',
+          discUsed: 'Cicada',
+          fairwayHit: true,
+          voiceNote: '★ Yellow Cicada into Circle 1 + Bogey 4 → NEW ALL-TIME 18-HOLE PB 65 (+11, crushing 71 by 6 strokes & tying Jeffery 65–65)!'
+        }
+      }
+    }
+  ]
+};
+
 export const INITIAL_USER_EXPORT: AppExportPayload = {
   app: typedV65.app || 'Jeffery & Jack Disc Golf Scorecard',
-  version: 'v112',
-  exportDate: '2026-11-22T23:35:00.000Z',
+  version: 'v113',
+  exportDate: '2026-11-23T22:00:00.000Z',
   history: [
+    ROUND_2026_11_23_BLACK_HOOF_18,
     ROUND_2026_11_22_ART_NINE,
     ROUND_2026_11_22_SMP_WOODED,
     ROUND_2026_11_17_ART_NINE,
@@ -10113,6 +10675,7 @@ export const INITIAL_USER_EXPORT: AppExportPayload = {
     ROUND_2026_10_25_MIZE,
     ...(typedV65.history || []).filter(
       (r) =>
+        r.id !== ROUND_2026_11_23_BLACK_HOOF_18.id &&
         r.id !== ROUND_2026_11_22_ART_NINE.id &&
         r.id !== ROUND_2026_11_22_SMP_WOODED.id &&
         r.id !== ROUND_2026_11_17_ART_NINE.id &&
