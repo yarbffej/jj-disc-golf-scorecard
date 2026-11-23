@@ -34,8 +34,9 @@ import {
   syncDossierToDashboard
 } from './reportGenerator';
 
-export const MASTER_STORAGE_KEY = 'jj_disc_golf_v113_master_state';
+export const MASTER_STORAGE_KEY = 'jj_disc_golf_v114_master_state';
 export const LEGACY_STORAGE_KEYS = [
+  'jj_disc_golf_v113_master_state',
   'jj_disc_golf_v112_master_state',
   'jj_disc_golf_v111_master_state',
   'jj_disc_golf_v110_master_state',
@@ -81,7 +82,7 @@ export const LEGACY_STORAGE_KEYS = [
   'jj_disc_golf_v70_master_state',
   'jj_disc_golf_v69_master_state'
 ];
-export const VERIFIED_PICKS_STORAGE_KEY = 'jj_disc_golf_verified_hole_picks_v9';
+export const VERIFIED_PICKS_STORAGE_KEY = 'jj_disc_golf_verified_hole_picks_v10';
 export const THEME_STORAGE_KEY = 'jj_disc_golf_bg_theme_v4';
 export const DOSSIER_STORAGE_KEY = 'jj_disc_golf_latest_dossier_v1';
 export const HD_CARDS_STORAGE_KEY = 'jj_disc_golf_hd_cards_v1';
@@ -664,9 +665,9 @@ export function mergeDiscBags(
     const winner = candidateTime >= existingTime ? d : existing;
     const loser = winner === d ? existing : d;
 
-    // v107 Cutover (2026-11-19T04:20:00Z): Cotton Candy discs arrived! Active Main Bag = 14 Cotton Candy
-    // "Sugar High" discs + Star Sync + DX Archangel + Pink DX Alien (17 Active Discs) unless manually toggled later.
-    const SUGAR_HIGH_MAIN_BAG_CUTOVER_TS = 1795062000000;
+    // v114 Cutover (2026-11-23T22:20:00Z): Old Star Sync & Royal Blue DX Archangel moved cleanly to
+    // Backup Vault and replaced in the 17-disc Main Bag by Halloween Star Sync & Hot Pink Archangel.
+    const SUGAR_HIGH_MAIN_BAG_CUTOVER_TS = 1795472400000;
     const forceArchived =
       d.id === 'innova-leopard3' || d.id === 'innova-aviar'
         ? true
@@ -895,7 +896,7 @@ export function mergeCloudPayloads(
 
   const payload: AppExportPayload = {
     app: 'Jeffery & Jack Disc Golf Scorecard',
-    version: 'v113',
+    version: 'v114',
     exportDate: new Date().toISOString(),
     updatedAt: Math.max(localTime, remoteTime),
     deviceId: local.deviceId || getOrCreateDeviceId(),
@@ -1007,7 +1008,7 @@ export function readLocalStorageSnapshot(): AppExportPayload {
 
   return {
     app: 'Jeffery & Jack Disc Golf Scorecard',
-    version: 'v113',
+    version: 'v114',
     exportDate: new Date().toISOString(),
     updatedAt: parsedMaster.updatedAt || Date.now(),
     deviceId: getOrCreateDeviceId(),

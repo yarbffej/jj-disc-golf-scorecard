@@ -45,7 +45,7 @@ import {
 import { playChainRattleSfx } from '../utils/soundFx';
 import { RhbhShotFinder } from './RhbhShotFinder';
 
-const VERIFIED_PICKS_STORAGE_KEY = 'jj_disc_golf_verified_hole_picks_v9';
+const VERIFIED_PICKS_STORAGE_KEY = 'jj_disc_golf_verified_hole_picks_v10';
 
 interface LiveScorecardViewProps {
   roundState: ActiveRoundState;
@@ -222,12 +222,15 @@ Players: ${playersLabel}
       'sugar high dx glow roc': 'innova-sugar-glow-roc',
       'classic glow roc': 'innova-classic-glow-roc',
       'glow roc': 'innova-sugar-glow-roc',
-      sync: 'innova-sync',
-      'star sync': 'innova-sync',
+      sync: 'innova-halloween-sync',
+      'star sync': 'innova-halloween-sync',
+      'halloween sync': 'innova-halloween-sync',
+      'halloween star sync': 'innova-halloween-sync',
       alien: 'innova-dx-alien',
       'dx alien': 'innova-dx-alien',
-      archangel: 'innova-archangel',
-      'dx archangel': 'innova-archangel',
+      archangel: 'innova-hot-pink-archangel',
+      'dx archangel': 'innova-hot-pink-archangel',
+      'hot pink archangel': 'innova-hot-pink-archangel',
       wraith: 'innova-halo-wraith',
       'halo wraith': 'innova-halo-wraith',
       'classic glow wraith': 'innova-classic-glow-wraith',
@@ -349,7 +352,10 @@ Players: ${playersLabel}
                 { shotType: 'tee', discId: disc.id },
                 {
                   shotType: 'putt',
-                  discId: disc.id === 'innova-sync' ? 'innova-sync' : 'innova-kc-pro-aviar'
+                  discId:
+                    disc.id === 'innova-halloween-sync' || disc.id === 'innova-sync'
+                      ? 'innova-halloween-sync'
+                      : 'innova-kc-pro-aviar'
                 }
               ]
             }

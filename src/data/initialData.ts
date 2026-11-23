@@ -214,6 +214,7 @@ export const INITIAL_PACK_GEAR: PackGearItem[] = [
 
 export const ARCHIVED_DISC_IDS = new Set([
   'innova-aviar',
+  'innova-sync',
   'innova-pig',
   'innova-toro',
   'innova-toro-alt',
@@ -224,6 +225,7 @@ export const ARCHIVED_DISC_IDS = new Set([
   'innova-classic-glow-roc',
   'innova-it',
   'innova-leopard3',
+  'innova-archangel',
   'innova-roadrunner',
   'innova-firebird',
   'innova-classic-glow-beast',
@@ -2073,17 +2075,55 @@ const NEW_INNOVA_DISCS: DiscItem[] = [
       '175g Champion Eagle — Overstable Control Fairway Driver [7|4|-1|3] for Headwinds, Hyzers & Forehand Flexes'
   },
   {
-    id: 'innova-archangel',
+    id: 'innova-halloween-sync',
+    ownerId: 'jeffery',
+    cardNumber: '#05 OF 17',
+    cardImage: './assets/aistudio/card_star_sync_halloween_pink.jpg',
+    name: 'Halloween Star Sync',
+    brand: 'Innova',
+    slotCategory: 'Putter 5 (Main Bag · Halloween Edition) · Precision Throwing Putter [3|3|0|1]',
+    plastic: 'Star (Halloween Edition)',
+    weightGrams: 174,
+    colorStamp: 'Hot Pink Sparkle Star · Halloween Edition (Bride of Frankenstein Archway Foil · 173–175g)',
+    orderNumber: 'Halloween Edition Hot Pink Star Sync Replacement (Debuted Nov 23, 2026)',
+    price: '$17.99',
+    type: 'Putter',
+    speedTier: 'SPD 2-4',
+    stabilitySlot: 'Neutral',
+    speed: 3,
+    glide: 3,
+    turn: 0,
+    fade: 1,
+    colorHex: '#FF1493',
+    idealMinFeet: 60,
+    idealMaxFeet: 195,
+    moldAndFlight:
+      'Precision throwing putter [3 | 3 | 0 | 1] in 173–175g Hot Pink Sparkle Star plastic — Halloween Edition (Bride of Frankenstein stone archway stamp). Dead-straight flight with reliable neutral glide and gentle 1-fade finish.',
+    courseStrategy:
+      'Putter 5 in your 100% Complete 17-Disc Main Bag: Brand-new Halloween Edition Hot Pink Star Sync replacing your original Vault Sync! Laser-straight 100–195ft wooded tee drives, tunnel chutes, and clutch Par approaches.',
+    personalFlightNotes:
+      '11/23 Black Hoof Championship Debut (2/2 Pars · 0.00 avg!): Threaded EVERY tree on 105ft H13 ("No idea how I missed all those trees—that Sync went right where I was aiming!") and grazed the top of the basket for a near-Birdie Par, plus drained a clutch 10ft Par on 294ft H10!',
+    fieldTestRank: '🎃 11/23 Debut (2/2 Pars · 0.00 avg) · Precision Throwing Putter [3|3|0|1]',
+    backComments:
+      'Halloween Edition Hot Pink Sparkle Star Sync [3 | 3 | 0 | 1] (173–175g · Precision Throwing Putter). Bride of Frankenstein limited archway stamp in neon pink matching the Cotton Candy bag — debuted 11/23 Black Hoof at 100% Par!',
+    transcriptStats:
+      '11/23 Black Hoof Debut: 2/2 Pars (0.00 avg!) — H13 105ft tree-threader grazed basket top + H10 10ft Par closer!',
+    caddieScenarios: ['calm', 'headwind', 'cross_lr', 'cross_rl'],
+    caddieRoleNote:
+      '174g Halloween Edition Hot Pink Star Sync — Precision Throwing Putter [3|3|0|1] (11/23 Debut: 2/2 Pars, H13 Tree-Threader!)'
+  },
+  {
+    id: 'innova-hot-pink-archangel',
     ownerId: 'jeffery',
     cardNumber: '#13 OF 17',
     cardImage: './assets/aistudio/card_dx_archangel_hot_pink.jpg',
-    name: 'Archangel',
+    name: 'Hot Pink Archangel',
     brand: 'Innova',
     slotCategory: 'Fairway 4 (Main Bag · Hot Pink DX) · High-Glide Understable Fairway [8|6|-4|1]',
     plastic: 'DX',
     weightGrams: 171,
     colorStamp: 'Hot Pink DX · Black Winged Sword Archangel Stamp (170–172g · SkyBox Foil Card)',
-    orderNumber: 'Hot Pink Main Bag Replacement (Nov 18, 2026)',
+    orderNumber: 'Hot Pink DX Archangel Replacement (Debuted Nov 23, 2026)',
     price: '$8.99',
     type: 'Fairway Driver',
     speedTier: 'SPD 7-11',
@@ -2098,17 +2138,55 @@ const NEW_INNOVA_DISCS: DiscItem[] = [
     moldAndFlight:
       'High-glide understable fairway driver [8 | 6 | -4 | 1] in 170–172g Hot Pink DX plastic with Black Winged Archangel stamp. Effortless 6-glide carry and smooth understable turn down tight wooded corridors.',
     courseStrategy:
-      'Fairway 4 in the Main Bag: Fresh Hot Pink DX replacement matching your Cotton Candy bag! Massive 6-glide floaty fairway driver for tailwinds, wooded hallways, and easy-turn distance with smooth 90° chest-high release.',
+      'Fairway 4 in your 100% Complete 17-Disc Main Bag: Brand-new Hot Pink DX replacement matching your Cotton Candy bag! Massive 6-glide floaty fairway driver for tailwinds, wooded hallways, and easy-turn distance with a smooth upright 90° chest-high release.',
     personalFlightNotes:
-      'Hot Pink DX Replacement (170–172g · [8|6|-4|1]) carrying forward your proven Archangel slot: Prairie Pass H8 pin-high 10ft park ("Like an angel! Permanent, keep this one!") + 11/05 Sar-Ko-Par H7 (3ft Park!) & H8 (20ft) BACK-TO-BACK BIRDIES ★ in your 21 (-6 PB) round!',
-    fieldTestRank: '🏆 Hot Pink DX Replacement · High-Glide Understable Fairway [8|6|-4|1]',
+      '11/23 Black Hoof Championship Debut: Back in your 100% complete bag on 250ft H2 ("Got a new one!")! Carries forward your beloved Archangel slot (6-glide effortless turn down wooded corridors with a smooth upright chest-high pull-through).',
+    fieldTestRank: '🪽 11/23 Debut · Hot Pink DX High-Glide Understable Fairway [8|6|-4|1]',
     backComments:
-      'Hot Pink DX Archangel [8 | 6 | -4 | 1] (170–172g · High-Glide Understable Fairway). Fresh neon-pink replacement matching the Cotton Candy lineup — effortless 6-glide carry and smooth wooded S-curves!',
+      'Hot Pink DX Archangel [8 | 6 | -4 | 1] (170–172g · High-Glide Understable Fairway). Fresh neon-pink replacement matching the Cotton Candy lineup — debuted 11/23 at Black Hoof Championship!',
+    transcriptStats:
+      '11/23 Black Hoof Debut: Teed off on 250ft H2 in your 65 (+11) All-Time 18-Hole PB Tie!',
+    caddieScenarios: ['calm', 'tailwind'],
+    caddieRoleNote:
+      '171g Hot Pink DX Archangel — High-Glide Understable Fairway [8|6|-4|1] (11/23 Bag Return!)'
+  },
+  {
+    id: 'innova-archangel',
+    ownerId: 'jeffery',
+    cardNumber: 'BACKUP VAULT',
+    cardImage: './assets/aistudio/card_dx_archangel_order_front_79dc09a3.jpg',
+    name: 'Archangel',
+    brand: 'Innova',
+    slotCategory: 'Backup Vault · Original 170g Royal Blue DX Archangel (Replaced 11/23 by Hot Pink Archangel)',
+    plastic: 'DX',
+    weightGrams: 170,
+    colorStamp: 'Royal Blue / Bright Red Winged Archangel Stamp',
+    orderNumber: '1010 Discs Order #281088 (Oct 26, 2026)',
+    price: '$8.99',
+    type: 'Fairway Driver',
+    speedTier: 'SPD 7-11',
+    stabilitySlot: 'Understable',
+    speed: 8,
+    glide: 6,
+    turn: -3,
+    fade: 1,
+    colorHex: '#3B82F6',
+    idealMinFeet: 160,
+    idealMaxFeet: 335,
+    moldAndFlight:
+      'Original high-glide understable control driver [8 | 6 | -3 | 1] in 170g Royal Blue DX plastic with Bright Red Winged Archangel stamp — now retired to the Vault after the Hot Pink DX Archangel arrived on 11/23!',
+    courseStrategy:
+      'Backup Vault Legend (Replaced 11/23 by Hot Pink DX Archangel): Floaty 6-glide wooded fairway driver that powered Prairie Pass H8 & Sar-Ko-Par H7/H8 Birdies.',
+    personalFlightNotes:
+      'Archived Vault Legend (39 pre-11/23 holes, 8 Birdies, 77% Par+!): Parked 202ft Prairie Pass H8 pin-high 10ft left ("Like an angel! Permanent, keep this one!") + 11/05 Sar-Ko-Par H7 (3ft Park!) & H8 (20ft) BACK-TO-BACK BIRDIES ★ in your 21 (-6 PB) round! Replaced 11/23 by your new Hot Pink DX Archangel.',
+    fieldTestRank: '📦 Backup Vault Legend (8 Birdies) · Replaced 11/23 by Hot Pink Archangel',
+    backComments:
+      'Original 170g Royal Blue DX Archangel [8 | 6 | -3 | 1] — retired to the Backup Vault on 11/23 after your new Hot Pink DX Archangel joined the Cotton Candy bag!',
     transcriptStats:
       'Prairie Pass H8 10ft park ("Permanent, keep this one!") + 11/05 Sar-Ko H7 (3ft) & H8 (20ft) Back-to-Back Birdies + 11/16 H3 top-band run!',
     caddieScenarios: ['calm', 'tailwind'],
     caddieRoleNote:
-      '170–172g Hot Pink DX Archangel — High-Glide Understable Fairway [8|6|-4|1] (Prairie Pass H8 & Sar-Ko H7/H8 Birdie Keeper)'
+      'Backup Vault · Original 170g Royal Blue DX Archangel (Replaced 11/23 by Hot Pink Archangel)'
   },
   {
     id: 'innova-roadrunner',
@@ -2916,14 +2994,16 @@ const CORE_DISC_UPDATES_V86: Record<string, Partial<DiscItem>> = {
       '11/05 Sar-Ko-Par H6 (21 PB): Parked 2ft from the pin for Birdie 2 + 11/03 H2 & 10/30 H6 Parked Birdie 2s!'
   },
   'innova-archangel': {
-    slotCategory: 'Fairway 3 (Main Compartment) · Floaty High-Glide Control Driver',
+    cardImage: './assets/aistudio/card_dx_archangel_order_front_79dc09a3.jpg',
+    slotCategory: 'Backup Vault · Original 170g Royal Blue DX Archangel (Replaced 11/23 by Hot Pink Archangel)',
     orderNumber: '1010 Discs Order #281088 (Oct 26, 2026)',
     price: '$8.99',
+    colorHex: '#3B82F6',
     personalFlightNotes:
-      '11/05 Sar-Ko-Par H7 (3ft Park!) & H8 (20ft) BACK-TO-BACK BIRDIES ★ (21 / -6 PB Round!) + 11/04 H6 Birdie ★: In Round 2 on 11/05, locked in your 90-degree chest-high elbow + "tea-kettle" wrist cue with the 170g DX Archangel on Hole #7 (139ft) to park 3ft under the pin ("Just go with the Archangel! Keep the elbow at 90° and chest high... right under the pin, 3 feet away!"), then repeated the exact upright 90° release on Hole #8 (171ft) to 20ft and drained the Birdie 2 putt!',
-    fieldTestRank: '🏆 Sar-Ko-Par H6, H7 (3ft!) & H8 (20ft!) Birdie Specialist · 90° Chest-High Release',
+      'Archived Vault Legend (39 pre-11/23 holes, 8 Birdies!): Parked Prairie Pass H8 pin-high 10ft left ("Like an angel! Permanent, keep this one!") + 11/05 Sar-Ko-Par H7 (3ft Park!) & H8 (20ft) BACK-TO-BACK BIRDIES ★ in your 21 (-6 PB) round! Replaced 11/23 by your new Hot Pink DX Archangel.',
+    fieldTestRank: '📦 Backup Vault Legend (8 Birdies) · Replaced 11/23 by Hot Pink Archangel',
     transcriptStats:
-      '11/05 Sar-Ko-Par (21 PB): H7 (parked 3ft) & H8 (20ft C1 putt) Back-to-Back Birdies + 11/04 & 10/29 H6 Birdie 2s!'
+      '11/05 Sar-Ko-Par (21 PB): H7 (parked 3ft) & H8 (20ft C1 putt) Back-to-Back Birdies + Prairie Pass H8 10ft park!'
   },
   'innova-rollo': {
     slotCategory: 'Midrange 5 (Main Compartment) · Understable Turnovers, Mini-S & Rollers',
@@ -2956,26 +3036,26 @@ const CORE_DISC_UPDATES_V86: Record<string, Partial<DiscItem>> = {
       '10/30 Sar-Ko-Par H3: Parked woods scramble right under the pin for Par 3 + 10/29 H1 Birdie (6–7ft)!'
   },
   'innova-sync': {
-    cardImage: './assets/aistudio/card_star_sync_halloween_pink.jpg',
-    slotCategory: 'Putter 5 (Main Bag · Halloween Edition) · Precision Throwing Putter & H1 Ace-Runner',
-    weightGrams: 174,
-    colorHex: '#FF1493',
-    colorStamp: 'Hot Pink Sparkle Star · Halloween Edition (Bride of Frankenstein Archway Foil · 173–175g)',
-    orderNumber: 'Halloween Edition Hot Pink Star Sync Replacement (Nov 18, 2026)',
-    price: '$17.99',
+    cardImage: './assets/aistudio/card_star_sync_8e893621.jpg',
+    slotCategory: 'Backup Vault · Original Star Sync (Replaced 11/23 by Halloween Star Sync)',
+    weightGrams: 175,
+    colorHex: '#00F0FF',
+    colorStamp: 'Original Star Sync · Classic Throwing Putter [3|3|0|1]',
+    orderNumber: 'Original Star Sync (Retired to Vault Nov 23, 2026)',
+    price: '$15.99',
     moldAndFlight:
-      'Precision throwing putter [3 | 3 | 0 | 1] in 173–175g Hot Pink Sparkle Star plastic — Halloween Edition (Bride of Frankenstein stone archway stamp). Dead-straight flight with reliable neutral glide and soft 1-fade finish.',
+      'Original precision throwing putter [3 | 3 | 0 | 1] in 175g Star plastic — retired to the Backup Vault on 11/23 when your brand-new Halloween Edition Hot Pink Star Sync took over the #05 Main Bag slot!',
     courseStrategy:
-      'Putter 5 in your 17-disc Main Bag: Halloween Edition Hot Pink Star Sync replacing your original Sync in matching neon pink! Built for laser-straight 130–190ft tee drives (Sar-Ko H1, Art Nine, SMP Wooded chutes) and confident approaches.',
+      'Backup Vault Legend (131 pre-11/23 holes, 27 Birdies!): Retired cleanly to the Vault on 11/23 and succeeded by your Hot Pink Halloween Star Sync.',
     personalFlightNotes:
-      'Halloween Edition Hot Pink Replacement (173–175g · [3|3|0|1]) carrying forward your #1 throwing putter slot: SMACKED THE BASKET on Sar-Ko-Par H1 (11/16 near-Ace Birdie 2!), parked H1 in both 11/05 rounds + 11/04, and piped SMP Wooded H2, H5 (3ft park!) & H15 Pars (11/17)!',
-    fieldTestRank: '🎃 Halloween Edition Main Bag · Precision Throwing Putter & H1 Basket-Hit Ace Runner [3|3|0|1]',
+      'Archived Vault All-Star (131 pre-11/23 holes, 27 Birdies!): SMACKED THE BASKET on Sar-Ko-Par H1 (11/16 near-Ace Birdie 2!), parked H1 in both 11/05 rounds + 11/04, and piped SMP Wooded H2, H5 (3ft park!) & H15 Pars (11/17)! Replaced 11/23 by your new Halloween Edition Hot Pink Star Sync.',
+    fieldTestRank: '📦 Backup Vault All-Star (27 Birdies) · Replaced 11/23 by Halloween Star Sync',
     backComments:
-      'Halloween Edition Hot Pink Sparkle Star Sync [3 | 3 | 0 | 1] (173–175g · Precision Throwing Putter). Bride of Frankenstein limited archway stamp upgraded in neon pink to match the Cotton Candy bag!',
+      'Original 175g Star Sync [3 | 3 | 0 | 1] — 131 career holes & 27 Birdies before retiring to the Backup Vault on 11/23 for your Halloween Edition Hot Pink Star Sync!',
     transcriptStats:
       '11/16 Sar-Ko H1 Basket Hit Birdie 2 + 11/17 SMP Wooded H2/H5/H15 Pars + 11/05 21 PB H1 Birdie!',
     caddieRoleNote:
-      '173–175g Hot Pink Star Sync (Halloween Edition) — Precision Throwing Putter [3|3|0|1] & H1 Ace-Runner'
+      'Backup Vault · Original 175g Star Sync (Replaced 11/23 by Halloween Star Sync)'
   }
 };
 
@@ -2984,7 +3064,7 @@ export const ACTIVE_CARD_NUMBERS: Record<string, string> = {
   'innova-proto-glow-aviar': '#02 OF 17',
   'innova-yeti-pro-aviar': '#03 OF 17',
   'innova-kc-pro-aviar': '#04 OF 17',
-  'innova-sync': '#05 OF 17',
+  'innova-halloween-sync': '#05 OF 17',
   'innova-dx-alien': '#06 OF 17',
   'innova-sugar-glow-roc': '#07 OF 17',
   'innova-proto-glow-mako3': '#08 OF 17',
@@ -2992,7 +3072,7 @@ export const ACTIVE_CARD_NUMBERS: Record<string, string> = {
   'innova-glow-leopard3': '#10 OF 17',
   'innova-glow-teebird': '#11 OF 17',
   'innova-champion-eagle': '#12 OF 17',
-  'innova-archangel': '#13 OF 17',
+  'innova-hot-pink-archangel': '#13 OF 17',
   'innova-sugar-star-roadrunner': '#14 OF 17',
   'innova-luster-firebird': '#15 OF 17',
   'innova-halo-wraith': '#16 OF 17',
@@ -3004,7 +3084,7 @@ export const ACTIVE_JEFFERY_ORDER = [
   'innova-proto-glow-aviar',
   'innova-yeti-pro-aviar',
   'innova-kc-pro-aviar',
-  'innova-sync',
+  'innova-halloween-sync',
   'innova-dx-alien',
   'innova-sugar-glow-roc',
   'innova-proto-glow-mako3',
@@ -3012,7 +3092,7 @@ export const ACTIVE_JEFFERY_ORDER = [
   'innova-glow-leopard3',
   'innova-glow-teebird',
   'innova-champion-eagle',
-  'innova-archangel',
+  'innova-hot-pink-archangel',
   'innova-sugar-star-roadrunner',
   'innova-luster-firebird',
   'innova-halo-wraith',
@@ -10152,13 +10232,13 @@ Bag Milestone: 100% Complete Cotton Candy + Hot Pink Halloween Star Sync + Hot P
         '★ HOT PINK DX ARCHANGEL & PROTO GLOW AVIAR DEBUT! Teed off with brand-new Hot Pink DX Archangel ("Got a new one!") + debuted Cotton Candy Proto Glow Aviar ("Color Aviar—only threw half distance") for 5; Jack 4!',
       meta: {
         jeffery: {
-          thrownDiscId: 'innova-archangel',
-          discUsed: 'Archangel',
+          thrownDiscId: 'innova-hot-pink-archangel',
+          discUsed: 'Hot Pink Archangel',
           scenarioUsed: 'cross_rl',
           puttDistance: 'C1',
           voiceNote: 'Debuted Hot Pink DX Archangel + debuted Cotton Candy Proto Glow Aviar ("Color Aviar") for 5',
           throws: [
-            { shotType: 'tee', discId: 'innova-archangel' },
+            { shotType: 'tee', discId: 'innova-hot-pink-archangel' },
             { shotType: 'approach', discId: 'innova-proto-glow-aviar' },
             { shotType: 'approach', discId: 'innova-proto-glow-aviar' },
             { shotType: 'putt', discId: 'innova-yeti-pro-aviar' },
@@ -10394,8 +10474,8 @@ Bag Milestone: 100% Complete Cotton Candy + Hot Pink Halloween Star Sync + Hot P
           voiceNote: '★ 3rd straight Par! Cotton Candy Star Rollo + Halloween Star Sync 10ft putt on 294ft H10!',
           throws: [
             { shotType: 'tee', discId: 'innova-sugar-star-rollo' },
-            { shotType: 'approach', discId: 'innova-sync' },
-            { shotType: 'putt', discId: 'innova-sync' }
+            { shotType: 'approach', discId: 'innova-halloween-sync' },
+            { shotType: 'putt', discId: 'innova-halloween-sync' }
           ]
         },
         jack: {
@@ -10471,16 +10551,16 @@ Bag Milestone: 100% Complete Cotton Candy + Hot Pink Halloween Star Sync + Hot P
         '★ HALLOWEEN STAR SYNC NEAR-BIRDIE! Threaded EVERY tree ("No idea how I missed all those trees—that Sync went right where I was aiming!") and grazed basket top for Double Par 3!',
       meta: {
         jeffery: {
-          thrownDiscId: 'innova-sync',
-          discUsed: 'Sync',
+          thrownDiscId: 'innova-halloween-sync',
+          discUsed: 'Halloween Star Sync',
           scenarioUsed: 'calm',
           fairwayHit: true,
           puttDistance: 'C1',
           voiceNote: '★ Hot Pink Halloween Star Sync missed every tree & grazed basket top (near-Birdie!) for Par 3!',
           throws: [
-            { shotType: 'tee', discId: 'innova-sync' },
-            { shotType: 'putt', discId: 'innova-sync' },
-            { shotType: 'putt', discId: 'innova-sync' }
+            { shotType: 'tee', discId: 'innova-halloween-sync' },
+            { shotType: 'putt', discId: 'innova-halloween-sync' },
+            { shotType: 'putt', discId: 'innova-halloween-sync' }
           ]
         },
         jack: {
@@ -10641,8 +10721,8 @@ Bag Milestone: 100% Complete Cotton Candy + Hot Pink Halloween Star Sync + Hot P
 
 export const INITIAL_USER_EXPORT: AppExportPayload = {
   app: typedV65.app || 'Jeffery & Jack Disc Golf Scorecard',
-  version: 'v113',
-  exportDate: '2026-11-23T22:00:00.000Z',
+  version: 'v114',
+  exportDate: '2026-11-23T22:20:00.000Z',
   history: [
     ROUND_2026_11_23_BLACK_HOOF_18,
     ROUND_2026_11_22_ART_NINE,
@@ -10739,7 +10819,8 @@ export const PUBLIC_HD_CARD_MAP: Record<string, string> = {
   'innova-halo-wraith': './assets/aistudio/card_sugar_high_halo_wraith.jpg',
   'innova-halo-destroyer': './assets/aistudio/card_sugar_high_halo_destroyer.jpg',
   'innova-aviar': './assets/aistudio/card_star_aviar_ef73dd08.jpg',
-  'innova-sync': './assets/aistudio/card_star_sync_halloween_pink.jpg',
+  'innova-sync': './assets/aistudio/card_star_sync_8e893621.jpg',
+  'innova-halloween-sync': './assets/aistudio/card_star_sync_halloween_pink.jpg',
   'innova-toro': './assets/aistudio/card_star_toro_order_front_b7d093dc.jpg',
   'innova-toro-alt': './assets/aistudio/card_star_toro_order_front_b7d093dc.jpg',
   'innova-dx-alien': './assets/aistudio/card_pink_dx_alien_invoice_4fe78f83.jpg',
@@ -10749,7 +10830,8 @@ export const PUBLIC_HD_CARD_MAP: Record<string, string> = {
   'innova-roc3': './assets/aistudio/card_dx_roc3_f562e170.jpg',
   'innova-classic-glow-roc': './assets/aistudio/card_classic_glow_roc_invoice_c493a3ba.jpg',
   'innova-leopard3': './assets/aistudio/card_gstar_leopard3_order_front_11425ae3.jpg',
-  'innova-archangel': './assets/aistudio/card_dx_archangel_hot_pink.jpg',
+  'innova-archangel': './assets/aistudio/card_dx_archangel_order_front_79dc09a3.jpg',
+  'innova-hot-pink-archangel': './assets/aistudio/card_dx_archangel_hot_pink.jpg',
   'innova-roadrunner': './assets/aistudio/card_gstar_roadrunner_order_front_832980e5.jpg',
   'innova-classic-glow-beast': './assets/aistudio/card_classic_glow_beast_invoice_92808f96.jpg',
   'innova-mamba': './assets/aistudio/card_star_mamba_c3695bde.jpg',
@@ -10784,7 +10866,7 @@ export const BUILT_IN_CARD_IMAGES: Record<string, string> = {
   'card_xt_glow_nova_cotton_candy_97868c2e.jpg': PUBLIC_HD_CARD_MAP['innova-xt-glow-nova'],
   'card_star_sync.jpg': PUBLIC_HD_CARD_MAP['innova-sync'],
   'card_star_sync_8e893621.jpg': PUBLIC_HD_CARD_MAP['innova-sync'],
-  'card_star_sync_halloween_pink.jpg': PUBLIC_HD_CARD_MAP['innova-sync'],
+  'card_star_sync_halloween_pink.jpg': PUBLIC_HD_CARD_MAP['innova-halloween-sync'],
   'card_xt_pig.jpg': PUBLIC_HD_CARD_MAP['innova-pig'],
   'card_star_rollo.jpg': PUBLIC_HD_CARD_MAP['innova-rollo'],
   'card_glow_mako3.jpg': PUBLIC_HD_CARD_MAP['innova-mako3'],
@@ -10799,7 +10881,7 @@ export const BUILT_IN_CARD_IMAGES: Record<string, string> = {
   'card_star_jay_order_front_c57ddddd.jpg': PUBLIC_HD_CARD_MAP['innova-jay'],
   'card_gstar_leopard3_order_front_11425ae3.jpg': PUBLIC_HD_CARD_MAP['innova-leopard3'],
   'card_dx_archangel_order_front_79dc09a3.jpg': PUBLIC_HD_CARD_MAP['innova-archangel'],
-  'card_dx_archangel_hot_pink.jpg': PUBLIC_HD_CARD_MAP['innova-archangel'],
+  'card_dx_archangel_hot_pink.jpg': PUBLIC_HD_CARD_MAP['innova-hot-pink-archangel'],
   'card_gstar_roadrunner_order_front_832980e5.jpg': PUBLIC_HD_CARD_MAP['innova-roadrunner'],
   'card_pink_dx_alien_invoice_4fe78f83.jpg': PUBLIC_HD_CARD_MAP['innova-dx-alien'],
   'card_pink_dx_alien_892926e3.jpg': PUBLIC_HD_CARD_MAP['innova-dx-alien'],

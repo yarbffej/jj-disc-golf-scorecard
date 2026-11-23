@@ -74,8 +74,8 @@ const LOADOUT_PRESETS: Record<
       'Active Bench (8): Proto Glow Aviar, Yeti Pro Aviar, Pink DX Alien, Glow Teebird, DX Archangel, Luster Firebird, Halo Wraith, Halo Destroyer',
     discIds: [
       { id: 'innova-kc-pro-aviar', role: 'Putter 1 · Cotton Candy 2-Foil Primary C1/C2 Chain Putter (21 / -6 PB!) [2|3|0|2]' },
-      { id: 'innova-sync', role: 'Putter 2 · Star Sync Dead-Straight Tee Putter & 11/16 H1 Basket-Smack Laser [3|3|0|1]' },
-      { id: 'innova-xt-glow-nova', role: 'Approach · Sugar High Zero-Fade Scramble & Sloped-Green Stopper [2|2|0|0]' },
+      { id: 'innova-halloween-sync', role: 'Putter 2 · Halloween Edition Hot Pink Star Sync (11/23 2/2 Pars · H13 Tree-Threader!) [3|3|0|1]' },
+      { id: 'innova-xt-glow-nova', role: 'Approach · Sugar High Zero-Fade Scramble & Sloped-Green Stopper (11/23 11-for-11!) [2|2|0|0]' },
       { id: 'innova-sugar-star-rollo', role: 'Midrange (US) · Cotton Candy Star Rollo Right-Turn, Tunnel & Uphill Closer [5|6|-4|1]' },
       { id: 'innova-proto-glow-mako3', role: 'Midrange (Neutral) · Cotton Candy Proto Glow Dead-Straight Point & Shoot [5|5|0|0]' },
       { id: 'innova-sugar-glow-roc', role: 'Midrange (OS) · Cotton Candy DX Glow Rancho Roc Wind & Left Hyzer [4|4|0|3]' },
@@ -92,7 +92,7 @@ const LOADOUT_PRESETS: Record<
     discIds: [
       { id: 'innova-kc-pro-aviar', role: 'Main Chain Putter · Cotton Candy 2-Foil Wind & C1 Lock [2|3|0|2]' },
       { id: 'innova-proto-glow-aviar', role: 'Driving Putter · Beadless Proto Glow 130–185 ft Tee Laser [2|3|0|1]' },
-      { id: 'innova-sync', role: 'Tee Putter · Star Sync Basket-Smacking Sar-Ko H1 & SMP H5 Parker [3|3|0|1]' },
+      { id: 'innova-halloween-sync', role: 'Tee Putter · Halloween Hot Pink Star Sync 105ft Wooded Tunnel Laser [3|3|0|1]' },
       { id: 'innova-xt-glow-nova', role: 'Scramble Stopper · Zero-Fade Mound & Sloped-Green Anchor [2|2|0|0]' },
       { id: 'innova-dx-alien', role: 'Low-Ceiling Touch · Pink DX Alien 2-Glide Skip & Under-Branch Laser [4|2|0|1]' },
       { id: 'innova-sugar-star-rollo', role: 'Right-Turning Woods Mid · Sar-Ko H9 & Art Nine H3 Specialist [5|6|-4|1]' },
@@ -111,7 +111,7 @@ const LOADOUT_PRESETS: Record<
       { id: 'innova-dx-alien', role: 'Low-Branch Scramble & Bullseye Stopper [4|2|0|1]' },
       { id: 'innova-proto-glow-mako3', role: '2nd-Shot Fairway Gap Threader (Prairie H7/H12) [5|5|0|0]' },
       { id: 'innova-glow-teebird', role: 'Straight-to-Fade 7-Speed Fairway Anchor (220–280 ft) [7|5|0|2]' },
-      { id: 'innova-archangel', role: 'Hot Pink DX High-Glide Understable Fairway Keeper ("Like an Angel!") [8|6|-4|1]' },
+      { id: 'innova-hot-pink-archangel', role: 'Hot Pink DX High-Glide Understable Fairway Keeper (11/23 Bag Return!) [8|6|-4|1]' },
       { id: 'innova-sugar-star-roadrunner', role: '#1 Workhorse Hot Pink Star Distance & S-Curve [9|5|-4|1]' },
       { id: 'innova-luster-firebird', role: 'Luster Champion Headwind Fighter & Flare-Skip Utility [9|3|0|4]' },
       { id: 'innova-halo-wraith', role: 'Two-Tone Halo 11-Speed Low-Ceiling Power Bomber [11|5|-1|3]' },

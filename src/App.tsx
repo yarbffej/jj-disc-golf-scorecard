@@ -73,8 +73,9 @@ import {
   writeMergedStateToLocalStorageAndDashboard
 } from './utils/cloudSync';
 
-const STORAGE_KEY = 'jj_disc_golf_v113_master_state';
+const STORAGE_KEY = 'jj_disc_golf_v114_master_state';
 const LEGACY_STORAGE_KEYS = [
+  'jj_disc_golf_v113_master_state',
   'jj_disc_golf_v112_master_state',
   'jj_disc_golf_v111_master_state',
   'jj_disc_golf_v110_master_state',
@@ -176,6 +177,7 @@ const DASHBOARD_CARD_DISC_IDS = [
   'innova-halo-destroyer',
   'innova-aviar',
   'innova-sync',
+  'innova-halloween-sync',
   'innova-toro',
   'innova-toro-alt',
   'innova-dx-alien',
@@ -187,6 +189,7 @@ const DASHBOARD_CARD_DISC_IDS = [
   'innova-it',
   'innova-leopard3',
   'innova-archangel',
+  'innova-hot-pink-archangel',
   'innova-roadrunner',
   'innova-classic-glow-beast',
   'innova-mamba',
@@ -1544,8 +1547,8 @@ export default function App() {
               {
                 shotType: 'putt',
                 discId:
-                  ph.thrownDiscId === 'innova-sync'
-                    ? 'innova-sync'
+                  ph.thrownDiscId === 'innova-halloween-sync' || ph.thrownDiscId === 'innova-sync'
+                    ? 'innova-halloween-sync'
                     : 'innova-kc-pro-aviar'
               }
             ]

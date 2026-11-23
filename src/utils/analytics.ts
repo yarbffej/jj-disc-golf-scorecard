@@ -512,39 +512,39 @@ export function getVerifiedHoleKey(courseKeyOrName: string, holeNumber: number):
  * 14 Cotton Candy "Sugar High" Stamped Innova Discs (Arrived 11/18!) + Star Sync + DX Archangel + Pink DX Alien!
  */
 export const DEFAULT_VERIFIED_HOLE_PICKS: Record<string, string> = {
-  // Sar-Ko-Par Trails (H1–H9) — 17-Disc Cotton Candy + Sync / Archangel / Alien Main Bag!
-  'sarko:1': 'innova-sync',
+  // Sar-Ko-Par Trails (H1–H9) — 17-Disc Cotton Candy + Halloween Sync / Hot Pink Archangel / Alien Main Bag!
+  'sarko:1': 'innova-halloween-sync',
   'sarko:2': 'innova-sugar-star-roadrunner',
   'sarko:3': 'innova-glow-leopard3',
   'sarko:4': 'innova-sugar-glow-roc',
   'sarko:5': 'innova-dx-alien',
   'sarko:6': 'innova-proto-glow-mako3',
-  'sarko:7': 'innova-archangel',
+  'sarko:7': 'innova-hot-pink-archangel',
   'sarko:8': 'innova-champion-eagle',
   'sarko:9': 'innova-sugar-star-rollo',
   // Harmon & Santa Fe Parks — Yardage-matched Cotton Candy + Core 3!
   'harmon:1': 'innova-glow-leopard3',
   'harmon:2': 'innova-halo-wraith',
   'harmon:3': 'innova-glow-teebird',
-  'harmon:4': 'innova-archangel',
+  'harmon:4': 'innova-hot-pink-archangel',
   'harmon:5': 'innova-sugar-star-roadrunner',
   'harmon:6': 'innova-proto-glow-mako3',
   'harmon:7': 'innova-sugar-star-rollo',
   'harmon:8': 'innova-halo-destroyer',
   'harmon:9': 'innova-sugar-glow-roc',
   // Black Hoof Flying Disc (9-Hole) — Cotton Candy + Core 3 Picks!
-  'blackhoof:1': 'innova-archangel',
-  'blackhoof:2': 'innova-archangel',
+  'blackhoof:1': 'innova-hot-pink-archangel',
+  'blackhoof:2': 'innova-hot-pink-archangel',
   'blackhoof:3': 'innova-sugar-star-roadrunner',
   'blackhoof:4': 'innova-sugar-glow-roc',
   'blackhoof:5': 'innova-sugar-star-rollo',
   'blackhoof:6': 'innova-proto-glow-mako3',
-  'blackhoof:7': 'innova-sync',
+  'blackhoof:7': 'innova-halloween-sync',
   'blackhoof:8': 'innova-glow-leopard3',
   'blackhoof:9': 'innova-xt-glow-nova',
   // Black Hoof Championship (White to White · 18 Holes · Par 54 · 4,218 ft) — 11/23 65 (+11 PB Tie!) Picks!
   'blackhoof_18:1': 'innova-sugar-star-rollo',
-  'blackhoof_18:2': 'innova-archangel',
+  'blackhoof_18:2': 'innova-hot-pink-archangel',
   'blackhoof_18:3': 'innova-glow-leopard3',
   'blackhoof_18:4': 'innova-sugar-glow-roc',
   'blackhoof_18:5': 'innova-glow-teebird',
@@ -555,7 +555,7 @@ export const DEFAULT_VERIFIED_HOLE_PICKS: Record<string, string> = {
   'blackhoof_18:10': 'innova-sugar-star-rollo',
   'blackhoof_18:11': 'innova-proto-glow-mako3',
   'blackhoof_18:12': 'innova-sugar-star-roadrunner',
-  'blackhoof_18:13': 'innova-sync',
+  'blackhoof_18:13': 'innova-halloween-sync',
   'blackhoof_18:14': 'innova-proto-glow-mako3',
   'blackhoof_18:15': 'innova-sugar-star-rollo',
   'blackhoof_18:16': 'innova-proto-glow-mako3',
@@ -571,15 +571,15 @@ export const DEFAULT_VERIFIED_HOLE_PICKS: Record<string, string> = {
   'cedarridge:7': 'innova-sugar-star-roadrunner',
   'cedarridge:8': 'innova-halo-destroyer',
   'cedarridge:9': 'innova-sugar-star-roadrunner',
-  'cedarridge:10': 'innova-sync',
+  'cedarridge:10': 'innova-halloween-sync',
   'cedarridge:11': 'innova-sugar-star-rollo',
-  'cedarridge:12': 'innova-sync',
+  'cedarridge:12': 'innova-halloween-sync',
   'cedarridge:13': 'innova-halo-wraith',
   'cedarridge:14': 'innova-sugar-star-roadrunner',
   'cedarridge:15': 'innova-sugar-star-roadrunner',
   'cedarridge:16': 'innova-halo-destroyer',
-  'cedarridge:17': 'innova-archangel',
-  'cedarridge:18': 'innova-archangel',
+  'cedarridge:17': 'innova-hot-pink-archangel',
+  'cedarridge:18': 'innova-hot-pink-archangel',
   // Mize Elementary (H1–H9, 218–389ft) — Cotton Candy + Core 3 Driver-First Lineup!
   'mize:1': 'innova-sugar-star-roadrunner',
   'mize:2': 'innova-sugar-star-roadrunner',
@@ -589,13 +589,13 @@ export const DEFAULT_VERIFIED_HOLE_PICKS: Record<string, string> = {
   'mize:6': 'innova-halo-destroyer',
   'mize:7': 'innova-glow-teebird',
   'mize:8': 'innova-sugar-star-roadrunner',
-  'mize:9': 'innova-archangel',
-  // The Art Nine @ SMP (H1–H9, 84–146ft) — Cotton Candy + Sync / Alien Picks!
+  'mize:9': 'innova-hot-pink-archangel',
+  // The Art Nine @ SMP (H1–H9, 84–146ft) — Cotton Candy + Halloween Sync / Alien Picks!
   'artnine:1': 'innova-sugar-glow-roc',
   'artnine:2': 'innova-dx-alien',
   'artnine:3': 'innova-sugar-star-rollo',
   'artnine:4': 'innova-proto-glow-mako3',
-  'artnine:5': 'innova-sync',
+  'artnine:5': 'innova-halloween-sync',
   'artnine:6': 'innova-dx-alien',
   'artnine:7': 'innova-proto-glow-aviar',
   'artnine:8': 'innova-kc-pro-aviar',
@@ -619,9 +619,9 @@ export const DEFAULT_VERIFIED_HOLE_PICKS: Record<string, string> = {
   'heritage_park:16': 'innova-sugar-star-roadrunner',
   'heritage_park:17': 'innova-glow-leopard3',
   'heritage_park:18': 'innova-halo-wraith',
-  // Shawnee Mission Wooded (H1–H18, Par 54, 4,881ft) — Cotton Candy + Sync / Archangel / Alien!
+  // Shawnee Mission Wooded (H1–H18, Par 54, 4,881ft) — Cotton Candy + Halloween Sync / Hot Pink Archangel / Alien!
   'smp_wooded:1': 'innova-champion-eagle',
-  'smp_wooded:2': 'innova-sync',
+  'smp_wooded:2': 'innova-halloween-sync',
   'smp_wooded:3': 'innova-sugar-star-roadrunner',
   'smp_wooded:4': 'innova-proto-glow-mako3',
   'smp_wooded:5': 'innova-sugar-star-rollo',
@@ -634,23 +634,23 @@ export const DEFAULT_VERIFIED_HOLE_PICKS: Record<string, string> = {
   'smp_wooded:12': 'innova-sugar-star-rollo',
   'smp_wooded:13': 'innova-proto-glow-mako3',
   'smp_wooded:14': 'innova-champion-eagle',
-  'smp_wooded:15': 'innova-sync',
+  'smp_wooded:15': 'innova-halloween-sync',
   'smp_wooded:16': 'innova-sugar-star-rollo',
   'smp_wooded:17': 'innova-glow-teebird',
   'smp_wooded:18': 'innova-halo-wraith',
-  // Blue Valley "Prairie Pass" DG Course (Standard 18, Par 54, 4,209 ft) — Cotton Candy + Sync / Archangel / Alien!
+  // Blue Valley "Prairie Pass" DG Course (Standard 18, Par 54, 4,209 ft) — Cotton Candy + Core 3!
   'prairie_pass:1': 'innova-glow-leopard3',
   'prairie_pass:2': 'innova-sugar-star-rollo',
   'prairie_pass:3': 'innova-proto-glow-mako3',
   'prairie_pass:4': 'innova-sugar-star-roadrunner',
   'prairie_pass:5': 'innova-sugar-star-roadrunner',
   'prairie_pass:6': 'innova-sugar-glow-roc',
-  'prairie_pass:7': 'innova-sync',
-  'prairie_pass:8': 'innova-archangel',
+  'prairie_pass:7': 'innova-halloween-sync',
+  'prairie_pass:8': 'innova-hot-pink-archangel',
   'prairie_pass:9': 'innova-proto-glow-mako3',
   'prairie_pass:10': 'innova-sugar-star-rollo',
   'prairie_pass:11': 'innova-sugar-star-rollo',
-  'prairie_pass:12': 'innova-archangel',
+  'prairie_pass:12': 'innova-hot-pink-archangel',
   'prairie_pass:13': 'innova-halo-wraith',
   'prairie_pass:14': 'innova-glow-leopard3',
   'prairie_pass:15': 'innova-glow-teebird',
@@ -682,6 +682,7 @@ export type CaddieStabilityFilter = 'hole_match' | 'understable' | 'stable' | 'o
 
 const MAIN_BAG_EQUIVALENT_MAP: Record<string, string[]> = {
   'innova-sync': [
+    'innova-halloween-sync',
     'innova-proto-glow-aviar',
     'innova-yeti-pro-aviar',
     'innova-xt-glow-nova',
@@ -699,6 +700,7 @@ const MAIN_BAG_EQUIVALENT_MAP: Record<string, string[]> = {
   'innova-it': ['innova-glow-leopard3', 'innova-glow-teebird', 'innova-sugar-star-roadrunner'],
   'innova-leopard3': ['innova-glow-leopard3', 'innova-glow-teebird', 'innova-sugar-star-roadrunner'],
   'innova-archangel': [
+    'innova-hot-pink-archangel',
     'innova-glow-leopard3',
     'innova-sugar-star-roadrunner',
     'innova-glow-teebird'
@@ -765,15 +767,15 @@ export function recommendDiscsByStability(
   if (stabilityFilter === 'understable') {
     const primaryDriver =
       distanceFeet >= 245
-        ? byId('innova-sugar-star-roadrunner') || byId('innova-archangel') || byId('innova-glow-leopard3')
-        : byId('innova-archangel') || byId('innova-glow-leopard3') || byId('innova-sugar-star-roadrunner');
+        ? byId('innova-sugar-star-roadrunner') || byId('innova-hot-pink-archangel') || byId('innova-glow-leopard3')
+        : byId('innova-hot-pink-archangel') || byId('innova-glow-leopard3') || byId('innova-sugar-star-roadrunner');
     const driverAlts = [
       byId('innova-sugar-star-roadrunner'),
-      byId('innova-archangel'),
+      byId('innova-hot-pink-archangel'),
       byId('innova-glow-leopard3')
     ].filter((d): d is DiscItem => Boolean(d));
     const mid = byId('innova-sugar-star-rollo') || byId('innova-proto-glow-mako3');
-    const putter = byId('innova-sync') || byId('innova-proto-glow-aviar') || byId('innova-xt-glow-nova');
+    const putter = byId('innova-halloween-sync') || byId('innova-proto-glow-aviar') || byId('innova-xt-glow-nova');
 
     return {
       primary: primaryDriver,
@@ -786,7 +788,7 @@ export function recommendDiscsByStability(
         byId('innova-dx-alien')
       ].filter((d): d is DiscItem => Boolean(d)),
       putterAlts: [
-        byId('innova-sync'),
+        byId('innova-halloween-sync'),
         byId('innova-proto-glow-aviar'),
         byId('innova-yeti-pro-aviar'),
         byId('innova-xt-glow-nova')
@@ -794,7 +796,7 @@ export function recommendDiscsByStability(
       shotCallout:
         primaryDriver?.id === 'innova-sugar-star-roadrunner'
           ? 'Star Roadrunner [9|5|-4|1] (Cotton Candy Main Bag) — Easy hyzer-flip distance, long right-turning pans & tailwind turnovers!'
-          : primaryDriver?.id === 'innova-archangel'
+          : primaryDriver?.id === 'innova-hot-pink-archangel'
           ? '170g DX Archangel [8|6|-4|1] (Main Bag Core 3) — Massive 6-glide woods threader (Prairie Pass H8 10ft pin-high gem!) paired w/ Glow Leopard3!'
           : 'Glow Leopard3 [7|5|-2|1] (Cotton Candy Color Glow) — Smooth wooded hyzer-flip & S-curve fairway.',
       secondaryCallout:
@@ -812,11 +814,11 @@ export function recommendDiscsByStability(
         ? byId('innova-halo-wraith') || byId('innova-glow-teebird')
         : distanceFeet >= 215
         ? byId('innova-glow-teebird') || byId('innova-glow-leopard3')
-        : byId('innova-glow-leopard3') || byId('innova-archangel') || byId('innova-glow-teebird');
+        : byId('innova-glow-leopard3') || byId('innova-hot-pink-archangel') || byId('innova-glow-teebird');
     const mid = byId('innova-proto-glow-mako3') || byId('innova-dx-alien') || byId('innova-sugar-glow-roc');
     const putter =
       distanceFeet < 155
-        ? byId('innova-sync') || byId('innova-xt-glow-nova')
+        ? byId('innova-halloween-sync') || byId('innova-xt-glow-nova')
         : byId('innova-dx-alien') || byId('innova-proto-glow-aviar') || byId('innova-xt-glow-nova');
 
     return {
@@ -826,7 +828,7 @@ export function recommendDiscsByStability(
       driverAlts: [
         byId('innova-glow-teebird'),
         byId('innova-glow-leopard3'),
-        byId('innova-archangel'),
+        byId('innova-hot-pink-archangel'),
         byId('innova-halo-wraith'),
         byId('innova-sugar-star-roadrunner')
       ].filter((d): d is DiscItem => Boolean(d)),
@@ -836,7 +838,7 @@ export function recommendDiscsByStability(
         byId('innova-sugar-glow-roc')
       ].filter((d): d is DiscItem => Boolean(d)),
       putterAlts: [
-        byId('innova-sync'),
+        byId('innova-halloween-sync'),
         byId('innova-dx-alien'),
         byId('innova-xt-glow-nova'),
         byId('innova-proto-glow-aviar'),
@@ -852,7 +854,7 @@ export function recommendDiscsByStability(
       secondaryCallout:
         'Proto Glow Mako3 [5|5|0|0] & Pink DX Alien [4|2|0|1] — Point-and-shoot straight tunnel laser + low-skip bullseye touch!',
       finisherCallout:
-        putter?.id === 'innova-sync'
+        putter?.id === 'innova-halloween-sync'
           ? '175g Star Sync [3|3|0|1] — #1 straight tee putter (Sar-Ko H1 Basket Hit!) & wooded chute laser.'
           : putter?.id === 'innova-dx-alien'
           ? '178g Pink DX Alien [4|2|0|1] — Low-ceiling skip birdie & bullseye stopper (Sar-Ko H5 & Art Nine H6 Birdies!).'
@@ -920,7 +922,7 @@ export function recommendDiscsByStability(
       byId('innova-halo-wraith'),
       byId('innova-luster-firebird'),
       byId('innova-sugar-star-roadrunner'),
-      byId('innova-archangel'),
+      byId('innova-hot-pink-archangel'),
       byId('innova-champion-eagle'),
       byId('innova-glow-teebird'),
       byId('innova-glow-leopard3')
@@ -932,7 +934,7 @@ export function recommendDiscsByStability(
       byId('innova-dx-alien')
     ].filter((d): d is DiscItem => Boolean(d)),
     putterAlts: [
-      byId('innova-sync'),
+      byId('innova-halloween-sync'),
       byId('innova-dx-alien'),
       byId('innova-xt-glow-nova'),
       byId('innova-proto-glow-aviar'),
@@ -988,9 +990,9 @@ export function recommendDiscForScenario(
   if ((normCourse === 'sarko' || normCourse.includes('sar-ko-par')) && holeNumber) {
     if (holeNumber === 1) {
       return {
-        primary: byId('innova-glow-leopard3') || byId('innova-archangel') || null,
+        primary: byId('innova-glow-leopard3') || byId('innova-hot-pink-archangel') || null,
         secondary: byId('innova-proto-glow-mako3') || byId('innova-dx-alien'),
-        finisher: byId('innova-sync') || byId('innova-proto-glow-aviar'),
+        finisher: byId('innova-halloween-sync') || byId('innova-proto-glow-aviar'),
         synergyAlt: byId('discraft-roach'),
         shotCallout: 'Glow Leopard3 [7|5|-2|1] — smooth 60% low touch line if throwing a fairway driver.',
         secondaryCallout: 'Proto Glow Mako3 [5|5|0|0] or Pink DX Alien [4|2|0|1] — point-and-shoot midrange.',
@@ -1002,7 +1004,7 @@ export function recommendDiscForScenario(
       return {
         primary: byId('innova-sugar-star-roadrunner') || byId('innova-glow-leopard3') || null,
         secondary: byId('innova-proto-glow-mako3') || byId('innova-sugar-glow-roc'),
-        finisher: byId('innova-kc-pro-aviar') || byId('innova-sync'),
+        finisher: byId('innova-kc-pro-aviar') || byId('innova-halloween-sync'),
         synergyAlt: byId('discraft-buzzz-ss'),
         shotCallout:
           '★ VERIFIED #1 DRIVER PICK (192 FT): Star Roadrunner [9|5|-4|1] (11/16 parked exact pin-high 3ft left for Birdie 2!) or Glow Leopard3 [7|5|-2|1].',
@@ -1014,7 +1016,7 @@ export function recommendDiscForScenario(
     }
     if (holeNumber === 3) {
       return {
-        primary: byId('innova-glow-leopard3') || byId('innova-archangel') || null,
+        primary: byId('innova-glow-leopard3') || byId('innova-hot-pink-archangel') || null,
         secondary: byId('innova-proto-glow-mako3') || byId('innova-dx-alien'),
         finisher: byId('innova-xt-glow-nova') || byId('innova-kc-pro-aviar'),
         synergyAlt: byId('discraft-cicada'),
@@ -1042,9 +1044,9 @@ export function recommendDiscForScenario(
     }
     if (holeNumber === 5) {
       return {
-        primary: byId('innova-archangel') || byId('innova-glow-leopard3') || null,
+        primary: byId('innova-hot-pink-archangel') || byId('innova-glow-leopard3') || null,
         secondary: byId('innova-sugar-glow-roc') || byId('innova-proto-glow-mako3'),
-        finisher: byId('innova-dx-alien') || byId('innova-sync'),
+        finisher: byId('innova-dx-alien') || byId('innova-halloween-sync'),
         synergyAlt: byId('discraft-roach'),
         shotCallout: '170g DX Archangel or Glow Leopard3 — smooth low corridor floater.',
         secondaryCallout:
@@ -1055,7 +1057,7 @@ export function recommendDiscForScenario(
     }
     if (holeNumber === 6) {
       return {
-        primary: byId('innova-champion-eagle') || byId('innova-archangel') || null,
+        primary: byId('innova-champion-eagle') || byId('innova-hot-pink-archangel') || null,
         secondary: byId('innova-proto-glow-mako3') || byId('innova-sugar-glow-roc'),
         finisher: byId('innova-xt-glow-nova') || byId('innova-kc-pro-aviar'),
         synergyAlt: byId('discraft-buzzz-ss'),
@@ -1069,7 +1071,7 @@ export function recommendDiscForScenario(
     }
     if (holeNumber === 7) {
       return {
-        primary: byId('innova-archangel') || byId('innova-champion-eagle') || null,
+        primary: byId('innova-hot-pink-archangel') || byId('innova-champion-eagle') || null,
         secondary: byId('innova-sugar-glow-roc') || byId('innova-proto-glow-mako3'),
         finisher: byId('innova-xt-glow-nova') || byId('innova-kc-pro-aviar'),
         synergyAlt: byId('discraft-roach'),
@@ -1082,7 +1084,7 @@ export function recommendDiscForScenario(
     }
     if (holeNumber === 8) {
       return {
-        primary: byId('innova-champion-eagle') || byId('innova-archangel') || null,
+        primary: byId('innova-champion-eagle') || byId('innova-hot-pink-archangel') || null,
         secondary: byId('innova-sugar-glow-roc') || byId('innova-proto-glow-mako3'),
         finisher: byId('innova-xt-glow-nova') || byId('innova-kc-pro-aviar'),
         synergyAlt: byId('discraft-buzzz-ss'),
@@ -1115,7 +1117,7 @@ export function recommendDiscForScenario(
       return {
         primary: byId('innova-glow-leopard3') || byId('innova-sugar-star-roadrunner') || null,
         secondary: byId('innova-proto-glow-mako3') || byId('innova-sugar-glow-roc'),
-        finisher: byId('innova-sync') || byId('innova-xt-glow-nova'),
+        finisher: byId('innova-halloween-sync') || byId('innova-xt-glow-nova'),
         synergyAlt: byId('discraft-cicada'),
         shotCallout: '★ YARDAGE DRIVER PICK (292 FT): Cotton Candy Glow Leopard3 [7|5|-2|1] — low glide under the oak canopy up the hill.',
         secondaryCallout: 'Proto Glow Mako3 [5|5|0|0] — clean 2nd shot straight up the fairway.',
@@ -1126,7 +1128,7 @@ export function recommendDiscForScenario(
       return {
         primary: byId('innova-halo-wraith') || byId('innova-sugar-star-roadrunner') || null,
         secondary: byId('innova-sugar-star-rollo') || byId('innova-proto-glow-mako3'),
-        finisher: byId('innova-sync') || byId('innova-kc-pro-aviar'),
+        finisher: byId('innova-halloween-sync') || byId('innova-kc-pro-aviar'),
         synergyAlt: byId('discraft-cicada'),
         shotCallout: '★ YARDAGE DRIVER PICK (320 FT): Cotton Candy Halo Wraith [11|5|-1|3] or Star Roadrunner [9|5|-4|1] — max-glide tee drive.',
         secondaryCallout: 'Cotton Candy Star Rollo [5|6|-4|1] — smooth 2nd shot curving cleanly down the fairway.',
@@ -1135,9 +1137,9 @@ export function recommendDiscForScenario(
     }
     if (holeNumber === 3) {
       return {
-        primary: byId('innova-glow-teebird') || byId('innova-archangel') || null,
+        primary: byId('innova-glow-teebird') || byId('innova-hot-pink-archangel') || null,
         secondary: byId('innova-sugar-glow-roc') || byId('innova-dx-alien'),
-        finisher: byId('innova-xt-glow-nova') || byId('innova-sync'),
+        finisher: byId('innova-xt-glow-nova') || byId('innova-halloween-sync'),
         synergyAlt: byId('discraft-buzzz-ss'),
         shotCallout: '★ YARDAGE DRIVER PICK (215 FT): Cotton Candy Glow Teebird [7|5|0|2] — pinpoint fairway placement.',
         secondaryCallout: 'DX Glow Roc [4|4|0|3] or Pink DX Alien [4|2|0|1] — controlled approach onto sloped green.',
@@ -1146,9 +1148,9 @@ export function recommendDiscForScenario(
     }
     if (holeNumber === 4) {
       return {
-        primary: byId('innova-archangel') || byId('innova-glow-leopard3') || null,
+        primary: byId('innova-hot-pink-archangel') || byId('innova-glow-leopard3') || null,
         secondary: byId('innova-proto-glow-mako3') || byId('innova-dx-alien'),
-        finisher: byId('innova-sync') || byId('innova-xt-glow-nova'),
+        finisher: byId('innova-halloween-sync') || byId('innova-xt-glow-nova'),
         synergyAlt: byId('discraft-buzzz-ss'),
         shotCallout: '★ YARDAGE DRIVER PICK (282 FT): 170g DX Archangel [8|6|-4|1] — high-glide straight carry safely clear of right ivy!',
         secondaryCallout: '★ TOP SCRAMBLE PICK: Proto Glow Mako3 [5|5|0|0] — dead-straight woods recovery laser.',
@@ -1168,7 +1170,7 @@ export function recommendDiscForScenario(
     }
     if (holeNumber === 6) {
       return {
-        primary: byId('innova-glow-leopard3') || byId('innova-archangel') || null,
+        primary: byId('innova-glow-leopard3') || byId('innova-hot-pink-archangel') || null,
         secondary: byId('innova-proto-glow-mako3') || byId('innova-dx-alien'),
         finisher: byId('innova-xt-glow-nova') || byId('innova-yeti-pro-aviar'),
         synergyAlt: byId('discraft-roach'),
@@ -1181,7 +1183,7 @@ export function recommendDiscForScenario(
       return {
         primary: byId('innova-sugar-star-roadrunner') || byId('innova-glow-leopard3') || null,
         secondary: byId('innova-sugar-star-rollo') || byId('innova-proto-glow-mako3'),
-        finisher: byId('innova-sync') || byId('innova-kc-pro-aviar'),
+        finisher: byId('innova-halloween-sync') || byId('innova-kc-pro-aviar'),
         synergyAlt: byId('discraft-buzzz-ss'),
         shotCallout: 'Cotton Candy Star Roadrunner [9|5|-4|1] — smooth air-shot or long roller option.',
         secondaryCallout: '★ BIRDIE 2 MVP (168 FT): Cotton Candy Star Rollo [5|6|-4|1] — downhill right-turning glide or roller to the pin!',
@@ -1192,7 +1194,7 @@ export function recommendDiscForScenario(
       return {
         primary: byId('innova-halo-destroyer') || byId('innova-halo-wraith') || null,
         secondary: byId('innova-sugar-star-rollo') || byId('innova-proto-glow-mako3'),
-        finisher: byId('innova-sync') || byId('innova-kc-pro-aviar'),
+        finisher: byId('innova-halloween-sync') || byId('innova-kc-pro-aviar'),
         synergyAlt: byId('discraft-buzzz-ss'),
         shotCallout: '★ YARDAGE DRIVER PICK (346 FT): Cotton Candy Halo Destroyer [12|5|-1|3] or Halo Wraith [11|5|-1|3] — big distance off the tee!',
         secondaryCallout: 'Star Rollo or Proto Glow Mako3 — clean 2nd shot through the tree gap.',
@@ -1203,7 +1205,7 @@ export function recommendDiscForScenario(
       return {
         primary: byId('innova-champion-eagle') || byId('innova-glow-teebird') || null,
         secondary: byId('innova-sugar-glow-roc') || byId('innova-dx-alien'),
-        finisher: byId('innova-sync') || byId('innova-kc-pro-aviar'),
+        finisher: byId('innova-halloween-sync') || byId('innova-kc-pro-aviar'),
         synergyAlt: byId('discraft-cicada'),
         shotCallout: '175g Champion Eagle [7|4|-1|3] — beat the guardian tree off the 196ft tee.',
         secondaryCallout: '★ YARDAGE MID PICK (196 FT): DX Glow Roc [4|4|0|3] — dependable fade around the center tree to the water tower.',
@@ -1218,7 +1220,7 @@ export function recommendDiscForScenario(
       return {
         primary: byId('innova-sugar-star-roadrunner') || byId('innova-glow-leopard3') || null,
         secondary: byId('innova-proto-glow-mako3') || byId('innova-dx-alien'),
-        finisher: byId('innova-sync') || byId('innova-proto-glow-aviar'),
+        finisher: byId('innova-halloween-sync') || byId('innova-proto-glow-aviar'),
         synergyAlt: byId('discraft-cicada'),
         shotCallout: '★ VERIFIED DRIVER PICK (218 FT): Cotton Candy Star Roadrunner [9|5|-4|1] or Glow Leopard3 [7|5|-2|1].',
         secondaryCallout: 'Proto Glow Mako3 [5|5|0|0] — straight open midrange option.',
@@ -1229,7 +1231,7 @@ export function recommendDiscForScenario(
       return {
         primary: byId('innova-sugar-star-roadrunner') || byId('innova-glow-teebird') || null,
         secondary: byId('innova-proto-glow-mako3') || byId('innova-sugar-glow-roc'),
-        finisher: byId('innova-sync') || byId('innova-kc-pro-aviar'),
+        finisher: byId('innova-halloween-sync') || byId('innova-kc-pro-aviar'),
         synergyAlt: byId('discraft-cicada'),
         shotCallout: '★ VERIFIED #1 HOLE PICK (264 FT): Cotton Candy Star Roadrunner [9|5|-4|1] — straight down left-center grass clear of right woods!',
         secondaryCallout: 'Proto Glow Mako3 [5|5|0|0] — dead-straight midrange option.',
@@ -1240,7 +1242,7 @@ export function recommendDiscForScenario(
       return {
         primary: byId('innova-halo-wraith') || byId('innova-sugar-star-roadrunner') || null,
         secondary: byId('innova-sugar-glow-roc') || byId('innova-proto-glow-mako3'),
-        finisher: byId('innova-sync') || byId('innova-kc-pro-aviar'),
+        finisher: byId('innova-halloween-sync') || byId('innova-kc-pro-aviar'),
         synergyAlt: byId('discraft-cicada'),
         shotCallout: '★ VERIFIED #1 DRIVER PICK (294 FT): Cotton Candy Halo Wraith [11|5|-1|3] or Star Roadrunner — flat 90° chest pull across open field!',
         secondaryCallout: 'DX Glow Roc [4|4|0|3] — wind-fighting 2nd shot.',
@@ -1251,7 +1253,7 @@ export function recommendDiscForScenario(
       return {
         primary: byId('innova-halo-wraith') || byId('innova-sugar-star-roadrunner') || null,
         secondary: byId('innova-proto-glow-mako3') || byId('innova-dx-alien'),
-        finisher: byId('innova-sync') || byId('innova-kc-pro-aviar'),
+        finisher: byId('innova-halloween-sync') || byId('innova-kc-pro-aviar'),
         synergyAlt: byId('discraft-buzzz-ss'),
         shotCallout: '★ VERIFIED #1 TEE DRIVER (296 FT): Cotton Candy Halo Wraith [11|5|-1|3] or Star Roadrunner to the 150ft landing zone.',
         secondaryCallout: '★ 150-FT APPROACH MAGIC: Proto Glow Mako3 [5|5|0|0] — site of your legendary 150-ft Mako3 throw-in Birdie 2!',
@@ -1262,7 +1264,7 @@ export function recommendDiscForScenario(
       return {
         primary: byId('innova-sugar-star-roadrunner') || byId('innova-glow-leopard3') || null,
         secondary: byId('innova-proto-glow-mako3') || byId('innova-dx-alien'),
-        finisher: byId('innova-sync') || byId('innova-kc-pro-aviar'),
+        finisher: byId('innova-halloween-sync') || byId('innova-kc-pro-aviar'),
         synergyAlt: byId('discraft-cicada'),
         shotCallout: '★ VERIFIED #1 HOLE PICK (296 FT): Cotton Candy Star Roadrunner [9|5|-4|1] — proven 2-foot skip-to-pin line past baseball backstop!',
         secondaryCallout: 'Proto Glow Mako3 or Pink DX Alien — pinpoint placement past the fence.',
@@ -1271,9 +1273,9 @@ export function recommendDiscForScenario(
     }
     if (holeNumber === 6) {
       return {
-        primary: byId('innova-halo-destroyer') || byId('innova-archangel') || null,
+        primary: byId('innova-halo-destroyer') || byId('innova-hot-pink-archangel') || null,
         secondary: byId('innova-sugar-star-rollo') || byId('innova-proto-glow-mako3'),
-        finisher: byId('innova-sync') || byId('innova-proto-glow-aviar'),
+        finisher: byId('innova-halloween-sync') || byId('innova-proto-glow-aviar'),
         synergyAlt: byId('discraft-cicada'),
         shotCallout: '★ VERIFIED DRIVER PICK (310 FT): Cotton Candy Halo Destroyer [12|5|-1|3] or 170g DX Archangel across bus loop.',
         secondaryCallout: '★ FAIRWAY LASER: Cotton Candy Star Rollo [5|6|-4|1] — straight high-glide fairway option!',
@@ -1284,7 +1286,7 @@ export function recommendDiscForScenario(
       return {
         primary: byId('innova-glow-teebird') || byId('innova-halo-wraith') || null,
         secondary: byId('innova-sugar-star-rollo') || byId('innova-proto-glow-mako3'),
-        finisher: byId('innova-sync') || byId('innova-dx-alien'),
+        finisher: byId('innova-halloween-sync') || byId('innova-dx-alien'),
         synergyAlt: byId('discraft-cicada'),
         shotCallout: '★ YARDAGE DRIVER PICK (324 FT): Cotton Candy Glow Teebird [7|5|0|2] or Halo Wraith low past middle guardian trees!',
         secondaryCallout: 'Cotton Candy Star Rollo or Proto Glow Mako3 — smooth 2nd-shot placement.',
@@ -1295,7 +1297,7 @@ export function recommendDiscForScenario(
       return {
         primary: byId('innova-sugar-star-roadrunner') || byId('innova-glow-leopard3') || null,
         secondary: byId('innova-proto-glow-mako3') || byId('innova-dx-alien'),
-        finisher: byId('innova-sync') || byId('innova-proto-glow-aviar'),
+        finisher: byId('innova-halloween-sync') || byId('innova-proto-glow-aviar'),
         synergyAlt: byId('discraft-cicada'),
         shotCallout: '★ VERIFIED #1 HOLE PICK (235 FT): Cotton Candy Star Roadrunner [9|5|-4|1] or Glow Leopard3 — big glide right between the two trees!',
         secondaryCallout: 'Proto Glow Mako3 [5|5|0|0] — dead-straight midrange option.',
@@ -1304,9 +1306,9 @@ export function recommendDiscForScenario(
     }
     if (holeNumber === 9) {
       return {
-        primary: byId('innova-archangel') || byId('innova-halo-destroyer') || null,
+        primary: byId('innova-hot-pink-archangel') || byId('innova-halo-destroyer') || null,
         secondary: byId('innova-proto-glow-mako3') || byId('innova-dx-alien'),
-        finisher: byId('innova-sync') || byId('innova-xt-glow-nova'),
+        finisher: byId('innova-halloween-sync') || byId('innova-xt-glow-nova'),
         synergyAlt: byId('discraft-cicada'),
         shotCallout: '★ VERIFIED #1 DRIVER PICK (389 FT): 170g DX Archangel [8|6|-4|1] ("stayed straight!") or Halo Destroyer along the south tree line!',
         secondaryCallout: '★ 2ND-SHOT MVP: Proto Glow Mako3 [5|5|0|0] — parks right by the uphill pin!',
@@ -1325,9 +1327,9 @@ export function recommendDiscForScenario(
   ) {
     if (holeNumber === 1) {
       return {
-        primary: byId('innova-archangel') || byId('innova-glow-leopard3') || null,
+        primary: byId('innova-hot-pink-archangel') || byId('innova-glow-leopard3') || null,
         secondary: byId('innova-proto-glow-mako3') || byId('innova-dx-alien'),
-        finisher: byId('innova-kc-pro-aviar') || byId('innova-sync'),
+        finisher: byId('innova-kc-pro-aviar') || byId('innova-halloween-sync'),
         synergyAlt: byId('discraft-cicada'),
         shotCallout: '★ VERIFIED #1 HOLE PICK (191 FT): 170g DX Archangel or Glow Leopard3 — smooth meadow hyzer-flip (11/01 Par 3!).',
         secondaryCallout: 'Proto Glow Mako3 [5|5|0|0] — dead-straight 191ft left-center laser.',
@@ -1336,9 +1338,9 @@ export function recommendDiscForScenario(
     }
     if (holeNumber === 2) {
       return {
-        primary: byId('innova-archangel') || byId('innova-glow-teebird') || null,
+        primary: byId('innova-hot-pink-archangel') || byId('innova-glow-teebird') || null,
         secondary: byId('innova-proto-glow-mako3') || byId('innova-sugar-glow-roc'),
-        finisher: byId('innova-kc-pro-aviar') || byId('innova-sync'),
+        finisher: byId('innova-kc-pro-aviar') || byId('innova-halloween-sync'),
         synergyAlt: byId('discraft-cicada'),
         shotCallout: '★ PERSONAL FLIGHT MATCH (204 FT): 170g DX Archangel [8|6|-4|1] or Glow Teebird across the uphill meadow.',
         secondaryCallout: 'Proto Glow Mako3 [5|5|0|0] — straight wind-resistant mid.',
@@ -1347,9 +1349,9 @@ export function recommendDiscForScenario(
     }
     if (holeNumber === 3) {
       return {
-        primary: byId('innova-sugar-star-roadrunner') || byId('innova-archangel') || null,
+        primary: byId('innova-sugar-star-roadrunner') || byId('innova-hot-pink-archangel') || null,
         secondary: byId('innova-proto-glow-mako3') || byId('innova-dx-alien'),
-        finisher: byId('innova-sync') || byId('innova-proto-glow-aviar'),
+        finisher: byId('innova-halloween-sync') || byId('innova-proto-glow-aviar'),
         synergyAlt: byId('discraft-cicada'),
         shotCallout: '★ #1 DISTANCE MATCH (225 FT): Cotton Candy Star Roadrunner [9|5|-4|1] or 170g DX Archangel across the northern meadow!',
         secondaryCallout: 'Proto Glow Mako3 [5|5|0|0] — straight fairway option.',
@@ -1360,7 +1362,7 @@ export function recommendDiscForScenario(
       return {
         primary: byId('innova-champion-eagle') || byId('innova-glow-teebird') || null,
         secondary: byId('innova-sugar-glow-roc') || byId('innova-dx-alien'),
-        finisher: byId('innova-kc-pro-aviar') || byId('innova-sync'),
+        finisher: byId('innova-kc-pro-aviar') || byId('innova-halloween-sync'),
         synergyAlt: byId('discraft-roach'),
         shotCallout: '175g Champion Eagle [7|4|-1|3] or Glow Teebird — controlled hyzer safely left of Monticello Rd.',
         secondaryCallout: '★ LAYOUT MATCH (146 FT): Cotton Candy DX Glow Roc [4|4|0|3] — fades naturally left away from the road!',
@@ -1369,9 +1371,9 @@ export function recommendDiscForScenario(
     }
     if (holeNumber === 5) {
       return {
-        primary: byId('innova-glow-leopard3') || byId('innova-archangel') || null,
+        primary: byId('innova-glow-leopard3') || byId('innova-hot-pink-archangel') || null,
         secondary: byId('innova-sugar-star-rollo') || byId('innova-proto-glow-mako3'),
-        finisher: byId('innova-xt-glow-nova') || byId('innova-sync'),
+        finisher: byId('innova-xt-glow-nova') || byId('innova-halloween-sync'),
         synergyAlt: byId('discraft-buzzz-ss'),
         shotCallout: 'Glow Leopard3 [7|5|-2|1] — 65% touch wooded tunnel shot.',
         secondaryCallout: '★ WOODED RIGHT-TURN PICK (151 FT): Cotton Candy Star Rollo [5|6|-4|1] — 11/01 Par 3 turning right into the woods!',
@@ -1382,7 +1384,7 @@ export function recommendDiscForScenario(
       return {
         primary: byId('innova-glow-leopard3') || byId('innova-sugar-star-roadrunner') || null,
         secondary: byId('innova-proto-glow-mako3') || byId('innova-sugar-star-rollo'),
-        finisher: byId('innova-xt-glow-nova') || byId('innova-sync'),
+        finisher: byId('innova-xt-glow-nova') || byId('innova-halloween-sync'),
         synergyAlt: byId('discraft-buzzz-ss'),
         shotCallout: 'Glow Leopard3 [7|5|-2|1] — gentle right-drifting hyzer-flip.',
         secondaryCallout: '★ S-CURVE MATCH (167 FT): Cotton Candy Proto Glow Mako3 or Star Rollo along the southern tree line!',
@@ -1391,9 +1393,9 @@ export function recommendDiscForScenario(
     }
     if (holeNumber === 7) {
       return {
-        primary: byId('innova-glow-leopard3') || byId('innova-archangel') || null,
+        primary: byId('innova-glow-leopard3') || byId('innova-hot-pink-archangel') || null,
         secondary: byId('innova-proto-glow-mako3') || byId('innova-dx-alien'),
-        finisher: byId('innova-sync') || byId('innova-proto-glow-aviar'),
+        finisher: byId('innova-halloween-sync') || byId('innova-proto-glow-aviar'),
         synergyAlt: byId('discraft-roach'),
         shotCallout: 'Glow Leopard3 [7|5|-2|1] — touch woods placement.',
         secondaryCallout: 'Proto Glow Mako3 [5|5|0|0] — zero-fade 142ft wooded gap shot (11/01 Par 3!).',
@@ -1404,7 +1406,7 @@ export function recommendDiscForScenario(
       return {
         primary: byId('innova-glow-leopard3') || byId('innova-champion-eagle') || null,
         secondary: byId('innova-sugar-star-rollo') || byId('innova-proto-glow-mako3'),
-        finisher: byId('innova-xt-glow-nova') || byId('innova-sync'),
+        finisher: byId('innova-xt-glow-nova') || byId('innova-halloween-sync'),
         synergyAlt: byId('discraft-buzzz-ss'),
         shotCallout: '★ VERIFIED TEE PICK (212 FT): Cotton Candy Glow Leopard3 or 175g Champion Eagle along the woods edge.',
         secondaryCallout: 'Cotton Candy Star Rollo [5|6|-4|1] — stays safely right of the left-side trees!',
@@ -1415,7 +1417,7 @@ export function recommendDiscForScenario(
       return {
         primary: byId('innova-glow-leopard3') || byId('innova-sugar-star-roadrunner') || null,
         secondary: byId('innova-proto-glow-mako3') || byId('innova-sugar-glow-roc'),
-        finisher: byId('innova-xt-glow-nova') || byId('innova-sync'),
+        finisher: byId('innova-xt-glow-nova') || byId('innova-halloween-sync'),
         synergyAlt: byId('discraft-cicada'),
         shotCallout: 'Glow Leopard3 [7|5|-2|1] — 90° flat swing closer.',
         secondaryCallout: '★ CLOSER PICK (167 FT): Proto Glow Mako3 or DX Glow Roc back toward the parking lot.',
@@ -1428,9 +1430,9 @@ export function recommendDiscForScenario(
   if ((normCourse === 'artnine' || normCourse.includes('art nine')) && holeNumber) {
     if (holeNumber === 1) {
       return {
-        primary: byId('innova-glow-leopard3') || byId('innova-archangel') || null,
+        primary: byId('innova-glow-leopard3') || byId('innova-hot-pink-archangel') || null,
         secondary: byId('innova-sugar-glow-roc') || byId('innova-proto-glow-mako3'),
-        finisher: byId('innova-sync') || byId('innova-xt-glow-nova'),
+        finisher: byId('innova-halloween-sync') || byId('innova-xt-glow-nova'),
         synergyAlt: byId('discraft-roach'),
         shotCallout: 'Glow Leopard3 [7|5|-2|1] — 50% touch shot if throwing a fairway.',
         secondaryCallout: '★ VERIFIED #1 HOLE PICK (132 FT): Cotton Candy DX Glow Roc [4|4|0|3] — dead-straight tunnel opener (11/17 Par 3)!',
@@ -1439,12 +1441,12 @@ export function recommendDiscForScenario(
     }
     if (holeNumber === 3 || holeNumber === 4 || holeNumber === 5 || holeNumber === 8) {
       return {
-        primary: byId('innova-glow-leopard3') || byId('innova-archangel') || null,
+        primary: byId('innova-glow-leopard3') || byId('innova-hot-pink-archangel') || null,
         secondary: byId('innova-sugar-star-rollo') || byId('innova-proto-glow-mako3'),
         finisher:
           holeNumber === 8
-            ? byId('innova-kc-pro-aviar') || byId('innova-sync')
-            : byId('innova-sync') || byId('innova-proto-glow-aviar'),
+            ? byId('innova-kc-pro-aviar') || byId('innova-halloween-sync')
+            : byId('innova-halloween-sync') || byId('innova-proto-glow-aviar'),
         synergyAlt: byId('discraft-roach'),
         shotCallout: 'Glow Leopard3 [7|5|-2|1] — standstill touch option.',
         secondaryCallout:
@@ -1460,7 +1462,7 @@ export function recommendDiscForScenario(
       };
     }
     return {
-      primary: byId('innova-glow-leopard3') || byId('innova-archangel') || null,
+      primary: byId('innova-glow-leopard3') || byId('innova-hot-pink-archangel') || null,
       secondary:
         holeNumber === 9
           ? byId('innova-sugar-glow-roc') || byId('innova-proto-glow-mako3')
@@ -1468,7 +1470,7 @@ export function recommendDiscForScenario(
       finisher:
         holeNumber === 6 || holeNumber === 2
           ? byId('innova-dx-alien') || byId('innova-proto-glow-aviar')
-          : byId('innova-proto-glow-aviar') || byId('innova-sync'),
+          : byId('innova-proto-glow-aviar') || byId('innova-halloween-sync'),
       synergyAlt: byId('discraft-roach'),
       shotCallout: 'Glow Leopard3 [7|5|-2|1] — 50% standstill touch shot under low ceiling.',
       secondaryCallout:
@@ -1490,8 +1492,8 @@ export function recommendDiscForScenario(
       return {
         primary: byId('innova-champion-eagle') || byId('innova-luster-firebird') || null,
         secondary: byId('innova-sugar-glow-roc') || byId('innova-dx-alien'),
-        finisher: byId('innova-kc-pro-aviar') || byId('innova-sync'),
-        synergyAlt: byId('innova-sync'),
+        finisher: byId('innova-kc-pro-aviar') || byId('innova-halloween-sync'),
+        synergyAlt: byId('innova-halloween-sync'),
         shotCallout: '175g Champion Eagle [7|4|-1|3] or Luster Firebird [9|3|0|4] — wind-fighting low skip line.',
         secondaryCallout: 'Cotton Candy DX Glow Roc [4|4|0|3] — low hyzer midrange punch with dependable left finish.',
         finisherCallout:
@@ -1500,9 +1502,9 @@ export function recommendDiscForScenario(
     }
     if (scenario === 'tailwind') {
       return {
-        primary: byId('innova-archangel') || byId('innova-glow-leopard3') || null,
+        primary: byId('innova-hot-pink-archangel') || byId('innova-glow-leopard3') || null,
         secondary: byId('innova-sugar-star-rollo') || byId('innova-proto-glow-mako3'),
-        finisher: byId('innova-sync') || byId('innova-proto-glow-aviar'),
+        finisher: byId('innova-halloween-sync') || byId('innova-proto-glow-aviar'),
         synergyAlt: byId('discraft-roach'),
         shotCallout: '170g DX Archangel [8|6|-4|1] or Glow Leopard3 — easy 60% tailwind glide.',
         secondaryCallout: 'Cotton Candy Star Rollo [5|6|-4|1] — effortless right-turning midrange glide.',
@@ -1511,9 +1513,9 @@ export function recommendDiscForScenario(
       };
     }
     return {
-      primary: byId('innova-glow-leopard3') || byId('innova-archangel') || null,
+      primary: byId('innova-glow-leopard3') || byId('innova-hot-pink-archangel') || null,
       secondary: byId('innova-proto-glow-mako3') || byId('innova-dx-alien'),
-      finisher: byId('innova-sync') || byId('innova-proto-glow-aviar'),
+      finisher: byId('innova-halloween-sync') || byId('innova-proto-glow-aviar'),
       synergyAlt: byId('discraft-roach'),
       shotCallout: 'Cotton Candy Glow Leopard3 [7|5|-2|1] or 170g DX Archangel — controlled 65% fairway glide.',
       secondaryCallout: 'Proto Glow Mako3 [5|5|0|0] & Pink DX Alien [4|2|0|1] — dead-straight laser & low-skip touch.',
@@ -1537,9 +1539,9 @@ export function recommendDiscForScenario(
     }
     if (scenario === 'tailwind') {
       return {
-        primary: byId('innova-sugar-star-roadrunner') || byId('innova-archangel') || null,
+        primary: byId('innova-sugar-star-roadrunner') || byId('innova-hot-pink-archangel') || null,
         secondary: byId('innova-sugar-star-rollo') || byId('innova-proto-glow-mako3'),
-        finisher: byId('innova-sync') || byId('innova-proto-glow-aviar'),
+        finisher: byId('innova-halloween-sync') || byId('innova-proto-glow-aviar'),
         synergyAlt: byId('discraft-buzzz-ss'),
         shotCallout: '★ DRIVER OPTION (185–239 FT): Cotton Candy Star Roadrunner [9|5|-4|1] or 170g DX Archangel [8|6|-4|1] — effortless high-glide S-curve!',
         secondaryCallout: '★ TOP MID PICK: Cotton Candy Star Rollo [5|6|-4|1] — effortless right-turning pan, uphill closer, or roller.',
@@ -1547,9 +1549,9 @@ export function recommendDiscForScenario(
       };
     }
     return {
-      primary: byId('innova-glow-leopard3') || byId('innova-archangel') || null,
+      primary: byId('innova-glow-leopard3') || byId('innova-hot-pink-archangel') || null,
       secondary: byId('innova-proto-glow-mako3') || byId('innova-dx-alien'),
-      finisher: byId('innova-sync') || byId('innova-xt-glow-nova'),
+      finisher: byId('innova-halloween-sync') || byId('innova-xt-glow-nova'),
       synergyAlt: byId('discraft-buzzz-ss'),
       shotCallout: '★ DRIVER PICK (185–239 FT): Cotton Candy Glow Leopard3 [7|5|-2|1], Glow Teebird [7|5|0|2], or 170g DX Archangel!',
       secondaryCallout: '★ TOP MID PICK: Proto Glow Mako3 [5|5|0|0] & Pink DX Alien [4|2|0|1] — laser-straight down wooded hallways.',
@@ -1562,7 +1564,7 @@ export function recommendDiscForScenario(
     return {
       primary: byId('innova-halo-destroyer') || byId('innova-halo-wraith') || null,
       secondary: byId('innova-proto-glow-mako3') || byId('innova-dx-alien'),
-      finisher: byId('innova-sync') || byId('innova-xt-glow-nova'),
+      finisher: byId('innova-halloween-sync') || byId('innova-xt-glow-nova'),
       synergyAlt: byId('discraft-cicada'),
       shotCallout:
         '★ TOP BOMBER PICK (295+ FT): Cotton Candy Halo Destroyer [12|5|-1|3] or Halo Wraith [11|5|-1|3] — flagship max-distance & low-ceiling power!',
@@ -1572,9 +1574,9 @@ export function recommendDiscForScenario(
   }
 
   return {
-    primary: byId('innova-sugar-star-roadrunner') || byId('innova-glow-teebird') || byId('innova-archangel') || null,
+    primary: byId('innova-sugar-star-roadrunner') || byId('innova-glow-teebird') || byId('innova-hot-pink-archangel') || null,
     secondary: byId('innova-proto-glow-mako3') || byId('innova-sugar-glow-roc'),
-    finisher: byId('innova-sync') || byId('innova-xt-glow-nova'),
+    finisher: byId('innova-halloween-sync') || byId('innova-xt-glow-nova'),
     synergyAlt: byId('discraft-cicada'),
     shotCallout:
       '★ TOP DRIVER PICK (240–295 FT): Cotton Candy Star Roadrunner [9|5|-4|1], Glow Teebird [7|5|0|2], or 170g DX Archangel [8|6|-4|1]!',
@@ -2788,7 +2790,12 @@ export function doesCommentaryMentionDisc(
     case 'innova-xt-glow-nova':
       return /\bnova\b/i.test(text);
     case 'innova-sync':
-      return /\b(sync|xero)\b/i.test(text);
+      return (!roundDate || roundDate < '2026-11-23') && /\b(sync|xero)\b/i.test(text);
+    case 'innova-halloween-sync':
+      return (
+        Boolean(roundDate && roundDate >= '2026-11-23') &&
+        /\b(halloween\s*(star\s*)?sync|sync)\b/i.test(text)
+      );
     case 'innova-dx-alien':
       return (!roundDate || roundDate >= '2026-11-05') && /\balien\b/i.test(text);
     case 'innova-classic-glow-beast':
@@ -2838,7 +2845,15 @@ export function doesCommentaryMentionDisc(
         /\b(rollo|rolo)\b/i.test(text)
       );
     case 'innova-archangel':
-      return /\b(archangel|arch\s*angel|ar\s*angel)\b/i.test(text);
+      return (
+        (!roundDate || roundDate < '2026-11-23') &&
+        /\b(archangel|arch\s*angel|ar\s*angel)\b/i.test(text)
+      );
+    case 'innova-hot-pink-archangel':
+      return (
+        Boolean(roundDate && roundDate >= '2026-11-23') &&
+        /\b(hot\s*pink\s*(dx\s*)?archangel|archangel|arch\s*angel|ar\s*angel)\b/i.test(text)
+      );
     case 'innova-roadrunner':
       return (
         (!roundDate || roundDate < '2026-11-18') &&
@@ -2939,6 +2954,7 @@ export function buildLivePersonalFlightProfile(
       const voiceMatched = Boolean(voice);
 
       const isCottonCandyEra = Boolean(r.date && r.date >= '2026-11-18');
+      const isHalloweenHotPinkEra = Boolean(r.date && r.date >= '2026-11-23');
       const isReplacedVaultMold =
         disc.id === 'innova-rollo' ||
         disc.id === 'innova-roadrunner' ||
@@ -2960,10 +2976,16 @@ export function buildLivePersonalFlightProfile(
         disc.id === 'innova-yeti-pro-aviar' ||
         disc.id === 'innova-proto-glow-aviar' ||
         disc.id === 'innova-halo-destroyer';
+      const isReplacedNov23VaultMold =
+        disc.id === 'innova-sync' || disc.id === 'innova-archangel';
+      const isNewNov23Mold =
+        disc.id === 'innova-halloween-sync' || disc.id === 'innova-hot-pink-archangel';
 
       const allowNameMatch =
         (!isReplacedVaultMold || !isCottonCandyEra) &&
-        (!isNewCottonCandyMold || isCottonCandyEra);
+        (!isNewCottonCandyMold || isCottonCandyEra) &&
+        (!isReplacedNov23VaultMold || !isHalloweenHotPinkEra) &&
+        (!isNewNov23Mold || isHalloweenHotPinkEra);
 
       const discUsedMatched =
         thrownId === disc.id ||
@@ -2972,6 +2994,8 @@ export function buildLivePersonalFlightProfile(
           (usedDisc === nameLower ||
             (disc.id === 'innova-sync' &&
               (usedDisc.includes('sync') || usedDisc.includes('xero'))) ||
+            (disc.id === 'innova-halloween-sync' && usedDisc.includes('sync')) ||
+            (disc.id === 'innova-hot-pink-archangel' && usedDisc.includes('archangel')) ||
             (disc.id === 'innova-roc3' && usedDisc.includes('roc3')) ||
             (disc.id === 'innova-classic-glow-roc' &&
               (usedDisc.includes('classic glow roc') || usedDisc === 'roc')) ||
@@ -2993,6 +3017,7 @@ export function buildLivePersonalFlightProfile(
               disc.id !== 'innova-classic-glow-roc' &&
               disc.id !== 'innova-aviar' &&
               !isNewCottonCandyMold &&
+              !isNewNov23Mold &&
               usedDisc.includes(idShort)) ||
             (disc.id === 'innova-aviar' &&
               (usedDisc === 'aviar' || usedDisc === 'star aviar'))));
@@ -3035,14 +3060,19 @@ export function buildLivePersonalFlightProfile(
       'Index finger off the rim, weight on front foot, and stroke straight through the chains without hesitating ("Lock in! Did it!").';
   } else if (disc.id === 'innova-xt-glow-nova') {
     howItFliesForMe =
-      'My dead-straight [2|2|0|0] scramble, mound & downhill stopper! On 11/16 at Sar-Ko-Par, I drained an ~18ft downhill H9 Birdie closer ("Birdied out, dude!") and saved 7 pars across two rounds—while confirming never to tee with Nova on H1 (keep Star Sync on H1 tee!). Also stuck H11’s thorn mound & steep downhill H16 at Prairie Pass (11/15 65 PB!).';
+      '🏆 #1 Dead-Straight Approach, Scramble & Slope Stopper [2|2|0|0]! On 11/23 Black Hoof Championship (65 / +11 18-Hole PB tie!), went 11-for-11 on clutch approaches — sticking H1 a couple feet away, H5 5ft under the pin after Glow Teebird, H8 & H9 Double Pars, H15 Par, and H18 tap-in Par! Also drained the ~18ft downhill Birdie closer on 11/16 Sar-Ko H9!';
     swingCue =
-      'Point-and-shoot flat release on mound/downhill greens & wooded scrambles; never use off the Hole #1 tee.';
-  } else if (disc.id === 'innova-sync') {
+      'Point-and-shoot flat release on approaches, mound/downhill greens & wooded scrambles — sits dead where it lands!';
+  } else if (disc.id === 'innova-halloween-sync') {
     howItFliesForMe =
-      'Halloween Edition Hot Pink Star Sync [3|3|0|1] — #1 Ace-Run Tee Putter & Trees-Threading Sniper! On 11/23 Black Hoof Championship (65 / +11 18-Hole PB tie!), threaded EVERY tree on 105ft H13 grazing the basket top ("No idea how I missed all those trees!") & drained a 10ft H10 Par; birdied Art Nine H7 (11/22 24 / -3 PB tie!) & smacked the basket on Sar-Ko H1 (11/16)!';
+      '🎃 Brand-New Halloween Edition Hot Pink Star Sync [3|3|0|1] — 2/2 Pars (0.00 avg!) in its 11/23 Black Hoof Championship debut! Threaded EVERY tree on 105ft H13 grazing the basket top ("No idea how I missed all those trees—that Sync went right where I was aiming!") and drained a 10ft Par on 294ft H10 during your 65 (+11) 18-Hole PB tie!';
     swingCue =
       'Step up without overthinking—relaxed 80% flat chest-high pull straight at the chains!';
+  } else if (disc.id === 'innova-sync') {
+    howItFliesForMe =
+      '📦 Backup Vault All-Star (131 pre-11/23 holes, 27 Birdies — Replaced 11/23 by Halloween Star Sync)! SMACKED THE BASKET on Sar-Ko H1 (11/16 near-Ace Birdie 2!), parked SMP Wooded H5 to 3ft (11/17), and birdied Art Nine H7 (11/22 24 / -3 PB tie!).';
+    swingCue =
+      'Vaulted 11/23 — throw your brand-new Halloween Star Sync (#05) on this exact straight line!';
   } else if (disc.id === 'innova-toro') {
     howItFliesForMe =
       'Flies like a heavy, torque-resistant approach brick [4|2|0|3] that refuses to turn over and hooks reliably left to brake by the pin. Saved Par up the wooded lane on Sar-Ko-Par H5 (11/04: "Toro was good, got me up there!") and parked a 3rd-shot uphill approach around a guardian tree on Cal Trail H9 (532ft Par 4). Won’t glide past the basket, but will dump left early if thrown softly.';
@@ -3143,11 +3173,16 @@ export function buildLivePersonalFlightProfile(
       'Breakout Cotton Candy "Sugar High" 2-Foil fairway workhorse [7|4|-1|3]! On 11/16 at Sar-Ko-Par R2 H8 (171ft), I parked it 5–7 FEET UNDER THE PIN ("That’s under the pin, dude! 5, 6, 7 feet away—Birdied!") during a bogey-free 24 (-3), plus earned Par 3s on R1 H8 & R2 H4 and a clean left skip on R1 H6! Dependable +3 left finish when Archangel stays too straight.';
     swingCue =
       'Aim right of guarded pockets and commit to a crisp flat release so it skips and hooks left right under the basket.';
-  } else if (disc.id === 'innova-archangel') {
+  } else if (disc.id === 'innova-hot-pink-archangel') {
     howItFliesForMe =
-      'New Hot Pink DX Archangel [8|6|-4|1] — BACK IN THE 100% COMPLETE BAG on 11/23 Black Hoof Championship (debuted on 250ft H2 during your 65/+11 18-Hole PB tie!). High-glide woods-threading birdie/par lineage: parked 202ft Prairie Pass H8 exact pin-high 10ft left ("Like an angel! Permanent, keep this one!") and threaded 193ft wooded H12!';
+      '🪽 Brand-New Hot Pink DX Archangel [8|6|-4|1] — BACK IN THE 100% COMPLETE BAG on 11/23 Black Hoof Championship! Debuted on 250ft H2 ("Got a new one!") during your 65 (+11) 18-Hole PB tie, taking over the beloved 6-glide wooded fairway slot from your vaulted Royal Blue DX Archangel!';
     swingCue =
       '"Don’t bend down—stay straight up when I release it" with a smooth chest-high pull-through.';
+  } else if (disc.id === 'innova-archangel') {
+    howItFliesForMe =
+      '📦 Backup Vault Legend (39 pre-11/23 holes, 8 Birdies, 77% Par+ — Replaced 11/23 by Hot Pink Archangel)! Parked 202ft Prairie Pass H8 pin-high 10ft left ("Like an angel! Permanent, keep this one!"), threaded 193ft wooded H12, and went back-to-back Birdie 2s on Sar-Ko H7/H8 in your 21 (-6 PB)!';
+    swingCue =
+      'Vaulted 11/23 — throw your new Hot Pink Archangel (#13) with the same upright chest-high pull!';
   } else if (disc.id === 'innova-roadrunner') {
     howItFliesForMe =
       'My #1 all-around distance driver and birdie catalyst [9|5|-4|1]! On 11/16 at Sar-Ko-Par R2 H2 (192ft), my Purple 168g GStar Roadrunner parked exact pin-high 3 FEET left ("Purple, there he is—exact distance of the pin, 3 feet away to the left! Birdie!"), right after striping a 200ft "straight box-cutter line" on Prairie Pass H4 (11/15)! Club down on 162ft H3 so it doesn’t sail long.';
@@ -3775,12 +3810,16 @@ export interface DiscBagTelemetrySummary {
 const DISC_COMMENTARY_VERDICTS: Record<string, string> = {
   'innova-roc3':
     '🏆 #1 Birdie-Rate Midrange! Money right-to-left hyzer finish on Sar-Ko H4/H5/H7 & Art Nine H5—including 11/13 H4 Birdie 2 while dialing the straight pull-through tee-kettle low cue!',
+  'innova-halloween-sync':
+    '🎃 Brand-New Halloween Edition Hot Pink Star Sync [3|3|0|1] — 2/2 Pars (0.00 avg!) in its 11/23 Black Hoof debut (threaded H13 trees grazing basket top + drained H10 Par)!',
+  'innova-hot-pink-archangel':
+    '🪽 Brand-New Hot Pink DX Archangel [8|6|-4|1] — BACK IN THE BAG on 11/23 Black Hoof H2! Succeeds your vaulted 8-Birdie Royal Blue Archangel!',
   'innova-sync':
-    '🏆 Halloween Edition Hot Pink Star Sync [3|3|0|1] — 2/2 Pars (0.00 avg) in its 11/23 Black Hoof debut (grazed basket top threading H13 trees + drained H10 Par)! SMACKED THE BASKET on Sar-Ko H1!',
+    '📦 Backup Vault All-Star (131H, 27 Birdies · Replaced 11/23 by Halloween Star Sync)! SMACKED THE BASKET on Sar-Ko H1 (11/16), parked SMP Wooded H5 to 3ft, & birdied Art Nine H7!',
   'innova-kc-pro-aviar':
-    '🏆 #1 Go-To Chain Putter (70% Par+)! Powered both 6-hole birdie streaks (11/05 & 11/09), 11/16 H3 Par save, & 20+ ft heavy-wind floater Par on Sar-Ko H7 (11/11).',
+    '🏆 #1 Go-To Chain Putter (64% Par+, 30 Birdies)! Powered both 6-hole birdie streaks (11/05 & 11/09), 11/16 H3 Par save, & 20+ ft heavy-wind floater Par on Sar-Ko H7 (11/11).',
   'innova-archangel':
-    '🏆 New Hot Pink DX Archangel — BACK IN THE BAG on 11/23 Black Hoof H2! Lineage: parked Prairie Pass H8 pin-high 10ft left ("Like an angel! Permanent, keep this one!") & parred H12!',
+    '📦 Backup Vault Legend (39H, 8 Birdies, 77% Par+ · Replaced 11/23 by Hot Pink Archangel)! Parked Prairie Pass H8 pin-high 10ft left ("Like an angel! Permanent, keep this one!") & Sar-Ko H7/H8 Birdies!',
   'innova-it':
     '⭐ Pinpoint Fairway Favorite! Striped a dead-flat heavy-wind ace-run Birdie 2 on Sar-Ko H3 (11/11), 1ft park on H3 (11/05), 5ft past H7 (11/09) & SMP Wooded H6/H17 Pars.',
   'innova-mako3':
@@ -3794,7 +3833,7 @@ const DISC_COMMENTARY_VERDICTS: Record<string, string> = {
   'innova-jay':
     '⭐ Clutch Back-9 Midrange! Locked in Par 3s on SMP Wooded H15 (10ft glide loop) & H17 headwind ("It was perfect!"), plus Cal Trail H5 4ft park.',
   'innova-xt-glow-nova':
-    '⭐ #1 Scramble, Mound & Downhill Stopper! Hit basket on SMP Wooded H9 & parked H4/H12 (11/17), drained ~18ft downhill Sar-Ko H9 Birdie (11/16), & stuck Prairie Pass H11/H16!',
+    '🏆 #1 Clutch Approach, Scramble & Slope Stopper! Went 11-for-11 on Black Hoof approaches (11/23 65 PB tie: stuck H1, H5 5ft, H8, H9, H15 & H18 Pars!) + drained ~18ft downhill Sar-Ko H9 Birdie!',
   'innova-toro':
     '⚠️ Pulled from Physical Bag before 11/15 Prairie Pass — dumps hard left (+3 fade) if thrown like a normal mid.',
   'innova-champion-eagle':
@@ -3925,10 +3964,20 @@ export function computeDiscBagTelemetry(
                 d.id === 'innova-proto-glow-aviar' ||
                 d.id === 'innova-yeti-pro-aviar') &&
               r.date < '2026-11-18'
+            ) &&
+            !(
+              (d.id === 'innova-halloween-sync' || d.id === 'innova-hot-pink-archangel') &&
+              r.date < '2026-11-23'
+            ) &&
+            !(
+              (d.id === 'innova-sync' || d.id === 'innova-archangel') &&
+              r.date >= '2026-11-23'
             )) ||
+            (uName === 'sync' && d.id === 'innova-halloween-sync' && r.date >= '2026-11-23') ||
+            (uName === 'archangel' && d.id === 'innova-hot-pink-archangel' && r.date >= '2026-11-23') ||
             (uName === 'it' && d.id === 'innova-it') ||
             (uName === 'halo it' && d.id === 'innova-it') ||
-            (uName === 'xero' && d.id === 'innova-sync') ||
+            (uName === 'xero' && d.id === 'innova-sync' && r.date < '2026-11-23') ||
             (uName === 'pig' && d.id === 'innova-pig') ||
             (uName === 'buzzz' && d.id === 'discraft-buzzz-ss'));
 
@@ -4037,48 +4086,60 @@ export function computeDiscBagTelemetry(
   // 2. My Favorites: Strictly within the active Collector Card Grouping!
   const favoritePriorityOrder = [
     'innova-roc3',
+    'innova-halloween-sync',
     'innova-sync',
     'innova-kc-pro-aviar',
+    'innova-sugar-star-rollo',
+    'innova-sugar-glow-roc',
+    'innova-xt-glow-nova',
+    'innova-champion-eagle',
     'innova-mako3',
     'innova-it',
     'innova-roadrunner',
     'innova-archangel',
     'innova-rollo',
     'innova-dx-alien',
+    'innova-proto-glow-mako3',
     'innova-jay',
     'innova-classic-glow-roc',
     'innova-classic-glow-wraith',
-    'innova-xt-glow-nova',
     'discraft-roach',
     'discraft-buzzz-ss',
     'discraft-cicada',
-    'innova-proto-glow-mako3',
+    'innova-hot-pink-archangel',
     'innova-sugar-star-roadrunner',
-    'innova-sugar-star-rollo',
-    'innova-sugar-glow-roc',
-    'innova-glow-leopard3',
     'innova-glow-teebird',
+    'innova-glow-leopard3',
+    'innova-yeti-pro-aviar',
     'innova-proto-glow-aviar',
+    'innova-luster-firebird',
     'innova-halo-wraith',
-    'innova-halo-destroyer',
-    'innova-yeti-pro-aviar'
+    'innova-halo-destroyer'
   ];
 
   const toughCommentaryOrder = [
     'innova-classic-glow-beast',
     'innova-toro',
-    'innova-champion-eagle',
     'innova-leopard3',
     'innova-mamba',
-    'innova-firebird',
-    'innova-xt-glow-nova'
+    'innova-firebird'
   ];
 
   const pureToughOnlyIds = new Set([
     'innova-classic-glow-beast',
     'innova-toro',
-    'innova-champion-eagle',
     'innova-leopard3'
+  ]);
+
+  // Clutch approach/scramble stoppers & primary putters get thrown mostly after tough tee shots
+  // (recovery/save bias) — never unfairly brand them "Least Favorite / Toughest"!
+  const protectedApproachAndPutterIds = new Set([
+    'innova-xt-glow-nova',
+    'innova-kc-pro-aviar',
+    'innova-yeti-pro-aviar',
+    'innova-halloween-sync',
+    'innova-sync',
+    'innova-dx-alien'
   ]);
 
   const thrownFavoriteCandidates = thrownRows.filter(
@@ -4119,12 +4180,32 @@ export function computeDiscBagTelemetry(
     .slice(0, 6);
 
   // 4. Worst Favorites / Toughest: Strictly within the active Collector Card Grouping!
-  // Ranks thrown discs in this grouping by commentary-flagged difficulty + highest strokes over par.
+  // Never contradict My Favorites, and never penalize clutch scramble/approach stoppers (like XT Glow Nova)
+  // for saving bogeys after tough tee shots.
+  const favoriteIdsInGroup = new Set(favorites.map((r) => r.disc.id));
+  const multiHoleThrownRows = thrownRows.filter((r) => r.totalHolesUsed >= 2);
+  const baseWorstSource = multiHoleThrownRows.length >= 3 ? multiHoleThrownRows : thrownRows;
+  const strictWorstPool = baseWorstSource.filter(
+    (r) =>
+      !favoriteIdsInGroup.has(r.disc.id) &&
+      !protectedApproachAndPutterIds.has(r.disc.id)
+  );
+  const relaxedWorstPool = baseWorstSource.filter(
+    (r) => !protectedApproachAndPutterIds.has(r.disc.id)
+  );
   const topFavoriteIdInGroup =
     thrownRows.length > 1 ? sortedThrownFavorites[0]?.disc.id : null;
-
-  const worstPool = thrownRows.filter((r) => r.disc.id !== topFavoriteIdInGroup);
-  const effectiveWorstPool = worstPool.length > 0 ? worstPool : thrownRows;
+  const fallbackWorstPool = thrownRows.filter(
+    (r) => r.disc.id !== topFavoriteIdInGroup && r.disc.id !== 'innova-xt-glow-nova'
+  );
+  const effectiveWorstPool =
+    strictWorstPool.length >= 3
+      ? strictWorstPool
+      : relaxedWorstPool.length > 0
+      ? relaxedWorstPool
+      : fallbackWorstPool.length > 0
+      ? fallbackWorstPool
+      : thrownRows;
 
   const leastFavorite = [...effectiveWorstPool]
     .sort((a, b) => {
@@ -4462,7 +4543,7 @@ export function recommendRhbhShotDiscs(
       if (disc.fade >= 4) shapeScore -= 8; // Firebird hooks harder than "gentle"
     } else if (query.shape === 'straight') {
       if (disc.turn === 0 && disc.fade === 0) shapeScore += 13; // XT Glow Nova & Proto Glow Mako3!
-      if (disc.id === 'innova-sync' && effDist <= 200) shapeScore += 10; // Proven dead-straight tee putter!
+      if (disc.id === 'innova-halloween-sync' && effDist <= 200) shapeScore += 10; // Proven dead-straight tee putter!
       if (disc.id === 'innova-glow-leopard3' && effDist >= 195 && effDist <= 305) shapeScore += 8; // Hyzer-flip laser
       if (disc.id === 'innova-glow-teebird' && effDist >= 210 && effDist <= 305) shapeScore += 6;
       if (disc.id === 'innova-halo-wraith' && effDist >= 295) shapeScore += 7;
@@ -4589,7 +4670,7 @@ export function recommendRhbhShotDiscs(
       whyParts.push(`+${disc.fade} reliable left hook`);
     } else if (query.shape === 'straight' && disc.fade === 0) {
       whyParts.push('Zero-fade laser');
-    } else if (disc.id === 'innova-sync' && effDist <= 195) {
+    } else if (disc.id === 'innova-halloween-sync' && effDist <= 195) {
       whyParts.push('#1 throwing putter');
     } else {
       whyParts.push(`Calibrated ${disc.idealMinFeet}–${disc.idealMaxFeet} ft`);

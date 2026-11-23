@@ -32,7 +32,7 @@ export function generateFullChatGptReport(input: FullReportInput): string {
   // Load any custom verified picks from localStorage merged with defaults
   let verifiedPicks: Record<string, string> = { ...DEFAULT_VERIFIED_HOLE_PICKS };
   try {
-    const saved = localStorage.getItem('jj_disc_golf_verified_hole_picks_v9');
+    const saved = localStorage.getItem('jj_disc_golf_verified_hole_picks_v10');
     if (saved) {
       verifiedPicks = { ...verifiedPicks, ...JSON.parse(saved) };
     }

@@ -27,6 +27,7 @@ function resolveHoleThrownDisc(
   roundDate?: string
 ): DiscItem | undefined {
   const isCottonCandyEra = Boolean(roundDate && roundDate >= '2026-11-18');
+  const isHalloweenHotPinkEra = Boolean(roundDate && roundDate >= '2026-11-23');
   const teeThrowId = h.meta?.jeffery?.throws?.find((t) => t.shotType === 'tee')?.discId;
   const thrownId = teeThrowId || h.meta?.jeffery?.thrownDiscId;
   const usedName = h.meta?.jeffery?.discUsed;
@@ -39,6 +40,10 @@ function resolveHoleThrownDisc(
       ? matchPool.find(
           (d) =>
             d.name.toLowerCase() === usedName.toLowerCase() ||
+            (usedName.toLowerCase() === 'sync' &&
+              d.id === (isHalloweenHotPinkEra ? 'innova-halloween-sync' : 'innova-sync')) ||
+            (usedName.toLowerCase() === 'archangel' &&
+              d.id === (isHalloweenHotPinkEra ? 'innova-hot-pink-archangel' : 'innova-archangel')) ||
             (usedName.toLowerCase() === 'xero' && d.id === 'innova-sync') ||
             (usedName.toLowerCase() === 'it' && d.id === 'innova-it')
         )
@@ -62,7 +67,7 @@ function resolveHoleThrownDisc(
         ['glow leopard3', 'innova-glow-leopard3'],
         ['leopard3', 'innova-glow-leopard3'],
         ['champion eagle', 'innova-champion-eagle'],
-        ['archangel', 'innova-archangel'],
+        ['archangel', isHalloweenHotPinkEra ? 'innova-hot-pink-archangel' : 'innova-archangel'],
         ['proto glow mako3', 'innova-proto-glow-mako3'],
         ['mako3', 'innova-proto-glow-mako3'],
         ['star rollo', 'innova-sugar-star-rollo'],
@@ -72,7 +77,7 @@ function resolveHoleThrownDisc(
         ['roc3', 'innova-roc3'],
         ['roc', 'innova-sugar-glow-roc'],
         ['dx alien', 'innova-dx-alien'],
-        ['sync', 'innova-sync'],
+        ['sync', isHalloweenHotPinkEra ? 'innova-halloween-sync' : 'innova-sync'],
         ['yeti pro aviar', 'innova-yeti-pro-aviar'],
         ['yeti', 'innova-yeti-pro-aviar'],
         ['kc pro aviar', 'innova-kc-pro-aviar'],

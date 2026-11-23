@@ -286,10 +286,15 @@ export const CoursesAndBagView: React.FC<CoursesAndBagViewProps> = ({
         'Mize #1 & #6 ★ (10/28 Pinpoint Approach!)',
         'Art Nine #7 ★ (Par)'
       ],
-      'innova-sync': [
+      'innova-halloween-sync': [
         'Putter 5 (Halloween Edition Main Bag) · 173–175g Hot Pink Sparkle Star ★ [3|3|0|1]',
+        '11/23 Black Hoof Debut: 2/2 Pars (0.00 avg!) — Grazed Basket Top on H13!',
+        'Drained 10ft H10 Par · Precision Wooded Throwing Putter'
+      ],
+      'innova-sync': [
+        'Backup Vault All-Star (131H · 27 Birdies) · Replaced 11/23 by Halloween Star Sync',
         'Sar-Ko-Par #1 ★ (11/16 Basket-Smack Near-Ace & 11/05 Parked Birdie!)',
-        'SMP Wooded #2, #5 (3ft Park!) & #15 · Precision Throwing Putter'
+        'SMP Wooded #2, #5 (3ft Park!) & #15 · Original Star Sync Legend'
       ],
       'innova-toro': [
         'Backup Vault · Sar-Ko-Par #6 ★ (11/04 14ft Birdie!)',
@@ -336,10 +341,15 @@ export const CoursesAndBagView: React.FC<CoursesAndBagViewProps> = ({
         '10/28 Field Test #2 ★ ("Lift Off, Down & Up" +15ft!)',
         'Cedar Ridge & Black Hoof Fairway Workhorse'
       ],
-      'innova-archangel': [
+      'innova-hot-pink-archangel': [
         'Fairway 4 (Hot Pink DX Main Bag) · 170–172g High-Glide Understable Fairway ★ [8|6|-4|1]',
+        '11/23 Black Hoof Debut: Back in your 100% Complete Bag on 250ft H2!',
+        '6-Glide Wooded Corridor S-Curves & Upright 90° Release'
+      ],
+      'innova-archangel': [
+        'Backup Vault Legend (39H · 8 Birdies) · Replaced 11/23 by Hot Pink Archangel',
         'Prairie Pass #8 Pin-High 10ft Park ("Permanent, Keep This One!")',
-        'Sar-Ko #7 6ft Parked Birdie & #3 Top-Band Run!'
+        'Sar-Ko #7 3ft Parked Birdie & #8 20ft Back-to-Back Birdies!'
       ],
       'innova-roadrunner': [
         'Backup Vault · Upgraded to Cotton Candy Hot Pink Star Roadrunner',

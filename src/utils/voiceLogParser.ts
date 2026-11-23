@@ -105,9 +105,9 @@ const DISC_VOICE_PATTERNS: Array<{
     regex: /\b(proto\s+glow\s+aviar|proto\s+aviar|glow\s+aviar)\b/i
   },
   {
-    discId: 'innova-sync',
-    displayName: 'Sync',
-    regex: /\b(star\s+sync|sync|sink|xero|zero)\b/i
+    discId: 'innova-halloween-sync',
+    displayName: 'Halloween Star Sync',
+    regex: /\b(halloween\s+(?:star\s+)?sync|star\s+sync|sync|sink|xero|zero)\b/i
   },
   {
     discId: 'innova-it',
@@ -115,9 +115,9 @@ const DISC_VOICE_PATTERNS: Array<{
     regex: /\b(halo\s+star\s+it|halo\s+it|the\s+it|with\s+the\s+it|throw\s+the\s+it|it\s+is\s+working|got\s+the\s+it\s+back)\b/i
   },
   {
-    discId: 'innova-archangel',
-    displayName: 'Archangel',
-    regex: /\b(dx\s+archangel|archangel|arch\s+angel|ar\s+angel)\b/i
+    discId: 'innova-hot-pink-archangel',
+    displayName: 'Hot Pink Archangel',
+    regex: /\b(hot\s+pink\s+(?:dx\s+)?archangel|dx\s+archangel|archangel|arch\s+angel|ar\s+angel)\b/i
   },
   {
     discId: 'innova-mamba',
@@ -429,7 +429,10 @@ export function convertParsedVoiceRoundToHistoricalRound(
     if (ph.jefferyScore >= 2) {
       throws.push({
         shotType: 'putt',
-        discId: ph.thrownDiscId === 'innova-sync' ? 'innova-sync' : 'innova-kc-pro-aviar'
+        discId:
+          ph.thrownDiscId === 'innova-halloween-sync' || ph.thrownDiscId === 'innova-sync'
+            ? 'innova-halloween-sync'
+            : 'innova-kc-pro-aviar'
       });
     }
 

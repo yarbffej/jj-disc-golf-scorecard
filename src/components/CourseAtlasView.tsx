@@ -560,6 +560,8 @@ function resolveDiscByIdOrName(
       (d) =>
         d.name.toLowerCase() === lower ||
         lower.includes(d.name.toLowerCase()) ||
+        (lower === 'sync' && d.id === 'innova-halloween-sync') ||
+        (lower === 'archangel' && d.id === 'innova-hot-pink-archangel') ||
         (lower === 'xero' && d.id === 'innova-sync') ||
         (lower === 'halo it' && d.id === 'innova-it')
     );
