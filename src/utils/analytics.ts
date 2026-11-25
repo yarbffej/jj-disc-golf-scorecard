@@ -600,25 +600,25 @@ export const DEFAULT_VERIFIED_HOLE_PICKS: Record<string, string> = {
   'artnine:7': 'innova-proto-glow-aviar',
   'artnine:8': 'innova-kc-pro-aviar',
   'artnine:9': 'innova-sugar-glow-roc',
-  // Heritage Park DGC (All Silver / A Baskets, H1–H18) — Cotton Candy + Core 3!
-  'heritage_park:1': 'innova-halo-wraith',
-  'heritage_park:2': 'innova-sugar-star-roadrunner',
-  'heritage_park:3': 'innova-halo-destroyer',
-  'heritage_park:4': 'innova-glow-teebird',
-  'heritage_park:5': 'innova-glow-leopard3',
-  'heritage_park:6': 'innova-glow-teebird',
+  // Heritage Park DGC (All Silver / A Baskets, H1–H18 · 11/25 72/+18 Debut, 33 Back 9!)
+  'heritage_park:1': 'innova-sugar-star-roadrunner',
+  'heritage_park:2': 'innova-luster-firebird',
+  'heritage_park:3': 'innova-glow-leopard3',
+  'heritage_park:4': 'innova-glow-leopard3',
+  'heritage_park:5': 'innova-glow-teebird',
+  'heritage_park:6': 'innova-hot-pink-archangel',
   'heritage_park:7': 'innova-halo-destroyer',
-  'heritage_park:8': 'innova-halo-wraith',
-  'heritage_park:9': 'innova-glow-leopard3',
+  'heritage_park:8': 'innova-sugar-star-rollo',
+  'heritage_park:9': 'innova-halo-wraith',
   'heritage_park:10': 'innova-glow-teebird',
-  'heritage_park:11': 'innova-sugar-star-roadrunner',
-  'heritage_park:12': 'innova-sugar-star-roadrunner',
-  'heritage_park:13': 'innova-glow-leopard3',
+  'heritage_park:11': 'innova-sugar-star-rollo',
+  'heritage_park:12': 'innova-sugar-star-rollo',
+  'heritage_park:13': 'innova-sugar-glow-roc',
   'heritage_park:14': 'innova-sugar-star-roadrunner',
-  'heritage_park:15': 'innova-glow-teebird',
+  'heritage_park:15': 'innova-sugar-star-roadrunner',
   'heritage_park:16': 'innova-sugar-star-roadrunner',
-  'heritage_park:17': 'innova-glow-leopard3',
-  'heritage_park:18': 'innova-halo-wraith',
+  'heritage_park:17': 'innova-sugar-star-rollo',
+  'heritage_park:18': 'innova-glow-leopard3',
   // Shawnee Mission Wooded (H1–H18, Par 54, 4,881ft) — Cotton Candy + Halloween Sync / Hot Pink Archangel / Alien!
   'smp_wooded:1': 'innova-champion-eagle',
   'smp_wooded:2': 'innova-halloween-sync',
@@ -3085,24 +3085,24 @@ export function buildLivePersonalFlightProfile(
       'Lock your thumb into the ridged saucer groove and punch it low and flat—skips pin-high under low ceilings without sailing long.';
   } else if (disc.id === 'innova-proto-glow-mako3') {
     howItFliesForMe =
-      'Breakout Cotton Candy "Sugar High" straight woods laser [5|5|0|0]! Sparked your 11/22 BOGEY-FREE 24 (-3) Art Nine PB tie (H3 skip Birdie 2 + H9 chain-out for 23!), laced SMP Wooded H15 Par, and started your 3-Par streak on 11/23 Black Hoof Championship H8 (65 / +11 18-Hole PB tie!)!';
+      'Breakout Cotton Candy "Sugar High" straight woods laser [5|5|0|0]! Parked 304ft Heritage Park H2 10ft left for your 1st-ever Heritage Park Par (11/25!) & perfect drop on H5, plus sparked your 11/22 BOGEY-FREE 24 (-3) Art Nine PB tie (H3 Birdie + H9 chain-out for 23!) and Black Hoof H8 Double Par!';
     swingCue =
-      'Stay upright with a dead-level chest-high pull-through—focus on releasing on time without drifting late right.';
+      'Stay upright, keep your hips rotating through ("don’t stop your hip!"), and release at 90° level.';
   } else if (disc.id === 'innova-sugar-star-rollo') {
     howItFliesForMe =
-      '🏆 11/23 BLACK HOOF CHAMPIONSHIP MVP [5|6|-4|1]!! Flipped up on 201ft H17 for your 1st Cotton Candy Star Rollo BIRDIE 2 ★ ("Flip up, flip up—IT DID IT!! Rollo is my disc, man! Birdie, dude!"), bombed 237+ ft downhill to the blue pin on H15 Par, & locked in Pars on H1, 294ft H10 & uphill H18 to tie your All-Time 18-Hole PB (65 / +11)!';
+      '🏆 #1 COTTON CANDY MVP [5|6|-4|1]!! Threaded the tiniest gap of trees on 278ft Heritage Park H11 for Par 3 (11/25 Back-9 33 surge!), right after flipping up on 201ft Black Hoof H17 for your 1st Cotton Candy Birdie 2 ★ ("IT DID IT!! Rollo is my disc!") + 237ft+ H15 bomb & 4 Pars in your 65 PB tie!';
     swingCue =
-      'Swing your hips ("belly button at target!") with firm flat chest-high zip—don’t be afraid to throw it far and let the -4 turn flip up!';
+      'Swing your hips ("belly button at target!") with firm flat chest-high zip at 90° release—let the -4 turn flip up!';
   } else if (disc.id === 'innova-sugar-star-roadrunner') {
     howItFliesForMe =
-      'Cotton Candy Hot Pink Star distance workhorse [9|5|-4|1]! On 11/23 Black Hoof Championship (65 PB tie!), twisted the hips down the 382ft longest hole H7 ("Went the distance! I was proud of that 4!"), plus 11/22 SMP Wooded H13 debut!';
+      'Cotton Candy Hot Pink Star distance workhorse [9|5|-4|1]! Threaded Heritage Park’s 330ft wooded H1 opener cleanly ("Got it through, baby!") & drove H15 (11/25 33 Back-9 surge!), plus twisted hips down 382ft Black Hoof H7 ("I was proud of that 4!") in your 65 PB tie!';
     swingCue =
-      'Drive through with hip rotation ("belly button at target") and keep the nose down so its 9-speed glide carries dead straight or pans right.';
+      'Drive through with hip rotation ("belly button at target") and release cleanly at 90° (not late 110°) with nose down.';
   } else if (disc.id === 'innova-halo-wraith') {
     howItFliesForMe =
-      'Cotton Candy Two-Tone Halo Star Speed 11 power bomber [11|5|-1|3]! Debuted off the tee on 11/22 at Shawnee Mission Wooded on 355ft H7 and closing 347ft H18—helping shave 7 strokes off your 11/17 score for a 71 (+17)! Premium Halo rim resists gusty headwinds with a reliable +3 left finish.';
+      'Cotton Candy Two-Tone Halo Star Speed 11 power bomber [11|5|-1|3]! Dialed in the release angle at Heritage Park DGC (11/25) on 323ft H7 ("Totally right angle!") and 210ft H9 ("Nice! Way better—that’s what I wanted!") before a 1-inch rim-out Par bid, plus 11/22 SMP Wooded H7 & H18 drives!';
     swingCue =
-      'Keep it low and flat under the ceiling with a full follow-through so Halo rim stability drives forward before hooking left.';
+      'Keep it low and flat under the ceiling with a full follow-through at 90° release so Halo rim stability drives forward before hooking left.';
   } else if (disc.id === 'innova-sugar-glow-roc') {
     howItFliesForMe =
       'Breakout Cotton Candy DX Glow Rancho Roc [4|4|0|3]! Locked in H9 Double Par during your 11/23 Black Hoof 65 (+11) PB tie, right after stealing the show on 11/22 SMP Wooded with 4 clutch Pars (H6, 15ft downhill H10, dead-straight H14 & H17) + Art Nine H1 Par!';
@@ -3130,14 +3130,14 @@ export function buildLivePersonalFlightProfile(
       'Swing your hips so your belly button finishes facing the target with a flat chest-high release for smooth wooded hyzer-flips.';
   } else if (disc.id === 'innova-luster-firebird') {
     howItFliesForMe =
-      'Cotton Candy Luster Champion wind & skip utility [9|3|0|4]! Debuted on 11/22 at Shawnee Mission Wooded—anchored a clutch Par 3 on 302ft H8 paired with Pink DX Alien and fought gusty wind on H9!';
+      '🏆 Cotton Candy Luster Champion wind & hyzer utility [9|3|0|4]! Powered your 1st-ever Par 3 at Heritage Park DGC on 304ft H2 (11/25 — hyzered cleanly into fairway avoiding deep grass + Mako3 10ft park!) AND locked in Par 3 on 302ft SMP Wooded H8 (11/22)!';
     swingCue =
-      'Pull strictly for headwinds, sharp dogleg-left corners, or low flare-skips aimed well right of the basket.';
+      'Pull for crosswinds/headwinds, dogleg-left corners, or fairway-finding hyzers aimed right of the landing zone.';
   } else if (disc.id === 'innova-halo-destroyer') {
     howItFliesForMe =
-      'Flagship Cotton Candy Speed 12 Neon Chartreuse Halo Destroyer [12|5|-1|3]! In-hand Main Bag max-distance & stiff-headwind bomber for 300–600ft open Championship fairways—awaiting its first logged tee rip!';
+      '🚀 OFFICIAL 11/25 DEBUT (17 OF 17 ACTIVE BAG LOGGED!!): Flagship Cotton Candy Speed 12 Neon Chartreuse Halo Destroyer [12|5|-1|3] debuted on 323ft Heritage Park DGC H7 ("Give it a try... Beauty! Wraith and the Destroyer were totally right angle!") — completing 100% of your 17-disc active bag!';
     swingCue =
-      'Save for wide-open 300+ ft fairways or fierce headwinds; release low and flat with room on the right for its +3 finish.';
+      'Save for wide-open 300+ ft fairways or stiff headwinds; release low and flat at 90° with room on the right for its +3 finish.';
   } else if (disc.id === 'innova-mako3') {
     howItFliesForMe =
       'My purest angle-integrity truth-teller [5|5|0|0]. On 11/10 at Shawnee Mission Wooded H13 (277ft downhill), I striped it dead-flat the entire flight ("Straight, beauty, perfect! Flat as can be the whole way!"). Also laced 11/09 Sar-Ko-Par H2, parked 2ft on 11/05 Sar-Ko H6 (21 PB), and birdied Art Nine H6 back-to-back. Tendency: Turning my wrist pulls it left into early trees.';
@@ -3855,27 +3855,27 @@ const DISC_COMMENTARY_VERDICTS: Record<string, string> = {
   'innova-firebird':
     '📦 Archived / Lost on Mize H1 (15 holes, 40% Birdies) — early headwind/skip workhorse before being lost in heavy rough.',
   'innova-proto-glow-aviar':
-    '🍬 Cotton Candy Debut 11/23! First throws on Black Hoof Championship (65 PB tie!) H2, H6, H11 & H14 ("Color Aviar") — 16 of 17 active discs now logged!',
+    '🍬 Cotton Candy Debut 11/23! First throws on Black Hoof Championship (65 PB tie!) H2, H6, H11 & H14 ("Color Aviar") — beadless Mint Collector putter!',
   'innova-yeti-pro-aviar':
-    '🏆 Breakout Cotton Candy Putter [2|3|0|1]! Powered 11/22 BOGEY-FREE 24 (-3) Art Nine PB tie (H5 tree-bending Birdie 2!) + sealed 11/23 Black Hoof H17 Birdie!',
+    '🏆 Breakout Cotton Candy Putter [2|3|0|1]! Powered 11/22 BOGEY-FREE 24 (-3) Art Nine PB tie (H5 Birdie!), sealed 11/23 Black Hoof H17 Birdie, & saved Heritage H16 bush scramble!',
   'innova-sugar-glow-roc':
     '🏆 Breakout Cotton Candy Midrange [4|4|0|3]! 11/23 Black Hoof H9 Double Par (65 PB tie!) + 4 Pars on 11/22 SMP Wooded (H6, 15ft H10, H14, H17)!',
   'innova-proto-glow-mako3':
-    '🏆 Breakout Cotton Candy Woods Laser [5|5|0|0]! Art Nine H3 Birdie + H9 chain-out for 23 (11/22), SMP H15 Par, & Black Hoof H8 Double Par (11/23 65 PB tie)!',
+    '🏆 Breakout Cotton Candy Woods Laser [5|5|0|0]! Parked Heritage H2 10ft for 1st Course Par (11/25!), Art Nine H3 Birdie (11/22), & Black Hoof H8 Double Par (11/23)!',
   'innova-sugar-star-rollo':
-    '🏆 11/23 BLACK HOOF MVP [5|6|-4|1]!! Flipped up on H17 for 1st Cotton Candy Birdie 2 ("IT DID IT!! Rollo is my disc!") + 237ft+ H15 bomb & 4 Pars in 65 PB tie!',
+    '🏆 #1 COTTON CANDY MVP [5|6|-4|1]!! Threaded tiniest tree gap on 278ft Heritage H11 Par (11/25!) + Black Hoof H17 Birdie 2 ("IT DID IT!! Rollo is my disc!") & 4 Pars!',
   'innova-glow-leopard3':
-    '🍬 Cotton Candy Color Glow Fairway [7|5|-2|1] — Unlocked hip-rotation skip carries ("belly button at target!") on 11/23 Black Hoof Championship H3 & H6!',
+    '🍬 Cotton Candy Color Glow Fairway [7|5|-2|1] — Pin-high closer on Heritage Park H18 (sealing 33 Back 9!) + Black Hoof H3/H6 hip-rotation skip carries!',
   'innova-glow-teebird':
-    '🏆 Breakout Cotton Candy Fairway [7|5|0|2]! Striped a snake S-glide on 315ft Black Hoof H5 for Monster Par 3 (11/23 65 PB tie!) + SMP Wooded H1 wind opener!',
+    '🏆 Breakout Cotton Candy Fairway [7|5|0|2]! Striped a snake S-glide on 315ft Black Hoof H5 for Monster Par 3 (11/23 65 PB tie!) + Heritage H5 & SMP H1!',
   'innova-sugar-star-roadrunner':
-    '⭐ Cotton Candy Hot Pink Star [9|5|-4|1] — Twisted hips down 382ft Black Hoof H7 for proud Bogey 4 (11/23 65 PB tie!) + SMP Wooded H13 debut!',
+    '⭐ Cotton Candy Hot Pink Star [9|5|-4|1] — Threaded 330ft Heritage Park H1 opener ("Got it through, baby!") + 382ft Black Hoof H7 hip-twist proud 4!',
   'innova-luster-firebird':
-    '⭐ Cotton Candy Headwind & Skip Debut [9|3|0|4]! Locked in Par 3 on 11/22 SMP Wooded H8 paired w/ Pink DX Alien!',
+    '⭐ 2/3 Pars (67% Par+)! Powered your 1st-ever Heritage Park Par on 304ft H2 (11/25!) + locked in Par 3 on 302ft SMP Wooded H8 (11/22)!',
   'innova-halo-wraith':
-    '🚀 Cotton Candy Two-Tone Halo Bomber [11|5|-1|3] — Debuted off the tee on 11/22 SMP Wooded H7 & closing H18 (71 / +17 — 7 strokes better than 11/17)!',
+    '🚀 Cotton Candy Two-Tone Halo Bomber [11|5|-1|3] — Dialed angle on Heritage Park H7 & H9 ("Way better—that’s what I wanted!") + SMP Wooded H7 & H18!',
   'innova-halo-destroyer':
-    '🍬 Arrived 11/18! Cotton Candy In-Hand Main Bag [12|5|-1|3] — Flagship Speed 12 Neon Chartreuse Halo Destroyer for max-distance open bombers & stiff headwinds!',
+    '🚀 OFFICIAL 11/25 DEBUT (17/17 ACTIVE BAG LOGGED!!) — Pulled on 323ft Heritage Park H7 ("Beauty! Totally right angle!") to complete 100% of your active bag!',
   'discraft-roach':
     '🏆 Jack’s #1 Go-To Putter & Ace-Run Laser! Drained the 47-ft Cal Trail putt, 3 Birdies in his bogey-free 24 (-3) Art Nine PB, and H1 near-ace Birdie on 11/09.',
   'discraft-buzzz-ss':
@@ -3907,6 +3907,7 @@ export function computeDiscBagTelemetry(
     if (cName.includes('Prairie Pass') || cName.includes('Blue Valley')) return 'Prairie Pass';
     if (cName.includes('Prairie Center')) return 'Prairie Ctr';
     if (cName.includes('California Trail')) return 'Cal Trail';
+    if (cName.includes('Heritage')) return 'Heritage Park';
     if (cName.includes('Wyandotte')) return 'Wyandotte';
     return cName;
   };

@@ -34,8 +34,9 @@ import {
   syncDossierToDashboard
 } from './reportGenerator';
 
-export const MASTER_STORAGE_KEY = 'jj_disc_golf_v114_master_state';
+export const MASTER_STORAGE_KEY = 'jj_disc_golf_v115_master_state';
 export const LEGACY_STORAGE_KEYS = [
+  'jj_disc_golf_v114_master_state',
   'jj_disc_golf_v113_master_state',
   'jj_disc_golf_v112_master_state',
   'jj_disc_golf_v111_master_state',
@@ -526,6 +527,7 @@ export function mergeRoundHistories(
       const isSingleCanonicalDayCourse =
         (canonicalDateCourseCounts.get(dcKey) || 0) === 1 &&
         ((canonical.totalHoles || canonical.holes.length) >= 18 ||
+          canonical.date === '2026-11-25' ||
           canonical.date === '2026-11-23' ||
           canonical.date === '2026-11-22' ||
           canonical.date === '2026-11-17' ||
@@ -896,7 +898,7 @@ export function mergeCloudPayloads(
 
   const payload: AppExportPayload = {
     app: 'Jeffery & Jack Disc Golf Scorecard',
-    version: 'v114',
+    version: 'v115',
     exportDate: new Date().toISOString(),
     updatedAt: Math.max(localTime, remoteTime),
     deviceId: local.deviceId || getOrCreateDeviceId(),
@@ -1008,7 +1010,7 @@ export function readLocalStorageSnapshot(): AppExportPayload {
 
   return {
     app: 'Jeffery & Jack Disc Golf Scorecard',
-    version: 'v114',
+    version: 'v115',
     exportDate: new Date().toISOString(),
     updatedAt: parsedMaster.updatedAt || Date.now(),
     deviceId: getOrCreateDeviceId(),
