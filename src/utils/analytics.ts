@@ -675,7 +675,17 @@ export const DEFAULT_VERIFIED_HOLE_PICKS: Record<string, string> = {
   'prairie_center:15': 'innova-sugar-star-roadrunner',
   'prairie_center:16': 'innova-glow-leopard3',
   'prairie_center:17': 'innova-halo-wraith',
-  'prairie_center:18': 'innova-sugar-star-roadrunner'
+  'prairie_center:18': 'innova-sugar-star-roadrunner',
+  // Jack's Backyard Course (Grandma & Grandpa's Bray 9-Hole · 11/26 25/-2 Bogey-Free!)
+  'backyard_bray:1': 'innova-proto-glow-mako3',
+  'backyard_bray:2': 'innova-proto-glow-mako3',
+  'backyard_bray:3': 'innova-proto-glow-mako3',
+  'backyard_bray:4': 'innova-proto-glow-mako3',
+  'backyard_bray:5': 'innova-proto-glow-mako3',
+  'backyard_bray:6': 'innova-proto-glow-mako3',
+  'backyard_bray:7': 'innova-proto-glow-mako3',
+  'backyard_bray:8': 'innova-proto-glow-mako3',
+  'backyard_bray:9': 'innova-sugar-star-rollo'
 };
 
 export type CaddieStabilityFilter = 'hole_match' | 'understable' | 'stable' | 'overstable';
@@ -3085,9 +3095,9 @@ export function buildLivePersonalFlightProfile(
       'Lock your thumb into the ridged saucer groove and punch it low and flat—skips pin-high under low ceilings without sailing long.';
   } else if (disc.id === 'innova-proto-glow-mako3') {
     howItFliesForMe =
-      'Breakout Cotton Candy "Sugar High" straight woods laser [5|5|0|0]! Parked 304ft Heritage Park H2 10ft left for your 1st-ever Heritage Park Par (11/25!) & perfect drop on H5, plus sparked your 11/22 BOGEY-FREE 24 (-3) Art Nine PB tie (H3 Birdie + H9 chain-out for 23!) and Black Hoof H8 Double Par!';
+      '🏆 BREAKOUT STRAIGHT LASER [5|5|0|0]!! Powered a BOGEY-FREE 25 (-2) Course Record on Jack\'s Backyard Course (11/26 Thanksgiving R2 — 2 Birdies, 7 Pars: "That went straight, Jeffery — that\'s what I\'ve been working towards!"), parked 304ft Heritage Park H2 10ft left for 1st Course Par (11/25), sparked your 11/22 BOGEY-FREE 24 (-3) Art Nine PB tie, and locked in Black Hoof H8 Double Par!';
     swingCue =
-      'Stay upright, keep your hips rotating through ("don’t stop your hip!"), and release at 90° level.';
+      'Stay upright, slice straight across the chest with hips rotating through ("don’t stop your hip!"), and release at 90° level.';
   } else if (disc.id === 'innova-sugar-star-rollo') {
     howItFliesForMe =
       '🏆 #1 COTTON CANDY MVP [5|6|-4|1]!! Threaded the tiniest gap of trees on 278ft Heritage Park H11 for Par 3 (11/25 Back-9 33 surge!), right after flipping up on 201ft Black Hoof H17 for your 1st Cotton Candy Birdie 2 ★ ("IT DID IT!! Rollo is my disc!") + 237ft+ H15 bomb & 4 Pars in your 65 PB tie!';
@@ -3861,7 +3871,7 @@ const DISC_COMMENTARY_VERDICTS: Record<string, string> = {
   'innova-sugar-glow-roc':
     '🏆 Breakout Cotton Candy Midrange [4|4|0|3]! 11/23 Black Hoof H9 Double Par (65 PB tie!) + 4 Pars on 11/22 SMP Wooded (H6, 15ft H10, H14, H17)!',
   'innova-proto-glow-mako3':
-    '🏆 Breakout Cotton Candy Woods Laser [5|5|0|0]! Parked Heritage H2 10ft for 1st Course Par (11/25!), Art Nine H3 Birdie (11/22), & Black Hoof H8 Double Par (11/23)!',
+    '🏆 BOGEY-FREE 25 (-2) BACKYARD RECORD (11/26 — 2 Birdies, 7 Pars: "That went straight!") + Heritage H2 10ft Par (11/25) + Art Nine H3 Birdie (11/22)!',
   'innova-sugar-star-rollo':
     '🏆 #1 COTTON CANDY MVP [5|6|-4|1]!! Threaded tiniest tree gap on 278ft Heritage H11 Par (11/25!) + Black Hoof H17 Birdie 2 ("IT DID IT!! Rollo is my disc!") & 4 Pars!',
   'innova-glow-leopard3':
@@ -3908,6 +3918,7 @@ export function computeDiscBagTelemetry(
     if (cName.includes('Prairie Center')) return 'Prairie Ctr';
     if (cName.includes('California Trail')) return 'Cal Trail';
     if (cName.includes('Heritage')) return 'Heritage Park';
+    if (cName.includes('Backyard') || cName.includes('Bray')) return "Jack's Backyard";
     if (cName.includes('Wyandotte')) return 'Wyandotte';
     return cName;
   };

@@ -73,8 +73,9 @@ import {
   writeMergedStateToLocalStorageAndDashboard
 } from './utils/cloudSync';
 
-const STORAGE_KEY = 'jj_disc_golf_v116_master_state';
+const STORAGE_KEY = 'jj_disc_golf_v117_master_state';
 const LEGACY_STORAGE_KEYS = [
+  'jj_disc_golf_v116_master_state',
   'jj_disc_golf_v115_master_state',
   'jj_disc_golf_v114_master_state',
   'jj_disc_golf_v113_master_state',
@@ -153,6 +154,7 @@ function normalizeCourseSignature(courseName?: string): string {
   if (raw.includes('cedar ridge') || raw.includes('cedarridge')) return 'cedarridge';
   if (raw.includes('wyandotte')) return 'wyandotte';
   if (raw.includes('heritage')) return 'heritage_park';
+  if (raw.includes('backyard') || raw.includes('bray')) return 'backyard_bray';
   return raw.replace(/[^a-z0-9]/g, '');
 }
 

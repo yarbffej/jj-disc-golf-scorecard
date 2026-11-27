@@ -3232,6 +3232,25 @@ const BLUE_VALLEY_PRAIRIE_PASS_COURSE: CourseTemplate = {
   ]
 };
 
+const JACKS_BACKYARD_COURSE: CourseTemplate = {
+  key: 'backyard_bray',
+  name: "Jack's Backyard Course",
+  location: "Grandma & Grandpa's · Bray 9-Hole Course (Laundry Baskets on Tomato Cages · Par 27 · 1,224 ft)",
+  totalHoles: 9,
+  updatedAt: 1795727400002,
+  holes: [
+    { number: 1, par: 3, distance: 128, hint: '128 ft Yard Opener · Watch the house (and Cheech/GG sneaking outside!) — smooth Proto Glow Mako3 or Star Rollo.' },
+    { number: 2, par: 3, distance: 160, hint: '160 ft Up by Grandpa\'s Shed (Pond Hazard!) · Avoid the mosquito pond left — towel in Grandpa\'s shed if wet!' },
+    { number: 3, par: 3, distance: 135, hint: '135 ft Back Yard by Chicken Coop & Pool Cover · Watch rooster, pool cover & duck pan; tiny no-chain basket!' },
+    { number: 4, par: 3, distance: 130, hint: '130 ft Little Island After the Deck (Roof Hazard!) · Keep Proto Glow Mako3 low & straight off the deck to avoid the roof!' },
+    { number: 5, par: 3, distance: 135, hint: '135 ft Upper Yard Laundry Basket · Smooth touch putt onto tomato-cage laundry basket (no chains — sit soft!).' },
+    { number: 6, par: 3, distance: 140, hint: '140 ft Down-Yard Approach · Watch lone guardian tree & pool edge; ★ 11/26 Jack Birdie 2 hole!' },
+    { number: 7, par: 3, distance: 130, hint: '130 ft Fire Pit to Treehouse · ★ 11/26 Mako3 Birdie 2! Slice-the-box chest-high hip swing straight between fire pit & treehouse.' },
+    { number: 8, par: 3, distance: 135, hint: '135 ft Past House & Left Water Pool · Keep disc right of the left water pool and clear of windows.' },
+    { number: 9, par: 3, distance: 131, hint: '131 ft Backyard Closer · ★ 11/26 Star Rollo Birdie 2! Controlled touch carry to close under par.' }
+  ]
+};
+
 export const INITIAL_COURSE_TEMPLATES: CourseTemplate[] = [
   ...(typedV65.courses || [])
     .map((c) => {
@@ -3259,9 +3278,10 @@ export const INITIAL_COURSE_TEMPLATES: CourseTemplate[] = [
       }
       return c;
     })
-    .filter((c) => c.key !== 'heritage_park' && c.key !== 'prairie_pass'),
+    .filter((c) => c.key !== 'heritage_park' && c.key !== 'prairie_pass' && c.key !== 'backyard_bray'),
   HERITAGE_PARK_COURSE,
-  BLUE_VALLEY_PRAIRIE_PASS_COURSE
+  BLUE_VALLEY_PRAIRIE_PASS_COURSE,
+  JACKS_BACKYARD_COURSE
 ];
 
 const ROUND_2026_11_01_BLACK_HOOF: HistoricalRound = {
@@ -11503,12 +11523,517 @@ Hole-by-Hole Recap:
   ]
 };
 
+const ROUND_2026_11_26_BACKYARD_1: HistoricalRound = {
+  id: 1795725600001,
+  courseName: "Jack's Backyard Course",
+  totalHoles: 9,
+  date: '2026-11-26',
+  duration: '00:26:00',
+  par: 27,
+  windCondition: 'calm',
+  gameMode: 'stroke',
+  notes:
+    '🦃 THANKSGIVING DAY ROUND 1 AT GRANDMA & GRANDPA\'S — JACK\'S BACKYARD COURSE (Laundry Baskets on Tomato Cages · 3-Disc Challenge: Cotton Candy Star Rollo + XT Glow Nova + KC Pro Aviar)! JACK WINS UNDER PAR 26 (-1) vs Jeffery 28 (+1)! Jack birdied H6 (wearing gloves!) while Jeffery survived the pond (H2), roof (H4), & tiny chainless laundry baskets to close with a clutch Star Rollo Birdie 2 on H9!',
+  roundTranscript: `Jack's Backyard Course (Grandma & Grandpa's · Bray 9-Hole Course · Thanksgiving Day Round 1 · 2026-11-26 · Laundry Baskets on Tomato Cages · Par 27 · 1,224 ft) — Jack 26 (-1 ★ WINNER!) vs Jeffery 28 (+1 · H9 Birdie Closer!).
+Jeffery played a strict 3-Disc Challenge (Cotton Candy Star Rollo off the tee + XT Glow Nova & KC Pro Aviar putting — zero Yeti Pro Aviar used!) while Jack threw wearing winter gloves and defended his home-built course under par!
+- H1 (128ft, Par 3 — Yard Opener by House): Jeffery 3 | Jack 3. Careful not to hit the house while Cheech/GG snuck out into the yard! Clean Double Par 3–3.
+- H2 (160ft, Par 3 — Up by Grandpa's Shed & Pond): Jeffery 3 | Jack 3. Jeffery landed in the mosquito pond ("I'm in the pond! Grandpa got a towel here in the shed"), dried the disc off, and salvaged Par 3!
+- H3 (135ft, Par 3 — Chicken Coop & Pool Cover): Jeffery 4 | Jack 3. Wet disc near pool cover & rooster ("Tiny baskets and no chains! That'll be four") while Jack carded Par 3.
+- H4 (130ft, Par 3 — Little Island After Deck / Roof): Jeffery 4 | Jack 3. Jeffery bounced onto the roof ("I went on the roof too, so I might as well give myself a four"); Jack steady Par 3.
+- H5 (135ft, Par 3 — Upper Yard Laundry Basket): Jeffery 3 | Jack 3. Confirmed strict 3-disc kit ("Using a Rollo, Nova, and KC Pro Aviar — that's the only thing I've been using! Laundry baskets on tomato cages!"). Double Par 3–3.
+- H6 (140ft, Par 3 — Down-Yard): Jeffery 3 | Jack 2 (★ JACK BIRDIE!). Jack threw clean ~5ft away ("Got a birdie, Jack did!") to go -1 under par!
+- H7 (130ft, Par 3 — Fire Pit & Treehouse): Jeffery 3 | Jack 3. Demoed Cotton Candy Star Rollo, XT Glow Nova, KC Pro Aviar, and the hip-rotation "slicing a box straight across your chest" cue to Grandpa & family! Double Par 3–3.
+- H8 (135ft, Par 3 — House & Left Water Pool): Jeffery 3 | Jack 3. Showed off the custom Jeffery & Jack scoring app ("Yes, I got my own scoring app for me and Jack!"), avoided water pool left for Double Par 3–3.
+- H9 (131ft, Par 3 — Backyard Closer): Jeffery 2 (★ BIRDIE!) | Jack 3. Jeffery closed with a clutch Star Rollo Birdie 2 ("There's my birdie!"), while Jack's Par 3 locked in a 26 (-1) Thanksgiving Championship victory over Jeffery's 28 (+1)!`,
+  players: [
+    { id: 'jeffery', name: 'Jeffery', tag: 'J1', total: 28 },
+    { id: 'jack', name: 'Jack', tag: 'J2', total: 26 }
+  ],
+  holes: [
+    {
+      number: 1,
+      par: 3,
+      distance: 128,
+      scores: { jeffery: 3, jack: 3 },
+      voiceTranscript:
+        'Thanksgiving Day opener on Jack\'s home-built Bray 9-Hole Course! Star Rollo + KC Pro Aviar Par 3 while keeping Cheech/GG inside; Jack threw with gloves for Double Par 3–3!',
+      meta: {
+        jeffery: {
+          thrownDiscId: 'innova-sugar-star-rollo',
+          discUsed: 'Star Rollo',
+          scenarioUsed: 'calm',
+          fairwayHit: true,
+          puttDistance: 'C1',
+          voiceNote: '3-Disc Challenge opener: Star Rollo + KC Pro Aviar for Par 3',
+          throws: [
+            { shotType: 'tee', discId: 'innova-sugar-star-rollo' },
+            { shotType: 'putt', discId: 'innova-kc-pro-aviar' }
+          ]
+        },
+        jack: {
+          thrownDiscId: 'discraft-roach',
+          discUsed: 'Roach',
+          fairwayHit: true,
+          voiceNote: 'Throwing with gloves cleanly for Double Par 3–3!'
+        }
+      }
+    },
+    {
+      number: 2,
+      par: 3,
+      distance: 160,
+      scores: { jeffery: 3, jack: 3 },
+      voiceTranscript:
+        'Up by Grandpa\'s shed — Star Rollo splashed into the mosquito pond ("I\'m in the pond! Grandpa got a towel in the shed!"), dried off & saved Double Par 3–3 with XT Glow Nova!',
+      meta: {
+        jeffery: {
+          thrownDiscId: 'innova-sugar-star-rollo',
+          discUsed: 'Star Rollo',
+          scenarioUsed: 'calm',
+          puttDistance: 'C1',
+          voiceNote: 'Star Rollo pond splash + shed towel dry-off + XT Glow Nova Par save!',
+          throws: [
+            { shotType: 'tee', discId: 'innova-sugar-star-rollo' },
+            { shotType: 'putt', discId: 'innova-xt-glow-nova' }
+          ]
+        },
+        jack: {
+          thrownDiscId: 'discraft-buzzz-ss',
+          discUsed: 'Buzzz SS',
+          fairwayHit: true,
+          voiceNote: 'Avoided pond cleanly for Par 3!'
+        }
+      }
+    },
+    {
+      number: 3,
+      par: 3,
+      distance: 135,
+      scores: { jeffery: 4, jack: 3 },
+      voiceTranscript:
+        'Back yard by chicken coop & pool cover (rooster crowing!) — wet Star Rollo + tiny chainless laundry basket for Bogey 4; Jack Par 3!',
+      meta: {
+        jeffery: {
+          thrownDiscId: 'innova-sugar-star-rollo',
+          discUsed: 'Star Rollo',
+          scenarioUsed: 'calm',
+          puttDistance: 'C1',
+          voiceNote: 'Wet Star Rollo + chainless laundry basket for Bogey 4',
+          throws: [
+            { shotType: 'tee', discId: 'innova-sugar-star-rollo' },
+            { shotType: 'putt', discId: 'innova-kc-pro-aviar' }
+          ]
+        },
+        jack: {
+          thrownDiscId: 'discraft-roach',
+          discUsed: 'Roach',
+          fairwayHit: true,
+          voiceNote: 'Clean home-course Par 3 to take the lead!'
+        }
+      }
+    },
+    {
+      number: 4,
+      par: 3,
+      distance: 130,
+      scores: { jeffery: 4, jack: 3 },
+      voiceTranscript:
+        'Little island after the deck — Star Rollo landed on the roof ("I went on the roof too, so I might as well give myself a four!"); Jack steady Par 3!',
+      meta: {
+        jeffery: {
+          thrownDiscId: 'innova-sugar-star-rollo',
+          discUsed: 'Star Rollo',
+          scenarioUsed: 'calm',
+          puttDistance: 'C1',
+          voiceNote: 'Star Rollo roof bounce + XT Glow Nova for Bogey 4',
+          throws: [
+            { shotType: 'tee', discId: 'innova-sugar-star-rollo' },
+            { shotType: 'putt', discId: 'innova-xt-glow-nova' }
+          ]
+        },
+        jack: {
+          thrownDiscId: 'discraft-roach',
+          discUsed: 'Roach',
+          fairwayHit: true,
+          voiceNote: '"Good job, dude!" — 4th straight Par 3!'
+        }
+      }
+    },
+    {
+      number: 5,
+      par: 3,
+      distance: 135,
+      scores: { jeffery: 3, jack: 3 },
+      voiceTranscript:
+        'Upper yard laundry baskets on tomato cages! Confirmed strict 3-disc kit (Star Rollo, XT Glow Nova & KC Pro Aviar) for Double Par 3–3!',
+      meta: {
+        jeffery: {
+          thrownDiscId: 'innova-sugar-star-rollo',
+          discUsed: 'Star Rollo',
+          scenarioUsed: 'calm',
+          fairwayHit: true,
+          puttDistance: 'C1',
+          voiceNote: 'Star Rollo + KC Pro Aviar Par 3 on tomato-cage laundry basket!',
+          throws: [
+            { shotType: 'tee', discId: 'innova-sugar-star-rollo' },
+            { shotType: 'putt', discId: 'innova-kc-pro-aviar' }
+          ]
+        },
+        jack: {
+          thrownDiscId: 'discraft-roach',
+          discUsed: 'Roach',
+          fairwayHit: true,
+          voiceNote: '5th straight Par 3!'
+        }
+      }
+    },
+    {
+      number: 6,
+      par: 3,
+      distance: 140,
+      scores: { jeffery: 3, jack: 2 },
+      voiceTranscript:
+        '★ JACK BIRDIE 2! Jack parked ~5ft away ("Got a birdie, Jack did!") to drop under par (-1); Jeffery steady Star Rollo + XT Glow Nova Par 3!',
+      meta: {
+        jeffery: {
+          thrownDiscId: 'innova-sugar-star-rollo',
+          discUsed: 'Star Rollo',
+          scenarioUsed: 'calm',
+          fairwayHit: true,
+          puttDistance: 'C1',
+          voiceNote: 'Star Rollo + XT Glow Nova Par 3',
+          throws: [
+            { shotType: 'tee', discId: 'innova-sugar-star-rollo' },
+            { shotType: 'putt', discId: 'innova-xt-glow-nova' }
+          ]
+        },
+        jack: {
+          thrownDiscId: 'discraft-roach',
+          discUsed: 'Roach',
+          fairwayHit: true,
+          voiceNote: '★ CLUTCH HOME-COURSE BIRDIE 2 (~5ft park) to jump to -1 under par!'
+        }
+      }
+    },
+    {
+      number: 7,
+      par: 3,
+      distance: 130,
+      scores: { jeffery: 3, jack: 3 },
+      voiceTranscript:
+        'Fire pit & treehouse hole — demoed Cotton Candy Star Rollo, XT Glow Nova, KC Pro Aviar & the "slicing a box straight across your chest" hip swing to Grandpa & family for Double Par 3–3!',
+      meta: {
+        jeffery: {
+          thrownDiscId: 'innova-sugar-star-rollo',
+          discUsed: 'Star Rollo',
+          scenarioUsed: 'calm',
+          fairwayHit: true,
+          puttDistance: 'C1',
+          voiceNote: 'Star Rollo + KC Pro Aviar Par 3 while coaching hip-swing "slice a box across chest"!',
+          throws: [
+            { shotType: 'tee', discId: 'innova-sugar-star-rollo' },
+            { shotType: 'putt', discId: 'innova-kc-pro-aviar' }
+          ]
+        },
+        jack: {
+          thrownDiscId: 'discraft-roach',
+          discUsed: 'Roach',
+          fairwayHit: true,
+          voiceNote: 'Steady Par 3 keeping -1 lead!'
+        }
+      }
+    },
+    {
+      number: 8,
+      par: 3,
+      distance: 135,
+      scores: { jeffery: 3, jack: 3 },
+      voiceTranscript:
+        'Showed off the custom Jeffery & Jack scoring app! Star Rollo + XT Glow Nova Par 3 avoiding the left water pool; Jack Par 3!',
+      meta: {
+        jeffery: {
+          thrownDiscId: 'innova-sugar-star-rollo',
+          discUsed: 'Star Rollo',
+          scenarioUsed: 'calm',
+          fairwayHit: true,
+          puttDistance: 'C1',
+          voiceNote: 'Star Rollo + XT Glow Nova Par 3',
+          throws: [
+            { shotType: 'tee', discId: 'innova-sugar-star-rollo' },
+            { shotType: 'putt', discId: 'innova-xt-glow-nova' }
+          ]
+        },
+        jack: {
+          thrownDiscId: 'discraft-roach',
+          discUsed: 'Roach',
+          fairwayHit: true,
+          voiceNote: '8th straight Par-or-better!'
+        }
+      }
+    },
+    {
+      number: 9,
+      par: 3,
+      distance: 131,
+      scores: { jeffery: 2, jack: 3 },
+      voiceTranscript:
+        '★ STAR ROLLO BIRDIE 2 CLOSER! Jeffery birdied 131ft H9 ("There\'s my birdie!") for 28 (+1) while Jack\'s Par 3 sealed a BOGEY-FREE 26 (-1) THANKSGIVING VICTORY on the course he built!!',
+      meta: {
+        jeffery: {
+          thrownDiscId: 'innova-sugar-star-rollo',
+          discUsed: 'Star Rollo',
+          scenarioUsed: 'calm',
+          fairwayHit: true,
+          puttDistance: 'C1',
+          voiceNote: '★ Walk-off Cotton Candy Star Rollo Birdie 2 on 131ft H9 → 28 (+1)!',
+          throws: [
+            { shotType: 'tee', discId: 'innova-sugar-star-rollo' },
+            { shotType: 'putt', discId: 'innova-kc-pro-aviar' }
+          ]
+        },
+        jack: {
+          thrownDiscId: 'discraft-roach',
+          discUsed: 'Roach',
+          fairwayHit: true,
+          voiceNote: '🏆 BOGEY-FREE 26 (-1) VICTORY ON JACK\'S BACKYARD COURSE!!'
+        }
+      }
+    }
+  ]
+};
+
+const ROUND_2026_11_26_BACKYARD_2: HistoricalRound = {
+  id: 1795727400002,
+  courseName: "Jack's Backyard Course",
+  totalHoles: 9,
+  date: '2026-11-26',
+  duration: '00:22:00',
+  par: 27,
+  windCondition: 'calm',
+  gameMode: 'stroke',
+  notes:
+    '🔥 THANKSGIVING DAY ROUND 2 (SOLO — BOGEY-FREE 25 / -2 COURSE RECORD!!): Jeffery swapped Star Rollo for Cotton Candy Proto Glow Mako3 ("That went straight, Jeffery — that\'s what I\'ve been working towards!") + XT Glow Nova & KC Pro Aviar! Jack warmed up inside after H3 when discs got wet/cold, and Jeffery went BOGEY-FREE 25 (-2) with 2 Mako3 Birdies (H4 & H7) & 7 Pars!',
+  roundTranscript: `Jack's Backyard Course (Grandma & Grandpa's · Thanksgiving Day Round 2 · 2026-11-26 · Jeffery Solo · Par 27 · 1,224 ft) — Jeffery 25 (-2 ★ BOGEY-FREE COURSE RECORD!!).
+Switched tee disc from Star Rollo to Cotton Candy Proto Glow Mako3 ("Put back my Rollo, we're using the Mako 3!") paired with XT Glow Nova & KC Pro Aviar. Jack played H1–H3 before heading inside from cold wet discs, so Jeffery switched the live app cleanly to Solo and fired a bogey-free 25 (-2)!
+- H1 (128ft, Par 3): Jeffery 3. Proto Glow Mako3 dead straight ("That went straight, Jeffery! That's what I've been working towards on that one — didn't throw it powerful!") for Par 3.
+- H2 (160ft, Par 3 — Pond by Shed): Jeffery 3. Stopped right on the edge of the pond ("Right on the edge!") for Par 3.
+- H3 (135ft, Par 3 — Duck Pan / Wet Discs): Jeffery 3. Jack headed inside to warm up ("We'll just make this a Jeffery round"); clean Par 3.
+- H4 (130ft, Par 3 — Roof Island): Jeffery 2 (★ BIRDIE!). Dialed Proto Glow Mako3 on target ("Give myself a two!") for Birdie 2!
+- H5 (135ft, Par 3): Jeffery 3. Clean Mako3 + putt for Par 3.
+- H6 (140ft, Par 3): Jeffery 3. Clipped the lone tree & almost slipped near the pool ("Almost fell in this pool!"), saved Par 3!
+- H7 (130ft, Par 3 — Fire Pit & Treehouse): Jeffery 2 (★ 2ND BIRDIE!). "That was beautiful, that felt good! If that was a normal basket with chains, I would have made it — counting that as a two!"
+- H8 (135ft, Par 3): Jeffery 3. Steady Par 3.
+- H9 (131ft, Par 3): Jeffery 3. Closing Par 3 seals a BOGEY-FREE 25 (-2) Backyard Course Record (7 Pars, 2 Birdies, 0 Bogeys) powered 100% by Cotton Candy Proto Glow Mako3!`,
+  players: [{ id: 'jeffery', name: 'Jeffery', tag: 'J1', total: 25 }],
+  holes: [
+    {
+      number: 1,
+      par: 3,
+      distance: 128,
+      scores: { jeffery: 3 },
+      voiceTranscript:
+        'Swapped to Cotton Candy Proto Glow Mako3 — striped dead-straight ("That went straight, Jeffery! That\'s what I\'ve been working towards!") for Par 3!',
+      meta: {
+        jeffery: {
+          thrownDiscId: 'innova-proto-glow-mako3',
+          discUsed: 'Proto Glow Mako3',
+          scenarioUsed: 'calm',
+          fairwayHit: true,
+          puttDistance: 'C1',
+          voiceNote: 'Proto Glow Mako3 dead-straight opener ("what I\'ve been working towards!") for Par 3',
+          throws: [
+            { shotType: 'tee', discId: 'innova-proto-glow-mako3' },
+            { shotType: 'putt', discId: 'innova-kc-pro-aviar' }
+          ]
+        }
+      }
+    },
+    {
+      number: 2,
+      par: 3,
+      distance: 160,
+      scores: { jeffery: 3 },
+      voiceTranscript:
+        'Proto Glow Mako3 stayed right on the dry edge of the pond ("Oh good, right on the edge!") for Par 3!',
+      meta: {
+        jeffery: {
+          thrownDiscId: 'innova-proto-glow-mako3',
+          discUsed: 'Proto Glow Mako3',
+          scenarioUsed: 'calm',
+          fairwayHit: true,
+          puttDistance: 'C1',
+          voiceNote: 'Proto Glow Mako3 safe on pond edge for Par 3',
+          throws: [
+            { shotType: 'tee', discId: 'innova-proto-glow-mako3' },
+            { shotType: 'putt', discId: 'innova-xt-glow-nova' }
+          ]
+        }
+      }
+    },
+    {
+      number: 3,
+      par: 3,
+      distance: 135,
+      scores: { jeffery: 3 },
+      voiceTranscript:
+        'Duck pan wet discs — Jack headed inside to warm up ("We\'ll just make this a Jeffery round"); Proto Glow Mako3 + putt for Par 3!',
+      meta: {
+        jeffery: {
+          thrownDiscId: 'innova-proto-glow-mako3',
+          discUsed: 'Proto Glow Mako3',
+          scenarioUsed: 'calm',
+          fairwayHit: true,
+          puttDistance: 'C1',
+          voiceNote: 'Switched to Solo after Jack went in cold; Proto Glow Mako3 Par 3',
+          throws: [
+            { shotType: 'tee', discId: 'innova-proto-glow-mako3' },
+            { shotType: 'putt', discId: 'innova-kc-pro-aviar' }
+          ]
+        }
+      }
+    },
+    {
+      number: 4,
+      par: 3,
+      distance: 130,
+      scores: { jeffery: 2 },
+      voiceTranscript:
+        '★ BIRDIE 2! Cotton Candy Proto Glow Mako3 nailed the island green for a real-basket Birdie 2!',
+      meta: {
+        jeffery: {
+          thrownDiscId: 'innova-proto-glow-mako3',
+          discUsed: 'Proto Glow Mako3',
+          scenarioUsed: 'calm',
+          fairwayHit: true,
+          puttDistance: 'C1',
+          voiceNote: '★ Proto Glow Mako3 Birdie 2 on H4!',
+          throws: [
+            { shotType: 'tee', discId: 'innova-proto-glow-mako3' },
+            { shotType: 'putt', discId: 'innova-kc-pro-aviar' }
+          ]
+        }
+      }
+    },
+    {
+      number: 5,
+      par: 3,
+      distance: 135,
+      scores: { jeffery: 3 },
+      voiceTranscript:
+        'Cotton Candy Proto Glow Mako3 + XT Glow Nova tap-in for 5th straight Par-or-better!',
+      meta: {
+        jeffery: {
+          thrownDiscId: 'innova-proto-glow-mako3',
+          discUsed: 'Proto Glow Mako3',
+          scenarioUsed: 'calm',
+          fairwayHit: true,
+          puttDistance: 'C1',
+          voiceNote: 'Proto Glow Mako3 + XT Glow Nova Par 3',
+          throws: [
+            { shotType: 'tee', discId: 'innova-proto-glow-mako3' },
+            { shotType: 'putt', discId: 'innova-xt-glow-nova' }
+          ]
+        }
+      }
+    },
+    {
+      number: 6,
+      par: 3,
+      distance: 140,
+      scores: { jeffery: 3 },
+      voiceTranscript:
+        'Clipped the lone tree & nearly slipped by the pool ("Almost fell in this pool!"), salvaged Par 3 with Proto Glow Mako3 + XT Glow Nova!',
+      meta: {
+        jeffery: {
+          thrownDiscId: 'innova-proto-glow-mako3',
+          discUsed: 'Proto Glow Mako3',
+          scenarioUsed: 'calm',
+          puttDistance: 'C1',
+          voiceNote: 'Proto Glow Mako3 tree clip + pool-edge save for Par 3',
+          throws: [
+            { shotType: 'tee', discId: 'innova-proto-glow-mako3' },
+            { shotType: 'putt', discId: 'innova-xt-glow-nova' }
+          ]
+        }
+      }
+    },
+    {
+      number: 7,
+      par: 3,
+      distance: 130,
+      scores: { jeffery: 2 },
+      voiceTranscript:
+        '★ 2ND MAKO3 BIRDIE 2! "That was beautiful, that felt good! If that was a normal basket with chains, I would have made it!"',
+      meta: {
+        jeffery: {
+          thrownDiscId: 'innova-proto-glow-mako3',
+          discUsed: 'Proto Glow Mako3',
+          scenarioUsed: 'calm',
+          fairwayHit: true,
+          puttDistance: 'C1',
+          voiceNote: '★ Proto Glow Mako3 pure beauty ("That felt good!") Birdie 2 on H7!',
+          throws: [
+            { shotType: 'tee', discId: 'innova-proto-glow-mako3' },
+            { shotType: 'putt', discId: 'innova-kc-pro-aviar' }
+          ]
+        }
+      }
+    },
+    {
+      number: 8,
+      par: 3,
+      distance: 135,
+      scores: { jeffery: 3 },
+      voiceTranscript:
+        'Cotton Candy Proto Glow Mako3 + XT Glow Nova clean Par 3 keeping the bogey-free round alive!',
+      meta: {
+        jeffery: {
+          thrownDiscId: 'innova-proto-glow-mako3',
+          discUsed: 'Proto Glow Mako3',
+          scenarioUsed: 'calm',
+          fairwayHit: true,
+          puttDistance: 'C1',
+          voiceNote: 'Proto Glow Mako3 + XT Glow Nova Par 3',
+          throws: [
+            { shotType: 'tee', discId: 'innova-proto-glow-mako3' },
+            { shotType: 'putt', discId: 'innova-xt-glow-nova' }
+          ]
+        }
+      }
+    },
+    {
+      number: 9,
+      par: 3,
+      distance: 131,
+      scores: { jeffery: 3 },
+      voiceTranscript:
+        'Closing Proto Glow Mako3 Par 3 seals a BOGEY-FREE 25 (-2) Backyard Course Record (7 Pars, 2 Birdies, 0 Bogeys)!',
+      meta: {
+        jeffery: {
+          thrownDiscId: 'innova-proto-glow-mako3',
+          discUsed: 'Proto Glow Mako3',
+          scenarioUsed: 'calm',
+          fairwayHit: true,
+          puttDistance: 'C1',
+          voiceNote: '★ Closing Par 3 seals BOGEY-FREE 25 (-2) Course Record with Proto Glow Mako3!',
+          throws: [
+            { shotType: 'tee', discId: 'innova-proto-glow-mako3' },
+            { shotType: 'putt', discId: 'innova-kc-pro-aviar' }
+          ]
+        }
+      }
+    }
+  ]
+};
+
 export const INITIAL_USER_EXPORT: AppExportPayload = {
   app: typedV65.app || 'Jeffery & Jack Disc Golf Scorecard',
-  version: 'v116',
-  exportDate: '2026-11-27T22:40:00.000Z',
+  version: 'v117',
+  exportDate: '2026-11-27T22:50:00.000Z',
   history: [
     ROUND_2026_11_27_MIZE,
+    ROUND_2026_11_26_BACKYARD_2,
+    ROUND_2026_11_26_BACKYARD_1,
     ROUND_2026_11_25_HERITAGE_PARK_18,
     ROUND_2026_11_23_BLACK_HOOF_18,
     ROUND_2026_11_22_ART_NINE,
@@ -11542,6 +12067,8 @@ export const INITIAL_USER_EXPORT: AppExportPayload = {
     ...(typedV65.history || []).filter(
       (r) =>
         r.id !== ROUND_2026_11_27_MIZE.id &&
+        r.id !== ROUND_2026_11_26_BACKYARD_2.id &&
+        r.id !== ROUND_2026_11_26_BACKYARD_1.id &&
         r.id !== ROUND_2026_11_25_HERITAGE_PARK_18.id &&
         r.id !== ROUND_2026_11_23_BLACK_HOOF_18.id &&
         r.id !== ROUND_2026_11_22_ART_NINE.id &&
