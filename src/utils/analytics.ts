@@ -580,16 +580,16 @@ export const DEFAULT_VERIFIED_HOLE_PICKS: Record<string, string> = {
   'cedarridge:16': 'innova-halo-destroyer',
   'cedarridge:17': 'innova-hot-pink-archangel',
   'cedarridge:18': 'innova-hot-pink-archangel',
-  // Mize Elementary (H1–H9, 218–389ft) — Cotton Candy + Core 3 Driver-First Lineup!
-  'mize:1': 'innova-sugar-star-roadrunner',
-  'mize:2': 'innova-sugar-star-roadrunner',
+  // Mize Elementary (H1–H9, 218–389ft) — 11/27 34 (+7) Cotton Candy + Hot Pink Lineup!
+  'mize:1': 'innova-hot-pink-archangel',
+  'mize:2': 'innova-halo-wraith',
   'mize:3': 'innova-halo-wraith',
   'mize:4': 'innova-halo-wraith',
-  'mize:5': 'innova-sugar-star-roadrunner',
-  'mize:6': 'innova-halo-destroyer',
-  'mize:7': 'innova-glow-teebird',
-  'mize:8': 'innova-sugar-star-roadrunner',
-  'mize:9': 'innova-hot-pink-archangel',
+  'mize:5': 'innova-halo-wraith',
+  'mize:6': 'innova-sugar-star-rollo',
+  'mize:7': 'innova-luster-firebird',
+  'mize:8': 'innova-halo-wraith',
+  'mize:9': 'innova-glow-leopard3',
   // The Art Nine @ SMP (H1–H9, 84–146ft) — Cotton Candy + Halloween Sync / Alien Picks!
   'artnine:1': 'innova-sugar-glow-roc',
   'artnine:2': 'innova-dx-alien',
@@ -3100,9 +3100,9 @@ export function buildLivePersonalFlightProfile(
       'Drive through with hip rotation ("belly button at target") and release cleanly at 90° (not late 110°) with nose down.';
   } else if (disc.id === 'innova-halo-wraith') {
     howItFliesForMe =
-      'Cotton Candy Two-Tone Halo Star Speed 11 power bomber [11|5|-1|3]! Dialed in the release angle at Heritage Park DGC (11/25) on 323ft H7 ("Totally right angle!") and 210ft H9 ("Nice! Way better—that’s what I wanted!") before a 1-inch rim-out Par bid, plus 11/22 SMP Wooded H7 & H18 drives!';
+      '🚀 11/27 MIZE BREAKOUT BOMBER [11|5|-1|3]! Piped chest-level ~220ft on Mize H2 (Double Par!) & curved back safely inside the fence on H5 (Par!), THEN parked solo Bonus H1 18ft left ("That was the best ever thrown! Learning the Wraith!")! Also dialed H7 & H9 at Heritage Park (11/25)!';
     swingCue =
-      'Keep it low and flat under the ceiling with a full follow-through at 90° release so Halo rim stability drives forward before hooking left.';
+      'Keep it chest-level and flat at 90° release — drives 220–250+ ft cleanly before a dependable +3 left comeback!';
   } else if (disc.id === 'innova-sugar-glow-roc') {
     howItFliesForMe =
       'Breakout Cotton Candy DX Glow Rancho Roc [4|4|0|3]! Locked in H9 Double Par during your 11/23 Black Hoof 65 (+11) PB tie, right after stealing the show on 11/22 SMP Wooded with 4 clutch Pars (H6, 15ft downhill H10, dead-straight H14 & H17) + Art Nine H1 Par!';
@@ -3130,7 +3130,7 @@ export function buildLivePersonalFlightProfile(
       'Swing your hips so your belly button finishes facing the target with a flat chest-high release for smooth wooded hyzer-flips.';
   } else if (disc.id === 'innova-luster-firebird') {
     howItFliesForMe =
-      '🏆 Cotton Candy Luster Champion wind & hyzer utility [9|3|0|4]! Powered your 1st-ever Par 3 at Heritage Park DGC on 304ft H2 (11/25 — hyzered cleanly into fairway avoiding deep grass + Mako3 10ft park!) AND locked in Par 3 on 302ft SMP Wooded H8 (11/22)!';
+      '🏆 BREAKOUT PAR MACHINE (3/4 PARS · 75% PAR+!) [9|3|0|4]! On 11/27 Black Friday at Mize H7 (324ft!), threaded trees cleanly for a proud Par 3 ("Great job, Firebird!"), right after anchoring your 1st-ever Heritage Park Par on 304ft H2 (11/25) AND SMP Wooded H8 Par (11/22)!';
     swingCue =
       'Pull for crosswinds/headwinds, dogleg-left corners, or fairway-finding hyzers aimed right of the landing zone.';
   } else if (disc.id === 'innova-halo-destroyer') {
@@ -3871,9 +3871,9 @@ const DISC_COMMENTARY_VERDICTS: Record<string, string> = {
   'innova-sugar-star-roadrunner':
     '⭐ Cotton Candy Hot Pink Star [9|5|-4|1] — Threaded 330ft Heritage Park H1 opener ("Got it through, baby!") + 382ft Black Hoof H7 hip-twist proud 4!',
   'innova-luster-firebird':
-    '⭐ 2/3 Pars (67% Par+)! Powered your 1st-ever Heritage Park Par on 304ft H2 (11/25!) + locked in Par 3 on 302ft SMP Wooded H8 (11/22)!',
+    '🏆 75% PAR+ BREAKOUT (3/4 Pars)! Clutched 324ft Mize H7 Par (11/27: "Great job, Firebird!") + 304ft Heritage H2 Par (11/25) + 302ft SMP H8 Par (11/22)!',
   'innova-halo-wraith':
-    '🚀 Cotton Candy Two-Tone Halo Bomber [11|5|-1|3] — Dialed angle on Heritage Park H7 & H9 ("Way better—that’s what I wanted!") + SMP Wooded H7 & H18!',
+    '🚀 11/27 Mize Breakout [11|5|-1|3]! Powered Mize H2 & H5 Pars + Bonus H1 18ft park ("Best ever thrown! Learning the Wraith!") + Heritage H7/H9!',
   'innova-halo-destroyer':
     '🚀 OFFICIAL 11/25 DEBUT (17/17 ACTIVE BAG LOGGED!!) — Pulled on 323ft Heritage Park H7 ("Beauty! Totally right angle!") to complete 100% of your active bag!',
   'discraft-roach':
@@ -4090,6 +4090,7 @@ export function computeDiscBagTelemetry(
     'innova-halloween-sync',
     'innova-sync',
     'innova-kc-pro-aviar',
+    'innova-luster-firebird',
     'innova-sugar-star-rollo',
     'innova-sugar-glow-roc',
     'innova-xt-glow-nova',

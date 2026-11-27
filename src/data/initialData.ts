@@ -2102,12 +2102,12 @@ const NEW_INNOVA_DISCS: DiscItem[] = [
     courseStrategy:
       'Putter 5 in your 100% Complete 17-Disc Main Bag: Brand-new Halloween Edition Hot Pink Star Sync replacing your original Vault Sync! Laser-straight 100–195ft wooded tee drives, tunnel chutes, and clutch Par approaches.',
     personalFlightNotes:
-      '11/23 Black Hoof Championship Debut (2/2 Pars · 0.00 avg!): Threaded EVERY tree on 105ft H13 ("No idea how I missed all those trees—that Sync went right where I was aiming!") and grazed the top of the basket for a near-Birdie Par, plus drained a clutch 10ft Par on 294ft H10!',
-    fieldTestRank: '🎃 11/23 Debut (2/2 Pars · 0.00 avg) · Precision Throwing Putter [3|3|0|1]',
+      '11/27 Mize H6 Pin-Hit & 11/23 Black Hoof Debut (2/2 Pars · 0.00 avg!): Hit the pin from long range on Mize H6 ("Proud of that one!"), right after threading EVERY tree on 105ft Black Hoof H13 (grazing basket top!) & draining 10ft H10 Par!',
+    fieldTestRank: '🎃 11/23–11/27 Precision Sniper (H6 Pin-Hit + 2/2 Black Hoof Pars) [3|3|0|1]',
     backComments:
-      'Halloween Edition Hot Pink Sparkle Star Sync [3 | 3 | 0 | 1] (173–175g · Precision Throwing Putter). Bride of Frankenstein limited archway stamp in neon pink matching the Cotton Candy bag — debuted 11/23 Black Hoof at 100% Par!',
+      'Halloween Edition Hot Pink Sparkle Star Sync [3 | 3 | 0 | 1] (173–175g · Precision Throwing Putter). Bride of Frankenstein limited archway stamp in neon pink matching the Cotton Candy bag!',
     transcriptStats:
-      '11/23 Black Hoof Debut: 2/2 Pars (0.00 avg!) — H13 105ft tree-threader grazed basket top + H10 10ft Par closer!',
+      '11/27 Mize H6 pin-hit + 11/23 Black Hoof Debut: 2/2 Pars (0.00 avg — H13 basket graze + H10 Par)!',
     caddieScenarios: ['calm', 'headwind', 'cross_lr', 'cross_rl'],
     caddieRoleNote:
       '174g Halloween Edition Hot Pink Star Sync — Precision Throwing Putter [3|3|0|1] (11/23 Debut: 2/2 Pars, H13 Tree-Threader!)'
@@ -2140,12 +2140,12 @@ const NEW_INNOVA_DISCS: DiscItem[] = [
     courseStrategy:
       'Fairway 4 in your 100% Complete 17-Disc Main Bag: Brand-new Hot Pink DX replacement matching your Cotton Candy bag! Massive 6-glide floaty fairway driver for tailwinds, wooded hallways, and easy-turn distance with a smooth upright 90° chest-high release.',
     personalFlightNotes:
-      '11/23 Black Hoof Championship Debut: Back in your 100% complete bag on 250ft H2 ("Got a new one!")! Carries forward your beloved Archangel slot (6-glide effortless turn down wooded corridors with a smooth upright chest-high pull-through).',
-    fieldTestRank: '🪽 11/23 Debut · Hot Pink DX High-Glide Understable Fairway [8|6|-4|1]',
+      '11/27 Mize Elementary H1 (218ft) Pin-High Straight Bomb: Flew dead-straight pin-high (~218ft) cleanly inside the new field fence ("That did go pretty far... same distance as the pin!"), following its 11/23 Black Hoof H2 debut!',
+    fieldTestRank: '🪽 11/27 Mize H1 218ft Pin-High · Hot Pink DX Fairway [8|6|-4|1]',
     backComments:
-      'Hot Pink DX Archangel [8 | 6 | -4 | 1] (170–172g · High-Glide Understable Fairway). Fresh neon-pink replacement matching the Cotton Candy lineup — debuted 11/23 at Black Hoof Championship!',
+      'Hot Pink DX Archangel [8 | 6 | -4 | 1] (170–172g · High-Glide Understable Fairway). Fresh neon-pink replacement matching the Cotton Candy lineup — effortless 6-glide carry!',
     transcriptStats:
-      '11/23 Black Hoof Debut: Teed off on 250ft H2 in your 65 (+11) All-Time 18-Hole PB Tie!',
+      '11/27 Mize H1 ~218ft pin-high straight drive + 11/23 Black Hoof H2 debut!',
     caddieScenarios: ['calm', 'tailwind'],
     caddieRoleNote:
       '171g Hot Pink DX Archangel — High-Glide Understable Fairway [8|6|-4|1] (11/23 Bag Return!)'
@@ -2621,12 +2621,12 @@ const NEW_INNOVA_DISCS: DiscItem[] = [
     courseStrategy:
       'Driver 2 in the Cotton Candy Sugar High Main Bag: Replaces the Champion Firebird lost on Mize H1! Pull this for brutal headwinds, low skip shots under tree canopies, dogleg-left corners, and forehand get-out-of-trouble flexes.',
     personalFlightNotes:
-      '11/25 Heritage Park DGC Debut (304ft H2 ★ 1ST COURSE PAR!): Hyzered cleanly into the fairway avoiding deep grass, then parked Proto Glow Mako3 10ft left for a clutch Par 3 ("Three! Wow!")! Also anchored Par 3 on 302ft SMP Wooded H8 (11/22)!',
-    fieldTestRank: '⭐ 11/25 Heritage Park H2 Par (304ft!) & SMP H8 Par · Headwind Utility [9|3|0|4]',
+      '🏆 BREAKOUT PAR MACHINE (3/4 PARS · 75% PAR+!!): On 11/27 Black Friday at Mize H7 (324ft!), threaded trees and landed cleanly for a clutch Par 3 ("Great job, Firebird! I was proud of that one!"), right after powering your 1st-ever Heritage Park Par on 304ft H2 (11/25) AND SMP Wooded H8 Par (11/22)!',
+    fieldTestRank: '🏆 75% Par+ Breakout (3/4 Pars: Mize H7, Heritage H2 & SMP H8!) [9|3|0|4]',
     backComments:
-      'Gold & Lightning Collector Card — Innova Luster Champion Firebird [9 | 3 | 0 | 4]. Tour-proven wind fighter for spike hyzers, flare skips, and high-torque forehands.',
+      'Gold & Lightning Collector Card — Innova Luster Champion Firebird [9 | 3 | 0 | 4]. Tour-proven wind fighter & Par-making fairway utility across Mize, Heritage Park & SMP Wooded!',
     transcriptStats:
-      '11/25 Heritage Park H2 (304ft) Par 3 + 11/22 SMP Wooded H8 (302ft) Par 3!',
+      '3/4 Career Pars (75% Par+): 11/27 Mize H7 (324ft) + 11/25 Heritage H2 (304ft) + 11/22 SMP H8 (302ft)!',
     caddieScenarios: ['headwind', 'cross_rl'],
     caddieRoleNote:
       'Luster Firebird — Sugar High Main Bag Headwind Fighter, Flare-Skip & Spike-Hyzer Utility [9|3|0|4]'
@@ -2658,12 +2658,12 @@ const NEW_INNOVA_DISCS: DiscItem[] = [
     courseStrategy:
       'Driver 3 in the Cotton Candy Sugar High Main Bag: Premium Halo Star upgrade to the Classic Glow Wraith you striped low and flat on Shawnee Mission Wooded H7 & H9 ("Excellent job Wraith—kept it down, great flight!").',
     personalFlightNotes:
-      '11/25 Heritage Park DGC H7 (323ft) & H9 (210ft): Dialed in the release angle on H7 ("Right angle!") and striped H9 ("Nice! Way better—that\'s what I wanted!") before a 1-inch rim-out Par bid! Plus 11/22 SMP Wooded H7 (355ft) & H18 (347ft) debut!',
-    fieldTestRank: '🚀 11/25 Heritage Park H7/H9 Dialed Angle · Speed 11 Power Driver [11|5|-1|3]',
+      '🚀 11/27 BLACK FRIDAY MIZE BREAKOUT (2 PARS + "BEST EVER THROWN!" BONUS H1!): Piped chest-level ~220ft on Mize H2 (264ft Double Par!) & curved back safely inside the baseball fence on H5 (296ft Par!), then parked Bonus H1 18ft left ("That was the best ever thrown! Learning the Wraith!")!',
+    fieldTestRank: '🚀 11/27 Mize Breakout (H2 & H5 Pars + 18ft Bonus Park!) · Speed 11 [11|5|-1|3]',
     backComments:
-      'Rainbow Holo Collector Card — Innova Halo Star Wraith [11 | 5 | -1 | 3]. Long, controllable distance driver with extra glide and reliable wind-penetrating Halo rim stability.',
+      'Rainbow Holo Collector Card — Innova Halo Star Wraith [11 | 5 | -1 | 3]. Breakout Mize Elementary distance driver — chest-level flat laser & reliable +3 comeback!',
     transcriptStats:
-      '11/25 Heritage Park H7 & H9 ("Way better—that\'s what I wanted!") + 11/22 SMP Wooded H7/H18!',
+      '11/27 Mize: H2 & H5 Pars + Bonus H1 18ft park ("Best ever thrown!") + 11/25 Heritage H7/H9!',
     caddieScenarios: ['headwind', 'cross_rl', 'calm'],
     caddieRoleNote:
       'Halo Wraith — Sugar High Main Bag Controlled Power & Wind Distance Driver [11|5|-1|3]'
@@ -3237,6 +3237,26 @@ export const INITIAL_COURSE_TEMPLATES: CourseTemplate[] = [
     .map((c) => {
       if (c.key === 'blackhoof_18') return BLACK_HOOF_18_COURSE;
       if (c.key === 'smp_wooded') return SHAWNEE_MISSION_WOODED_COURSE;
+      if (c.key === 'mize') {
+        return {
+          ...c,
+          updatedAt: 1795809970733,
+          holes: c.holes.map((h) => {
+            const mizeIntel: Record<number, string> = {
+              1: '218 ft (NEW FIELD FENCE ADDED 11/27!) · Hot Pink Archangel / Halo Wraith straight inside fence (watch Rollo flipping right over fence!) + XT Glow Nova.',
+              2: '264 ft Straight Park Lane · ★ 11/27 DOUBLE PAR: Halo Wraith chest-level ~220ft + XT Glow Nova!',
+              3: '294 ft Open-to-Green · Drive ~250ft + Pink DX Alien Circle-1 approach!',
+              4: '296 ft Long Field Lane · Halo Wraith + DX Glow Roc / Pink DX Alien (almost birdied Bonus H4!).',
+              5: '296 ft Baseball Backstop Corner · ★ 11/27 PAR: Halo Wraith fades back inside fence + DX Glow Roc hyzer over backstop!',
+              6: '310 ft Right-Curve Tree Gap · Star Rollo turnover + Halloween Star Sync pin-run (hit pin 11/27!).',
+              7: '324 ft Guarded Tree Fairway · ★ 11/27 CLUTCH PAR: Luster Firebird threaded trees + XT Glow Nova 40ft save!',
+              8: '235 ft Post-Side Tee · Watch tee post on follow-through; Halo Wraith smooth straight-left fade.',
+              9: '389 ft Longest Mize Closer · Glow Leopard3 flat-to-left or Halo Wraith open power drive.'
+            };
+            return mizeIntel[h.number] ? { ...h, hint: mizeIntel[h.number] } : h;
+          })
+        };
+      }
       return c;
     })
     .filter((c) => c.key !== 'heritage_park' && c.key !== 'prairie_pass'),
@@ -11209,11 +11229,286 @@ Hole-by-Hole Recap:
   ]
 };
 
+const ROUND_2026_11_27_MIZE: HistoricalRound = {
+  id: 1795809970733,
+  courseName: 'Mize Elementary',
+  totalHoles: 9,
+  date: '2026-11-27',
+  duration: '00:48:49',
+  par: 27,
+  windCondition: 'calm',
+  gameMode: 'stroke',
+  notes:
+    '🦃 BLACK FRIDAY RETURN TO MIZE ELEMENTARY (1st Cotton Candy Bag Round at Mize!) — Jeffery 34 (+7 · 3 Pars: H2, H5, H7!) vs Jack 37 (+10 · TIES ALL-TIME MIZE PB, beating 10/28 by 5 strokes!). Breakthrough Halo Wraith day (H2 & H5 Pars + Bonus H1 18ft "best ever thrown!" & Nova fell through chains!), Luster Firebird clutched 324ft H7 Par (now 3/4 career Pars = 75% Par+!), and new fence added around H1 field. Bonus Solo H1–H5 practice logged in recap.',
+  roundTranscript: `Mize Elementary — Black Friday Return (2026-11-27 · 1:14 PM · 00:48:49 · 48°F Sunshine, Touch of Breeze · 9 Holes · Par 27 · 2,626 ft) — Jeffery 34 (+7 · 3 Pars) vs Jack 37 (+10 · TIES ALL-TIME MIZE PB!!).
+First time back at Mize Elementary in a month (since 10/28) and first round here with the Cotton Candy + Hot Pink bag! Notice: New fence installed around the entire Hole #1 field.
+🚀 BREAKOUT DISCS OF THE DAY:
+- Halo Wraith: Powered H2 (264ft chest-level ~220ft Double Par!) & H5 (296ft Par curling back inside the baseball fence!), THEN during unscored solo Bonus Holes 1–5 while Jack played on the playground, striped Bonus H1 18ft left of the pin ("That was the best ever thrown! Learning the Wraith!")!
+- Luster Firebird: Threaded trees on 324ft H7 for a clutch Par 3 ("Great job, Firebird! I was proud of that one!") — now 3 Pars in 4 career holes (75% Par+)!
+Hole-by-Hole Recap:
+- H1 (218ft, Par 3): Jeffery 4 | Jack 4. Brand-new fence around field! Tested Star Rollo (flipped right OVER the new fence — walked around opening to retrieve!) and played Hot Pink Archangel dead-straight pin-high (~218ft) + XT Glow Nova for tied Bogey 4–4.
+- H2 (264ft, Par 3): Jeffery 3 (★ DOUBLE PAR!) | Jack 3 (★ DOUBLE PAR!). Halo Wraith chest-level ~220ft laser + XT Glow Nova for Par 3 alongside Jack's beauty Par 3!
+- H3 (294ft, Par 3): Jeffery 4 | Jack 4. ~250ft tee drive + Pink DX Alien Circle-1 park ("Perfect! That's Circle 1!") before hitting top of basket for tied 4–4.
+- H4 (296ft, Par 3): Jeffery 4 | Jack 4. Halo Wraith tee + Proto Glow Mako3 + DX Glow Roc 20ft out — hit basket and flopped out for tied 4–4.
+- H5 (296ft, Par 3): Jeffery 3 (★ PAR!) | Jack 4. Halo Wraith faded safely back inside the baseball fence + DX Glow Roc hyzer right over the baseball backstop for Par 3! Jack hit basket and bounced out for 4.
+- H6 (310ft, Par 3): Jeffery 4 | Jack 4. Star Rollo clean turnover ("flew how it's supposed to!") + Halloween Star Sync long run HIT THE PIN ("I hit the pin! Proud of that one!") for tied 4–4.
+- H7 (324ft, Par 3): Jeffery 3 (★ CLUTCH LUSTER FIREBIRD PAR!) | Jack 4. Luster Firebird threaded right through the trees ("Great job, Firebird!") + XT Glow Nova 40ft save for proud Par 3!
+- H8 (235ft, Par 3): Jeffery 4 | Jack 4. Halo Wraith tee (dodging tee post!) + softer upshot for tied 4–4.
+- H9 (389ft, Par 3): Jeffery 5 | Jack 6. Glow Leopard3 flat-to-left (x2) + pin-hit approach for 5; Jack's 6 seals a 37 (+10) ALL-TIME MIZE PB TIE (5 strokes better than 10/28)!
+- Unscored Solo Bonus Practice (H1–H5 while Jack hit the playground):
+  * Bonus H1: Halo Wraith 18ft left ("Best ever thrown! Learning the Wraith!") + XT Glow Nova birdie putt went IN and fell straight through the basket!
+  * Bonus H2–H3: Halo Wraith dialed straight without turning over too far left.
+  * Bonus H4: Halo Wraith + Pink DX Alien HIT THE PAN ("Almost had my second birdie on Hole 4!").
+  * Bonus H5: Halo Wraith clean right of the baseball backstop.`,
+  players: [
+    { id: 'jeffery', name: 'Jeffery', tag: 'J1', total: 34 },
+    { id: 'jack', name: 'Jack', tag: 'J2', total: 37 }
+  ],
+  holes: [
+    {
+      number: 1,
+      par: 3,
+      distance: 218,
+      scores: { jeffery: 4, jack: 4 },
+      voiceTranscript:
+        'New fence around entire H1 field! Star Rollo test flipped right over the fence (retrieved!), played Hot Pink Archangel straight pin-high (~218ft) + XT Glow Nova for tied Bogey 4–4!',
+      meta: {
+        jeffery: {
+          thrownDiscId: 'innova-hot-pink-archangel',
+          discUsed: 'Hot Pink Archangel',
+          scenarioUsed: 'calm',
+          fairwayHit: true,
+          puttDistance: 'C1',
+          voiceNote: 'Hot Pink Archangel dead-straight ~218ft pin-high (Star Rollo test went over new fence & retrieved!) + XT Glow Nova for 4',
+          throws: [
+            { shotType: 'tee', discId: 'innova-hot-pink-archangel' },
+            { shotType: 'tee', discId: 'innova-sugar-star-rollo' },
+            { shotType: 'approach', discId: 'innova-xt-glow-nova' }
+          ]
+        },
+        jack: {
+          thrownDiscId: 'discraft-buzzz-ss',
+          discUsed: 'Buzzz SS',
+          voiceNote: 'Solid opener Bogey 4 to tie Jeffery on fenced H1'
+        }
+      }
+    },
+    {
+      number: 2,
+      par: 3,
+      distance: 264,
+      scores: { jeffery: 3, jack: 3 },
+      voiceTranscript:
+        '★ DOUBLE PAR (264 FT)! Cotton Candy Halo Wraith chest-level ~220ft laser ("Nice, nice, nice! Chest level the whole way!") + XT Glow Nova Par 3 alongside Jack\'s beauty Par 3!',
+      meta: {
+        jeffery: {
+          thrownDiscId: 'innova-halo-wraith',
+          discUsed: 'Halo Wraith',
+          scenarioUsed: 'calm',
+          fairwayHit: true,
+          puttDistance: 'C1',
+          voiceNote: '★ 1st Cotton Candy Halo Wraith Par! Chest-level ~220ft drive + XT Glow Nova for Double Par 3!',
+          throws: [
+            { shotType: 'tee', discId: 'innova-halo-wraith' },
+            { shotType: 'approach', discId: 'innova-xt-glow-nova' }
+          ]
+        },
+        jack: {
+          thrownDiscId: 'discraft-cicada',
+          discUsed: 'Cicada',
+          fairwayHit: true,
+          voiceNote: '★ "Right in there, Jack! That was a beauty!" — clutch Double Par 3!'
+        }
+      }
+    },
+    {
+      number: 3,
+      par: 3,
+      distance: 294,
+      scores: { jeffery: 4, jack: 4 },
+      voiceTranscript:
+        '~250ft drive ("I am getting some distance—at least 250!") + Pink DX Alien parked inside Circle 1 ("Perfect! That\'s Circle 1!") before hitting top of basket for tied 4–4!',
+      meta: {
+        jeffery: {
+          scenarioUsed: 'calm',
+          puttDistance: 'C1',
+          voiceNote: '~250ft tee drive + Pink DX Alien parked Circle 1 + hit top of basket for Bogey 4',
+          throws: [{ shotType: 'approach', discId: 'innova-dx-alien' }]
+        },
+        jack: {
+          thrownDiscId: 'discraft-cicada',
+          discUsed: 'Cicada',
+          voiceNote: 'Clean Bogey 4 to stay deadlocked with Jeffery!'
+        }
+      }
+    },
+    {
+      number: 4,
+      par: 3,
+      distance: 296,
+      scores: { jeffery: 4, jack: 4 },
+      voiceTranscript:
+        'Halo Wraith tee + Proto Glow Mako3 + DX Glow Roc 20ft out — hit basket and flopped out ("I just hit these baskets and they flop out!") for tied Bogey 4–4!',
+      meta: {
+        jeffery: {
+          thrownDiscId: 'innova-halo-wraith',
+          discUsed: 'Halo Wraith',
+          scenarioUsed: 'calm',
+          puttDistance: 'C1',
+          puttDistanceFeet: 20,
+          voiceNote: 'Halo Wraith + Proto Glow Mako3 + DX Glow Roc to 20ft (basket flop-out!) for 4',
+          throws: [
+            { shotType: 'tee', discId: 'innova-halo-wraith' },
+            { shotType: 'fairway', discId: 'innova-proto-glow-mako3' },
+            { shotType: 'approach', discId: 'innova-sugar-glow-roc' }
+          ]
+        },
+        jack: {
+          thrownDiscId: 'discraft-cicada',
+          discUsed: 'Cicada',
+          voiceNote: 'Matched Jeffery at 4–4 on 296ft H4'
+        }
+      }
+    },
+    {
+      number: 5,
+      par: 3,
+      distance: 296,
+      scores: { jeffery: 3, jack: 4 },
+      voiceTranscript:
+        '★ 2ND HALO WRAITH PAR (296 FT)! Halo Wraith curved back safely inside the baseball fence ("Good one!") + DX Glow Roc hyzer right over the baseball backstop for Par 3! Jack hit basket for 4!',
+      meta: {
+        jeffery: {
+          thrownDiscId: 'innova-halo-wraith',
+          discUsed: 'Halo Wraith',
+          scenarioUsed: 'calm',
+          fairwayHit: true,
+          puttDistance: 'C1',
+          voiceNote: '★ Halo Wraith faded safely inside fence + DX Glow Roc hyzer over baseball backstop for Par 3!',
+          throws: [
+            { shotType: 'tee', discId: 'innova-halo-wraith' },
+            { shotType: 'approach', discId: 'innova-sugar-glow-roc' }
+          ]
+        },
+        jack: {
+          thrownDiscId: 'discraft-cicada',
+          discUsed: 'Cicada',
+          voiceNote: 'Hit the basket & bounced out for 4 ("That happened to me twice!")'
+        }
+      }
+    },
+    {
+      number: 6,
+      par: 3,
+      distance: 310,
+      scores: { jeffery: 4, jack: 4 },
+      voiceTranscript:
+        'Cotton Candy Star Rollo clean turnover ("Flew how it\'s supposed to!") + Halloween Star Sync long run HIT THE PIN ("I hit the pin! Proud of that one!") for tied Bogey 4–4!',
+      meta: {
+        jeffery: {
+          thrownDiscId: 'innova-sugar-star-rollo',
+          discUsed: 'Star Rollo',
+          scenarioUsed: 'calm',
+          puttDistance: 'C1',
+          voiceNote: 'Star Rollo clean turnover + Halloween Star Sync HIT THE PIN ("Proud of that one!") for 4',
+          throws: [
+            { shotType: 'tee', discId: 'innova-sugar-star-rollo' },
+            { shotType: 'approach', discId: 'innova-halloween-sync' }
+          ]
+        },
+        jack: {
+          thrownDiscId: 'discraft-cicada',
+          discUsed: 'Cicada',
+          voiceNote: 'Solid Bogey 4 on 310ft H6'
+        }
+      }
+    },
+    {
+      number: 7,
+      par: 3,
+      distance: 324,
+      scores: { jeffery: 3, jack: 4 },
+      voiceTranscript:
+        '★ CLUTCH LUSTER FIREBIRD PAR (324 FT)! Luster Firebird threaded right through the trees ("Great job, Firebird!") + XT Glow Nova 40ft save for proud Par 3 (Firebird now 3/4 career Pars!)!',
+      meta: {
+        jeffery: {
+          thrownDiscId: 'innova-luster-firebird',
+          discUsed: 'Luster Firebird',
+          scenarioUsed: 'calm',
+          fairwayHit: true,
+          puttDistance: 'C2',
+          puttDistanceFeet: 40,
+          voiceNote: '★ Luster Firebird threaded trees cleanly ("Great job, Firebird!") + XT Glow Nova 40ft save for proud Par 3!',
+          throws: [
+            { shotType: 'tee', discId: 'innova-luster-firebird' },
+            { shotType: 'approach', discId: 'innova-xt-glow-nova' }
+          ]
+        },
+        jack: {
+          thrownDiscId: 'discraft-cicada',
+          discUsed: 'Cicada',
+          voiceNote: 'Clean Bogey 4 on long 324ft H7'
+        }
+      }
+    },
+    {
+      number: 8,
+      par: 3,
+      distance: 235,
+      scores: { jeffery: 4, jack: 4 },
+      voiceTranscript:
+        'Cotton Candy Halo Wraith good drive (careful of tee post on follow-through!) + softer upshot for tied Bogey 4–4!',
+      meta: {
+        jeffery: {
+          thrownDiscId: 'innova-halo-wraith',
+          discUsed: 'Halo Wraith',
+          scenarioUsed: 'calm',
+          puttDistance: 'C1',
+          voiceNote: 'Halo Wraith tee (dodging tee post!) + softer approach for tied 4',
+          throws: [{ shotType: 'tee', discId: 'innova-halo-wraith' }]
+        },
+        jack: {
+          thrownDiscId: 'discraft-buzzz-ss',
+          discUsed: 'Buzzz SS',
+          voiceNote: 'Bogey 4 keeps Jack on PB-tying pace heading into H9!'
+        }
+      }
+    },
+    {
+      number: 9,
+      par: 3,
+      distance: 389,
+      scores: { jeffery: 5, jack: 6 },
+      voiceTranscript:
+        'Cotton Candy Glow Leopard3 flat-to-left (x2) + pin-hit approach for 5 (34 / +7 total — 1 stroke better than 10/28!); Jack\'s 6 seals a 37 (+10) ALL-TIME MIZE PB TIE!! (Followed by 5 unscored solo bonus practice holes!)',
+      meta: {
+        jeffery: {
+          thrownDiscId: 'innova-glow-leopard3',
+          discUsed: 'Glow Leopard3',
+          scenarioUsed: 'calm',
+          puttDistance: 'C1',
+          voiceNote: 'Glow Leopard3 (x2) + pin-hit approach for 5 → 34 (+7) Cotton Candy Mize debut!',
+          throws: [
+            { shotType: 'tee', discId: 'innova-glow-leopard3' },
+            { shotType: 'fairway', discId: 'innova-glow-leopard3' }
+          ]
+        },
+        jack: {
+          thrownDiscId: 'discraft-cicada',
+          discUsed: 'Cicada',
+          voiceNote: '★ Gorgeous S-curve + closing 6 → TIES ALL-TIME MIZE PB 37 (+10, 5 strokes better than 10/28)!'
+        }
+      }
+    }
+  ]
+};
+
 export const INITIAL_USER_EXPORT: AppExportPayload = {
   app: typedV65.app || 'Jeffery & Jack Disc Golf Scorecard',
-  version: 'v115',
-  exportDate: '2026-11-25T22:30:00.000Z',
+  version: 'v116',
+  exportDate: '2026-11-27T22:40:00.000Z',
   history: [
+    ROUND_2026_11_27_MIZE,
     ROUND_2026_11_25_HERITAGE_PARK_18,
     ROUND_2026_11_23_BLACK_HOOF_18,
     ROUND_2026_11_22_ART_NINE,
@@ -11246,6 +11541,7 @@ export const INITIAL_USER_EXPORT: AppExportPayload = {
     ROUND_2026_10_25_MIZE,
     ...(typedV65.history || []).filter(
       (r) =>
+        r.id !== ROUND_2026_11_27_MIZE.id &&
         r.id !== ROUND_2026_11_25_HERITAGE_PARK_18.id &&
         r.id !== ROUND_2026_11_23_BLACK_HOOF_18.id &&
         r.id !== ROUND_2026_11_22_ART_NINE.id &&
