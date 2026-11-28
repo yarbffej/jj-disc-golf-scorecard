@@ -682,6 +682,8 @@ export const CourseAtlasView: React.FC<CourseAtlasViewProps> = ({
   const [courseFilter, setCourseFilter] = useState<CourseFilterMode>('played');
   const [holeFilter, setHoleFilter] = useState<HoleFilterMode>('all');
   const [mapMode, setMapMode] = useState<'loop' | 'satellite'>('loop');
+  const [mapStatsPlayer, setMapStatsPlayer] = useState<'p1' | 'p2'>('p1');
+  const activeMapPlayerName = mapStatsPlayer === 'p1' ? p1.name : p2.name;
   const [zoomSatelliteModal, setZoomSatelliteModal] = useState<boolean>(false);
   const [focusedHoleNumber, setFocusedHoleNumber] = useState<number | null>(null);
   const [expandedHoleHistory, setExpandedHoleHistory] = useState<Record<number, boolean>>({});
@@ -942,6 +944,7 @@ export const CourseAtlasView: React.FC<CourseAtlasViewProps> = ({
         p2Scores.length > 0
           ? Number((p2Scores.reduce((a, b) => a + b, 0) / p2Scores.length).toFixed(2))
           : null;
+      const p2AvgRel = p2Avg !== null ? Number((p2Avg - par).toFixed(2)) : null;
 
       const verifiedKey = getVerifiedHoleKey(
         activeCourse.courseKey || activeCourse.name,
@@ -986,6 +989,7 @@ export const CourseAtlasView: React.FC<CourseAtlasViewProps> = ({
         p2Plays: p2Scores.length,
         p2Best,
         p2Avg,
+        p2AvgRel,
         goToDisc,
         topLoggedCount: isTopLoggedActive ? topLogged?.count || 0 : 0,
         prevLoggedName: !isTopLoggedActive && topLogged ? topLogged.name : null,
@@ -998,6 +1002,8 @@ export const CourseAtlasView: React.FC<CourseAtlasViewProps> = ({
   }, [activeCourse, bag, p1.id, p2.id]);
 
   const visibleHoleEntries = useMemo(() => {
+    const getRel = (h: (typeof holeAtlasEntries)[number]) =>
+      mapStatsPlayer === 'p1' ? h.p1AvgRel : h.p2AvgRel;
     if (holeFilter === 'front9') {
       return holeAtlasEntries.filter((h) => h.holeNumber <= 9);
     }
@@ -1005,21 +1011,22 @@ export const CourseAtlasView: React.FC<CourseAtlasViewProps> = ({
       return holeAtlasEntries.filter((h) => h.holeNumber >= 10);
     }
     if (holeFilter === 'best') {
-      const withScores = holeAtlasEntries.filter((h) => h.p1AvgRel !== null);
+      const withScores = holeAtlasEntries.filter((h) => getRel(h) !== null);
       return [...withScores]
-        .sort((a, b) => (a.p1AvgRel ?? 99) - (b.p1AvgRel ?? 99))
+        .sort((a, b) => (getRel(a) ?? 99) - (getRel(b) ?? 99))
         .slice(0, Math.min(6, withScores.length));
     }
     if (holeFilter === 'leaks') {
-      const leaks = holeAtlasEntries.filter(
-        (h) => h.p1AvgRel !== null && h.p1AvgRel > 0
-      );
+      const leaks = holeAtlasEntries.filter((h) => {
+        const rel = getRel(h);
+        return rel !== null && rel > 0;
+      });
       return [...leaks]
-        .sort((a, b) => (b.p1AvgRel ?? -99) - (a.p1AvgRel ?? -99))
+        .sort((a, b) => (getRel(b) ?? -99) - (getRel(a) ?? -99))
         .slice(0, Math.min(6, leaks.length));
     }
     return holeAtlasEntries;
-  }, [holeAtlasEntries, holeFilter]);
+  }, [holeAtlasEntries, holeFilter, mapStatsPlayer]);
 
   // Course-level Historical Stats
   const courseStats = useMemo(() => {
@@ -1441,6 +1448,42 @@ export const CourseAtlasView: React.FC<CourseAtlasViewProps> = ({
           </div>
 
           <div className="flex flex-wrap items-center gap-2">
+            {/* Player Stats Color-Coding Toggle (Jeffery / Jack) */}
+            <div
+              className="inline-flex items-center p-0.5 rounded-xl bg-[#0D1B14] border border-emerald-500/35"
+              role="group"
+              aria-label="Color-code holes by player"
+            >
+              <button
+                type="button"
+                onClick={() => {
+                  playChainRattleSfx('tap');
+                  setMapStatsPlayer('p1');
+                }}
+                className={`px-2.5 py-1 rounded-lg text-xs font-mono-tabular font-extrabold transition-all ${
+                  mapStatsPlayer === 'p1'
+                    ? 'bg-[#FF2E93] text-white shadow-sm'
+                    : 'text-slate-300 hover:text-white'
+                }`}
+              >
+                🏆 {p1.name}
+              </button>
+              <button
+                type="button"
+                onClick={() => {
+                  playChainRattleSfx('tap');
+                  setMapStatsPlayer('p2');
+                }}
+                className={`px-2.5 py-1 rounded-lg text-xs font-mono-tabular font-extrabold transition-all ${
+                  mapStatsPlayer === 'p2'
+                    ? 'bg-[#00F0FF] text-slate-950 shadow-sm'
+                    : 'text-slate-300 hover:text-white'
+                }`}
+              >
+                ⚡ {p2.name}
+              </button>
+            </div>
+
             {activeSatelliteMapUrl && (
               <button
                 type="button"
@@ -1515,22 +1558,24 @@ export const CourseAtlasView: React.FC<CourseAtlasViewProps> = ({
                   Jump to Hole:
                 </span>
                 {holeAtlasEntries.map((h) => {
+                  const avgRel = mapStatsPlayer === 'p1' ? h.p1AvgRel : h.p2AvgRel;
+                  const best = mapStatsPlayer === 'p1' ? h.p1Best : h.p2Best;
                   const badgeCls =
-                    h.p1AvgRel === null
+                    avgRel === null
                       ? 'bg-[#0D1B14] text-slate-200 border-emerald-500/30'
-                      : h.p1AvgRel < 0
+                      : avgRel < 0
                       ? 'bg-[#39FF14]/20 text-[#39FF14] border-[#39FF14]'
-                      : h.p1AvgRel <= 0.25
+                      : avgRel <= 0.25
                       ? 'bg-[#00F0FF]/20 text-[#00F0FF] border-[#00F0FF]'
-                      : h.p1AvgRel <= 0.75
+                      : avgRel <= 0.75
                       ? 'bg-[#FACC15]/20 text-[#FACC15] border-[#FACC15]'
                       : 'bg-[#FF2E93]/20 text-[#FF2E93] border-[#FF2E93]';
                   const titleTip =
-                    h.p1AvgRel === null
-                      ? `Hole #${h.holeNumber} (${h.distance} ft · Par ${h.par}) — Not yet played`
-                      : `Hole #${h.holeNumber} (${h.distance} ft · Par ${h.par}) — Your avg: ${
-                          h.p1AvgRel > 0 ? `+${h.p1AvgRel.toFixed(2)}` : h.p1AvgRel.toFixed(2)
-                        } vs Par${h.p1Best !== null && h.p1Best < h.par ? ' · ★ Birdied!' : ''}`;
+                    avgRel === null
+                      ? `Hole #${h.holeNumber} (${h.distance} ft · Par ${h.par}) — Not yet played by ${activeMapPlayerName}`
+                      : `Hole #${h.holeNumber} (${h.distance} ft · Par ${h.par}) — ${activeMapPlayerName}'s avg: ${
+                          avgRel > 0 ? `+${avgRel.toFixed(2)}` : avgRel.toFixed(2)
+                        } vs Par${best !== null && best < h.par ? ' · ★ Birdied!' : ''}`;
                   return (
                     <button
                       key={h.holeNumber}
@@ -1540,13 +1585,19 @@ export const CourseAtlasView: React.FC<CourseAtlasViewProps> = ({
                       className={`px-2.5 py-1 rounded-lg border text-[11px] font-mono-tabular font-extrabold transition-transform hover:-translate-y-0.5 ${badgeCls}`}
                     >
                       #{h.holeNumber} · {h.distance}&apos;
-                      {h.p1Best !== null && h.p1Best < h.par ? ' ★' : ''}
+                      {best !== null && best < h.par ? ' ★' : ''}
                     </button>
                   );
                 })}
               </div>
               <div className="flex flex-wrap items-center gap-x-3 gap-y-1 text-[10px] font-mono-tabular text-slate-400">
-                <span className="uppercase font-bold text-slate-500">Your Avg vs Par:</span>
+                <span
+                  className={`uppercase font-bold ${
+                    mapStatsPlayer === 'p1' ? 'text-[#FF2E93]' : 'text-[#00F0FF]'
+                  }`}
+                >
+                  {activeMapPlayerName}&apos;s Avg vs Par:
+                </span>
                 <span className="text-[#39FF14] font-bold">● Under Par (&lt;0)</span>
                 <span className="text-[#00F0FF] font-bold">● Even Par (0 to +0.25)</span>
                 <span className="text-[#FACC15] font-bold">● Slight Over (+0.26 to +0.75)</span>
@@ -1563,22 +1614,30 @@ export const CourseAtlasView: React.FC<CourseAtlasViewProps> = ({
             {/* Color Legend */}
             <div className="flex flex-wrap items-center justify-between gap-2 text-[11px] font-mono-tabular text-slate-300 bg-[#0B1B14] px-3 py-2 rounded-xl border border-emerald-500/20">
               <div className="flex flex-wrap items-center gap-3">
+                <span
+                  className={`uppercase font-extrabold ${
+                    mapStatsPlayer === 'p1' ? 'text-[#FF2E93]' : 'text-[#00F0FF]'
+                  }`}
+                >
+                  {activeMapPlayerName}&apos;s Avg:
+                </span>
                 <span className="inline-flex items-center gap-1.5">
                   <span className="w-2.5 h-2.5 rounded-full bg-[#39FF14]" />
-                  <span>Under Par Avg</span>
+                  <span>Under Par (&lt;0)</span>
                 </span>
                 <span className="inline-flex items-center gap-1.5">
                   <span className="w-2.5 h-2.5 rounded-full bg-[#00F0FF]" />
-                  <span>Par Zone (≤+0.3)</span>
+                  <span>Even Par (≤+0.25)</span>
                 </span>
                 <span className="inline-flex items-center gap-1.5">
                   <span className="w-2.5 h-2.5 rounded-full bg-[#FACC15]" />
-                  <span>Bogey Battle</span>
+                  <span>Slight Over (≤+0.75)</span>
                 </span>
                 <span className="inline-flex items-center gap-1.5">
                   <span className="w-2.5 h-2.5 rounded-full bg-[#FF2E93]" />
-                  <span>Stroke Leak (&gt;+0.8)</span>
+                  <span>Trouble (&gt;+0.75)</span>
                 </span>
+                <span className="text-slate-300 font-bold">★ = Birdied</span>
               </div>
               <span className="text-emerald-300 font-bold">
                 Start Tee #1 → Finish Basket #{activeCourse.totalHoles}
@@ -1620,6 +1679,9 @@ export const CourseAtlasView: React.FC<CourseAtlasViewProps> = ({
 
                 <div className="grid grid-cols-3 sm:grid-cols-3 lg:grid-cols-9 gap-2">
                   {nineGroup.holes.map((h, idx) => {
+                    const avgRel = mapStatsPlayer === 'p1' ? h.p1AvgRel : h.p2AvgRel;
+                    const avg = mapStatsPlayer === 'p1' ? h.p1Avg : h.p2Avg;
+                    const best = mapStatsPlayer === 'p1' ? h.p1Best : h.p2Best;
                     const shapeArrow =
                       h.spec.shape === 'dogleg_left'
                         ? '↰'
@@ -1636,24 +1698,24 @@ export const CourseAtlasView: React.FC<CourseAtlasViewProps> = ({
                         : '↑';
 
                     const borderAccent =
-                      h.p1AvgRel === null
+                      avgRel === null
                         ? 'border-emerald-500/35 hover:border-[#00F0FF]'
-                        : h.p1AvgRel < 0
+                        : avgRel < 0
                         ? 'border-[#39FF14] bg-[#39FF14]/10'
-                        : h.p1AvgRel <= 0.3
+                        : avgRel <= 0.25
                         ? 'border-[#00F0FF] bg-[#00F0FF]/10'
-                        : h.p1AvgRel <= 0.8
+                        : avgRel <= 0.75
                         ? 'border-[#FACC15]/80 bg-[#FACC15]/10'
                         : 'border-[#FF2E93]/85 bg-[#FF2E93]/10';
 
                     const scoreColor =
-                      h.p1AvgRel === null
+                      avgRel === null
                         ? 'text-slate-400'
-                        : h.p1AvgRel < 0
+                        : avgRel < 0
                         ? 'text-[#39FF14]'
-                        : h.p1AvgRel <= 0.3
+                        : avgRel <= 0.25
                         ? 'text-[#00F0FF]'
-                        : h.p1AvgRel <= 0.8
+                        : avgRel <= 0.75
                         ? 'text-[#FACC15]'
                         : 'text-[#FF2E93]';
 
@@ -1695,9 +1757,9 @@ export const CourseAtlasView: React.FC<CourseAtlasViewProps> = ({
                         <div
                           className={`pt-1 border-t border-white/10 text-[10px] font-mono-tabular font-extrabold truncate ${scoreColor}`}
                         >
-                          {h.p1Avg !== null
-                            ? `Avg ${h.p1Avg} · B:${h.p1Best}${
-                                h.p1Best !== null && h.p1Best <= h.par ? '★' : ''
+                          {avg !== null
+                            ? `Avg ${avg} · B:${best}${
+                                best !== null && best < h.par ? '★' : ''
                               }`
                             : 'Tap Layout →'}
                         </div>
@@ -1745,8 +1807,8 @@ export const CourseAtlasView: React.FC<CourseAtlasViewProps> = ({
                   : []),
                 ...(activeCourse.rounds.length > 0
                   ? ([
-                      { id: 'best', label: '★ Best Holes' },
-                      { id: 'leaks', label: '⚠️ Leak Holes' }
+                      { id: 'best', label: `★ ${activeMapPlayerName}'s Best` },
+                      { id: 'leaks', label: `⚠️ ${activeMapPlayerName}'s Leaks` }
                     ] as const)
                   : [])
               ] as ReadonlyArray<{ id: HoleFilterMode; label: string }>
