@@ -34,8 +34,9 @@ import {
   syncDossierToDashboard
 } from './reportGenerator';
 
-export const MASTER_STORAGE_KEY = 'jj_disc_golf_v117_master_state';
+export const MASTER_STORAGE_KEY = 'jj_disc_golf_v118_master_state';
 export const LEGACY_STORAGE_KEYS = [
+  'jj_disc_golf_v117_master_state',
   'jj_disc_golf_v116_master_state',
   'jj_disc_golf_v115_master_state',
   'jj_disc_golf_v114_master_state',
@@ -164,10 +165,12 @@ export function normalizeCourseSignature(courseName?: string): string {
   if (raw.includes('california trail') || raw.includes('cal trail')) return 'caltrail';
   if (raw === 'blackhoof_18' || (raw.includes('black hoof') && (raw.includes('championship') || raw.includes('white')))) return 'blackhoof_18';
   if (raw.includes('black hoof') && !raw.includes('championship')) return 'blackhoof';
+  if (raw === 'cedar_ridge_short' || (raw.includes('cedar ridge') && (raw.includes('short') || raw.includes('young pup')))) return 'cedar_ridge_short';
   if (raw.includes('cedar ridge') || raw.includes('cedarridge')) return 'cedarridge';
+  if (raw === 'wyandotte_short' || (raw.includes('wyandotte') && raw.includes('short'))) return 'wyandotte_short';
   if (raw.includes('wyandotte')) return 'wyandotte';
   if (raw.includes('heritage')) return 'heritage_park';
-  if (raw.includes('backyard') || raw.includes('bray')) return 'backyard_bray';
+  if (raw.includes('backyard') || raw.includes('bray')) return 'jacks_backyard';
   if (raw.includes('wolf den') || raw.includes('mission trail')) return 'wolfden';
   return raw.replace(/[^a-z0-9]/g, '');
 }
@@ -902,7 +905,7 @@ export function mergeCloudPayloads(
 
   const payload: AppExportPayload = {
     app: 'Jeffery & Jack Disc Golf Scorecard',
-    version: 'v117',
+    version: 'v118',
     exportDate: new Date().toISOString(),
     updatedAt: Math.max(localTime, remoteTime),
     deviceId: local.deviceId || getOrCreateDeviceId(),
@@ -1014,7 +1017,7 @@ export function readLocalStorageSnapshot(): AppExportPayload {
 
   return {
     app: 'Jeffery & Jack Disc Golf Scorecard',
-    version: 'v117',
+    version: 'v118',
     exportDate: new Date().toISOString(),
     updatedAt: parsedMaster.updatedAt || Date.now(),
     deviceId: getOrCreateDeviceId(),

@@ -1,4 +1,4 @@
-const CACHE_NAME = 'jj-disc-golf-course-cache-v20';
+const CACHE_NAME = 'jj-disc-golf-course-cache-v21';
 
 const PRECACHE_URLS = [
   './',
@@ -8,7 +8,18 @@ const PRECACHE_URLS = [
   './assets/course_maps/udisc_mize.jpg',
   './assets/course_maps/udisc_harmon.jpg',
   './assets/course_maps/udisc_blackhoof.jpg',
+  './assets/course_maps/udisc_blackhoof_18.jpg',
   './assets/course_maps/udisc_artnine.jpg',
+  './assets/course_maps/udisc_cedar_ridge.jpg',
+  './assets/course_maps/udisc_cedar_ridge_short.jpg',
+  './assets/course_maps/udisc_smp_wooded.jpg',
+  './assets/course_maps/udisc_heritage_park.jpg',
+  './assets/course_maps/udisc_prairie_center.jpg',
+  './assets/course_maps/udisc_prairie_pass.jpg',
+  './assets/course_maps/udisc_caltrail.jpg',
+  './assets/course_maps/udisc_wyandotte.jpg',
+  './assets/course_maps/udisc_wyandotte_short.jpg',
+  './assets/course_maps/udisc_wolfden.jpg',
   './assets/aistudio/card_xt_glow_nova_sugar_high_4204e372.jpg',
   './assets/aistudio/card_sugar_high_proto_glow_aviar.jpg',
   './assets/aistudio/card_sugar_high_yeti_pro_aviar.jpg',

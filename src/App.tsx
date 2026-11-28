@@ -73,8 +73,9 @@ import {
   writeMergedStateToLocalStorageAndDashboard
 } from './utils/cloudSync';
 
-const STORAGE_KEY = 'jj_disc_golf_v117_master_state';
+const STORAGE_KEY = 'jj_disc_golf_v118_master_state';
 const LEGACY_STORAGE_KEYS = [
+  'jj_disc_golf_v117_master_state',
   'jj_disc_golf_v116_master_state',
   'jj_disc_golf_v115_master_state',
   'jj_disc_golf_v114_master_state',
@@ -151,10 +152,12 @@ function normalizeCourseSignature(courseName?: string): string {
   if (raw.includes('harmon')) return 'harmon';
   if (raw === 'blackhoof_18' || (raw.includes('black hoof') && (raw.includes('championship') || raw.includes('white')))) return 'blackhoof_18';
   if (raw.includes('black hoof') && !raw.includes('championship')) return 'blackhoof';
+  if (raw === 'cedar_ridge_short' || (raw.includes('cedar ridge') && (raw.includes('short') || raw.includes('young pup')))) return 'cedar_ridge_short';
   if (raw.includes('cedar ridge') || raw.includes('cedarridge')) return 'cedarridge';
+  if (raw === 'wyandotte_short' || (raw.includes('wyandotte') && raw.includes('short'))) return 'wyandotte_short';
   if (raw.includes('wyandotte')) return 'wyandotte';
   if (raw.includes('heritage')) return 'heritage_park';
-  if (raw.includes('backyard') || raw.includes('bray')) return 'backyard_bray';
+  if (raw.includes('backyard') || raw.includes('bray')) return 'jacks_backyard';
   return raw.replace(/[^a-z0-9]/g, '');
 }
 

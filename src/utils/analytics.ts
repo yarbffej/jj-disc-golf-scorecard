@@ -677,15 +677,53 @@ export const DEFAULT_VERIFIED_HOLE_PICKS: Record<string, string> = {
   'prairie_center:17': 'innova-halo-wraith',
   'prairie_center:18': 'innova-sugar-star-roadrunner',
   // Jack's Backyard Course (Grandma & Grandpa's Bray 9-Hole · 11/26 25/-2 Bogey-Free!)
-  'backyard_bray:1': 'innova-proto-glow-mako3',
-  'backyard_bray:2': 'innova-proto-glow-mako3',
-  'backyard_bray:3': 'innova-proto-glow-mako3',
-  'backyard_bray:4': 'innova-proto-glow-mako3',
-  'backyard_bray:5': 'innova-proto-glow-mako3',
-  'backyard_bray:6': 'innova-proto-glow-mako3',
-  'backyard_bray:7': 'innova-proto-glow-mako3',
-  'backyard_bray:8': 'innova-proto-glow-mako3',
-  'backyard_bray:9': 'innova-sugar-star-rollo'
+  'jacks_backyard:1': 'innova-proto-glow-mako3',
+  'jacks_backyard:2': 'innova-proto-glow-mako3',
+  'jacks_backyard:3': 'innova-proto-glow-mako3',
+  'jacks_backyard:4': 'innova-proto-glow-mako3',
+  'jacks_backyard:5': 'innova-proto-glow-mako3',
+  'jacks_backyard:6': 'innova-proto-glow-mako3',
+  'jacks_backyard:7': 'innova-proto-glow-mako3',
+  'jacks_backyard:8': 'innova-proto-glow-mako3',
+  'jacks_backyard:9': 'innova-sugar-star-rollo',
+  // Cedar Ridge — Young Pup (All Short Pins · 18H · Par 54 · 4,185 ft)
+  'cedar_ridge_short:1': 'innova-sugar-star-roadrunner',
+  'cedar_ridge_short:2': 'innova-sugar-star-roadrunner',
+  'cedar_ridge_short:3': 'innova-glow-teebird',
+  'cedar_ridge_short:4': 'innova-glow-leopard3',
+  'cedar_ridge_short:5': 'innova-proto-glow-mako3',
+  'cedar_ridge_short:6': 'innova-halo-wraith',
+  'cedar_ridge_short:7': 'innova-glow-leopard3',
+  'cedar_ridge_short:8': 'innova-sugar-glow-roc',
+  'cedar_ridge_short:9': 'innova-proto-glow-mako3',
+  'cedar_ridge_short:10': 'innova-halloween-sync',
+  'cedar_ridge_short:11': 'innova-sugar-star-rollo',
+  'cedar_ridge_short:12': 'innova-halloween-sync',
+  'cedar_ridge_short:13': 'innova-proto-glow-mako3',
+  'cedar_ridge_short:14': 'innova-proto-glow-mako3',
+  'cedar_ridge_short:15': 'innova-sugar-glow-roc',
+  'cedar_ridge_short:16': 'innova-glow-teebird',
+  'cedar_ridge_short:17': 'innova-halo-wraith',
+  'cedar_ridge_short:18': 'innova-sugar-star-rollo',
+  // Wyandotte County Park (Short · 18H · Par 56 · 6,825 ft)
+  'wyandotte_short:1': 'innova-halo-destroyer',
+  'wyandotte_short:2': 'innova-halo-destroyer',
+  'wyandotte_short:3': 'innova-halo-destroyer',
+  'wyandotte_short:4': 'innova-halo-destroyer',
+  'wyandotte_short:5': 'innova-glow-teebird',
+  'wyandotte_short:6': 'innova-halo-wraith',
+  'wyandotte_short:7': 'innova-halo-destroyer',
+  'wyandotte_short:8': 'innova-glow-leopard3',
+  'wyandotte_short:9': 'innova-halo-wraith',
+  'wyandotte_short:10': 'innova-halo-wraith',
+  'wyandotte_short:11': 'innova-glow-teebird',
+  'wyandotte_short:12': 'innova-glow-leopard3',
+  'wyandotte_short:13': 'innova-halo-destroyer',
+  'wyandotte_short:14': 'innova-halo-wraith',
+  'wyandotte_short:15': 'innova-sugar-star-roadrunner',
+  'wyandotte_short:16': 'innova-halo-destroyer',
+  'wyandotte_short:17': 'innova-halo-destroyer',
+  'wyandotte_short:18': 'innova-halo-wraith'
 };
 
 export type CaddieStabilityFilter = 'hole_match' | 'understable' | 'stable' | 'overstable';
@@ -1940,12 +1978,12 @@ export const COURSE_SATELLITE_LAYOUTS: Record<string, CourseSatelliteLayoutInfo>
   blackhoof_18: {
     courseKey: 'blackhoof_18',
     courseName: 'Black Hoof Championship (White to White)',
-    imageUrl: './assets/aistudio/image_bdc10b31.png',
+    imageUrl: './assets/course_maps/udisc_blackhoof_18.jpg',
     udiscParRating: 171,
-    difficultyLabel: 'Short · White to White · 18 Holes · Par 54 · Global Avg +2 (56)',
-    totalFeet: 4219,
+    difficultyLabel: 'Short · White to White (Shortest Layout) · 18 Holes · Par 54 · Global Avg +3 (57)',
+    totalFeet: 4218,
     overviewNote:
-      'Black Hoof Driven by Henderson Engineers (White to White layout): 18 holes, Par 54, 4,219 ft total (most holes between 183 ft and 310 ft).',
+      'Black Hoof Driven by Henderson Engineers (White to White — shortest active layout on UDisc): 18 holes, Par 54, 4,218 ft total. Site of Jeffery & Jack\'s 65–65 (+11) Double All-Time 18-Hole PB Tie on 2026-11-23!',
     holeGeometry: {
       1: {
         direction: '183 ft · Par 3 (White to White)',
@@ -2042,12 +2080,12 @@ export const COURSE_SATELLITE_LAYOUTS: Record<string, CourseSatelliteLayoutInfo>
   smp_wooded: {
     courseKey: 'smp_wooded',
     courseName: 'Shawnee Mission Wooded',
-    imageUrl: '',
+    imageUrl: './assets/course_maps/udisc_smp_wooded.jpg',
     udiscParRating: 175,
-    difficultyLabel: 'Mid-Length · Technical Forest Tunnels & Elevation · 18 Holes · Par 54',
-    totalFeet: 4881,
+    difficultyLabel: 'Short to White White Veteran (Shortest Layout) · 18 Holes · Par 54 · 4,879 ft',
+    totalFeet: 4879,
     overviewNote:
-      'Shawnee Mission Park’s 18-hole wooded course (4,881 ft, Par 54): blends tight oak/hickory tunnels, scenic elevation drops (H10, H13), uphill climbs (H12, H15, H16), and long low-ceiling bombers (H7, H9, H11, H18).',
+      'Wooded Prairie at Shawnee Mission Park (Short to White White Veteran — 4,879 ft, Par 54): blends tight oak/hickory tunnels, scenic elevation drops (H10, H13), uphill climbs (H12, H15, H16), and long low-ceiling bombers (H7, H9, H11, H18).',
     holeGeometry: {
       1: {
         direction: '260 ft Slight Left (Water near right tee area)',
@@ -2144,10 +2182,10 @@ export const COURSE_SATELLITE_LAYOUTS: Record<string, CourseSatelliteLayoutInfo>
   prairie_pass: {
     courseKey: 'prairie_pass',
     courseName: 'Blue Valley "Prairie Pass" DG Course',
-    imageUrl: '',
+    imageUrl: './assets/course_maps/udisc_prairie_pass.jpg',
     udiscParRating: 160,
-    difficultyLabel: 'Standard Layout · 18 Holes · Par 54 · Global Avg E (54) · "18-Hole Sar-Ko-Par!"',
-    totalFeet: 4209,
+    difficultyLabel: 'Standard Layout (Short) · 18 Holes · Par 54 · 4,208 ft · Global Avg E (54)',
+    totalFeet: 4208,
     overviewNote:
       'Park in Pleasant Ridge Middle School lot (Overland Park, KS · Est. 2010 · 4.0★ / 2,117 ratings). Concrete tees, Black Hole Portal baskets, moderate hills, open prairie & dense wooded holes (with 2 hanging tires in the woods!). Site of Jeffery’s 65 (+11) & Jack’s 71 (+17) Double All-Time 18-Hole PBs on 2026-11-15!',
     holeGeometry: {
@@ -2264,67 +2302,89 @@ export const COURSE_SATELLITE_LAYOUTS: Record<string, CourseSatelliteLayoutInfo>
   prairie_center: {
     courseKey: 'prairie_center',
     courseName: 'Prairie Center Park',
-    imageUrl: '',
-    udiscParRating: 181,
-    difficultyLabel: 'Mid-to-Long Park · 18 Holes · Par 55 · 5,808 ft · Signature 604ft Par 4 Water Hole',
-    totalFeet: 5808,
+    imageUrl: './assets/course_maps/udisc_prairie_center.jpg',
+    udiscParRating: 213,
+    difficultyLabel: 'Main Layout · Long Technical · 18 Holes · Par 55 · 5,959 ft · Signature 604ft Par 4 Water Hole',
+    totalFeet: 5959,
     overviewNote:
-      'Sprawling 18-hole Olathe park layout (5,808 ft, Par 55) mixing mature tree-framed fairways, a 517-ft dogleg-left H12, and a signature 604-ft Par 4 water hole on H13. Jeffery shot 77 (+22) & Jack 86 (+31) on 2026-11-08.',
+      'Sprawling 18-hole Olathe park layout (5,959 ft UDisc verified, Par 55) mixing mature tree-framed fairways, a 517-ft dogleg-left H12, a 604-ft Par 4 water hole on H13, and 470-ft H15 Long. Jeffery shot 77 (+22) & Jack 86 (+31) on 2026-11-08.',
     holeGeometry: {}
   },
   cedarridge: {
     courseKey: 'cedarridge',
     courseName: 'Cedar Ridge',
-    imageUrl: '',
-    udiscParRating: 186,
-    difficultyLabel: 'Heavy Championship Woods · 18 Holes · Par 58 · 5,344 ft · Four Par-4 Monsters',
-    totalFeet: 5344,
+    imageUrl: './assets/course_maps/udisc_cedar_ridge.jpg',
+    udiscParRating: 207,
+    difficultyLabel: 'Main (Mix Long & Short Pins) · 18 Holes · Par 58 · 5,287 ft · Four Par-4 Monsters',
+    totalFeet: 5287,
     overviewNote:
-      'Rugged, heavily wooded 18-hole test at Wyandotte County Lake / Bonner Springs (Par 58, 5,344 ft) featuring narrow timber tunnels, swamp bridge H4, steep ravines, and a 613-ft Par 4 H16.',
+      'Rugged, heavily wooded 18-hole test in Bonner Springs, KS (Par 58, 5,287 ft UDisc verified) featuring narrow timber tunnels, swamp bridge H4, steep ravines, and a 613-ft Par 4 H16.',
+    holeGeometry: {}
+  },
+  cedar_ridge_short: {
+    courseKey: 'cedar_ridge_short',
+    courseName: 'Cedar Ridge (Young Pup · All Short Pins)',
+    imageUrl: './assets/course_maps/udisc_cedar_ridge_short.jpg',
+    udiscParRating: 199,
+    difficultyLabel: 'Young Pup (All Short Pins · Short-to-Short) · 18 Holes · Par 54 · 4,185 ft',
+    totalFeet: 4185,
+    overviewNote:
+      'Cedar Ridge\'s official All Short Pins layout ("Young Pup" · 4,185 ft, Par 54 — 1,102 ft shorter than Main!) trading the brutal 503–613 ft Par 4s for crisp 138–331 ft technical woods birdie/par runs!',
     holeGeometry: {}
   },
   california_trail: {
     courseKey: 'california_trail',
     courseName: 'California Trail MS',
-    imageUrl: '',
-    udiscParRating: 168,
-    difficultyLabel: 'Open School Hills & Par 4 Closers · 9 Holes · Par 29 · 3,043 ft',
-    totalFeet: 3043,
+    imageUrl: './assets/course_maps/udisc_caltrail.jpg',
+    udiscParRating: 173,
+    difficultyLabel: 'Main Layout · Open School Hills & Par 4 Closers · 9 Holes · Par 29 · 2,990 ft',
+    totalFeet: 2990,
     overviewNote:
-      'Long 9-hole school campus loop in Olathe, KS (Par 29, 3,043 ft) featuring sand volleyball H1, downhill-to-uphill soccer vistas, and back-to-back Par 4 finishers (467 ft H8 & 532 ft H9 — site of Jack’s 47-ft putt!).',
+      'Long 9-hole school campus loop in Olathe, KS (Par 29, 2,990 ft UDisc verified) featuring sand volleyball H1, 238-ft downhill H3, and back-to-back Par 4 finishers (467 ft H8 & 532 ft H9 — site of Jack’s 47-ft putt!).',
     holeGeometry: {}
   },
   wyandotte: {
     courseKey: 'wyandotte',
     courseName: 'Wyandotte County Park',
-    imageUrl: '',
-    udiscParRating: 198,
-    difficultyLabel: 'Championship Bomber Park · 18 Holes · Par 63 · 8,296 ft · Veteran Baskets',
+    imageUrl: './assets/course_maps/udisc_wyandotte.jpg',
+    udiscParRating: 196,
+    difficultyLabel: 'Veteran Baskets · Championship Bomber Park · 18 Holes · Par 63 · 8,296 ft',
     totalFeet: 8296,
     overviewNote:
-      'Massive 8,296-ft championship-scale course in Bonner Springs, KS (Par 63) with sprawling multi-shot Par 4s, rolling hills, and Dynamic Discs Veteran targets.',
+      'Massive 8,296-ft championship-scale course in Bonner Springs, KS (Par 63, White Flags) with sprawling multi-shot Par 4s, rolling hills, and Dynamic Discs Veteran targets.',
+    holeGeometry: {}
+  },
+  wyandotte_short: {
+    courseKey: 'wyandotte_short',
+    courseName: 'Wyandotte County Park (Short)',
+    imageUrl: './assets/course_maps/udisc_wyandotte_short.jpg',
+    udiscParRating: 215,
+    difficultyLabel: 'Short Layout (Most Short Baskets) · 18 Holes · Par 56 · 6,825 ft',
+    totalFeet: 6825,
+    overviewNote:
+      'Wyandotte County Park\'s shortest active 18-hole layout (6,825 ft, Par 56 — 1,471 ft shorter than Veteran Baskets!), bringing 16 holes down to playable Par 3 placements with two Par 4s (H4 & H17).',
     holeGeometry: {}
   },
   wolfden: {
     courseKey: 'wolfden',
     courseName: 'Wolf Den @ Mission Trail',
-    imageUrl: '',
+    imageUrl: './assets/course_maps/udisc_wolfden.jpg',
     udiscParRating: 174,
-    difficultyLabel: 'Wooded Creek & Meadow · 18 Holes · Par 54 · 5,011 ft',
+    difficultyLabel: 'Main (Shortest Permanent Layout) · 18 Holes · Par 54 · 5,011 ft',
     totalFeet: 5011,
     overviewNote:
-      'Scenic 18-hole Leawood layout (5,011 ft, Par 54) winding along Tomahawk Creek trails and wooded pockets behind Mission Trail Elementary.',
+      'Scenic 18-hole Olathe/Mission Trail layout (5,011 ft UDisc verified, Par 54) winding around Mission Trail Middle School with varied wooded gaps and open meadow holes.',
     holeGeometry: {}
   },
   heritage_park: {
     courseKey: 'heritage_park',
-    courseName: 'Heritage Park',
-    imageUrl: '',
-    udiscParRating: 188,
-    difficultyLabel: 'Championship Tournament Course · 18 Holes · Olathe, KS',
-    totalFeet: 6150,
+    courseName: 'Heritage Park DGC',
+    imageUrl: './assets/course_maps/udisc_heritage_park.jpg',
+    udiscParRating: 203,
+    difficultyLabel: 'All Silver Layout (Shortest Layout) · 18 Holes · Par 54 · 4,915 ft · Olathe, KS',
+    totalFeet: 4915,
     overviewNote:
-      'Premier Johnson County tournament course in Olathe, KS blending open bomber prairie grass fairways with technical creek-side woods.',
+      'Premier Johnson County course in Olathe, KS playing the shortest All Silver / A-basket layout (4,915 ft UDisc verified, Par 54). Site of Jeffery\'s 72 (+18 · 33 Back 9!) & Halo Destroyer 17/17 Bag Debut on 2026-11-25!',
     holeGeometry: {}
   }
 };
@@ -2348,10 +2408,20 @@ export function getCourseHoleLayoutIntel(
     key = 'prairie_pass';
   } else if (norm === 'prairie_center' || norm.includes('prairie center')) {
     key = 'prairie_center';
+  } else if (
+    norm === 'cedar_ridge_short' ||
+    (norm.includes('cedar ridge') && (norm.includes('short') || norm.includes('young pup')))
+  ) {
+    key = 'cedar_ridge_short';
   } else if (norm === 'cedar_ridge' || norm === 'cedarridge' || norm.includes('cedar ridge')) {
     key = 'cedarridge';
   } else if (norm === 'california_trail' || norm.includes('california trail')) {
     key = 'california_trail';
+  } else if (
+    norm === 'wyandotte_short' ||
+    (norm.includes('wyandotte') && norm.includes('short'))
+  ) {
+    key = 'wyandotte_short';
   } else if (norm === 'wyandotte' || norm.includes('wyandotte')) {
     key = 'wyandotte';
   } else if (norm === 'wolfden' || norm.includes('wolf den')) {

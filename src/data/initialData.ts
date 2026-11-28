@@ -3232,23 +3232,89 @@ const BLUE_VALLEY_PRAIRIE_PASS_COURSE: CourseTemplate = {
   ]
 };
 
+const CEDAR_RIDGE_SHORT_COURSE: CourseTemplate = {
+  key: 'cedar_ridge_short',
+  name: 'Cedar Ridge (Young Pup · All Short Pins)',
+  location: 'Bonner Springs, KS (Short-to-Short · All Short Pins · Par 54 · 4,185 ft)',
+  totalHoles: 18,
+  updatedAt: 1795825000000,
+  holes: [
+    { number: 1, par: 3, distance: 261, hint: 'Pin 1A (Short) · 261 ft Par 3 · Wooded opener.' },
+    { number: 2, par: 3, distance: 289, hint: 'Pin 2A (Short) · 289 ft Par 3.' },
+    { number: 3, par: 3, distance: 283, hint: 'Pin 3A (Short) · 283 ft Par 3.' },
+    { number: 4, par: 3, distance: 282, hint: 'Pin 4B (Short) · 282 ft Par 3 (110 ft shorter than Main Pin C!).' },
+    { number: 5, par: 3, distance: 228, hint: 'Pin 5A (Short) · 228 ft Par 3.' },
+    { number: 6, par: 3, distance: 310, hint: 'Pin 6A (Short) · 310 ft Par 3 (146 ft shorter than Main Pin B!).' },
+    { number: 7, par: 3, distance: 270, hint: 'Pin 7B (Short) · 270 ft Par 3.' },
+    { number: 8, par: 3, distance: 174, hint: 'Pin 8A (Short) · 174 ft Par 3 (127 ft shorter than Main Pin B!).' },
+    { number: 9, par: 3, distance: 207, hint: 'Pin 9A (Short) · 207 ft Par 3.' },
+    { number: 10, par: 3, distance: 147, hint: 'Pin 10A (Short) · 147 ft Par 3 · Ace-run woods pocket!' },
+    { number: 11, par: 3, distance: 167, hint: 'Pin 11A (Short) · 167 ft Par 3 (61 ft shorter than Main!).' },
+    { number: 12, par: 3, distance: 138, hint: 'Pin 12A (Short) · 138 ft Par 3 · Shortest hole on Cedar Ridge!' },
+    { number: 13, par: 3, distance: 234, hint: 'Pin 13A (Short) · 234 ft Par 3.' },
+    { number: 14, par: 3, distance: 201, hint: 'Pin 14A (Short) · 201 ft Par 3 (UDisc verified).' },
+    { number: 15, par: 3, distance: 189, hint: 'Pin 15A (Short) · 189 ft Par 3.' },
+    { number: 16, par: 3, distance: 267, hint: 'Pin 16B (Short) · 267 ft Par 3 (346 ft shorter than Main 613 ft Par 4!).' },
+    { number: 17, par: 3, distance: 331, hint: 'Pin 17A (Short) · 331 ft Par 3 (172 ft shorter than Main 503 ft Par 4!).' },
+    { number: 18, par: 3, distance: 207, hint: 'Pin 18A (Short) · 207 ft Par 3 · Closing birdie look (125 ft shorter than Main!).' }
+  ]
+};
+
+const WYANDOTTE_SHORT_COURSE: CourseTemplate = {
+  key: 'wyandotte_short',
+  name: 'Wyandotte County Park (Short)',
+  location: 'Bonner Springs, KS (Short Layout · Most Short Baskets · Par 56 · 6,825 ft)',
+  totalHoles: 18,
+  updatedAt: 1795825000000,
+  holes: [
+    { number: 1, par: 3, distance: 444, hint: 'Pin 1A (Short) · 444 ft Par 3 (111 ft shorter than Veteran Pin D).' },
+    { number: 2, par: 3, distance: 432, hint: 'Pin 2B (Short) · 432 ft Par 3 (116 ft shorter than Veteran Pin C).' },
+    { number: 3, par: 3, distance: 441, hint: 'Pin 3C · 441 ft Par 3.' },
+    { number: 4, par: 4, distance: 487, hint: 'Pin 4A · 487 ft Par 4.' },
+    { number: 5, par: 3, distance: 262, hint: 'Pin 5A · 262 ft Par 3 · Shortest hole at Wyandotte!' },
+    { number: 6, par: 3, distance: 292, hint: 'Pin 6A (Short) · 292 ft Par 3 (115 ft shorter than Veteran Pin B).' },
+    { number: 7, par: 3, distance: 461, hint: 'Pin 7A (Short) · 461 ft Par 3 (89 ft shorter than Veteran Pin C).' },
+    { number: 8, par: 3, distance: 263, hint: 'Pin 8A (Short) · 263 ft Par 3 (74 ft shorter than Veteran Pin C).' },
+    { number: 9, par: 3, distance: 366, hint: 'Pin 9C · 366 ft Par 3.' },
+    { number: 10, par: 3, distance: 334, hint: 'Pin 10A (Short) · 334 ft Par 3 (166 ft shorter than Veteran Pin B).' },
+    { number: 11, par: 3, distance: 283, hint: 'Pin 11C · 283 ft Par 3.' },
+    { number: 12, par: 3, distance: 270, hint: 'Pin 12A (Short) · 270 ft Par 3 (250 ft shorter than Veteran Pin C!).' },
+    { number: 13, par: 3, distance: 423, hint: 'Pin 13C (Short) · 423 ft Par 3 (262 ft shorter than Veteran 685 ft!).' },
+    { number: 14, par: 3, distance: 326, hint: 'Pin 14A (Short) · 326 ft Par 3 (236 ft shorter than Veteran Pin B!).' },
+    { number: 15, par: 3, distance: 309, hint: 'Pin 15B (Short) · 309 ft Par 3.' },
+    { number: 16, par: 3, distance: 429, hint: 'Pin 16A · 429 ft Par 3.' },
+    { number: 17, par: 4, distance: 617, hint: 'Pin 17B · 617 ft Par 4.' },
+    { number: 18, par: 3, distance: 386, hint: 'Pin 18A · 386 ft Par 3 closer.' }
+  ]
+};
+
 const JACKS_BACKYARD_COURSE: CourseTemplate = {
-  key: 'backyard_bray',
+  key: 'jacks_backyard',
   name: "Jack's Backyard Course",
-  location: "Grandma & Grandpa's · Bray 9-Hole Course (Laundry Baskets on Tomato Cages · Par 27 · 1,224 ft)",
+  location: "Grandma & Grandpa's · Bray 9-Hole Course (Laundry Baskets on Tomato Cages · Par 27 · 1,106 ft)",
   totalHoles: 9,
-  updatedAt: 1795727400002,
+  updatedAt: 1795825000000,
   holes: [
     { number: 1, par: 3, distance: 128, hint: '128 ft Yard Opener · Watch the house (and Cheech/GG sneaking outside!) — smooth Proto Glow Mako3 or Star Rollo.' },
-    { number: 2, par: 3, distance: 160, hint: '160 ft Up by Grandpa\'s Shed (Pond Hazard!) · Avoid the mosquito pond left — towel in Grandpa\'s shed if wet!' },
-    { number: 3, par: 3, distance: 135, hint: '135 ft Back Yard by Chicken Coop & Pool Cover · Watch rooster, pool cover & duck pan; tiny no-chain basket!' },
-    { number: 4, par: 3, distance: 130, hint: '130 ft Little Island After the Deck (Roof Hazard!) · Keep Proto Glow Mako3 low & straight off the deck to avoid the roof!' },
-    { number: 5, par: 3, distance: 135, hint: '135 ft Upper Yard Laundry Basket · Smooth touch putt onto tomato-cage laundry basket (no chains — sit soft!).' },
-    { number: 6, par: 3, distance: 140, hint: '140 ft Down-Yard Approach · Watch lone guardian tree & pool edge; ★ 11/26 Jack Birdie 2 hole!' },
-    { number: 7, par: 3, distance: 130, hint: '130 ft Fire Pit to Treehouse · ★ 11/26 Mako3 Birdie 2! Slice-the-box chest-high hip swing straight between fire pit & treehouse.' },
-    { number: 8, par: 3, distance: 135, hint: '135 ft Past House & Left Water Pool · Keep disc right of the left water pool and clear of windows.' },
+    { number: 2, par: 3, distance: 168, hint: '168 ft Up by Grandpa\'s Shed (Pond Hazard!) · Avoid the mosquito pond left — towel in Grandpa\'s shed if wet!' },
+    { number: 3, par: 3, distance: 120, hint: '120 ft Back Yard by Chicken Coop & Pool Cover · Watch rooster, pool cover & duck pan; tiny no-chain basket!' },
+    { number: 4, par: 3, distance: 110, hint: '110 ft Little Island After the Deck (Roof Hazard!) · Keep Proto Glow Mako3 low & straight off the deck to avoid the roof!' },
+    { number: 5, par: 3, distance: 95, hint: '95 ft Upper Yard Laundry Basket · Shortest ace run! Smooth touch putt onto tomato-cage laundry basket.' },
+    { number: 6, par: 3, distance: 119, hint: '119 ft Down-Yard Approach · Watch lone guardian tree & pool edge; ★ 11/26 Jack Birdie 2 hole!' },
+    { number: 7, par: 3, distance: 120, hint: '120 ft Fire Pit to Treehouse · ★ 11/26 Mako3 Birdie 2! Slice-the-box chest-high hip swing straight between fire pit & treehouse.' },
+    { number: 8, par: 3, distance: 115, hint: '115 ft Past House & Left Water Pool · Keep disc right of the left water pool and clear of windows.' },
     { number: 9, par: 3, distance: 131, hint: '131 ft Backyard Closer · ★ 11/26 Star Rollo Birdie 2! Controlled touch carry to close under par.' }
   ]
+};
+
+// Official UDisc Caddie Book verified distances (audited 2026-11-27 across all 14 played public courses!)
+const UDISC_VERIFIED_DISTANCES: Record<string, Record<number, number>> = {
+  sarko: { 1: 128, 2: 197, 3: 167, 4: 165, 5: 131, 6: 125, 7: 139, 8: 204, 9: 121 },
+  harmon: { 1: 314, 2: 323, 3: 221, 4: 297, 5: 197, 6: 159, 7: 131, 8: 326, 9: 175 },
+  blackhoof: { 1: 180, 2: 204, 3: 248, 4: 157, 5: 184, 6: 180, 7: 175, 8: 214, 9: 170 },
+  prairie_center: { 15: 470 },
+  cedar_ridge: { 14: 201 },
+  california_trail: { 3: 238 }
 };
 
 export const INITIAL_COURSE_TEMPLATES: CourseTemplate[] = [
@@ -3256,6 +3322,7 @@ export const INITIAL_COURSE_TEMPLATES: CourseTemplate[] = [
     .map((c) => {
       if (c.key === 'blackhoof_18') return BLACK_HOOF_18_COURSE;
       if (c.key === 'smp_wooded') return SHAWNEE_MISSION_WOODED_COURSE;
+      if (c.key === 'jacks_backyard') return JACKS_BACKYARD_COURSE;
       if (c.key === 'mize') {
         return {
           ...c,
@@ -3276,12 +3343,30 @@ export const INITIAL_COURSE_TEMPLATES: CourseTemplate[] = [
           })
         };
       }
+      const distFix = UDISC_VERIFIED_DISTANCES[c.key];
+      if (distFix) {
+        return {
+          ...c,
+          updatedAt: 1795825000000,
+          holes: c.holes.map((h) =>
+            distFix[h.number] ? { ...h, distance: distFix[h.number] } : h
+          )
+        };
+      }
       return c;
     })
-    .filter((c) => c.key !== 'heritage_park' && c.key !== 'prairie_pass' && c.key !== 'backyard_bray'),
+    .filter(
+      (c) =>
+        c.key !== 'heritage_park' &&
+        c.key !== 'prairie_pass' &&
+        c.key !== 'backyard_bray' &&
+        c.key !== 'cedar_ridge_short' &&
+        c.key !== 'wyandotte_short'
+    ),
   HERITAGE_PARK_COURSE,
   BLUE_VALLEY_PRAIRIE_PASS_COURSE,
-  JACKS_BACKYARD_COURSE
+  CEDAR_RIDGE_SHORT_COURSE,
+  WYANDOTTE_SHORT_COURSE
 ];
 
 const ROUND_2026_11_01_BLACK_HOOF: HistoricalRound = {
@@ -12028,8 +12113,8 @@ Switched tee disc from Star Rollo to Cotton Candy Proto Glow Mako3 ("Put back my
 
 export const INITIAL_USER_EXPORT: AppExportPayload = {
   app: typedV65.app || 'Jeffery & Jack Disc Golf Scorecard',
-  version: 'v117',
-  exportDate: '2026-11-27T22:50:00.000Z',
+  version: 'v118',
+  exportDate: '2026-11-28T00:25:00.000Z',
   history: [
     ROUND_2026_11_27_MIZE,
     ROUND_2026_11_26_BACKYARD_2,
