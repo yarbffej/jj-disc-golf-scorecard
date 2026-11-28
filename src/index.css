@@ -2,326 +2,363 @@
 
 @layer base {
   /* ==========================================================================
-     THEME 1: 🍬 COTTON CANDY ARCADE (.theme-sugar)
-     High-Voltage Pop-Glass Neon · Plush 24px Corners · Syne + Outfit · LARGE Scale
+     VIBE 1 (DAYLIGHT): SUNBURST COMIC ZINE (High-Contrast Outdoor Pop-Art)
      ========================================================================== */
   :root,
-  html[data-theme="sugar"],
-  .theme-sugar {
-    --font-display: 'Syne', 'Outfit', -apple-system, BlinkMacSystemFont, sans-serif;
-    --font-sans: 'Outfit', -apple-system, BlinkMacSystemFont, sans-serif;
+  .theme-turf {
+    --font-display: 'Outfit', 'Space Grotesk', 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+    --font-sans: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
     --font-mono: 'JetBrains Mono', monospace;
-    --dg-heading-transform: none;
-    --dg-heading-tracking: -0.025em;
-    --dg-heading-scale: 1.05;
-    --dg-body-leading: 1.46;
+    --dg-paper: #FFFBE6;
+    --dg-bg-image: radial-gradient(rgba(15, 23, 42, 0.14) 1.6px, transparent 1.6px);
+    --dg-bg-size: 16px 16px;
+    --dg-card: #FFFFFF;
+    --dg-card-backdrop: none;
+    --dg-card-shadow: 5px 5px 0px #0F172A;
+    --dg-card-radius: 1rem;
+    --dg-well: #FEFDF5;
+    --dg-well-alt: #F8FAFC;
+    --dg-well-border: #0F172A;
+    --dg-ink: #0F172A;
+    --dg-muted: #475569;
+    --dg-shadow: #0F172A;
+    --dg-border: #0F172A;
+    --dg-border-width: 2.5px;
+    --dg-hero-bg: linear-gradient(135deg, #FFE600 0%, #FFD000 100%);
+    --dg-hero-ink: #0F172A;
+    --dg-hero-shadow: 6px 6px 0px #0F172A;
+    --dg-hero-circle: #FF4D94;
+    --dg-hero-text-shadow: none;
+    --dg-lime: #82ED1F;
+    --dg-yellow: #FFE600;
+    --dg-cyan: #3CE6FF;
+    --dg-pink: #E8357D;
+    --dg-orange: #FF6B2C;
+    --dg-header-bg: #FFFDF2;
+    --dg-header-border: #0F172A;
+    --dg-header-shadow: 0 3px 0 rgba(15, 23, 42, 0.12);
+    --dg-nav-idle-bg: #FFFFFF;
+    --dg-nav-idle-ink: #0F172A;
+    --dg-nav-idle-border: #0F172A;
+    --dg-vibe-active-bg: #FFE600;
+    --dg-vibe-active-ink: #0F172A;
+    --dg-btn-shadow: 3px 3px 0px #0F172A;
+    --dg-btn-shadow-hover: 4px 4px 0px #0F172A;
+    --dg-btn-shadow-active: 1px 1px 0px #0F172A;
+    --dg-sticker-shadow: 2.5px 2.5px 0px #0F172A;
+    --dg-accent-lime-text: #15803D;
+    --dg-accent-cyan-text: #0369A1;
+    --dg-accent-yellow-text: #B45309;
+    --dg-accent-pink-text: #C81E68;
+  }
 
-    /* Canvas Background */
-    --dg-paper: #0B0318;
+  /* ==========================================================================
+     VIBE 2 (DAYLIGHT): EMERALD FAIRWAY PRO (Mowed Turf + Augusta Pine & Gold)
+     ========================================================================== */
+  .theme-adventure {
+    --dg-paper: #D8F3E2;
+    --dg-bg-image: repeating-linear-gradient(
+      -45deg,
+      rgba(6, 78, 59, 0.055) 0px,
+      rgba(6, 78, 59, 0.055) 26px,
+      transparent 26px,
+      transparent 52px
+    );
+    --dg-bg-size: 74px 74px;
+    --dg-card: #F8FFFA;
+    --dg-card-backdrop: none;
+    --dg-card-shadow: 5px 5px 0px #064E3B;
+    --dg-card-radius: 1.1rem;
+    --dg-well: #ECFDF5;
+    --dg-well-alt: #D1FAE5;
+    --dg-well-border: #065F46;
+    --dg-ink: #052E22;
+    --dg-muted: #1E5A46;
+    --dg-shadow: #064E3B;
+    --dg-border: #064E3B;
+    --dg-border-width: 2.5px;
+    --dg-hero-bg: linear-gradient(135deg, #064E3B 0%, #047857 58%, #10B981 100%);
+    --dg-hero-ink: #FFFFFF;
+    --dg-hero-shadow: 6px 6px 0px #022C22;
+    --dg-hero-circle: #FACC15;
+    --dg-hero-text-shadow: 0 2px 10px rgba(2, 44, 34, 0.45);
+    --dg-lime: #34D399;
+    --dg-yellow: #FACC15;
+    --dg-cyan: #22D3EE;
+    --dg-pink: #E11D48;
+    --dg-orange: #EA580C;
+    --dg-header-bg: #ECFDF5;
+    --dg-header-border: #064E3B;
+    --dg-header-shadow: 0 3px 0 rgba(6, 78, 59, 0.18);
+    --dg-nav-idle-bg: #FFFFFF;
+    --dg-nav-idle-ink: #064E3B;
+    --dg-nav-idle-border: #064E3B;
+    --dg-vibe-active-bg: #065F46;
+    --dg-vibe-active-ink: #FACC15;
+    --dg-btn-shadow: 3px 3px 0px #064E3B;
+    --dg-btn-shadow-hover: 4px 4px 0px #064E3B;
+    --dg-btn-shadow-active: 1px 1px 0px #064E3B;
+    --dg-sticker-shadow: 2.5px 2.5px 0px #064E3B;
+    --dg-accent-lime-text: #047857;
+    --dg-accent-cyan-text: #0E7490;
+    --dg-accent-yellow-text: #B45309;
+    --dg-accent-pink-text: #BE123C;
+  }
+
+  /* ==========================================================================
+     VIBE 3 (NEON DARK): COTTON CANDY NEON (Hot Pink + Aqua Holo Glass)
+     Built to match the 17-Disc Cotton Candy + Halloween Sync + Pink Archangel Bag!
+     ========================================================================== */
+  .theme-sugar {
+    --dg-paper: #0F051D;
     --dg-bg-image:
-      radial-gradient(circle at 12% 10%, rgba(255, 46, 147, 0.34) 0%, transparent 44%),
-      radial-gradient(circle at 88% 16%, rgba(0, 240, 255, 0.28) 0%, transparent 42%),
-      radial-gradient(circle at 50% 90%, rgba(168, 85, 247, 0.26) 0%, transparent 48%),
-      radial-gradient(rgba(255, 119, 200, 0.22) 1.5px, transparent 1.5px);
+      radial-gradient(circle at 12% 10%, rgba(255, 46, 147, 0.28) 0%, transparent 42%),
+      radial-gradient(circle at 88% 18%, rgba(0, 240, 255, 0.24) 0%, transparent 40%),
+      radial-gradient(circle at 50% 88%, rgba(168, 85, 247, 0.22) 0%, transparent 48%),
+      radial-gradient(rgba(255, 119, 200, 0.2) 1.3px, transparent 1.3px);
     --dg-bg-size: 100% 100%, 100% 100%, 100% 100%, 22px 22px;
-
-    /* Outer Tiles (.neon-card) */
-    --dg-card: linear-gradient(155deg, rgba(36, 13, 66, 0.94) 0%, rgba(18, 6, 36, 0.97) 100%);
-    --dg-card-backdrop: blur(16px);
-    --dg-card-shadow: 0 0 28px rgba(255, 46, 147, 0.28), 0 12px 30px rgba(0, 0, 0, 0.6), 4px 4px 0px #00F0FF;
-    --dg-card-radius: 1.5rem;
-    --dg-border: #FF4DA6;
-    --dg-border-width: 2px;
-    --dg-card-top-accent: 2px solid #FF4DA6;
-
-    /* Nested Tiles-Within-Tiles (L2 & L3) */
-    --dg-well: linear-gradient(160deg, rgba(16, 6, 34, 0.96) 0%, rgba(25, 10, 48, 0.96) 100%);
-    --dg-well-alt: rgba(46, 18, 82, 0.92);
-    --dg-well-border: rgba(0, 240, 255, 0.45);
-    --dg-well-left-accent: 1.5px solid rgba(0, 240, 255, 0.45);
-    --dg-well-radius: 1.05rem;
-    --dg-well-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.12), 0 4px 14px rgba(0, 0, 0, 0.35);
-
-    /* Typography & Surfaces */
+    --dg-card: rgba(27, 11, 48, 0.90);
+    --dg-card-backdrop: blur(14px);
+    --dg-card-shadow: 0 0 24px rgba(255, 46, 147, 0.26), 0 0 42px rgba(0, 240, 255, 0.12), 4px 4px 0px #FF2E93;
+    --dg-card-radius: 1.15rem;
+    --dg-well: rgba(16, 6, 30, 0.92);
+    --dg-well-alt: rgba(38, 16, 66, 0.92);
+    --dg-well-border: rgba(255, 46, 147, 0.48);
     --dg-ink: #FDF4FF;
     --dg-muted: #E9D5FF;
-    --dg-shadow: #00F0FF;
-    --dg-divider: rgba(255, 77, 166, 0.34);
-
-    /* Hero Banner */
+    --dg-shadow: #FF2E93;
+    --dg-border: #FF4DA6;
+    --dg-border-width: 2px;
     --dg-hero-bg: linear-gradient(135deg, #FF1F8F 0%, #9333EA 52%, #06B6D4 100%);
     --dg-hero-ink: #FFFFFF;
-    --dg-hero-shadow: 0 0 36px rgba(255, 46, 147, 0.48), 5px 5px 0px #00F0FF;
+    --dg-hero-shadow: 0 0 32px rgba(255, 46, 147, 0.45), 5px 5px 0px #00F0FF;
     --dg-hero-circle: linear-gradient(135deg, #00F0FF 0%, #FFE600 100%);
     --dg-hero-text-shadow: 0 2px 14px rgba(15, 5, 29, 0.55);
-
-    /* Buttons & Accents (Full Arcade Bubble Pills) */
-    --dg-btn-radius: 9999px;
     --dg-lime: #CCFF00;
-    --dg-lime-ink: #0F051D;
     --dg-yellow: #FFE600;
-    --dg-yellow-ink: #0F051D;
     --dg-cyan: #00F0FF;
-    --dg-cyan-ink: #0F051D;
     --dg-pink: #FF2E93;
-    --dg-pink-ink: #FFFFFF;
     --dg-orange: #FF6EC7;
-    --dg-orange-ink: #0F051D;
-
-    /* Masthead & Nav */
-    --dg-header-bg: rgba(16, 5, 32, 0.92);
+    --dg-header-bg: rgba(18, 6, 34, 0.90);
     --dg-header-border: #FF2E93;
-    --dg-header-shadow: 0 4px 24px rgba(255, 46, 147, 0.3);
-    --dg-nav-idle-bg: rgba(44, 17, 78, 0.92);
+    --dg-header-shadow: 0 4px 22px rgba(255, 46, 147, 0.28);
+    --dg-nav-idle-bg: rgba(42, 17, 72, 0.9);
     --dg-nav-idle-ink: #FDF4FF;
-    --dg-nav-idle-border: rgba(255, 77, 166, 0.65);
+    --dg-nav-idle-border: rgba(255, 77, 166, 0.6);
     --dg-vibe-active-bg: linear-gradient(135deg, #FF2E93 0%, #00F0FF 100%);
     --dg-vibe-active-ink: #0F051D;
-
-    /* Elevation & Glow */
     --dg-btn-shadow: 0 0 14px rgba(255, 46, 147, 0.35), 2.5px 2.5px 0px #00F0FF;
-    --dg-btn-shadow-hover: 0 0 22px rgba(0, 240, 255, 0.52), 3.5px 3.5px 0px #00F0FF;
+    --dg-btn-shadow-hover: 0 0 20px rgba(0, 240, 255, 0.48), 3.5px 3.5px 0px #00F0FF;
     --dg-btn-shadow-active: 0 0 8px rgba(255, 46, 147, 0.4), 1px 1px 0px #00F0FF;
-    --dg-sticker-shadow: 0 0 12px rgba(255, 46, 147, 0.38), 2px 2px 0px #0F051D;
-
-    /* Readable Accent Text Tokens */
+    --dg-sticker-shadow: 0 0 10px rgba(255, 46, 147, 0.35), 2px 2px 0px #0F051D;
     --dg-accent-lime-text: #D9FF3B;
     --dg-accent-cyan-text: #38F6FF;
     --dg-accent-yellow-text: #FFE94A;
     --dg-accent-pink-text: #FF62B5;
-
-    /* Soft Tinted Badge Tokens */
-    --dg-pill-lime-bg: rgba(204, 255, 0, 0.16);
-    --dg-pill-lime-border: #CCFF00;
-    --dg-pill-cyan-bg: rgba(0, 240, 255, 0.16);
-    --dg-pill-cyan-border: #00F0FF;
-    --dg-pill-pink-bg: rgba(255, 46, 147, 0.2);
-    --dg-pill-pink-border: #FF4DA6;
-    --dg-pill-yellow-bg: rgba(255, 230, 0, 0.16);
-    --dg-pill-yellow-border: #FFE600;
-
-    /* Embedded Map / Dark Rangefinder Frame */
-    --dg-dark-panel-bg: #120624;
-    --dg-dark-panel-border: #00F0FF;
   }
 
   /* ==========================================================================
-     THEME 2: 🏛️ AUGUSTA CLUBHOUSE (.theme-adventure)
-     Warm Heritage Editorial Print · Double-Ruled Cardstock · Fraunces Serif + DM Sans
+     VIBE 4 (NEON DARK): GLOW-DISC NIGHT (UV Phosphor Blacklight + Toxic Lime)
      ========================================================================== */
-  html[data-theme="adventure"],
-  .theme-adventure {
-    --font-display: 'Fraunces', Georgia, 'Times New Roman', serif;
-    --font-sans: 'DM Sans', -apple-system, BlinkMacSystemFont, sans-serif;
-    --font-mono: 'IBM Plex Mono', monospace;
-    --dg-heading-transform: none;
-    --dg-heading-tracking: -0.02em;
-    --dg-heading-scale: 1.13;
-    --dg-body-leading: 1.54;
-
-    /* Canvas Background: Warm Linen Parchment */
-    --dg-paper: #EAE0CC;
+  .theme-midnight {
+    --dg-paper: #060A14;
     --dg-bg-image:
-      radial-gradient(ellipse at 50% 0%, rgba(255, 252, 244, 0.65) 0%, transparent 58%),
-      repeating-linear-gradient(
-        -45deg,
-        rgba(27, 67, 50, 0.042) 0px,
-        rgba(27, 67, 50, 0.042) 2px,
-        transparent 2px,
-        transparent 14px
-      );
-    --dg-bg-size: 100% 100%, 20px 20px;
-
-    /* Outer Tiles (.neon-card): Double-Ruled Ivory Cardstock (NO comic offset!) */
-    --dg-card: #FFFDF7;
-    --dg-card-backdrop: none;
-    --dg-card-shadow:
-      inset 0 0 0 3px #FFFDF7,
-      inset 0 0 0 4.5px rgba(182, 134, 44, 0.42),
-      0 10px 26px rgba(27, 67, 50, 0.12),
-      0 2px 6px rgba(27, 67, 50, 0.08);
-    --dg-card-radius: 0.65rem;
-    --dg-border: #1B4332;
-    --dg-border-width: 1.5px;
-    --dg-card-top-accent: 3.5px solid #1B4332;
-
-    /* Nested Tiles-Within-Tiles: Warm Champagne Sand Ledger + Gold Left Rule */
-    --dg-well: #F3EAD6;
-    --dg-well-alt: #E5EFE7;
-    --dg-well-border: #CBBBA0;
-    --dg-well-left-accent: 4px solid #B6862C;
-    --dg-well-radius: 0.4rem;
-    --dg-well-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.75), 0 1px 3px rgba(27, 67, 50, 0.08);
-
-    /* Typography & Surfaces */
-    --dg-ink: #16281F;
-    --dg-muted: #526157;
-    --dg-shadow: rgba(27, 67, 50, 0.28);
-    --dg-divider: rgba(27, 67, 50, 0.18);
-
-    /* Hero Banner: Classic Masters Pine & Burnished Brass */
-    --dg-hero-bg: linear-gradient(135deg, #123124 0%, #1B4332 54%, #255C45 100%);
-    --dg-hero-ink: #FAF5E8;
-    --dg-hero-shadow: 0 14px 32px rgba(18, 49, 36, 0.28), inset 0 0 0 3px rgba(198, 146, 46, 0.45);
-    --dg-hero-circle: linear-gradient(135deg, #D4A438 0%, #B6862C 100%);
-    --dg-hero-text-shadow: 0 2px 10px rgba(8, 24, 17, 0.4);
-
-    /* Buttons & Accents: Tailored Heritage Rectangles (ZERO Neon!) */
-    --dg-btn-radius: 0.4rem;
-    --dg-lime: #1B4332;
-    --dg-lime-ink: #FAF5E8;
-    --dg-yellow: #C6922E;
-    --dg-yellow-ink: #10241B;
-    --dg-cyan: #1E5D63;
-    --dg-cyan-ink: #FFFFFF;
-    --dg-pink: #8E292E;
-    --dg-pink-ink: #FFFDF7;
-    --dg-orange: #A64B2A;
-    --dg-orange-ink: #FFFDF7;
-
-    /* Masthead & Nav */
-    --dg-header-bg: #FAF5E8;
-    --dg-header-border: #1B4332;
-    --dg-header-shadow: 0 4px 16px rgba(27, 67, 50, 0.1);
-    --dg-nav-idle-bg: #F3EAD6;
-    --dg-nav-idle-ink: #1B4332;
-    --dg-nav-idle-border: #C5B393;
-    --dg-vibe-active-bg: #1B4332;
-    --dg-vibe-active-ink: #F7D782;
-
-    /* Soft Architectural Elevation (No Cartoon Drop Shadow) */
-    --dg-btn-shadow: 0 2px 6px rgba(27, 67, 50, 0.18);
-    --dg-btn-shadow-hover: 0 5px 12px rgba(27, 67, 50, 0.24);
-    --dg-btn-shadow-active: 0 1px 2px rgba(27, 67, 50, 0.2);
-    --dg-sticker-shadow: 0 2px 6px rgba(27, 67, 50, 0.14);
-
-    /* Deep Editorial Ink Accents */
-    --dg-accent-lime-text: #1B4332;
-    --dg-accent-cyan-text: #1B5A61;
-    --dg-accent-yellow-text: #946312;
-    --dg-accent-pink-text: #8E292E;
-
-    /* Heritage Tinted Badge Tokens */
-    --dg-pill-lime-bg: #DFEDE4;
-    --dg-pill-lime-border: #1B4332;
-    --dg-pill-cyan-bg: #DCEEEF;
-    --dg-pill-cyan-border: #1E5D63;
-    --dg-pill-pink-bg: #F5E1E2;
-    --dg-pill-pink-border: #8E292E;
-    --dg-pill-yellow-bg: #F5E9CE;
-    --dg-pill-yellow-border: #B6862C;
-
-    /* Embedded Map / Dark Rangefinder Frame: Deep Clubhouse Pine + Gold */
-    --dg-dark-panel-bg: #10261C;
-    --dg-dark-panel-border: #B6862C;
-  }
-
-  /* ==========================================================================
-     THEME 3: 🎯 STEALTH TACTICAL HUD (.theme-glow)
-     Brutalist F1 / Bushnell Carbon Cockpit · Razor 2-4px Corners · Chakra Petch · COMPACT
-     ========================================================================== */
-  html[data-theme="glow"],
-  .theme-glow {
-    --font-display: 'Chakra Petch', 'Space Grotesk', sans-serif;
-    --font-sans: 'Space Grotesk', -apple-system, BlinkMacSystemFont, sans-serif;
-    --font-mono: 'JetBrains Mono', monospace;
-    --dg-heading-transform: uppercase;
-    --dg-heading-tracking: 0.055em;
-    --dg-heading-scale: 0.98;
-    --dg-body-leading: 1.36;
-
-    /* Canvas Background: Matte Carbon Blueprint Grid */
-    --dg-paper: #050709;
-    --dg-bg-image:
-      radial-gradient(circle at 86% 6%, rgba(217, 255, 0, 0.09) 0%, transparent 38%),
-      radial-gradient(circle at 12% 92%, rgba(0, 229, 255, 0.09) 0%, transparent 40%),
-      linear-gradient(rgba(148, 163, 184, 0.075) 1px, transparent 1px),
-      linear-gradient(90deg, rgba(148, 163, 184, 0.075) 1px, transparent 1px);
-    --dg-bg-size: 100% 100%, 100% 100%, 24px 24px, 24px 24px;
-
-    /* Outer Tiles (.neon-card): Brushed Graphite Panel + Acid Volt Top Telemetry Rail */
-    --dg-card: #0E1317;
-    --dg-card-backdrop: none;
-    --dg-card-shadow: 0 12px 28px rgba(0, 0, 0, 0.78), inset 0 1px 0 rgba(255, 255, 255, 0.05);
-    --dg-card-radius: 0.2rem;
-    --dg-border: #2B3640;
-    --dg-border-width: 1px;
-    --dg-card-top-accent: 3px solid #D9FF00;
-
-    /* Nested Tiles-Within-Tiles: Recessed Pitch Black Instrument Readouts */
-    --dg-well: #06090C;
-    --dg-well-alt: #151D24;
-    --dg-well-border: #25313B;
-    --dg-well-left-accent: 3px solid #00E5FF;
-    --dg-well-radius: 0.15rem;
-    --dg-well-shadow: inset 0 2px 10px rgba(0, 0, 0, 0.7);
-
-    /* Typography & Surfaces */
-    --dg-ink: #EEF4F8;
-    --dg-muted: #93A4B3;
-    --dg-shadow: #000000;
-    --dg-divider: #222C35;
-
-    /* Hero Banner: Carbon Radar Pit Wall */
-    --dg-hero-bg: linear-gradient(135deg, #0B1014 0%, #121B22 65%, #1A262E 100%);
+      radial-gradient(circle at 18% 8%, rgba(57, 255, 20, 0.16) 0%, transparent 40%),
+      radial-gradient(circle at 86% 85%, rgba(99, 102, 241, 0.2) 0%, transparent 45%),
+      radial-gradient(rgba(57, 255, 20, 0.22) 1.5px, transparent 1.5px);
+    --dg-bg-size: 100% 100%, 100% 100%, 18px 18px;
+    --dg-card: rgba(14, 22, 40, 0.94);
+    --dg-card-backdrop: blur(10px);
+    --dg-card-shadow: 0 0 22px rgba(57, 255, 20, 0.22), 5px 5px 0px #39FF14;
+    --dg-card-radius: 1rem;
+    --dg-well: #09101F;
+    --dg-well-alt: #13203A;
+    --dg-well-border: rgba(57, 255, 20, 0.42);
+    --dg-ink: #F8FAFC;
+    --dg-muted: #CBD5E1;
+    --dg-shadow: #39FF14;
+    --dg-border: #39FF14;
+    --dg-border-width: 2.5px;
+    --dg-hero-bg: linear-gradient(135deg, #1E1B4B 0%, #0F172A 62%, #064E3B 100%);
     --dg-hero-ink: #F8FAFC;
-    --dg-hero-shadow: 0 14px 32px rgba(0, 0, 0, 0.8), inset 0 3px 0 #D9FF00;
-    --dg-hero-circle: linear-gradient(135deg, #D9FF00 0%, #00E5FF 100%);
-    --dg-hero-text-shadow: 0 0 14px rgba(217, 255, 0, 0.28);
-
-    /* Buttons & Accents: Sharp Military / F1 Hardware Switches */
-    --dg-btn-radius: 0.15rem;
-    --dg-lime: #D9FF00;
-    --dg-lime-ink: #050709;
-    --dg-yellow: #FF9F0A;
-    --dg-yellow-ink: #050709;
-    --dg-cyan: #00E5FF;
-    --dg-cyan-ink: #050709;
-    --dg-pink: #FF3B30;
-    --dg-pink-ink: #FFFFFF;
-    --dg-orange: #FF6B00;
-    --dg-orange-ink: #050709;
-
-    /* Masthead & Nav */
-    --dg-header-bg: rgba(7, 10, 13, 0.96);
-    --dg-header-border: #D9FF00;
-    --dg-header-shadow: 0 4px 20px rgba(0, 0, 0, 0.85);
-    --dg-nav-idle-bg: #131A20;
-    --dg-nav-idle-ink: #CBD5E1;
-    --dg-nav-idle-border: #2C3944;
-    --dg-vibe-active-bg: #D9FF00;
-    --dg-vibe-active-ink: #050709;
-
-    /* Precision Hardware Elevation */
-    --dg-btn-shadow: 0 2px 8px rgba(0, 0, 0, 0.65);
-    --dg-btn-shadow-hover: 0 0 16px rgba(217, 255, 0, 0.32);
-    --dg-btn-shadow-active: inset 0 2px 4px rgba(0, 0, 0, 0.5);
-    --dg-sticker-shadow: 0 2px 6px rgba(0, 0, 0, 0.6);
-
-    /* Crisp Telemetry Text Tokens */
-    --dg-accent-lime-text: #D9FF00;
-    --dg-accent-cyan-text: #00E5FF;
-    --dg-accent-yellow-text: #FFB020;
-    --dg-accent-pink-text: #FF554A;
-
-    /* Tactical Tinted Badge Tokens */
-    --dg-pill-lime-bg: rgba(217, 255, 0, 0.12);
-    --dg-pill-lime-border: #D9FF00;
-    --dg-pill-cyan-bg: rgba(0, 229, 255, 0.12);
-    --dg-pill-cyan-border: #00E5FF;
-    --dg-pill-pink-bg: rgba(255, 59, 48, 0.16);
-    --dg-pill-pink-border: #FF3B30;
-    --dg-pill-yellow-bg: rgba(255, 159, 10, 0.14);
-    --dg-pill-yellow-border: #FF9F0A;
-
-    /* Embedded Map / Dark Rangefinder Frame */
-    --dg-dark-panel-bg: #070A0D;
-    --dg-dark-panel-border: #D9FF00;
+    --dg-hero-shadow: 0 0 28px rgba(57, 255, 20, 0.35), 6px 6px 0px #39FF14;
+    --dg-hero-circle: #39FF14;
+    --dg-hero-text-shadow: 0 0 18px rgba(57, 255, 20, 0.35);
+    --dg-lime: #39FF14;
+    --dg-yellow: #FACC15;
+    --dg-cyan: #22D3EE;
+    --dg-pink: #EC4899;
+    --dg-orange: #FF6B2C;
+    --dg-header-bg: rgba(9, 14, 28, 0.92);
+    --dg-header-border: #39FF14;
+    --dg-header-shadow: 0 4px 20px rgba(57, 255, 20, 0.2);
+    --dg-nav-idle-bg: #121D34;
+    --dg-nav-idle-ink: #F1F5F9;
+    --dg-nav-idle-border: rgba(57, 255, 20, 0.55);
+    --dg-vibe-active-bg: #39FF14;
+    --dg-vibe-active-ink: #050914;
+    --dg-btn-shadow: 0 0 12px rgba(57, 255, 20, 0.3), 2.5px 2.5px 0px #39FF14;
+    --dg-btn-shadow-hover: 0 0 18px rgba(57, 255, 20, 0.45), 3.5px 3.5px 0px #39FF14;
+    --dg-btn-shadow-active: 1px 1px 0px #39FF14;
+    --dg-sticker-shadow: 2px 2px 0px #39FF14;
+    --dg-accent-lime-text: #4DFF2B;
+    --dg-accent-cyan-text: #22D3EE;
+    --dg-accent-yellow-text: #FDE047;
+    --dg-accent-pink-text: #F472B6;
   }
 
   /* ==========================================================================
-     ROOT TYPOGRAPHIC SCALE PER THEME (Distinct Size & Density Across Entire App!)
+     VIBE 5 (NEON DARK): OUTRUN ARCADE 80s (Synthwave Laser Grid + Solar Sunset)
      ========================================================================== */
+  .theme-sunset {
+    --dg-paper: #13061D;
+    --dg-bg-image:
+      linear-gradient(180deg, rgba(255, 107, 44, 0.20) 0%, rgba(255, 46, 147, 0.10) 28%, transparent 58%),
+      linear-gradient(rgba(255, 46, 147, 0.16) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(255, 107, 44, 0.15) 1px, transparent 1px);
+    --dg-bg-size: 100% 100%, 28px 28px, 28px 28px;
+    --dg-card: rgba(29, 12, 44, 0.92);
+    --dg-card-backdrop: blur(12px);
+    --dg-card-shadow: 0 0 24px rgba(255, 107, 44, 0.25), 4px 4px 0px #FF2E93;
+    --dg-card-radius: 0.9rem;
+    --dg-well: rgba(18, 7, 30, 0.94);
+    --dg-well-alt: rgba(42, 16, 58, 0.92);
+    --dg-well-border: rgba(255, 107, 44, 0.5);
+    --dg-ink: #FFF7ED;
+    --dg-muted: #FED7AA;
+    --dg-shadow: #FF2E93;
+    --dg-border: #FF7A2F;
+    --dg-border-width: 2px;
+    --dg-hero-bg: linear-gradient(135deg, #D91A7A 0%, #FF5E1A 56%, #FACC15 100%);
+    --dg-hero-ink: #FFFFFF;
+    --dg-hero-shadow: 0 0 34px rgba(255, 94, 26, 0.45), 5px 5px 0px #FACC15;
+    --dg-hero-circle: linear-gradient(180deg, #FFE600 0%, #FF4D00 100%);
+    --dg-hero-text-shadow: 0 2px 12px rgba(19, 6, 29, 0.55);
+    --dg-lime: #FACC15;
+    --dg-yellow: #FFE600;
+    --dg-cyan: #22D3EE;
+    --dg-pink: #FF2E93;
+    --dg-orange: #FF6B2C;
+    --dg-header-bg: rgba(22, 8, 34, 0.92);
+    --dg-header-border: #FF6B2C;
+    --dg-header-shadow: 0 4px 22px rgba(255, 107, 44, 0.28);
+    --dg-nav-idle-bg: #26103A;
+    --dg-nav-idle-ink: #FFF7ED;
+    --dg-nav-idle-border: rgba(255, 122, 47, 0.6);
+    --dg-vibe-active-bg: linear-gradient(135deg, #FF6B2C 0%, #FACC15 100%);
+    --dg-vibe-active-ink: #13061D;
+    --dg-btn-shadow: 0 0 14px rgba(255, 107, 44, 0.35), 2.5px 2.5px 0px #FF2E93;
+    --dg-btn-shadow-hover: 0 0 22px rgba(255, 46, 147, 0.5), 3.5px 3.5px 0px #FACC15;
+    --dg-btn-shadow-active: 1px 1px 0px #FF2E93;
+    --dg-sticker-shadow: 2px 2px 0px #FF2E93;
+    --dg-accent-lime-text: #FDE047;
+    --dg-accent-cyan-text: #38F6FF;
+    --dg-accent-yellow-text: #FDBA74;
+    --dg-accent-pink-text: #FF62B5;
+  }
+
+  /* ==========================================================================
+     VIBE 6 (NEON DARK): CYBER RANGEFINDER HUD (Stealth Obsidian + Plasma Cyan)
+     Sharp Laser-Precision Tactical Telemetry (Zero Comic Offset — Pure Glow!)
+     ========================================================================== */
+  .theme-glow {
+    --dg-paper: #020A0E;
+    --dg-bg-image:
+      radial-gradient(circle at 82% 8%, rgba(0, 240, 255, 0.18) 0%, transparent 42%),
+      radial-gradient(circle at 12% 85%, rgba(204, 255, 0, 0.12) 0%, transparent 42%),
+      linear-gradient(rgba(0, 240, 255, 0.085) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(0, 240, 255, 0.085) 1px, transparent 1px);
+    --dg-bg-size: 100% 100%, 100% 100%, 20px 20px, 20px 20px;
+    --dg-card: rgba(5, 22, 31, 0.92);
+    --dg-card-backdrop: blur(14px);
+    --dg-card-shadow: 0 0 24px rgba(0, 240, 255, 0.22), inset 0 1px 0 rgba(0, 240, 255, 0.35);
+    --dg-card-radius: 0.65rem;
+    --dg-well: rgba(3, 14, 21, 0.96);
+    --dg-well-alt: rgba(8, 33, 46, 0.94);
+    --dg-well-border: rgba(0, 240, 255, 0.42);
+    --dg-ink: #ECFEFF;
+    --dg-muted: #A5F3FC;
+    --dg-shadow: #00F0FF;
+    --dg-border: #00E5FF;
+    --dg-border-width: 1.5px;
+    --dg-hero-bg: linear-gradient(135deg, #041E2B 0%, #0A4D68 58%, #0E7490 100%);
+    --dg-hero-ink: #ECFEFF;
+    --dg-hero-shadow: 0 0 32px rgba(0, 240, 255, 0.36), inset 0 1px 0 rgba(204, 255, 0, 0.5);
+    --dg-hero-circle: linear-gradient(135deg, #CCFF00 0%, #00F0FF 100%);
+    --dg-hero-text-shadow: 0 0 16px rgba(0, 240, 255, 0.45);
+    --dg-lime: #CCFF00;
+    --dg-yellow: #FDE047;
+    --dg-cyan: #00F0FF;
+    --dg-pink: #F43F5E;
+    --dg-orange: #FF5722;
+    --dg-header-bg: rgba(3, 14, 21, 0.92);
+    --dg-header-border: #00F0FF;
+    --dg-header-shadow: 0 4px 24px rgba(0, 240, 255, 0.22);
+    --dg-nav-idle-bg: rgba(7, 29, 41, 0.95);
+    --dg-nav-idle-ink: #CFFAFE;
+    --dg-nav-idle-border: rgba(0, 240, 255, 0.45);
+    --dg-vibe-active-bg: #00F0FF;
+    --dg-vibe-active-ink: #020A0E;
+    --dg-btn-shadow: 0 0 16px rgba(0, 240, 255, 0.34);
+    --dg-btn-shadow-hover: 0 0 24px rgba(204, 255, 0, 0.48);
+    --dg-btn-shadow-active: 0 0 8px rgba(0, 240, 255, 0.4);
+    --dg-sticker-shadow: 0 0 10px rgba(0, 240, 255, 0.3);
+    --dg-accent-lime-text: #CCFF00;
+    --dg-accent-cyan-text: #00F0FF;
+    --dg-accent-yellow-text: #FDE047;
+    --dg-accent-pink-text: #FB7185;
+  }
+
+  /* ==========================================================================
+     VIBE 7 (NEON DARK): COBALT PRO TOUR (Night Stadium Broadcast Glass)
+     ========================================================================== */
+  .theme-championship {
+    --dg-paper: #050C22;
+    --dg-bg-image:
+      radial-gradient(ellipse at 20% 0%, rgba(37, 99, 235, 0.35) 0%, transparent 48%),
+      radial-gradient(ellipse at 85% 5%, rgba(14, 165, 233, 0.28) 0%, transparent 45%),
+      radial-gradient(circle at 50% 95%, rgba(250, 204, 21, 0.12) 0%, transparent 45%);
+    --dg-bg-size: 100% 100%, 100% 100%, 100% 100%;
+    --dg-card: rgba(11, 23, 54, 0.90);
+    --dg-card-backdrop: blur(14px);
+    --dg-card-shadow: 0 12px 30px rgba(2, 6, 23, 0.55), 0 0 22px rgba(56, 189, 248, 0.18), inset 0 1px 0 rgba(255, 255, 255, 0.16);
+    --dg-card-radius: 1rem;
+    --dg-well: rgba(7, 15, 38, 0.94);
+    --dg-well-alt: rgba(18, 36, 80, 0.92);
+    --dg-well-border: rgba(56, 189, 248, 0.42);
+    --dg-ink: #F0F9FF;
+    --dg-muted: #BAE6FD;
+    --dg-shadow: #0EA5E9;
+    --dg-border: #38BDF8;
+    --dg-border-width: 1.75px;
+    --dg-hero-bg: linear-gradient(135deg, #1E3A8A 0%, #1D4ED8 48%, #0284C7 100%);
+    --dg-hero-ink: #FFFFFF;
+    --dg-hero-shadow: 0 12px 32px rgba(2, 132, 199, 0.42), inset 0 1px 0 rgba(255, 255, 255, 0.28);
+    --dg-hero-circle: linear-gradient(135deg, #FACC15 0%, #F59E0B 100%);
+    --dg-hero-text-shadow: 0 2px 14px rgba(5, 12, 34, 0.5);
+    --dg-lime: #34D399;
+    --dg-yellow: #FACC15;
+    --dg-cyan: #38BDF8;
+    --dg-pink: #F43F5E;
+    --dg-orange: #FB923C;
+    --dg-header-bg: rgba(7, 15, 38, 0.92);
+    --dg-header-border: #38BDF8;
+    --dg-header-shadow: 0 4px 24px rgba(14, 165, 233, 0.24);
+    --dg-nav-idle-bg: rgba(16, 33, 74, 0.94);
+    --dg-nav-idle-ink: #E0F2FE;
+    --dg-nav-idle-border: rgba(56, 189, 248, 0.48);
+    --dg-vibe-active-bg: linear-gradient(135deg, #38BDF8 0%, #FACC15 100%);
+    --dg-vibe-active-ink: #050C22;
+    --dg-btn-shadow: 0 6px 16px rgba(2, 132, 199, 0.34);
+    --dg-btn-shadow-hover: 0 8px 22px rgba(56, 189, 248, 0.45);
+    --dg-btn-shadow-active: 0 2px 8px rgba(2, 132, 199, 0.4);
+    --dg-sticker-shadow: 0 4px 12px rgba(2, 6, 23, 0.45);
+    --dg-accent-lime-text: #4ADE80;
+    --dg-accent-cyan-text: #38BDF8;
+    --dg-accent-yellow-text: #FDE047;
+    --dg-accent-pink-text: #FB7185;
+  }
+
   html, body, #root {
     width: 100%;
     max-width: 100vw;
@@ -330,81 +367,37 @@
     touch-action: pan-y;
   }
 
-  /* Default / Cotton Candy Arcade: Plush & Bold */
-  html,
-  html[data-theme="sugar"] {
-    font-size: 14.5px;
-  }
-  @media (min-width: 640px) {
-    html,
-    html[data-theme="sugar"] {
-      font-size: 15.5px;
-    }
+  html {
+    font-size: 13.75px;
   }
 
-  /* Augusta Clubhouse: Refined Editorial Magazine */
-  html[data-theme="adventure"] {
-    font-size: 14px;
-  }
   @media (min-width: 640px) {
-    html[data-theme="adventure"] {
-      font-size: 15px;
-    }
-  }
-
-  /* Stealth Tactical HUD: Compact High-Density Instrument Cockpit */
-  html[data-theme="glow"] {
-    font-size: 12.75px;
-  }
-  @media (min-width: 640px) {
-    html[data-theme="glow"] {
-      font-size: 13.5px;
+    html {
+      font-size: 14.5px;
     }
   }
 
   body {
     font-family: var(--font-sans);
-    background-color: var(--dg-paper, #0B0318);
-    color: var(--dg-ink, #FDF4FF);
-    line-height: var(--dg-body-leading, 1.46);
+    background-color: var(--dg-paper, #FFFBE6);
+    color: var(--dg-ink, #0F172A);
+    line-height: 1.45;
+    letter-spacing: -0.005em;
     -webkit-font-smoothing: antialiased;
   }
 
-  h1, h2, h3, .font-display {
-    font-family: var(--font-display) !important;
-    letter-spacing: var(--dg-heading-tracking, -0.02em);
-    text-transform: var(--dg-heading-transform, none);
-    font-weight: 800;
-    overflow-wrap: break-word;
-  }
-
-  h4 {
+  h1, h2, .font-display {
     font-family: var(--font-display);
-    letter-spacing: var(--dg-heading-tracking, -0.015em);
+    letter-spacing: -0.02em;
     font-weight: 800;
     overflow-wrap: break-word;
   }
 
-  /* Theme-specific heading size boosts so serif & tactical headings feel native */
-  .theme-adventure h1,
-  .theme-adventure h2 {
+  h3, h4 {
+    font-family: var(--font-sans);
+    letter-spacing: -0.015em;
     font-weight: 800;
-    letter-spacing: -0.025em;
-  }
-  .theme-adventure h3 {
-    font-size: 1.2em;
-    font-weight: 700;
-  }
-  .theme-glow h1,
-  .theme-glow h2,
-  .theme-glow h3,
-  .theme-glow .font-display {
-    font-weight: 700;
-    text-transform: uppercase;
-    letter-spacing: 0.055em;
-  }
-  .theme-glow button {
-    letter-spacing: 0.03em;
+    overflow-wrap: break-word;
   }
 
   button, a[role="button"] {
@@ -415,18 +408,17 @@
   }
 
   button:not(:disabled):hover, a[role="button"]:hover {
-    transform: translateY(-1px);
+    transform: translate(-1px, -1px);
   }
 
   button:not(:disabled):active, a[role="button"]:active {
-    transform: translateY(1px) scale(0.985);
+    transform: translate(1.5px, 1.5px) scale(0.985);
   }
 }
 
 .font-display {
-  font-family: var(--font-display) !important;
-  letter-spacing: var(--dg-heading-tracking, -0.02em);
-  text-transform: var(--dg-heading-transform, none);
+  font-family: var(--font-display);
+  letter-spacing: -0.02em;
 }
 
 .font-mono-tabular,
@@ -438,35 +430,45 @@
 }
 
 /* ============================================================================
-   1. FULL-APP ATMOSPHERIC CANVAS
+   1. FULL-APP ATMOSPHERIC VIBE CANVAS (PATTERN + AMBIENT NEON LAYERS)
    ============================================================================ */
-.theme-sugar,
+.theme-turf,
 .theme-adventure,
-.theme-glow {
-  font-family: var(--font-sans);
-  line-height: var(--dg-body-leading, 1.46);
+.theme-midnight,
+.theme-glow,
+.theme-sunset,
+.theme-synthwave,
+.theme-sugar,
+.theme-championship,
+.theme-white {
   background-color: var(--dg-paper) !important;
   background-image: var(--dg-bg-image) !important;
-  background-size: var(--dg-bg-size, 22px 22px) !important;
+  background-size: var(--dg-bg-size, 18px 18px) !important;
   background-attachment: fixed;
   color: var(--dg-ink) !important;
 }
 
 /* ============================================================================
-   2. OUTER TILES (.neon-card) — WILDLY DIFFERENT PER THEME
+   2. VIBE-DRIVEN CARDS (.neon-card) — GLASS, HUD, ARCADE, UV OR COMIC PAPER
    ============================================================================ */
-.neon-card {
+.neon-card,
+.tile-auto .neon-card,
+.tile-acrylic .neon-card,
+.tile-holo .neon-card,
+.tile-hud .neon-card,
+.tile-white .neon-card,
+.tile-frosted .neon-card,
+.tile-paper .neon-card {
   min-width: 0;
   max-width: 100%;
   overflow-wrap: break-word;
-  background: var(--dg-card) !important;
+  background: var(--dg-card, #FFFFFF) !important;
   backdrop-filter: var(--dg-card-backdrop, none) !important;
   -webkit-backdrop-filter: var(--dg-card-backdrop, none) !important;
-  border: var(--dg-border-width, 2px) solid var(--dg-border) !important;
-  border-top: var(--dg-card-top-accent) !important;
-  box-shadow: var(--dg-card-shadow) !important;
-  border-radius: var(--dg-card-radius) !important;
-  color: var(--dg-ink) !important;
+  border: var(--dg-border-width, 2.5px) solid var(--dg-border, #0F172A) !important;
+  box-shadow: var(--dg-card-shadow, 5px 5px 0px #0F172A) !important;
+  border-radius: var(--dg-card-radius, 1rem);
+  color: var(--dg-ink, #0F172A) !important;
 }
 
 /* ============================================================================
@@ -478,16 +480,14 @@
   max-width: 100%;
   overflow: hidden;
   overflow-wrap: break-word;
-  background: var(--dg-hero-bg) !important;
-  color: var(--dg-hero-ink) !important;
-  border: var(--dg-border-width, 2px) solid var(--dg-border) !important;
-  border-radius: var(--dg-card-radius) !important;
-  box-shadow: var(--dg-hero-shadow) !important;
+  background: var(--dg-hero-bg, #FFE600) !important;
+  color: var(--dg-hero-ink, #0F172A) !important;
+  border: 2.5px solid var(--dg-border, #0F172A) !important;
+  box-shadow: var(--dg-hero-shadow, 6px 6px 0px #0F172A) !important;
 }
 
-.zine-hero-card h1,
-.zine-hero-card h2 {
-  color: var(--dg-hero-ink) !important;
+.zine-hero-card h1 {
+  color: var(--dg-hero-ink, #0F172A) !important;
   text-shadow: var(--dg-hero-text-shadow, none);
 }
 
@@ -498,202 +498,183 @@
   width: 118px;
   height: 118px;
   border-radius: 9999px;
-  background: var(--dg-hero-circle);
-  border: 2px solid var(--dg-border);
+  background: var(--dg-hero-circle, #FF4D94);
+  border: 2.5px solid var(--dg-border, #0F172A);
   pointer-events: none;
   z-index: 0;
 }
 
-.theme-glow .zine-hero-orb {
-  border-radius: 0.25rem;
-  transform: rotate(45deg);
-  opacity: 0.22;
-}
-
-.theme-adventure .zine-hero-orb {
-  opacity: 0.3;
-  border-color: rgba(247, 215, 130, 0.65);
-}
-
-.theme-sugar .zine-hero-orb {
-  box-shadow: 0 0 36px rgba(0, 240, 255, 0.45);
+.vibe-dark .zine-hero-orb {
+  box-shadow: 0 0 34px rgba(255, 255, 255, 0.25);
 }
 
 .zine-sticker {
-  border: 1.5px solid var(--dg-border);
-  border-radius: var(--dg-btn-radius) !important;
-  box-shadow: var(--dg-sticker-shadow);
+  border: 2px solid var(--dg-border, #0F172A);
+  box-shadow: var(--dg-sticker-shadow, 2.5px 2.5px 0px #0F172A);
 }
 
 .zine-pill-btn {
-  border: 1.5px solid var(--dg-border) !important;
-  border-radius: var(--dg-btn-radius) !important;
-  box-shadow: var(--dg-btn-shadow) !important;
+  border: 2px solid var(--dg-border, #0F172A) !important;
+  box-shadow: var(--dg-btn-shadow, 3px 3px 0px #0F172A) !important;
 }
 
 .zine-pill-btn:not(:disabled):hover {
-  box-shadow: var(--dg-btn-shadow-hover) !important;
+  box-shadow: var(--dg-btn-shadow-hover, 4px 4px 0px #0F172A) !important;
 }
 
 .zine-pill-btn:not(:disabled):active {
-  box-shadow: var(--dg-btn-shadow-active) !important;
+  box-shadow: var(--dg-btn-shadow-active, 1px 1px 0px #0F172A) !important;
 }
 
-/* Harmonize ALL button shapes per theme (bubble pills vs heritage rects vs tactical switches) */
-.theme-adventure main button,
-.theme-adventure header button {
-  border-radius: var(--dg-btn-radius) !important;
-}
-
-.theme-glow main button,
-.theme-glow header button,
-.theme-glow main span[class*="rounded-"] {
-  border-radius: var(--dg-btn-radius) !important;
-}
-
-/* Themed Idle Navigation & Switcher Pills */
+/* Themed Idle Navigation & Vibe Switcher Pills */
 .vibe-nav-idle {
-  background: var(--dg-nav-idle-bg) !important;
-  color: var(--dg-nav-idle-ink) !important;
-  border-color: var(--dg-nav-idle-border) !important;
-}
-
-.vibe-pill-active,
-.vibe-pill-active * {
-  color: var(--dg-vibe-active-ink) !important;
+  background: var(--dg-nav-idle-bg, #FFFFFF) !important;
+  color: var(--dg-nav-idle-ink, #0F172A) !important;
+  border-color: var(--dg-nav-idle-border, #0F172A) !important;
 }
 
 .vibe-pill-active {
-  background: var(--dg-vibe-active-bg) !important;
-  border-color: var(--dg-border) !important;
+  background: var(--dg-vibe-active-bg, #FFE600) !important;
+  color: var(--dg-vibe-active-ink, #0F172A) !important;
+  border-color: var(--dg-border, #0F172A) !important;
 }
 
 /* Masthead Header */
 .zine-masthead {
-  background: var(--dg-header-bg) !important;
+  background: var(--dg-header-bg, #FFFDF2) !important;
   backdrop-filter: var(--dg-card-backdrop, none);
   -webkit-backdrop-filter: var(--dg-card-backdrop, none);
-  border-bottom: 2px solid var(--dg-header-border) !important;
-  box-shadow: var(--dg-header-shadow);
-  color: var(--dg-ink) !important;
+  border-bottom: 2.5px solid var(--dg-header-border, #0F172A) !important;
+  box-shadow: var(--dg-header-shadow, 0 3px 0 rgba(15, 23, 42, 0.1));
+  color: var(--dg-ink, #0F172A) !important;
 }
 
 /* ============================================================================
-   4. NESTED TILES-WITHIN-TILES (L2 & L3 WELLS — TRANSFORM COMPLETELY PER THEME!)
+   4A. DAYLIGHT VIBE SURFACE CONVERSIONS (.vibe-light: Sunburst & Emerald)
    ============================================================================ */
-/* Level-2 Nested Tiles inside outer cards */
-main .bg-\[\#080B14\]:not(.rangefinder-keep-dark):not(.rangefinder-keep-dark *),
-main .bg-\[\#080B14\]\/60:not(.rangefinder-keep-dark *),
-main .bg-\[\#080B14\]\/50:not(.rangefinder-keep-dark *),
-main .bg-\[\#090D0B\]:not(.rangefinder-keep-dark):not(.rangefinder-keep-dark *),
-main .bg-\[\#090D0B\]\/85:not(.rangefinder-keep-dark *),
-main .bg-\[\#090D0B\]\/90:not(.rangefinder-keep-dark *),
-main .bg-\[\#0B0F1E\]:not(.rangefinder-keep-dark *) {
-  background: var(--dg-well) !important;
-  border: 1.5px solid var(--dg-well-border) !important;
-  border-left: var(--dg-well-left-accent) !important;
-  border-radius: var(--dg-well-radius) !important;
-  box-shadow: var(--dg-well-shadow) !important;
-  color: var(--dg-ink) !important;
+.vibe-light > main .bg-\[\#080B14\]:not(.rangefinder-keep-dark):not(.rangefinder-keep-dark *),
+.vibe-light > main .bg-\[\#080B14\]\/60:not(.rangefinder-keep-dark *),
+.vibe-light > main .bg-\[\#080B14\]\/50:not(.rangefinder-keep-dark *),
+.vibe-light > main .bg-\[\#090D0B\]\/85:not(.rangefinder-keep-dark *),
+.vibe-light > main .bg-\[\#090D0B\]\/90:not(.rangefinder-keep-dark *) {
+  background-color: var(--dg-well, #FEFDF5) !important;
+  border-color: var(--dg-well-border, #0F172A) !important;
+  color: var(--dg-ink, #0F172A) !important;
 }
 
-/* Level-3 Nested Tiles (cards inside cards inside cards!) */
-main .bg-\[\#111629\]:not(.rangefinder-keep-dark *),
-main .bg-\[\#0D1120\]:not(.rangefinder-keep-dark *),
-main .bg-\[\#0D1222\]:not(.rangefinder-keep-dark *),
-main .bg-\[\#070A14\]:not(.collector-3d-front):not(.rangefinder-keep-dark *) {
-  background: var(--dg-well-alt) !important;
-  border: 1px solid var(--dg-well-border) !important;
-  border-radius: var(--dg-well-radius) !important;
-  color: var(--dg-ink) !important;
+.vibe-light > main .rangefinder-keep-dark {
+  border: 2.5px solid var(--dg-border, #0F172A) !important;
+  box-shadow: var(--dg-card-shadow, 4px 4px 0px #0F172A) !important;
 }
 
-/* Embedded Rangefinder / Course Map Dark Modules adapt to each theme's signature frame */
-main .rangefinder-keep-dark {
-  background: var(--dg-dark-panel-bg) !important;
-  border: var(--dg-border-width, 2px) solid var(--dg-dark-panel-border) !important;
-  border-radius: var(--dg-card-radius) !important;
-  box-shadow: var(--dg-card-shadow) !important;
+.vibe-light > main .bg-\[\#090D0B\]:not(.rangefinder-keep-dark):not(.rangefinder-keep-dark *) {
+  background-color: var(--dg-well-alt, #F8FAFC) !important;
+  border-color: var(--dg-well-border, #0F172A) !important;
+  color: var(--dg-ink, #0F172A) !important;
 }
 
-.theme-adventure main .rangefinder-keep-dark {
-  border-top: 3px solid #B6862C !important;
+.vibe-light > main .bg-\[\#111629\]:not(.rangefinder-keep-dark *),
+.vibe-light > main .bg-\[\#0B0F1E\]:not(.rangefinder-keep-dark *),
+.vibe-light > main .bg-\[\#0D1120\]:not(.rangefinder-keep-dark *),
+.vibe-light > main .bg-\[\#0D1222\]:not(.rangefinder-keep-dark *),
+.vibe-light > main .bg-\[\#070A14\]:not(.collector-3d-front):not(.rangefinder-keep-dark *) {
+  background-color: var(--dg-well-alt, #F4F6FA) !important;
+  border-color: var(--dg-well-border, #0F172A) !important;
+  color: var(--dg-ink, #0F172A) !important;
 }
 
-.theme-glow main .rangefinder-keep-dark {
-  border-top: 3px solid #D9FF00 !important;
+.vibe-light > main .border-slate-800:not(.rangefinder-keep-dark *),
+.vibe-light > main .border-slate-700:not(.rangefinder-keep-dark *),
+.vibe-light > main .border-white\/10:not(.rangefinder-keep-dark *),
+.vibe-light > main .border-white\/15:not(.rangefinder-keep-dark *) {
+  border-color: rgba(15, 23, 42, 0.26) !important;
 }
 
-/* Dividers inside tiles */
-main .border-slate-800:not(.rangefinder-keep-dark *),
-main .border-slate-700:not(.rangefinder-keep-dark *),
-main .border-slate-900\/15:not(.rangefinder-keep-dark *),
-main .border-slate-900\/20:not(.rangefinder-keep-dark *),
-main .border-white\/10:not(.rangefinder-keep-dark *),
-main .border-white\/15:not(.rangefinder-keep-dark *) {
-  border-color: var(--dg-divider) !important;
-}
-
-/* ============================================================================
-   5A. LIGHT THEME INK & SURFACE RULES (.vibe-light — Augusta Clubhouse)
-   ============================================================================ */
 .vibe-light > main h1:not(.zine-keep-color):not(.rangefinder-keep-dark *),
 .vibe-light > main h2:not(.zine-keep-color):not(.rangefinder-keep-dark *),
 .vibe-light > main h3:not(.zine-keep-color):not(.rangefinder-keep-dark *),
 .vibe-light > main h4:not(.zine-keep-color):not(.rangefinder-keep-dark *),
 .vibe-light > main .text-white:not(button):not(button *):not(.collector-3d-front *):not(.rangefinder-keep-dark *):not(span[class*="bg-"]):not(.zine-keep-white) {
-  color: var(--dg-ink) !important;
+  color: var(--dg-ink, #0F172A) !important;
 }
 
 .vibe-light > main .text-slate-200:not(.collector-3d-front *):not(.rangefinder-keep-dark *):not(button *),
 .vibe-light > main .text-slate-300:not(.collector-3d-front *):not(.rangefinder-keep-dark *):not(button *) {
-  color: var(--dg-ink) !important;
+  color: var(--dg-ink, #1E293B) !important;
 }
 
 .vibe-light > main .text-slate-400:not(.collector-3d-front *):not(.rangefinder-keep-dark *),
 .vibe-light > main .text-slate-500:not(.collector-3d-front *):not(.rangefinder-keep-dark *) {
-  color: var(--dg-muted) !important;
+  color: var(--dg-muted, #475569) !important;
 }
 
 .vibe-light > main button.bg-\[\#080B14\]:not(.rangefinder-keep-dark *),
 .vibe-light > main button.bg-\[\#111629\]:not(.rangefinder-keep-dark *),
 .vibe-light > main button.bg-\[\#0B0F1E\]:not(.rangefinder-keep-dark *),
-.vibe-light > main button.bg-\[\#0D1120\]:not(.rangefinder-keep-dark *) {
-  background: var(--dg-nav-idle-bg) !important;
-  color: var(--dg-nav-idle-ink) !important;
-  border: 1.5px solid var(--dg-nav-idle-border) !important;
-}
-
+.vibe-light > main button.bg-\[\#0D1120\]:not(.rangefinder-keep-dark *),
 .vibe-light > main button.bg-\[\#080B14\]:not(.rangefinder-keep-dark *) *,
 .vibe-light > main button.bg-\[\#111629\]:not(.rangefinder-keep-dark *) * {
-  color: var(--dg-nav-idle-ink) !important;
+  color: var(--dg-ink, #0F172A) !important;
 }
 
-/* Editorial heritage ink colors replacing raw neon text in Light mode */
 .vibe-light > main .text-\[\#39FF14\]:not(.collector-3d-front *):not(.rangefinder-keep-dark *):not(span[class*="bg-"]),
 .vibe-light > main .text-\[\#00FF9D\]:not(.collector-3d-front *):not(.rangefinder-keep-dark *),
 .vibe-light > main .text-\[\#CCFF00\]:not(.collector-3d-front *):not(.rangefinder-keep-dark *) {
-  color: var(--dg-accent-lime-text) !important;
+  color: var(--dg-accent-lime-text, #15803D) !important;
 }
 
 .vibe-light > main .text-\[\#00F0FF\]:not(.collector-3d-front *):not(.rangefinder-keep-dark *):not(span[class*="bg-"]),
 .vibe-light > main .text-\[\#00E5FF\]:not(.collector-3d-front *):not(.rangefinder-keep-dark *),
 .vibe-light > main .text-\[\#38BDF8\]:not(.collector-3d-front *):not(.rangefinder-keep-dark *) {
-  color: var(--dg-accent-cyan-text) !important;
+  color: var(--dg-accent-cyan-text, #0369A1) !important;
 }
 
 .vibe-light > main .text-\[\#FACC15\]:not(.collector-3d-front *):not(.rangefinder-keep-dark *):not(span[class*="bg-"]) {
-  color: var(--dg-accent-yellow-text) !important;
+  color: var(--dg-accent-yellow-text, #B45309) !important;
 }
 
 .vibe-light > main .text-\[\#FF2E93\]:not(.collector-3d-front *):not(.rangefinder-keep-dark *):not(span[class*="bg-"]),
 .vibe-light > main .text-\[\#FF5722\]:not(.collector-3d-front *):not(.rangefinder-keep-dark *):not(span[class*="bg-"]) {
-  color: var(--dg-accent-pink-text) !important;
+  color: var(--dg-accent-pink-text, #C81E68) !important;
 }
 
 /* ============================================================================
-   5B. DARK THEME INK & SURFACE RULES (.vibe-dark — Cotton Candy & Stealth HUD)
+   4B. FULL NEON DARK VIBE ENGINE (.vibe-dark: Cotton Candy, Glow Night,
+       Outrun Arcade, Cyber Rangefinder HUD, Cobalt Pro Tour)
    ============================================================================ */
+.vibe-dark > main .bg-\[\#080B14\]:not(.rangefinder-keep-dark),
+.vibe-dark > main .bg-\[\#080B14\]\/60,
+.vibe-dark > main .bg-\[\#080B14\]\/50,
+.vibe-dark > main .bg-\[\#090D0B\]:not(.rangefinder-keep-dark),
+.vibe-dark > main .bg-\[\#090D0B\]\/85,
+.vibe-dark > main .bg-\[\#090D0B\]\/90,
+.vibe-dark > main .bg-\[\#0B0F1E\] {
+  background-color: var(--dg-well) !important;
+  border-color: var(--dg-well-border) !important;
+  color: var(--dg-ink) !important;
+}
+
+.vibe-dark > main .bg-\[\#111629\],
+.vibe-dark > main .bg-\[\#0D1120\],
+.vibe-dark > main .bg-\[\#0D1222\] {
+  background-color: var(--dg-well-alt) !important;
+  border-color: var(--dg-well-border) !important;
+  color: var(--dg-ink) !important;
+}
+
+.vibe-dark > main .rangefinder-keep-dark {
+  background-color: var(--dg-well) !important;
+  border: var(--dg-border-width, 2px) solid var(--dg-border) !important;
+  box-shadow: var(--dg-card-shadow) !important;
+}
+
+.vibe-dark > main .border-slate-800,
+.vibe-dark > main .border-slate-700,
+.vibe-dark > main .border-slate-900\/15,
+.vibe-dark > main .border-slate-900\/20 {
+  border-color: var(--dg-well-border) !important;
+}
+
 .vibe-dark > main h1:not(.zine-keep-color):not(.text-slate-950),
 .vibe-dark > main h2:not(.zine-keep-color):not(.text-slate-950),
 .vibe-dark > main h3:not(.zine-keep-color):not(.text-slate-950),
@@ -706,208 +687,127 @@ main .border-white\/15:not(.rangefinder-keep-dark *) {
   color: var(--dg-muted) !important;
 }
 
-/* Keep crisp dark ink inside bright stickers & light badges in Dark Themes */
+/* Keep crisp dark ink inside bright pill badges & light stickers in Dark Vibes */
 .vibe-dark > main .text-slate-950,
 .vibe-dark > main .text-slate-900 {
   color: #0F172A !important;
 }
 
-/* Convert idle white filter pills & dark-well buttons cleanly in Dark Themes */
+/* Make dark-well secondary buttons luminous in Dark Vibes */
 .vibe-dark > main button.bg-\[\#080B14\],
 .vibe-dark > main button.bg-\[\#111629\],
 .vibe-dark > main button.bg-\[\#0B0F1E\],
-.vibe-dark > main button.bg-\[\#0D1120\],
-.vibe-dark > main button.bg-white:not(.zine-keep-white) {
+.vibe-dark > main button.bg-\[\#0D1120\] {
   background: var(--dg-nav-idle-bg) !important;
   color: var(--dg-nav-idle-ink) !important;
   border-color: var(--dg-nav-idle-border) !important;
 }
 
-/* Theme the Course Atlas KPI stickers inside dark themes so they match the world! */
-.vibe-dark > main .zine-hero-card div.bg-white\/95 {
-  background: var(--dg-well) !important;
-  color: var(--dg-ink) !important;
-  border: 1.5px solid var(--dg-well-border) !important;
-  border-radius: var(--dg-well-radius) !important;
-}
-.vibe-dark > main .zine-hero-card div.bg-white\/95 .text-slate-950,
-.vibe-dark > main .zine-hero-card div.bg-white\/95 .text-slate-700 {
-  color: var(--dg-ink) !important;
-}
-.vibe-dark > main .zine-hero-card div.bg-white\/95 .text-pink-700 {
-  color: var(--dg-accent-pink-text) !important;
-}
-.vibe-dark > main .zine-hero-card div.bg-white\/95 .text-sky-700 {
-  color: var(--dg-accent-cyan-text) !important;
-}
-.vibe-dark > main .zine-hero-card div.bg-white\/95 .text-emerald-700 {
-  color: var(--dg-accent-lime-text) !important;
-}
-.vibe-dark > main .zine-hero-card div.bg-white\/95 .text-amber-700 {
-  color: var(--dg-accent-yellow-text) !important;
-}
-
-/* Luminous Per-Theme Accent Text in Dark Worlds */
+/* Luminous Per-Vibe Neon Accent Text */
 .vibe-dark > main .text-\[\#39FF14\]:not(span[class*="bg-"]),
 .vibe-dark > main .text-\[\#CCFF00\]:not(span[class*="bg-"]),
 .vibe-dark > main .text-emerald-600 {
-  color: var(--dg-accent-lime-text) !important;
+  color: var(--dg-accent-lime-text, #39FF14) !important;
 }
 
 .vibe-dark > main .text-\[\#00F0FF\]:not(span[class*="bg-"]),
 .vibe-dark > main .text-\[\#38BDF8\]:not(span[class*="bg-"]),
 .vibe-dark > main .text-sky-600 {
-  color: var(--dg-accent-cyan-text) !important;
+  color: var(--dg-accent-cyan-text, #00F0FF) !important;
 }
 
 .vibe-dark > main .text-\[\#FACC15\]:not(span[class*="bg-"]),
 .vibe-dark > main .text-amber-600:not(.bg-white\/95 *) {
-  color: var(--dg-accent-yellow-text) !important;
+  color: var(--dg-accent-yellow-text, #FACC15) !important;
 }
 
 .vibe-dark > main .text-\[\#FF2E93\]:not(span[class*="bg-"]),
 .vibe-dark > main .text-pink-600 {
-  color: var(--dg-accent-pink-text) !important;
+  color: var(--dg-accent-pink-text, #FF4DA6) !important;
 }
 
 /* ============================================================================
-   6. THEME-HARMONIZED BUTTONS, SOFT TINTED BADGES & FORM CONTROLS
+   5. VIBE-HARMONIZED ACTION BUTTONS, BADGES & FORM CONTROLS
    ============================================================================ */
-/* Soft Tinted Badges (e.g. "6 Rounds", status chips) */
-main .bg-\[\#39FF14\]\/15:not(.rangefinder-keep-dark *),
-main .bg-\[\#39FF14\]\/20:not(.rangefinder-keep-dark *),
-main .bg-\[\#CCFF00\]\/20:not(.rangefinder-keep-dark *) {
-  background-color: var(--dg-pill-lime-bg) !important;
-  border-color: var(--dg-pill-lime-border) !important;
-  color: var(--dg-accent-lime-text) !important;
-  border-radius: var(--dg-btn-radius) !important;
-}
-
-main .bg-\[\#00F0FF\]\/15:not(.rangefinder-keep-dark *),
-main .bg-\[\#00F0FF\]\/20:not(.rangefinder-keep-dark *) {
-  background-color: var(--dg-pill-cyan-bg) !important;
-  border-color: var(--dg-pill-cyan-border) !important;
-  color: var(--dg-accent-cyan-text) !important;
-  border-radius: var(--dg-btn-radius) !important;
-}
-
-main .bg-\[\#FF2E93\]\/15:not(.rangefinder-keep-dark *),
-main .bg-\[\#FF2E93\]\/20:not(.rangefinder-keep-dark *) {
-  background-color: var(--dg-pill-pink-bg) !important;
-  border-color: var(--dg-pill-pink-border) !important;
-  color: var(--dg-accent-pink-text) !important;
-  border-radius: var(--dg-btn-radius) !important;
-}
-
-main .bg-\[\#FACC15\]\/15:not(.rangefinder-keep-dark *),
-main .bg-\[\#FACC15\]\/20:not(.rangefinder-keep-dark *) {
-  background-color: var(--dg-pill-yellow-bg) !important;
-  border-color: var(--dg-pill-yellow-border) !important;
-  color: var(--dg-accent-yellow-text) !important;
-  border-radius: var(--dg-btn-radius) !important;
-}
-
-/* Solid Accent Action Buttons & Badges (Contrast-Safe Per Theme!) */
 button.bg-\[\#39FF14\],
 button.bg-\[\#CCFF00\],
 div.bg-\[\#39FF14\]:not(.h-1\.5):not(.h-2),
-span.bg-\[\#39FF14\]:not(.w-2):not(.w-1\.5):not(.w-2\.5),
-span.bg-\[\#CCFF00\]:not(.w-2):not(.w-1\.5):not(.w-2\.5) {
-  background-color: var(--dg-lime) !important;
-  color: var(--dg-lime-ink) !important;
-  border: 1.5px solid var(--dg-border) !important;
-  border-radius: var(--dg-btn-radius) !important;
-}
-
-button.bg-\[\#39FF14\] *,
-button.bg-\[\#CCFF00\] *,
-span.bg-\[\#39FF14\] *,
-span.bg-\[\#CCFF00\] * {
-  color: var(--dg-lime-ink) !important;
+span.bg-\[\#39FF14\]:not(.w-2):not(.w-1\.5),
+span.bg-\[\#CCFF00\]:not(.w-2):not(.w-1\.5) {
+  background-color: var(--dg-lime, #82ED1F) !important;
+  color: #0F172A !important;
+  border: 2px solid var(--dg-border, #0F172A) !important;
 }
 
 button.bg-\[\#39FF14\],
 button.bg-\[\#CCFF00\] {
-  box-shadow: var(--dg-btn-shadow) !important;
+  box-shadow: var(--dg-btn-shadow, 3px 3px 0px #0F172A) !important;
+}
+
+button.bg-\[\#39FF14\]:active,
+button.bg-\[\#CCFF00\]:active {
+  box-shadow: var(--dg-btn-shadow-active, 1px 1px 0px #0F172A) !important;
 }
 
 button.bg-\[\#00F0FF\],
-span.bg-\[\#00F0FF\]:not(.w-2):not(.w-1\.5):not(.w-2\.5) {
-  background-color: var(--dg-cyan) !important;
-  color: var(--dg-cyan-ink) !important;
-  border: 1.5px solid var(--dg-border) !important;
-  border-radius: var(--dg-btn-radius) !important;
-}
-
-button.bg-\[\#00F0FF\] *,
-span.bg-\[\#00F0FF\] * {
-  color: var(--dg-cyan-ink) !important;
+span.bg-\[\#00F0FF\]:not(.w-2):not(.w-1\.5) {
+  background-color: var(--dg-cyan, #3CE6FF) !important;
+  color: #0F172A !important;
+  border: 2px solid var(--dg-border, #0F172A) !important;
 }
 
 button.bg-\[\#00F0FF\] {
-  box-shadow: var(--dg-btn-shadow) !important;
+  box-shadow: var(--dg-btn-shadow, 3px 3px 0px #0F172A) !important;
 }
 
 button.bg-\[\#FACC15\],
 div.bg-\[\#FACC15\],
-span.bg-\[\#FACC15\]:not(.w-2):not(.w-1\.5):not(.w-2\.5) {
-  background-color: var(--dg-yellow) !important;
-  color: var(--dg-yellow-ink) !important;
-  border: 1.5px solid var(--dg-border) !important;
-  border-radius: var(--dg-btn-radius) !important;
-}
-
-button.bg-\[\#FACC15\] > :not(.bg-slate-950),
-span.bg-\[\#FACC15\] * {
-  color: var(--dg-yellow-ink) !important;
-}
-
-/* Preserve bright text inside dark badges nested inside bright buttons (e.g. selected Course Atlas card) */
-button .bg-slate-950,
-button .bg-slate-950 * {
-  background-color: #090D12 !important;
-  color: #D9FF00 !important;
+span.bg-\[\#FACC15\]:not(.w-2):not(.w-1\.5) {
+  background-color: var(--dg-yellow, #FFE600) !important;
+  color: #0F172A !important;
+  border: 2px solid var(--dg-border, #0F172A) !important;
 }
 
 button.bg-\[\#FACC15\] {
-  box-shadow: var(--dg-btn-shadow) !important;
+  box-shadow: var(--dg-btn-shadow, 3px 3px 0px #0F172A) !important;
 }
 
 button.bg-\[\#FF2E93\],
-span.bg-\[\#FF2E93\]:not(.w-2):not(.w-1\.5):not(.w-2\.5) {
-  background-color: var(--dg-pink) !important;
-  color: var(--dg-pink-ink) !important;
-  border: 1.5px solid var(--dg-border) !important;
-  border-radius: var(--dg-btn-radius) !important;
-}
-
-button.bg-\[\#FF2E93\] *,
-span.bg-\[\#FF2E93\] * {
-  color: var(--dg-pink-ink) !important;
+span.bg-\[\#FF2E93\]:not(.w-2):not(.w-1\.5) {
+  background-color: var(--dg-pink, #E8357D) !important;
+  color: #FFFFFF !important;
+  border: 2px solid var(--dg-border, #0F172A) !important;
 }
 
 button.bg-\[\#FF5722\],
-span.bg-\[\#FF5722\]:not(.w-2):not(.w-1\.5):not(.w-2\.5) {
-  background-color: var(--dg-orange) !important;
-  color: var(--dg-orange-ink) !important;
-  border: 1.5px solid var(--dg-border) !important;
-  border-radius: var(--dg-btn-radius) !important;
-}
-
-button.bg-\[\#FF5722\] *,
-span.bg-\[\#FF5722\] * {
-  color: var(--dg-orange-ink) !important;
+span.bg-\[\#FF5722\]:not(.w-2):not(.w-1\.5) {
+  background-color: var(--dg-orange, #FF6B2C) !important;
+  color: #FFFFFF !important;
+  border: 2px solid var(--dg-border, #0F172A) !important;
 }
 
 button.bg-\[\#FF2E93\],
 button.bg-\[\#FF5722\] {
-  box-shadow: var(--dg-btn-shadow) !important;
+  box-shadow: var(--dg-btn-shadow, 3px 3px 0px #0F172A) !important;
+}
+
+/* Secondary bordered buttons adapt cleanly to Light vs Dark Vibes */
+.vibe-light main button[class*="border-"]:not(:disabled):not(.collector-3d-front button) {
+  box-shadow: 2.5px 2.5px 0px var(--dg-shadow, #0F172A);
+}
+
+.vibe-light main button[class*="border-"]:not(:disabled):active {
+  box-shadow: 1px 1px 0px var(--dg-shadow, #0F172A);
+}
+
+.vibe-dark main button[class*="border-"]:not(:disabled):not(.collector-3d-front button) {
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.35);
 }
 
 .neon-border-pink,
 .neon-border-cyan,
 .neon-border-lime {
-  box-shadow: var(--dg-card-shadow) !important;
+  box-shadow: var(--dg-btn-shadow, 3px 3px 0px #0F172A) !important;
 }
 
 /* Form Controls */
@@ -917,10 +817,8 @@ button.bg-\[\#FF5722\] {
 .vibe-light main input[type="number"],
 .vibe-light main select,
 .vibe-light main textarea {
-  background-color: #FFFDF7 !important;
-  color: var(--dg-ink) !important;
-  border: 1.5px solid var(--dg-border) !important;
-  border-radius: var(--dg-btn-radius) !important;
+  border: 2px solid var(--dg-border, #0F172A) !important;
+  border-radius: 0.85rem;
 }
 
 .vibe-dark main input[type="text"],
@@ -929,14 +827,14 @@ button.bg-\[\#FF5722\] {
 .vibe-dark main input[type="number"],
 .vibe-dark main select,
 .vibe-dark main textarea:not(.bg-white) {
-  background: var(--dg-well) !important;
+  background-color: var(--dg-well) !important;
   color: var(--dg-ink) !important;
-  border: 1.5px solid var(--dg-well-border) !important;
-  border-radius: var(--dg-btn-radius) !important;
+  border: 1.75px solid var(--dg-well-border) !important;
+  border-radius: 0.85rem;
 }
 
 /* ============================================================================
-   7. ANIMATED SVG BEZIER FLIGHT PATH CURVE
+   6. ANIMATED SVG BEZIER FLIGHT PATH CURVE
    ============================================================================ */
 @keyframes drawFlightBezier {
   0% {
@@ -956,7 +854,7 @@ button.bg-\[\#FF5722\] {
 }
 
 /* ============================================================================
-   8. COLLECTOR CARD 3D FLIP SCENE (DARK FOIL FRONT + THEME-ADAPTIVE BACK)
+   7. COLLECTOR CARD 3D FLIP SCENE (DARK FOIL FRONT + VIBE-ADAPTIVE BACK)
    ============================================================================ */
 .collector-3d-scene {
   perspective: 1200px;
@@ -983,7 +881,7 @@ button.bg-\[\#FF5722\] {
   width: 100%;
   backface-visibility: hidden;
   -webkit-backface-visibility: hidden;
-  border-radius: var(--dg-card-radius, 0.875rem);
+  border-radius: 0.875rem;
   overflow: hidden;
 }
 
@@ -1015,10 +913,17 @@ button.bg-\[\#FF5722\] {
   -webkit-transform: rotateY(180deg) translateZ(1px);
 }
 
-.card-back-dark {
+.vibe-light .card-back-dark {
+  background-color: #FFFFFF !important;
+  color: #0F172A !important;
+  border: 2.5px solid var(--dg-border, #0F172A) !important;
+  box-shadow: 4px 4px 0px var(--dg-shadow, #0F172A) !important;
+}
+
+.vibe-dark .card-back-dark {
   background: var(--dg-card) !important;
   color: var(--dg-ink) !important;
-  border: var(--dg-border-width, 2px) solid var(--dg-border) !important;
+  border: 2px solid var(--dg-border) !important;
   box-shadow: var(--dg-card-shadow) !important;
 }
 
