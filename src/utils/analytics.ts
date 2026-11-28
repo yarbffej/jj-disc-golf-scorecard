@@ -3971,6 +3971,30 @@ export type BagGroupingFilter =
   | 'archived'
   | 'jeffery_all';
 
+export function filterBagByGrouping(
+  bag: DiscItem[],
+  groupingFilter: BagGroupingFilter = 'jeffery'
+): DiscItem[] {
+  return bag.filter((d) => {
+    if (d.id.endsWith('-alt')) return false;
+    const dOwner = d.ownerId || 'jeffery';
+    if (groupingFilter === 'jeffery') {
+      return dOwner === 'jeffery' && !d.archived;
+    }
+    if (groupingFilter === 'jack') {
+      return dOwner === 'jack' && !d.archived;
+    }
+    if (groupingFilter === 'all') {
+      return !d.archived;
+    }
+    if (groupingFilter === 'archived') {
+      return Boolean(d.archived);
+    }
+    // 'jeffery_all' -> All Jeffery Career (Cotton Candy Main Bag + Backup / Vault)
+    return dOwner === 'jeffery';
+  });
+}
+
 export function computeDiscBagTelemetry(
   history: HistoricalRound[],
   bag: DiscItem[],
@@ -3993,24 +4017,7 @@ export function computeDiscBagTelemetry(
     return cName;
   };
 
-  const candidateDiscs = bag.filter((d) => {
-    if (d.id.endsWith('-alt')) return false;
-    const dOwner = d.ownerId || 'jeffery';
-    if (groupingFilter === 'jeffery') {
-      return dOwner === 'jeffery' && !d.archived;
-    }
-    if (groupingFilter === 'jack') {
-      return dOwner === 'jack' && !d.archived;
-    }
-    if (groupingFilter === 'all') {
-      return !d.archived;
-    }
-    if (groupingFilter === 'archived') {
-      return Boolean(d.archived);
-    }
-    // 'jeffery_all' -> All Jeffery Career (Cotton Candy Main Bag + Backup / Vault)
-    return dOwner === 'jeffery';
-  });
+  const candidateDiscs = filterBagByGrouping(bag, groupingFilter);
 
   const allRows: DiscTelemetryRow[] = candidateDiscs.map((d) => {
     const rowOwner: 'jeffery' | 'jack' = d.ownerId === 'jack' ? 'jack' : 'jeffery';
@@ -4481,7 +4488,8 @@ export function parseRhbhShotQuery(
  */
 export function recommendRhbhShotDiscs(
   queryInput: RhbhShotQuery,
-  bag: DiscItem[]
+  bag: DiscItem[],
+  groupingFilter: BagGroupingFilter = 'jeffery'
 ): RhbhShotFinderResult {
   const query: Required<RhbhShotQuery> = {
     distanceFeet: Math.max(30, Math.min(450, Math.round(queryInput.distanceFeet))),
@@ -4490,8 +4498,8 @@ export function recommendRhbhShotDiscs(
     terrain: queryInput.terrain || 'open'
   };
 
-  const activeJeffery = bag.filter((d) => !d.archived && d.ownerId !== 'jack');
-  const pool = activeJeffery.length > 0 ? activeJeffery : bag.filter((d) => !d.archived);
+  const scopedPool = filterBagByGrouping(bag, groupingFilter);
+  const pool = scopedPool.length > 0 ? scopedPool : bag.filter((d) => !d.archived);
 
   // Effective playing distance adjusted for elevation & wind
   let effDist = query.distanceFeet;

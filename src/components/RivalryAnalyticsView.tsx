@@ -21,6 +21,7 @@ import {
   buildCourseSummary,
   computeDiscBagTelemetry,
   computePlayerCareerProfile,
+  filterBagByGrouping,
   formatRelativePar,
   getCoursePersonalBest,
   getVerifiedHoleKey
@@ -549,6 +550,33 @@ export const RivalryAnalyticsView: React.FC<RivalryAnalyticsViewProps> = ({
       }),
     [bag, isSoloJeffery, isSoloJack]
   );
+
+  const bagFilterCounts = useMemo(
+    () => ({
+      jeffery: filterBagByGrouping(bag, 'jeffery').length,
+      archived: filterBagByGrouping(bag, 'archived').length,
+      jeffery_all: filterBagByGrouping(bag, 'jeffery_all').length,
+      jack: filterBagByGrouping(bag, 'jack').length,
+      all: filterBagByGrouping(bag, 'all').length
+    }),
+    [bag]
+  );
+
+  const matrixDiscs = useMemo(
+    () => filterBagByGrouping(bag, analyticsBagGroup),
+    [bag, analyticsBagGroup]
+  );
+
+  const activeBagGroupLabel =
+    analyticsBagGroup === 'jeffery'
+      ? `Current Bag (${bagFilterCounts.jeffery})`
+      : analyticsBagGroup === 'archived'
+      ? `Archive / Vault (${bagFilterCounts.archived})`
+      : analyticsBagGroup === 'jack'
+      ? `Jack’s Discs (${bagFilterCounts.jack})`
+      : analyticsBagGroup === 'jeffery_all'
+      ? `All Jeffery Career (${bagFilterCounts.jeffery_all})`
+      : `Active Both (${bagFilterCounts.all})`;
 
   const focusPlayer = isSoloJack ? p2 : p1;
   const focusProfile = isSoloJack ? p2Profile : p1Profile;
@@ -1395,11 +1423,11 @@ export const RivalryAnalyticsView: React.FC<RivalryAnalyticsViewProps> = ({
               <div className="flex flex-wrap items-center gap-1.5">
                 {(
                   [
-                    { id: 'jeffery', label: '🍬 Cotton Candy + 3 (17)' },
-                    { id: 'archived', label: '📦 Backup / Vault' },
-                    { id: 'jeffery_all', label: '🏆 All Jeffery Career' },
-                    { id: 'jack', label: 'Jack’s Discraft' },
-                    { id: 'all', label: 'Active Combined' }
+                    { id: 'jeffery', label: `🍬 Current Bag (${bagFilterCounts.jeffery})` },
+                    { id: 'archived', label: `📦 Archive / Vault (${bagFilterCounts.archived})` },
+                    { id: 'jack', label: `⚡ Jack’s Discs (${bagFilterCounts.jack})` },
+                    { id: 'all', label: `👥 Active Both (${bagFilterCounts.all})` },
+                    { id: 'jeffery_all', label: `🏆 All Career (${bagFilterCounts.jeffery_all})` }
                   ] as const
                 ).map((grp) => (
                   <button
@@ -2259,11 +2287,11 @@ export const RivalryAnalyticsView: React.FC<RivalryAnalyticsViewProps> = ({
               <div className="flex flex-wrap items-center gap-1.5">
                 {(
                   [
-                    { id: 'jeffery', label: '🍬 Cotton Candy + 3 (17)' },
-                    { id: 'archived', label: '📦 Backup / Vault' },
-                    { id: 'jeffery_all', label: '🏆 All Jeffery Career' },
-                    { id: 'jack', label: 'Jack’s Discraft' },
-                    { id: 'all', label: 'Active Combined' }
+                    { id: 'jeffery', label: `🍬 Current Bag (${bagFilterCounts.jeffery})` },
+                    { id: 'archived', label: `📦 Archive / Vault (${bagFilterCounts.archived})` },
+                    { id: 'jack', label: `⚡ Jack’s Discs (${bagFilterCounts.jack})` },
+                    { id: 'all', label: `👥 Active Both (${bagFilterCounts.all})` },
+                    { id: 'jeffery_all', label: `🏆 All Career (${bagFilterCounts.jeffery_all})` }
                   ] as const
                 ).map((grp) => (
                   <button
@@ -2724,14 +2752,44 @@ export const RivalryAnalyticsView: React.FC<RivalryAnalyticsViewProps> = ({
 
           {/* 2D Flight Matrix Scatter Plot (Speed Y vs Net Stability X) */}
           <div className="neon-card border border-[#00F0FF]/50 rounded-2xl p-5 space-y-4">
-            <div>
-              <h3 className="text-base sm:text-lg font-extrabold text-white">
-                🧭 2D Flight Matrix Graph: Speed (Y) vs. Net Stability Turn+Fade (X)
-              </h3>
-              <p className="text-xs text-slate-400">
-                Visualizing all {activeDiscs.length} active discs. Left = Overstable (+Fade),
-                Center = Neutral (0), Right = Understable (-Turn).
-              </p>
+            <div className="flex flex-col gap-3">
+              <div>
+                <h3 className="text-base sm:text-lg font-extrabold text-white">
+                  🧭 2D Flight Matrix Graph: Speed (Y) vs. Net Stability Turn+Fade (X)
+                </h3>
+                <p className="text-xs text-slate-400">
+                  Showing <span className="text-[#00F0FF] font-bold">{activeBagGroupLabel}</span> —{' '}
+                  {matrixDiscs.length} {matrixDiscs.length === 1 ? 'disc' : 'discs'}. Left = Overstable (+Fade),
+                  Center = Neutral (0), Right = Understable (-Turn). Tap any disc to inspect its card.
+                </p>
+              </div>
+              <div className="flex flex-wrap items-center gap-1.5">
+                <span className="text-[10px] font-mono-tabular font-bold uppercase tracking-wider text-slate-400 mr-1">
+                  Plot Bag:
+                </span>
+                {(
+                  [
+                    { id: 'jeffery', label: `🍬 Current Bag (${bagFilterCounts.jeffery})` },
+                    { id: 'archived', label: `📦 Archive / Vault (${bagFilterCounts.archived})` },
+                    { id: 'jack', label: `⚡ Jack’s Discs (${bagFilterCounts.jack})` },
+                    { id: 'all', label: `👥 Active Both (${bagFilterCounts.all})` },
+                    { id: 'jeffery_all', label: `🏆 All Career (${bagFilterCounts.jeffery_all})` }
+                  ] as const
+                ).map((grp) => (
+                  <button
+                    key={grp.id}
+                    type="button"
+                    onClick={() => setAnalyticsBagGroup(grp.id)}
+                    className={`px-2.5 py-1 rounded-lg text-[11px] font-extrabold border transition-all ${
+                      analyticsBagGroup === grp.id
+                        ? 'bg-[#00F0FF] text-slate-950 border-[#00F0FF]'
+                        : 'bg-[#080B14] text-slate-300 border-slate-700 hover:border-white/40 hover:text-white'
+                    }`}
+                  >
+                    {grp.label}
+                  </button>
+                ))}
+              </div>
             </div>
 
             <div className="p-4 rounded-xl bg-[#080B14] border border-slate-800 overflow-x-auto">
@@ -2799,41 +2857,72 @@ export const RivalryAnalyticsView: React.FC<RivalryAnalyticsViewProps> = ({
                 })}
 
                 {/* Disc Nodes */}
-                {activeDiscs.map((d, i) => {
+                {matrixDiscs.map((d, i) => {
                   const net = d.turn + d.fade;
                   const baseX = 60 + ((3.5 - net) / 8) * 600;
                   const baseY = 30 + ((12 - d.speed) / 10) * 240;
                   const jitterX = ((i % 3) - 1) * 12;
                   const cx = Math.max(70, Math.min(650, baseX + jitterX));
                   const cy = Math.max(28, Math.min(272, baseY));
+                  const bagTag = d.archived
+                    ? ' · Vault'
+                    : d.ownerId === 'jack'
+                    ? ' · Jack'
+                    : '';
 
                   return (
                     <g
                       key={d.id}
                       onClick={() =>
                         onOpenBagGuide &&
-                        onOpenBagGuide(d.id, d.ownerId === 'jack' ? 'jack' : 'jeffery')
+                        onOpenBagGuide(
+                          d.id,
+                          d.archived ? undefined : d.ownerId === 'jack' ? 'jack' : 'jeffery'
+                        )
                       }
                       className="cursor-pointer"
                     >
+                      {d.archived && (
+                        <circle
+                          cx={cx}
+                          cy={cy}
+                          r={10.5}
+                          fill="none"
+                          stroke="#FACC15"
+                          strokeWidth={1.5}
+                          strokeDasharray="3 2"
+                        />
+                      )}
+                      {d.ownerId === 'jack' && !d.archived && (
+                        <circle
+                          cx={cx}
+                          cy={cy}
+                          r={10.5}
+                          fill="none"
+                          stroke="#00F0FF"
+                          strokeWidth={1.5}
+                        />
+                      )}
                       <circle
                         cx={cx}
                         cy={cy}
                         r={7}
                         fill={d.colorHex}
-                        stroke="#FFFFFF"
+                        stroke={d.archived ? '#FACC15' : '#FFFFFF'}
                         strokeWidth={2}
+                        opacity={d.archived ? 0.85 : 1}
                       >
                         <title>
                           {d.name} [{d.speed}|{d.glide}|{d.turn}|{d.fade}] (Net:{' '}
-                          {net > 0 ? `+${net}` : net})
+                          {net > 0 ? `+${net}` : net}
+                          {bagTag})
                         </title>
                       </circle>
                       <text
                         x={cx}
-                        y={cy - 10}
+                        y={cy - 11}
                         textAnchor="middle"
-                        fill="#FFFFFF"
+                        fill={d.archived ? '#FDE68A' : d.ownerId === 'jack' ? '#67E8F9' : '#FFFFFF'}
                         fontSize="10"
                         fontWeight="800"
                       >

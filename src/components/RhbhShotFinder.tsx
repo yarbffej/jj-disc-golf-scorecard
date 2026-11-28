@@ -16,9 +16,11 @@ import {
   getDiscCardImageUrl
 } from '../data/initialData';
 import {
+  BagGroupingFilter,
   RhbhShotShape,
   RhbhTerrain,
   computeFlightPathSvg,
+  filterBagByGrouping,
   parseRhbhShotQuery,
   recommendRhbhShotDiscs
 } from '../utils/analytics';
@@ -143,6 +145,7 @@ export const RhbhShotFinder: React.FC<RhbhShotFinderProps> = ({
   const [shape, setShape] = useState<RhbhShotShape>('straight');
   const [wind, setWind] = useState<CaddieScenario>(initialWind);
   const [terrain, setTerrain] = useState<RhbhTerrain>('open');
+  const [bagFilter, setBagFilter] = useState<BagGroupingFilter>('jeffery');
   const [phraseInput, setPhraseInput] = useState<string>('');
   const [voiceFeedback, setVoiceFeedback] = useState<string | null>(null);
   const [isListening, setIsListening] = useState<boolean>(false);
@@ -170,13 +173,57 @@ export const RhbhShotFinder: React.FC<RhbhShotFinderProps> = ({
     };
   }, []);
 
+  const bagGroupOptions = useMemo(() => {
+    const currentCount = filterBagByGrouping(bag, 'jeffery').length;
+    const vaultCount = filterBagByGrouping(bag, 'archived').length;
+    const jackCount = filterBagByGrouping(bag, 'jack').length;
+    const bothCount = filterBagByGrouping(bag, 'all').length;
+    const careerCount = filterBagByGrouping(bag, 'jeffery_all').length;
+    return [
+      {
+        id: 'jeffery' as BagGroupingFilter,
+        label: `🍬 Current Bag (${currentCount})`,
+        shortName: `CURRENT BAG (${currentCount})`,
+        activeCls: 'bg-[#FF5722] text-white border-[#FF5722]'
+      },
+      {
+        id: 'archived' as BagGroupingFilter,
+        label: `📦 Archive / Vault (${vaultCount})`,
+        shortName: `ARCHIVE / VAULT (${vaultCount})`,
+        activeCls: 'bg-amber-400 text-slate-950 border-amber-400'
+      },
+      {
+        id: 'jack' as BagGroupingFilter,
+        label: `⚡ Jack's Discs (${jackCount})`,
+        shortName: `JACK'S DISCRAFT (${jackCount})`,
+        activeCls: 'bg-[#00F0FF] text-slate-950 border-[#00F0FF]'
+      },
+      {
+        id: 'all' as BagGroupingFilter,
+        label: `👥 Active Both (${bothCount})`,
+        shortName: `ACTIVE COMBINED (${bothCount})`,
+        activeCls: 'bg-[#39FF14] text-slate-950 border-[#39FF14]'
+      },
+      {
+        id: 'jeffery_all' as BagGroupingFilter,
+        label: `🏆 All Career (${careerCount})`,
+        shortName: `ALL JEFFERY CAREER (${careerCount})`,
+        activeCls: 'bg-[#FF2E93] text-white border-[#FF2E93]'
+      }
+    ];
+  }, [bag]);
+
+  const activeBagOption =
+    bagGroupOptions.find((opt) => opt.id === bagFilter) || bagGroupOptions[0];
+
   const result = useMemo(
     () =>
       recommendRhbhShotDiscs(
         { distanceFeet, shape, wind, terrain },
-        bag
+        bag,
+        bagFilter
       ),
-    [distanceFeet, shape, wind, terrain, bag]
+    [distanceFeet, shape, wind, terrain, bag, bagFilter]
   );
 
   const applySpokenOrTypedPhrase = (text: string) => {
@@ -294,7 +341,7 @@ export const RhbhShotFinder: React.FC<RhbhShotFinderProps> = ({
               🎯 RHBH SHOT FINDER
             </span>
             <span className="text-[10px] font-mono-tabular font-bold uppercase tracking-wider text-[#00F0FF]">
-              ALWAYS BACKHAND · ACTIVE BAG
+              ALWAYS BACKHAND · {activeBagOption.shortName}
             </span>
           </div>
           <h3 className="font-display text-sm sm:text-base font-extrabold uppercase tracking-tight mt-1">
@@ -334,6 +381,30 @@ export const RhbhShotFinder: React.FC<RhbhShotFinderProps> = ({
             </button>
           )}
         </div>
+      </div>
+
+      {/* BAG POOL FILTER BAR: CURRENT BAG / ARCHIVE / JACK'S DISCS / ACTIVE BOTH / ALL CAREER */}
+      <div className="flex flex-wrap items-center gap-1.5">
+        <span className="text-[10px] font-mono-tabular font-extrabold uppercase tracking-wider text-slate-400 mr-1">
+          Search Bag:
+        </span>
+        {bagGroupOptions.map((opt) => (
+          <button
+            key={opt.id}
+            type="button"
+            onClick={() => {
+              playChainRattleSfx('tap');
+              setBagFilter(opt.id);
+            }}
+            className={`px-2.5 py-1 rounded-lg text-[11px] font-extrabold border transition-all ${
+              bagFilter === opt.id
+                ? opt.activeCls
+                : 'bg-[#080B14] text-slate-300 border-slate-700 hover:border-white/40 hover:text-white'
+            }`}
+          >
+            {opt.label}
+          </button>
+        ))}
       </div>
 
       {/* VOICE / QUICK-PHRASE INPUT */}
@@ -622,6 +693,16 @@ export const RhbhShotFinder: React.FC<RhbhShotFinderProps> = ({
                   <span className="px-2 py-0.5 rounded-full bg-[#00F0FF] text-slate-950 font-mono-tabular text-[10px] font-extrabold">
                     {topPick.whyBadge}
                   </span>
+                  {topPick.disc.archived && (
+                    <span className="px-2 py-0.5 rounded-full bg-amber-400/20 border border-amber-400 text-amber-300 font-mono-tabular text-[10px] font-extrabold uppercase">
+                      📦 Archive / Vault
+                    </span>
+                  )}
+                  {topPick.disc.ownerId === 'jack' && (
+                    <span className="px-2 py-0.5 rounded-full bg-[#00F0FF]/20 border border-[#00F0FF] text-[#00F0FF] font-mono-tabular text-[10px] font-extrabold uppercase">
+                      ⚡ Jack&apos;s Disc
+                    </span>
+                  )}
                 </div>
               </div>
 
@@ -848,6 +929,7 @@ export const RhbhShotFinder: React.FC<RhbhShotFinderProps> = ({
                     <div className="text-xs font-extrabold truncate">
                       {alt.disc.weightGrams ? `${alt.disc.weightGrams}g ` : ''}
                       {alt.disc.name} [{alt.disc.speed}|{alt.disc.glide}|{alt.disc.turn}|{alt.disc.fade}]
+                      {alt.disc.archived ? ' · 📦 Vault' : alt.disc.ownerId === 'jack' ? ' · ⚡ Jack' : ''}
                     </div>
                     <div className="text-[10.5px] text-slate-400 truncate">
                       {alt.releaseLabel} · {alt.whyBadge}

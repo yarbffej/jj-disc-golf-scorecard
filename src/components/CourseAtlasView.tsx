@@ -23,15 +23,20 @@ import {
   getDiscCardImageUrl
 } from '../data/initialData';
 import {
+  BagGroupingFilter,
   DEFAULT_VERIFIED_HOLE_PICKS,
   HoleVisualOutlineSpec,
+  RhbhShotShape,
   buildCourseSummary,
+  filterBagByGrouping,
   formatRelativePar,
   getCourseHoleLayoutIntel,
   getCoursePersonalBest,
   getHoleVisualOutlineSpec,
   getVerifiedHoleKey,
-  normalizeCourseKeyForPicks
+  normalizeCourseKeyForPicks,
+  recommendJackDisc,
+  recommendRhbhShotDiscs
 } from '../utils/analytics';
 import { playChainRattleSfx } from '../utils/soundFx';
 
@@ -683,7 +688,35 @@ export const CourseAtlasView: React.FC<CourseAtlasViewProps> = ({
   const [holeFilter, setHoleFilter] = useState<HoleFilterMode>('all');
   const [mapMode, setMapMode] = useState<'loop' | 'satellite'>('loop');
   const [mapStatsPlayer, setMapStatsPlayer] = useState<'p1' | 'p2'>('p1');
+  const [discBagFilter, setDiscBagFilter] = useState<BagGroupingFilter>('jeffery');
   const activeMapPlayerName = mapStatsPlayer === 'p1' ? p1.name : p2.name;
+
+  const atlasBagCounts = useMemo(
+    () => ({
+      jeffery: filterBagByGrouping(bag, 'jeffery').length,
+      archived: filterBagByGrouping(bag, 'archived').length,
+      jack: filterBagByGrouping(bag, 'jack').length,
+      all: filterBagByGrouping(bag, 'all').length,
+      jeffery_all: filterBagByGrouping(bag, 'jeffery_all').length
+    }),
+    [bag]
+  );
+
+  const scopedBagPool = useMemo(
+    () => filterBagByGrouping(bag, discBagFilter),
+    [bag, discBagFilter]
+  );
+
+  const activeDiscBagLabel =
+    discBagFilter === 'jeffery'
+      ? `Current Bag (${atlasBagCounts.jeffery})`
+      : discBagFilter === 'archived'
+      ? `Archive / Vault (${atlasBagCounts.archived})`
+      : discBagFilter === 'jack'
+      ? `Jack’s Discs (${atlasBagCounts.jack})`
+      : discBagFilter === 'jeffery_all'
+      ? `All Career (${atlasBagCounts.jeffery_all})`
+      : `Active Both (${atlasBagCounts.all})`;
   const [zoomSatelliteModal, setZoomSatelliteModal] = useState<boolean>(false);
   const [focusedHoleNumber, setFocusedHoleNumber] = useState<number | null>(null);
   const [expandedHoleHistory, setExpandedHoleHistory] = useState<Record<number, boolean>>({});
@@ -828,6 +861,14 @@ export const CourseAtlasView: React.FC<CourseAtlasViewProps> = ({
       const p1Scores: number[] = [];
       const p2Scores: number[] = [];
       const discCounts = new Map<string, { count: number; discId?: string; name: string }>();
+      const scopedDiscCounts = new Map<string, { count: number; disc: DiscItem }>();
+      const scopedIds = new Set(scopedBagPool.map((d) => d.id));
+
+      const recordScopedThrow = (disc?: DiscItem) => {
+        if (!disc || !scopedIds.has(disc.id)) return;
+        const prev = scopedDiscCounts.get(disc.id);
+        scopedDiscCounts.set(disc.id, { count: (prev?.count || 0) + 1, disc });
+      };
 
       const historicalPlays: Array<{
         roundId: number;
@@ -885,6 +926,17 @@ export const CourseAtlasView: React.FC<CourseAtlasViewProps> = ({
             discId: primaryDisc.id,
             name: primaryDisc.name
           });
+          // Match exact disc in scoped pool (or by name within scoped pool when filtering Archive/Current Bag)
+          if (scopedIds.has(primaryDisc.id)) {
+            recordScopedThrow(primaryDisc);
+          } else {
+            const scopedByName = resolveDiscByIdOrName(
+              scopedBagPool,
+              jMeta?.thrownDiscId,
+              jMeta?.discUsed || primaryDisc.name
+            );
+            recordScopedThrow(scopedByName);
+          }
         } else if (jMeta?.discUsed) {
           const key = jMeta.discUsed.toLowerCase();
           const prev = discCounts.get(key);
@@ -892,6 +944,22 @@ export const CourseAtlasView: React.FC<CourseAtlasViewProps> = ({
             count: (prev?.count || 0) + 1,
             name: jMeta.discUsed
           });
+          recordScopedThrow(resolveDiscByIdOrName(scopedBagPool, undefined, jMeta.discUsed));
+        }
+
+        // Also include Jack's logged throws when Jack's discs are in the selected bag filter
+        if (discBagFilter === 'jack' || discBagFilter === 'all') {
+          let jackPrimary: DiscItem | undefined;
+          if (kMeta?.throws && kMeta.throws.length > 0) {
+            jackPrimary = resolveDiscByIdOrName(scopedBagPool, kMeta.throws[0].discId);
+          } else if (kMeta?.thrownDiscId || kMeta?.discUsed) {
+            jackPrimary = resolveDiscByIdOrName(
+              scopedBagPool,
+              kMeta.thrownDiscId,
+              kMeta.discUsed
+            );
+          }
+          recordScopedThrow(jackPrimary);
         }
 
         const commentary =
@@ -952,16 +1020,66 @@ export const CourseAtlasView: React.FC<CourseAtlasViewProps> = ({
       );
       const verifiedId = DEFAULT_VERIFIED_HOLE_PICKS[verifiedKey];
       const topLogged = Array.from(discCounts.values()).sort((a, b) => b.count - a.count)[0];
-      const topLoggedDiscObj = resolveDiscByIdOrName(bag, topLogged?.discId, topLogged?.name);
-      const activeVerifiedDisc = resolveDiscByIdOrName(bag, verifiedId);
+      const topScopedLogged = Array.from(scopedDiscCounts.values()).sort(
+        (a, b) => b.count - a.count
+      )[0];
+      const scopedVerifiedDisc = scopedBagPool.find((d) => d.id === verifiedId);
 
-      // Prefer the active 17-disc Main Bag pick (Cotton Candy + Sync/Archangel/Alien) when
-      // the historically most-thrown disc has been moved to Backup / Vault.
-      const isTopLoggedActive = Boolean(topLoggedDiscObj && !topLoggedDiscObj.archived);
+      const holeRhbhShape: RhbhShotShape =
+        spec.shape === 'dogleg_left'
+          ? 'hard_left'
+          : spec.shape === 'slight_left'
+          ? 'gentle_left'
+          : spec.shape === 'dogleg_right'
+          ? 'hard_right'
+          : spec.shape === 'slight_right' || spec.shape === 's_curve'
+          ? 'gentle_right'
+          : 'straight';
+
+      const fallbackScopedDisc =
+        discBagFilter === 'jack'
+          ? recommendJackDisc(distance, scopedBagPool) || undefined
+          : recommendRhbhShotDiscs(
+              {
+                distanceFeet: distance,
+                shape: holeRhbhShape,
+                wind: 'calm',
+                terrain:
+                  spec.elevation === 'uphill'
+                    ? 'uphill'
+                    : spec.elevation === 'downhill'
+                    ? 'downhill'
+                    : 'open'
+              },
+              bag,
+              discBagFilter
+            ).topPick?.disc;
+
       const goToDisc =
-        (isTopLoggedActive ? topLoggedDiscObj : activeVerifiedDisc) ||
-        topLoggedDiscObj ||
-        activeVerifiedDisc;
+        topScopedLogged?.disc ||
+        scopedVerifiedDisc ||
+        fallbackScopedDisc ||
+        scopedBagPool[0];
+
+      const goToDiscLabel = topScopedLogged
+        ? discBagFilter === 'archived'
+          ? `📦 Most Thrown Vault Disc (${topScopedLogged.count}×)`
+          : discBagFilter === 'jack'
+          ? `⚡ Jack's Logged Pick (${topScopedLogged.count}×)`
+          : `★ Most Thrown Here (${topScopedLogged.count}×)${
+              topScopedLogged.disc.archived
+                ? ' · Vault'
+                : topScopedLogged.disc.ownerId === 'jack'
+                ? ' · Jack'
+                : ''
+            }`
+        : discBagFilter === 'jack'
+        ? `⚡ Jack's Discraft Match (${distance}ft)`
+        : discBagFilter === 'archived'
+        ? `📦 Vault Flight Match (${distance}ft)`
+        : topLogged && topLogged.name !== goToDisc?.name
+        ? `🍬 Current Bag Pick (Prev: ${topLogged.name})`
+        : '🍬 Current Bag Pick';
 
       // Check if user saved a custom hole photo on Live Scorecard
       let customHolePhoto: string | null = null;
@@ -991,15 +1109,16 @@ export const CourseAtlasView: React.FC<CourseAtlasViewProps> = ({
         p2Avg,
         p2AvgRel,
         goToDisc,
-        topLoggedCount: isTopLoggedActive ? topLogged?.count || 0 : 0,
-        prevLoggedName: !isTopLoggedActive && topLogged ? topLogged.name : null,
+        goToDiscLabel,
+        topLoggedCount: topScopedLogged?.count || 0,
+        prevLoggedName: !topScopedLogged && topLogged ? topLogged.name : null,
         customHolePhoto,
         historicalPlays
       });
     }
 
     return entries;
-  }, [activeCourse, bag, p1.id, p2.id]);
+  }, [activeCourse, bag, p1.id, p2.id, discBagFilter, scopedBagPool]);
 
   const visibleHoleEntries = useMemo(() => {
     const getRel = (h: (typeof holeAtlasEntries)[number]) =>
@@ -1071,10 +1190,41 @@ export const CourseAtlasView: React.FC<CourseAtlasViewProps> = ({
     const firstDate = chronologicalRounds[0]?.date || null;
     const latestDate = activeCourse.rounds[0]?.date || null;
 
+    // Scoped Top Course Workhorses matching discBagFilter
+    const scopedIds = new Set(scopedBagPool.map((d) => d.id));
+    const scopedCourseCounts = new Map<string, { name: string; count: number }>();
+    for (const r of activeCourse.rounds) {
+      for (const h of r.holes) {
+        const metas =
+          discBagFilter === 'jack'
+            ? [h.meta?.jack]
+            : discBagFilter === 'all'
+            ? [h.meta?.jeffery, h.meta?.jack]
+            : [h.meta?.jeffery];
+        for (const m of metas) {
+          if (!m) continue;
+          const matched =
+            resolveDiscByIdOrName(bag, m.thrownDiscId, m.discUsed) ||
+            (m.throws?.[0] ? resolveDiscByIdOrName(bag, m.throws[0].discId) : undefined);
+          if (matched && scopedIds.has(matched.id)) {
+            const prev = scopedCourseCounts.get(matched.id);
+            scopedCourseCounts.set(matched.id, {
+              name: matched.name,
+              count: (prev?.count || 0) + 1
+            });
+          }
+        }
+      }
+    }
+    const scopedWorkhorses = Array.from(scopedCourseCounts.values())
+      .sort((a, b) => b.count - a.count)
+      .slice(0, 3);
+
     return {
       jPB,
       kPB,
       summary,
+      scopedWorkhorses,
       jTotalBirdies,
       jTotalPars,
       kTotalBirdies,
@@ -1086,7 +1236,7 @@ export const CourseAtlasView: React.FC<CourseAtlasViewProps> = ({
       firstDate,
       latestDate
     };
-  }, [activeCourse, bag, p1.id, p2.id]);
+  }, [activeCourse, bag, p1.id, p2.id, discBagFilter, scopedBagPool]);
 
   const jumpToHoleCard = (holeNum: number) => {
     playChainRattleSfx('tap');
@@ -1414,15 +1564,18 @@ export const CourseAtlasView: React.FC<CourseAtlasViewProps> = ({
           </div>
 
           <div className="p-3 rounded-2xl bg-white/95 text-slate-950 zine-sticker space-y-1 min-w-0">
-            <div className="text-[11px] font-mono-tabular font-extrabold uppercase text-amber-700">
-              🥏 Top Course Workhorses
+            <div className="text-[11px] font-mono-tabular font-extrabold uppercase text-amber-700 truncate">
+              🥏 Top Workhorses · {activeDiscBagLabel}
             </div>
             <div className="text-xs sm:text-sm font-extrabold text-slate-950 truncate">
-              {courseStats.summary.topGoToDiscs.length > 0
-                ? courseStats.summary.topGoToDiscs
-                    .slice(0, 3)
+              {courseStats.scopedWorkhorses.length > 0
+                ? courseStats.scopedWorkhorses
                     .map((d) => `${d.name} (${d.count}×)`)
                     .join(' · ')
+                : discBagFilter === 'jack'
+                ? 'Roach · Buzzz SS · Cicada'
+                : discBagFilter === 'archived'
+                ? 'No Vault Throws Logged Here'
                 : 'Proto Glow Mako3 · Star Rollo · Star Roadrunner'}
             </div>
             <div className="text-[11px] font-bold text-slate-700 truncate">
@@ -1459,6 +1612,7 @@ export const CourseAtlasView: React.FC<CourseAtlasViewProps> = ({
                 onClick={() => {
                   playChainRattleSfx('tap');
                   setMapStatsPlayer('p1');
+                  if (discBagFilter === 'jack') setDiscBagFilter('jeffery');
                 }}
                 className={`px-2.5 py-1 rounded-lg text-xs font-mono-tabular font-extrabold transition-all ${
                   mapStatsPlayer === 'p1'
@@ -1473,6 +1627,7 @@ export const CourseAtlasView: React.FC<CourseAtlasViewProps> = ({
                 onClick={() => {
                   playChainRattleSfx('tap');
                   setMapStatsPlayer('p2');
+                  setDiscBagFilter('jack');
                 }}
                 className={`px-2.5 py-1 rounded-lg text-xs font-mono-tabular font-extrabold transition-all ${
                   mapStatsPlayer === 'p2'
@@ -1784,49 +1939,103 @@ export const CourseAtlasView: React.FC<CourseAtlasViewProps> = ({
 
       {/* 4. HOLE-BY-HOLE TEE-SIGN DIAGRAMS & FORENSIC HISTORICAL LOGS */}
       <div className="neon-card rounded-2xl p-4 sm:p-5 space-y-4">
-        <div className="flex flex-col md:flex-row md:items-center justify-between gap-3 border-b-2 border-slate-900/15 pb-3.5">
-          <div>
-            <div className="font-mono-tabular text-[10px] sm:text-[11px] font-extrabold uppercase tracking-wider text-[#FF5722]">
-              HOLE-BY-HOLE TEE SIGNS &amp; ON-COURSE VOICE LOGS
+        <div className="flex flex-col gap-3 border-b-2 border-slate-900/15 pb-3.5">
+          <div className="flex flex-col md:flex-row md:items-center justify-between gap-3">
+            <div>
+              <div className="font-mono-tabular text-[10px] sm:text-[11px] font-extrabold uppercase tracking-wider text-[#FF5722]">
+                HOLE-BY-HOLE TEE SIGNS &amp; ON-COURSE VOICE LOGS
+              </div>
+              <h3 className="font-display text-lg sm:text-xl font-extrabold uppercase tracking-tight">
+                ⛳ Visual Hole Layouts &amp; Historical Shot Archive ({visibleHoleEntries.length}{' '}
+                {visibleHoleEntries.length === 1 ? 'Hole' : 'Holes'})
+              </h3>
             </div>
-            <h3 className="font-display text-lg sm:text-xl font-extrabold uppercase tracking-tight">
-              ⛳ Visual Hole Layouts &amp; Historical Shot Archive ({visibleHoleEntries.length}{' '}
-              {visibleHoleEntries.length === 1 ? 'Hole' : 'Holes'})
-            </h3>
+
+            <div className="flex flex-wrap items-center gap-1.5">
+              {(
+                [
+                  { id: 'all', label: `All (${holeAtlasEntries.length})` },
+                  ...(holeAtlasEntries.length > 9
+                    ? ([
+                        { id: 'front9', label: 'Front 9' },
+                        { id: 'back9', label: 'Back 9' }
+                      ] as const)
+                    : []),
+                  ...(activeCourse.rounds.length > 0
+                    ? ([
+                        { id: 'best', label: `★ ${activeMapPlayerName}'s Best` },
+                        { id: 'leaks', label: `⚠️ ${activeMapPlayerName}'s Leaks` }
+                      ] as const)
+                    : [])
+                ] as ReadonlyArray<{ id: HoleFilterMode; label: string }>
+              ).map((hf) => (
+                <button
+                  key={hf.id}
+                  type="button"
+                  onClick={() => {
+                    playChainRattleSfx('tap');
+                    setHoleFilter(hf.id);
+                  }}
+                  className={`px-3 py-1 rounded-full text-xs font-extrabold zine-pill-btn transition-all ${
+                    holeFilter === hf.id
+                      ? 'bg-[#00F0FF] text-slate-950'
+                      : 'bg-white text-slate-900 hover:bg-sky-50'
+                  }`}
+                >
+                  {hf.label}
+                </button>
+              ))}
+            </div>
           </div>
 
-          <div className="flex flex-wrap items-center gap-1.5">
+          {/* Disc Bag Filter Bar for Hole Go-To Discs & Top Course Workhorses */}
+          <div className="flex flex-wrap items-center gap-1.5 pt-1">
+            <span className="text-[10px] font-mono-tabular font-extrabold uppercase tracking-wider opacity-75 mr-1">
+              Disc Picks Bag:
+            </span>
             {(
               [
-                { id: 'all', label: `All (${holeAtlasEntries.length})` },
-                ...(holeAtlasEntries.length > 9
-                  ? ([
-                      { id: 'front9', label: 'Front 9' },
-                      { id: 'back9', label: 'Back 9' }
-                    ] as const)
-                  : []),
-                ...(activeCourse.rounds.length > 0
-                  ? ([
-                      { id: 'best', label: `★ ${activeMapPlayerName}'s Best` },
-                      { id: 'leaks', label: `⚠️ ${activeMapPlayerName}'s Leaks` }
-                    ] as const)
-                  : [])
-              ] as ReadonlyArray<{ id: HoleFilterMode; label: string }>
-            ).map((hf) => (
+                {
+                  id: 'jeffery',
+                  label: `🍬 Current Bag (${atlasBagCounts.jeffery})`,
+                  activeCls: 'bg-[#FF5722] text-white'
+                },
+                {
+                  id: 'archived',
+                  label: `📦 Archive / Vault (${atlasBagCounts.archived})`,
+                  activeCls: 'bg-amber-400 text-slate-950'
+                },
+                {
+                  id: 'jack',
+                  label: `⚡ Jack’s Discs (${atlasBagCounts.jack})`,
+                  activeCls: 'bg-[#00F0FF] text-slate-950'
+                },
+                {
+                  id: 'all',
+                  label: `👥 Active Both (${atlasBagCounts.all})`,
+                  activeCls: 'bg-[#39FF14] text-slate-950'
+                },
+                {
+                  id: 'jeffery_all',
+                  label: `🏆 All Career (${atlasBagCounts.jeffery_all})`,
+                  activeCls: 'bg-[#FF2E93] text-white'
+                }
+              ] as const
+            ).map((grp) => (
               <button
-                key={hf.id}
+                key={grp.id}
                 type="button"
                 onClick={() => {
                   playChainRattleSfx('tap');
-                  setHoleFilter(hf.id);
+                  setDiscBagFilter(grp.id);
                 }}
-                className={`px-3 py-1 rounded-full text-xs font-extrabold zine-pill-btn transition-all ${
-                  holeFilter === hf.id
-                    ? 'bg-[#00F0FF] text-slate-950'
-                    : 'bg-white text-slate-900 hover:bg-sky-50'
+                className={`px-2.5 py-1 rounded-full text-[11px] font-extrabold zine-pill-btn transition-all ${
+                  discBagFilter === grp.id
+                    ? grp.activeCls
+                    : 'bg-white text-slate-900 hover:bg-slate-100'
                 }`}
               >
-                {hf.label}
+                {grp.label}
               </button>
             ))}
           </div>
@@ -1926,11 +2135,7 @@ export const CourseAtlasView: React.FC<CourseAtlasViewProps> = ({
                           )}
                           <div className="min-w-0">
                             <div className="text-[10px] font-mono-tabular font-bold uppercase text-[#00F0FF]">
-                              {h.topLoggedCount > 0
-                                ? `★ Most Thrown Here (${h.topLoggedCount}×)`
-                                : h.prevLoggedName
-                                ? `🍬 Active Bag Pick (Prev: ${h.prevLoggedName})`
-                                : '🍬 Active Main Bag Pick'}
+                              {h.goToDiscLabel}
                             </div>
                             <div className="text-xs font-extrabold text-white truncate">
                               {h.goToDisc.weightGrams ? `${h.goToDisc.weightGrams}g ` : ''}
