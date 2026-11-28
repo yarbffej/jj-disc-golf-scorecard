@@ -843,8 +843,9 @@ export const CourseAtlasView: React.FC<CourseAtlasViewProps> = ({
       for (const r of activeCourse.rounds) {
         const h = r.holes.find((item) => item.number === hNum);
         if (!h) continue;
-        if (h.par) par = h.par;
-        if (h.distance) distance = h.distance;
+        // Prefer canonical UDisc-verified CourseTemplate par & distance; only fall back to historical round values for orphan courses
+        if (!tplHole?.par && h.par) par = h.par;
+        if (!tplHole?.distance && h.distance) distance = h.distance;
 
         const s1 = h.scores?.[p1.id] || 0;
         const s2 = h.scores?.[p2.id] || 0;
@@ -1508,33 +1509,50 @@ export const CourseAtlasView: React.FC<CourseAtlasViewProps> = ({
             </div>
 
             {/* Quick Hole Jump Pills Underneath Satellite Image */}
-            <div className="flex flex-wrap items-center gap-1.5 pt-1">
-              <span className="text-[11px] font-mono-tabular font-extrabold text-emerald-300 uppercase mr-1">
-                Jump to Hole:
-              </span>
-              {holeAtlasEntries.map((h) => {
-                const badgeCls =
-                  h.p1AvgRel === null
-                    ? 'bg-[#0D1B14] text-slate-200 border-emerald-500/30'
-                    : h.p1AvgRel < 0
-                    ? 'bg-[#39FF14]/20 text-[#39FF14] border-[#39FF14]'
-                    : h.p1AvgRel <= 0.25
-                    ? 'bg-[#00F0FF]/20 text-[#00F0FF] border-[#00F0FF]'
-                    : h.p1AvgRel <= 0.75
-                    ? 'bg-[#FACC15]/20 text-[#FACC15] border-[#FACC15]'
-                    : 'bg-[#FF2E93]/20 text-[#FF2E93] border-[#FF2E93]';
-                return (
-                  <button
-                    key={h.holeNumber}
-                    type="button"
-                    onClick={() => jumpToHoleCard(h.holeNumber)}
-                    className={`px-2.5 py-1 rounded-lg border text-[11px] font-mono-tabular font-extrabold transition-transform hover:-translate-y-0.5 ${badgeCls}`}
-                  >
-                    #{h.holeNumber} · {h.distance}&apos;
-                    {h.p1Best !== null && h.p1Best < h.par ? ' ★' : ''}
-                  </button>
-                );
-              })}
+            <div className="space-y-1.5 pt-1">
+              <div className="flex flex-wrap items-center gap-1.5">
+                <span className="text-[11px] font-mono-tabular font-extrabold text-emerald-300 uppercase mr-1">
+                  Jump to Hole:
+                </span>
+                {holeAtlasEntries.map((h) => {
+                  const badgeCls =
+                    h.p1AvgRel === null
+                      ? 'bg-[#0D1B14] text-slate-200 border-emerald-500/30'
+                      : h.p1AvgRel < 0
+                      ? 'bg-[#39FF14]/20 text-[#39FF14] border-[#39FF14]'
+                      : h.p1AvgRel <= 0.25
+                      ? 'bg-[#00F0FF]/20 text-[#00F0FF] border-[#00F0FF]'
+                      : h.p1AvgRel <= 0.75
+                      ? 'bg-[#FACC15]/20 text-[#FACC15] border-[#FACC15]'
+                      : 'bg-[#FF2E93]/20 text-[#FF2E93] border-[#FF2E93]';
+                  const titleTip =
+                    h.p1AvgRel === null
+                      ? `Hole #${h.holeNumber} (${h.distance} ft · Par ${h.par}) — Not yet played`
+                      : `Hole #${h.holeNumber} (${h.distance} ft · Par ${h.par}) — Your avg: ${
+                          h.p1AvgRel > 0 ? `+${h.p1AvgRel.toFixed(2)}` : h.p1AvgRel.toFixed(2)
+                        } vs Par${h.p1Best !== null && h.p1Best < h.par ? ' · ★ Birdied!' : ''}`;
+                  return (
+                    <button
+                      key={h.holeNumber}
+                      type="button"
+                      title={titleTip}
+                      onClick={() => jumpToHoleCard(h.holeNumber)}
+                      className={`px-2.5 py-1 rounded-lg border text-[11px] font-mono-tabular font-extrabold transition-transform hover:-translate-y-0.5 ${badgeCls}`}
+                    >
+                      #{h.holeNumber} · {h.distance}&apos;
+                      {h.p1Best !== null && h.p1Best < h.par ? ' ★' : ''}
+                    </button>
+                  );
+                })}
+              </div>
+              <div className="flex flex-wrap items-center gap-x-3 gap-y-1 text-[10px] font-mono-tabular text-slate-400">
+                <span className="uppercase font-bold text-slate-500">Your Avg vs Par:</span>
+                <span className="text-[#39FF14] font-bold">● Under Par (&lt;0)</span>
+                <span className="text-[#00F0FF] font-bold">● Even Par (0 to +0.25)</span>
+                <span className="text-[#FACC15] font-bold">● Slight Over (+0.26 to +0.75)</span>
+                <span className="text-[#FF2E93] font-bold">● Trouble Hole (&gt;+0.75)</span>
+                <span className="text-slate-300 font-bold">★ = Birdied</span>
+              </div>
             </div>
           </div>
         )}
