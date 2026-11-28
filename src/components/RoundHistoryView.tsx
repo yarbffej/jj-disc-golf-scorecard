@@ -250,7 +250,7 @@ export const RoundHistoryView: React.FC<RoundHistoryViewProps> = ({
                 <div className="space-y-3 min-w-0">
                   <div className="flex items-start justify-between gap-2 border-b border-slate-800 pb-3">
                     <div className="min-w-0">
-                      <span className="text-xs font-mono-tabular font-bold text-[#00F0FF] block truncate">
+                      <span className="text-xs font-mono-tabular font-bold text-[#00F0FF] block leading-snug">
                         Par {coursePar}
                         {totalDist > 0 ? ` · ${totalDist.toLocaleString()} ft` : ''} · Last:{' '}
                         {latestRound?.date}

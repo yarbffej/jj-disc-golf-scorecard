@@ -32,6 +32,8 @@ import { playChainRattleSfx } from '../utils/soundFx';
 interface ThemeOption {
   id: BgThemeMode;
   label: string;
+  shortLabel?: string;
+  tagline?: string;
   surface: 'light' | 'dark';
   swatch: string;
 }
@@ -280,13 +282,24 @@ Players: ${soloMode ? 'Jeffery (Solo)' : 'Jeffery & Jack'}
 
   return (
     <div className="space-y-5">
-      {/* 0A. DISC GOLF FULL-APP UI VIBE STUDIO BAR */}
-      <div className="neon-card rounded-2xl p-2.5 sm:p-3 flex flex-wrap items-center justify-between gap-2">
-        <div className="flex flex-wrap items-center gap-1.5 min-w-0">
-          <span className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-slate-950 text-white font-mono-tabular text-[10px] sm:text-[11px] font-extrabold uppercase tracking-wider shrink-0 zine-sticker">
-            <Palette className="w-3.5 h-3.5 text-[#FFE600]" />
-            <span>UI VIBE:</span>
+      {/* 0A. 3 SIGNATURE FULL-APP THEME WORLDS (BACKGROUND + TILES + NESTED TILES + FONTS + SCALE) */}
+      <div className="neon-card rounded-2xl p-3 sm:p-4 space-y-2.5">
+        <div className="flex flex-wrap items-center justify-between gap-2">
+          <div className="flex items-center gap-2">
+            <span className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-[#FF2E93] text-white font-mono-tabular text-[10px] sm:text-[11px] font-extrabold uppercase tracking-wider shrink-0 zine-sticker">
+              <Palette className="w-3.5 h-3.5" />
+              <span>FULL THEME WORLD</span>
+            </span>
+            <span className="text-[11px] font-bold opacity-80">
+              Changes canvas, tiles, nested boxes, fonts &amp; sizing
+            </span>
+          </div>
+          <span className="hidden md:inline-flex items-center px-2.5 py-0.5 rounded-full font-mono-tabular text-[10px] font-extrabold uppercase tracking-wider shrink-0 bg-[#FACC15] text-slate-950">
+            {activeVibeMeta.label}
           </span>
+        </div>
+
+        <div className="grid grid-cols-1 sm:grid-cols-3 gap-2">
           {bgThemeOptions.map((opt) => {
             const isSelected = bgTheme === opt.id;
             return (
@@ -294,28 +307,30 @@ Players: ${soloMode ? 'Jeffery (Solo)' : 'Jeffery & Jack'}
                 key={opt.id}
                 type="button"
                 onClick={() => onChangeBgTheme(opt.id)}
-                className={`px-2.5 py-1 rounded-full text-[11px] font-extrabold zine-pill-btn transition-all whitespace-nowrap flex items-center gap-1.5 ${
-                  isSelected ? 'vibe-pill-active scale-[1.02]' : 'vibe-nav-idle opacity-90 hover:opacity-100'
+                className={`p-2.5 sm:p-3 text-left zine-pill-btn transition-all flex items-center gap-2.5 ${
+                  isSelected
+                    ? 'vibe-pill-active scale-[1.01]'
+                    : 'vibe-nav-idle opacity-90 hover:opacity-100'
                 }`}
               >
                 <span
-                  className="w-3 h-3 rounded-full border border-white/70 shrink-0 shadow-sm"
+                  className="w-8 h-8 rounded-lg border-2 border-white/60 shrink-0 shadow-sm"
                   style={{ background: opt.swatch }}
                 />
-                <span>{opt.label}</span>
+                <div className="min-w-0 flex-1">
+                  <div className="font-display text-xs sm:text-sm font-extrabold leading-tight truncate">
+                    {opt.label}
+                  </div>
+                  {opt.tagline && (
+                    <div className="text-[10px] font-mono-tabular opacity-85 truncate mt-0.5">
+                      {opt.tagline}
+                    </div>
+                  )}
+                </div>
               </button>
             );
           })}
         </div>
-        <span
-          className={`hidden xl:inline-flex items-center px-2.5 py-0.5 rounded-full font-mono-tabular text-[10px] font-extrabold uppercase tracking-wider shrink-0 ${
-            isDarkVibe
-              ? 'bg-[#FF2E93] text-white'
-              : 'bg-[#FACC15] text-slate-950'
-          }`}
-        >
-          {isDarkVibe ? '⚡ NEON DARK MODE' : '☀️ DAYLIGHT MODE'}
-        </span>
       </div>
 
       {/* 0B. POP-ART DISC GOLF FIELD ZINE ISSUE COVER BANNER */}

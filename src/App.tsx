@@ -266,52 +266,42 @@ const TILE_STYLE_STORAGE_KEY = 'jj_disc_golf_tile_style_v4';
 export const BG_THEME_OPTIONS: ReadonlyArray<{
   id: BgThemeMode;
   label: string;
+  shortLabel: string;
+  tagline: string;
   surface: 'light' | 'dark';
   swatch: string;
 }> = [
   {
     id: 'sugar',
-    label: '🍬 Cotton Candy Neon',
+    label: '🍬 Cotton Candy Arcade',
+    shortLabel: '🍬 Arcade',
+    tagline: 'Pop-Glass Neon · Syne Bold · Large',
     surface: 'dark',
     swatch: 'linear-gradient(135deg, #FF2E93 0%, #9333EA 50%, #00F0FF 100%)'
   },
   {
-    id: 'midnight',
-    label: '🌙 Glow-Disc Night',
-    surface: 'dark',
-    swatch: 'linear-gradient(135deg, #1E1B4B 0%, #39FF14 100%)'
-  },
-  {
-    id: 'sunset',
-    label: '🕹️ Outrun Arcade 80s',
-    surface: 'dark',
-    swatch: 'linear-gradient(135deg, #FF2E93 0%, #FF6B2C 55%, #FFE600 100%)'
+    id: 'adventure',
+    label: '🏛️ Augusta Clubhouse',
+    shortLabel: '🏛️ Club',
+    tagline: 'Heritage Print · Fraunces Serif · Editorial',
+    surface: 'light',
+    swatch: 'linear-gradient(135deg, #1B4332 0%, #C6922E 58%, #FAF5E8 100%)'
   },
   {
     id: 'glow',
-    label: '☢️ Cyber Rangefinder',
+    label: '🎯 Stealth Tactical HUD',
+    shortLabel: '🎯 HUD',
+    tagline: 'Carbon Cockpit · Chakra Tech · Compact',
     surface: 'dark',
-    swatch: 'linear-gradient(135deg, #041E2B 0%, #00F0FF 55%, #CCFF00 100%)'
-  },
-  {
-    id: 'championship',
-    label: '💎 Cobalt Pro Tour',
-    surface: 'dark',
-    swatch: 'linear-gradient(135deg, #1E3A8A 0%, #38BDF8 60%, #FACC15 100%)'
-  },
-  {
-    id: 'turf',
-    label: '☀️ Sunburst Comic',
-    surface: 'light',
-    swatch: 'linear-gradient(135deg, #FFE600 0%, #FF4D94 100%)'
-  },
-  {
-    id: 'adventure',
-    label: '🌲 Emerald Fairway',
-    surface: 'light',
-    swatch: 'linear-gradient(135deg, #064E3B 0%, #10B981 60%, #FACC15 100%)'
+    swatch: 'linear-gradient(135deg, #0D1114 0%, #D9FF00 58%, #00E5FF 100%)'
   }
 ];
+
+function normalizeToSignatureTheme(theme: BgThemeMode | string | null | undefined): BgThemeMode {
+  if (theme === 'adventure' || theme === 'turf') return 'adventure';
+  if (theme === 'glow' || theme === 'midnight' || theme === 'championship') return 'glow';
+  return 'sugar';
+}
 
 export const TILE_STYLE_OPTIONS: ReadonlyArray<{
   id: TileStyleMode;
@@ -366,7 +356,7 @@ export default function App() {
     try {
       const savedTheme = localStorage.getItem(THEME_STORAGE_KEY);
       if (isValidBgTheme(savedTheme)) {
-        return savedTheme;
+        return normalizeToSignatureTheme(savedTheme);
       }
     } catch {
       // Fallback
@@ -387,22 +377,20 @@ export default function App() {
   });
 
   useEffect(() => {
+    const canonical = normalizeToSignatureTheme(bgTheme);
     try {
-      localStorage.setItem(THEME_STORAGE_KEY, bgTheme);
+      localStorage.setItem(THEME_STORAGE_KEY, canonical);
     } catch {
       // Ignore
     }
     const paperColorByTheme: Record<string, string> = {
-      sugar: '#0F051D',
-      midnight: '#060A14',
-      sunset: '#13061D',
-      glow: '#020A0E',
-      championship: '#050C22',
-      turf: '#FFFBE6',
-      adventure: '#D8F3E2'
+      sugar: '#0B0318',
+      adventure: '#EAE0CC',
+      glow: '#050709'
     };
-    const nextColor = paperColorByTheme[bgTheme] || '#0F051D';
+    const nextColor = paperColorByTheme[canonical] || '#0B0318';
     if (typeof document !== 'undefined') {
+      document.documentElement.setAttribute('data-theme', canonical);
       document.body.style.backgroundColor = nextColor;
       const meta = document.querySelector('meta[name="theme-color"]');
       if (meta) {
@@ -1657,8 +1645,9 @@ export default function App() {
     setIsRoundInProgress(false);
   };
 
+  const canonicalTheme = normalizeToSignatureTheme(bgTheme);
   const selectedThemeMeta =
-    BG_THEME_OPTIONS.find((t) => t.id === bgTheme) || BG_THEME_OPTIONS[0];
+    BG_THEME_OPTIONS.find((t) => t.id === canonicalTheme) || BG_THEME_OPTIONS[0];
   const selectedTileMeta =
     TILE_STYLE_OPTIONS.find((t) => t.id === tileStyle) || TILE_STYLE_OPTIONS[0];
   const isDarkVibe = selectedThemeMeta.surface === 'dark';
@@ -1807,8 +1796,43 @@ export default function App() {
             </button>
           </nav>
 
-          {/* Zone 3: Quick RHBH Shot Finder + Chains SFX + Sync Now + Data */}
+          {/* Zone 3: Quick 3-Theme Switcher + RHBH Shot Finder + Chains SFX + Sync Now + Data */}
           <div className="flex items-center gap-1.5 sm:gap-2 shrink min-w-0">
+            {/* Instant 3-World Theme Switcher (Available on Every Page) */}
+            <div
+              className="inline-flex items-center p-0.5 gap-0.5 border-2 border-[var(--dg-border)] bg-[var(--dg-nav-idle-bg)] shrink-0"
+              style={{ borderRadius: 'var(--dg-btn-radius)' }}
+              role="group"
+              aria-label="Switch App Theme"
+            >
+              {BG_THEME_OPTIONS.map((opt) => {
+                const isSelected = canonicalTheme === opt.id;
+                return (
+                  <button
+                    key={opt.id}
+                    type="button"
+                    title={`${opt.label} — ${opt.tagline}`}
+                    onClick={() => {
+                      playChainRattleSfx('vibe');
+                      setBgTheme(opt.id);
+                    }}
+                    className={`px-1.5 sm:px-2 py-0.5 sm:py-1 text-[10px] sm:text-[11px] font-extrabold transition-all whitespace-nowrap flex items-center gap-1 ${
+                      isSelected
+                        ? 'vibe-pill-active shadow-sm'
+                        : 'text-[var(--dg-nav-idle-ink)] opacity-75 hover:opacity-100'
+                    }`}
+                  >
+                    <span
+                      className="w-2.5 h-2.5 rounded-full border border-white/70 shrink-0"
+                      style={{ background: opt.swatch }}
+                    />
+                    <span className="hidden xl:inline">{opt.shortLabel}</span>
+                    <span className="xl:hidden">{opt.shortLabel.split(' ')[0]}</span>
+                  </button>
+                );
+              })}
+            </div>
+
             <button
               type="button"
               onClick={() => {
@@ -1974,7 +1998,7 @@ export default function App() {
             history={history}
             roundState={roundState}
             hasActiveRound={hasActiveRound}
-            bgTheme={bgTheme}
+            bgTheme={canonicalTheme}
             bgThemeOptions={BG_THEME_OPTIONS}
             onChangeBgTheme={(nextTheme) => {
               playChainRattleSfx('vibe');
